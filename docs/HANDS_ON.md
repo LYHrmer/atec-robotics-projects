@@ -7,8 +7,11 @@
 在仓库根目录运行下面的命令，可以依次看到五组输出。已有 Isaac Lab 环境时，也可以把 `python3` 换成该环境的 Python 路径；不需要启动 Isaac Sim。
 
 ```bash
+export PYTHONNOUSERSITE=1
 python3 tools/task_e/learn_geometry.py
 ```
+
+`PYTHONNOUSERSITE=1` 用于避免用户目录中的包覆盖当前 Python 环境；后面的命令在同一终端继续运行。
 
 脚本只有一个文件：[learn_geometry.py](../tools/task_e/learn_geometry.py)。每个小节也可以单独运行。建议先按文字手算，再看输出；遇到不一致时，先检查坐标系和单位。
 
