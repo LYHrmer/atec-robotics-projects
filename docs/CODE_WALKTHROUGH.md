@@ -29,13 +29,13 @@ solution.AlgSolution
 
 单环境 `obs["proprio"]` 通常是 `(1, 24)`：前 8 项是相对默认值的关节位置，中间 8 项是相对默认速度的关节速度，最后 8 项是上一次动作。本任务默认速度全为零，因此中间八项数值就是实际关节速度。当前控制主要读取前 8 项，不能把整个数组当成 24 个关节。前六个位置用弧度、后两个夹爪位置用米，相应速度单位为 rad/s、m/s。[`joints_from_proprio`](../task_e_geometry.py#L300) 加回默认位置；按手臂和夹爪拆开写是：
 
-$$
+```math
 q_{\mathrm{arm},0}=[0,\ 1.2,\ -1.5,\ 0,\ 1.2,\ 0].
-$$
+```
 
-$$
+```math
 q_{\mathrm{jaws},0}=[0.035,\ -0.035].
-$$
+```
 
 两段合起来就是 `DEFAULT_JOINT_POS`，下文记为 $`q_{\mathrm{default}}`$。
 
@@ -59,17 +59,17 @@ print(action_from_joint_targets(target))
 
 [`unproject_depth`](../task_e_geometry.py#L262) 丢弃零、NaN 和无穷深度。深度 $`d`$ 是沿相机光轴的距离；设像素列、行为 $`u,v`$，先得到相机坐标，再用外参转到世界坐标：
 
-$$
+```math
 p_c=d\begin{bmatrix}
 (u-c_x)/f_x\\
 (v-c_y)/f_y\\
 1
 \end{bmatrix}.
-$$
+```
 
-$$
+```math
 p_w=R_{wc}p_c+t_{wc}.
-$$
+```
 
 **例二：一个深度像素的往返。** 当前 640×480 标定给出 $`f_x=f_y=732.999284`$ 像素，主点为 `(320, 240)`。构造中心像素深度 1.4 m：
 
@@ -98,24 +98,24 @@ print(points, project_world(points))
 
 用 $`r_z`$ 表示旋转矩阵第三列，即手指伸出方向，代码中写作 `R[:,2]`。接触深度取 0.115 m，因此当前夹持点为：
 
-$$
+```math
 c=p+0.115r_z.
-$$
+```
 
 给定目标朝向的第三列 $`r_z^\star`$，末端目标位置为：
 
-$$
+```math
 p_{\mathrm{target}}=c-0.115r_z^\star.
-$$
+```
 
 [`solve_ik`](../task_e_geometry.py#L107) 用 SciPy `least_squares` 在六个关节上下限内寻找关节角。它最小化下面残差的平方和，其中 `rotvec` 用方向表示旋转轴、长度表示旋转角：
 
-$$
+```math
 r(q)=\begin{bmatrix}
 p(q)-p_d\\
 w\,\mathrm{rotvec}\left(R(q)R_d^\mathsf{T}\right)
 \end{bmatrix}.
-$$
+```
 
 默认旋转权重 $`w=0.20`$，成功容差是位置小于 5 mm、角度小于 0.08 rad；目标没有旋转时只优化位置。[`solve_grasp_ik`](../task_e_geometry.py#L194) 枚举倾角和夹爪方向的正负，先检查手指盒到桌面的间隙，再用 $`w=0.15`$、3 mm/0.05 rad 容差求解。两个夹爪方向虽能夹同一个物体，却可能受有限腕关节范围影响而具有不同可达性。
 
