@@ -1,0 +1,40 @@
+{
+  "seed": 42,
+  "score": 18.0,
+  "full_score": true,
+  "steps": 2689,
+  "sim_seconds": 53.78,
+  "wall_seconds": 230.607439348998,
+  "stop_reason": "terminated",
+  "action_spec": {},
+  "task_physics_modified": false,
+  "render_preset": "crisp",
+  "use_fabric": true,
+  "implementation": "v3 source before flat-import packaging; candidate and baseline wrapper differ only in import paths; five helpers byte-identical",
+  "source_runtime_sha256": {
+    "solution_task_e_rgbd.py": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+    "solution_task_e_vision.py": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+    "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+    "task_e_held_motion.py": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270",
+    "task_e_perception.py": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+    "solution_fast_confirm.py": "cacf1f9e1f8aa22ca012b1d128c7658664c11d7fd44a092784bd93ac72b8eac1",
+    "solution_opus_transfer.py": "45c33f002853c31d0f095f92f9512de16519fb7a281d87865f88f914fd5be200"
+  },
+  "published_runtime_sha256": {
+    "solution.py": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+    "solution_baseline.py": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+    "solution_task_e_rgbd.py": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+    "solution_task_e_vision.py": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+    "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+    "task_e_perception.py": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+    "task_e_held_motion.py": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270"
+  },
+  "video": {
+    "fps": 25.0,
+    "frames": 1396,
+    "simulation_speed": "1x",
+    "ending_hold_seconds": 2,
+    "sha256": "7d579601059f1d94e5e28987dd949decb3353d6d1ba59808c01593dcad580f3b",
+    "file": "media/task_e_fast_seed42_original.mp4"
+  }
+}

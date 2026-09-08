@@ -116,7 +116,7 @@ def check_environment(training: bool = False) -> dict:
         if experience is None:
             warnings.append("Isaac Sim 4.5 detected but no bundled IsaacLab 4.5 camera experience was found.")
         elif package_version("isaacsim") is None:
-            warnings.append("Split Isaac Sim 4.5 packages have no isaacsim metapackage; use run_task_e_local.sh to select the matching experience.")
+            warnings.append("Split Isaac Sim 4.5 packages have no isaacsim metapackage; use scripts/evaluate.sh to select the matching experience.")
     if training:
         warnings.append("This check does not validate the ACT training import chain, dataset or simulator startup.")
     report.update(errors=errors, warnings=warnings, ok=not errors)

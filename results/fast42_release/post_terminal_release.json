@@ -1,0 +1,89 @@
+{
+  "diagnostic": "POST-TERMINAL RELEASE AUDIT",
+  "not_part_of_official_episode": true,
+  "official_result_file": "../fast_seed42_package.json",
+  "official_score": 18.0,
+  "official_steps": 2689,
+  "official_sim_seconds": 53.78,
+  "requested_steps": 150,
+  "executed_steps": 150,
+  "diagnostic_sim_seconds": 3.0,
+  "stop_reason": "requested_steps_complete",
+  "fixed_arm_target_rad": [
+    0.5886950492858887,
+    2.045680046081543,
+    -1.927822232246399,
+    -0.0007213235949166119,
+    1.1728944778442383,
+    0.5560621023178101
+  ],
+  "finger_target_delta_limit_m_per_step": 0.002,
+  "finger_open_target_m": [
+    0.035,
+    -0.035
+  ],
+  "original_action_scale": 0.5,
+  "basket_thresholds_local": {
+    "center_xy": [
+      1.08,
+      -0.3
+    ],
+    "half_x": 0.2,
+    "half_y": 0.11,
+    "min_z": 0.8266426479059952,
+    "max_z": 0.9766426479059952
+  },
+  "initial_objects_xyz_w": {
+    "object_1": [
+      1.1777722835540771,
+      -0.28896620869636536,
+      0.8584223985671997
+    ],
+    "object_2": [
+      1.0530953407287598,
+      -0.2500287890434265,
+      0.8849309086799622
+    ],
+    "object_3": [
+      1.0333482027053833,
+      -0.2761058211326599,
+      0.9761195778846741
+    ]
+  },
+  "final_objects_xyz_w": {
+    "object_1": [
+      1.1777721643447876,
+      -0.28896620869636536,
+      0.8584223985671997
+    ],
+    "object_2": [
+      1.048097014427185,
+      -0.25192901492118835,
+      0.8824279308319092
+    ],
+    "object_3": [
+      0.9665520787239075,
+      -0.2919776439666748,
+      0.8853534460067749
+    ]
+  },
+  "initial_jaw_width_m": 0.05787541717290878,
+  "final_jaw_width_m": 0.0699988529086113,
+  "final_jaws_open": true,
+  "final_membership": {
+    "object_1": true,
+    "object_2": true,
+    "object_3": true
+  },
+  "final_all_inside": true,
+  "continuous_last_1s_membership": {
+    "object_1": true,
+    "object_2": true,
+    "object_3": true
+  },
+  "continuous_last_1s_all_inside": true,
+  "continuous_window_seconds": 1.0,
+  "maximum_arm_drift_rad": 0.0012204647064208984,
+  "telemetry": "post_terminal_release.npz",
+  "interpretation": "Membership uses official root-position bounds. Open jaws and continuous membership do not independently prove zero velocity or collision-free rest."
+}

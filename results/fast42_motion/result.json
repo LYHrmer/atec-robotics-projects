@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "score": 18.0,
+  "steps": 2689,
+  "sim_seconds": 53.78,
+  "stop_reason": "terminated",
+  "implementation": "fast-confirm v1; tested entry SHA256=cacf1f9e1f8aa22ca012b1d128c7658664c11d7fd44a092784bd93ac72b8eac1"
+}

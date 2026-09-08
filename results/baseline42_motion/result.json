@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "score": 18.0,
+  "steps": 3092,
+  "sim_seconds": 61.84,
+  "stop_reason": "terminated",
+  "implementation": "baseline-18 v2; tested entry SHA256=efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d"
+}

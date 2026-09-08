@@ -1,0 +1,60 @@
+{
+  "experiment": "matched seed42 local physics; two complete 18-point runs",
+  "source_comparison": "comparison.json",
+  "stage_boundary": "Intervals belong to destination sample labels; see comparison measurement_contract.",
+  "sugar_retract_home": {
+    "baseline": {
+      "duration_s": 5.28,
+      "arm_path_rad": 6.277477290508159,
+      "wrist_joint6_path_rad": 3.254609011200955,
+      "arm_acceleration_rms_rad_s2": 3.6237695828829084,
+      "wrist_joint6_acceleration_rms_rad_s2": 5.145457046462862,
+      "adjacent_intervals": 264
+    },
+    "candidate": {
+      "duration_s": 3.7,
+      "arm_path_rad": 4.506365477636166,
+      "wrist_joint6_path_rad": 1.8717169458977878,
+      "arm_acceleration_rms_rad_s2": 3.226819466720188,
+      "wrist_joint6_acceleration_rms_rad_s2": 2.6779946573160878,
+      "adjacent_intervals": 185
+    }
+  },
+  "moving_states": {
+    "states": [
+      "PREGRASP",
+      "DESCEND",
+      "LIFT",
+      "TRANSPORT",
+      "PLACE",
+      "RETRACT",
+      "HOME"
+    ],
+    "baseline": {
+      "duration_s": 47.980000000000004,
+      "arm_path_rad": 40.49341523417654,
+      "wrist_joint6_path_rad": 9.639575746911174,
+      "arm_acceleration_rms_rad_s2": 3.752523839701697,
+      "wrist_joint6_acceleration_rms_rad_s2": 4.147874129660076,
+      "adjacent_intervals": 2399
+    },
+    "candidate": {
+      "duration_s": 46.22,
+      "arm_path_rad": 38.59221110780616,
+      "wrist_joint6_path_rad": 8.247891475771535,
+      "arm_acceleration_rms_rad_s2": 3.718891259742022,
+      "wrist_joint6_acceleration_rms_rad_s2": 3.9324471758955912,
+      "adjacent_intervals": 2311
+    }
+  },
+  "duration_reduction_s": 8.060000000000002,
+  "confirmation_reduction_s": 6.300000000000001,
+  "sugar_retract_home_reduction_s": 1.58,
+  "remaining_duration_reduction_s": 0.1800000000000015,
+  "boundaries": [
+    "Same seed and identical initial-object placements were checked in original runs; hidden object poses are not included in these public artifacts.",
+    "Original baseline did not record video and candidate did; no wall-clock speedup claim. Sanitized result files omit wall-clock and local paths.",
+    "These are sampled 50 Hz statistics, not a continuous-time jerk or global smoothness guarantee.",
+    "This comparison covers one initial state; packaged seed0 validation is separate."
+  ]
+}

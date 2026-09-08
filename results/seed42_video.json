@@ -27,5 +27,7 @@
     "ending_hold_seconds": 2,
     "sha256": "ebe07f9b8d8dcedbff1c7bdd66bd4dbc6a881a3e5682992dd8df44aa83960819",
     "file": "media/task_e_seed42_original.mp4"
-  }
+  },
+  "release": "baseline-18",
+  "runtime_note": "The old solution.py is retained byte-for-byte as solution_baseline.py on the optimized branch; original file names and hashes refer to tag baseline-18."
 }

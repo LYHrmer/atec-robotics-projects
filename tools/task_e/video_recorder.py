@@ -13,8 +13,13 @@ class TaskEVideoRecorder:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.dt, self.stride, self.seed = step_dt, stride, seed
         self.fps = 1.0/(step_dt*stride)
-        self.font_path = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
-        self.fonts = {size: ImageFont.truetype(self.font_path, size) for size in (14, 16, 18, 22, 36)}
+        # Pillow also searches platform font directories by family filename.
+        self.fonts = {}
+        for size in (14, 16, 18, 22, 36):
+            try:
+                self.fonts[size] = ImageFont.truetype('DejaVuSans.ttf', size)
+            except OSError:
+                self.fonts[size] = ImageFont.load_default()
         self.temporary_path = self.path.with_name('.' + self.path.stem + '.recording.mp4')
         self.error_file = self.path.with_suffix('.ffmpeg.log').open('wb')
         self.process = subprocess.Popen([
