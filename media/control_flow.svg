@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="1050" viewBox="0 0 560 1050" role="img" aria-labelledby="title description">
+  <title id="title">Task E：从固定相机到关节控制的七个阶段</title>
+  <desc id="description">固定相机 RGB-D，反投影、分割和物体匹配，选择世界坐标中的夹持点，确定夹爪姿态并换算末端目标，求 IK 并检查中间路径，状态机按关节反馈发送位置命令，环境执行动作并返回观测和得分。环境反馈到状态机继续控制，需要重新定位时返回固定相机。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#2865a8"/>
+    </marker>
+  </defs>
+  <rect width="560" height="1050" rx="16" fill="#ffffff"/>
+
+  <!-- Main path and two feedback paths. -->
+  <g fill="none" stroke="#2865a8" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M 201 148 V 174"/>
+    <path d="M 201 288 V 314"/>
+    <path d="M 201 428 V 454"/>
+    <path d="M 201 568 V 594"/>
+    <path d="M 201 708 V 734"/>
+    <path d="M 201 848 V 874"/>
+    <path d="M 366 918 H 426 V 792 H 368"/>
+    <path d="M 366 964 H 510 V 92 H 368"/>
+  </g>
+
+  <g fill="#f1f6fd" stroke="#779bc7" stroke-width="2">
+    <rect x="36" y="36" width="330" height="112" rx="14"/>
+    <rect x="36" y="176" width="330" height="112" rx="14"/>
+    <rect x="36" y="316" width="330" height="112" rx="14"/>
+    <rect x="36" y="456" width="330" height="112" rx="14"/>
+    <rect x="36" y="596" width="330" height="112" rx="14"/>
+    <rect x="36" y="736" width="330" height="112" rx="14"/>
+    <rect x="36" y="876" width="330" height="112" rx="14"/>
+  </g>
+
+  <g fill="#152c47" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif" font-size="28" font-weight="500" text-anchor="middle">
+    <text x="201" y="83"><tspan x="201">固定相机</tspan><tspan x="201" dy="38">RGB-D</tspan></text>
+    <text x="201" y="223"><tspan x="201">反投影、分割</tspan><tspan x="201" dy="38">和物体匹配</tspan></text>
+    <text x="201" y="363"><tspan x="201">选择夹持点</tspan><tspan x="201" dy="38">世界坐标</tspan></text>
+    <text x="201" y="503"><tspan x="201">确定夹爪姿态</tspan><tspan x="201" dy="38">换算末端目标</tspan></text>
+    <text x="201" y="643"><tspan x="201">求 IK</tspan><tspan x="201" dy="38">检查中间路径</tspan></text>
+    <text x="201" y="783"><tspan x="201">状态机按关节反馈</tspan><tspan x="201" dy="38">发送位置命令</tspan></text>
+    <text x="201" y="923"><tspan x="201">环境执行动作</tspan><tspan x="201" dy="38">返回观测和得分</tspan></text>
+  </g>
+
+  <g fill="#234f81" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif" font-size="25" font-weight="500" text-anchor="middle">
+    <text x="466" y="840"><tspan x="466">继续</tspan><tspan x="466" dy="34">控制</tspan></text>
+    <text x="535" y="355"><tspan x="535">需</tspan><tspan x="535" dy="32">要</tspan><tspan x="535" dy="32">重</tspan><tspan x="535" dy="32">新</tspan><tspan x="535" dy="32">定</tspan><tspan x="535" dy="32">位</tspan></text>
+  </g>
+</svg>
