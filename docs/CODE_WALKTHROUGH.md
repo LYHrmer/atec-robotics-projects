@@ -60,12 +60,14 @@ print(action_from_joint_targets(target))
 [`unproject_depth`](../task_e_geometry.py#L262) 丢弃零、NaN 和无穷深度。深度 $`d`$ 是沿相机光轴的距离；设像素列、行为 $`u,v`$，先得到相机坐标，再用外参转到世界坐标：
 
 ```math
-p_c=d\begin{bmatrix}
-(u-c_x)/f_x\\
-(v-c_y)/f_y\\
-1
-\end{bmatrix}.
+\begin{aligned}
+x_c&=d(u-c_x)/f_x,\\
+y_c&=d(v-c_y)/f_y,\\
+z_c&=d.
+\end{aligned}
 ```
+
+相机点的三个分量组成列向量 $`p_c=[x_c,y_c,z_c]^{\mathsf T}`$，再转换到世界坐标：
 
 ```math
 p_w=R_{wc}p_c+t_{wc}.
@@ -111,13 +113,13 @@ p_{\mathrm{target}}=c-0.115r_z^\star.
 [`solve_ik`](../task_e_geometry.py#L107) 用 SciPy `least_squares` 在六个关节上下限内寻找关节角。它最小化下面残差的平方和，其中 `rotvec` 用方向表示旋转轴、长度表示旋转角：
 
 ```math
-r(q)=\begin{bmatrix}
-p(q)-p_d\\
-w\,\mathrm{rotvec}\left(R(q)R_d^\mathsf{T}\right)
-\end{bmatrix}.
+\begin{aligned}
+r_p(q)&=p(q)-p_d,\\
+r_R(q)&=w\,\mathrm{rotvec}\left(R(q)R_d^\mathsf{T}\right).
+\end{aligned}
 ```
 
-默认旋转权重 $`w=0.20`$，成功容差是位置小于 5 mm、角度小于 0.08 rad；目标没有旋转时只优化位置。[`solve_grasp_ik`](../task_e_geometry.py#L194) 枚举倾角和夹爪方向的正负，先检查手指盒到桌面的间隙，再用 $`w=0.15`$、3 mm/0.05 rad 容差求解。两个夹爪方向虽能夹同一个物体，却可能受有限腕关节范围影响而具有不同可达性。
+代码把两个三维误差顺序拼成六维残差，再最小化六个分量的平方和。默认旋转权重 $`w=0.20`$，成功容差是位置小于 5 mm、角度小于 0.08 rad；目标没有旋转时只优化位置。[`solve_grasp_ik`](../task_e_geometry.py#L194) 枚举倾角和夹爪方向的正负，先检查手指盒到桌面的间隙，再用 $`w=0.15`$、3 mm/0.05 rad 容差求解。两个夹爪方向虽能夹同一个物体，却可能受有限腕关节范围影响而具有不同可达性。
 
 这里有两层判据：抓取求解器可能返回“最接近的候选”，其 `success` 未必为真；[通用 `_plan_motion`](../solution_task_e_vision.py#L109) 最终按 18 mm/0.18 rad 的较宽误差门槛决定接收。读代码应跟到调用者，不能只看 `IKResult.success`。通用规划把接触点直线分段，默认间距 25 mm、最多 32 点，逐点把上一个解作为下一个初值。
 
