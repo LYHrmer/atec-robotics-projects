@@ -1,0 +1,10 @@
+{
+  "original_file": "task_e_seed42_original.mp4",
+  "presentation_file": "task_e_seed42_color.mp4",
+  "processing": "Color saturation 1.18 and contrast 1.02; BT.709 tags, baseline H.264. No cuts, speed changes, geometry or score edits.",
+  "playback": "1x simulation time, plus 2 seconds final still",
+  "sha256": {
+    "task_e_seed42_original.mp4": "ebe07f9b8d8dcedbff1c7bdd66bd4dbc6a881a3e5682992dd8df44aa83960819",
+    "task_e_seed42_color.mp4": "69a104bd21d64292b474b7cd3becaed77cfdaeebe83429a3a2457a9452600a61"
+  }
+}

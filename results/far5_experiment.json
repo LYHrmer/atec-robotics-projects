@@ -1,0 +1,11 @@
+{
+  "seed": 5,
+  "score": 15.0,
+  "full_score": false,
+  "steps": 3485,
+  "sim_seconds": 69.7,
+  "stop_reason": "policy_giveup",
+  "task_physics_modified": false,
+  "implementation": "separate experimental far-banana branch; not the released v2 policy",
+  "observed_failure": "Grasp scored, banana slipped during transfer and landed outside basket; recovery ROI excluded fallen object."
+}

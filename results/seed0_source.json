@@ -1,0 +1,23 @@
+{
+  "seed": 0,
+  "score": 18.0,
+  "full_score": true,
+  "steps": 3329,
+  "sim_seconds": 66.58,
+  "wall_seconds": 167.60534471799838,
+  "stop_reason": "terminated",
+  "action_spec": {},
+  "task_physics_modified": false,
+  "render_preset": "crisp",
+  "use_fabric": true,
+  "implementation": "v2 source; entry imports were normalized for standalone packaging",
+  "runtime_sha256": {
+    "solution.py": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+    "solution_task_e_rgbd.py": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+    "solution_task_e_vision.py": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+    "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+    "task_e_perception.py": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+    "task_e_held_motion.py": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270"
+  },
+  "source_entry_sha256": "45c33f002853c31d0f095f92f9512de16519fb7a281d87865f88f914fd5be200"
+}
