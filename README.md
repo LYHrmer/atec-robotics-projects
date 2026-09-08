@@ -1,65 +1,51 @@
 # ATEC Task E：RGB-D 三物体抓取与入篮
 
-固定基 Piper 机械臂使用 RGB-D、运动学和反馈状态机，完成糖盒、芥末瓶与香蕉的抓取、搬运和入篮。加速版在本机 **seed 42 实测 18/18 分，2689 步，53.78 秒仿真时间**，比基线缩短 **13.03%**。打包后的同一算法在 **seed 0 得到 18/18 分、62.36 秒**。
+一台固定在桌边的 Piper 机械臂，依次把芥末瓶、糖盒和香蕉放入篮中。策略从 RGB-D 图像估计夹持点，用运动学规划关节路径，再根据关节位置、夹爪开度和公开得分推进抓放过程。
 
-这是可解释的几何控制项目，针对已知机器人、相机标定和物体集合；没有训练新的强化学习或模仿学习模型。成绩来自本地官方任务环境，不代表线上榜单成绩或所有随机场景的成功保证。
+当前 v3 独立包在本机 **seed 42 和 seed 0 均得到 18/18 分**。seed 42 用时 **53.78 秒**，相比满分基线缩短 **13.03%**。这是已知机器人、相机和物体配置下的几何控制方案，成绩来自本地比赛环境。
 
-[![播放加速版三物体成功录像](media/fast_preview.jpg)](media/task_e_fast_seed42_color.mp4)
+[![播放三物体抓放视频](media/fast_preview.jpg)](media/task_e_fast_seed42_color.mp4)
 
-**[新版彩色视频](media/task_e_fast_seed42_color.mp4)** · **[新版原始录像](media/task_e_fast_seed42_original.mp4)** · **[优化对比](docs/OPTIMIZATION.md)** · **[关键算法](docs/ALGORITHM.md)** · **[面试讲解提纲](docs/INTERVIEW.md)**
+[彩色演示视频](media/task_e_fast_seed42_color.mp4) · [原始录像](media/task_e_fast_seed42_original.mp4) · [视频与代码包下载](https://github.com/LYHrmer/atec-taske-rgbd-manipulation/releases/tag/fast-smooth-18)
 
-[基线版本与视频](https://github.com/LYHrmer/atec-taske-rgbd-manipulation/releases/tag/baseline-18) 保留，可随时对照。
+## 从哪里开始读
 
-视频为 1280×720、25 fps，按 1 倍仿真时间连续展示，两路相机同时可见，结尾定格 2 秒。彩色展示版仅增强饱和度和对比度，使用 BT.709 色彩标记；没有剪掉失败片段、改变动作速度或编辑计分。原始文件与处理记录见 [视频来源说明](media/provenance.json)。
+第一次接触项目，建议从 [项目导读](docs/LEARNING_GUIDE.md) 开始。它从视频中的具体动作讲起，再把感知、运动学和状态机连到一起。
 
-## 结果与证据
-
-| 版本与运行 | 种子 | 得分 | 仿真时间 | 说明 |
-| --- | ---: | ---: | ---: | --- |
-| v3 加速源版本，录像评测 | 42 | **18/18** | **53.78 s** | 打包仅规范化导入路径，[结果及哈希](results/fast_seed42_source.json) |
-| v3 加速独立包复核 | 42 | **18/18** | **53.78 s** | 经公开启动器复现，[结果](results/fast_seed42_package.json)；终止后松爪观察通过 |
-| v3 加速独立包 | 0 | **18/18** | **62.36 s** | 发布的七个运行文件与该次实测逐字节一致，[结果](results/fast_seed0_package.json) |
-| 基线独立 v2 包，录像评测 | 42 | **18/18** | **61.84 s** | 对应 `baseline-18` 标签，[结果及哈希](results/seed42_video.json) |
-| v2 源版本 | 0 | **18/18** | 66.58 s | 同一算法与五个依赖；打包时仅将入口导入路径改为平级，[结果](results/seed0_source.json) |
-| 远端香蕉实验分支 | 5 | 15/18 | 69.70 s | 抓起后搬运滑落，属于另一实验分支，[失败记录](results/far5_experiment.json) |
-
-这些验证的覆盖范围有限，不据此报告统计成功率。53.78 秒是环境完成计分的时间；官方入篮事件可能发生在松爪前，因此计分结束与释放后留篮是两个不同的检查。seed 42 已追加 3 秒松爪诊断：最终夹宽约 70 mm，最后 1 秒三个物体持续在篮区内；[独立报告](results/fast42_release/post_terminal_release.json) 与 [释放后截图](media/fast_release_final.png) 单独提供，额外诊断不计入 53.78 秒。任务物理参数、计分和终止条件保持不变。场景真值只用于开发期间的离线诊断，不进入策略输入；发布代码不读取运行时真实物体位姿。
-
-## 算法怎样工作
-
-```text
-固定外部 RGB-D → 深度反投影 → 三维连通簇与物体匹配
-             → 物体专属接触点 → 有关节限制的 IK 轨迹
-             → 关节反馈执行 → 公开得分确认抓起与入篮
-```
-
-- **瓶子净空**：由瓶顶深度定位瓶颈，抬高悬垂瓶身后再横移，解决瓶底撞篮沿的问题。
-- **香蕉夹持**：考虑资产的凸包碰撞几何、夹爪开口和重心偏移，选择较稳的接触位置，先竖直提升，再逐步倾转。
-- **持物姿态连续性**：在糖盒搬运与放置阶段插值位置和旋转，逐点检查 FK 误差、关节变化与桌面间隙，减少腕部分支跳变。
-- **反馈状态机**：多帧定位、下降接触停滞判断、夹爪开度与得分联合确认，以及有限重试。
-- **加速与减少转腕**：满足夹爪稳定、张开或公开得分条件后提前结束等待；糖盒空夹回撤沿当前姿态连续求解。全程腕关节行程减少 14.39%，但差分加速度 RMS 增加 4.36%，不据此声称全面降低加速度或冲击。
-
-接口提供末端相机，但当前策略决策使用固定外部 RGB-D；末端画面用于录像与诊断。姿态连续路径检查也不是完整的物体避障规划，失败恢复仍有改进空间。
-
-## 代码结构
-
-| 文件 | 职责 |
+| 想弄清楚的事情 | 对应资料 |
 | --- | --- |
-| [solution.py](solution.py) | v3 官方入口，反馈提前确认与糖盒连续回撤 |
-| [solution_baseline.py](solution_baseline.py) | 保留 v2 入口，组合 RGB-D 与持物规划 |
-| [solution_task_e_rgbd.py](solution_task_e_rgbd.py) | 接触点修正、瓶子净空、香蕉提升 |
-| [solution_task_e_vision.py](solution_task_e_vision.py) | 状态机、反馈执行和任务确认 |
-| [task_e_perception.py](task_e_perception.py) | RGB-D 三维分割与匹配 |
-| [task_e_geometry.py](task_e_geometry.py) | 标定、FK/IK、动作尺度 |
-| [task_e_held_motion.py](task_e_held_motion.py) | 连续持物姿态规划 |
-| [tools/eval_task_e.py](tools/eval_task_e.py) | 本地评测、源码快照、逐步遥测、连续录像 |
-| [tools/task_e/compare_motion.py](tools/task_e/compare_motion.py) | 相同种子下的耗时与关节运动对比 |
+| 整个任务怎么完成，各模块怎样配合 | [项目导读](docs/LEARNING_GUIDE.md) |
+| 像素怎样变成夹持点，IK 又在求什么 | [算法原理与公式](docs/ALGORITHM.md) |
+| 一次 `predicts` 调用会经过哪些代码 | [代码导读](docs/CODE_WALKTHROUGH.md) |
+| 不开仿真，先自己算一遍关键步骤 | [五个动手练习](docs/HANDS_ON.md) |
+| 为什么能省下 8.06 秒，动作指标怎样比较 | [优化记录](docs/OPTIMIZATION.md) |
+| 怎样讲项目，以及如何检查自己是否读懂 | [面试讲解](docs/INTERVIEW.md) · [自测题](docs/SELF_CHECK.md) |
 
-## 复现
+## 实测结果
 
-先按 [ATEC 官方项目](https://github.com/atecup/ATEC2026_Simulation_Challenge) 配置 Isaac Lab 和比赛资产。本仓库不打包官方模型或机器人资产。策略运行只需 NumPy/SciPy，仿真评测另需官方环境、Pillow、PyTorch 与 FFmpeg。
+| 运行版本 | 种子 | 得分 | 仿真时间 | 记录 |
+| --- | ---: | ---: | ---: | --- |
+| v3 独立包 | 42 | **18/18** | **53.78 s** | [结果与源码哈希](results/fast_seed42_package.json) |
+| v3 独立包 | 0 | **18/18** | **62.36 s** | [结果与源码哈希](results/fast_seed0_package.json) |
+| v2 满分基线 | 42 | 18/18 | 61.84 s | [基线结果](results/seed42_video.json) |
 
-本机验证环境：Ubuntu、Python 3.10.20、Isaac Sim 4.5、Isaac Lab 2.3.2、PyTorch 2.7.0+cu128、RTX 5060 Laptop。4.5 与新版 Isaac Lab 的相机接口兼容处理仅在本地评测工具中启用，不属于提交策略。
+视频对应 v3 的 seed 42 源版本，打包时只规范化了导入路径；独立包随后复现相同步数和分数。详细对应关系见 [录像源码记录](results/fast_seed42_source.json)，旧版代码与视频保留在 [baseline-18](https://github.com/LYHrmer/atec-taske-rgbd-manipulation/releases/tag/baseline-18)。
+
+加速主要来自满足反馈条件后结束等待，以及减少糖盒回撤时的多余转腕。全程腕关节行程减少 14.39%，但差分加速度 RMS 增加 4.36%；[逐步数据与对比报告](results/motion_comparison/analysis.md) 同时保留这些变化。有限种子的结果还不足以估计随机场景成功率；另一个远端香蕉实验分支在 seed 5 得到 15/18，失败记录见 [far5_experiment.json](results/far5_experiment.json)。
+
+官方入篮计分可能早于最后一次松爪。seed 42 另外观察了 3 秒：夹爪最终张开到约 70 mm，三个物体在最后 1 秒持续留在篮区。[释放报告](results/fast42_release/post_terminal_release.json) 和 [最终截图](media/fast_release_final.png) 单独保存，额外诊断时间不计入 53.78 秒。
+
+## 几个决定成败的细节
+
+瓶子的夹持点在瓶颈，瓶身悬在下方，所以需要先抬高，再越过篮沿。香蕉的弯曲外形、碰撞几何和手指厚度共同影响接触位置，刚离桌时采用小幅姿态变化。糖盒则需要检查中间 IK 路径，避免端点可达、手腕却在中途绕行。
+
+当前决策使用固定外部 RGB-D；视频中的腕部相机用于观察和诊断。机器人尺寸、标定和固定桌篮配置来自公开任务定义，随机物体位置由图像估计。运行策略不读取真实物体位姿，也不需要训练权重 `policy.pt`。
+
+## 本地复现
+
+先按 [ATEC 官方项目](https://github.com/atecup/ATEC2026_Simulation_Challenge) 配置 Isaac Lab 与比赛资产。策略依赖 NumPy/SciPy，录像评测另需官方环境、Pillow、PyTorch 和 FFmpeg。官方机器人与物体资产不在本仓库中。
+
+本机已验证环境：Ubuntu、Python 3.10.20、Isaac Sim 4.5、Isaac Lab 2.3.2、PyTorch 2.7.0+cu128、RTX 5060 Laptop。评测工具包含该环境所需的相机接口兼容处理。
 
 ```bash
 export ATEC_TASK_ROOT=/path/to/ATEC2026_Simulation_Challenge
@@ -71,29 +57,17 @@ bash scripts/evaluate.sh --solution solution.py --headless --seed 42 \
   --max_steps 6000 --output runs/seed42 --video runs/seed42.mp4
 ```
 
-输出目录必须是新目录。录像先编码到临时文件，完成封装后才显示最终 MP4，避免打开录制中的不完整文件。评测会保存得分、停止原因、源码哈希、观测快照与诊断轨迹；策略只接收官方观测和累计得分。
+每次使用新的输出目录。评测会保存源码快照、得分、逐步遥测和录像；MP4 编码封装完成后才显示最终文件。视频按 1 倍仿真时间连续展示，结尾定格 2 秒。彩色版只调整饱和度、对比度与编码，处理参数和文件哈希见 [视频来源记录](media/provenance.json)。
 
-无需仿真即可运行 20 项运动学、反馈确认与释放诊断测试：
+不启动仿真，可以先跑学习算例和已有的 20 项检查：
 
 ```bash
+PYTHONNOUSERSITE=1 "$ATEC_PYTHON" tools/task_e/learn_geometry.py
 PYTHONNOUSERSITE=1 "$ATEC_PYTHON" -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-本次运动对比的原始逐步数据已提供，可以独立重算：
-
-```bash
-"$ATEC_PYTHON" tools/task_e/compare_motion.py \
-  results/baseline42_motion results/fast42_motion --relative-to . --output-dir runs/comparison
-```
-
-官方部署入口是 `AlgSolution.predicts(obs, current_score)`，输出包含 8 维 `action` 与布尔 `giveup`。当前方法无需 `policy.pt`。动作按官方位置控制定义换算，并非一律裁剪到 `[-1, 1]`。
-
-## 面试展示
-
-建议先播放视频，再解释“相机坐标如何变成关节目标”，最后用瓶子碰篮沿和香蕉滑落说明怎样依据证据定位问题。推导、实验边界和常见追问见 [算法说明](docs/ALGORITHM.md) 与 [面试提纲](docs/INTERVIEW.md)。
-
-项目采用 Codex 与 Claude Opus 辅助实现和诊断，其中连续持物规划 helper 有 Opus 参与。重点是能够解释、验证和复现代码，不把 AI 生成初稿等同于已经验证的算法。
+官方入口是 [solution.py](solution.py) 中的 `AlgSolution.predicts(obs, current_score)`，返回八维 `action` 和布尔 `giveup`。运行时需要根目录的七个策略 Python 文件；继承关系、调用顺序和动作尺度见 [代码导读](docs/CODE_WALKTHROUGH.md)。
 
 ## 许可与来源
 
-代码采用 MIT 许可，保留 ATEC 版权与来源说明。官方任务、Piper/YCB 等资产由各自项目提供，未随本仓库重新分发。详见 [LICENSE](LICENSE) 与 [ATTRIBUTIONS.md](ATTRIBUTIONS.md)。
+代码采用 MIT 许可，保留 ATEC 版权与来源说明。任务、Piper/YCB 等资产由各自项目提供。详见 [LICENSE](LICENSE) 与 [ATTRIBUTIONS.md](ATTRIBUTIONS.md)。
