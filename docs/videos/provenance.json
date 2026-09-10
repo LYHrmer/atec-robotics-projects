@@ -1,0 +1,82 @@
+{
+  "source_release": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/robotics-comparison-20260910/d1g2_taska_faster_landscape_1080p_1x.mp4",
+  "source": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "profile": "High",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "avg_frame_rate": "10/1",
+        "nb_frames": "4593"
+      }
+    ],
+    "format": {
+      "duration": "459.300000",
+      "size": "151272963"
+    },
+    "sha256": "ac644f7733e82b866ce72453ae7f62f36a512bca8c1850bf37790a295c7220e7"
+  },
+  "web_file": "d1g2_taska_faster_720p_1x.mp4",
+  "web": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "profile": "Main",
+        "width": 1280,
+        "height": 720,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "avg_frame_rate": "10/1",
+        "nb_frames": "4593"
+      }
+    ],
+    "format": {
+      "duration": "459.300000",
+      "size": "21136223"
+    },
+    "sha256": "c09da3a19bb012c3b8f164a3346947aafdd8566039f353a551d8f0750ed0e771"
+  },
+  "simulation_score_seconds": 457.32,
+  "simulation_distance_m": 286.0045166015625,
+  "playback_speed": 1,
+  "source_frames_and_timestamps_preserved": true,
+  "full_decode_passed": true,
+  "original_1080p_retained": true,
+  "encoding": [
+    "ffmpeg",
+    "-n",
+    "-i",
+    "d1g2_taska_faster_landscape_1080p_1x.mp4",
+    "-map",
+    "0:v:0",
+    "-vf",
+    "scale=1280:720:flags=lanczos",
+    "-c:v",
+    "libx264",
+    "-threads",
+    "8",
+    "-preset",
+    "medium",
+    "-crf",
+    "27",
+    "-maxrate",
+    "650k",
+    "-bufsize",
+    "1300k",
+    "-profile:v",
+    "main",
+    "-level:v",
+    "3.1",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "-an",
+    "d1g2_taska_faster_720p_1x.mp4"
+  ]
+}

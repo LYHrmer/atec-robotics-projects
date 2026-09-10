@@ -16,6 +16,8 @@ Task B 的要求、旧方案与硬件可行性见 [评估说明](docs/TASK_B_FEA
 
 Task E 的学习实验每组只运行一次，省时主要来自放置阶段减少等待；本轮满分终止时尚未完成独立的松爪留篮检查。原规则方案和历史视频继续保留。
 
+**[直接播放 Task A 新横屏视频](https://lyhrmer.github.io/atec-robotics-projects/)**。网页使用约 21 MB 的完整 720p 版本；原 1080p 视频及全部历史录像仍可从 [视频对比页](docs/VIDEO_COMPARISON.md) 下载。
+
 ## 先选一条阅读路线
 
 | 你想做什么 | Task A | Task E |

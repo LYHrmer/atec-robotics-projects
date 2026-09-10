@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ATEC Task A：D1 + G2 提速通关完整录像，720p、1 倍速，仿真成绩 457.32 秒。">
+  <title>Task A 提速通关 · ATEC</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; background: #101820; color: #edf3f7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.6; }
+    main { width: min(1120px, 100%); margin: 0 auto; padding: 40px 24px 32px; }
+    .eyebrow { margin: 0 0 8px; color: #7de2cb; font-size: .85rem; letter-spacing: .08em; }
+    h1 { margin: 0; font-size: clamp(1.75rem, 5vw, 2.65rem); line-height: 1.25; }
+    .intro { margin: 12px 0 24px; color: #bdcbd6; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 24px; }
+    .stats div { border: 1px solid #354451; border-radius: 12px; padding: 14px 18px; background: #19252f; }
+    dt { color: #bdcbd6; font-size: .85rem; }
+    dd { margin: 4px 0 0; font-weight: 650; font-size: clamp(1.2rem, 3.5vw, 1.7rem); font-variant-numeric: tabular-nums; }
+    dd small { font-size: .8rem; font-weight: 400; }
+    figure { margin: 0; }
+    .player { overflow: hidden; border: 1px solid #354451; border-radius: 12px; background: #000; }
+    video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+    figcaption { margin: 12px 0 20px; color: #bdcbd6; font-size: .9rem; }
+    .playback-error { margin: 16px 0 0; padding: 14px 18px; border: 1px solid #e9b869; border-radius: 10px; background: #32291d; color: #ffe4b7; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; }
+    a { color: #9ae8d8; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #ffcf7c; outline-offset: 4px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 18px; border: 1px solid #607787; border-radius: 9px; text-decoration: none; color: #edf3f7; }
+    .button.primary { background: #7de2cb; border-color: #7de2cb; color: #102b27; font-weight: 650; }
+    .button:hover { border-color: #b6e5dc; }
+    footer { margin-top: 28px; padding-top: 18px; border-top: 1px solid #354451; color: #bdcbd6; font-size: .9rem; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+    footer p { margin: 12px 0 0; }
+    @media (max-width: 560px) {
+      main { padding: 26px 16px; }
+      .stats { gap: 8px; }
+      .stats div { padding: 10px 8px; }
+      dt { font-size: .75rem; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">ATEC · D1 + G2</p>
+      <h1>Task A 提速通关</h1>
+      <p class="intro">720p 完整录像 · 1× 仿真时间播放 · 点击播放器开始观看</p>
+    </header>
+    <dl class="stats" aria-label="本次通关成绩">
+      <div><dt>仿真成绩</dt><dd>457.32 <small>s</small></dd></div>
+      <div><dt>行进距离</dt><dd>286.005 <small>m</small></dd></div>
+      <div><dt>较原 505.66 s 少</dt><dd>9.56 <small>%</small></dd></div>
+    </dl>
+    <figure>
+      <div class="player">
+        <video id="task-video" controls playsinline preload="metadata" width="1280" height="720" src="videos/d1g2_taska_faster_720p_1x.mp4" poster="videos/d1g2_taska_faster_poster.jpg" aria-label="Task A 提速通关完整录像" aria-describedby="video-caption">
+          你的浏览器不支持视频播放，请使用下方的下载入口观看。
+        </video>
+      </div>
+      <div id="playback-error" class="playback-error" role="alert" hidden>
+        <strong>视频暂时无法播放。</strong>
+        <span id="error-detail">请刷新页面重试，或使用下方下载入口观看。</span>
+      </div>
+      <figcaption id="video-caption">媒体时长 459.3 秒，包含末尾 2 秒结果页。任务成绩为 457.32 仿真秒；完整 1× 录像未做倍速处理。</figcaption>
+    </figure>
+    <nav class="links" aria-label="视频下载">
+      <a class="button primary" href="videos/d1g2_taska_faster_720p_1x.mp4" download>下载 720p 完整视频 · 约 21 MB</a>
+      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/robotics-comparison-20260910/d1g2_taska_faster_landscape_1080p_1x.mp4">下载原 1080p 版 · GitHub Release</a>
+    </nav>
+    <footer>
+      <nav aria-label="项目资料">
+        <a href="https://github.com/LYHrmer/atec-robotics-projects">源码主页</a>
+        <a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/VIDEO_COMPARISON.md">历史视频与新旧对比</a>
+      </nav>
+      <p>此页用于播放录像；运行方法、实验记录和历史版本见源码仓库。</p>
+    </footer>
+  </main>
+  <script>
+    const video = document.getElementById('task-video');
+    const errorBox = document.getElementById('playback-error');
+    const errorDetail = document.getElementById('error-detail');
+    video.addEventListener('error', () => {
+      const messages = {
+        1: '视频加载已中断，请刷新页面重试，或下载后观看。',
+        2: '网络未能完整加载视频，请检查连接后刷新，或下载后观看。',
+        3: '浏览器无法解码这段视频，请下载后使用本地播放器观看。',
+        4: '视频文件暂不可用，或浏览器不支持此格式。请刷新重试，也可下载原 1080p 版。'
+      };
+      errorDetail.textContent = messages[video.error && video.error.code] || '请刷新页面重试，或使用下方下载入口观看。';
+      errorBox.hidden = false;
+    });
+    video.addEventListener('loadeddata', () => { errorBox.hidden = true; });
+  </script>
+</body>
+</html>

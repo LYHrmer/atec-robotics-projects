@@ -77,3 +77,9 @@ python3 tools/task_a_video/export_preview.py \
 ```
 
 它先核对完整版本及其来源 JSON 的 SHA，再压缩过程时间戳；30 fps 输出会丢弃部分中间帧，不使用光流补帧。结果与完整录像请一起保留，速览用于快速观看。
+
+## 网页直接播放
+
+[播放页](https://lyhrmer.github.io/atec-robotics-projects/) 使用 `docs/videos/d1g2_taska_faster_720p_1x.mp4`，由提速版 1080p 横屏视频缩小至 1280×720。H.264 Main / Level 3.1、yuv420p、faststart，约 21 MB，便于浏览器加载。全部 4593 帧和 459.3 秒时间轴保留，没有倍速或删减，原 1080p 文件保留。
+
+具体转码参数、原文件和网页文件 SHA-256、完整解码验证见 [来源记录](../../docs/videos/provenance.json)。`docs/index.html` 提供原生播放器；GitHub Pages 从 `main` 分支的 `/docs` 发布，`.nojekyll` 保持静态文件原样输出。Release 中的 1080p 链接是下载附件，网页播放器直接加载同站点的 MP4。

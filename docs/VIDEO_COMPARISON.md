@@ -6,7 +6,9 @@
 
 ## Task A：先看这几段
 
-[![新提速版横屏仿真录像截图](../media/d1g2_taska_faster_landscape_poster.jpg)](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/robotics-comparison-20260910)
+**[直接在线播放 Task A 提速通关](https://lyhrmer.github.io/atec-robotics-projects/)**：720p 横屏、完整 1×，约 21 MB。可以暂停、拖动和全屏，也可下载后播放。原 1080p 版约 151 MB，继续保存在 Release；该附件链接用于下载。
+
+[![新提速版横屏仿真录像截图](../media/d1g2_taska_faster_landscape_poster.jpg)](https://lyhrmer.github.io/atec-robotics-projects/)
 
 | 视频 | 实际任务成绩 | 展示方式 | 获取位置 |
 | --- | --- | --- | --- |
@@ -15,6 +17,7 @@
 | 原通关快速浏览 | 同一次 505.66 秒运行 | 明确标注 **10×**；约 52.57 秒，包含结果页 | 同上，文件 `d1g2_taska_landscape_preview_10x.mp4` |
 | 新提速完整原片 | **457.32 仿真秒 / 286.005 m** | 新运行原始录制，0.70/0.50 m/s 指令 | 同上，文件 `d1g2_taska_faster_full_run.mp4` |
 | 新提速横屏版 | 同一次 457.32 秒运行 | 1920×1080，完整 1×；第三人称 + 新旧成绩卡 | 同上，文件 `d1g2_taska_faster_landscape_1080p_1x.mp4` |
+| 新提速网页播放版 | 同一次 457.32 秒运行 | 1280×720，完整 1×；保留全部 4593 帧及原时间轴 | [在线播放 / 下载](https://lyhrmer.github.io/atec-robotics-projects/)，[转码记录](videos/provenance.json) |
 | 缺场景资源的首轮配置失败 | 69.90 仿真秒后停滞，未通关 | 原始录制，仅用于说明复现问题 | 同上，文件 `d1g2_taska_scene_assets_missing_01.mp4` |
 
 横屏版末尾另加 2 秒结果页，所以文件时长分别为 507.7 / 459.3 秒；任务成绩取自原始 `result.json`，不是媒体时长。新提速运行没有保存前视视频，因此其横屏版只使用本次第三人称画面，没有拼入旧运行的相机。
