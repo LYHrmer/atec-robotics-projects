@@ -1,0 +1,62 @@
+{
+  "dataset": "runs/task_e_il/data_seed42_complete",
+  "rollout": "runs/task_e_il/teacher_seed42_complete",
+  "rollout_seed": 42,
+  "rollout_score": 18.0,
+  "rollout_steps": 2689,
+  "samples": 2310,
+  "first_servo_step": 153,
+  "last_servo_step": 2689,
+  "last_recorded_policy_step": 2689,
+  "finalized_before_sim_shutdown": true,
+  "phase_counts": {
+    "PREGRASP": 325,
+    "DESCEND": 226,
+    "LIFT": 516,
+    "TRANSPORT": 671,
+    "PLACE": 293,
+    "RETRACT": 86,
+    "HOME": 193
+  },
+  "object_phase_counts": {
+    "2/PREGRASP": 85,
+    "2/DESCEND": 95,
+    "2/LIFT": 310,
+    "2/TRANSPORT": 342,
+    "2/PLACE": 162,
+    "2/RETRACT": 36,
+    "2/HOME": 58,
+    "1/PREGRASP": 174,
+    "1/DESCEND": 63,
+    "1/LIFT": 63,
+    "1/TRANSPORT": 140,
+    "1/PLACE": 89,
+    "1/RETRACT": 50,
+    "1/HOME": 135,
+    "3/PREGRASP": 66,
+    "3/DESCEND": 68,
+    "3/LIFT": 143,
+    "3/TRANSPORT": 189,
+    "3/PLACE": 42
+  },
+  "all_finite": true,
+  "alignment": {
+    "pre_action_q_max_abs_error": 4.768371586472142e-08,
+    "teacher_delta_vs_executed_action_max_abs_error": 5.896863841670097e-08,
+    "label_times_limit_max_abs_error": 1.3877787807814457e-17
+  },
+  "source_snapshots_match": {
+    "solution.py": true,
+    "solution_baseline.py": true,
+    "solution_task_e_rgbd.py": true,
+    "solution_task_e_vision.py": true,
+    "task_e_geometry.py": true,
+    "task_e_perception.py": true,
+    "task_e_held_motion.py": true,
+    "tools/task_e/il/common.py": true,
+    "tools/task_e/il/collect.py": true
+  },
+  "saturated_label_fraction": 0.21673881673881673,
+  "near_zero_label_fraction": 0.37352092352092353,
+  "interpretation": "Offline diagnostic truth comparison only; telemetry truth is not a network input."
+}

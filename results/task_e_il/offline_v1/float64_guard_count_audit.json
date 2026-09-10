@@ -1,0 +1,15 @@
+{
+  "scope": "Same validation states and trained checkpoint, recompute analytic steps in runtime float64 precision. No model/runtime code changed.",
+  "samples": 2769,
+  "guard_counts": {
+    "dls_only": {
+      "rate_guard_calls": 0,
+      "joint_guard_calls": 0
+    },
+    "learned": {
+      "rate_guard_calls": 1667,
+      "joint_guard_calls": 309
+    }
+  },
+  "training_report_limitation": "Trainer stores derived analytic steps in float32 then measures clamps at 1e-12 rad; reported DLS clamp counts include roundoff. These float64 counts match deployment arithmetic."
+}

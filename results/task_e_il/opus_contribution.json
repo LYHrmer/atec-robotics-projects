@@ -1,0 +1,18 @@
+{
+  "model": "claude-opus-5",
+  "interface": "Claude Code --model opus",
+  "design_session": "1c3bbc72-e097-4059-8caa-588f7377f625",
+  "implementation_session": "f57de36e-ef39-4875-884f-a0d129da5a59",
+  "design_success": true,
+  "implementation_success": true,
+  "implementation_files": [
+    "tools/task_e/il/cartesian.py",
+    "tools/task_e/il/train_cartesian_bc.py",
+    "tools/task_e/il/cartesian_policy.py",
+    "solution_task_e_il_cartesian.py",
+    "tools/task_e/il/CARTESIAN_NOTES.md"
+  ],
+  "opus_scope": "Detected that the first BC target was an exact clipped input; designed and implemented the Cartesian-goal residual variant.",
+  "other_work": "Separate local assistants collected aligned demonstrations, checked interfaces and leakage, trained on CPU, and ran real Isaac closed-loop evaluation. Opus did not run the GPU evaluation.",
+  "first_api_attempt": "Failed with upstream connection error; host retry succeeded."
+}

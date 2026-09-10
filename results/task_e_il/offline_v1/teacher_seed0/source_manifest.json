@@ -1,0 +1,62 @@
+{
+  "/home/lybm/ATEC_Robotics_Projects_20260910/solution.py": {
+    "sha256": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+    "snapshot": "sources/solution.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/solution_baseline.py": {
+    "sha256": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+    "snapshot": "sources/solution_baseline.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/solution_task_e_il_collect.py": {
+    "sha256": "068649c0dd4e6dfa73e977e9155df43e54bbaca196cbd07f44e42ffb495f2fb4",
+    "snapshot": "sources/solution_task_e_il_collect.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/solution_task_e_rgbd.py": {
+    "sha256": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+    "snapshot": "sources/solution_task_e_rgbd.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/solution_task_e_vision.py": {
+    "sha256": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+    "snapshot": "sources/solution_task_e_vision.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/task_e_geometry.py": {
+    "sha256": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+    "snapshot": "sources/task_e_geometry.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/task_e_held_motion.py": {
+    "sha256": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270",
+    "snapshot": "sources/task_e_held_motion.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/task_e_perception.py": {
+    "sha256": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+    "snapshot": "sources/task_e_perception.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "snapshot": "sources/tools/__init__.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/eval_task_e.py": {
+    "sha256": "088838d5a4133d08e024e3ccbba5a77f0792b32ae4666c9b5a7ac837d0b369f1",
+    "snapshot": "sources/tools/eval_task_e.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "snapshot": "sources/tools/task_e/__init__.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/fabric_compat.py": {
+    "sha256": "0d0c8585352cc022058e6cab0cc0dd7236b799fd054dacac00e62de31cd6611e",
+    "snapshot": "sources/tools/task_e/fabric_compat.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/il/__init__.py": {
+    "sha256": "1335269f11562063f7794a2809300040cd2fc5ccd691e9fcaca9b79fee7a2546",
+    "snapshot": "sources/tools/task_e/il/__init__.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/il/collect.py": {
+    "sha256": "d3162ddeccb206d2a0e7664334103916e805f88f7a3c0ad833e4dc3d4d4773c7",
+    "snapshot": "sources/tools/task_e/il/collect.py"
+  },
+  "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/il/common.py": {
+    "sha256": "98c4b65fe6d99e51abc1f19c5f556507bf5b9b6aa15e99eed05651151ecffffc",
+    "snapshot": "sources/tools/task_e/il/common.py"
+  }
+}

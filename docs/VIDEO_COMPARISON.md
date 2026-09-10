@@ -6,7 +6,7 @@
 
 ## Task A：先看这几段
 
-[![新提速版横屏实拍海报](../media/d1g2_taska_faster_landscape_poster.jpg)](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/robotics-comparison-20260910)
+[![新提速版横屏仿真录像截图](../media/d1g2_taska_faster_landscape_poster.jpg)](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/robotics-comparison-20260910)
 
 | 视频 | 实际任务成绩 | 展示方式 | 获取位置 |
 | --- | --- | --- | --- |
@@ -29,4 +29,12 @@
 
 ## Task E
 
-原几何/状态机方案视频继续保存在 [fast-smooth-18](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/fast-smooth-18) 和 [baseline-18](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/baseline-18)。新版模仿学习实验使用独立结果目录和文件名，完成闭环评测后再附实际成绩，不覆盖原 18/18 方案。
+原几何/状态机方案视频继续保存在 [fast-smooth-18](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/fast-smooth-18) 和 [baseline-18](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/baseline-18)。新增 [模仿学习对比发布](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-e-imitation-20260910) 保存同一 seed 1 的三次独立完整录像：
+
+| 方案 | 得分 | 仿真时间 | 录像文件 |
+| --- | ---: | ---: | --- |
+| 原规则教师 | 18/18 | 62.96 s | `task_e_rule_baseline_seed1.mp4` |
+| 纯 DLS 对照（关闭学习修正） | 18/18 | 63.16 s | `task_e_dls_only_seed1.mp4` |
+| DLS + 模仿学习修正 | **18/18** | **52.84 s** | `task_e_cartesian_bc_seed1.mp4` |
+
+三段均按 **1× 仿真时间**展示，结尾另有 2 秒结果定格。学习版本比原规则少 16.07%、比纯 DLS 少 16.34%，主要来自放置阶段减少等待。每组只有一次运行，且学生在最后松爪前已触发满分终止；本轮没有另做释放后的稳定留篮验证。方法、范围和原始证据见 [模仿学习说明](TASK_E_IMITATION.md)。

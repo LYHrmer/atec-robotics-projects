@@ -1,0 +1,293 @@
+{
+  "format_version": 1,
+  "description": "Byte-preserving public IL data/model/evidence copies. Does not claim student closed-loop success.",
+  "files": [
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0000.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0000.npz",
+      "bytes": 23572,
+      "sha256": "672e1e6528b302e3e2e87e74242d83e91922bcf1c48525a876d50b2b849bb7f6",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0001.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0001.npz",
+      "bytes": 42535,
+      "sha256": "3b252e165506c307ece8448e6c1a7c05f4abcad92e4b49044e714a5c986d3bf4",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0002.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0002.npz",
+      "bytes": 43419,
+      "sha256": "989c17ad1e4ce86f8ded846ca35ef88077d7048d270ad44a593a890b9fa9bb8c",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0003.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0003.npz",
+      "bytes": 45623,
+      "sha256": "df18ff02b51581c137608a58189730e67a200bab400fc520b5b5b77a22eb68c5",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0004.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0004.npz",
+      "bytes": 43071,
+      "sha256": "b6ee006b2973f9a4b439b79668f91c7ce617759d181141df0c39fcf6fa789ce3",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0005.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0005.npz",
+      "bytes": 43425,
+      "sha256": "c61c37ed00e37da61b43d58434db8acaea0a25e56b121b31f75d8e456b1c5387",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0006.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0006.npz",
+      "bytes": 47098,
+      "sha256": "817c4354d543c3821058c4226595a85033cbb9673a5cbc662dac15f853d5349e",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0007.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0007.npz",
+      "bytes": 46346,
+      "sha256": "2d6e6d991bb3921f1726f5ad13d0ed86cbd20cb147be42b707e3db489a6874dc",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0008.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0008.npz",
+      "bytes": 44233,
+      "sha256": "324a9d6ee713aa9733c4ab089e0fb2efc5a0351ac15c4b6e43588022d47d19d1",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0009.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0009.npz",
+      "bytes": 45691,
+      "sha256": "a5482a38b3393571306af28f75746f2b1ae78b655b079ee5bcda0eac0054a0d3",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/chunk_0010.npz",
+      "source": "runs/task_e_il/data_seed42_complete/chunk_0010.npz",
+      "bytes": 38606,
+      "sha256": "a6caceacaf20442bede7d9cb41ad7a8d7a56ecf24b97200615815ef90ba0af15",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed42/metadata.json",
+      "source": "runs/task_e_il/data_seed42_complete/metadata.json",
+      "bytes": 1917,
+      "sha256": "3d4dd30597294f1e27e88e3f907a3a285060a05f94d617e11f01f5963694a7c6",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/teacher_seed42/result.json",
+      "source": "runs/task_e_il/teacher_seed42_complete/result.json",
+      "bytes": 891,
+      "sha256": "e6a111d0f604bbffe19475476e5ed54fe2a85b08cb1aa7b0bb13602da37285d7",
+      "scope": "teacher evaluator result/source manifest; source bytes preserved"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/teacher_seed42/source_manifest.json",
+      "source": "runs/task_e_il/teacher_seed42_complete/source_manifest.json",
+      "bytes": 3148,
+      "sha256": "0366b2e3e6aa5a09c875a1a08a02c27148abb76529845fa208865082a116a82f",
+      "scope": "teacher evaluator result/source manifest; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0000.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0000.npz",
+      "bytes": 23446,
+      "sha256": "099aa8772417a7074019eaf06931f5c1eb3dbdb9d9d3ead13a527f7122604a9b",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0001.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0001.npz",
+      "bytes": 42693,
+      "sha256": "4d2276acf1a477f1850a0fed59bbe410fef2072e3a756da33ff1baf6a9e11c1f",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0002.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0002.npz",
+      "bytes": 44239,
+      "sha256": "19477bbf62c34e4d126a3b6a8fec6f52ea7e51e2d9f1e1d39e15c5023d18a3b9",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0003.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0003.npz",
+      "bytes": 46131,
+      "sha256": "057ef42f50c5709a8d47531e6923b59c6252d5dd7e5aaa8081bfac9082ea876f",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0004.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0004.npz",
+      "bytes": 39720,
+      "sha256": "3b4d4f0ca37693f29cdfc65cf86945a7eb213baba3947c070e29ce68f23a731c",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0005.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0005.npz",
+      "bytes": 24980,
+      "sha256": "4ee6f4b080090d39b0d691b3066a4f6d616711c4499895413f1a09696b4f3392",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0006.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0006.npz",
+      "bytes": 33404,
+      "sha256": "6a6cfcd7f9aed1c6bc92775838e3fc7ae16df7dab4e9c0b7c8fc7cb079eaa842",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0007.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0007.npz",
+      "bytes": 46144,
+      "sha256": "86e0cd07d7442e469088531add07dc77cf190fcb725ac236297aecc7b27f3a3e",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0008.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0008.npz",
+      "bytes": 47473,
+      "sha256": "7271208e55d2a3e1738cd360039bbc7869b10e48e84f1dd7b686446cec81496e",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0009.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0009.npz",
+      "bytes": 43030,
+      "sha256": "b6da51619ddb52529a73afa8329db3247401ed17e1fefaebf4c8663e76888cbf",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0010.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0010.npz",
+      "bytes": 39114,
+      "sha256": "e9533a090a28824e28434357bc90f744305ff1395833bdb0e1980cd4ba8dd05e",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0011.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0011.npz",
+      "bytes": 51792,
+      "sha256": "5c19169571cd1a9980ebc136be794b916667150e243164cd7850b3b0c3ae432a",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/chunk_0012.npz",
+      "source": "runs/task_e_il/data_seed0_complete/chunk_0012.npz",
+      "bytes": 26147,
+      "sha256": "ac6326d63a65306bade1f0ffe81fe03089dbc606ee05c95405fe8fc6e1e265eb",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "datasets/task_e_il/teacher_seed0/metadata.json",
+      "source": "runs/task_e_il/data_seed0_complete/metadata.json",
+      "bytes": 1915,
+      "sha256": "dc51a53e8f3d3447463f4796d8e770af8bed73e0f18b07056a259d338caf738b",
+      "scope": "finalized teacher demonstration; source bytes preserved"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/teacher_seed0/result.json",
+      "source": "runs/task_e_il/teacher_seed0_complete/result.json",
+      "bytes": 889,
+      "sha256": "e203e462e9d599ce83271e5c14bc771dbec044142941b12cc452a4c0ed35aadc",
+      "scope": "teacher evaluator result/source manifest; source bytes preserved"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/teacher_seed0/source_manifest.json",
+      "source": "runs/task_e_il/teacher_seed0_complete/source_manifest.json",
+      "bytes": 3148,
+      "sha256": "0366b2e3e6aa5a09c875a1a08a02c27148abb76529845fa208865082a116a82f",
+      "scope": "teacher evaluator result/source manifest; source bytes preserved"
+    },
+    {
+      "path": "weights/task_e_il/cartesian_bc_v1.pt",
+      "source": "runs/task_e_il/cartesian_bc_01/cartesian_bc.pt",
+      "bytes": 97489,
+      "sha256": "ca99c2adc0c78184f1f960a156923632438245d8766819095e4e629e4526b276",
+      "scope": "frozen main residual checkpoint, version 1"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/training_report.json",
+      "source": "runs/task_e_il/cartesian_bc_01/training_report.json",
+      "bytes": 61857,
+      "sha256": "470d367768ea92fc72641622d8adf4906e4f2d41c30a612a6f70da2daef91888",
+      "scope": "main model CPU training or audit"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/independent_cpu_audit.json",
+      "source": "runs/task_e_il/cartesian_bc_01/independent_cpu_audit.json",
+      "bytes": 5088,
+      "sha256": "5e26d863fe15b0816e5eac336170bf2268c48fdadb1d3aeed11a1017eeecab50",
+      "scope": "main model CPU training or audit"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/float64_guard_count_audit.json",
+      "source": "runs/task_e_il/cartesian_bc_01/float64_guard_count_audit.json",
+      "bytes": 576,
+      "sha256": "1082b255783d13a75cf4e12ac699f3e520e6efc96d2c3cf013b02947d2055290",
+      "scope": "main model CPU training or audit"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/teacher_seed42_data_audit.json",
+      "source": "runs/task_e_il/teacher_seed42_complete_data_audit.json",
+      "bytes": 1713,
+      "sha256": "52b06e916eb86f7e65fa86d5687ff3770ce34cf87cda95f26a20b2fd8732e47e",
+      "scope": "complete demonstration alignment and coverage audit"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/teacher_seed0_data_audit.json",
+      "source": "runs/task_e_il/teacher_seed0_complete_data_audit.json",
+      "bytes": 2196,
+      "sha256": "3ca984b84179e9c7d89e02a32e5ad982e408a211a962c941c759ca961c8c702f",
+      "scope": "complete demonstration alignment and coverage audit"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/interface_checks.json",
+      "source": "runs/task_e_il/cartesian_interface_checks_01/report.json",
+      "bytes": 378,
+      "sha256": "c935c4d5b460f5b3868d5c63bc0a987f3eff05a4462f9a59c1811456919a0a91",
+      "scope": "CPU property checks; no synthetic checkpoint copied"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/pipeline_control/training_report.json",
+      "source": "runs/task_e_il/servo_pipeline_control_01/training_report.json",
+      "bytes": 44403,
+      "sha256": "3eb9b6712150729a926a29d26e5e7d1a5af743b00b40c75afd4c270886ad9748",
+      "scope": "trivial saturation BC pipeline control; no performance claim"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/pipeline_control/pipeline_control_comparison.json",
+      "source": "runs/task_e_il/servo_pipeline_control_01/pipeline_control_comparison.json",
+      "bytes": 468,
+      "sha256": "d2b4ee8ebd3d8af188e90fadb1e9cd8ec59c8f6b2c295204c855aa3aca3f6ff9",
+      "scope": "trivial saturation BC pipeline control; no performance claim"
+    },
+    {
+      "path": "results/task_e_il/offline_v1/pipeline_control/offline_audit.json",
+      "source": "runs/task_e_il/servo_pipeline_control_01/offline_audit.json",
+      "bytes": 5537,
+      "sha256": "e78fa1a1b0a5ae695f9538af09bb88b66979505be645c8e490d997db050b072f",
+      "scope": "trivial saturation BC pipeline control; no performance claim"
+    },
+    {
+      "path": "datasets/task_e_il/README.md",
+      "source": "generated_dataset_documentation",
+      "bytes": 3448,
+      "sha256": "2665b1c5b20d563d71cfac643e3ba47a36f0992107445442589a9ba0f7fb02dc",
+      "scope": "Dataset split, deployable feature boundary and reproduction instructions"
+    }
+  ]
+}

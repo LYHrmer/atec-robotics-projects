@@ -1,0 +1,107 @@
+{
+  "dataset_provenance": [
+    {
+      "directory": "/home/lybm/ATEC_Robotics_Projects_20260910/runs/task_e_il/data_seed0_complete",
+      "episode_id": "teacher_seed0_complete",
+      "seed": 0,
+      "servo_frames": 2769,
+      "last_observed_score": 14.999999664723873,
+      "metadata_sha256": "dc51a53e8f3d3447463f4796d8e770af8bed73e0f18b07056a259d338caf738b",
+      "chunk_sha256": {
+        "chunk_0000.npz": "099aa8772417a7074019eaf06931f5c1eb3dbdb9d9d3ead13a527f7122604a9b",
+        "chunk_0001.npz": "4d2276acf1a477f1850a0fed59bbe410fef2072e3a756da33ff1baf6a9e11c1f",
+        "chunk_0002.npz": "19477bbf62c34e4d126a3b6a8fec6f52ea7e51e2d9f1e1d39e15c5023d18a3b9",
+        "chunk_0003.npz": "057ef42f50c5709a8d47531e6923b59c6252d5dd7e5aaa8081bfac9082ea876f",
+        "chunk_0004.npz": "3b4d4f0ca37693f29cdfc65cf86945a7eb213baba3947c070e29ce68f23a731c",
+        "chunk_0005.npz": "4ee6f4b080090d39b0d691b3066a4f6d616711c4499895413f1a09696b4f3392",
+        "chunk_0006.npz": "6a6cfcd7f9aed1c6bc92775838e3fc7ae16df7dab4e9c0b7c8fc7cb079eaa842",
+        "chunk_0007.npz": "86e0cd07d7442e469088531add07dc77cf190fcb725ac236297aecc7b27f3a3e",
+        "chunk_0008.npz": "7271208e55d2a3e1738cd360039bbc7869b10e48e84f1dd7b686446cec81496e",
+        "chunk_0009.npz": "b6da51619ddb52529a73afa8329db3247401ed17e1fefaebf4c8663e76888cbf",
+        "chunk_0010.npz": "e9533a090a28824e28434357bc90f744305ff1395833bdb0e1980cd4ba8dd05e",
+        "chunk_0011.npz": "5c19169571cd1a9980ebc136be794b916667150e243164cd7850b3b0c3ae432a",
+        "chunk_0012.npz": "ac6326d63a65306bade1f0ffe81fe03089dbc606ee05c95405fe8fc6e1e265eb"
+      },
+      "collector_source_sha256": {
+        "solution.py": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+        "solution_baseline.py": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+        "solution_task_e_rgbd.py": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+        "solution_task_e_vision.py": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+        "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+        "task_e_perception.py": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+        "task_e_held_motion.py": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270",
+        "tools/task_e/il/common.py": "98c4b65fe6d99e51abc1f19c5f556507bf5b9b6aa15e99eed05651151ecffffc",
+        "tools/task_e/il/collect.py": "d3162ddeccb206d2a0e7664334103916e805f88f7a3c0ad833e4dc3d4d4773c7"
+      }
+    }
+  ],
+  "checkpoint_sha256": "ca99c2adc0c78184f1f960a156923632438245d8766819095e4e629e4526b276",
+  "audited_frames": 2769,
+  "feature_count": 45,
+  "teacher_label_perturbation_feature_difference": 0.0,
+  "equivalent_Cartesian_goal_feature_difference": 5.684341886080802e-14,
+  "independent_DLS_difference_rad": 0.0,
+  "zero_goal_DLS_max_abs_rad": 1.9815348881957462e-05,
+  "counterfactual_zero_goal_zero_velocity_learned_residual_bias": {
+    "mean_abs_rad": 0.0008867809437196858,
+    "p99_abs_rad": 0.003169339199587082,
+    "max_abs_rad": 0.004006368384313563
+  },
+  "learned_teacher_error": {
+    "mean_abs_rad": 0.000847728860322245,
+    "p99_abs_rad": 0.0064670702626533185,
+    "max_abs_rad": 0.03475983017424911
+  },
+  "dls_teacher_error": {
+    "mean_abs_rad": 0.002008828696801866,
+    "p99_abs_rad": 0.03283589918694931,
+    "max_abs_rad": 0.08578383076470346
+  },
+  "learned_residual_magnitude": {
+    "mean_abs_rad": 0.002377927644576379,
+    "p99_abs_rad": 0.031117138709918096,
+    "max_abs_rad": 0.08324119609013536
+  },
+  "phase_equilibrium_bias": {
+    "DESCEND": {
+      "mean_abs_rad": 0.000590489730399282,
+      "p99_abs_rad": 0.0021848472316854995,
+      "max_abs_rad": 0.0022791735827076554
+    },
+    "HOME": {
+      "mean_abs_rad": 0.001190244644111717,
+      "p99_abs_rad": 0.003574598380347087,
+      "max_abs_rad": 0.004006368384313563
+    },
+    "LIFT": {
+      "mean_abs_rad": 0.0009123547368897698,
+      "p99_abs_rad": 0.003066539796540625,
+      "max_abs_rad": 0.0032958767236273556
+    },
+    "PLACE": {
+      "mean_abs_rad": 0.0008073938753404478,
+      "p99_abs_rad": 0.0021711019643760056,
+      "max_abs_rad": 0.0026241032690918487
+    },
+    "PREGRASP": {
+      "mean_abs_rad": 0.000979860769036147,
+      "p99_abs_rad": 0.0035865501558136736,
+      "max_abs_rad": 0.003710866244752725
+    },
+    "RETRACT": {
+      "mean_abs_rad": 0.0004896463724209669,
+      "p99_abs_rad": 0.0019700179343287607,
+      "max_abs_rad": 0.0021470299395208448
+    },
+    "TRANSPORT": {
+      "mean_abs_rad": 0.0009965440162063388,
+      "p99_abs_rad": 0.0029900754143307572,
+      "max_abs_rad": 0.0030236116522538437
+    }
+  },
+  "scope": "CPU audit only. Perturbations test label/target leakage and steady-state bias, not task completion.",
+  "source_sha256": {
+    "tools/task_e/il/audit_cartesian_model.py": "63864e9cd6ae6ea53f5f024bf1182ef6f9453690ab07da12479689e0aa9867ce",
+    "tools/task_e/il/cartesian.py": "090c6016a1aae3be65d43b6212ebadd81587988e08ddbd5b41a6ac620671c3d0"
+  }
+}

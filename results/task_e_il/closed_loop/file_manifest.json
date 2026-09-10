@@ -1,0 +1,119 @@
+{
+  "description": "Closed-loop result/trace/telemetry copies and derived comparison summary; original camera arrays and videos excluded.",
+  "files": [
+    {
+      "path": "results/task_e_il/closed_loop/rule_seed1/result.json",
+      "source": "runs/task_e_il/rule_baseline_seed1/result.json",
+      "bytes": 1151,
+      "sha256": "18b85c1b443a8f215d137fe20019c8aa2d7c9fc6cf1dd4bb623864cce1bdc1f0"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/rule_seed1/source_manifest.json",
+      "source": "runs/task_e_il/rule_baseline_seed1/source_manifest.json",
+      "bytes": 2274,
+      "sha256": "6abff89c6f799d80b27f8d1fecedbce4c92f8db4ed5c5acdf3115cd05fd52b69"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/rule_seed1/trace.jsonl",
+      "source": "runs/task_e_il/rule_baseline_seed1/trace.jsonl",
+      "bytes": 109009,
+      "sha256": "bea8aa73a5e7ffde8ff9c85f9c80c87c6c3e1d9c9972f80cc299de0dc64b2a13"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/rule_seed1/telemetry.npz",
+      "source": "runs/task_e_il/rule_baseline_seed1/telemetry.npz",
+      "bytes": 199842,
+      "sha256": "4834d577cdd408e65e79e55b4daa34c5925d3d4d166f856426b7d788a8a4f421"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/result.json",
+      "source": "runs/task_e_il/cartesian_seed1/result.json",
+      "bytes": 1170,
+      "sha256": "9c5982d6e42a616207f1134520681ad0c2021f86a46a4c18e6c8faa6675261d9"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/source_manifest.json",
+      "source": "runs/task_e_il/cartesian_seed1/source_manifest.json",
+      "bytes": 3606,
+      "sha256": "815dccfce6eac808bf17961b65c3243f3c43d129305235a610ba6ee8b4f199b6"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/trace.jsonl",
+      "source": "runs/task_e_il/cartesian_seed1/trace.jsonl",
+      "bytes": 92288,
+      "sha256": "3a9d4912e835da53e372e697a94c4db1dba91688b3a6531714517557f36d2dd1"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/telemetry.npz",
+      "source": "runs/task_e_il/cartesian_seed1/telemetry.npz",
+      "bytes": 214146,
+      "sha256": "d1915725e441dd917b4d5aead5087b4d8d9200cbc9998cfc5d89e5615810f594"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/metrics.json",
+      "source": "runs/task_e_il/cartesian_seed1_metrics.json",
+      "bytes": 1908,
+      "sha256": "d93bceecd7c38a94c0801db7b02852899712443b911aed623a0c492a2df247d4"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/servo.npz",
+      "source": "runs/task_e_il/cartesian_seed1_metrics.servo.npz",
+      "bytes": 627981,
+      "sha256": "62bbd7fd8f472c1efcd0ba2afa9e1e5a5e3749a4e50a4baaac8393412b424e0a"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/cartesian_bc_seed1/execution_audit.json",
+      "source": "runs/task_e_il/cartesian_seed1_execution_audit.json",
+      "bytes": 1320,
+      "sha256": "b59fe1ca5029f6c66752d511bdaca87dc75fdd941a82f2393a8a645b094aef8a"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/result.json",
+      "source": "runs/task_e_il/cartesian_dls_seed1/result.json",
+      "bytes": 1178,
+      "sha256": "089524de27e35d101c1a82b0de0e43b7c02700720743030b38493d3ac5c5d650"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/source_manifest.json",
+      "source": "runs/task_e_il/cartesian_dls_seed1/source_manifest.json",
+      "bytes": 3606,
+      "sha256": "815dccfce6eac808bf17961b65c3243f3c43d129305235a610ba6ee8b4f199b6"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/trace.jsonl",
+      "source": "runs/task_e_il/cartesian_dls_seed1/trace.jsonl",
+      "bytes": 108869,
+      "sha256": "9eb4c0d0824d1b5f50e9caef9053b919fdde09fced3f16560dda2c4fb8c2b7bc"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/telemetry.npz",
+      "source": "runs/task_e_il/cartesian_dls_seed1/telemetry.npz",
+      "bytes": 237438,
+      "sha256": "79ccf9f3a2a191f15dcfc0e60a23226171906410f35557baec38893fe8c6dc83"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/metrics.json",
+      "source": "runs/task_e_il/cartesian_dls_seed1_metrics.json",
+      "bytes": 1872,
+      "sha256": "b39f85f38518f273d48da71ccf26c69fea8f0c54bf4414398317f2ad05e147b9"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/servo.npz",
+      "source": "runs/task_e_il/cartesian_dls_seed1_metrics.servo.npz",
+      "bytes": 609016,
+      "sha256": "41d0283c1958191e297a6ed443867bbf0bdc2f7bef22c270dc902b7a531f91b6"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/dls_seed1/execution_audit.json",
+      "source": "runs/task_e_il/cartesian_dls_seed1_execution_audit.json",
+      "bytes": 1282,
+      "sha256": "ef03cc7cd54327678fca5f20525845141f758fb05d048888d9cafcc72b4376ab"
+    },
+    {
+      "path": "results/task_e_il/closed_loop/comparison_summary.json",
+      "source": "generated from the three immutable evaluator results, metrics and terminal telemetry",
+      "bytes": 3041,
+      "sha256": "9b3f66be0d45f2a0e36876fba4dde0a68769ce0e69aaa4fc0d4ce1e3e467e8cd"
+    }
+  ]
+}

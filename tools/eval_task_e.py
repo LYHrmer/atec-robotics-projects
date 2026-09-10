@@ -323,11 +323,18 @@ def main():
         (args.output / "failure.txt").write_text(error)
         raise
     finally:
-        trace.close()
-        if recorder:
-            recorder.close()
-        env.close()
-        restore_camera_views()
+        # Isaac shutdown can bypass Python atexit. Flush optional demonstration
+        # buffers / policy metrics before closing the simulator.
+        try:
+            finalize = getattr(solution, "finalize", None)
+            if callable(finalize):
+                finalize()
+        finally:
+            trace.close()
+            if recorder:
+                recorder.close()
+            env.close()
+            restore_camera_views()
 
 
 if __name__ == "__main__":

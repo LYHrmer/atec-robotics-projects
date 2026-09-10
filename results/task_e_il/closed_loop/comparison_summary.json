@@ -1,0 +1,93 @@
+{
+  "seed": 1,
+  "episodes_per_configuration": 1,
+  "rule": {
+    "score": 18.0,
+    "steps": 3148,
+    "sim_seconds": 62.96,
+    "stop_reason": "terminated"
+  },
+  "cartesian_residual_bc": {
+    "score": 18.0,
+    "steps": 2642,
+    "sim_seconds": 52.84,
+    "stop_reason": "terminated"
+  },
+  "dls_only": {
+    "score": 18.0,
+    "steps": 3158,
+    "sim_seconds": 63.160000000000004,
+    "stop_reason": "terminated"
+  },
+  "matching_initial_object_positions": true,
+  "bc_vs_rule_time_saved_sim_seconds": 10.12,
+  "bc_vs_rule_time_reduction_fraction": 0.16073697585768743,
+  "scope": "One independent test-seed episode per configuration, all 18/18. Observed completion-time improvement only; no statistical reliability or generalization claim. Learned residual, DLS-only and rule all preserve the original scoring/physics.",
+  "bc_vs_dls_time_saved_sim_seconds": 10.32,
+  "bc_vs_dls_time_reduction_fraction": 0.16339455351488286,
+  "same_policy_source_sha_for_bc_and_dls": true,
+  "learned_component": "Only the six-axis DLS residual; perception, IK planning, waypoint logic, grasp/release FSM and gripper remain analytic/rule-based.",
+  "phase_attribution": {
+    "student_servo_calls": {
+      "DESCEND": 227,
+      "HOME": 189,
+      "LIFT": 477,
+      "PLACE": 314,
+      "PREGRASP": 348,
+      "RETRACT": 86,
+      "TRANSPORT": 622
+    },
+    "dls_servo_calls": {
+      "DESCEND": 228,
+      "HOME": 190,
+      "LIFT": 470,
+      "PLACE": 859,
+      "PREGRASP": 360,
+      "RETRACT": 83,
+      "TRANSPORT": 617
+    },
+    "dls_minus_student_servo_calls": {
+      "DESCEND": 1,
+      "HOME": 1,
+      "LIFT": -7,
+      "PLACE": 545,
+      "PREGRASP": 12,
+      "RETRACT": -3,
+      "TRANSPORT": -5
+    },
+    "PLACE_fewer_calls": 545,
+    "PLACE_sim_seconds_reduction": 10.9,
+    "interpretation": "Observed difference is mainly less PLACE phase waiting/tracking time, not evidence that all movements are uniformly faster. Other motion/hold differences offset part of the 10.90-second PLACE reduction."
+  },
+  "terminal_release_boundary": {
+    "configurations": {
+      "rule": {
+        "state": "OPEN",
+        "jaw_width_m": 0.061929116025567055,
+        "commanded_jaw_target_m": [
+          0.035,
+          -0.035
+        ]
+      },
+      "cartesian_residual_bc": {
+        "state": "PLACE",
+        "jaw_width_m": 0.05810505710542202,
+        "commanded_jaw_target_m": [
+          -0.015000000745058056,
+          0.015000000745058056
+        ]
+      },
+      "dls_only": {
+        "state": "OPEN",
+        "jaw_width_m": 0.06192251294851303,
+        "commanded_jaw_target_m": [
+          0.035,
+          -0.035
+        ]
+      }
+    },
+    "student_terminal_command_is_closed": true,
+    "post_terminal_all_jaws_open_and_stable_membership_verified": false,
+    "interpretation": "All three results satisfy the original 18/18 termination. The student terminates during PLACE with a closed-jaw command; this experiment did not separately verify that all objects remain stably in the basket after fully opening the jaws."
+  }
+}

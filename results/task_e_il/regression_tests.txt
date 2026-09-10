@@ -1,0 +1,25 @@
+test_close_minimum_and_stability_window (test_fast_confirm.FastConfirmationTests) ... ok
+test_close_oscillation_nonfinite_and_original_timeout (test_fast_confirm.FastConfirmationTests) ... ok
+test_close_stable_empty_jaws_still_reject_grasp (test_fast_confirm.FastConfirmationTests) ... ok
+test_episode_reset_clears_history_and_does_not_skip_init (test_fast_confirm.FastConfirmationTests) ... ok
+test_lift_waits_for_score_width_and_ten_observations (test_fast_confirm.FastConfirmationTests) ... ok
+test_only_sugar_post_place_changes_planner_with_fallback (test_fast_confirm.FastConfirmationTests) ... ok
+test_open_requires_observed_width_and_minimum_time (test_fast_confirm.FastConfirmationTests) ... ok
+test_place_distinguishes_grasp_score_and_full_attempt_gain (test_fast_confirm.FastConfirmationTests) ... ok
+test_camera_center_ray_matches_world_convention (test_geometry.ObservationGeometryTests) ... ok
+test_depth_roundtrip_filters_invalid_and_preserves_optical_depth (test_geometry.ObservationGeometryTests) ... ok
+test_relative_joint_observation_and_action_scale (test_geometry.ObservationGeometryTests) ... ok
+test_differential_step_reduces_error_without_violating_step_bound (test_geometry.PiperKinematicsTests) ... ok
+test_full_spatial_jacobian_matches_finite_difference (test_geometry.PiperKinematicsTests) ... ok
+test_grasp_ik_selected_workspace_points_and_bounds (test_geometry.PiperKinematicsTests) ... ok
+test_unreachable_target_is_not_reported_successful (test_geometry.PiperKinematicsTests) ... ok
+test_zero_pose_matches_independent_usd_export (test_geometry.PiperKinematicsTests) ... ok
+test_150_steps_frozen_arm_ramp_scale_local_bounds_and_isolation (test_post_terminal_release.PostTerminalReleaseTests) ... ok
+test_application_stop_is_bounded_and_retains_initial_record (test_post_terminal_release.PostTerminalReleaseTests) ... ok
+test_last_second_transient_exit_not_hidden_by_final_membership (test_post_terminal_release.PostTerminalReleaseTests) ... ok
+test_short_audit_does_not_claim_one_second_continuous_window (test_post_terminal_release.PostTerminalReleaseTests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.528s
+
+OK

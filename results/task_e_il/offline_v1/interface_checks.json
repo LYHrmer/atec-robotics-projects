@@ -1,0 +1,11 @@
+{
+  "AST": true,
+  "feature_dimension": 45,
+  "zero_initialized_network_exact_DLS": true,
+  "rate_and_joint_guards": true,
+  "parent_predicts_and_finalize_compatible": true,
+  "teacher_motion_not_called": true,
+  "DLS_ablation_equal_zero_residual": true,
+  "teacher_label_not_input": true,
+  "scope": "CPU interface checks only. Checkpoint is deliberately zero, not trained."
+}

@@ -1,0 +1,198 @@
+{
+  "dataset": "runs/task_e_il/data_seed0_complete",
+  "rollout": "runs/task_e_il/teacher_seed0_complete",
+  "rollout_seed": 0,
+  "rollout_score": 18.0,
+  "rollout_steps": 3118,
+  "samples": 2769,
+  "first_servo_step": 153,
+  "last_servo_step": 3118,
+  "last_recorded_policy_step": 3118,
+  "finalized_before_sim_shutdown": true,
+  "phase_counts": {
+    "PREGRASP": 319,
+    "DESCEND": 226,
+    "LIFT": 502,
+    "TRANSPORT": 599,
+    "PLACE": 848,
+    "RETRACT": 82,
+    "HOME": 193
+  },
+  "object_phase_counts": {
+    "2/PREGRASP": 80,
+    "2/DESCEND": 96,
+    "2/LIFT": 294,
+    "2/TRANSPORT": 303,
+    "2/PLACE": 701,
+    "2/RETRACT": 32,
+    "2/HOME": 58,
+    "1/PREGRASP": 176,
+    "1/DESCEND": 63,
+    "1/LIFT": 64,
+    "1/TRANSPORT": 138,
+    "1/PLACE": 89,
+    "1/RETRACT": 50,
+    "1/HOME": 135,
+    "3/PREGRASP": 63,
+    "3/DESCEND": 67,
+    "3/LIFT": 144,
+    "3/TRANSPORT": 158,
+    "3/PLACE": 58
+  },
+  "all_finite": true,
+  "alignment": {
+    "pre_action_q_max_abs_error": 4.768371586472142e-08,
+    "teacher_delta_vs_executed_action_max_abs_error": 5.782479362004267e-08,
+    "label_times_limit_max_abs_error": 1.3877787807814457e-17
+  },
+  "source_snapshots_match": {
+    "solution.py": true,
+    "solution_baseline.py": true,
+    "solution_task_e_rgbd.py": true,
+    "solution_task_e_vision.py": true,
+    "task_e_geometry.py": true,
+    "task_e_perception.py": true,
+    "task_e_held_motion.py": true,
+    "tools/task_e/il/common.py": true,
+    "tools/task_e/il/collect.py": true
+  },
+  "saturated_label_fraction": 0.20482725412302877,
+  "near_zero_label_fraction": 0.3034188034188034,
+  "interpretation": "Offline diagnostic truth comparison only; telemetry truth is not a network input.",
+  "distribution_shift": {
+    "feature_range_exceedance_fraction": [
+      0.0,
+      0.0010232334175996147,
+      0.005055976886962802,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "unseen_object_phase_pairs": [],
+    "note": "Marginal range diagnostic, not a guarantee of in-distribution joint feature combinations."
+  },
+  "checkpoint_sha256": "582df9c9f80a38c94953033bae57cd7088092564fc30ce32df52f0b3cdab0fb0",
+  "offline_action_error": {
+    "mae_rad": 0.0009834811750814882,
+    "p99_abs_rad": 0.010019848300753871,
+    "max_abs_rad": 0.016611827015876726
+  },
+  "counterfactual_equilibrium_bias": {
+    "mae_rad": 0.00039789864006984916,
+    "p99_abs_rad": 0.0015992518831044436,
+    "max_abs_rad": 0.0019102138653397562
+  },
+  "object_phase_action_error": {
+    "1/DESCEND": {
+      "mae_rad": 0.0010061394156559707,
+      "p99_abs_rad": 0.00583743455814247,
+      "max_abs_rad": 0.006013280153274455
+    },
+    "1/HOME": {
+      "mae_rad": 0.00047577582557315514,
+      "p99_abs_rad": 0.009375325968861562,
+      "max_abs_rad": 0.015461507141590072
+    },
+    "1/LIFT": {
+      "mae_rad": 0.0011212792937445775,
+      "p99_abs_rad": 0.010953999343260275,
+      "max_abs_rad": 0.01574088400514305
+    },
+    "1/PLACE": {
+      "mae_rad": 0.0008880361372334346,
+      "p99_abs_rad": 0.005295832376889042,
+      "max_abs_rad": 0.006101220250129727
+    },
+    "1/PREGRASP": {
+      "mae_rad": 0.0011871313041857449,
+      "p99_abs_rad": 0.013388578534126238,
+      "max_abs_rad": 0.016611827015876726
+    },
+    "1/RETRACT": {
+      "mae_rad": 0.0017828742257975227,
+      "p99_abs_rad": 0.014141519936919176,
+      "max_abs_rad": 0.015481839634761962
+    },
+    "1/TRANSPORT": {
+      "mae_rad": 0.0022582384480856555,
+      "p99_abs_rad": 0.013902737164123635,
+      "max_abs_rad": 0.015371568500995594
+    },
+    "2/DESCEND": {
+      "mae_rad": 0.0008659072395044552,
+      "p99_abs_rad": 0.005235750675201556,
+      "max_abs_rad": 0.005890177786350391
+    },
+    "2/HOME": {
+      "mae_rad": 0.0009882475130027725,
+      "p99_abs_rad": 0.0128236513972282,
+      "max_abs_rad": 0.015910643041133876
+    },
+    "2/LIFT": {
+      "mae_rad": 0.00033742680787216477,
+      "p99_abs_rad": 0.00367274079682448,
+      "max_abs_rad": 0.004483934448091007
+    },
+    "2/PLACE": {
+      "mae_rad": 0.0008892940480928276,
+      "p99_abs_rad": 0.0035658566653727596,
+      "max_abs_rad": 0.00424892008304598
+    },
+    "2/PREGRASP": {
+      "mae_rad": 0.0021362962417487367,
+      "p99_abs_rad": 0.013715102967619849,
+      "max_abs_rad": 0.01645308137741361
+    },
+    "2/RETRACT": {
+      "mae_rad": 0.0013850336293534026,
+      "p99_abs_rad": 0.013746537394308605,
+      "max_abs_rad": 0.014700240790843921
+    },
+    "2/TRANSPORT": {
+      "mae_rad": 0.0006276846717939943,
+      "p99_abs_rad": 0.0039042401760816577,
+      "max_abs_rad": 0.004521380364894776
+    },
+    "3/DESCEND": {
+      "mae_rad": 0.0009313210687671773,
+      "p99_abs_rad": 0.005582765915576445,
+      "max_abs_rad": 0.005937060117721476
+    },
+    "3/LIFT": {
+      "mae_rad": 0.0009296446100959724,
+      "p99_abs_rad": 0.006009084713458932,
+      "max_abs_rad": 0.006477277336203426
+    },
+    "3/PLACE": {
+      "mae_rad": 0.001506657555803321,
+      "p99_abs_rad": 0.00539895208830867,
+      "max_abs_rad": 0.006036559494983756
+    },
+    "3/PREGRASP": {
+      "mae_rad": 0.0015084658814403038,
+      "p99_abs_rad": 0.014643532761650632,
+      "max_abs_rad": 0.015114003549253657
+    },
+    "3/TRANSPORT": {
+      "mae_rad": 0.0011897843117133166,
+      "p99_abs_rad": 0.0058235585710993505,
+      "max_abs_rad": 0.006536115653231353
+    }
+  },
+  "wrong_direction_fraction_active": 0.0
+}

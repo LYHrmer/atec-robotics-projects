@@ -1,0 +1,318 @@
+{
+  "scope": "CPU-only video format, complete decode, source-hash and sampled visual review for three final TaskE seed1 recordings. Original MP4 files were not modified.",
+  "created_utc": "2026-09-10T07:20:53.934843+00:00",
+  "all_checks_passed": true,
+  "videos": [
+    {
+      "run": "rule_baseline_seed1",
+      "video_path": "/home/lybm/ATEC_Experiments_20260910/task_e_rule_baseline_seed1.mp4",
+      "video_sha256": "1e7c4970117348e8be99e5e88630664ebef8664f17ac0a46f5ee117d535ea6f4",
+      "video_bytes": 5079179,
+      "evaluator_result_path": "/home/lybm/ATEC_Robotics_Projects_20260910/runs/task_e_il/rule_baseline_seed1/result.json",
+      "evaluator_result_sha256": "18b85c1b443a8f215d137fe20019c8aa2d7c9fc6cf1dd4bb623864cce1bdc1f0",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "duration": "65.000000",
+            "nb_frames": "1625"
+          }
+        ],
+        "format": {
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "duration": "65.000000",
+          "size": "5079179"
+        }
+      },
+      "checks": {
+        "video_hash_matches_evaluator_result": true,
+        "h264_1280x720_25fps": true,
+        "frames_match_evaluator": true,
+        "frames_match_control_stride_terminal_frame_and_2s_hold": true,
+        "duration_matches_frame_count": true,
+        "duration_matches_simulation_plus_terminal_frame_and_hold": true,
+        "entire_video_cpu_decode_without_errors": true,
+        "sampled_final_hud_score_and_simtime_match_result": true,
+        "all_four_keyframes_visually_inspected": true,
+        "sampled_frames_contain_valid_scene_and_wrist_views": true
+      },
+      "official_score": 18.0,
+      "official_sim_seconds": 62.96,
+      "video_duration_seconds": 65.0,
+      "terminal_hud_observed": {
+        "score_text": "18 / 18",
+        "seed": 1,
+        "sim_time_text": "62.96 s",
+        "state_text": "TASK COMPLETE",
+        "objects_done_labels": 3
+      },
+      "keyframes": [
+        {
+          "label": "start",
+          "timestamp_seconds": 0.0,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/rule_baseline_seed1_start.png",
+          "sha256": "a1267190bb889fe2f452ea19e1a7df2cb087b1431710d6e5210ed382265710aa",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "placement_window",
+          "timestamp_seconds": 22.4,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/rule_baseline_seed1_placement_window.png",
+          "sha256": "b2a5c1b4bc55bc3b44e7f0606de40d3eb323ab35782095998e13ecfc870b8aac",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "middle",
+          "timestamp_seconds": 32.5,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/rule_baseline_seed1_middle.png",
+          "sha256": "97586ee41652f8eac8dd4ca57c9825b30cbf95838a042963e4554c678f5df91c",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "final",
+          "timestamp_seconds": 64.96,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/rule_baseline_seed1_final.png",
+          "sha256": "00aadcdfffe7825be3774eb658a0cd6b735fa3490d7e24bf64eaa99f7854e601",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        }
+      ],
+      "contact_sheet_path": "/tmp/task_e_il_video_audit_q4aobd7j/rule_baseline_seed1_contact_sheet.png",
+      "contact_sheet_sha256": "705048a39abca4813e4c473f9f1cd8780a13e0e0b581d466c6bc00e40534d06d",
+      "full_decode": {
+        "returncode": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "run": "cartesian_seed1",
+      "video_path": "/home/lybm/ATEC_Experiments_20260910/task_e_cartesian_bc_seed1.mp4",
+      "video_sha256": "2eeb715bcbe949a0e2580e98f23f0164f72a8d844335ba2fd03eff50ccd317d5",
+      "video_bytes": 4397887,
+      "evaluator_result_path": "/home/lybm/ATEC_Robotics_Projects_20260910/runs/task_e_il/cartesian_seed1/result.json",
+      "evaluator_result_sha256": "9c5982d6e42a616207f1134520681ad0c2021f86a46a4c18e6c8faa6675261d9",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "duration": "54.880000",
+            "nb_frames": "1372"
+          }
+        ],
+        "format": {
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "duration": "54.880000",
+          "size": "4397887"
+        }
+      },
+      "checks": {
+        "video_hash_matches_evaluator_result": true,
+        "h264_1280x720_25fps": true,
+        "frames_match_evaluator": true,
+        "frames_match_control_stride_terminal_frame_and_2s_hold": true,
+        "duration_matches_frame_count": true,
+        "duration_matches_simulation_plus_terminal_frame_and_hold": true,
+        "entire_video_cpu_decode_without_errors": true,
+        "sampled_final_hud_score_and_simtime_match_result": true,
+        "all_four_keyframes_visually_inspected": true,
+        "sampled_frames_contain_valid_scene_and_wrist_views": true
+      },
+      "official_score": 18.0,
+      "official_sim_seconds": 52.84,
+      "video_duration_seconds": 54.88,
+      "terminal_hud_observed": {
+        "score_text": "18 / 18",
+        "seed": 1,
+        "sim_time_text": "52.84 s",
+        "state_text": "TASK COMPLETE",
+        "objects_done_labels": 3
+      },
+      "keyframes": [
+        {
+          "label": "start",
+          "timestamp_seconds": 0.0,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_seed1_start.png",
+          "sha256": "65000d4ec422470c342a976b5c5c0f41d05381b0ab35055fefb6678e7ffd4ae5",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "placement_window",
+          "timestamp_seconds": 22.4,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_seed1_placement_window.png",
+          "sha256": "77d34bf08eff3015d13e439f46950ecc243803ed88b550e6819c8fe8d44eb34c",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "middle",
+          "timestamp_seconds": 27.44,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_seed1_middle.png",
+          "sha256": "445f58f34ff54b07a0290f2ec8d01d4e53e85357c98901345a4b811a202f13f4",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "final",
+          "timestamp_seconds": 54.84,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_seed1_final.png",
+          "sha256": "2bf44ae1fb6619bad5b133444e68654db5e04575935a84f78faa465dc939b445",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        }
+      ],
+      "contact_sheet_path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_seed1_contact_sheet.png",
+      "contact_sheet_sha256": "730f2381c708928c8ff5821f382dfca6b3e01b685ff0f2f4d91f27f5514c89fb",
+      "full_decode": {
+        "returncode": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "run": "cartesian_dls_seed1",
+      "video_path": "/home/lybm/ATEC_Experiments_20260910/task_e_dls_only_seed1.mp4",
+      "video_sha256": "707ff305abb0a8bc84f63ca2287b125776c7d75dfbe220d1194b98aca532464f",
+      "video_bytes": 5049462,
+      "evaluator_result_path": "/home/lybm/ATEC_Robotics_Projects_20260910/runs/task_e_il/cartesian_dls_seed1/result.json",
+      "evaluator_result_sha256": "089524de27e35d101c1a82b0de0e43b7c02700720743030b38493d3ac5c5d650",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "duration": "65.200000",
+            "nb_frames": "1630"
+          }
+        ],
+        "format": {
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "duration": "65.200000",
+          "size": "5049462"
+        }
+      },
+      "checks": {
+        "video_hash_matches_evaluator_result": true,
+        "h264_1280x720_25fps": true,
+        "frames_match_evaluator": true,
+        "frames_match_control_stride_terminal_frame_and_2s_hold": true,
+        "duration_matches_frame_count": true,
+        "duration_matches_simulation_plus_terminal_frame_and_hold": true,
+        "entire_video_cpu_decode_without_errors": true,
+        "sampled_final_hud_score_and_simtime_match_result": true,
+        "all_four_keyframes_visually_inspected": true,
+        "sampled_frames_contain_valid_scene_and_wrist_views": true
+      },
+      "official_score": 18.0,
+      "official_sim_seconds": 63.160000000000004,
+      "video_duration_seconds": 65.2,
+      "terminal_hud_observed": {
+        "score_text": "18 / 18",
+        "seed": 1,
+        "sim_time_text": "63.16 s",
+        "state_text": "TASK COMPLETE",
+        "objects_done_labels": 3
+      },
+      "keyframes": [
+        {
+          "label": "start",
+          "timestamp_seconds": 0.0,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_dls_seed1_start.png",
+          "sha256": "2432265c885b604567b1ad13f86fbe56d2fc255550b70d7f515277a05bfc18bb",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "placement_window",
+          "timestamp_seconds": 22.4,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_dls_seed1_placement_window.png",
+          "sha256": "ce4189a26b181743f83813269b258716d3779e67a7d8d615db41500a7a77b790",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "middle",
+          "timestamp_seconds": 32.6,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_dls_seed1_middle.png",
+          "sha256": "9578e45ad17a2b2bca38fd0f706035067724f4eb5e931663375915dfc88adcaf",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        },
+        {
+          "label": "final",
+          "timestamp_seconds": 65.16,
+          "path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_dls_seed1_final.png",
+          "sha256": "dfa8a7c8e3158a61c28b7077c6e744163604f7472d8db27eaa98b098b3638381",
+          "decoded_size": [
+            1280,
+            720
+          ]
+        }
+      ],
+      "contact_sheet_path": "/tmp/task_e_il_video_audit_q4aobd7j/cartesian_dls_seed1_contact_sheet.png",
+      "contact_sheet_sha256": "d3b412abed1c8ee96146be6265398217b9c3f25bfe11be5bcf9a83c2fd0eb930",
+      "full_decode": {
+        "returncode": 0,
+        "stderr": ""
+      }
+    }
+  ],
+  "inspection_method": {
+    "metadata": "ffprobe -v error -show_entries format=duration,size,format_name:stream=codec_name,codec_type,width,height,r_frame_rate,avg_frame_rate,nb_frames,duration -of json VIDEO",
+    "full_decode": "ffmpeg -v error -threads 1 -i VIDEO -f null -",
+    "keyframe_extraction": "ffmpeg -v error -threads 1 -ss TIMESTAMP -i VIDEO -frames:v 1 -threads 1 OUTPUT.png",
+    "visual_inspection": "Agent viewed all three 2x2 contact sheets through view_image at original size. Each includes first frame, t22.40s object2 placement window, midpoint, and final frame. Full scene and wrist inset, terminal score/time labels were checked.",
+    "temporary_directory": "/tmp/task_e_il_video_audit_q4aobd7j",
+    "recorder_timing": "Control dt=.02s, capture stride2 gives25fps. All runs have even step counts; loop captures steps0..N-2 plus one final terminal image, followed by50 repeated final frames. Thus MP4 duration=official sim_seconds+2.04s."
+  },
+  "observations_and_limits": [
+    "All three final HUDs read18/18 and match evaluator simulation times: rule62.96s, student52.84s, DLS63.16s. No score or timing mismatch was found.",
+    "The initial t0 scene is visibly dark in all3 videos during renderer warmup; later sampled fixed-camera scenes show normal illuminated robot, table, objects and pink basket. No entirely black or error-overlay sample was found.",
+    "At22.4s all3 recordings show the mustard bottle in the basket and6/18. Rule/DLS midpoint samples still show the long PLACE dwell; the student midpoint27.44s has exited and approaches the sugar box. This agrees with telemetry phase analysis.",
+    "The video HUD does not identify rule, residual-BC, or DLS-only mode. Publication should distinguish the methods through filenames and captions. It does not label all control as learned.",
+    "TASK COMPLETE and all3 DONE labels are based on the official score threshold; they do not establish fully released objects or independent rest stability. Ending2seconds are frozen frames, not additional simulator release/retention evidence.",
+    "Complete decode checks file integrity. Visual quality was checked at12 sampled keyframes, not every decoded frame; no independent camera calibration or synchronization claim follows from this review.",
+    "The video claim that scoring is unchanged is consistent with the shared evaluator and empty action_spec in the audited runs; exhaustive external physics-dependency verification remains outside this audit scope."
+  ]
+}

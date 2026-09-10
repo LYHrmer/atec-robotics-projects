@@ -1,0 +1,29 @@
+{
+  "score": 18.0,
+  "full_score": true,
+  "seed": 1,
+  "steps": 2642,
+  "sim_seconds": 52.84,
+  "stop_reason": "terminated",
+  "mode": "learned_residual",
+  "checkpoint_sha256": "ca99c2adc0c78184f1f960a156923632438245d8766819095e4e629e4526b276",
+  "servo_frames": 2263,
+  "first_servo_step": 153,
+  "last_servo_step": 2642,
+  "teacher_action_fallback_calls": 0,
+  "rule_contact_stop_calls": 0,
+  "learned_fraction_all_calls": 0.8565480696442089,
+  "learned_fraction_moving_calls": 1.0,
+  "recomputed_residual_max_abs_error_rad": 1.2679193250875187e-08,
+  "recomputed_command_max_abs_error_rad": 1.2679193250875187e-08,
+  "recorded_command_vs_executed_action_max_abs_error_rad": 5.950774095708766e-08,
+  "all_servo_commands_execution_verified": true,
+  "scope": "Offline execution audit; actual task score comes from unchanged evaluator result.json.",
+  "files_sha256": {
+    "result.json": "9c5982d6e42a616207f1134520681ad0c2021f86a46a4c18e6c8faa6675261d9",
+    "telemetry.npz": "d1915725e441dd917b4d5aead5087b4d8d9200cbc9998cfc5d89e5615810f594",
+    "metrics.json": "d93bceecd7c38a94c0801db7b02852899712443b911aed623a0c492a2df247d4",
+    "servo_trace.npz": "62bbd7fd8f472c1efcd0ba2afa9e1e5a5e3749a4e50a4baaac8393412b424e0a",
+    "audit_script": "1683e6e9b13f2f621d43d4eb9e17a3ba3e1993886d75465362b88cdf7b87a125"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "solution": "/home/lybm/ATEC_Robotics_Projects_20260910/solution_task_e_il_collect.py",
+  "seed": 0,
+  "initial_objects": {
+    "object_1": [
+      1.0273923873901367,
+      0.26079148054122925,
+      0.8759167194366455
+    ],
+    "object_2": [
+      0.9072263240814209,
+      0.1410372108221054,
+      0.881519079208374
+    ],
+    "object_3": [
+      1.0631706714630127,
+      0.030164310708642006,
+      0.8759167194366455
+    ]
+  },
+  "score": 18.0,
+  "full_score": true,
+  "steps": 3118,
+  "sim_seconds": 62.36,
+  "wall_seconds": 155.0396458890027,
+  "stop_reason": "terminated",
+  "action_spec": {},
+  "task_physics_modified": false,
+  "render_preset": "crisp",
+  "usd_pose_updates": false,
+  "use_fabric": true,
+  "solution_sha256": "068649c0dd4e6dfa73e977e9155df43e54bbaca196cbd07f44e42ffb495f2fb4",
+  "source_manifest": "source_manifest.json",
+  "telemetry": "telemetry.npz"
+}

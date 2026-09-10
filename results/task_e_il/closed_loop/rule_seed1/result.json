@@ -1,0 +1,43 @@
+{
+  "solution": "/home/lybm/ATEC_Robotics_Projects_20260910/solution.py",
+  "seed": 1,
+  "initial_objects": {
+    "object_1": [
+      1.0023642778396606,
+      0.2880185544490814,
+      0.8759167194366455
+    ],
+    "object_2": [
+      0.9286233186721802,
+      0.19667305052280426,
+      0.881725549697876
+    ],
+    "object_3": [
+      0.9623662829399109,
+      0.055399585515260696,
+      0.8759167194366455
+    ]
+  },
+  "score": 18.0,
+  "full_score": true,
+  "steps": 3148,
+  "sim_seconds": 62.96,
+  "wall_seconds": 270.03155303800304,
+  "stop_reason": "terminated",
+  "action_spec": {},
+  "task_physics_modified": false,
+  "render_preset": "crisp",
+  "usd_pose_updates": false,
+  "use_fabric": true,
+  "solution_sha256": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+  "source_manifest": "source_manifest.json",
+  "telemetry": "telemetry.npz",
+  "video": {
+    "path": "/home/lybm/ATEC_Experiments_20260910/task_e_rule_baseline_seed1.mp4",
+    "fps": 25.0,
+    "frames": 1625,
+    "simulation_speed": "1x",
+    "ending_hold_seconds": 2,
+    "sha256": "1e7c4970117348e8be99e5e88630664ebef8664f17ac0a46f5ee117d535ea6f4"
+  }
+}

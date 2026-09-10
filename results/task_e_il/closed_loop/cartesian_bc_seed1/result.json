@@ -1,0 +1,43 @@
+{
+  "solution": "/home/lybm/ATEC_Robotics_Projects_20260910/solution_task_e_il_cartesian.py",
+  "seed": 1,
+  "initial_objects": {
+    "object_1": [
+      1.0023642778396606,
+      0.2880185544490814,
+      0.8759167194366455
+    ],
+    "object_2": [
+      0.9286233186721802,
+      0.19667305052280426,
+      0.881725549697876
+    ],
+    "object_3": [
+      0.9623662829399109,
+      0.055399585515260696,
+      0.8759167194366455
+    ]
+  },
+  "score": 18.0,
+  "full_score": true,
+  "steps": 2642,
+  "sim_seconds": 52.84,
+  "wall_seconds": 233.55552635499043,
+  "stop_reason": "terminated",
+  "action_spec": {},
+  "task_physics_modified": false,
+  "render_preset": "crisp",
+  "usd_pose_updates": false,
+  "use_fabric": true,
+  "solution_sha256": "bf885f8fc8227f44c7a726e2e863a6d49127be5a27ba481342aa0afd0ac84bbc",
+  "source_manifest": "source_manifest.json",
+  "telemetry": "telemetry.npz",
+  "video": {
+    "path": "/home/lybm/ATEC_Experiments_20260910/task_e_cartesian_bc_seed1.mp4",
+    "fps": 25.0,
+    "frames": 1372,
+    "simulation_speed": "1x",
+    "ending_hold_seconds": 2,
+    "sha256": "2eeb715bcbe949a0e2580e98f23f0164f72a8d844335ba2fd03eff50ccd317d5"
+  }
+}

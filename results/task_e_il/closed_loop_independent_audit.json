@@ -1,0 +1,1512 @@
+{
+  "scope": "Independent CPU-only source/provenance/telemetry audit of the frozen Cartesian residual student, same-seed rule baseline and completed DLS-only ablation. No simulator run or code/model mutation.",
+  "created_utc": "2026-09-10T07:11:15.598616+00:00",
+  "auditor_script_sha256": "bf59b7ba67333bb4f4925931471d2e00f97ecd70557756d52a7dc4bd6f646b01",
+  "checks": {
+    "public_and_original_checkpoint_byte_identical": true,
+    "public_files_match_recorded_manifests": true,
+    "public_files_match_originals_where_present": true,
+    "train_validation_test_seeds_disjoint": true,
+    "same_initial_objects": true,
+    "same_recorded_environment_metadata": true,
+    "all_shared_sources_identical": true,
+    "snapshots_and_current_sources_match_manifests": true,
+    "finite_nonzero_trained_output_layer": true,
+    "sampled_teacher_delta_changes_do_not_change_features": true,
+    "runtime_public_model_sample_parity": true,
+    "all_servo_actions_match_executed_telemetry": true,
+    "all_guard_and_nonzero_residual_counts_match": true,
+    "final_metrics_complete_without_contact_override": true,
+    "both_scores_and_steps_agree_across_final_artifacts": true,
+    "dls_same_initial_objects_and_environment": true,
+    "dls_all_controller_and_evaluator_source_hashes_identical_to_student": true,
+    "dls_snapshot_current_hashes_match": true,
+    "dls_same_checkpoint_and_exactly_zero_runtime_residual": true,
+    "dls_all_executed_servo_commands_match_guarded_analytic_steps": true,
+    "dls_analytic_recomputed_from_recorded_cartesian_goal_sample": true,
+    "dls_metrics_final_and_counts_match": true,
+    "dls_final_score_time_trace_telemetry_consistent": true
+  },
+  "all_checks_passed": true,
+  "score_and_timing": {
+    "student": {
+      "result_score": 18.0,
+      "telemetry_final_score": 17.999999597668648,
+      "trace_final_score": 17.999999597668648,
+      "steps": 2642,
+      "telemetry_length": 2642,
+      "trace_last_step": 2642,
+      "sim_seconds": 52.84,
+      "dt": 0.02,
+      "stop_reason": "terminated",
+      "trace_reward_sum": 17.999999597668648,
+      "score_events": [
+        {
+          "step": 402,
+          "score": 2.9999999329447746,
+          "object_id": 2,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 1117,
+          "score": 5.999999865889549,
+          "object_id": 2,
+          "phase_after_action": "PLACE"
+        },
+        {
+          "step": 1603,
+          "score": 8.999999798834324,
+          "object_id": 1,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 1872,
+          "score": 11.999999731779099,
+          "object_id": 1,
+          "phase_after_action": "PLACE"
+        },
+        {
+          "step": 2377,
+          "score": 14.999999664723873,
+          "object_id": 3,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 2642,
+          "score": 17.999999597668648,
+          "object_id": 3,
+          "phase_after_action": "PLACE"
+        }
+      ],
+      "terminal_phase_after_action": "PLACE",
+      "terminal_jaw_width_m": 0.05810505710542202,
+      "terminal_command_jaw_width_m": -0.030000001490116113,
+      "post_terminal_release_audit_present": false
+    },
+    "rule": {
+      "result_score": 18.0,
+      "telemetry_final_score": 17.999999597668648,
+      "trace_final_score": 17.999999597668648,
+      "steps": 3148,
+      "telemetry_length": 3148,
+      "trace_last_step": 3148,
+      "sim_seconds": 62.96,
+      "dt": 0.02,
+      "stop_reason": "terminated",
+      "trace_reward_sum": 17.999999597668648,
+      "score_events": [
+        {
+          "step": 397,
+          "score": 2.9999999329447746,
+          "object_id": 2,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 1106,
+          "score": 5.999999865889549,
+          "object_id": 2,
+          "phase_after_action": "PLACE"
+        },
+        {
+          "step": 2103,
+          "score": 8.999999798834324,
+          "object_id": 1,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 2371,
+          "score": 11.999999731779099,
+          "object_id": 1,
+          "phase_after_action": "PLACE"
+        },
+        {
+          "step": 2878,
+          "score": 14.999999664723873,
+          "object_id": 3,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 3148,
+          "score": 17.999999597668648,
+          "object_id": 3,
+          "phase_after_action": "OPEN"
+        }
+      ],
+      "terminal_phase_after_action": "OPEN",
+      "terminal_jaw_width_m": 0.061929116025567055,
+      "terminal_command_jaw_width_m": 0.07,
+      "post_terminal_release_audit_present": false
+    },
+    "dls_only": {
+      "result_score": 18.0,
+      "telemetry_final_score": 17.999999597668648,
+      "trace_final_score": 17.999999597668648,
+      "steps": 3158,
+      "telemetry_length": 3158,
+      "trace_last_step": 3158,
+      "sim_seconds": 63.160000000000004,
+      "dt": 0.02,
+      "stop_reason": "terminated",
+      "trace_reward_sum": 17.999999597668648,
+      "score_events": [
+        {
+          "step": 399,
+          "score": 2.9999999329447746,
+          "object_id": 2,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 1097,
+          "score": 5.999999865889549,
+          "object_id": 2,
+          "phase_after_action": "PLACE"
+        },
+        {
+          "step": 2100,
+          "score": 8.999999798834324,
+          "object_id": 1,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 2375,
+          "score": 11.999999731779099,
+          "object_id": 1,
+          "phase_after_action": "PLACE"
+        },
+        {
+          "step": 2887,
+          "score": 14.999999664723873,
+          "object_id": 3,
+          "phase_after_action": "LIFT"
+        },
+        {
+          "step": 3158,
+          "score": 17.999999597668648,
+          "object_id": 3,
+          "phase_after_action": "OPEN"
+        }
+      ],
+      "terminal_phase_after_action": "OPEN",
+      "terminal_jaw_width_m": 0.06192251294851303,
+      "terminal_command_jaw_width_m": 0.07,
+      "post_terminal_release_audit_present": false
+    }
+  },
+  "timing_comparison": {
+    "saved_steps": 506,
+    "saved_sim_seconds": 10.119999999999997,
+    "sim_time_reduction_percent": 16.073697585768738,
+    "phase_accounting": "Telemetry records phase AFTER predicts and env.step, so a transition step is labelled by its resulting phase. Compare both runs with this identical convention; executed learned-call counts come from servo trace.",
+    "primary_difference": "Object 2 PLACE: rule 701 steps versus student 161, saving 540 steps (10.80 s). Rule already got the object-2 placement reward at step1106, then remains in PLACE until the existing >700 motion timeout; student gets that reward slightly later at1117 and exits PLACE without that timeout. All remaining steps combined cost student34 steps (0.68 s), net saving506 (10.12 s).",
+    "by_phase": [
+      {
+        "phase": "CLOSE",
+        "rule_steps": 105,
+        "student_steps": 105,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "DESCEND",
+        "rule_steps": 227,
+        "student_steps": 227,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "HOME",
+        "rule_steps": 189,
+        "student_steps": 189,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "INIT",
+        "rule_steps": 135,
+        "student_steps": 135,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "LIFT",
+        "rule_steps": 478,
+        "student_steps": 477,
+        "saved_steps": 1,
+        "saved_sim_seconds": 0.02
+      },
+      {
+        "phase": "LOCATE",
+        "rule_steps": 48,
+        "student_steps": 48,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "OPEN",
+        "rule_steps": 23,
+        "student_steps": 40,
+        "saved_steps": -17,
+        "saved_sim_seconds": -0.34
+      },
+      {
+        "phase": "PLACE",
+        "rule_steps": 859,
+        "student_steps": 315,
+        "saved_steps": 544,
+        "saved_sim_seconds": 10.88
+      },
+      {
+        "phase": "PREGRASP",
+        "rule_steps": 348,
+        "student_steps": 348,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "RETRACT",
+        "rule_steps": 81,
+        "student_steps": 86,
+        "saved_steps": -5,
+        "saved_sim_seconds": -0.1
+      },
+      {
+        "phase": "TRANSPORT",
+        "rule_steps": 615,
+        "student_steps": 622,
+        "saved_steps": -7,
+        "saved_sim_seconds": -0.14
+      },
+      {
+        "phase": "VERIFY_LIFT",
+        "rule_steps": 30,
+        "student_steps": 30,
+        "saved_steps": 0,
+        "saved_sim_seconds": 0.0
+      },
+      {
+        "phase": "VERIFY_PLACE",
+        "rule_steps": 10,
+        "student_steps": 20,
+        "saved_steps": -10,
+        "saved_sim_seconds": -0.2
+      }
+    ],
+    "by_object_phase": [
+      {
+        "object_id": 0,
+        "phase": "INIT",
+        "rule_steps": 135,
+        "student_steps": 135,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 0,
+        "phase": "LOCATE",
+        "rule_steps": 16,
+        "student_steps": 16,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "CLOSE",
+        "rule_steps": 35,
+        "student_steps": 35,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "DESCEND",
+        "rule_steps": 69,
+        "student_steps": 69,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "HOME",
+        "rule_steps": 131,
+        "student_steps": 131,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "LIFT",
+        "rule_steps": 68,
+        "student_steps": 67,
+        "saved_steps": 1
+      },
+      {
+        "object_id": 1,
+        "phase": "LOCATE",
+        "rule_steps": 16,
+        "student_steps": 16,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "OPEN",
+        "rule_steps": 20,
+        "student_steps": 20,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "PLACE",
+        "rule_steps": 89,
+        "student_steps": 89,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "PREGRASP",
+        "rule_steps": 181,
+        "student_steps": 180,
+        "saved_steps": 1
+      },
+      {
+        "object_id": 1,
+        "phase": "RETRACT",
+        "rule_steps": 50,
+        "student_steps": 50,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "TRANSPORT",
+        "rule_steps": 146,
+        "student_steps": 146,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "VERIFY_LIFT",
+        "rule_steps": 10,
+        "student_steps": 10,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 1,
+        "phase": "VERIFY_PLACE",
+        "rule_steps": 10,
+        "student_steps": 10,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 2,
+        "phase": "CLOSE",
+        "rule_steps": 35,
+        "student_steps": 35,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 2,
+        "phase": "DESCEND",
+        "rule_steps": 91,
+        "student_steps": 93,
+        "saved_steps": -2
+      },
+      {
+        "object_id": 2,
+        "phase": "HOME",
+        "rule_steps": 58,
+        "student_steps": 58,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 2,
+        "phase": "LIFT",
+        "rule_steps": 281,
+        "student_steps": 280,
+        "saved_steps": 1
+      },
+      {
+        "object_id": 2,
+        "phase": "LOCATE",
+        "rule_steps": 16,
+        "student_steps": 16,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 2,
+        "phase": "OPEN",
+        "rule_steps": 0,
+        "student_steps": 20,
+        "saved_steps": -20
+      },
+      {
+        "object_id": 2,
+        "phase": "PLACE",
+        "rule_steps": 701,
+        "student_steps": 161,
+        "saved_steps": 540
+      },
+      {
+        "object_id": 2,
+        "phase": "PREGRASP",
+        "rule_steps": 82,
+        "student_steps": 83,
+        "saved_steps": -1
+      },
+      {
+        "object_id": 2,
+        "phase": "RETRACT",
+        "rule_steps": 31,
+        "student_steps": 36,
+        "saved_steps": -5
+      },
+      {
+        "object_id": 2,
+        "phase": "TRANSPORT",
+        "rule_steps": 333,
+        "student_steps": 338,
+        "saved_steps": -5
+      },
+      {
+        "object_id": 2,
+        "phase": "VERIFY_LIFT",
+        "rule_steps": 10,
+        "student_steps": 10,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 2,
+        "phase": "VERIFY_PLACE",
+        "rule_steps": 0,
+        "student_steps": 10,
+        "saved_steps": -10
+      },
+      {
+        "object_id": 3,
+        "phase": "CLOSE",
+        "rule_steps": 35,
+        "student_steps": 35,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 3,
+        "phase": "DESCEND",
+        "rule_steps": 67,
+        "student_steps": 65,
+        "saved_steps": 2
+      },
+      {
+        "object_id": 3,
+        "phase": "LIFT",
+        "rule_steps": 129,
+        "student_steps": 130,
+        "saved_steps": -1
+      },
+      {
+        "object_id": 3,
+        "phase": "OPEN",
+        "rule_steps": 3,
+        "student_steps": 0,
+        "saved_steps": 3
+      },
+      {
+        "object_id": 3,
+        "phase": "PLACE",
+        "rule_steps": 69,
+        "student_steps": 65,
+        "saved_steps": 4
+      },
+      {
+        "object_id": 3,
+        "phase": "PREGRASP",
+        "rule_steps": 85,
+        "student_steps": 85,
+        "saved_steps": 0
+      },
+      {
+        "object_id": 3,
+        "phase": "TRANSPORT",
+        "rule_steps": 136,
+        "student_steps": 138,
+        "saved_steps": -2
+      },
+      {
+        "object_id": 3,
+        "phase": "VERIFY_LIFT",
+        "rule_steps": 10,
+        "student_steps": 10,
+        "saved_steps": 0
+      }
+    ],
+    "completed_dls_ablation": {
+      "saved_steps_vs_dls": 516,
+      "saved_sim_seconds_vs_dls": 10.32,
+      "sim_time_reduction_vs_dls_percent": 16.339455351488283,
+      "dls_minus_rule_sim_seconds": 0.20000000000000284,
+      "phase_accounting": "Telemetry records phase AFTER predicts and env.step, so a transition step is labelled by its resulting phase. Compare both runs with this identical convention; executed learned-call counts come from servo trace.",
+      "primary_difference": "DLS-only also spends701 steps in object2 PLACE, compared with161 for the residual student:540 steps(10.80s) saved. DLS gets object2 placement reward at1097, student1117; the student nevertheless exits PLACE without the >700step timeout. Other steps combined cost the student24 steps(0.48s), leaving516steps(10.32s) net saving versus DLS.",
+      "interpretation": "With identical controller/evaluator source hashes, checkpoint, initial scene and seed, zero-residual ablation reproduces the long PLACE dwell while the learned-residual run avoids it. This single paired experiment supports a useful residual effect on this seed. It does not establish that learning is necessary for full score (all3 variants score18), nor uniform motion speedup or a multi-seed average benefit.",
+      "by_phase": [
+        {
+          "phase": "CLOSE",
+          "dls_steps": 105,
+          "student_steps": 105,
+          "saved_steps": 0
+        },
+        {
+          "phase": "DESCEND",
+          "dls_steps": 228,
+          "student_steps": 227,
+          "saved_steps": 1
+        },
+        {
+          "phase": "HOME",
+          "dls_steps": 190,
+          "student_steps": 189,
+          "saved_steps": 1
+        },
+        {
+          "phase": "INIT",
+          "dls_steps": 135,
+          "student_steps": 135,
+          "saved_steps": 0
+        },
+        {
+          "phase": "LIFT",
+          "dls_steps": 470,
+          "student_steps": 477,
+          "saved_steps": -7
+        },
+        {
+          "phase": "LOCATE",
+          "dls_steps": 48,
+          "student_steps": 48,
+          "saved_steps": 0
+        },
+        {
+          "phase": "OPEN",
+          "dls_steps": 23,
+          "student_steps": 40,
+          "saved_steps": -17
+        },
+        {
+          "phase": "PLACE",
+          "dls_steps": 859,
+          "student_steps": 315,
+          "saved_steps": 544
+        },
+        {
+          "phase": "PREGRASP",
+          "dls_steps": 360,
+          "student_steps": 348,
+          "saved_steps": 12
+        },
+        {
+          "phase": "RETRACT",
+          "dls_steps": 83,
+          "student_steps": 86,
+          "saved_steps": -3
+        },
+        {
+          "phase": "TRANSPORT",
+          "dls_steps": 617,
+          "student_steps": 622,
+          "saved_steps": -5
+        },
+        {
+          "phase": "VERIFY_LIFT",
+          "dls_steps": 30,
+          "student_steps": 30,
+          "saved_steps": 0
+        },
+        {
+          "phase": "VERIFY_PLACE",
+          "dls_steps": 10,
+          "student_steps": 20,
+          "saved_steps": -10
+        }
+      ],
+      "by_object_phase": [
+        {
+          "object_id": 0,
+          "phase": "INIT",
+          "dls_steps": 135,
+          "student_steps": 135,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 0,
+          "phase": "LOCATE",
+          "dls_steps": 16,
+          "student_steps": 16,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 1,
+          "phase": "CLOSE",
+          "dls_steps": 35,
+          "student_steps": 35,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 1,
+          "phase": "DESCEND",
+          "dls_steps": 68,
+          "student_steps": 69,
+          "saved_steps": -1
+        },
+        {
+          "object_id": 1,
+          "phase": "HOME",
+          "dls_steps": 131,
+          "student_steps": 131,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 1,
+          "phase": "LIFT",
+          "dls_steps": 68,
+          "student_steps": 67,
+          "saved_steps": 1
+        },
+        {
+          "object_id": 1,
+          "phase": "LOCATE",
+          "dls_steps": 16,
+          "student_steps": 16,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 1,
+          "phase": "OPEN",
+          "dls_steps": 20,
+          "student_steps": 20,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 1,
+          "phase": "PLACE",
+          "dls_steps": 90,
+          "student_steps": 89,
+          "saved_steps": 1
+        },
+        {
+          "object_id": 1,
+          "phase": "PREGRASP",
+          "dls_steps": 185,
+          "student_steps": 180,
+          "saved_steps": 5
+        },
+        {
+          "object_id": 1,
+          "phase": "RETRACT",
+          "dls_steps": 52,
+          "student_steps": 50,
+          "saved_steps": 2
+        },
+        {
+          "object_id": 1,
+          "phase": "TRANSPORT",
+          "dls_steps": 148,
+          "student_steps": 146,
+          "saved_steps": 2
+        },
+        {
+          "object_id": 1,
+          "phase": "VERIFY_LIFT",
+          "dls_steps": 10,
+          "student_steps": 10,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 1,
+          "phase": "VERIFY_PLACE",
+          "dls_steps": 10,
+          "student_steps": 10,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 2,
+          "phase": "CLOSE",
+          "dls_steps": 35,
+          "student_steps": 35,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 2,
+          "phase": "DESCEND",
+          "dls_steps": 91,
+          "student_steps": 93,
+          "saved_steps": -2
+        },
+        {
+          "object_id": 2,
+          "phase": "HOME",
+          "dls_steps": 59,
+          "student_steps": 58,
+          "saved_steps": 1
+        },
+        {
+          "object_id": 2,
+          "phase": "LIFT",
+          "dls_steps": 273,
+          "student_steps": 280,
+          "saved_steps": -7
+        },
+        {
+          "object_id": 2,
+          "phase": "LOCATE",
+          "dls_steps": 16,
+          "student_steps": 16,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 2,
+          "phase": "OPEN",
+          "dls_steps": 0,
+          "student_steps": 20,
+          "saved_steps": -20
+        },
+        {
+          "object_id": 2,
+          "phase": "PLACE",
+          "dls_steps": 701,
+          "student_steps": 161,
+          "saved_steps": 540
+        },
+        {
+          "object_id": 2,
+          "phase": "PREGRASP",
+          "dls_steps": 87,
+          "student_steps": 83,
+          "saved_steps": 4
+        },
+        {
+          "object_id": 2,
+          "phase": "RETRACT",
+          "dls_steps": 31,
+          "student_steps": 36,
+          "saved_steps": -5
+        },
+        {
+          "object_id": 2,
+          "phase": "TRANSPORT",
+          "dls_steps": 331,
+          "student_steps": 338,
+          "saved_steps": -7
+        },
+        {
+          "object_id": 2,
+          "phase": "VERIFY_LIFT",
+          "dls_steps": 10,
+          "student_steps": 10,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 2,
+          "phase": "VERIFY_PLACE",
+          "dls_steps": 0,
+          "student_steps": 10,
+          "saved_steps": -10
+        },
+        {
+          "object_id": 3,
+          "phase": "CLOSE",
+          "dls_steps": 35,
+          "student_steps": 35,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 3,
+          "phase": "DESCEND",
+          "dls_steps": 69,
+          "student_steps": 65,
+          "saved_steps": 4
+        },
+        {
+          "object_id": 3,
+          "phase": "LIFT",
+          "dls_steps": 129,
+          "student_steps": 130,
+          "saved_steps": -1
+        },
+        {
+          "object_id": 3,
+          "phase": "OPEN",
+          "dls_steps": 3,
+          "student_steps": 0,
+          "saved_steps": 3
+        },
+        {
+          "object_id": 3,
+          "phase": "PLACE",
+          "dls_steps": 68,
+          "student_steps": 65,
+          "saved_steps": 3
+        },
+        {
+          "object_id": 3,
+          "phase": "PREGRASP",
+          "dls_steps": 88,
+          "student_steps": 85,
+          "saved_steps": 3
+        },
+        {
+          "object_id": 3,
+          "phase": "TRANSPORT",
+          "dls_steps": 138,
+          "student_steps": 138,
+          "saved_steps": 0
+        },
+        {
+          "object_id": 3,
+          "phase": "VERIFY_LIFT",
+          "dls_steps": 10,
+          "student_steps": 10,
+          "saved_steps": 0
+        }
+      ]
+    }
+  },
+  "learning_boundary": {
+    "feature_dimensions": 45,
+    "network": "45 -> 128 tanh -> 128 tanh -> 6 tanh",
+    "learned_output": "Six bounded JOINT-angle increments in radians added to analytic DLS; not a six-dimensional Cartesian action.",
+    "learned_phase_calls": 2263,
+    "all_policy_calls": 2642,
+    "fraction_policy_calls_with_learned_residual": 0.8565480696442089,
+    "not_learned": [
+      "RGBD perception",
+      "IK path planning",
+      "Cartesian goal from FK",
+      "analytic DLS step",
+      "waypoint acceptance",
+      "rule contact stop",
+      "grasp/release state machine",
+      "gripper",
+      "initial homing",
+      "holding",
+      "rate and joint-limit guards"
+    ],
+    "input_sources": [
+      "public proprioception (joint position and velocity)",
+      "Cartesian pose goal derived by FK from the retained rule IK waypoint",
+      "analytic DLS update",
+      "retained rule phase and object id; upstream RGB-D perception and public score"
+    ],
+    "no_runtime_simulator_truth_input_found": true,
+    "control_dataflow_evidence": [
+      "eval_task_e.py passes only solution.predicts(obs,score); env.scene positions are saved only in evaluator result/trace/telemetry or post-terminal diagnostics",
+      "policy.py reads qdot from public proprio[8:14]; root solution reads joint angles from public proprio and image perception",
+      "cartesian_policy.py obtains rule waypoint, converts it by FK, computes DLS/features, applies MLP residual plus guards",
+      "cartesian.py uses fixed published Piper/base/camera geometry; no current object/world-pose accessor"
+    ],
+    "fallback_scope": "No moving-servo teacher-action fallback; rule planning, initial homing, holding, gripper and state transitions remain active."
+  },
+  "cpu_verification": {
+    "runtime_frames_scalar_model_checked": 64,
+    "runtime_residual_max_abs_error_rad": 0.0,
+    "all_executed_servo_frames_checked": 2263,
+    "actual_action_max_abs_error_rad": 5.950774095708766e-08,
+    "pre_action_q_max_abs_error_rad": 4.768371586472142e-08,
+    "pre_action_velocity_feature_max_abs_error": 0.0,
+    "guard_recomputation_max_abs_error_rad": 0.0,
+    "observed_guard_counts": {
+      "rate": 1078,
+      "joint": 280
+    },
+    "nonzero_residual_changed_commands": 2263,
+    "teacher_label_feature_leak_max": 0.0,
+    "small_offline_samples": [
+      {
+        "seed": 42,
+        "frames": 12,
+        "learned_delta_mae_rad": 0.0007949860301519926,
+        "dls_delta_mae_rad": 0.002611066946499209,
+        "mean_abs_residual_rad": 0.002751217015965492
+      },
+      {
+        "seed": 0,
+        "frames": 12,
+        "learned_delta_mae_rad": 0.0008982420052603018,
+        "dls_delta_mae_rad": 0.001300850488751269,
+        "mean_abs_residual_rad": 0.0016555058211975835
+      }
+    ],
+    "model_parameter_count": 23174,
+    "output_layer_nonzero_values": 768,
+    "train_frames": 2310,
+    "validation_frames": 2769,
+    "best_epoch": 197,
+    "training_seed": 7,
+    "dls_only": {
+      "all_executed_servo_frames_checked": 2807,
+      "runtime_residual_max_abs_rad": 0.0,
+      "guard_recomputed_command_max_abs_error_rad": 0.0,
+      "actual_action_max_abs_error_rad": 5.9486820802590046e-08,
+      "pre_action_q_max_abs_error_rad": 4.768371586472142e-08,
+      "pre_action_velocity_feature_max_abs_error": 0.0,
+      "guard_counts": {
+        "rate": 0,
+        "joint": 0
+      },
+      "analytic_sample_frames": 64,
+      "analytic_reconstruction_max_abs_error_rad": 9.846784783384965e-09,
+      "analytic_reconstruction_note": "Recorded rotation error is float32; reconstruct the rotation goal with FK(q) and that rotation vector. This precision-limited check is separate from the exact full-trace guard/action check.",
+      "counterfactual_enabled_model_on_same64_states_mean_abs_residual_rad": 0.0022761830574290643,
+      "counterfactual_enabled_model_on_same64_states_max_abs_residual_rad": 0.08323996367255138,
+      "ablation_dataflow": "cartesian_policy.py checks ATEC_IL_DLS_ONLY, selects zeros(6), and skips the network forward branch. All recorded runtime residuals are exactly zero, even though the unchanged learned checkpoint produces nonzero residuals when evaluated offline on the same features."
+    }
+  },
+  "provenance": {
+    "checkpoint_sha256": "ca99c2adc0c78184f1f960a156923632438245d8766819095e4e629e4526b276",
+    "source_checks": [
+      {
+        "run": "student",
+        "path": "solution.py",
+        "sha256": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "solution_baseline.py",
+        "sha256": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "solution_task_e_il_cartesian.py",
+        "sha256": "bf885f8fc8227f44c7a726e2e863a6d49127be5a27ba481342aa0afd0ac84bbc",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "solution_task_e_rgbd.py",
+        "sha256": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "solution_task_e_vision.py",
+        "sha256": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "task_e_geometry.py",
+        "sha256": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "task_e_held_motion.py",
+        "sha256": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "task_e_perception.py",
+        "sha256": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/eval_task_e.py",
+        "sha256": "088838d5a4133d08e024e3ccbba5a77f0792b32ae4666c9b5a7ac837d0b369f1",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/fabric_compat.py",
+        "sha256": "0d0c8585352cc022058e6cab0cc0dd7236b799fd054dacac00e62de31cd6611e",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/il/__init__.py",
+        "sha256": "1335269f11562063f7794a2809300040cd2fc5ccd691e9fcaca9b79fee7a2546",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/il/cartesian.py",
+        "sha256": "090c6016a1aae3be65d43b6212ebadd81587988e08ddbd5b41a6ac620671c3d0",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/il/cartesian_policy.py",
+        "sha256": "30e4192590ae07ee215f83f8743dae0daf038655b7368ef9b203f162b6e002c7",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/il/common.py",
+        "sha256": "98c4b65fe6d99e51abc1f19c5f556507bf5b9b6aa15e99eed05651151ecffffc",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "student",
+        "path": "tools/task_e/il/policy.py",
+        "sha256": "2e4cfcfe88f0d7bed96df029e44bf5b8de5917efb3b638bb912bb4533df6e07a",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "solution.py",
+        "sha256": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "solution_baseline.py",
+        "sha256": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "solution_task_e_rgbd.py",
+        "sha256": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "solution_task_e_vision.py",
+        "sha256": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "task_e_geometry.py",
+        "sha256": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "task_e_held_motion.py",
+        "sha256": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "task_e_perception.py",
+        "sha256": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "tools/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "tools/eval_task_e.py",
+        "sha256": "088838d5a4133d08e024e3ccbba5a77f0792b32ae4666c9b5a7ac837d0b369f1",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "tools/task_e/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "rule",
+        "path": "tools/task_e/fabric_compat.py",
+        "sha256": "0d0c8585352cc022058e6cab0cc0dd7236b799fd054dacac00e62de31cd6611e",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "solution.py",
+        "sha256": "0fa9e9b3f7e7b0cc7de82f807890dcd99e2145a45c5e166fb66658a749e07c54",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "solution_baseline.py",
+        "sha256": "efc4d58236701e4d4dd8445cf8b1ac6e989abf23e13397943f85579aa656042d",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "solution_task_e_il_cartesian.py",
+        "sha256": "bf885f8fc8227f44c7a726e2e863a6d49127be5a27ba481342aa0afd0ac84bbc",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "solution_task_e_rgbd.py",
+        "sha256": "6dc2edf386a10fff0054eda1b7c8369087e1e53a7dd364da23979f2c4485999d",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "solution_task_e_vision.py",
+        "sha256": "21bda55f9255a90cc61898a58c95f999a51e9108a6fda991107e3504ac347171",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "task_e_geometry.py",
+        "sha256": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "task_e_held_motion.py",
+        "sha256": "71e66938d8ff27feef11b99bd140924fe61e38eadb9458e81b6e6c835f33b270",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "task_e_perception.py",
+        "sha256": "ceeabbe2d441c067487841d61c50953c6c83968d1932499deaa9298fa452f3db",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/eval_task_e.py",
+        "sha256": "088838d5a4133d08e024e3ccbba5a77f0792b32ae4666c9b5a7ac837d0b369f1",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/fabric_compat.py",
+        "sha256": "0d0c8585352cc022058e6cab0cc0dd7236b799fd054dacac00e62de31cd6611e",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/il/__init__.py",
+        "sha256": "1335269f11562063f7794a2809300040cd2fc5ccd691e9fcaca9b79fee7a2546",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/il/cartesian.py",
+        "sha256": "090c6016a1aae3be65d43b6212ebadd81587988e08ddbd5b41a6ac620671c3d0",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/il/cartesian_policy.py",
+        "sha256": "30e4192590ae07ee215f83f8743dae0daf038655b7368ef9b203f162b6e002c7",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/il/common.py",
+        "sha256": "98c4b65fe6d99e51abc1f19c5f556507bf5b9b6aa15e99eed05651151ecffffc",
+        "snapshot_matches": true,
+        "current_matches": true
+      },
+      {
+        "run": "dls_only",
+        "path": "tools/task_e/il/policy.py",
+        "sha256": "2e4cfcfe88f0d7bed96df029e44bf5b8de5917efb3b638bb912bb4533df6e07a",
+        "snapshot_matches": true,
+        "current_matches": true
+      }
+    ],
+    "public_file_checks": [
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0000.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0001.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0002.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0003.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0004.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0005.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0006.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0007.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0008.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0009.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/chunk_0010.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed42/metadata.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/teacher_seed42/result.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/teacher_seed42/source_manifest.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0000.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0001.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0002.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0003.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0004.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0005.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0006.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0007.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0008.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0009.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0010.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0011.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/chunk_0012.npz",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/teacher_seed0/metadata.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/teacher_seed0/result.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/teacher_seed0/source_manifest.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "weights/task_e_il/cartesian_bc_v1.pt",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/training_report.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/independent_cpu_audit.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/float64_guard_count_audit.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/teacher_seed42_data_audit.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/teacher_seed0_data_audit.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/interface_checks.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/pipeline_control/training_report.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/pipeline_control/pipeline_control_comparison.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "results/task_e_il/offline_v1/pipeline_control/offline_audit.json",
+        "manifest_match": true,
+        "original_match": true
+      },
+      {
+        "path": "datasets/task_e_il/README.md",
+        "manifest_match": true,
+        "original_match": null
+      }
+    ],
+    "input_sha256": {
+      "runs/task_e_il/cartesian_seed1/result.json": "9c5982d6e42a616207f1134520681ad0c2021f86a46a4c18e6c8faa6675261d9",
+      "runs/task_e_il/cartesian_seed1/telemetry.npz": "d1915725e441dd917b4d5aead5087b4d8d9200cbc9998cfc5d89e5615810f594",
+      "runs/task_e_il/cartesian_seed1/trace.jsonl": "3a9d4912e835da53e372e697a94c4db1dba91688b3a6531714517557f36d2dd1",
+      "runs/task_e_il/rule_baseline_seed1/result.json": "18b85c1b443a8f215d137fe20019c8aa2d7c9fc6cf1dd4bb623864cce1bdc1f0",
+      "runs/task_e_il/rule_baseline_seed1/telemetry.npz": "4834d577cdd408e65e79e55b4daa34c5925d3d4d166f856426b7d788a8a4f421",
+      "runs/task_e_il/rule_baseline_seed1/trace.jsonl": "bea8aa73a5e7ffde8ff9c85f9c80c87c6c3e1d9c9972f80cc299de0dc64b2a13",
+      "runs/task_e_il/cartesian_seed1_metrics.json": "d93bceecd7c38a94c0801db7b02852899712443b911aed623a0c492a2df247d4",
+      "runs/task_e_il/cartesian_seed1_metrics.servo.npz": "62bbd7fd8f472c1efcd0ba2afa9e1e5a5e3749a4e50a4baaac8393412b424e0a",
+      "results/task_e_il/offline_v1/training_report.json": "470d367768ea92fc72641622d8adf4906e4f2d41c30a612a6f70da2daef91888",
+      "runs/task_e_il/cartesian_dls_seed1/result.json": "089524de27e35d101c1a82b0de0e43b7c02700720743030b38493d3ac5c5d650",
+      "runs/task_e_il/cartesian_dls_seed1/telemetry.npz": "79ccf9f3a2a191f15dcfc0e60a23226171906410f35557baec38893fe8c6dc83",
+      "runs/task_e_il/cartesian_dls_seed1/trace.jsonl": "9eb4c0d0824d1b5f50e9caef9053b919fdde09fced3f16560dda2c4fb8c2b7bc",
+      "runs/task_e_il/cartesian_dls_seed1_metrics.json": "b39f85f38518f273d48da71ccf26c69fea8f0c54bf4414398317f2ad05e147b9",
+      "runs/task_e_il/cartesian_dls_seed1_metrics.servo.npz": "41d0283c1958191e297a6ed443867bbf0bdc2f7bef22c270dc902b7a531f91b6"
+    }
+  },
+  "limitations_and_followups": [
+    "Completed DLS-only paired run scores18/18 in63.16s; student scores18/18 in52.84s (16.34% less simulation time). This supports a residual-associated benefit on seed1, concentrated in avoiding one existing PLACE timeout. All3 methods pass; do not equate nonzero residual use with full-task learning or general superiority.",
+    "Only one independent held-out rollout seed (1) has been audited; one training episode and one validation/model-selection episode do not establish a general success rate. Validation seed0 selected epoch197 and is not an untouched test set.",
+    "Official terminal18/18 is verified for all3 runs. Student terminates during PLACE with a closed-gripper command; rule and DLS terminate after only3 OPEN-labelled steps. None has a post-terminal release audit here. Do not claim all3 objects were released and stably retained.",
+    "residual_changed_command_calls counts that a residual affects a candidate command, not beneficial task contribution. Generic code records candidate servo rows before a possible DESCEND contact-stop override; no such override happened in the audited student run (count0).",
+    "Trainer offline clamp counts use float32 analytic steps and a1e-12 threshold; use existing float64_guard_count_audit.json for corrected validation guard statistics. Runtime guard counts above are independently reproduced.",
+    "Source snapshots verify local controller/evaluator sameness and evaluator requests the normal TaskE environment with empty action_spec; installed framework/taskphysics dependency files outside this project were not archived by snapshot_sources. task_physics_modified=false alone is a self-report, so this audit does not claim an independent exhaustive physics-dependency byte comparison.",
+    "Model receives goals from retained rule IK/FK; saying the network does not directly receive joint waypoints is true, but saying the full controller has no waypoint or planning guidance would be misleading.",
+    "Nonzero learned residual at zero Cartesian error is documented by the prior CPU audit; existing clamps/waypoint acceptance contain it, but no equilibrium-stability guarantee follows from BC error."
+  ],
+  "updated_utc": "2026-09-10T07:19:43.342112+00:00",
+  "dls_completion_revision": {
+    "previous_report_sha256": "1be1eb85e30e7d75993dc8ee8696890c4e5c3ba71f2e8d22f14e65e4b9815a58",
+    "auditor_script_sha256": "f4d27f375e2c7a876cb9cd744c2f71de7594c0ed99b432122fff0ee666827d61"
+  }
+}

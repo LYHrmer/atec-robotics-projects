@@ -1,0 +1,8 @@
+{
+  "scope": "Offline pipeline control only, not the main imitation-learning result",
+  "exact_arithmetic_baseline": "clip(feature_0, -1, 1) * limit",
+  "closed_form_validation_MAE_rad": 1.4596359962416187e-10,
+  "learned_validation_MAE_rad": 0.0009834812954068184,
+  "interpretation": "The formula already present in inputs is more accurate; this experiment only establishes aligned collection, training and episode isolation.",
+  "closed_loop_not_scheduled": true
+}
