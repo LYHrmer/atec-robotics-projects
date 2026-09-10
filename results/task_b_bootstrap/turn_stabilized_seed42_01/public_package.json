@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 12512,
+      "sha256": "ef34f070789d1c96179cca3bef9964d32f745ebfe4cd68344070a553156dfb28"
+    },
+    "environment_metadata.json": {
+      "bytes": 24281,
+      "sha256": "715db8f1b051e3f06bf3c1eef8a30c36208e7d4e4ea816e7c17e9a0defb61501"
+    },
+    "source_manifest.json": {
+      "bytes": 17765,
+      "sha256": "1431fb4c1397a7a13816894b657bd744addad8ea74d27036e12d73d11655a211"
+    },
+    "telemetry.npz": {
+      "bytes": 231668,
+      "sha256": "3813dc2e077cf87a33f0a7f376d5d4036adff9a89b19296cd11aa3985a3eb4de"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 101719,
+      "sha256": "331d18fd7583e7ab6678782abf74f7c807b5d59903a637378fc85e29cc76f10f",
+      "uncompressed_sha256": "5c0225f612588a2aa4a7f9fb10f44478d90d0a1b137366109083377c9ddc6289",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_stabilized_seed42_01",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

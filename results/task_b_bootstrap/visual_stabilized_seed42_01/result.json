@@ -1,0 +1,456 @@
+{
+  "task": "ATEC-TaskB-B2wPiper",
+  "mode": "visual_approach",
+  "seed": 42,
+  "device": "cuda:0",
+  "headless": true,
+  "enable_cameras": true,
+  "use_fabric": true,
+  "experience": "/home/lybm/IsaacLab/apps/isaacsim_4_5/isaaclab.python.headless.rendering.kit",
+  "camera_fabric_compatibility": "task_a.tools.d1g2_taska_camera_compat.prepare_camera_views (read-only recursive world-pose reader; preserves moving camera inheritance)",
+  "action_spec": null,
+  "apply_safe_action_spec": "called with no participant spec",
+  "steps": 1500,
+  "max_steps": 1500,
+  "sim_seconds": 30.0,
+  "wall_seconds": 79.58566897100536,
+  "stop_reason": "max_steps",
+  "terminated": false,
+  "truncated": false,
+  "active_termination_terms_at_stop": [],
+  "terminated_during_settle": false,
+  "score_definition": "sum over steps of env reward / step_dt, matching the official scripts/play_atec_task.py accumulation",
+  "score_raw_total": 0.0,
+  "reward_term_totals_raw": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 0.0
+  },
+  "reward_term_total_definition": "per step, weighted term value with dt removed (RewardManager.get_active_iterable_terms), summed over steps",
+  "reward_term_sum_vs_env_reward_max_abs_error": 0.0,
+  "final_reward_terms": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 0.0
+  },
+  "base_motion": {
+    "first_recorded_base_xyz": [
+      -10.000272750854492,
+      -9.999722480773926,
+      0.7881918549537659
+    ],
+    "last_recorded_base_xyz": [
+      -10.240571975708008,
+      -9.9356107711792,
+      0.5188208222389221
+    ],
+    "delta_xyz": [
+      -0.24029922485351562,
+      0.06411170959472656,
+      -0.26937103271484375
+    ],
+    "planar_distance_m": 0.2487047016620636,
+    "max_planar_distance_m": 0.3103296458721161,
+    "min_base_z_m": 0.4349767565727234,
+    "max_base_z_m": 0.7898235321044922,
+    "note": "world frame, pre-step samples; the sign tells which way the wheel command drove the base"
+  },
+  "observation_joint_mapping_max_abs_error": 7.450580596923828e-09,
+  "terminal_pre_reset": null,
+  "terminal_post_step_state_after_official_reset": null,
+  "policy": {
+    "mode": "visual_approach",
+    "inputs": "public proprio84 and ee_rgb/ee_depth; static joint/action/camera geometry",
+    "target": "nearest forward yellow vertical component; not a verified mustard class",
+    "grasping": false,
+    "target_x_m": 0.8,
+    "forward_normalized_cap": 0.1,
+    "wheel_normalized_cap": 0.6,
+    "turn_sign": 1.0,
+    "turn_gain": 1.2,
+    "turn_sign_requires_physical_probe": true,
+    "settle_calls": 100,
+    "ramp_calls": 100,
+    "vision_stride_calls": 5,
+    "missing_target_behavior": "stop; no blind scan",
+    "wheel_joint_names": [
+      "FR_foot_joint",
+      "FL_foot_joint",
+      "RR_foot_joint",
+      "RL_foot_joint"
+    ],
+    "wheel_action_slice": [
+      12,
+      16
+    ],
+    "legs_and_arm": "official zero normalized action",
+    "calls": 1500,
+    "alpha": 1.0,
+    "state": "ALIGN",
+    "debug": {
+      "vision_call": 1496,
+      "detector": {
+        "yellow_components": 3,
+        "rejected": {},
+        "K": [
+          [
+            458.12455261274164,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            458.12455261274164,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "intrinsics_pixel_convention": "configured_raster_K_width_over_2",
+        "classification_claim": "none; color and shape heuristic only"
+      },
+      "candidates": [
+        {
+          "kind": "yellow_vertical_component_not_semantic_classification",
+          "body_point": [
+            2.817356841619633,
+            -1.4776022924932941,
+            -0.22520015312427638
+          ],
+          "camera_point": [
+            1.4775731400981544,
+            0.781614777008444,
+            2.4525816440582275
+          ],
+          "pixel_uv": [
+            596.0,
+            386.0
+          ],
+          "bbox_xywh": [
+            587,
+            364,
+            18,
+            37
+          ],
+          "pixel_area": 412,
+          "depth_samples": 401,
+          "optical_depth_m": 2.4525816440582275,
+          "height_span_m": 0.17519390388807016,
+          "forward_planar_distance_m": 3.1813217548375063
+        },
+        {
+          "kind": "yellow_vertical_component_not_semantic_classification",
+          "body_point": [
+            3.486299567773508,
+            1.2745811920429369,
+            -0.18263955222636935
+          ],
+          "camera_point": [
+            -1.274639881562814,
+            0.7906857019320129,
+            3.122694253921509
+          ],
+          "pixel_uv": [
+            133.0,
+            356.0
+          ],
+          "bbox_xywh": [
+            129,
+            338,
+            10,
+            30
+          ],
+          "pixel_area": 196,
+          "depth_samples": 195,
+          "optical_depth_m": 3.122694253921509,
+          "height_span_m": 0.18385985964851964,
+          "forward_planar_distance_m": 3.7119862461177497
+        },
+        {
+          "kind": "yellow_vertical_component_not_semantic_classification",
+          "body_point": [
+            3.8358265766719746,
+            1.8641223261734836,
+            -0.17597208200529085
+          ],
+          "camera_point": [
+            -1.864194543232396,
+            0.8108488460401072,
+            3.4716800451278687
+          ],
+          "pixel_uv": [
+            74.0,
+            347.0
+          ],
+          "bbox_xywh": [
+            73,
+            342,
+            4,
+            10
+          ],
+          "pixel_area": 36,
+          "depth_samples": 26,
+          "optical_depth_m": 3.4716800451278687,
+          "height_span_m": 0.06324483944130321,
+          "forward_planar_distance_m": 4.264799828038999
+        }
+      ],
+      "target_body": [
+        2.8175651344452755,
+        -1.4777228147083226,
+        -0.22530213532931495
+      ],
+      "selected": {
+        "kind": "yellow_vertical_component_not_semantic_classification",
+        "body_point": [
+          2.817356841619633,
+          -1.4776022924932941,
+          -0.22520015312427638
+        ],
+        "camera_point": [
+          1.4775731400981544,
+          0.781614777008444,
+          2.4525816440582275
+        ],
+        "pixel_uv": [
+          596.0,
+          386.0
+        ],
+        "bbox_xywh": [
+          587,
+          364,
+          18,
+          37
+        ],
+        "pixel_area": 412,
+        "depth_samples": 401,
+        "optical_depth_m": 2.4525816440582275,
+        "height_span_m": 0.17519390388807016,
+        "forward_planar_distance_m": 3.1813217548375063
+      },
+      "confirmations": 280,
+      "bearing_rad": -0.483029877544265,
+      "forward_error_m": 2.0175651344452756,
+      "reason": "ALIGN",
+      "forward_normalized": 0.0,
+      "turn_normalized": -0.579635853053118,
+      "wheel_action": [
+        -0.579635853053118,
+        0.579635853053118,
+        -0.579635853053118,
+        0.579635853053118
+      ]
+    }
+  },
+  "stability_controller": {
+    "controller": "StabilityController",
+    "status": "experimental candidate; untested in simulation",
+    "dt": 0.02,
+    "settle_calls": 100,
+    "settle_behaviour": "first calls returned byte-identical to the incoming action so the recorded initial condition is preserved",
+    "inputs": "public proprio observation and the static joint/action schema only",
+    "proprio_layout": {
+      "expected_size": 84,
+      "base_lin_vel": [
+        0,
+        3
+      ],
+      "base_ang_vel": [
+        3,
+        6
+      ],
+      "velocity_commands": [
+        6,
+        9
+      ],
+      "projected_gravity": [
+        9,
+        12
+      ],
+      "joint_pos_rel": [
+        12,
+        36
+      ],
+      "joint_vel_rel": [
+        36,
+        60
+      ],
+      "last_actions": [
+        60,
+        84
+      ],
+      "source": "official ProprioObservationsCfg term order (concatenated, corruption disabled)"
+    },
+    "leg_mode": "raise_low_corners",
+    "strict": true,
+    "wheel": {
+      "joint_names": [
+        "FR_foot_joint",
+        "FL_foot_joint",
+        "RR_foot_joint",
+        "RL_foot_joint"
+      ],
+      "action_indices": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "side_sign": {
+        "FR_foot_joint": 1.0,
+        "FL_foot_joint": -1.0,
+        "RR_foot_joint": 1.0,
+        "RL_foot_joint": -1.0
+      },
+      "max_common": 0.15,
+      "max_diff": 0.3,
+      "max_residual": 0.05,
+      "max_abs": 0.35,
+      "slew_per_call": {
+        "common": 0.002,
+        "diff": 0.003,
+        "residual": 0.004,
+        "abort_gain": 4.0
+      },
+      "yaw_assist_max": 0.0,
+      "explicit_zero_request": "all four requested wheel actions zero clears slew/assist and stops immediately",
+      "yaw_assist": "magnitude only; grows the caller's own differential while the base is quiet and |yaw rate| < 0.15 rad/s. It never picks a turn direction.",
+      "note": "continuous wheels have no usable soft position limits; the caps above are constants, not limits read from the articulation"
+    },
+    "gating": {
+      "tilt_deadband": 0.06,
+      "tilt_max": 0.2,
+      "tilt_abort": 0.3,
+      "tilt_rate_deadband": 0.5,
+      "tilt_rate_max": 1.5,
+      "gravity_tau_s": 0.15,
+      "angvel_tau_s": 0.2,
+      "authority": {
+        "decay": 0.98,
+        "recover": 0.002,
+        "floor": 0.3
+      },
+      "definition": "tilt = |horizontal part of the unit projected gravity| = sin(angle from vertical); tilt_rate = |(w_x, w_y)| of the base angular velocity",
+      "gravity_boundary": "raw norm in [.5,1.5]; upward or degenerate filtered gravity forces abort"
+    },
+    "legs": {
+      "corner_unit_rad": {
+        "hip": 0.0,
+        "thigh": 0.2,
+        "calf": -0.5
+      },
+      "corner_unit_normalized": [
+        0.0,
+        0.4,
+        -1.0,
+        0.0,
+        0.4,
+        -1.0,
+        0.0,
+        0.4,
+        -1.0,
+        0.0,
+        0.4,
+        -1.0
+      ],
+      "leg_scale": 0.5,
+      "max_units": 0.12,
+      "slew_units_per_call": 0.004,
+      "kp_units_per_sin_tilt": 1.2,
+      "sign_convention": "positive units follow a synthetic thigh+.2/calf-.5 direction; negative units extend legs near the default stance in static USD FK",
+      "action_lower": [
+        -1.3659998625516891,
+        -2.916999936103821,
+        -2.400999069213867,
+        -1.7659998685121536,
+        -2.916999936103821,
+        -2.400999069213867,
+        -1.3659998625516891,
+        -3.316999912261963,
+        -2.400999069213867,
+        -1.7659998685121536,
+        -3.316999912261963,
+        -2.400999069213867
+      ],
+      "action_upper": [
+        1.7659998685121536,
+        7.216999411582947,
+        1.9009997844696045,
+        1.3659998625516891,
+        7.216999411582947,
+        1.9009997844696045,
+        1.7659998685121536,
+        6.816999435424805,
+        1.9009997844696045,
+        1.3659998625516891,
+        6.816999435424805,
+        1.9009997844696045
+      ],
+      "clip_definition": "(soft_limit - default) / leg_scale from the live articulation"
+    },
+    "hypotheses": [
+      "H1 (wheel slew + caps): capping the drive command at 0.15 and the half-differential at 0.30 normalized, with slew limiting, keeps the base within the survivable envelope seen at 0.10/0.10 while staying below the 0.6 differential that produced an illegal contact at step 322.",
+      "H2 (tilt gating): filtered sin(tilt) and base roll/pitch rate lead loss of stability by enough calls that shrinking wheel commands before 0.20 rad of tilt prevents the illegal contact. Direction-independent.",
+      "H3 (leg levelling): gravity points downhill and USD FK verifies F/L corner positions and extension direction at the default stance. Whether 0.12 synthetic corner units reduce dynamic tilt still requires a physical test.",
+      "H4 (yaw assist, opt-in): a stalled turn can be escalated safely if the escalation is slow, magnitude-only and retracted whenever the tilt gate fires."
+    ],
+    "limitations": [
+      "No simulation run has been executed for this controller; nothing here is verified.",
+      "The differential-to-yaw sign is unknown; the controller never chooses a turn direction and only reports yaw_rate_per_diff_estimate for offline identification.",
+      "Static USD FK verifies H3's corner mapping and local extension, not its dynamic stabilizing effect; compare leg_mode='off' to test that effect.",
+      "Raising the low corners raises the centre of mass slightly; the tiny cap is the only protection against that being harmful.",
+      "Arm entries are passed through unchecked, by contract; arm safety is the caller's.",
+      "Gains were chosen from five recorded runs at one seed, not fitted or swept."
+    ]
+  },
+  "rgb_frames": {
+    "step_00000": {
+      "head_rgb": "head_rgb_step_00000.png",
+      "ee_rgb": "ee_rgb_step_00000.png"
+    },
+    "step_00250": {
+      "head_rgb": "head_rgb_step_00250.png",
+      "ee_rgb": "ee_rgb_step_00250.png"
+    },
+    "step_00500": {
+      "head_rgb": "head_rgb_step_00500.png",
+      "ee_rgb": "ee_rgb_step_00500.png"
+    },
+    "step_00750": {
+      "head_rgb": "head_rgb_step_00750.png",
+      "ee_rgb": "ee_rgb_step_00750.png"
+    },
+    "step_01000": {
+      "head_rgb": "head_rgb_step_01000.png",
+      "ee_rgb": "ee_rgb_step_01000.png"
+    },
+    "step_01250": {
+      "head_rgb": "head_rgb_step_01250.png",
+      "ee_rgb": "ee_rgb_step_01250.png"
+    },
+    "step_01500": {
+      "head_rgb": "head_rgb_step_01500.png",
+      "ee_rgb": "ee_rgb_step_01500.png"
+    },
+    "final": {
+      "head_rgb": "head_rgb_final.png",
+      "ee_rgb": "ee_rgb_final.png"
+    }
+  },
+  "video": "public_cameras.mp4",
+  "files": {
+    "trace": "trace.jsonl",
+    "telemetry": "telemetry.npz",
+    "metadata": "environment_metadata.json",
+    "manifest": "source_manifest.json"
+  },
+  "task_physics_modified": false,
+  "manifest_coverage": [
+    "USD/USDA robot, object and scene assets, textures and MDL materials",
+    "Isaac Lab and Isaac Sim packages, Kit experience files and GPU drivers",
+    "runtime monkeypatching, including the Isaac Sim 4.5 camera Fabric pose reader that this evaluator installs on purpose (see result.json:camera_fabric_compatibility)",
+    "whether the installed original repository itself matches upstream"
+  ],
+  "interpretation": "Mobility/reachability bootstrap. Survival, driving or crouching is NOT a successful grasp and NOT a Task B pass. Any grasped_objects reward only means the gripper body came within the official distance threshold of an object; objects_in_circle is the term that scores delivery."
+}

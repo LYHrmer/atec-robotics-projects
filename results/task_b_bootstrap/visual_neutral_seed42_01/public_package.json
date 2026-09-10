@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 16720,
+      "sha256": "87904343adbc2ad139883afe102cc850f0b42d776b380bcc58aa983d33782286"
+    },
+    "environment_metadata.json": {
+      "bytes": 24779,
+      "sha256": "77ac65a665f376657faae598fd5c9d19ac50324e214afa28e5713807f6795a99"
+    },
+    "source_manifest.json": {
+      "bytes": 18822,
+      "sha256": "36ae9a2ddc8037044fa7911a7ea2792fce2b385c1c5f9204a8fb7cc8e6394b5c"
+    },
+    "telemetry.npz": {
+      "bytes": 660165,
+      "sha256": "39158457b8a8f6bf782a847efb24ccc0b4dff7a6b986fbb6d0bc86360bfcbbb3"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 486972,
+      "sha256": "2d49e13b242235bda42ddac8dcd5d03156ede112e463d15b8332415e198ff7b0",
+      "uncompressed_sha256": "02c986408cb29c1595030b757dfe3c32df341f504d3a8d46f68eab8a79e6548e",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_neutral_seed42_01",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

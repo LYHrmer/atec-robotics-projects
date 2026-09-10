@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "execution": "CPU only; no simulation application, no GPU, no original source writes",
+  "recorder_checks": {
+    "initial_reset_excluded": true,
+    "copy_precedes_mutable_reset": true,
+    "callback_ids_cannot_mutate_reset_ids": true,
+    "one_original_call_and_return_identity": true,
+    "next_step_has_no_stale_snapshot": true,
+    "restores_class_method_lookup": true,
+    "observer_failure_still_resets": true,
+    "original_exception_identity_preserved": true,
+    "multiple_resets_preserved": true,
+    "restores_prior_instance_override": true
+  },
+  "action_boundary": {
+    "passed": true,
+    "schemas": 12,
+    "physical_command_cases": 192,
+    "manager_and_joint_order_permuted": true,
+    "different_scales_and_nonzero_default_offsets": true,
+    "max_abs_physical_command_error": 9.536743172944284e-09,
+    "settle_first_100_calls_zero": true,
+    "invalid_schema_rejections": 7,
+    "continuous_wheel_nan_inf_unused_position_limits_accepted": true,
+    "continuous_wheel_limits_json_serializes_as_null": true,
+    "consumer_methods_executed": [
+      "/home/lybm/IsaacLab/source/isaaclab/isaaclab/managers/action_manager.py:ActionManager.process_action",
+      "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/mdp/actions/joint_actions.py:JointAction.process_actions"
+    ],
+    "scope": "CPU affine/slicing boundary. Does not establish physical wheel sign, stability, collision freedom, or reachability."
+  },
+  "reward_dt_boundary": {
+    "passed": true,
+    "actual_method": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/managers/reward_manager.py:RewardManager.compute",
+    "cases": [
+      {
+        "reward_returned_dt_scaled": 0.019999999552965164,
+        "terms_already_raw": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "reward_returned_dt_scaled": 0.0,
+        "terms_already_raw": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "reward_returned_dt_scaled": 0.019999999552965164,
+        "terms_already_raw": [
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "correct_raw_score": 2.0,
+    "division_of_active_terms_would_be_incorrect": true,
+    "scope": "Tests dt normalization of supplied one-time term events, not physical grasp detection."
+  },
+  "source_sha256": {
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/control.py": "4001b889d390291751371ec96d056d0fd0cb7201be68998edc33abf5991c2f0b",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/diagnostics.py": "bb3cc76a0a6358ac9ec5e4c31c815a1012dead33f91007683dfffffe038c3452",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/evaluate.py": "ac83c160152ca6fc8f69a22749f3ae99b88d127fc1796902b174f9f6ad3bff49",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/audit_bootstrap.py": "8e52ca01b2119a14ec61d19fcc4966e01d3aa28123e52cca81ed670d92b1fc47",
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/b2w.py": "4b88d079b53a6bfc0bd3cf3cd2107c74fd313d73e8f04b6bcec6702d6cdd61c8",
+    "/home/lybm/IsaacLab/source/isaaclab/isaaclab/managers/action_manager.py": "ddeca14586f2816930c20be42ce59497c92758bc1466dc23a3fb62f3dfe94167",
+    "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/mdp/actions/joint_actions.py": "6bbf0f7837636eb7d6b17db3e8d25a433e8a69ba671dde0e993b0a0b2025cf55",
+    "/home/lybm/IsaacLab/source/isaaclab/isaaclab/managers/reward_manager.py": "6be44a98df5aed8a0ebac2913ebea33010633e007e816697a6d99f7ccfd731db"
+  },
+  "remaining_nonblocking_schema_hardening": [
+    "Wheel default velocity offset is zero in the official configuration, but is not represented in ActionSchema.",
+    "Non-None action clips are described but not refused; current official terms have clip=None.",
+    "Policy checks proprio finite/nonempty but does not enforce the actual 84-element shape; it is open-loop."
+  ]
+}

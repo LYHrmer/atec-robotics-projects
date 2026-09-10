@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 12110,
+      "sha256": "f27ff4b7c35ffb87ccb7e89111122edbf317a67373d98ab6a58272e5308841fe"
+    },
+    "environment_metadata.json": {
+      "bytes": 18186,
+      "sha256": "d06fe877a3e7ad43276182503040ee85d02204d1d8386a3499bc950c32f65328"
+    },
+    "source_manifest.json": {
+      "bytes": 17510,
+      "sha256": "5a9ff8b3e7cce0b66392e829d0f0f12071b7a7c5ca24da9b34fa16797a5ffc69"
+    },
+    "telemetry.npz": {
+      "bytes": 55165,
+      "sha256": "2342c28917f8cd0537d6324828e49c4214e3bf925057abfb1a0778d4725e78bb"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 7282,
+      "sha256": "3e5714692a39f17f0aad0d5d532865275bd26c9d69f385aad32de07b6cc0d8c1",
+      "uncompressed_sha256": "f9a02c9336dfe06f04afda1d1933815076980ef9804edffd94181e8fbb8754ce",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/crouch_seed42_03",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

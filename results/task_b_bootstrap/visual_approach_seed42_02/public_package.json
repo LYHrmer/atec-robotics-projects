@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 10505,
+      "sha256": "d5a1c02f02f50b410f2f1f4596f5af077eadb7c38ad0631ce605fe1e9b47f4b1"
+    },
+    "environment_metadata.json": {
+      "bytes": 16455,
+      "sha256": "91f24788aed14326a69959153d18d6bc95108d78b8b078df41ec757148605004"
+    },
+    "source_manifest.json": {
+      "bytes": 18294,
+      "sha256": "8ee1332948043c1f3a7942b22d254cc023ca6716b82dd92e67bb124c8db38ee8"
+    },
+    "telemetry.npz": {
+      "bytes": 159891,
+      "sha256": "2e54032bb6e9e5d4c9a3a047deed880ed662f36ffadc090a6d22382c8c3d7eaf"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 31817,
+      "sha256": "35856d7b8737f67f07f12b0563cf8bd21296bb5576e0be4753f23cdbbbf8e742",
+      "uncompressed_sha256": "987e56debefdd317403c9a0744623223f9f3ecb4ef5b4aef3b154d38ad1d99c1",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_approach_seed42_02",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

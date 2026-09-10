@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 15464,
+      "sha256": "59fea3af8657a7c623c8a67a0a43babaaac0cd63e238c1048d32e0e29e2ee6bb"
+    },
+    "environment_metadata.json": {
+      "bytes": 26968,
+      "sha256": "93494aaa5a6d17faf896775a9d73cad93c5658fe30bea6dee1eedc0db3cb4fd9"
+    },
+    "source_manifest.json": {
+      "bytes": 18038,
+      "sha256": "d03c3920ad2868c652428de4b5b617b3764006b4995dbb28ae21d9c912b08311"
+    },
+    "telemetry.npz": {
+      "bytes": 217549,
+      "sha256": "d5347ed6fea65a8c9fa8e6e13f463c3a0261f594265a0b17f13a7a8d64bcbbc6"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 109736,
+      "sha256": "34cad0f4fb10f3225c22aebc772596ea9d6f1ec50ef54d5e087b5f384dd8466f",
+      "uncompressed_sha256": "c7500bad0f5cc0fc406005c5e90b56ed2cac5b2f41286e040a3296dae967041b",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_neutral_seed42_01",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

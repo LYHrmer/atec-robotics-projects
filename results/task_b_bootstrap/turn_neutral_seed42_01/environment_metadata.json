@@ -1,0 +1,1089 @@
+{
+  "task": "ATEC-TaskB-B2wPiper",
+  "seed": 42,
+  "device": "cuda:0",
+  "step_dt": 0.02,
+  "physics_dt": 0.005,
+  "decimation": 4,
+  "episode_length_s": 1200.0,
+  "max_episode_length_steps": 60000,
+  "action_schema": {
+    "total_action_dim": 24,
+    "terms": [
+      {
+        "name": "joint_leg",
+        "action_slice": [
+          0,
+          12
+        ],
+        "dim": 12,
+        "joint_names": [
+          "FR_hip_joint",
+          "FR_thigh_joint",
+          "FR_calf_joint",
+          "FL_hip_joint",
+          "FL_thigh_joint",
+          "FL_calf_joint",
+          "RR_hip_joint",
+          "RR_thigh_joint",
+          "RR_calf_joint",
+          "RL_hip_joint",
+          "RL_thigh_joint",
+          "RL_calf_joint"
+        ],
+        "joint_names_source": "resolved",
+        "mode": "position",
+        "scale": 0.5,
+        "use_default_offset": true,
+        "clip": "None"
+      },
+      {
+        "name": "joint_wheel",
+        "action_slice": [
+          12,
+          16
+        ],
+        "dim": 4,
+        "joint_names": [
+          "FR_foot_joint",
+          "FL_foot_joint",
+          "RR_foot_joint",
+          "RL_foot_joint"
+        ],
+        "joint_names_source": "resolved",
+        "mode": "velocity",
+        "scale": 5.0,
+        "use_default_offset": true,
+        "clip": "None"
+      },
+      {
+        "name": "joint_arm",
+        "action_slice": [
+          16,
+          24
+        ],
+        "dim": 8,
+        "joint_names": [
+          "arm_joint1",
+          "arm_joint2",
+          "arm_joint3",
+          "arm_joint4",
+          "arm_joint5",
+          "arm_joint6",
+          "arm_joint7",
+          "arm_joint8"
+        ],
+        "joint_names_source": "resolved",
+        "mode": "position",
+        "scale": 0.5,
+        "use_default_offset": true,
+        "clip": "None"
+      }
+    ],
+    "articulation_joint_names": [
+      "FL_hip_joint",
+      "FR_hip_joint",
+      "RL_hip_joint",
+      "RR_hip_joint",
+      "FL_thigh_joint",
+      "FR_thigh_joint",
+      "RL_thigh_joint",
+      "RR_thigh_joint",
+      "arm_joint1",
+      "FL_calf_joint",
+      "FR_calf_joint",
+      "RL_calf_joint",
+      "RR_calf_joint",
+      "arm_joint2",
+      "FL_foot_joint",
+      "FR_foot_joint",
+      "RL_foot_joint",
+      "RR_foot_joint",
+      "arm_joint3",
+      "arm_joint4",
+      "arm_joint5",
+      "arm_joint6",
+      "arm_joint7",
+      "arm_joint8"
+    ],
+    "default_joint_pos": [
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.800000011920929,
+      0.800000011920929,
+      1.0,
+      1.0,
+      0.0,
+      -1.5,
+      -1.5,
+      -1.5,
+      -1.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "soft_joint_pos_limits": [
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -2.378700017929077,
+        1.9286997318267822
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        0.15700006484985352,
+        2.982999801635742
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        -2.8186497688293457,
+        -0.14835000038146973
+      ],
+      [
+        -1.5704998970031738,
+        1.5704998970031738
+      ],
+      [
+        -1.097999930381775,
+        1.097999930381775
+      ],
+      [
+        -1.8849596977233887,
+        1.8849596977233887
+      ],
+      [
+        0.0017499998211860657,
+        0.033250000327825546
+      ],
+      [
+        -0.033250000327825546,
+        -0.0017499998211860657
+      ]
+    ],
+    "null_limit_definition": "unbounded/undefined soft position limit on a continuous velocity-controlled wheel",
+    "note": "Action indices come from the action manager term order, which is independent of the articulation (USD) joint order listed here."
+  },
+  "articulation": {
+    "body_names": [
+      "base_link",
+      "FL_hip",
+      "FR_hip",
+      "RL_hip",
+      "RR_hip",
+      "arm_base",
+      "FL_thigh",
+      "FR_thigh",
+      "RL_thigh",
+      "RR_thigh",
+      "arm_link1",
+      "FL_calf",
+      "FR_calf",
+      "RL_calf",
+      "RR_calf",
+      "arm_link2",
+      "FL_foot",
+      "FR_foot",
+      "RL_foot",
+      "RR_foot",
+      "arm_link3",
+      "arm_link4",
+      "arm_link5",
+      "arm_link6",
+      "gripper_base",
+      "arm_link7",
+      "arm_link8"
+    ],
+    "joint_pos_limits": [
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -2.618000030517578,
+        2.167999744415283
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        0.0,
+        3.1399998664855957
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -2.9669997692108154,
+        0.0
+      ],
+      [
+        -1.744999885559082,
+        1.744999885559082
+      ],
+      [
+        -1.21999990940094,
+        1.21999990940094
+      ],
+      [
+        -2.0943996906280518,
+        2.0943996906280518
+      ],
+      [
+        0.0,
+        0.03500000014901161
+      ],
+      [
+        -0.03500000014901161,
+        0.0
+      ]
+    ],
+    "soft_joint_pos_limits": [
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -2.378700017929077,
+        1.9286997318267822
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        0.15700006484985352,
+        2.982999801635742
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        -2.8186497688293457,
+        -0.14835000038146973
+      ],
+      [
+        -1.5704998970031738,
+        1.5704998970031738
+      ],
+      [
+        -1.097999930381775,
+        1.097999930381775
+      ],
+      [
+        -1.8849596977233887,
+        1.8849596977233887
+      ],
+      [
+        0.0017499998211860657,
+        0.033250000327825546
+      ],
+      [
+        -0.033250000327825546,
+        -0.0017499998211860657
+      ]
+    ]
+  },
+  "observations": {
+    "proprio_dim": 84,
+    "joint_names": [
+      "FR_hip_joint",
+      "FR_thigh_joint",
+      "FR_calf_joint",
+      "FL_hip_joint",
+      "FL_thigh_joint",
+      "FL_calf_joint",
+      "RR_hip_joint",
+      "RR_thigh_joint",
+      "RR_calf_joint",
+      "RL_hip_joint",
+      "RL_thigh_joint",
+      "RL_calf_joint",
+      "FR_foot_joint",
+      "FL_foot_joint",
+      "RR_foot_joint",
+      "RL_foot_joint",
+      "arm_joint1",
+      "arm_joint2",
+      "arm_joint3",
+      "arm_joint4",
+      "arm_joint5",
+      "arm_joint6",
+      "arm_joint7",
+      "arm_joint8"
+    ],
+    "proprio_expected_dim_for_this_schema": 84,
+    "image_keys": [
+      "ee_depth",
+      "ee_rgb",
+      "head_depth",
+      "head_rgb"
+    ],
+    "policy_inputs": "proprio only"
+  },
+  "reward_terms": {
+    "objects_in_circle": {
+      "weight": 1.0,
+      "func": "<atec_rl_lab.tasks.task_b.mdp.rewards.ObjectsInCircle object at 0x7ce59d39b370>",
+      "params": {
+        "center": [
+          -3.0,
+          -10.0
+        ],
+        "radius": 1.0,
+        "reward_per_object": 1.0
+      }
+    },
+    "grasped_objects": {
+      "weight": 1.0,
+      "func": "<atec_rl_lab.tasks.task_b.mdp.rewards.GraspedObjectsByEE object at 0x7ce59d39b460>",
+      "params": {
+        "ee_body_name": "gripper_base",
+        "grasp_dist_thresh": 0.2,
+        "reward_per_object": 1.0
+      }
+    }
+  },
+  "termination_terms": {
+    "time_out": {
+      "time_out": true,
+      "func": "<function time_out at 0x7ce5e810f640>",
+      "params": {}
+    },
+    "illegal_contact": {
+      "time_out": false,
+      "func": "<function illegal_contact at 0x7ce5e810fd00>",
+      "params": {
+        "sensor_cfg": "SceneEntityCfg(name='contact_sensor', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=['base_link', '.*_hip', '.*_thigh'], body_ids=[0, 1, 2, 5, 6, 9, 10, 13, 14], object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)",
+        "threshold": 1.0
+      }
+    },
+    "fall": {
+      "time_out": false,
+      "func": "<function root_height_below_minimum at 0x7ce5e810f9a0>",
+      "params": {
+        "asset_cfg": "SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)",
+        "minimum_height": 0.0
+      }
+    },
+    "objects_in_circle_done": {
+      "time_out": false,
+      "func": "<atec_rl_lab.tasks.task_b.mdp.terminations.ObjectsInCircleDone object at 0x7ce59d39b070>",
+      "params": {
+        "center": [
+          -3.0,
+          -10.0
+        ],
+        "radius": 1.0
+      }
+    }
+  },
+  "illegal_contact": {
+    "sensor_name": "contact_sensor",
+    "body_ids": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      9,
+      10,
+      13,
+      14
+    ],
+    "body_names": [
+      "base_link",
+      "FL_hip",
+      "FL_thigh",
+      "FR_hip",
+      "FR_thigh",
+      "RL_hip",
+      "RL_thigh",
+      "RR_hip",
+      "RR_thigh"
+    ],
+    "threshold": 1.0,
+    "definition": "max over the contact-sensor history of |net force| per body, exactly as the official illegal_contact term computes it"
+  },
+  "contact_sensor_body_names": [
+    "base_link",
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "FL_foot",
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "FR_foot",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf",
+    "RL_foot",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "RR_foot",
+    "gripper_base",
+    "arm_base",
+    "arm_link1",
+    "arm_link2",
+    "arm_link3",
+    "arm_link4",
+    "arm_link5",
+    "arm_link6",
+    "arm_link7",
+    "arm_link8"
+  ],
+  "policy": {
+    "mode": "turn",
+    "settle_calls": 100,
+    "ramp_calls": 100,
+    "crouch_fraction": 1.0,
+    "wheel_normalized_cmd": 0.6,
+    "wheel_action_index": {
+      "FL_foot_joint": 13,
+      "FR_foot_joint": 12,
+      "RL_foot_joint": 15,
+      "RR_foot_joint": 14
+    },
+    "wheel_side": {
+      "FL_foot_joint": "left",
+      "FR_foot_joint": "right",
+      "RL_foot_joint": "left",
+      "RR_foot_joint": "right"
+    },
+    "wheel_scale": 5.0,
+    "wheel_target_rad_per_s_at_full_ramp": 3.0,
+    "crouch_target": {
+      "joint_names": [
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint"
+      ],
+      "requested_target_rad": [
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0
+      ],
+      "clipped_target_rad": [
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0
+      ],
+      "default_rad": [
+        -0.10000000149011612,
+        0.800000011920929,
+        -1.5,
+        0.10000000149011612,
+        0.800000011920929,
+        -1.5,
+        -0.10000000149011612,
+        1.0,
+        -1.5,
+        0.10000000149011612,
+        1.0,
+        -1.5
+      ],
+      "soft_limit_lower_rad": [
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336,
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336,
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336,
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336
+      ],
+      "soft_limit_upper_rad": [
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978,
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978,
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978,
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978
+      ],
+      "clipped_by_limits": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "full_crouch_normalized_action": [
+        0.20000000298023224,
+        0.3999999761581421,
+        -1.0,
+        -0.20000000298023224,
+        0.3999999761581421,
+        -1.0,
+        0.20000000298023224,
+        0.0,
+        -1.0,
+        -0.20000000298023224,
+        0.0,
+        -1.0
+      ],
+      "leg_scale": 0.5
+    },
+    "inputs": "public proprio observation and the static joint/action schema only",
+    "sign_hypotheses": {
+      "forward": "all four wheels positive; the direction of travel is measured from the recorded base position, not assumed",
+      "turn": "right wheels positive and left wheels negative; the yaw direction is measured"
+    }
+  },
+  "stability_controller": {
+    "controller": "NeutralAwareStabilityController",
+    "status": "experimental candidate; untested in simulation",
+    "dt": 0.02,
+    "settle_calls": 100,
+    "settle_behaviour": "first calls returned byte-identical to the incoming action so the recorded initial condition is preserved",
+    "inputs": "public proprio observation and the static joint/action schema only",
+    "proprio_layout": {
+      "expected_size": 84,
+      "base_lin_vel": [
+        0,
+        3
+      ],
+      "base_ang_vel": [
+        3,
+        6
+      ],
+      "velocity_commands": [
+        6,
+        9
+      ],
+      "projected_gravity": [
+        9,
+        12
+      ],
+      "joint_pos_rel": [
+        12,
+        36
+      ],
+      "joint_vel_rel": [
+        36,
+        60
+      ],
+      "last_actions": [
+        60,
+        84
+      ],
+      "source": "official ProprioObservationsCfg term order (concatenated, corruption disabled)"
+    },
+    "leg_mode": "raise_low_corners",
+    "strict": true,
+    "wheel": {
+      "joint_names": [
+        "FR_foot_joint",
+        "FL_foot_joint",
+        "RR_foot_joint",
+        "RL_foot_joint"
+      ],
+      "action_indices": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "side_sign": {
+        "FR_foot_joint": 1.0,
+        "FL_foot_joint": -1.0,
+        "RR_foot_joint": 1.0,
+        "RL_foot_joint": -1.0
+      },
+      "max_common": 0.15,
+      "max_diff": 0.3,
+      "max_residual": 0.05,
+      "max_abs": 0.35,
+      "slew_per_call": {
+        "common": 0.002,
+        "diff": 0.003,
+        "residual": 0.004,
+        "abort_gain": 4.0
+      },
+      "yaw_assist_max": 0.0,
+      "explicit_zero_request": "all four requested wheel actions zero clears slew/assist and stops immediately",
+      "yaw_assist": "magnitude only; grows the caller's own differential while the base is quiet and |yaw rate| < 0.15 rad/s. It never picks a turn direction.",
+      "note": "continuous wheels have no usable soft position limits; the caps above are constants, not limits read from the articulation"
+    },
+    "gating": {
+      "tilt_deadband": 0.06,
+      "tilt_max": 0.2,
+      "tilt_abort": 0.3,
+      "tilt_rate_deadband": 0.5,
+      "tilt_rate_max": 1.5,
+      "gravity_tau_s": 0.15,
+      "angvel_tau_s": 0.2,
+      "authority": {
+        "decay": 0.98,
+        "recover": 0.002,
+        "floor": 0.3
+      },
+      "definition": "tilt = |horizontal part of the unit projected gravity| = sin(angle from vertical); tilt_rate = |(w_x, w_y)| of the base angular velocity",
+      "gravity_boundary": "raw norm in [.5,1.5]; upward or degenerate filtered gravity forces abort"
+    },
+    "legs": {
+      "corner_unit_rad": {
+        "hip": 0.0,
+        "thigh": 0.2,
+        "calf": -0.5
+      },
+      "corner_unit_normalized": [
+        0.0,
+        0.4,
+        -1.0,
+        0.0,
+        0.4,
+        -1.0,
+        0.0,
+        0.4,
+        -1.0,
+        0.0,
+        0.4,
+        -1.0
+      ],
+      "leg_scale": 0.5,
+      "max_units": 0.12,
+      "slew_units_per_call": 0.004,
+      "kp_units_per_sin_tilt": 1.2,
+      "sign_convention": "positive units follow a synthetic thigh+.2/calf-.5 direction; negative units extend legs near the default stance in static USD FK",
+      "action_lower": [
+        -1.3659998625516891,
+        -2.916999936103821,
+        -2.400999069213867,
+        -1.7659998685121536,
+        -2.916999936103821,
+        -2.400999069213867,
+        -1.3659998625516891,
+        -3.316999912261963,
+        -2.400999069213867,
+        -1.7659998685121536,
+        -3.316999912261963,
+        -2.400999069213867
+      ],
+      "action_upper": [
+        1.7659998685121536,
+        7.216999411582947,
+        1.9009997844696045,
+        1.3659998625516891,
+        7.216999411582947,
+        1.9009997844696045,
+        1.7659998685121536,
+        6.816999435424805,
+        1.9009997844696045,
+        1.3659998625516891,
+        6.816999435424805,
+        1.9009997844696045
+      ],
+      "clip_definition": "(soft_limit - default) / leg_scale from the live articulation"
+    },
+    "hypotheses": [
+      "H1 (wheel slew + caps): capping the drive command at 0.15 and the half-differential at 0.30 normalized, with slew limiting, keeps the base within the survivable envelope seen at 0.10/0.10 while staying below the 0.6 differential that produced an illegal contact at step 322.",
+      "H2 (tilt gating): filtered sin(tilt) and base roll/pitch rate lead loss of stability by enough calls that shrinking wheel commands before 0.20 rad of tilt prevents the illegal contact. Direction-independent.",
+      "H3 (leg levelling): gravity points downhill and USD FK verifies F/L corner positions and extension direction at the default stance. Whether 0.12 synthetic corner units reduce dynamic tilt still requires a physical test.",
+      "H4 (yaw assist, opt-in): a stalled turn can be escalated safely if the escalation is slow, magnitude-only and retracted whenever the tilt gate fires."
+    ],
+    "limitations": [
+      "No simulation run has been executed for this controller; nothing here is verified.",
+      "The differential-to-yaw sign is unknown; the controller never chooses a turn direction and only reports yaw_rate_per_diff_estimate for offline identification.",
+      "Static USD FK verifies H3's corner mapping and local extension, not its dynamic stabilizing effect; compare leg_mode='off' to test that effect.",
+      "Raising the low corners raises the centre of mass slightly; the tiny cap is the only protection against that being harmful.",
+      "Arm entries are passed through unchecked, by contract; arm safety is the caller's.",
+      "Gains were chosen from five recorded runs at one seed, not fitted or swept.",
+      "Neutral profile: unverified. The frozen reference removes a constant pitch offset, so reference-relative tilt is NOT the true tilt; read 'absolute' in the debug record.",
+      "Neutral profile: the leg-levelling downhill direction is computed in the rotated reference frame, so corner selection is approximate to within the reference tilt (~3.6 deg for the recorded stance) and can mis-select near the deadband.",
+      "Neutral profile: the rotation is the shortest proper rotation to level, which fixes no yaw; it is a stance offset, not an orientation estimate.",
+      "Neutral profile: calibration assumes the settle window ends on flat, stationary ground. A start on a real slope up to the reference-tilt limit would be absorbed into the reference; only the absolute envelope still sees it."
+    ],
+    "profile": "neutral",
+    "base_controller": "StabilityController (frozen; unmodified)",
+    "neutral_reference": {
+      "enabled": true,
+      "purpose": "the settled B2wPiper stance measured sin(tilt) = 0.0633, above the baseline TILT_DEADBAND of 0.06, so the baseline gated 366 calls of a healthy pose and sank to the 0.30 authority floor",
+      "calibration": {
+        "window": 20,
+        "source": "public projected_gravity during the tail of the zero-action settle window",
+        "frozen_once": true,
+        "max_spread_rad": 0.03,
+        "max_rate_rad_s": 0.15,
+        "max_reference_sin_tilt": 0.15,
+        "min_coherence": 0.999,
+        "on_refusal": "runs as the uncalibrated baseline and reports the reason",
+        "status": "not attempted yet",
+        "calibrated": false,
+        "reference_unit_gravity": null,
+        "reference_sin_tilt": null
+      },
+      "absolute_envelope": {
+        "deadband": 0.18,
+        "abort": 0.3,
+        "latch_calls": 50,
+        "action": "wheel request scaled by a ramp between deadband and abort; on abort or inverted gravity the baseline is fed the raw (unrotated) proprio and a zero wheel request, which triggers its native abort and immediate stop",
+        "rates": "base angular velocity is never rewritten, so the baseline's rate gate and yaw readings stay raw"
+      },
+      "unchanged": [
+        "all baseline gains, caps, slew rates, leg limits and abort thresholds",
+        "arm entries are the incoming bytes",
+        "an all-zero wheel request still stops immediately and clears wheel memory",
+        "float32, finiteness, gravity-norm and inverted-gravity boundaries"
+      ]
+    }
+  },
+  "diagnostics_not_visible_to_policy": {
+    "note": "recorded for auditing only; never passed to the policy",
+    "env_origin": [
+      -10.0,
+      -10.0,
+      0.0
+    ],
+    "initial_base_xyz": [
+      -10.000272750854492,
+      -9.999722480773926,
+      0.7881918549537659
+    ],
+    "initial_base_quat_wxyz": [
+      0.9999999403953552,
+      2.0915000277454965e-05,
+      4.38609131379053e-05,
+      1.7596534235053696e-05
+    ],
+    "initial_joint_pos": [
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.800000011920929,
+      0.800000011920929,
+      1.0,
+      1.0,
+      0.0,
+      -1.5,
+      -1.5,
+      -1.5,
+      -1.5,
+      0.15700006484985352,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.14835000038146973,
+      0.0,
+      0.0,
+      0.0,
+      0.0017499998211860657,
+      -0.0017499998211860657
+    ],
+    "initial_object_xyz": {
+      "object_1": [
+        -7.260439395904541,
+        -10.611215591430664,
+        0.1492740362882614
+      ],
+      "object_2": [
+        -6.414021015167236,
+        -8.02631950378418,
+        0.1492740362882614
+      ],
+      "object_3": [
+        -14.058226585388184,
+        -5.243776321411133,
+        0.1492740362882614
+      ],
+      "object_4": [
+        -7.388603210449219,
+        -7.139357089996338,
+        0.1492740362882614
+      ],
+      "object_5": [
+        -13.718863487243652,
+        -10.496140480041504,
+        0.1492740362882614
+      ],
+      "object_6": [
+        -11.292019844055176,
+        -5.7323503494262695,
+        0.1492740362882614
+      ],
+      "object_7": [
+        -8.561281204223633,
+        -6.772592544555664,
+        0.10508875548839569
+      ],
+      "object_8": [
+        -10.565790176391602,
+        -12.727821350097656,
+        0.10508875548839569
+      ],
+      "object_9": [
+        -9.454084396362305,
+        -14.36203670501709,
+        0.10508875548839569
+      ],
+      "object_10": [
+        -6.723618984222412,
+        -8.683565139770508,
+        0.10508875548839569
+      ],
+      "object_11": [
+        -7.419053554534912,
+        -11.454949378967285,
+        0.10508875548839569
+      ],
+      "object_12": [
+        -5.292950630187988,
+        -6.068997859954834,
+        0.10508875548839569
+      ],
+      "object_13": [
+        -7.216165065765381,
+        -13.05361270904541,
+        0.09927403181791306
+      ],
+      "object_14": [
+        -10.33279037475586,
+        -14.561962127685547,
+        0.09927403181791306
+      ],
+      "object_15": [
+        -13.457104682922363,
+        -8.169510841369629,
+        0.09927403181791306
+      ],
+      "object_16": [
+        -7.5523786544799805,
+        -5.324902534484863,
+        0.09927403181791306
+      ],
+      "object_17": [
+        -11.741745948791504,
+        -11.295402526855469,
+        0.09927403181791306
+      ],
+      "object_18": [
+        -10.304441452026367,
+        -13.105286598205566,
+        0.09927403181791306
+      ]
+    }
+  }
+}

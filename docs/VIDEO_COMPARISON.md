@@ -41,3 +41,13 @@
 | DLS + 模仿学习修正 | **18/18** | **52.84 s** | `task_e_cartesian_bc_seed1.mp4` |
 
 三段均按 **1× 仿真时间**展示，结尾另有 2 秒结果定格。学习版本比原规则少 16.07%、比纯 DLS 少 16.34%，主要来自放置阶段减少等待。每组只有一次运行，且学生在最后松爪前已触发满分终止；本轮没有另做释放后的稳定留篮验证。方法、范围和原始证据见 [模仿学习说明](TASK_E_IMITATION.md)。
+
+## Task A：新增关闭残差对照
+
+[基础策略完整失败原片](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-method-comparison-20260910/d1g2_taska_base_only_seed42.mp4)：seed 42，最大前向进展 31.296 m，86.96 s 因停滞退出；不是通关用时。[对照条件与论文参考](TASK_A_COMPARISON.md)。全部既有录像继续保留。
+
+## Task B：得分前录像保留在本机
+
+按用户要求，Task B 得分前的录像暂不上传 GitHub。当前全部为 0 分；本机原片继续保留，后续取得正分再上传对应视频。[实验比较与失败分析](TASK_B_EXPERIMENTS.md)、[数据 JSON](../results/task_b_bootstrap/comparison.json) 和 [证据数据包](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-bootstrap-20260910) 可以公开核验；比较 JSON 中的 `video.published=false`、`url=null` 表示没有公开视频链接。
+
+本机录像由官方头部和腕部 RGB 横向拼接，1280×480、10 fps、原速。最后一次自动复位后的图像不作为碰撞现场；终止原因以复位前记录为准。已有 Task A/E 视频继续保留。

@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 6973,
+      "sha256": "96d22e85c44ed252b5c25f6e6c905deeebf30d3e828c8f06121ea949c7a923c4"
+    },
+    "environment_metadata.json": {
+      "bytes": 18184,
+      "sha256": "cdca958402d298be40acf5f5320eaf4c56f1d8f0262cbc5be3bac6b5b1f56bde"
+    },
+    "source_manifest.json": {
+      "bytes": 17510,
+      "sha256": "5a9ff8b3e7cce0b66392e829d0f0f12071b7a7c5ca24da9b34fa16797a5ffc69"
+    },
+    "telemetry.npz": {
+      "bytes": 98090,
+      "sha256": "7e53b15516401d7e07cb7406871be428b9ca61d320efffcd6a38bef5d9c2f238"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 9279,
+      "sha256": "14b7e9bda9a6b4610ac3ce5ccc33deb744e67a90707c267ba0a8170793df5308",
+      "uncompressed_sha256": "9be822be78224821de57c842792bbbe33f9804b8734a8ef0b67d83ce3e0f3a10",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/hold_seed42_03",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

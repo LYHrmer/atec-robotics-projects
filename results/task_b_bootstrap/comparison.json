@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "task": "ATEC-TaskB-B2wPiper",
+  "official_online_result": false,
+  "scope": "single-seed local staged experiments; survival/nearby-gripper reward is not a grasp/pass",
+  "source": "raw official environment returns, diagnostic-only state, all source result files unchanged",
+  "rows": [
+    {
+      "id": "crouch_seed42_02",
+      "mode": "crouch",
+      "seed": 42,
+      "steps": 195,
+      "sim_seconds": 3.9,
+      "stop_reason": "terminated",
+      "terminated": true,
+      "active_termination_terms": [
+        "illegal_contact"
+      ],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 195,
+        "sample_time_span_s": 1.9000000000000001,
+        "delta_xyz_m": [
+          -0.17327499389648438,
+          0.012388229370117188,
+          -0.19283640384674072
+        ],
+        "yaw_delta_deg": 0.15080784261226654,
+        "minimum_base_z_m": 0.32871824502944946
+      },
+      "terminal_contact_forces_n": {
+        "base_link": 0.0,
+        "FL_hip": 0.0,
+        "FL_thigh": 0.0,
+        "FR_hip": 0.0,
+        "FR_thigh": 0.0,
+        "RL_hip": 0.0,
+        "RL_thigh": 1082.38525390625,
+        "RR_hip": 0.0,
+        "RR_thigh": 0.0
+      },
+      "video": null,
+      "original_result_sha256": "91a420c09c2a3c053f2a04419eb2a254898fdd80be0e3bab2bd24a24b6a0a446"
+    },
+    {
+      "id": "crouch_seed42_03",
+      "mode": "crouch",
+      "seed": 42,
+      "steps": 231,
+      "sim_seconds": 4.62,
+      "stop_reason": "terminated",
+      "terminated": true,
+      "active_termination_terms": [
+        "illegal_contact"
+      ],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 231,
+        "sample_time_span_s": 2.62,
+        "delta_xyz_m": [
+          -0.2147817611694336,
+          0.0002593994140625,
+          -0.15034502744674683
+        ],
+        "yaw_delta_deg": 1.0169305801391602,
+        "minimum_base_z_m": 0.3657183349132538
+      },
+      "terminal_contact_forces_n": {
+        "base_link": 0.0,
+        "FL_hip": 0.0,
+        "FL_thigh": 0.0,
+        "FR_hip": 0.0,
+        "FR_thigh": 0.0,
+        "RL_hip": 0.0,
+        "RL_thigh": 0.0,
+        "RR_hip": 0.0,
+        "RR_thigh": 76.64281463623047
+      },
+      "video": {
+        "name": "crouch_seed42_03.mp4",
+        "bytes": 9066510,
+        "sha256": "89074b667bed118ece1fe60b517bb3707c5c83ebaff0114d3acff61d9e8da2b8",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/crouch_seed42_03/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "f27ff4b7c35ffb87ccb7e89111122edbf317a67373d98ab6a58272e5308841fe"
+    },
+    {
+      "id": "forward_seed42_02",
+      "mode": "forward",
+      "seed": 42,
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 500,
+        "sample_time_span_s": 8.0,
+        "delta_xyz_m": [
+          0.2747955322265625,
+          0.007258415222167969,
+          -0.001264810562133789
+        ],
+        "yaw_delta_deg": 0.35314664244651794,
+        "minimum_base_z_m": 0.5194313526153564
+      },
+      "terminal_contact_forces_n": {},
+      "video": null,
+      "original_result_sha256": "dd00236eb94ee48efadc6935d441c1b7e0e3416dd9cc69c1ac26a511c8301553"
+    },
+    {
+      "id": "hold_seed42_03",
+      "mode": "hold",
+      "seed": 42,
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 500,
+        "sample_time_span_s": 8.0,
+        "delta_xyz_m": [
+          0.04700469970703125,
+          0.0053844451904296875,
+          -0.002761662006378174
+        ],
+        "yaw_delta_deg": 0.33188074827194214,
+        "minimum_base_z_m": 0.5187821388244629
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "hold_seed42_03.mp4",
+        "bytes": 20417391,
+        "sha256": "168c33d3e3fd2e63e76d151e7a0e876831baa816a52a879f8f2eefaf631e02e2",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/hold_seed42_03/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "96d22e85c44ed252b5c25f6e6c905deeebf30d3e828c8f06121ea949c7a923c4"
+    },
+    {
+      "id": "turn_neutral_seed42_01",
+      "mode": "turn",
+      "seed": 42,
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": true,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 500,
+        "sample_time_span_s": 8.0,
+        "delta_xyz_m": [
+          0.03321266174316406,
+          0.006709098815917969,
+          -0.005857884883880615
+        ],
+        "yaw_delta_deg": 1.3662787675857544,
+        "minimum_base_z_m": 0.5156393647193909
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "turn_neutral_seed42_01.mp4",
+        "bytes": 20215629,
+        "sha256": "a61004e2135238fbc43c06282bc562a00fefef0b01a928c189411cd4c1392978",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_neutral_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "59fea3af8657a7c623c8a67a0a43babaaac0cd63e238c1048d32e0e29e2ee6bb"
+    },
+    {
+      "id": "turn_seed42_01",
+      "mode": "turn",
+      "seed": 42,
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 500,
+        "sample_time_span_s": 8.0,
+        "delta_xyz_m": [
+          0.047748565673828125,
+          0.009991645812988281,
+          -0.0032990574836730957
+        ],
+        "yaw_delta_deg": 0.5326959490776062,
+        "minimum_base_z_m": 0.5182520151138306
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "turn_seed42_01.mp4",
+        "bytes": 20413496,
+        "sha256": "deb2fddc50ec4b7141a86e49dad26626af8262d47cf750c947b4c1be8cb88b9b",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "4aeeb9b0c4ba0ff1bf8b7461a6ae0f75c607220a60451796354d2be3727e4584"
+    },
+    {
+      "id": "turn_seed42_03",
+      "mode": "turn",
+      "seed": 42,
+      "steps": 322,
+      "sim_seconds": 6.44,
+      "stop_reason": "terminated",
+      "terminated": true,
+      "active_termination_terms": [
+        "illegal_contact"
+      ],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 322,
+        "sample_time_span_s": 4.44,
+        "delta_xyz_m": [
+          -0.12266731262207031,
+          -0.1569995880126953,
+          -0.06339547038078308
+        ],
+        "yaw_delta_deg": 6.9873456954956055,
+        "minimum_base_z_m": 0.4581591784954071
+      },
+      "terminal_contact_forces_n": {
+        "base_link": 0.0,
+        "FL_hip": 0.0,
+        "FL_thigh": 0.0,
+        "FR_hip": 0.0,
+        "FR_thigh": 0.0,
+        "RL_hip": 0.0,
+        "RL_thigh": 0.0,
+        "RR_hip": 0.0,
+        "RR_thigh": 107.382568359375
+      },
+      "video": {
+        "name": "turn_seed42_03.mp4",
+        "bytes": 12614018,
+        "sha256": "15c14d6b718c536e0457b4a3f557ee0d995a3c76eb9166ba46bf2cd12641f824",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_seed42_03/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "9259c0ee72dc0e0e8365c2d37c3d51c68810e5789c727ab7b9b4adfeb89e7482"
+    },
+    {
+      "id": "turn_stabilized_seed42_01",
+      "mode": "turn",
+      "seed": 42,
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": true,
+      "last_policy_state": null,
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 500,
+        "sample_time_span_s": 8.0,
+        "delta_xyz_m": [
+          0.04781150817871094,
+          0.00902557373046875,
+          -0.0027545690536499023
+        ],
+        "yaw_delta_deg": 0.5264520645141602,
+        "minimum_base_z_m": 0.5187838673591614
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "turn_stabilized_seed42_01.mp4",
+        "bytes": 20394008,
+        "sha256": "ba5b20dd24b98cc46497a46427ae96ebd65fa3e72aa47b0c15136bddd3f61fbc",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_stabilized_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "ef34f070789d1c96179cca3bef9964d32f745ebfe4cd68344070a553156dfb28"
+    },
+    {
+      "id": "visual_approach_seed42_01",
+      "mode": "visual_approach",
+      "seed": 42,
+      "steps": 330,
+      "sim_seconds": 6.6000000000000005,
+      "stop_reason": "terminated",
+      "terminated": true,
+      "active_termination_terms": [
+        "illegal_contact"
+      ],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": "APPROACH",
+      "classification": {
+        "classification": "integration_failure_not_valid_perception_method_baseline",
+        "reason": "Evaluator obtained unresolved observation joint_ids from task.cfg, while ObservationManager resolves a deep copy; FK therefore used incorrect joint order. Fixed in subsequent evaluator using observation_manager.cfg.",
+        "actual_execution_preserved": {
+          "steps": 330,
+          "termination": "illegal_contact",
+          "score": 0
+        },
+        "comparison_limit": "Do not attribute this run to the validated visual/FK algorithm or use it to claim benefit from stabilization."
+      },
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 330,
+        "sample_time_span_s": 4.6000000000000005,
+        "delta_xyz_m": [
+          -0.2187795639038086,
+          0.10254192352294922,
+          -0.0716877281665802
+        ],
+        "yaw_delta_deg": -2.4559850692749023,
+        "minimum_base_z_m": 0.44986692070961
+      },
+      "terminal_contact_forces_n": {
+        "base_link": 0.0,
+        "FL_hip": 0.0,
+        "FL_thigh": 0.0,
+        "FR_hip": 0.0,
+        "FR_thigh": 0.0,
+        "RL_hip": 0.0,
+        "RL_thigh": 1251.917236328125,
+        "RR_hip": 0.0,
+        "RR_thigh": 0.0
+      },
+      "video": {
+        "name": "visual_approach_seed42_01.mp4",
+        "bytes": 12632137,
+        "sha256": "7777127edc4bd1089b2d9162a690b7b276c11857fa789e1dd7e5c919362539fc",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_approach_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "5dc2aa6229db840f2562343eca72a3adc3551d58861cb4d7e8c0c86e368d79a9"
+    },
+    {
+      "id": "visual_approach_seed42_02",
+      "mode": "visual_approach",
+      "seed": 42,
+      "steps": 350,
+      "sim_seconds": 7.0,
+      "stop_reason": "terminated",
+      "terminated": true,
+      "active_termination_terms": [
+        "illegal_contact"
+      ],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": false,
+      "last_policy_state": "NO_VISIBLE_TARGET",
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 350,
+        "sample_time_span_s": 5.0,
+        "delta_xyz_m": [
+          -0.2648887634277344,
+          -0.013284683227539062,
+          -0.09892159700393677
+        ],
+        "yaw_delta_deg": 1.3428207635879517,
+        "minimum_base_z_m": 0.4226330518722534
+      },
+      "terminal_contact_forces_n": {
+        "base_link": 0.0,
+        "FL_hip": 0.0,
+        "FL_thigh": 0.0,
+        "FR_hip": 0.0,
+        "FR_thigh": 0.0,
+        "RL_hip": 0.0,
+        "RL_thigh": 0.0,
+        "RR_hip": 0.0,
+        "RR_thigh": 99.69536590576172
+      },
+      "video": {
+        "name": "visual_approach_seed42_02.mp4",
+        "bytes": 13295677,
+        "sha256": "abeadb5426491c18ef5021ff8a3b47c4342643f2c0b8822c98f65b6b3fa830a1",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_approach_seed42_02/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "d5a1c02f02f50b410f2f1f4596f5af077eadb7c38ad0631ce605fe1e9b47f4b1"
+    },
+    {
+      "id": "visual_head_neutral_seed42_01",
+      "mode": "visual_approach",
+      "seed": 42,
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": true,
+      "last_policy_state": "ALIGN",
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 500,
+        "sample_time_span_s": 8.0,
+        "delta_xyz_m": [
+          -0.02170276641845703,
+          0.03309154510498047,
+          -0.0062621235847473145
+        ],
+        "yaw_delta_deg": -1.6822293996810913,
+        "minimum_base_z_m": 0.5135790705680847
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "visual_head_neutral_seed42_01.mp4",
+        "bytes": 20090157,
+        "sha256": "b47d6e5655af7d45401c09e808ac7569a97eee6bac0b8328f5f1a3ef652ec279",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_head_neutral_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "204cc42a54bd7c3e7714b61e1b6bd84c9a723fbe56949cf9cbaeb83c468237b4"
+    },
+    {
+      "id": "visual_neutral_seed42_01",
+      "mode": "visual_approach",
+      "seed": 42,
+      "steps": 1500,
+      "sim_seconds": 30.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": true,
+      "last_policy_state": "ALIGN",
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 1500,
+        "sample_time_span_s": 28.0,
+        "delta_xyz_m": [
+          0.004343986511230469,
+          0.019680023193359375,
+          -0.007775247097015381
+        ],
+        "yaw_delta_deg": -1.2266764640808105,
+        "minimum_base_z_m": 0.512889564037323
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "visual_neutral_seed42_01.mp4",
+        "bytes": 57465882,
+        "sha256": "85319cc6ff3738779b91ba1fddd34cd1b3cace1f39c92ae6a1e0ca5d98f22267",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_neutral_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "87904343adbc2ad139883afe102cc850f0b42d776b380bcc58aa983d33782286"
+    },
+    {
+      "id": "visual_stabilized_seed42_01",
+      "mode": "visual_approach",
+      "seed": 42,
+      "steps": 1500,
+      "sim_seconds": 30.0,
+      "stop_reason": "max_steps",
+      "terminated": false,
+      "active_termination_terms": [],
+      "raw_score": 0.0,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "is_task_pass": false,
+      "stability_enabled": true,
+      "last_policy_state": "ALIGN",
+      "classification": null,
+      "after_settle": {
+        "start_pre_step_index": 100,
+        "end_pre_step_index": 1500,
+        "sample_time_span_s": 28.0,
+        "delta_xyz_m": [
+          0.045124053955078125,
+          0.0020618438720703125,
+          -0.0027338266372680664
+        ],
+        "yaw_delta_deg": 0.11861548572778702,
+        "minimum_base_z_m": 0.5187995433807373
+      },
+      "terminal_contact_forces_n": {},
+      "video": {
+        "name": "visual_stabilized_seed42_01.mp4",
+        "bytes": 58421096,
+        "sha256": "5247b20be38b8d390419307c0b374a661ffd1329944d35fb144f69c19645a26c",
+        "published": false,
+        "url": null,
+        "local_original": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_stabilized_seed42_01/public_cameras.mp4",
+        "publication_policy": "Keep pre-score Task B videos local, per user instruction.",
+        "definition": "10 Hz public head/wrist RGB; unaccelerated; terminal auto-reset frame excluded"
+      },
+      "original_result_sha256": "aba51831311c013c666be84ffdd6b6c3e9fcb2de923838898f7fa589cd7654d4"
+    }
+  ]
+}

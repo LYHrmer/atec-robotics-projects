@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "calibrates_nominal_tilt_and_preserves_authority": true,
+    "neutral_turn_request_is_not_permanently_cut_by_nominal_pitch": true,
+    "caller_arrays_unchanged_and_arm_preserved": true,
+    "zero_wheel_request_immediate_stop": true,
+    "proper_rotation": true,
+    "inverted_cannot_be_hidden_by_reference": true,
+    "inverted_absolute_diagnostic_reports_180_degrees": true,
+    "horizontal_cannot_be_hidden_by_reference": true,
+    "absolute_tilt_cannot_be_hidden_by_reference": true,
+    "excessive_reference_refused": true,
+    "moving_reference_refused": true,
+    "reference_frozen_after_settle": true,
+    "reset_clears_reference": true,
+    "zero_gravity_rejected": true,
+    "nonfinite_gravity_rejected": true,
+    "huge_gravity_rejected": true,
+    "float32_overflow_rejected": true,
+    "absolute_gate_cannot_hide_wheel_input_overflow": true,
+    "bounded_action_outputs_unchanged_by_input_validation_fix_500_frames": true,
+    "disabled_profile_matches_baseline_500_frames": true,
+    "actual_recorded_settle_calibrates": true
+  },
+  "passed": true,
+  "count": 21,
+  "recorded_settle_replay": {
+    "source": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_stabilized_seed42_01/telemetry.npz",
+    "sha256": "b397a15b43970e4421ab5c7b4faaef7f0ff0330b75dba1e43d67c196d5b5fc30",
+    "calibrated": true,
+    "reason": "frozen at call 100 from 20 samples: sin(tilt) 0.0508, spread 0.0150 rad, max rate 0.1070 rad/s",
+    "interpretation": "CPU replay of recorded settle observations only; not a new physical episode"
+  },
+  "profile_source_sha256": "8f6cfeba863678370c3ec0fcfb63dbe73f0737309dc01817d0a09c41ebf94100",
+  "scope": "CPU behavior and boundary tests; no claim of driving/grasping performance"
+}

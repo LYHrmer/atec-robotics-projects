@@ -1,0 +1,50 @@
+{
+  "note": "Offline-only transform consistency check; root and object positions were not inputs to detection or control. Initial object XY is a reference, not final segmentation ground truth. Yellow heuristic is not semantic classification.",
+  "run": "visual_stabilized_seed42_01",
+  "samples": [
+    {
+      "record_step": 106,
+      "vision_call": 106,
+      "diagnostic_world_point": [
+        -7.4526702971542,
+        -11.434461364228941,
+        0.1350031819848727
+      ],
+      "nearest_initial_object": "object_11",
+      "xy_distance_to_initial_object_m": 0.03936805979788783
+    },
+    {
+      "record_step": 500,
+      "vision_call": 496,
+      "diagnostic_world_point": [
+        -7.450017870683961,
+        -11.438360644611091,
+        0.12764629545417738
+      ],
+      "nearest_initial_object": "object_11",
+      "xy_distance_to_initial_object_m": 0.03512798004609206
+    },
+    {
+      "record_step": 1000,
+      "vision_call": 996,
+      "diagnostic_world_point": [
+        -7.448786657737745,
+        -11.437651132360179,
+        0.1281675574685689
+      ],
+      "nearest_initial_object": "object_11",
+      "xy_distance_to_initial_object_m": 0.03439893547408992
+    },
+    {
+      "record_step": 1500,
+      "vision_call": 1496,
+      "diagnostic_world_point": [
+        -7.453366905416244,
+        -11.434734297403224,
+        0.12430864233805217
+      ],
+      "nearest_initial_object": "object_11",
+      "xy_distance_to_initial_object_m": 0.0398253131983546
+    }
+  ]
+}

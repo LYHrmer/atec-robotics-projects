@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 6975,
+      "sha256": "4aeeb9b0c4ba0ff1bf8b7461a6ae0f75c607220a60451796354d2be3727e4584"
+    },
+    "environment_metadata.json": {
+      "bytes": 18184,
+      "sha256": "6bb13e7588edd766bb197d0794a41783f357b101a39a4329aefcc8138aeb5545"
+    },
+    "source_manifest.json": {
+      "bytes": 17510,
+      "sha256": "5a9ff8b3e7cce0b66392e829d0f0f12071b7a7c5ca24da9b34fa16797a5ffc69"
+    },
+    "telemetry.npz": {
+      "bytes": 102508,
+      "sha256": "2448868443e2ab83c2c3186dce59da3b0e7a75e68f9bfd4c57acad7e4f866bb5"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 10395,
+      "sha256": "6d28b26523b44c93ba1342e9e0bcfaca64988da97e8beab64b982c8a76bb95bd",
+      "uncompressed_sha256": "706d2a909dad787c6ba774bda0af27f855f9693d3d65894321d770bae0524f25",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/turn_seed42_01",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

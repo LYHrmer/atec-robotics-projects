@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scope": "synthetic RGB-D CPU geometry/controller checks only; no physical approach claim",
+  "projection_error_max_m": 0.0,
+  "component_count": 1,
+  "first_100_calls_zero": true,
+  "only_actual_wheel_slice_modified": true,
+  "per_step_valid_command_slew_bound": 0.02,
+  "command_cap": 0.6,
+  "invalid_rgbd_stops": true,
+  "blank_and_invalid_depth_reject": true,
+  "horizontal_yellow_blob_reject": true,
+  "standoff_stops": true,
+  "requested_turn_sign_logic_checked_not_physical_turn": true,
+  "max_observed_action": 0.16715702414512634,
+  "sha256": "b3f51f4a59c5cf8c16cf82af047735daaa6c020dcebeae430de52d1c985ae656",
+  "known_limitation": "Default q=0 EE camera loses ground-level target around body x~2m; head near-field transition or explicit arm viewpoint is needed to achieve .8m."
+}

@@ -1,0 +1,352 @@
+{
+  "generated": "after environment creation, before the first step",
+  "hashed_files": {
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/evaluate.py": {
+      "root": "project",
+      "relative_path": "task_b/evaluate.py",
+      "bytes": 25854,
+      "sha256": "b7f79bedbd86425b016364a0ddeeb4ca70cd9f5c3f59a58d56955a3aea975dae"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/tools/__init__.py": {
+      "root": "project",
+      "relative_path": "tools/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/__init__.py": {
+      "root": "project",
+      "relative_path": "tools/task_e/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/tools/task_e/check_environment.py": {
+      "root": "project",
+      "relative_path": "tools/task_e/check_environment.py",
+      "bytes": 6789,
+      "sha256": "fcb3f250edda2d2c060ee864245a566b8a3a84fd0f5b543c374a616111538c9b"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/envs_base.py",
+      "bytes": 551,
+      "sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/rewards.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/mdp/rewards.py",
+      "bytes": 1081,
+      "sha256": "017f3fcc8439a155239a288dec44dcdf0587a3cf8385ce17003821a08d77638d"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/mdp/__init__.py",
+      "bytes": 62,
+      "sha256": "c37a82c7da7532b69b3050948577a5f16906ee138890a3f4bb92d09aad1fc9a8"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/__init__.py",
+      "bytes": 226,
+      "sha256": "7819fb5ec56a872b678aa079eb9ae92223c0d0d86e882a90cfcbfaa84cd1ba17"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/cfg.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/cfg.py",
+      "bytes": 798,
+      "sha256": "ac2b0a22772584b70b3b5cd19dad8ab3ecd1d378927993bcc1d0f7933984369e"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/b2.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/b2.py",
+      "bytes": 4051,
+      "sha256": "dde3e56631517debf6bfe40415b1f2ab94ee78a48c620bceb0b33dda88107c3c"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/b2w.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/b2w.py",
+      "bytes": 2713,
+      "sha256": "4b88d079b53a6bfc0bd3cf3cd2107c74fd313d73e8f04b6bcec6702d6cdd61c8"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/g1/g1_29dof_dex1.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/g1/g1_29dof_dex1.py",
+      "bytes": 7795,
+      "sha256": "b47e37c20aebf1331bbd6f19b7fb09ed35cdb30fcc82d40875a790d58b7fb4ab"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/piper.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/piper.py",
+      "bytes": 2122,
+      "sha256": "18258c1e075c06f7a53a51380aabd675a095bf1b8e38cf107a57e35a707bde12"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/tron1a.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/tron1a.py",
+      "bytes": 4031,
+      "sha256": "d963e700cae7327ea74f38a76c871ec3577251ffb2dc0cc8a00eef9fc6af6701"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/tron2a.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/tron2a.py",
+      "bytes": 6448,
+      "sha256": "16e8537bbbefb36e435b9f13beab74d77f1e80ea020baad4b9c8b3be06a25d90"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/robots/__init__.py",
+      "bytes": 1039,
+      "sha256": "240b58db48b6e173423c9a913419137fa2a441a86c68752aaaff8e4efd25ba5c"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/terrain_base.py",
+      "bytes": 7076,
+      "sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/envs_base_cfg.py",
+      "bytes": 13889,
+      "sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/__init__.py",
+      "bytes": 405,
+      "sha256": "3e3664c14bd4346f354ac48ba28ac517842f52da5ff3d538ea627f298e83952b"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_a/terrain.py",
+      "bytes": 3217,
+      "sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/rewards.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_a/mdp/rewards.py",
+      "bytes": 11359,
+      "sha256": "6f0941e0ff0749e10cc79e9a14bd7aa49bdfb7afe9ff756049670feb65d5af30"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_a/mdp/terminations.py",
+      "bytes": 452,
+      "sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_a/mdp/__init__.py",
+      "bytes": 51,
+      "sha256": "7a4ca2a473feccca88008dc0586fcf021e78f584fd9cb0de71f3748103e3de4c"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_a/env_cfg.py",
+      "bytes": 8799,
+      "sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_a/__init__.py",
+      "bytes": 1641,
+      "sha256": "68675ddfd91af67a30b9abcfad277d31b043c62e63ca847d4ec51f8d54adea7c"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/terrain.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_b/terrain.py",
+      "bytes": 3615,
+      "sha256": "d7fd6b801199327dba95de156bc235fa7197790728b16227cbafc8cf25e905fc"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_b/object.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/objects/task_b/object.py",
+      "bytes": 4001,
+      "sha256": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/objects/task_e/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/basket.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/objects/task_e/basket.py",
+      "bytes": 900,
+      "sha256": "54e43ded35a8f2ad6dc8c1cb98fce2088eaa04a0cd8dbba982b549e5757bcc44"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/table.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/objects/task_e/table.py",
+      "bytes": 523,
+      "sha256": "730f1310f6be9014e41b2876628872a10d568f3e943528399d9d15a170b05832"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "assets/objects/__init__.py",
+      "bytes": 284,
+      "sha256": "8c456f8c597caca327777acfa0865a4c14ce5075d8b81fce4a953feea64b0304"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/rewards.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_b/mdp/rewards.py",
+      "bytes": 4708,
+      "sha256": "58e54fa477cb84171e9cf550622b31376d597a0a32dfe7447e247ba009360d3c"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/terminations.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_b/mdp/terminations.py",
+      "bytes": 1301,
+      "sha256": "d42f497cd8120735ac481f474b7adba464ca069b3c213233036422cd00f26cee"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_b/mdp/__init__.py",
+      "bytes": 51,
+      "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/env_cfg.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_b/env_cfg.py",
+      "bytes": 10153,
+      "sha256": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_b/__init__.py",
+      "bytes": 1641,
+      "sha256": "0f750f36dbc286a07498f3ce03cc591faa2adf66b473a96e5810e17199e9e912"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/terrain.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_d/terrain.py",
+      "bytes": 6739,
+      "sha256": "42b0a2a0a8b5b85ccf474f8cc9ed71315bf4d69ecae626fef5f016b92a661fea"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/rewards.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_d/mdp/rewards.py",
+      "bytes": 13055,
+      "sha256": "c572549f2c2609ef6bc9ff1376ccd67ae641faaec793d94bdf48774a62e48d46"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/terminations.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_d/mdp/terminations.py",
+      "bytes": 569,
+      "sha256": "e3d4e08f7242c0a415a347c022d7edffafb5797dc5178fae95b3e0ed27a70ade"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_d/mdp/__init__.py",
+      "bytes": 51,
+      "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/env_cfg.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_d/env_cfg.py",
+      "bytes": 11603,
+      "sha256": "536c02b9d63250805c2fd0d42b5b089a9809a54591fc6cf0bd08599e394c3c19"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_d/__init__.py",
+      "bytes": 1683,
+      "sha256": "051a9e6351a6157a297f45cfc07f39e3c48485ec0d1d3e668e3271a30119c813"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/rewards.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_e/mdp/rewards.py",
+      "bytes": 4416,
+      "sha256": "80121ef00a27cf335242eb0ead7925e31c111bab877bf094a6d630aca4eb8d74"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/terminations.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_e/mdp/terminations.py",
+      "bytes": 1472,
+      "sha256": "7e8f205d6baba71769e3101554ebef0d5a245ac75cb3130cd30aa56801298a3c"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_e/mdp/__init__.py",
+      "bytes": 51,
+      "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/terrain.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_e/terrain.py",
+      "bytes": 724,
+      "sha256": "1c950bcad48280d4ae9409a5ba2e3eae1901dd0d35d15f59896d594f08af049d"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/env_cfg.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_e/env_cfg.py",
+      "bytes": 10008,
+      "sha256": "af5d1cfa3977e4b32c4704e78b60af590e99330628032bab9f4ec83fdd902e51"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_e/__init__.py",
+      "bytes": 327,
+      "sha256": "25acc6ac000ecb422731e56ff4c8ecf1c144fc2a5a0f9a0462a88ed444b77782"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/__init__.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/__init__.py",
+      "bytes": 98,
+      "sha256": "8d56cc8c7dc3ed0dc89f9c4ea4fb57d2aed76481199db1858b66ff26bfbfbf96"
+    },
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/action_base.py": {
+      "root": "atec_rl_lab",
+      "relative_path": "tasks/task_base/action_base.py",
+      "bytes": 8110,
+      "sha256": "a5e6d366cfd6fbdbff61b55f5e9a30ee0a9a50684abab1c8dc846502f2a09ee6"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/__init__.py": {
+      "root": "project",
+      "relative_path": "task_a/tools/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_camera_compat.py": {
+      "root": "project",
+      "relative_path": "task_a/tools/d1g2_taska_camera_compat.py",
+      "bytes": 1925,
+      "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/__init__.py": {
+      "root": "project",
+      "relative_path": "task_b/__init__.py",
+      "bytes": 427,
+      "sha256": "e2ae23048fde81d709d2af393bbd02fbd086797893146ed79ec80e34193690ea"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/control.py": {
+      "root": "project",
+      "relative_path": "task_b/control.py",
+      "bytes": 14338,
+      "sha256": "49dac62792facfae6264d1afb1f67c64c6f672e094f400cb7defd76e1710f9db"
+    },
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/diagnostics.py": {
+      "root": "project",
+      "relative_path": "task_b/diagnostics.py",
+      "bytes": 5052,
+      "sha256": "bb3cc76a0a6358ac9ec5e4c31c815a1012dead33f91007683dfffffe038c3452"
+    }
+  },
+  "no_physics_change_assertion": {
+    "claim": "This run did not modify the official physics, assets, action terms, reward terms or termination terms.",
+    "basis": "configured, not measured: the evaluator constructs the official TaskBEnvB2WCfg and only sets scene.num_envs=1, sim.device and sim.use_fabric, then calls the official apply_safe_action_spec with no participant action spec.",
+    "covered_by_hashes": "the exact bootstrap and atec_rl_lab .py sources loaded in this process",
+    "not_covered_by_hashes": [
+      "USD/USDA robot, object and scene assets, textures and MDL materials",
+      "Isaac Lab and Isaac Sim packages, Kit experience files and GPU drivers",
+      "runtime monkeypatching, including the Isaac Sim 4.5 camera Fabric pose reader that this evaluator installs on purpose (see result.json:camera_fabric_compatibility)",
+      "whether the installed original repository itself matches upstream"
+    ]
+  }
+}

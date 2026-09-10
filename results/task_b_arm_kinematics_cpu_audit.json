@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "CPU static geometry only; no physical grasp/balance/collision proof",
+  "random_seed": 17,
+  "samples": 30,
+  "usd_fk_position_error_m_max": 7.976679627913133e-08,
+  "usd_fk_rotation_error_rad_max": 6.456645982521731e-07,
+  "numeric_jacobian_error_max": 1.9595458589094505e-10,
+  "task_e_rigid_frame_equivalence": true,
+  "task_e_dls_delta_error_max": 2.3869795029440866e-15,
+  "ik_roundtrip_samples": 8,
+  "ik_position_error_max": 1.0740455071854829e-08,
+  "ik_rotation_error_max": 3.131911130928334e-08,
+  "observed_vs_action_joint_order_and_defaults_checked": true,
+  "gripper_open_closed_preload_checked": true,
+  "sha256": {
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/robot/b2w/b2w_piper.usda": "516e1b838869289f4b61eef8846ecee167dbd51f55746dca023b05f887fd03db",
+    "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+    "task_b/arm_kinematics.py": "7598dd62e32a72d7fb121704325ee32dc7e81944a0b7369da06a48fe4d8e9d3d"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "scope": "CPU only; no simulator or GPU",
+  "checks": {
+    "public_layout_84_correct": true,
+    "first_100_bootstrap_zero_outputs": true,
+    "normal_drive_reaches_requested_value": true,
+    "zero_request_stops_without_slew_tail": true,
+    "inverted_or_horizontal_(0, 0, 1)_aborts": true,
+    "inverted_or_horizontal_(1, 0, 0)_aborts": true,
+    "invalid_gravity_norm_and_finiteness_rejected": true,
+    "float32_overflow_rejected_before_and_after_settle": true,
+    "non_strict_bad_proprio_aborts_and_retracts": true,
+    "reordered_terms_observations_scales_arm_preservation": true,
+    "finite_random_outputs_wheel_caps_leg_physical_bounds": true,
+    "leg_off_preserves_in_range_incoming_legs": true,
+    "unsupported_leg_clip_rejected": true,
+    "roll_pitch_gravity_selects_geometrically_lower_corners": true
+  },
+  "numerical": {
+    "arm_preservation_error_max": 0.0,
+    "physical_joint_bound_float32_error_max": 5.1498413200512516e-08
+  },
+  "remaining_limitations": [
+    "H3 is validated only as a local static extension direction; dynamic benefit requires paired physical runs.",
+    "First 100 calls preserve incoming float32 actions. They are zero only when the upstream bootstrap emits zero.",
+    "Normal tilt/rate gains unchanged. A short single-seed survival run is not proof of safe steering or useful motion.",
+    "Arm values are preserved, not certified safe; invalid actions always raise even with strict=False.",
+    "Wheel default velocity offsets must remain zero; they are not encoded in the present schema."
+  ],
+  "normal_sequence_parity": {
+    "frames": 500,
+    "bit_exact_float32": true,
+    "max_error": 0.0,
+    "source": "/tmp/taskb_stability_before_hypsel6y/parity.npz"
+  },
+  "usd_geometry": {
+    "passed": true,
+    "usd": "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/robot/b2w/b2w_piper.usda",
+    "sha256": "516e1b838869289f4b61eef8846ecee167dbd51f55746dca023b05f887fd03db",
+    "corners": {
+      "FR": {
+        "default_foot_body_xyz": [
+          0.3029015617769021,
+          -0.24310808475268864,
+          -0.496942442391909
+        ],
+        "negative_012_unit_foot_delta": [
+          -0.003856942253329221,
+          -0.0013873780025614457,
+          -0.013827503232181848
+        ]
+      },
+      "FL": {
+        "default_foot_body_xyz": [
+          0.3029015617769021,
+          0.24211308253104266,
+          -0.49704227561354214
+        ],
+        "negative_012_unit_foot_delta": [
+          -0.003856942253329221,
+          0.0013873780025614735,
+          -0.013827503232181793
+        ]
+      },
+      "RR": {
+        "default_foot_body_xyz": [
+          -0.45521590663593814,
+          -0.24158238956323105,
+          -0.48173638094030824
+        ],
+        "negative_012_unit_foot_delta": [
+          -0.0065409539778791825,
+          -0.0012832248430207915,
+          -0.012789445725481019
+        ]
+      },
+      "RL": {
+        "default_foot_body_xyz": [
+          -0.45521590663593814,
+          0.24058738535069288,
+          -0.4818362143616969
+        ],
+        "negative_012_unit_foot_delta": [
+          -0.0065409539778791825,
+          0.0012832248430207915,
+          -0.012789445725481019
+        ]
+      }
+    },
+    "interpretation": "Static foot lowering relative to body supports the extension sign near default. Does not prove dynamic levelling or balance."
+  },
+  "source_sha256": {
+    "task_b/stability.py": "73c64b0de4eba75bd53768ca22497c01b27afa3ea7c2c5b88b8f2febd412e306",
+    "task_b/control.py": "4001b889d390291751371ec96d056d0fd0cb7201be68998edc33abf5991c2f0b",
+    "task_b/audit_stability.py": "694fddbb67456d7b209bc043755744a90d516e85f1036c7ff141fe65df825804"
+  }
+}

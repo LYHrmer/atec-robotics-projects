@@ -1,0 +1,377 @@
+{
+  "status": "passed",
+  "camera_config_and_ray_mapping": {
+    "passed": true,
+    "head_rotation_vs_actual_camera_convention_max_error": 1.1920928955078125e-07,
+    "head_position": [
+      0.4216099977493286,
+      0.02500000037252903,
+      0.06185099855065346
+    ],
+    "head_optical_forward_body": [
+      0.8660254037844387,
+      0.0,
+      -0.49999999999999994
+    ],
+    "head_image_right_body": [
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "actual_sensor_intrinsic_builder": {
+      "ee": [
+        [
+          458.12455261274164,
+          0.0,
+          320.0
+        ],
+        [
+          0.0,
+          458.12455261274164,
+          240.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "head": [
+        [
+          732.9992841803866,
+          0.0,
+          320.0
+        ],
+        [
+          0.0,
+          732.9992841803866,
+          240.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "source_sha256": {
+      "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/b2.py": "dde3e56631517debf6bfe40415b1f2ab94ee78a48c620bceb0b33dda88107c3c",
+      "/home/lybm/IsaacLab/source/isaaclab/isaaclab/utils/math.py": "881ab27758816475e26d6721bab22c934fd70d0c064392266a90b06f5bbe4149",
+      "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/camera/camera.py": "a3689cffa01d046b510f7564f7adad972edf6316568b0e323abc2c4f0c4ec354"
+    },
+    "scope": "Actual local configuration and sensor math executed on CPU. Not a live-rendered calibration or camera-timestamp test."
+  },
+  "handoff": {
+    "passed": true,
+    "camera_body_point_disagreement_m": 0.033589219419741564,
+    "handoff_first_new_camera_frame_stops": true,
+    "second_new_camera_frame_confirms": true,
+    "head_continues_to_082m_and_stops": true,
+    "trace": [
+      {
+        "x": 2.2,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          2.2,
+          0.0002126793418344014,
+          -0.38016147655458266
+        ]
+      },
+      {
+        "x": 2.11375,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          2.1525625,
+          -1.8558243285117835e-06,
+          -0.37057527966062836
+        ]
+      },
+      {
+        "x": 2.0275000000000003,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          2.0837781250000003,
+          0.0005538815299349251,
+          -0.36149484427504763
+        ]
+      },
+      {
+        "x": 1.9412500000000001,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          2.0053876562500004,
+          0.0003124582094703155,
+          -0.35307081751260777
+        ]
+      },
+      {
+        "x": 1.855,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.9226744453125004,
+          -0.00020095810994860143,
+          -0.34846978582750077
+        ]
+      },
+      {
+        "x": 1.76875,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.8380160003906254,
+          -0.00021747035942276845,
+          -0.34641235951934923
+        ]
+      },
+      {
+        "x": 1.6825,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.7524822001757814,
+          -0.0004452316272441022,
+          -0.3459998058833742
+        ]
+      },
+      {
+        "x": 1.59625,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.6665544900791018,
+          -0.0001806387046248162,
+          -0.34459215163865586
+        ]
+      },
+      {
+        "x": 1.51,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.580449520535596,
+          -8.669009441252462e-05,
+          -0.3445552470282673
+        ]
+      },
+      {
+        "x": 1.42375,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.4942647842410182,
+          4.802136481339437e-05,
+          -0.344594180901147
+        ]
+      },
+      {
+        "x": 1.3375,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.4080441529084582,
+          0.00031455307180608356,
+          -0.3445483626025684
+        ]
+      },
+      {
+        "x": 1.25125,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.3218073688088063,
+          5.994051402218048e-05,
+          -0.34454638254948566
+        ]
+      },
+      {
+        "x": 1.165,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.235563315963963,
+          -0.00019487325510891322,
+          -0.3438858809716777
+        ]
+      },
+      {
+        "x": 1.0787499999999999,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.1493159921837832,
+          -0.00022102110235539644,
+          -0.34275981261774513
+        ]
+      },
+      {
+        "x": 0.9924999999999999,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          1.063067250714941,
+          -0.00018169025164528672,
+          -0.3415867122339463
+        ]
+      },
+      {
+        "x": 0.9062499999999998,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          0.9768177628217234,
+          0.00016122919557149494,
+          -0.3408163589711969
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          0.8905679932697754,
+          0.00021037085350891722,
+          -0.32675657062419927
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "APPROACH",
+        "source": "head",
+        "body": [
+          0.8517555969713989,
+          0.00023248459958075723,
+          -0.32042966586805033
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8342900186371295,
+          0.00024243578531308522,
+          -0.3175825587277833
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8264305083867083,
+          0.0002469138188926328,
+          -0.3163013605146631
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8228937287740187,
+          0.00024892893400342927,
+          -0.315724821318759
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8213021779483083,
+          0.00024983573580328767,
+          -0.3154653786806022
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8205859800767388,
+          0.00025024379661322394,
+          -0.3153486294934316
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8202636910345324,
+          0.00025042742397769524,
+          -0.31529609235920486
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8201186609655395,
+          0.0002505100562917073,
+          -0.3152724506488028
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8200533974344928,
+          0.00025054724083301276,
+          -0.31526181187912194
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8200240288455217,
+          0.0002505639738766002,
+          -0.3152570244327655
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.8200108129804847,
+          0.00025057150374621455,
+          -0.3152548700819051
+        ]
+      },
+      {
+        "x": 0.82,
+        "state": "AT_STANDOFF",
+        "source": "head",
+        "body": [
+          0.820004865841218,
+          0.000250574892187541,
+          -0.3152539006240179
+        ]
+      }
+    ],
+    "scope": "Synthetic observed rectangle and real fixed camera transforms; no physical approach claim."
+  },
+  "ee_only_parity": {
+    "passed": true,
+    "frames": 500,
+    "max_action_error": 0.0,
+    "actions_states_debug_identical": true,
+    "baseline_file": "/tmp/taskb_visual_before_head_btttsct0/visual_approach.py",
+    "baseline_sha256": "b3f51f4a59c5cf8c16cf82af047735daaa6c020dcebeae430de52d1c985ae656"
+  },
+  "source_sha256": {
+    "task_b/arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "task_b/visual_approach.py": "028850d002029db7be80843b4ef80d581b84de5601e5cfccafb8707410c9dbf4",
+    "task_b/audit_visual_handoff.py": "4057924cd90070754c341ed6a4316e6e6aec2157d66248e7d2d454bd4db73ffc"
+  }
+}

@@ -1,0 +1,772 @@
+{
+  "schema_version": 1,
+  "reviewed_at_local": "2026-09-10T17:10:13.907223+08:00",
+  "review_scope": "Bounded independent CPU/read-only release audit; no GPU, Git, network, source/model/physics edits. This JSON is the only new artifact.",
+  "release_conclusion": "Suitable to publish as zero-score staged experiments, not a Task B grasp/delivery/pass. No evidence-integrity or control-input blocker found. The original-action input-range finding was fixed by the root agent and independently rechecked on CPU. Three nonblocking diagnostic/documentation limitations remain. No new GPU run was performed for the boundary-only patch.",
+  "official_online_result": false,
+  "comparison_sha256": "e628e80c9b25e9c8219d7a3b55fca2c338170cdd439b5b2c56d3fa8b771256b2",
+  "run_count": 13,
+  "total_physics_steps": 7428,
+  "artifact_checks_passed": true,
+  "failed_checks": [],
+  "runs": [
+    {
+      "id": "crouch_seed42_02",
+      "steps": 195,
+      "sim_seconds": 3.9,
+      "raw_score": 0.0,
+      "terminated": true,
+      "active_terms": [
+        "illegal_contact"
+      ],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "pre_reset_snapshot_captured": true
+      }
+    },
+    {
+      "id": "crouch_seed42_03",
+      "steps": 231,
+      "sim_seconds": 4.62,
+      "raw_score": 0.0,
+      "terminated": true,
+      "active_terms": [
+        "illegal_contact"
+      ],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "pre_reset_snapshot_captured": true
+      }
+    },
+    {
+      "id": "forward_seed42_02",
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true
+      }
+    },
+    {
+      "id": "hold_seed42_03",
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true
+      }
+    },
+    {
+      "id": "turn_neutral_seed42_01",
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": 7.450580596923828e-09,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "resolved_observation_q_order": true
+      }
+    },
+    {
+      "id": "turn_seed42_01",
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true
+      }
+    },
+    {
+      "id": "turn_seed42_03",
+      "steps": 322,
+      "sim_seconds": 6.44,
+      "raw_score": 0.0,
+      "terminated": true,
+      "active_terms": [
+        "illegal_contact"
+      ],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "pre_reset_snapshot_captured": true
+      }
+    },
+    {
+      "id": "turn_stabilized_seed42_01",
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": null,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true
+      }
+    },
+    {
+      "id": "visual_approach_seed42_01",
+      "steps": 330,
+      "sim_seconds": 6.6000000000000005,
+      "raw_score": 0.0,
+      "terminated": true,
+      "active_terms": [
+        "illegal_contact"
+      ],
+      "max_observation_joint_error_rad": null,
+      "classification": {
+        "classification": "integration_failure_not_valid_perception_method_baseline",
+        "reason": "Evaluator obtained unresolved observation joint_ids from task.cfg, while ObservationManager resolves a deep copy; FK therefore used incorrect joint order. Fixed in subsequent evaluator using observation_manager.cfg.",
+        "actual_execution_preserved": {
+          "steps": 330,
+          "termination": "illegal_contact",
+          "score": 0
+        },
+        "comparison_limit": "Do not attribute this run to the validated visual/FK algorithm or use it to claim benefit from stabilization."
+      },
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "pre_reset_snapshot_captured": true
+      }
+    },
+    {
+      "id": "visual_approach_seed42_02",
+      "steps": 350,
+      "sim_seconds": 7.0,
+      "raw_score": 0.0,
+      "terminated": true,
+      "active_terms": [
+        "illegal_contact"
+      ],
+      "max_observation_joint_error_rad": 7.450580596923828e-09,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "pre_reset_snapshot_captured": true,
+        "resolved_observation_q_order": true
+      }
+    },
+    {
+      "id": "visual_head_neutral_seed42_01",
+      "steps": 500,
+      "sim_seconds": 10.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": 7.450580596923828e-09,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "resolved_observation_q_order": true
+      }
+    },
+    {
+      "id": "visual_neutral_seed42_01",
+      "steps": 1500,
+      "sim_seconds": 30.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": 7.450580596923828e-09,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "resolved_observation_q_order": true
+      }
+    },
+    {
+      "id": "visual_stabilized_seed42_01",
+      "steps": 1500,
+      "sim_seconds": 30.0,
+      "raw_score": 0.0,
+      "terminated": false,
+      "active_terms": [],
+      "max_observation_joint_error_rad": 7.450580596923828e-09,
+      "classification": null,
+      "checks": {
+        "comparison_result_sha": true,
+        "packaged_files_sha": true,
+        "trace_lossless_sha": true,
+        "original_result_unchanged": true,
+        "step_count": true,
+        "step_sequence": true,
+        "time_matches_dt": true,
+        "finite_actions": true,
+        "score_recomputed": true,
+        "term_total_matches": true,
+        "zero_score_no_pass_claim": true,
+        "stopped_first_termination": true,
+        "resolved_observation_q_order": true
+      }
+    }
+  ],
+  "input_boundary": {
+    "policy_call_sites": [
+      "task_b/evaluate.py:265 VisualApproachPolicy(schema, resolved observed names, static defaults, dt)",
+      "task_b/evaluate.py:370 policy.act(public proprio, public image dict)",
+      "task_b/evaluate.py:373 stabilizer.apply(requested_action, public proprio)"
+    ],
+    "diagnostic_only": [
+      "evaluate.py:163 sample_state reads root pose/contact/joint buffers for logging",
+      "evaluate.py:288 capture_terminal copies official flags/contact/object poses before reset",
+      "evaluate.py:332 initial diagnostic metadata",
+      "evaluate.py:359-366 observed q order check may fail fast on mismatch but does not supply simulator q to policy"
+    ],
+    "no_root_pose_object_pose_or_terrain_height_argument_to_policy": true,
+    "image_classification_limit": "Yellow tall-shape heuristic and median depth; not a validated semantic mustard classifier. Head handoff is an opt-in and its CPU test does not establish a real approach/grasp.",
+    "initial_mapping_failure_explicitly_excluded": "visual_approach_seed42_01 is marked integration_failure_not_valid_perception_method_baseline; original result preserved."
+  },
+  "original_source_check": {
+    "current_loaded_atec_sources_match_archived_hashes": true,
+    "unique_loaded_atec_python_files": 47,
+    "files": [
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/__init__.py",
+        "sha256": "7819fb5ec56a872b678aa079eb9ae92223c0d0d86e882a90cfcbfaa84cd1ba17",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/__init__.py",
+        "sha256": "8c456f8c597caca327777acfa0865a4c14ce5075d8b81fce4a953feea64b0304",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_b/object.py",
+        "sha256": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/basket.py",
+        "sha256": "54e43ded35a8f2ad6dc8c1cb98fce2088eaa04a0cd8dbba982b549e5757bcc44",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/table.py",
+        "sha256": "730f1310f6be9014e41b2876628872a10d568f3e943528399d9d15a170b05832",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/__init__.py",
+        "sha256": "240b58db48b6e173423c9a913419137fa2a441a86c68752aaaff8e4efd25ba5c",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/b2.py",
+        "sha256": "dde3e56631517debf6bfe40415b1f2ab94ee78a48c620bceb0b33dda88107c3c",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/b2w.py",
+        "sha256": "4b88d079b53a6bfc0bd3cf3cd2107c74fd313d73e8f04b6bcec6702d6cdd61c8",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/cfg.py",
+        "sha256": "ac2b0a22772584b70b3b5cd19dad8ab3ecd1d378927993bcc1d0f7933984369e",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/g1/g1_29dof_dex1.py",
+        "sha256": "b47e37c20aebf1331bbd6f19b7fb09ed35cdb30fcc82d40875a790d58b7fb4ab",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/piper.py",
+        "sha256": "18258c1e075c06f7a53a51380aabd675a095bf1b8e38cf107a57e35a707bde12",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/tron1a.py",
+        "sha256": "d963e700cae7327ea74f38a76c871ec3577251ffb2dc0cc8a00eef9fc6af6701",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/robots/tron2a.py",
+        "sha256": "16e8537bbbefb36e435b9f13beab74d77f1e80ea020baad4b9c8b3be06a25d90",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/__init__.py",
+        "sha256": "8d56cc8c7dc3ed0dc89f9c4ea4fb57d2aed76481199db1858b66ff26bfbfbf96",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/__init__.py",
+        "sha256": "68675ddfd91af67a30b9abcfad277d31b043c62e63ca847d4ec51f8d54adea7c",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+        "sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/__init__.py",
+        "sha256": "7a4ca2a473feccca88008dc0586fcf021e78f584fd9cb0de71f3748103e3de4c",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/rewards.py",
+        "sha256": "6f0941e0ff0749e10cc79e9a14bd7aa49bdfb7afe9ff756049670feb65d5af30",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+        "sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+        "sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/__init__.py",
+        "sha256": "0f750f36dbc286a07498f3ce03cc591faa2adf66b473a96e5810e17199e9e912",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/env_cfg.py",
+        "sha256": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/__init__.py",
+        "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/rewards.py",
+        "sha256": "58e54fa477cb84171e9cf550622b31376d597a0a32dfe7447e247ba009360d3c",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/terminations.py",
+        "sha256": "d42f497cd8120735ac481f474b7adba464ca069b3c213233036422cd00f26cee",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/terrain.py",
+        "sha256": "d7fd6b801199327dba95de156bc235fa7197790728b16227cbafc8cf25e905fc",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/__init__.py",
+        "sha256": "3e3664c14bd4346f354ac48ba28ac517842f52da5ff3d538ea627f298e83952b",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/action_base.py",
+        "sha256": "a5e6d366cfd6fbdbff61b55f5e9a30ee0a9a50684abab1c8dc846502f2a09ee6",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+        "sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+        "sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/__init__.py",
+        "sha256": "c37a82c7da7532b69b3050948577a5f16906ee138890a3f4bb92d09aad1fc9a8",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/rewards.py",
+        "sha256": "017f3fcc8439a155239a288dec44dcdf0587a3cf8385ce17003821a08d77638d",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+        "sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/__init__.py",
+        "sha256": "051a9e6351a6157a297f45cfc07f39e3c48485ec0d1d3e668e3271a30119c813",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/env_cfg.py",
+        "sha256": "536c02b9d63250805c2fd0d42b5b089a9809a54591fc6cf0bd08599e394c3c19",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/__init__.py",
+        "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/rewards.py",
+        "sha256": "c572549f2c2609ef6bc9ff1376ccd67ae641faaec793d94bdf48774a62e48d46",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/terminations.py",
+        "sha256": "e3d4e08f7242c0a415a347c022d7edffafb5797dc5178fae95b3e0ed27a70ade",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_d/terrain.py",
+        "sha256": "42b0a2a0a8b5b85ccf474f8cc9ed71315bf4d69ecae626fef5f016b92a661fea",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/__init__.py",
+        "sha256": "25acc6ac000ecb422731e56ff4c8ecf1c144fc2a5a0f9a0462a88ed444b77782",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/env_cfg.py",
+        "sha256": "af5d1cfa3977e4b32c4704e78b60af590e99330628032bab9f4ec83fdd902e51",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/__init__.py",
+        "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/rewards.py",
+        "sha256": "80121ef00a27cf335242eb0ead7925e31c111bab877bf094a6d630aca4eb8d74",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/terminations.py",
+        "sha256": "7e8f205d6baba71769e3101554ebef0d5a245ac75cb3130cd30aa56801298a3c",
+        "current_match": true
+      },
+      {
+        "path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_e/terrain.py",
+        "sha256": "1c950bcad48280d4ae9409a5ba2e3eae1901dd0d35d15f59896d594f08af049d",
+        "current_match": true
+      }
+    ],
+    "limit": "A hash-only manifest checks listed loaded .py files, not all official assets, Python asset configs outside atec_rl_lab, Isaac/Kit dependencies, runtime patch behavior or upstream equality. No full original-directory before/after hash was captured by this review, so unchanged whole-repository state is not independently proven."
+  },
+  "source_revision_limits": {
+    "archived_task_b_and_camera_hash_versions": {
+      "task_a/tools/d1g2_taska_camera_compat.py": [
+        "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+      ],
+      "task_b/__init__.py": [
+        "e2ae23048fde81d709d2af393bbd02fbd086797893146ed79ec80e34193690ea"
+      ],
+      "task_b/arm_kinematics.py": [
+        "7598dd62e32a72d7fb121704325ee32dc7e81944a0b7369da06a48fe4d8e9d3d",
+        "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591"
+      ],
+      "task_b/control.py": [
+        "4001b889d390291751371ec96d056d0fd0cb7201be68998edc33abf5991c2f0b",
+        "49dac62792facfae6264d1afb1f67c64c6f672e094f400cb7defd76e1710f9db"
+      ],
+      "task_b/diagnostics.py": [
+        "bb3cc76a0a6358ac9ec5e4c31c815a1012dead33f91007683dfffffe038c3452"
+      ],
+      "task_b/evaluate.py": [
+        "1be47f16361f75774e0d11482a9cd0e3b8aafc7f2c15467b8417488c64a4b1a0",
+        "229498ef220c801c131919002c3c1af8bff0db22b0892a22fc62f74fdca373b0",
+        "283a0fe73ff7e4f13514f8ab6adfb459ea4245f891f3f0f4007526519b5d6ec4",
+        "37fb6ec5704785728382911fb3d4a81c73836dae68d1a9452dddd238b138fc70",
+        "5092cb26a33f173a81bad14962c721390df06d1b375826872967d0ef7d71a7bc",
+        "ac83c160152ca6fc8f69a22749f3ae99b88d127fc1796902b174f9f6ad3bff49",
+        "b7f79bedbd86425b016364a0ddeeb4ca70cd9f5c3f59a58d56955a3aea975dae"
+      ],
+      "task_b/stability.py": [
+        "73c64b0de4eba75bd53768ca22497c01b27afa3ea7c2c5b88b8f2febd412e306",
+        "d84a61d541f0b4c82e15208293fc5f4ccaaee2a15c4951cab3862b22dbcd83b3"
+      ],
+      "task_b/stability_profiles.py": [
+        "1bdadc29a1139ca234b0db7e829c8fe895b6397b2a00d51d57432c382e0b19e4"
+      ],
+      "task_b/visual_approach.py": [
+        "028850d002029db7be80843b4ef80d581b84de5601e5cfccafb8707410c9dbf4",
+        "b3f51f4a59c5cf8c16cf82af047735daaa6c020dcebeae430de52d1c985ae656"
+      ]
+    },
+    "note": "Historical runs intentionally use different evaluator/controller revisions. Manifest hashes identify them; current source should not be presented as byte-identical to every historical run. Hashes alone cannot reconstruct omitted historical source bytes."
+  },
+  "neutral_reference_risks": {
+    "frozen_source_sha256": "187d437d52c64f52b2f48f8a076c35c926320ecd6fd004d9f827b1bb25b48afd",
+    "calibration_window": "Last 20 usable public-gravity samples; default .02s calls gives roughly .4s, with omega/spread/coherence/near-down gates; frozen once at call 100.",
+    "assumption": "Flat and stationary startup is an assumption. The class itself does not test zero incoming action; current upstream policies supply zero for first 100 calls. A stable shallow slope can be absorbed as reference.",
+    "sensor_frame": "Gravity alone is rotated; gyro remains raw and leg corner directions remain body axes. Small-reference approximation is explicitly disclosed.",
+    "cpu_negative_cases": {
+      "overflow": {
+        "original_huge_wheel_rejected": true,
+        "error": "Incoming action is not representable as finite float32"
+      },
+      "native_abort": {
+        "absolute_danger": true,
+        "wheel_stop": true,
+        "baseline_state": "active",
+        "baseline_abort_events": 0,
+        "baseline_filtered_sin_tilt": 0.10291176470588237
+      },
+      "inverted_tilt": {
+        "absolute_danger": true,
+        "reported_absolute_tilt_deg": 0.0,
+        "geometrical_absolute_tilt_deg": 180.0,
+        "wheel_stop": true
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "N1",
+      "severity": "low",
+      "release_blocker": false,
+      "file": "task_b/stability_profiles.py:324",
+      "title": "Neutral wrapper does not preserve rejection of all non-float32 input requests",
+      "evidence": {
+        "original_huge_wheel_rejected": true,
+        "error": "Incoming action is not representable as finite float32"
+      },
+      "explanation": "A finite float64 wheel request 1e100 is multiplied by zero at the absolute abort gate before baseline validation. The output remains finite and stopped, but the original request is not rejected. Existing audit_profiles overflow test covers an arm entry, not this wheel case. Actual archived incoming actions are finite float32 and are unaffected.",
+      "recommendation": "In a subsequent unfrozen revision validate original action float32 representability before any profile scaling, and add this negative case.",
+      "status": "Fixed by root after the frozen GPU runs; independently rechecked that 1e100 original wheel request at absolute gate=0 raises StabilityError. Root CPU audit records 20 passing checks including 500 bounded-action before/after bit-exact parity. No additional GPU claim.",
+      "fixed_source_sha256": "187d437d52c64f52b2f48f8a076c35c926320ecd6fd004d9f827b1bb25b48afd"
+    },
+    {
+      "id": "N2",
+      "severity": "low",
+      "release_blocker": false,
+      "file": "task_b/stability_profiles.py:447",
+      "title": "Immediate wheel stop is proven; immediate native baseline abort is not",
+      "evidence": {
+        "absolute_danger": true,
+        "wheel_stop": true,
+        "baseline_state": "active",
+        "baseline_abort_events": 0,
+        "baseline_filtered_sin_tilt": 0.10291176470588237
+      },
+      "explanation": "After a settled reference, one raw sin(tilt)=.4 sample stops all wheels but baseline EMA remains .1029117647 and state remains active. The describe wording claiming this necessarily triggers native abort is too strong. The independent absolute danger flag is correct.",
+      "recommendation": "Describe independent absolute-envelope wheel stop separately from filtered baseline abort; keep historical results unchanged."
+    },
+    {
+      "id": "N3",
+      "severity": "low",
+      "release_blocker": false,
+      "file": "task_b/stability_profiles.py:369",
+      "title": "Absolute tilt diagnostic uses arcsin and loses hemisphere",
+      "evidence": {
+        "absolute_danger": true,
+        "reported_absolute_tilt_deg": 0.0,
+        "geometrical_absolute_tilt_deg": 180.0,
+        "wheel_stop": true
+      },
+      "explanation": "Inverted gravity (0,0,+1) reports absolute tilt_deg=0 although it is 180 degrees. Raw gravity, danger detection and zero-wheel output are correct. Archived nominal upright episodes are not affected.",
+      "recommendation": "Use atan2(horizontal,-g_z) for future diagnostic degrees; do not change frozen historic logs."
+    },
+    {
+      "id": "D1",
+      "severity": "low",
+      "release_blocker": false,
+      "file": "task_b/NEUTRAL_REFERENCE_DESIGN.md:9;167 and task_b/STABILITY_DESIGN.md:3;191",
+      "title": "Historical design status conflicts with appended completed experiments",
+      "explanation": "Early paragraphs say no simulation or nothing verified, while later dated addenda explicitly report CPU checks and real runs. This understates rather than exaggerates results.",
+      "recommendation": "Label the early status as the initial design state, retaining all original numbers and later outcomes."
+    }
+  ],
+  "current_reviewed_source_sha256": {
+    "task_b/evaluate.py": "229498ef220c801c131919002c3c1af8bff0db22b0892a22fc62f74fdca373b0",
+    "task_b/control.py": "4001b889d390291751371ec96d056d0fd0cb7201be68998edc33abf5991c2f0b",
+    "task_b/visual_approach.py": "028850d002029db7be80843b4ef80d581b84de5601e5cfccafb8707410c9dbf4",
+    "task_b/arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "task_b/stability.py": "73c64b0de4eba75bd53768ca22497c01b27afa3ea7c2c5b88b8f2febd412e306",
+    "task_b/stability_profiles.py": "187d437d52c64f52b2f48f8a076c35c926320ecd6fd004d9f827b1bb25b48afd",
+    "task_b/diagnostics.py": "bb3cc76a0a6358ac9ec5e4c31c815a1012dead33f91007683dfffffe038c3452",
+    "task_b/audit_profiles.py": "e0cb54c0584b2ffc117ba9db5b939132f0c0609a44ff79596e5ed1947912d246"
+  },
+  "publication_scope": "Latest 13 packaged entries rechecked after repackaging. Every video entry is published=false and url=null; zero-score raw MP4s remain local. This review requires no public video upload.",
+  "head_run_boundary": {
+    "id": "visual_head_neutral_seed42_01",
+    "steps": 500,
+    "score_raw_total": 0.0,
+    "terminated": false,
+    "source_samples": {
+      "None": 100,
+      "ee": 400
+    },
+    "interpretation": "500-step completed run is not evidence of successful head-camera handoff; head was enabled but no head selection/switch occurred. CPU handoff remains a separate synthetic check.",
+    "source_changed_flag_frames": 5,
+    "flag_semantics": "Five rows retain source_changed from the initial None-to-ee acquisition across the five-step vision stride; these are not five switches and no frame selects head."
+  },
+  "post_review_boundary_fix": {
+    "current_profile_sha256": "187d437d52c64f52b2f48f8a076c35c926320ecd6fd004d9f827b1bb25b48afd",
+    "frozen_gpu_source_snapshot": "results/task_b_bootstrap/source_snapshots/stability_profiles_1bdadc29.py",
+    "frozen_gpu_source_sha256": "1bdadc29a1139ca234b0db7e829c8fe895b6397b2a00d51d57432c382e0b19e4",
+    "independent_wheel_overflow_rejection_passed": true,
+    "root_cpu_audit": "results/task_b_neutral_profile_cpu_audit.json",
+    "root_cpu_audit_sha256": "8d149dad6002aa6acca49f3cee9e8b25d1cf1c0495b02ce5af01c6c3af6036ff",
+    "root_cpu_check_count": 20,
+    "root_cpu_checks_all_passed": true,
+    "new_gpu_validation": false
+  }
+}

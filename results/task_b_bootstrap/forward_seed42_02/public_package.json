@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 6846,
+      "sha256": "dd00236eb94ee48efadc6935d441c1b7e0e3416dd9cc69c1ac26a511c8301553"
+    },
+    "environment_metadata.json": {
+      "bytes": 18159,
+      "sha256": "5292f69dfe4e03259b0905a093aafa63face398d981daf09445cb5bdf849fbbd"
+    },
+    "source_manifest.json": {
+      "bytes": 17510,
+      "sha256": "f1b3f57ae99064cca04748c8c979e61be984d8b078880524bf9a1036571f2d25"
+    },
+    "telemetry.npz": {
+      "bytes": 104028,
+      "sha256": "65164e949b3991c8e7bd027a58ca1887c59d9c128dcba54b61af7193e8a526a6"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 10487,
+      "sha256": "133885dfe16df75d69ab06ae7d3ca770d758307787c5bdd22607b6575742d213",
+      "uncompressed_sha256": "e72630b908917ec6faef7ec68638d4549ec18c48590ba1f23adf3062cd4d879c",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/forward_seed42_02",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

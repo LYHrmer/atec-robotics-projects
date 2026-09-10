@@ -1,0 +1,44 @@
+{
+  "calls": [
+    {
+      "task": "Task B initial evaluator and controller",
+      "requested_model": "opus",
+      "reported_models": [
+        "claude-opus-5"
+      ],
+      "status": "error_max_budget_usd",
+      "is_error": true,
+      "turns": 52,
+      "wall_duration_ms": 846129,
+      "local_response_sha256": "1c0f90a7c25ea6bc2b35646a01ad9e2348599653c61bfbade0d711de0b4ed237",
+      "note": "Actual local Claude CLI invocation. Implementation acceptance is determined by separate CPU/GPU evidence, not CLI status."
+    },
+    {
+      "task": "Stability controller from physical failure evidence",
+      "requested_model": "opus",
+      "reported_models": [
+        "claude-opus-5"
+      ],
+      "status": "success",
+      "is_error": false,
+      "turns": 13,
+      "wall_duration_ms": 467877,
+      "local_response_sha256": "8feeac21e1bba78c4fc13e807f5c9405d3c77cc74d8db1d62a6420766dd59bdf",
+      "note": "Actual local Claude CLI invocation. Implementation acceptance is determined by separate CPU/GPU evidence, not CLI status."
+    },
+    {
+      "task": "Iteration after nominal-stance gating failure",
+      "requested_model": "opus",
+      "reported_models": [
+        "claude-opus-5"
+      ],
+      "status": "success",
+      "is_error": false,
+      "turns": 12,
+      "wall_duration_ms": 372452,
+      "local_response_sha256": "a0869b38585e3883802eb8908e166b37c5ba2d5e38d08d29d01adcb94bb792cd",
+      "note": "Actual local Claude CLI invocation. Implementation acceptance is determined by separate CPU/GPU evidence, not CLI status."
+    }
+  ],
+  "credentials_or_full_transcripts_included": false
+}

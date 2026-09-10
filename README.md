@@ -1,4 +1,4 @@
-# ATEC 机器人仿真：Task A 越障与 Task E 抓取
+# ATEC 机器人仿真：越障、抓取与移动操作
 
 这个仓库记录两项机器人任务：让 D1+G2 走完整条复杂赛道，让 Piper 机械臂把三个物体放入篮中。两项任务的代码、文档和验收证据统一管理，便于复现、学习和回顾工程取舍。
 
@@ -12,7 +12,7 @@
 
 Task A 两个速度配置各有一次完整通过，原配置也存在失败；Task E 只验证了少量指定初态。这些结果来自 Isaac Sim / Isaac Lab 本机仿真，尚未证明广泛场景成功率、实机效果或官方线上成绩。
 
-Task B 的要求、旧方案与硬件可行性见 [评估说明](docs/TASK_B_FEASIBILITY.md)：可以继续研发，当前尚无正分或通关证据。
+**Task B 已开始实测，当前仍为 0 分，尚未抓起或投递物体。** 已完成 B2wPiper 低速前行、转向/下蹲失败诊断、RGB-D 视觉接近与 Claude Opus 稳定控制对照；见 [实际实验与失败记录](docs/TASK_B_EXPERIMENTS.md)、[运行入口](task_b/README.md) 和 [初始可行性评估](docs/TASK_B_FEASIBILITY.md)。
 
 Task E 的学习实验每组只运行一次，省时主要来自放置阶段减少等待；本轮满分终止时尚未完成独立的松爪留篮检查。原规则方案和历史视频继续保留。
 
@@ -37,7 +37,7 @@ Task E 的学习实验每组只运行一次，省时主要来自放置阶段减�
 
 先按各任务运行文档配置环境与外部资产：[Task A](task_a/README.md) · [Task E](docs/TASK_E.md#本地复现)。Task A 的机器人原始资源及基础策略需要按其说明准备；训练后的 [残差模型](task_a/weights/model_1999_final.pt) 已随本仓库保存。
 
-配置完成后，从仓库根目录使用统一入口 `bash run.sh task-a` 或 `bash run.sh task-e`，按对应运行文档追加参数。Task A 的相对输出路径以 `task_a/` 为起点，Task E 以仓库根目录为起点。
+配置完成后，从仓库根目录使用统一入口 `bash run.sh task-a`、`bash run.sh task-e` 或 `bash run.sh task-b`，按对应运行文档追加参数。Task A 的相对输出路径以 `task_a/` 为起点，Task E 以仓库根目录为起点。
 
 还没有配置仿真时，可以从仓库根目录运行 Task E 几何算例，只需 Python、NumPy 和 SciPy：
 
@@ -51,6 +51,7 @@ PYTHONNOUSERSITE=1 python3 tools/task_e/learn_geometry.py
 
 ```text
 task_a/              Task A 代码、训练权重、运行说明与验收证据
+task_b/              Task B 基础控制、移动运动学、视觉接近与稳定控制实验
 run.sh               两项任务的统一启动入口
 solution.py          Task E 官方策略入口；同目录策略文件共同运行
 scripts/evaluate.sh  Task E 评测入口
@@ -58,7 +59,7 @@ tools/task_e/        Task E 评测、几何学习和运动分析工具
 datasets/task_e_il/  Task E 完整教师演示，按回合划分训练与验证
 weights/task_e_il/   Task E 模仿学习实验权重
 docs/               跨任务学习路线、Task E 深入文档、Task A 成果说明
-results/            Task E 结果、源码记录和逐步运动数据
+results/            各任务的结果、源码记录、审计与逐步运动数据
 media/              Task E 视频、截图与教学图
 ```
 
@@ -76,4 +77,4 @@ Task A 的运行说明集中在 `task_a/`；Task E 保留根目录的官方调�
 
 ## 来源与许可
 
-项目基于 [ATEC 官方仿真环境](https://github.com/atecup/ATEC2026_Simulation_Challenge)。Task E 代码许可与来源见 [LICENSE](LICENSE)、[ATTRIBUTIONS.md](ATTRIBUTIONS.md)；Task A 的依赖来源与使用范围见 [任务说明](task_a/README.md)。开发使用 Codex / Opus 辅助分析、实现和检查，结论以保存的运行证据为准。
+项目基于 [ATEC 官方仿真环境](https://github.com/atecup/ATEC2026_Simulation_Challenge)。Task E 代码许可与来源见 [LICENSE](LICENSE)、[ATTRIBUTIONS.md](ATTRIBUTIONS.md)；Task A 的依赖来源与使用范围见 [任务说明](task_a/README.md)。开发使用 Codex / Opus 辅助分析、实现和检查；[具体分工与验收](docs/COLLABORATION.md) 记录实际交付，结论以保存的运行证据为准。

@@ -1,0 +1,865 @@
+{
+  "task": "ATEC-TaskB-B2wPiper",
+  "seed": 42,
+  "device": "cuda:0",
+  "step_dt": 0.02,
+  "physics_dt": 0.005,
+  "decimation": 4,
+  "episode_length_s": 1200.0,
+  "max_episode_length_steps": 60000,
+  "action_schema": {
+    "total_action_dim": 24,
+    "terms": [
+      {
+        "name": "joint_leg",
+        "action_slice": [
+          0,
+          12
+        ],
+        "dim": 12,
+        "joint_names": [
+          "FR_hip_joint",
+          "FR_thigh_joint",
+          "FR_calf_joint",
+          "FL_hip_joint",
+          "FL_thigh_joint",
+          "FL_calf_joint",
+          "RR_hip_joint",
+          "RR_thigh_joint",
+          "RR_calf_joint",
+          "RL_hip_joint",
+          "RL_thigh_joint",
+          "RL_calf_joint"
+        ],
+        "joint_names_source": "resolved",
+        "mode": "position",
+        "scale": 0.5,
+        "use_default_offset": true,
+        "clip": "None"
+      },
+      {
+        "name": "joint_wheel",
+        "action_slice": [
+          12,
+          16
+        ],
+        "dim": 4,
+        "joint_names": [
+          "FR_foot_joint",
+          "FL_foot_joint",
+          "RR_foot_joint",
+          "RL_foot_joint"
+        ],
+        "joint_names_source": "resolved",
+        "mode": "velocity",
+        "scale": 5.0,
+        "use_default_offset": true,
+        "clip": "None"
+      },
+      {
+        "name": "joint_arm",
+        "action_slice": [
+          16,
+          24
+        ],
+        "dim": 8,
+        "joint_names": [
+          "arm_joint1",
+          "arm_joint2",
+          "arm_joint3",
+          "arm_joint4",
+          "arm_joint5",
+          "arm_joint6",
+          "arm_joint7",
+          "arm_joint8"
+        ],
+        "joint_names_source": "resolved",
+        "mode": "position",
+        "scale": 0.5,
+        "use_default_offset": true,
+        "clip": "None"
+      }
+    ],
+    "articulation_joint_names": [
+      "FL_hip_joint",
+      "FR_hip_joint",
+      "RL_hip_joint",
+      "RR_hip_joint",
+      "FL_thigh_joint",
+      "FR_thigh_joint",
+      "RL_thigh_joint",
+      "RR_thigh_joint",
+      "arm_joint1",
+      "FL_calf_joint",
+      "FR_calf_joint",
+      "RL_calf_joint",
+      "RR_calf_joint",
+      "arm_joint2",
+      "FL_foot_joint",
+      "FR_foot_joint",
+      "RL_foot_joint",
+      "RR_foot_joint",
+      "arm_joint3",
+      "arm_joint4",
+      "arm_joint5",
+      "arm_joint6",
+      "arm_joint7",
+      "arm_joint8"
+    ],
+    "default_joint_pos": [
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.800000011920929,
+      0.800000011920929,
+      1.0,
+      1.0,
+      0.0,
+      -1.5,
+      -1.5,
+      -1.5,
+      -1.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "soft_joint_pos_limits": [
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -2.378700017929077,
+        1.9286997318267822
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        0.15700006484985352,
+        2.982999801635742
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        -2.8186497688293457,
+        -0.14835000038146973
+      ],
+      [
+        -1.5704998970031738,
+        1.5704998970031738
+      ],
+      [
+        -1.097999930381775,
+        1.097999930381775
+      ],
+      [
+        -1.8849596977233887,
+        1.8849596977233887
+      ],
+      [
+        0.0017499998211860657,
+        0.033250000327825546
+      ],
+      [
+        -0.033250000327825546,
+        -0.0017499998211860657
+      ]
+    ],
+    "null_limit_definition": "unbounded/undefined soft position limit on a continuous velocity-controlled wheel",
+    "note": "Action indices come from the action manager term order, which is independent of the articulation (USD) joint order listed here."
+  },
+  "articulation": {
+    "body_names": [
+      "base_link",
+      "FL_hip",
+      "FR_hip",
+      "RL_hip",
+      "RR_hip",
+      "arm_base",
+      "FL_thigh",
+      "FR_thigh",
+      "RL_thigh",
+      "RR_thigh",
+      "arm_link1",
+      "FL_calf",
+      "FR_calf",
+      "RL_calf",
+      "RR_calf",
+      "arm_link2",
+      "FL_foot",
+      "FR_foot",
+      "RL_foot",
+      "RR_foot",
+      "arm_link3",
+      "arm_link4",
+      "arm_link5",
+      "arm_link6",
+      "gripper_base",
+      "arm_link7",
+      "arm_link8"
+    ],
+    "joint_pos_limits": [
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.8699999451637268,
+        0.8699999451637268
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -0.9399999380111694,
+        4.689999580383301
+      ],
+      [
+        -2.618000030517578,
+        2.167999744415283
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        -2.8199996948242188,
+        -0.429999977350235
+      ],
+      [
+        0.0,
+        3.1399998664855957
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -3.4028234663852886e+38,
+        3.4028234663852886e+38
+      ],
+      [
+        -2.9669997692108154,
+        0.0
+      ],
+      [
+        -1.744999885559082,
+        1.744999885559082
+      ],
+      [
+        -1.21999990940094,
+        1.21999990940094
+      ],
+      [
+        -2.0943996906280518,
+        2.0943996906280518
+      ],
+      [
+        0.0,
+        0.03500000014901161
+      ],
+      [
+        -0.03500000014901161,
+        0.0
+      ]
+    ],
+    "soft_joint_pos_limits": [
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.7829999327659607,
+        0.7829999327659607
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -0.6584999561309814,
+        4.408499717712402
+      ],
+      [
+        -2.378700017929077,
+        1.9286997318267822
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        -2.7004995346069336,
+        -0.5495001077651978
+      ],
+      [
+        0.15700006484985352,
+        2.982999801635742
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        -2.8186497688293457,
+        -0.14835000038146973
+      ],
+      [
+        -1.5704998970031738,
+        1.5704998970031738
+      ],
+      [
+        -1.097999930381775,
+        1.097999930381775
+      ],
+      [
+        -1.8849596977233887,
+        1.8849596977233887
+      ],
+      [
+        0.0017499998211860657,
+        0.033250000327825546
+      ],
+      [
+        -0.033250000327825546,
+        -0.0017499998211860657
+      ]
+    ]
+  },
+  "observations": {
+    "proprio_dim": 84,
+    "proprio_expected_dim_for_this_schema": 84,
+    "image_keys": [
+      "ee_depth",
+      "ee_rgb",
+      "head_depth",
+      "head_rgb"
+    ],
+    "policy_inputs": "proprio only"
+  },
+  "reward_terms": {
+    "objects_in_circle": {
+      "weight": 1.0,
+      "func": "<atec_rl_lab.tasks.task_b.mdp.rewards.ObjectsInCircle object at 0x767142b86950>",
+      "params": {
+        "center": [
+          -3.0,
+          -10.0
+        ],
+        "radius": 1.0,
+        "reward_per_object": 1.0
+      }
+    },
+    "grasped_objects": {
+      "weight": 1.0,
+      "func": "<atec_rl_lab.tasks.task_b.mdp.rewards.GraspedObjectsByEE object at 0x767142b86a40>",
+      "params": {
+        "ee_body_name": "gripper_base",
+        "grasp_dist_thresh": 0.2,
+        "reward_per_object": 1.0
+      }
+    }
+  },
+  "termination_terms": {
+    "time_out": {
+      "time_out": true,
+      "func": "<function time_out at 0x7671abdd31c0>",
+      "params": {}
+    },
+    "illegal_contact": {
+      "time_out": false,
+      "func": "<function illegal_contact at 0x7671abdd3880>",
+      "params": {
+        "sensor_cfg": "SceneEntityCfg(name='contact_sensor', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=['base_link', '.*_hip', '.*_thigh'], body_ids=[0, 1, 2, 5, 6, 9, 10, 13, 14], object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)",
+        "threshold": 1.0
+      }
+    },
+    "fall": {
+      "time_out": false,
+      "func": "<function root_height_below_minimum at 0x7671abdd3520>",
+      "params": {
+        "asset_cfg": "SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)",
+        "minimum_height": 0.0
+      }
+    },
+    "objects_in_circle_done": {
+      "time_out": false,
+      "func": "<atec_rl_lab.tasks.task_b.mdp.terminations.ObjectsInCircleDone object at 0x767142b86650>",
+      "params": {
+        "center": [
+          -3.0,
+          -10.0
+        ],
+        "radius": 1.0
+      }
+    }
+  },
+  "illegal_contact": {
+    "sensor_name": "contact_sensor",
+    "body_ids": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      9,
+      10,
+      13,
+      14
+    ],
+    "body_names": [
+      "base_link",
+      "FL_hip",
+      "FL_thigh",
+      "FR_hip",
+      "FR_thigh",
+      "RL_hip",
+      "RL_thigh",
+      "RR_hip",
+      "RR_thigh"
+    ],
+    "threshold": 1.0,
+    "definition": "max over the contact-sensor history of |net force| per body, exactly as the official illegal_contact term computes it"
+  },
+  "contact_sensor_body_names": [
+    "base_link",
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "FL_foot",
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "FR_foot",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf",
+    "RL_foot",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "RR_foot",
+    "gripper_base",
+    "arm_base",
+    "arm_link1",
+    "arm_link2",
+    "arm_link3",
+    "arm_link4",
+    "arm_link5",
+    "arm_link6",
+    "arm_link7",
+    "arm_link8"
+  ],
+  "policy": {
+    "mode": "turn",
+    "settle_calls": 100,
+    "ramp_calls": 100,
+    "crouch_fraction": 0.6,
+    "wheel_normalized_cmd": 0.6,
+    "wheel_action_index": {
+      "FL_foot_joint": 13,
+      "FR_foot_joint": 12,
+      "RL_foot_joint": 15,
+      "RR_foot_joint": 14
+    },
+    "wheel_side": {
+      "FL_foot_joint": "left",
+      "FR_foot_joint": "right",
+      "RL_foot_joint": "left",
+      "RR_foot_joint": "right"
+    },
+    "wheel_scale": 5.0,
+    "wheel_target_rad_per_s_at_full_ramp": 3.0,
+    "crouch_target": {
+      "joint_names": [
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint"
+      ],
+      "requested_target_rad": [
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0
+      ],
+      "clipped_target_rad": [
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0,
+        0.0,
+        1.0,
+        -2.0
+      ],
+      "default_rad": [
+        -0.10000000149011612,
+        0.800000011920929,
+        -1.5,
+        0.10000000149011612,
+        0.800000011920929,
+        -1.5,
+        -0.10000000149011612,
+        1.0,
+        -1.5,
+        0.10000000149011612,
+        1.0,
+        -1.5
+      ],
+      "soft_limit_lower_rad": [
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336,
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336,
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336,
+        -0.7829999327659607,
+        -0.6584999561309814,
+        -2.7004995346069336
+      ],
+      "soft_limit_upper_rad": [
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978,
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978,
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978,
+        0.7829999327659607,
+        4.408499717712402,
+        -0.5495001077651978
+      ],
+      "clipped_by_limits": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "full_crouch_normalized_action": [
+        0.20000000298023224,
+        0.3999999761581421,
+        -1.0,
+        -0.20000000298023224,
+        0.3999999761581421,
+        -1.0,
+        0.20000000298023224,
+        0.0,
+        -1.0,
+        -0.20000000298023224,
+        0.0,
+        -1.0
+      ],
+      "leg_scale": 0.5
+    },
+    "inputs": "public proprio observation and the static joint/action schema only",
+    "sign_hypotheses": {
+      "forward": "all four wheels positive; the direction of travel is measured from the recorded base position, not assumed",
+      "turn": "right wheels positive and left wheels negative; the yaw direction is measured"
+    }
+  },
+  "diagnostics_not_visible_to_policy": {
+    "note": "recorded for auditing only; never passed to the policy",
+    "env_origin": [
+      -10.0,
+      -10.0,
+      0.0
+    ],
+    "initial_base_xyz": [
+      -10.000272750854492,
+      -9.999722480773926,
+      0.7881918549537659
+    ],
+    "initial_base_quat_wxyz": [
+      0.9999999403953552,
+      2.0915000277454965e-05,
+      4.38609131379053e-05,
+      1.7596534235053696e-05
+    ],
+    "initial_joint_pos": [
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.10000000149011612,
+      -0.10000000149011612,
+      0.800000011920929,
+      0.800000011920929,
+      1.0,
+      1.0,
+      0.0,
+      -1.5,
+      -1.5,
+      -1.5,
+      -1.5,
+      0.15700006484985352,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.14835000038146973,
+      0.0,
+      0.0,
+      0.0,
+      0.0017499998211860657,
+      -0.0017499998211860657
+    ],
+    "initial_object_xyz": {
+      "object_1": [
+        -7.260439395904541,
+        -10.611215591430664,
+        0.1492740362882614
+      ],
+      "object_2": [
+        -6.414021015167236,
+        -8.02631950378418,
+        0.1492740362882614
+      ],
+      "object_3": [
+        -14.058226585388184,
+        -5.243776321411133,
+        0.1492740362882614
+      ],
+      "object_4": [
+        -7.388603210449219,
+        -7.139357089996338,
+        0.1492740362882614
+      ],
+      "object_5": [
+        -13.718863487243652,
+        -10.496140480041504,
+        0.1492740362882614
+      ],
+      "object_6": [
+        -11.292019844055176,
+        -5.7323503494262695,
+        0.1492740362882614
+      ],
+      "object_7": [
+        -8.561281204223633,
+        -6.772592544555664,
+        0.10508875548839569
+      ],
+      "object_8": [
+        -10.565790176391602,
+        -12.727821350097656,
+        0.10508875548839569
+      ],
+      "object_9": [
+        -9.454084396362305,
+        -14.36203670501709,
+        0.10508875548839569
+      ],
+      "object_10": [
+        -6.723618984222412,
+        -8.683565139770508,
+        0.10508875548839569
+      ],
+      "object_11": [
+        -7.419053554534912,
+        -11.454949378967285,
+        0.10508875548839569
+      ],
+      "object_12": [
+        -5.292950630187988,
+        -6.068997859954834,
+        0.10508875548839569
+      ],
+      "object_13": [
+        -7.216165065765381,
+        -13.05361270904541,
+        0.09927403181791306
+      ],
+      "object_14": [
+        -10.33279037475586,
+        -14.561962127685547,
+        0.09927403181791306
+      ],
+      "object_15": [
+        -13.457104682922363,
+        -8.169510841369629,
+        0.09927403181791306
+      ],
+      "object_16": [
+        -7.5523786544799805,
+        -5.324902534484863,
+        0.09927403181791306
+      ],
+      "object_17": [
+        -11.741745948791504,
+        -11.295402526855469,
+        0.09927403181791306
+      ],
+      "object_18": [
+        -10.304441452026367,
+        -13.105286598205566,
+        0.09927403181791306
+      ]
+    }
+  }
+}

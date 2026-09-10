@@ -1,0 +1,29 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 14617,
+      "sha256": "aba51831311c013c666be84ffdd6b6c3e9fcb2de923838898f7fa589cd7654d4"
+    },
+    "environment_metadata.json": {
+      "bytes": 22159,
+      "sha256": "69e3ec41be1b1b4edae984d4fd0d1f1335fe7591433f60a54f4754bf68c6cd61"
+    },
+    "source_manifest.json": {
+      "bytes": 18549,
+      "sha256": "6a5cba942893925b47af229233fdddbafce9baa558aae5eff67eb511d9a1dd9a"
+    },
+    "telemetry.npz": {
+      "bytes": 631731,
+      "sha256": "b397a15b43970e4421ab5c7b4faaef7f0ff0330b75dba1e43d67c196d5b5fc30"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 415934,
+      "sha256": "e59d1ba0cd13211bca05daae119ac5ab7bddabdf3eb04629d710e39c7bae99de",
+      "uncompressed_sha256": "47edc1f032324688cfc5e17738ea9d8f1a8ab7c149429f11f3b2dfbc0969bc7d",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_stabilized_seed42_01",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}

@@ -1,0 +1,369 @@
+{
+  "task": "ATEC-TaskB-B2wPiper",
+  "mode": "visual_approach",
+  "seed": 42,
+  "device": "cuda:0",
+  "headless": true,
+  "enable_cameras": true,
+  "use_fabric": true,
+  "experience": "/home/lybm/IsaacLab/apps/isaacsim_4_5/isaaclab.python.headless.rendering.kit",
+  "camera_fabric_compatibility": "task_a.tools.d1g2_taska_camera_compat.prepare_camera_views (read-only recursive world-pose reader; preserves moving camera inheritance)",
+  "action_spec": null,
+  "apply_safe_action_spec": "called with no participant spec",
+  "steps": 350,
+  "max_steps": 1500,
+  "sim_seconds": 7.0,
+  "wall_seconds": 24.77596430700214,
+  "stop_reason": "terminated",
+  "terminated": true,
+  "truncated": false,
+  "active_termination_terms_at_stop": [
+    "illegal_contact"
+  ],
+  "terminated_during_settle": false,
+  "score_definition": "sum over steps of env reward / step_dt, matching the official scripts/play_atec_task.py accumulation",
+  "score_raw_total": 0.0,
+  "reward_term_totals_raw": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 0.0
+  },
+  "reward_term_total_definition": "per step, weighted term value with dt removed (RewardManager.get_active_iterable_terms), summed over steps",
+  "reward_term_sum_vs_env_reward_max_abs_error": 0.0,
+  "final_reward_terms": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 0.0
+  },
+  "base_motion": {
+    "first_recorded_base_xyz": [
+      -10.000272750854492,
+      -9.999722480773926,
+      0.7881918549537659
+    ],
+    "last_recorded_base_xyz": [
+      -10.55058479309082,
+      -9.950957298278809,
+      0.4226330518722534
+    ],
+    "delta_xyz": [
+      -0.5503120422363281,
+      0.04876518249511719,
+      -0.36555880308151245
+    ],
+    "planar_distance_m": 0.5524684190750122,
+    "max_planar_distance_m": 0.5524684190750122,
+    "min_base_z_m": 0.4226330518722534,
+    "max_base_z_m": 0.7898235321044922,
+    "note": "world frame, pre-step samples; the sign tells which way the wheel command drove the base"
+  },
+  "observation_joint_mapping_max_abs_error": 7.450580596923828e-09,
+  "terminal_pre_reset": {
+    "step_index": 350,
+    "reset_index_in_step": 0,
+    "phase": "terminal_pre_reset",
+    "env_ids": [
+      0
+    ],
+    "snapshot": {
+      "state": {
+        "q": [
+          0.1905364990234375,
+          -0.1600247323513031,
+          0.38979440927505493,
+          -0.4120253622531891,
+          0.6714290976524353,
+          0.6770102381706238,
+          0.5547964572906494,
+          0.5802186131477356,
+          0.00021987683430779725,
+          -1.6199334859848022,
+          -1.6663813591003418,
+          -2.0862488746643066,
+          -2.120816707611084,
+          8.816695299174171e-06,
+          -1.392051339149475,
+          -1.4872385263442993,
+          1.5776362419128418,
+          1.7086198329925537,
+          7.725499017396942e-06,
+          0.00011218577856197953,
+          0.007852675393223763,
+          -3.0698486170877004e-06,
+          0.0006907766219228506,
+          -0.0004953717580065131
+        ],
+        "qdot": [
+          0.004030071198940277,
+          0.026122717186808586,
+          -0.28319647908210754,
+          -0.003965127281844616,
+          -0.06433342397212982,
+          -0.40615010261535645,
+          -0.39292609691619873,
+          -0.7537151575088501,
+          0.082572802901268,
+          0.13800431787967682,
+          -0.20068010687828064,
+          0.6151878237724304,
+          0.4693191349506378,
+          -0.003052453976124525,
+          -1.7537938356399536,
+          -0.017919210717082024,
+          -0.3816106915473938,
+          -0.02807004004716873,
+          0.0010137303033843637,
+          -0.00017771463899407536,
+          0.008064222522079945,
+          -7.508018461521715e-05,
+          0.03107261285185814,
+          0.020800691097974777
+        ],
+        "base_xyz": [
+          -10.553818702697754,
+          -9.953134536743164,
+          0.421763151884079
+        ],
+        "base_quat": [
+          0.9831321239471436,
+          0.007990363985300064,
+          -0.18257147073745728,
+          0.007423085160553455
+        ],
+        "illegal_force": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          99.69536590576172
+        ]
+      },
+      "termination_flags": {
+        "time_out": false,
+        "illegal_contact": true,
+        "fall": false,
+        "objects_in_circle_done": false
+      },
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 0.0
+      },
+      "object_xyz": {
+        "object_1": [
+          -7.25826358795166,
+          -10.602023124694824,
+          0.09020683914422989
+        ],
+        "object_2": [
+          -6.4118475914001465,
+          -8.01716136932373,
+          0.09020508080720901
+        ],
+        "object_3": [
+          -14.056037902832031,
+          -5.234580039978027,
+          0.09020618349313736
+        ],
+        "object_4": [
+          -7.386420249938965,
+          -7.1301589012146,
+          0.0902068093419075
+        ],
+        "object_5": [
+          -13.716680526733398,
+          -10.486949920654297,
+          0.09020721912384033
+        ],
+        "object_6": [
+          -11.289835929870605,
+          -5.7231526374816895,
+          0.09020619839429855
+        ],
+        "object_7": [
+          -8.561485290527344,
+          -6.769255638122559,
+          0.14022481441497803
+        ],
+        "object_8": [
+          -10.565979957580566,
+          -12.724531173706055,
+          0.14022429287433624
+        ],
+        "object_9": [
+          -9.454275131225586,
+          -14.358746528625488,
+          0.14022448658943176
+        ],
+        "object_10": [
+          -6.723809242248535,
+          -8.680275917053223,
+          0.14022468030452728
+        ],
+        "object_11": [
+          -7.419244766235352,
+          -11.451658248901367,
+          0.14022581279277802
+        ],
+        "object_12": [
+          -5.293142318725586,
+          -6.0657057762146,
+          0.1402241736650467
+        ],
+        "object_13": [
+          -7.211845397949219,
+          -13.054414749145508,
+          0.060087863355875015
+        ],
+        "object_14": [
+          -10.328531265258789,
+          -14.562829971313477,
+          0.0600879043340683
+        ],
+        "object_15": [
+          -13.45276927947998,
+          -8.170336723327637,
+          0.06008647382259369
+        ],
+        "object_16": [
+          -7.548063278198242,
+          -5.325768947601318,
+          0.06008747220039368
+        ],
+        "object_17": [
+          -11.737444877624512,
+          -11.296244621276855,
+          0.060087524354457855
+        ],
+        "object_18": [
+          -10.300076484680176,
+          -13.106103897094727,
+          0.06008726730942726
+        ]
+      }
+    },
+    "observer_error": null
+  },
+  "terminal_post_step_state_after_official_reset": {
+    "base_xyz": [
+      -10.553818702697754,
+      -9.953134536743164,
+      0.421763151884079
+    ],
+    "base_quat_wxyz": [
+      0.9831321239471436,
+      0.007990363985300064,
+      -0.18257147073745728,
+      0.007423085160553455
+    ],
+    "max_illegal_force": 99.69536590576172,
+    "illegal_force_per_body": {
+      "base_link": 0.0,
+      "FL_hip": 0.0,
+      "FL_thigh": 0.0,
+      "FR_hip": 0.0,
+      "FR_thigh": 0.0,
+      "RL_hip": 0.0,
+      "RL_thigh": 0.0,
+      "RR_hip": 0.0,
+      "RR_thigh": 99.69536590576172
+    },
+    "note": "read after env.step(); the official reset already restored default joint positions for this env, while the base pose is untouched"
+  },
+  "policy": {
+    "mode": "visual_approach",
+    "inputs": "public proprio84 and ee_rgb/ee_depth; static joint/action/camera geometry",
+    "target": "nearest forward yellow vertical component; not a verified mustard class",
+    "grasping": false,
+    "target_x_m": 0.8,
+    "forward_normalized_cap": 0.1,
+    "wheel_normalized_cap": 0.6,
+    "turn_sign": 1.0,
+    "turn_gain": 1.2,
+    "turn_sign_requires_physical_probe": true,
+    "settle_calls": 100,
+    "ramp_calls": 100,
+    "vision_stride_calls": 5,
+    "missing_target_behavior": "stop; no blind scan",
+    "wheel_joint_names": [
+      "FR_foot_joint",
+      "FL_foot_joint",
+      "RR_foot_joint",
+      "RL_foot_joint"
+    ],
+    "wheel_action_slice": [
+      12,
+      16
+    ],
+    "legs_and_arm": "official zero normalized action",
+    "calls": 350,
+    "alpha": 1.0,
+    "state": "NO_VISIBLE_TARGET",
+    "debug": {
+      "vision_call": 346,
+      "detector": {
+        "yellow_components": 0,
+        "rejected": {},
+        "K": [
+          [
+            458.12455261274164,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            458.12455261274164,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "intrinsics_pixel_convention": "configured_raster_K_width_over_2",
+        "classification_claim": "none; color and shape heuristic only"
+      },
+      "candidates": [],
+      "target_body": null,
+      "reason": "NO_VISIBLE_TARGET",
+      "wheel_action": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "stability_controller": null,
+  "rgb_frames": {
+    "step_00000": {
+      "head_rgb": "head_rgb_step_00000.png",
+      "ee_rgb": "ee_rgb_step_00000.png"
+    },
+    "step_00250": {
+      "head_rgb": "head_rgb_step_00250.png",
+      "ee_rgb": "ee_rgb_step_00250.png"
+    },
+    "final": {
+      "head_rgb": "head_rgb_final.png",
+      "ee_rgb": "ee_rgb_final.png"
+    }
+  },
+  "video": "public_cameras.mp4",
+  "files": {
+    "trace": "trace.jsonl",
+    "telemetry": "telemetry.npz",
+    "metadata": "environment_metadata.json",
+    "manifest": "source_manifest.json"
+  },
+  "task_physics_modified": false,
+  "manifest_coverage": [
+    "USD/USDA robot, object and scene assets, textures and MDL materials",
+    "Isaac Lab and Isaac Sim packages, Kit experience files and GPU drivers",
+    "runtime monkeypatching, including the Isaac Sim 4.5 camera Fabric pose reader that this evaluator installs on purpose (see result.json:camera_fabric_compatibility)",
+    "whether the installed original repository itself matches upstream"
+  ],
+  "interpretation": "Mobility/reachability bootstrap. Survival, driving or crouching is NOT a successful grasp and NOT a Task B pass. Any grasped_objects reward only means the gripper body came within the official distance threshold of an object; objects_in_circle is the term that scores delivery."
+}

@@ -1,0 +1,10 @@
+{
+  "classification": "integration_failure_not_valid_perception_method_baseline",
+  "reason": "Evaluator obtained unresolved observation joint_ids from task.cfg, while ObservationManager resolves a deep copy; FK therefore used incorrect joint order. Fixed in subsequent evaluator using observation_manager.cfg.",
+  "actual_execution_preserved": {
+    "steps": 330,
+    "termination": "illegal_contact",
+    "score": 0
+  },
+  "comparison_limit": "Do not attribute this run to the validated visual/FK algorithm or use it to claim benefit from stabilization."
+}

@@ -1,0 +1,33 @@
+{
+  "files": {
+    "result.json": {
+      "bytes": 12225,
+      "sha256": "5dc2aa6229db840f2562343eca72a3adc3551d58861cb4d7e8c0c86e368d79a9"
+    },
+    "environment_metadata.json": {
+      "bytes": 16455,
+      "sha256": "27f77c4e89d73224051eabae2cc5f30c3ec0bdb92b87ec91aa5c150ad7dc7c9a"
+    },
+    "source_manifest.json": {
+      "bytes": 18294,
+      "sha256": "b1759cc7a9885ba12e48f46064628137133b8e5a026bd1b70152b027aa254b7d"
+    },
+    "telemetry.npz": {
+      "bytes": 150085,
+      "sha256": "06d5bf6464835098b20cae132603977d25fd6a1cd6ca52d98da1a629c97d4ff6"
+    },
+    "audit_classification.json": {
+      "bytes": 559,
+      "sha256": "95158de5f925fa6d82dd6d306ec43be3d752e57598eb77c85a535619815f042f"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 28532,
+      "sha256": "8efc430e0c77643976dc96fa09ce3547be724b25324ce091e831045cc4ddbebd",
+      "uncompressed_sha256": "f1c4e162c6e0f1d7f2826e810dfeb512992a3707e6f868a4b9a76b8b4d16a4b7",
+      "original_name": "trace.jsonl"
+    }
+  },
+  "source_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_initial/visual_approach_seed42_01",
+  "original_result_preserved": true,
+  "trace_is_losslessly_gzipped": true
+}
