@@ -1,0 +1,316 @@
+{
+  "archive_status": "complete",
+  "captured_utc": "2026-09-09T10:30:09.297025+00:00",
+  "run_directory": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02",
+  "purpose": "Independent completed-run acceptance/dependency evidence only; original report, code and assets are not modified.",
+  "sources": [
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+      "archived_path": "files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+      "sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+      "bytes": 3217,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+      "prior_snapshot_sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+      "archived_path": "files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+      "sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+      "bytes": 8799,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+      "prior_snapshot_sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+      "archived_path": "files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+      "sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+      "bytes": 452,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+      "prior_snapshot_sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+      "archived_path": "files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+      "sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+      "bytes": 13889,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+      "prior_snapshot_sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+      "archived_path": "files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+      "sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+      "bytes": 551,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+      "prior_snapshot_sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+      "archived_path": "files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+      "sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+      "bytes": 7076,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+      "prior_snapshot_sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/config/extension.toml",
+      "archived_path": "files/atec/source/atec_rl_lab/config/extension.toml",
+      "sha256": "879a5a0f0b7de25ed1b802a10f14138290e7f9296bb227f7e3bc9719af43ba77",
+      "bytes": 918,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "879a5a0f0b7de25ed1b802a10f14138290e7f9296bb227f7e3bc9719af43ba77",
+      "prior_snapshot_sha256": "879a5a0f0b7de25ed1b802a10f14138290e7f9296bb227f7e3bc9719af43ba77",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/mdp/terminations.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/envs/mdp/terminations.py",
+      "sha256": "c04d1240b9f2f533da3e6ed66c6da826fbfac9d924fc1038df8a082b283ea300",
+      "bytes": 6834,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "c04d1240b9f2f533da3e6ed66c6da826fbfac9d924fc1038df8a082b283ea300",
+      "prior_snapshot_sha256": "c04d1240b9f2f533da3e6ed66c6da826fbfac9d924fc1038df8a082b283ea300",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_env.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/envs/manager_based_env.py",
+      "sha256": "74d495925e264521b05a92296bbaf98adcabb7d94f3787ab3ed61f4d0680a198",
+      "bytes": 25693,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "74d495925e264521b05a92296bbaf98adcabb7d94f3787ab3ed61f4d0680a198",
+      "prior_snapshot_sha256": "74d495925e264521b05a92296bbaf98adcabb7d94f3787ab3ed61f4d0680a198",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py",
+      "sha256": "974977825dbbd916460b4f9bb12176ab2cde41026fadc05e1de02d8fbbc94725",
+      "bytes": 18417,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "974977825dbbd916460b4f9bb12176ab2cde41026fadc05e1de02d8fbbc94725",
+      "prior_snapshot_sha256": "974977825dbbd916460b4f9bb12176ab2cde41026fadc05e1de02d8fbbc94725",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/managers/termination_manager.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/managers/termination_manager.py",
+      "sha256": "cb6333f11fa6472f7d8034bae9835714e83ae3edde97894b767f1351a7eea99d",
+      "bytes": 11189,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "cb6333f11fa6472f7d8034bae9835714e83ae3edde97894b767f1351a7eea99d",
+      "prior_snapshot_sha256": "cb6333f11fa6472f7d8034bae9835714e83ae3edde97894b767f1351a7eea99d",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/contact_sensor/contact_sensor.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/sensors/contact_sensor/contact_sensor.py",
+      "sha256": "5bf3b77d2159850526e3833bf50253dbce06cb78b850eae13fb4088dc233760d",
+      "bytes": 26330,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "5bf3b77d2159850526e3833bf50253dbce06cb78b850eae13fb4088dc233760d",
+      "prior_snapshot_sha256": "5bf3b77d2159850526e3833bf50253dbce06cb78b850eae13fb4088dc233760d",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/sensor_base.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/sensors/sensor_base.py",
+      "sha256": "4716a4b89ed1ac4f640f8744f1e2fcaac2e74d00c2193e0ce24e52c61e5659fc",
+      "bytes": 14173,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "4716a4b89ed1ac4f640f8744f1e2fcaac2e74d00c2193e0ce24e52c61e5659fc",
+      "prior_snapshot_sha256": "4716a4b89ed1ac4f640f8744f1e2fcaac2e74d00c2193e0ce24e52c61e5659fc",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/terrain_generator.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/terrains/terrain_generator.py",
+      "sha256": "a364d85812a7713b21a94a450f40e8ef5d448bbe652bcb2ee36184b6300c409b",
+      "bytes": 19469,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "a364d85812a7713b21a94a450f40e8ef5d448bbe652bcb2ee36184b6300c409b",
+      "prior_snapshot_sha256": "a364d85812a7713b21a94a450f40e8ef5d448bbe652bcb2ee36184b6300c409b",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/terrain_importer.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/terrains/terrain_importer.py",
+      "sha256": "fdc32823ccf4eabfe1cd175bb8f65d85927407f02600d966f9d28d94cee954e5",
+      "bytes": 16874,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "fdc32823ccf4eabfe1cd175bb8f65d85927407f02600d966f9d28d94cee954e5",
+      "prior_snapshot_sha256": "fdc32823ccf4eabfe1cd175bb8f65d85927407f02600d966f9d28d94cee954e5",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/utils.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/terrains/utils.py",
+      "sha256": "66e0aa81e6ae33aba16317845537b02eba87684a9ae8cd832323c9bab4481afb",
+      "bytes": 12496,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "66e0aa81e6ae33aba16317845537b02eba87684a9ae8cd832323c9bab4481afb",
+      "prior_snapshot_sha256": "66e0aa81e6ae33aba16317845537b02eba87684a9ae8cd832323c9bab4481afb",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/height_field/hf_terrains.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/terrains/height_field/hf_terrains.py",
+      "sha256": "830971981a5920d3feed55512d6f2bd820396a16af3476a593d26b97daaaeed1",
+      "bytes": 18808,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "830971981a5920d3feed55512d6f2bd820396a16af3476a593d26b97daaaeed1",
+      "prior_snapshot_sha256": "830971981a5920d3feed55512d6f2bd820396a16af3476a593d26b97daaaeed1",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/height_field/utils.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/terrains/height_field/utils.py",
+      "sha256": "a8820498ecb5ba6535a27bf3d8c5baf9069d2314d8e7fd9d950f60912e301725",
+      "bytes": 8076,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "a8820498ecb5ba6535a27bf3d8c5baf9069d2314d8e7fd9d950f60912e301725",
+      "prior_snapshot_sha256": "a8820498ecb5ba6535a27bf3d8c5baf9069d2314d8e7fd9d950f60912e301725",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/trimesh/mesh_terrains.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/terrains/trimesh/mesh_terrains.py",
+      "sha256": "50c1bbc1b319c71cb9a3305f4c52211be9e8c8db9859949e9784806fc26806c3",
+      "bytes": 39258,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "50c1bbc1b319c71cb9a3305f4c52211be9e8c8db9859949e9784806fc26806c3",
+      "prior_snapshot_sha256": "50c1bbc1b319c71cb9a3305f4c52211be9e8c8db9859949e9784806fc26806c3",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/config/extension.toml",
+      "archived_path": "files/isaaclab/source/isaaclab/config/extension.toml",
+      "sha256": "20788530c894de99bba947129657eaba3029d59f92a3b8ca11c3b2a1874c75f7",
+      "bytes": 763,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "20788530c894de99bba947129657eaba3029d59f92a3b8ca11c3b2a1874c75f7",
+      "prior_snapshot_sha256": "20788530c894de99bba947129657eaba3029d59f92a3b8ca11c3b2a1874c75f7",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/VERSION",
+      "archived_path": "files/isaaclab/VERSION",
+      "sha256": "e1d31f14bed34a1c7e6227931673f0bb4ec1e26ee4278d00dac169809c4d9539",
+      "bytes": 6,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "e1d31f14bed34a1c7e6227931673f0bb4ec1e26ee4278d00dac169809c4d9539",
+      "prior_snapshot_sha256": "e1d31f14bed34a1c7e6227931673f0bb4ec1e26ee4278d00dac169809c4d9539",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/camera/camera.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/sensors/camera/camera.py",
+      "sha256": "a3689cffa01d046b510f7564f7adad972edf6316568b0e323abc2c4f0c4ec354",
+      "bytes": 34548,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "a3689cffa01d046b510f7564f7adad972edf6316568b0e323abc2c4f0c4ec354",
+      "prior_snapshot_sha256": "a3689cffa01d046b510f7564f7adad972edf6316568b0e323abc2c4f0c4ec354",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sim/views/xform_prim_view.py",
+      "archived_path": "files/isaaclab/source/isaaclab/isaaclab/sim/views/xform_prim_view.py",
+      "sha256": "5a05ccc9322e6f042f2ab669cbaf7fb60712726dfeb0d323913b78c87d3755b3",
+      "bytes": 51055,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "5a05ccc9322e6f042f2ab669cbaf7fb60712726dfeb0d323913b78c87d3755b3",
+      "prior_snapshot_sha256": "5a05ccc9322e6f042f2ab669cbaf7fb60712726dfeb0d323913b78c87d3755b3",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/isaacsim/exts/isaacsim.core.utils/isaacsim/core/utils/xforms.py",
+      "archived_path": "files/isaacsim/isaacsim/core/utils/xforms.py",
+      "sha256": "b69b4a84adfa456a24020d403d889bea69dcb07188f3c709a918d7a917e0727e",
+      "bytes": 7770,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "b69b4a84adfa456a24020d403d889bea69dcb07188f3c709a918d7a917e0727e",
+      "prior_snapshot_sha256": "b69b4a84adfa456a24020d403d889bea69dcb07188f3c709a918d7a917e0727e",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl/modules/actor_critic.py",
+      "archived_path": "files/rsl_rl/modules/actor_critic.py",
+      "sha256": "20c6396d32802112dc217ba51add5fe7f7953518a0c7cdb4b7da51f77dc30b6e",
+      "bytes": 5975,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "20c6396d32802112dc217ba51add5fe7f7953518a0c7cdb4b7da51f77dc30b6e",
+      "prior_snapshot_sha256": "20c6396d32802112dc217ba51add5fe7f7953518a0c7cdb4b7da51f77dc30b6e",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl/networks/mlp.py",
+      "archived_path": "files/rsl_rl/networks/mlp.py",
+      "sha256": "ea52cb5b27e6d986731ac657bcc37f8b74a1e5630e8a8fb323986ed2b6c01b23",
+      "bytes": 4090,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "ea52cb5b27e6d986731ac657bcc37f8b74a1e5630e8a8fb323986ed2b6c01b23",
+      "prior_snapshot_sha256": "ea52cb5b27e6d986731ac657bcc37f8b74a1e5630e8a8fb323986ed2b6c01b23",
+      "current_matches_prior": true
+    },
+    {
+      "original_path": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl/networks/normalization.py",
+      "archived_path": "files/rsl_rl/networks/normalization.py",
+      "sha256": "7db82f8021d62a660b4229782b52ac47e32d781206dba709d6bc436bf13f6672",
+      "bytes": 3999,
+      "status": "copied_current_source_verified",
+      "prior_manifest_sha256": "7db82f8021d62a660b4229782b52ac47e32d781206dba709d6bc436bf13f6672",
+      "prior_snapshot_sha256": "7db82f8021d62a660b4229782b52ac47e32d781206dba709d6bc436bf13f6672",
+      "current_matches_prior": true
+    }
+  ],
+  "all_27_dependencies_match_prior": true,
+  "run_source_hash_audit": "run_source_hash_audit.json",
+  "all_13_run_sources_match": true,
+  "policy_weights": [
+    {
+      "kind": "residual_checkpoint",
+      "absolute_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/model_1999_final.pt",
+      "sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+      "matches_run_metadata": true,
+      "copied": false
+    },
+    {
+      "kind": "flat_base_policy",
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+      "sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+      "matches_run_metadata": true,
+      "copied": false
+    }
+  ],
+  "robot_usd_dependencies": "robot_usd_dependencies.json",
+  "environment_versions": "environment_versions.json",
+  "validation_lineage": "validation_lineage.json",
+  "control_and_termination_audit": "control_and_termination_audit.json",
+  "final_result_snapshot": "final_result_snapshot.json",
+  "prior_archive": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies",
+  "static_review_reuse": "Prior nav checks and independent review reused only after current module/dependency hashes matched.",
+  "limitations": [
+    "Filesystem/source snapshots are not process-memory snapshots.",
+    "Large assets and weights are hashed, not copied into the audit.",
+    "No per-frame sensor hashing was performed; full trace is separately hashed/compressed.",
+    "USD closure excludes resolver-managed OmniPBR MDL internals, complete scene lighting/materials and generated live mesh.",
+    "This records one local successful custom D1+G2 TaskA run; no official online submission is implied."
+  ],
+  "run_acceptance": "local_original_full_course_passed",
+  "run_acceptance_audit": "run_acceptance_audit.json",
+  "recovery_budget_audit": "recovery_budget_audit.json",
+  "hardware_audit": "hardware_audit.json",
+  "trace_sha256": "3a624c47c768cfbfe842e1a66e502d6cf14af6a323a58e795969dd98122e06a5"
+}

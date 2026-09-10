@@ -1,6 +1,6 @@
 # 不启动仿真，也能把几个关键步骤跑一遍
 
-[项目导读](LEARNING_GUIDE.md) · [算法原理](ALGORITHM.md) · [代码导读](CODE_WALKTHROUGH.md) · [自测题](SELF_CHECK.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 这些练习直接调用仓库里的几何函数，只需要 Python、NumPy 和 SciPy。前四个使用人工构造的数据，便于检查计算过程；最后一个读取已有实测结果。它们不产生新的比赛成绩。
 

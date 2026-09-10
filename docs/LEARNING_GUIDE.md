@@ -1,6 +1,6 @@
 # 从一段抓取视频读懂这个项目
 
-[项目首页](../README.md) · [算法原理](ALGORITHM.md) · [代码导读](CODE_WALKTHROUGH.md) · [动手练习](HANDS_ON.md) · [面试讲解](INTERVIEW.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 桌上有一瓶芥末、一盒糖和一根香蕉。机械臂要依次把它们夹起来，送进旁边的篮子。看起来是一套重复动作，实际要接连回答三个问题：物体在哪里，夹爪应该怎样靠近，动作执行后到底发生了什么。
 

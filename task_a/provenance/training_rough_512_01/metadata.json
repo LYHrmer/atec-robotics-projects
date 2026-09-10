@@ -1,0 +1,67 @@
+{
+  "base_policy_sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+  "base_normalization_backend": "onnx",
+  "interface_version": 1,
+  "actor_obs_dim": 331,
+  "residual_scales": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "residual_clip": 3.0,
+  "policy_cfg": {
+    "class_name": "ActorCritic",
+    "init_noise_std": 0.25,
+    "noise_std_type": "log",
+    "actor_hidden_dims": [
+      256,
+      128,
+      64
+    ],
+    "critic_hidden_dims": [
+      256,
+      128,
+      64
+    ],
+    "activation": "elu",
+    "actor_obs_normalization": true,
+    "critic_obs_normalization": true
+  },
+  "seed": 42,
+  "actor_observation": "5x57 history,7 arm positions,7 arm velocities*.05,16 base actions,16 last residuals",
+  "training_model": "Original D1+G2 combined USD with original actuators; arm held at default",
+  "training_profile": "rough",
+  "evaluation_required": "Original Task A x=-141 to x>145 without failed termination",
+  "rough_training_distribution": {
+    "kind": "original_full_rough_all_rows",
+    "noise_range_m": [
+      0.02,
+      0.1
+    ],
+    "noise_step_m": 0.02,
+    "training_tile_size_m": [
+      8.0,
+      8.0
+    ],
+    "original_task_tile_size_m": [
+      20.0,
+      20.0
+    ],
+    "rough_curriculum": false,
+    "other_terrain_curriculum": true
+  },
+  "critic_obs_dim": 521
+}

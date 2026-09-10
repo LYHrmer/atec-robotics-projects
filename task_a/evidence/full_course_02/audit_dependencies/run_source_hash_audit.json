@@ -1,0 +1,123 @@
+{
+  "captured_utc": "2026-09-09T10:30:09.297025+00:00",
+  "all_match": true,
+  "sources": [
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/run_d1g2_taska.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/0_run_d1g2_taska.py",
+      "expected_sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "current_sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "snapshot_sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_env.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/1_d1g2_taska_env.py",
+      "expected_sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "current_sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "snapshot_sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_policy.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/2_d1g2_taska_policy.py",
+      "expected_sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "current_sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "snapshot_sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/source/ddt_lab/ddt_lab/assets/ddt_robot.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/3_ddt_robot.py",
+      "expected_sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "current_sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "snapshot_sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/tmp/d1g2_taska_assets_2amkdwjk/d1_with_g2_combined.usda",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/4_d1_with_g2_combined.usda",
+      "expected_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "current_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "snapshot_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_torch_policy.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/5_d1g2_taska_torch_policy.py",
+      "expected_sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "current_sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "snapshot_sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_residual.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/6_d1g2_taska_residual.py",
+      "expected_sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "current_sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "snapshot_sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_rgbd.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/7_d1g2_taska_rgbd.py",
+      "expected_sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "current_sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "snapshot_sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_navigation.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/8_d1g2_taska_visual_navigation.py",
+      "expected_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "current_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "snapshot_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_navigation.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/9_d1g2_taska_navigation.py",
+      "expected_sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "current_sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "snapshot_sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_axis_heading.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/10_d1g2_taska_axis_heading.py",
+      "expected_sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "current_sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "snapshot_sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_recovery.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/11_d1g2_taska_visual_recovery.py",
+      "expected_sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "current_sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "snapshot_sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "current_matches": true,
+      "snapshot_matches": true
+    },
+    {
+      "original_path": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_camera_compat.py",
+      "snapshot_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/12_d1g2_taska_camera_compat.py",
+      "expected_sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "current_sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "snapshot_sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "current_matches": true,
+      "snapshot_matches": true
+    }
+  ]
+}

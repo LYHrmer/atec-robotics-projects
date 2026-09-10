@@ -1,6 +1,6 @@
 # 从像素到关节：抓放过程中的几何与控制
 
-[项目导读](LEARNING_GUIDE.md) · [代码导读](CODE_WALKTHROUGH.md) · [动手练习](HANDS_ON.md) · [优化记录](OPTIMIZATION.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 把夹爪移到瓶子附近，只解决了抓取的一小部分。程序还要知道手指应夹在哪里、以什么朝向接近、抬多高才能越过篮沿，以及怎样判断瓶子真的跟着机械臂走了。这篇说明沿着一次抓取的顺序，解释这些问题在代码中如何连接。
 

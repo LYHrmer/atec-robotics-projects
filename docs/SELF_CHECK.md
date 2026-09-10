@@ -1,6 +1,6 @@
 # 分级自测
 
-[学习路线](LEARNING_GUIDE.md) · [算法](ALGORITHM.md) · [代码导读](CODE_WALKTHROUGH.md) · [面试讲解](INTERVIEW.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 先写出推理、画草图或找到代码，再展开答案。做对之后改变一个条件：例如交换坐标轴、让计分延迟，或让物体滑移，看看原判断是否仍成立。
 

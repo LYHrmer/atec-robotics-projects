@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "description": "User-supplied original DDT_Lab dependencies, imported locally and excluded from public Git history.",
+  "private_archive_repository": "LYHrmer/atec-taska-d1g2",
+  "private_archive_commit": "cdc4dbad5c690d7b86d2d304eb1c9494bf103cdf",
+  "files": [
+    {
+      "path": ".github/LICENSE_HEADER.txt",
+      "bytes": 185,
+      "sha256": "44c9548dc93bb56da36c399947f5c38ede66211a1849ac2b6c2c37eb58b6fb3b"
+    },
+    {
+      "path": "ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+      "bytes": 1024945,
+      "sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b"
+    },
+    {
+      "path": "ddt_ros2_control/controller/rl_controller/package.xml",
+      "bytes": 1307,
+      "sha256": "031e0874e1baa7eb4aa9a914bb341d8d5544aa0a21c6a585a9b990ee011b8220"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/package.xml",
+      "bytes": 1189,
+      "sha256": "ad284b9e380707a5d943b1b7f30695cc3a58536027d72d4c2070662d997ab767"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "bytes": 30139119,
+      "sha256": "9536f33f2c7235c1222edf90c2a76391ea47029064615d82efa4b02457e3fdee"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "bytes": 7095,
+      "sha256": "7f9ab722a728f5fa81b5c18735b184e4b2a89434a0a135d09953c0b81ae868af"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_robot.usd",
+      "bytes": 2321,
+      "sha256": "d49e8589b64b0d6ff9941cf8db7beb89a555ee1ce800ca222d75c057ece8fe59"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_sensor.usd",
+      "bytes": 654,
+      "sha256": "6279b1bc88820eeb9cd770e5da51bb3e49283f98699ee91ee8d5b14ee19d6fea"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "bytes": 1459,
+      "sha256": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f"
+    },
+    {
+      "path": "ddt_ros2_control/urdfs/d1_description/usd/d1_with_g2_combined.usda",
+      "bytes": 1785,
+      "sha256": "9c0a6bd04216ed0eb5097e7d2fd0048c7a9c275275e55be275e3d8825e88015a"
+    },
+    {
+      "path": "ros2_play_g2/play_g2/package.xml",
+      "bytes": 843,
+      "sha256": "17f72039208959c0bd5a1b9362ab49b9ef0fb206cae1296525c0450fdfe55f5a"
+    },
+    {
+      "path": "ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "bytes": 96926891,
+      "sha256": "5e582987c344b3e560d74b1b93a6ea63165c2fc5c453587d0d1bffb6436feaf8"
+    },
+    {
+      "path": "ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "bytes": 6018,
+      "sha256": "466ec75c70de1fde61f8ba83b2143e186d1d07b7bf8ac971345612eb3d8d0c38"
+    },
+    {
+      "path": "ros2_play_g2/play_g2/usd/configuration/play_g2_robot.usd",
+      "bytes": 1945,
+      "sha256": "2b834759dc9782c093be1eac389d2ccad89c565b4734d92c5f4f06ec53a701f2"
+    },
+    {
+      "path": "ros2_play_g2/play_g2/usd/configuration/play_g2_sensor.usd",
+      "bytes": 647,
+      "sha256": "51138b9504bc42c330d7801e056cf1ed8d2891839e051b480fbc5425cfa0f88c"
+    },
+    {
+      "path": "ros2_play_g2/play_g2/usd/play_g2.usd",
+      "bytes": 1456,
+      "sha256": "fb2a98599adf35ee462ce3833ffd103b9a3d60aa74c37f202b63a2c28261fe79"
+    },
+    {
+      "path": "source/ddt_lab/ddt_lab/assets/ddt_robot.py",
+      "bytes": 8389,
+      "sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55"
+    },
+    {
+      "path": "source/ddt_lab/setup.py",
+      "bytes": 1491,
+      "sha256": "83e49cd5e841abf71cf76eb6b2045d2e1c5deb6fbc0e72b3c0c2c7db89f72f78"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "captured_utc": "2026-09-09T10:30:09.297025+00:00",
+  "scope": "Static frozen-code/configuration review; final acceptance is separate",
+  "compared_to": "residual_1999_axis_course_01",
+  "source_changes": {
+    "changed": [
+      "run_d1g2_taska.py",
+      "d1g2_taska_visual_navigation.py"
+    ],
+    "added": [
+      "d1g2_taska_visual_recovery.py"
+    ],
+    "all_other_10_runtime_modules": "byte-identical, including robot USD composition root, robot config, env, residual/base controller, RGBD, axis, camera compatibility and startup proprio navigator"
+  },
+  "original_environment": {
+    "seed": 42,
+    "terrain_seed": 0,
+    "initial_xyz": [
+      -141.0,
+      0.0,
+      0.6000000238418579
+    ],
+    "initial_state_matches_prior": true,
+    "episode_seconds": 1200,
+    "physics_dt": 0.005,
+    "control_dt": 0.02,
+    "num_envs": 1,
+    "diagnostic_last_stairs_enabled": false,
+    "physical_configuration_change_found": false,
+    "termination_change_found": false
+  },
+  "terminations": {
+    "goal": "root world x >145.0, strict comparison",
+    "time_out": "episode_length_buf >=60000 at50Hz (original1200s)",
+    "fall": "root world z < -20.0",
+    "illegal_contact": "selected base/torso/hip/thigh force norm >1N across original3-frame history",
+    "illegal_body_patterns": [
+      "base_link",
+      "[FR]_base_link",
+      ".*_hip",
+      ".*_thigh"
+    ],
+    "bad_orientation_added": false,
+    "pre_reset_capture": "RecordedTaskAEnv saves physics and active terms before super()._reset_idx"
+  },
+  "controller_data_flow": {
+    "actor": "Same331 inputs, same base/residual action history, same checkpoint; inference has no critic/terrain/root pose input.",
+    "recovery_sensor_inputs": "Original proprio body linear velocity[0:3], body gyro[3:6], projected gravity[9:12], observed RGB/depth/intrinsics, sensor-estimated yaw/relative position.",
+    "computed_world_velocity": "Recovery variable is estimated rotation @ body linear velocity; it is not a read of simulator world velocity.",
+    "prior_axes": "Observed grid lines constrained by known fixed TaskA directions.",
+    "world_truth_outside_actor_nav": [
+      "Official score/goal/fall evaluation",
+      "Diagnostic pose/yaw and sensor records",
+      "Initial start assertion",
+      "No-progress watchdog",
+      "Internal camera sensor assembly/render poses and overview video"
+    ]
+  },
+  "recovery_state_machine": {
+    "active_first": true,
+    "candidate_seed": "Full provisional XYZ and rotation in original initial-frame coordinates, with current camera as reference.",
+    "candidate_rejection": "Reseed at current image/full sensor-estimated pose and reset only candidate consecutive-accept evidence; original gap and episode budgets persist.",
+    "promotion": "Two consecutive candidate visual accepts; explicitly inertial_reanchor, not visually-connected old-map relocalization.",
+    "budgets": {
+      "gap_seconds": 2.0,
+      "gap_path_m": 1.0,
+      "episode_seconds": 4.0,
+      "episode_path_m": 2.0,
+      "reanchors": 4
+    },
+    "timing": "One observe_proprio at reset0 and once after each nonterminal env.step using absolute steps*.02; camera requires same timestamp and advances no sensor dt.",
+    "heading": "Validated independent heading can update yaw without resetting XY age; fresh flag prevents duplicate yaw interval.",
+    "stop_gate": "recovery_stop_required forces next controller command to zero before same existing policy; normal .8s stale-XY stop remains.",
+    "extra_diagnostic_switch": "109→131 helper branch exists in runner but is disabled: original initial x−141, rough_speed enabled (parser rejects combining rough with diagnostic mode), no diagnostic metadata or helper snapshot."
+  },
+  "success_contract": "Only final reason reach_goal_x, sole active terminal term reach_goal_x, final.x>145 and reached_goal=true establish local completion; static audit does not establish outcome.",
+  "limitations": [
+    "Inertial bridge uses simulator-reported proprio velocities whose short drift is inherited and unquantified.",
+    "Same render settings need not yield bit-identical RGB across independent GPU runs.",
+    "Official acceptance of known-course priors/custom robot remains outside this static implementation audit."
+  ],
+  "run_directory": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02",
+  "review_reuse_basis": "All13 runtime module hashes and all27 dependencies freshly match the prior independently reviewed full_01; no changes to robot/env/physics/termination or recovery code.",
+  "prior_static_audit_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/control_and_termination_audit.json",
+  "prior_static_audit_sha256": "eac614ddf298118b646f94272bfb1f6655c6ce851c5de2f43c4e369eba23d537"
+}

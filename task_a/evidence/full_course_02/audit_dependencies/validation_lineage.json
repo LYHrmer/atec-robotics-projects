@@ -1,0 +1,118 @@
+{
+  "short_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/last_stairs_camera_recovery_02/result.json",
+  "short_result_sha256": "b2a2d1f6d5af828eb41b236c29774a3c58bbd751e773aac55c3f55a0ed968872",
+  "short_is_diagnostic_only": true,
+  "short_passed_its_exit": true,
+  "short_full_course_reached_goal": false,
+  "modules": [
+    {
+      "module": "run_d1g2_taska.py",
+      "full_run_sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "passed_short_segment_sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_env.py",
+      "full_run_sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "passed_short_segment_sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_policy.py",
+      "full_run_sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "passed_short_segment_sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "ddt_robot.py",
+      "full_run_sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "passed_short_segment_sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1_with_g2_combined.usda",
+      "full_run_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "passed_short_segment_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_torch_policy.py",
+      "full_run_sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "passed_short_segment_sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_residual.py",
+      "full_run_sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "passed_short_segment_sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_rgbd.py",
+      "full_run_sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "passed_short_segment_sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_visual_navigation.py",
+      "full_run_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "passed_short_segment_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_navigation.py",
+      "full_run_sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "passed_short_segment_sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_axis_heading.py",
+      "full_run_sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "passed_short_segment_sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_visual_recovery.py",
+      "full_run_sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "passed_short_segment_sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "matches_prior_full_01": true
+    },
+    {
+      "module": "d1g2_taska_camera_compat.py",
+      "full_run_sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "passed_short_segment_sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "matches_passed_short_segment": true,
+      "prior_full_01_sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "matches_prior_full_01": true
+    }
+  ],
+  "all_13_modules_match_passed_short": true,
+  "all_13_modules_match_prior_full_01": true,
+  "checkpoint_matches_short": true,
+  "base_matches_short": true,
+  "note": "Short run additionally archives the diagnostic reset helper, unused in this original-start full run."
+}

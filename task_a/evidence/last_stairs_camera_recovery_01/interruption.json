@@ -1,0 +1,17 @@
+{
+  "status": "operator_interrupted_after_confirmed_recovery_failure",
+  "signal": "SIGINT",
+  "diagnostic_only": true,
+  "reached_goal": false,
+  "reason": "candidate_reference_disconnected_and_gap_budget_exceeded; stopped to verify reseeding fix",
+  "last_recorded_step": 3426,
+  "last_recorded_sim_seconds": 68.52,
+  "last_recorded_xyz": [
+    128.40687561035156,
+    0.6736482381820679,
+    -0.07434402406215668
+  ],
+  "max_recorded_x": 128.41912841796875,
+  "not_original_task_termination": true,
+  "original_result_file_preserved": true
+}

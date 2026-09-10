@@ -1,0 +1,12 @@
+{
+  "captured_utc": "2026-09-09T10:14:30.532853+00:00",
+  "reviewer": "/root/training_notes",
+  "mode": "Independent read-only frozen-source comparison; no GPU, no code edits",
+  "findings": [
+    "With diagnostic_last_stairs=False, normal main still calls env.reset(seed) exactly once. Normal environment construction,50 zero-action settling steps,2-second speed ramp and original termination handling are unchanged.",
+    "RecoveringRGBDOdometry.reset affects only its NumPy/VO state. Candidate reseeding and promotion never reset the Isaac environment.",
+    "Only runner and VisualNavigator change among prior common runtime modules, and visual_recovery is added. Robot/assets, env, actor/residual, RGBD and axis modules are byte-identical.",
+    "Recovery reads original proprio/RGBD/intrinsics/time and sensor-estimated pose; world truth is not passed to actor/navigation."
+  ],
+  "blocking_issue_found": false
+}

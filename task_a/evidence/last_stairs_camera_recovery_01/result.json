@@ -1,0 +1,360 @@
+{
+  "status": "running",
+  "robot": "D1+G2",
+  "mode": "policy",
+  "assets_root": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab",
+  "official_submission": false,
+  "seed": 42,
+  "speed_command_mps": 0.6,
+  "video": true,
+  "action_joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint",
+    "FL_foot_joint",
+    "FR_foot_joint",
+    "RL_foot_joint",
+    "RR_foot_joint",
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "g2_joint"
+  ],
+  "action_scales": [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "scope": "Diagnostic traversal of the original Task A last stairs only; original robot physics, camera, controls and terminations retained; not a full-course attempt.",
+  "terminal_state_captured_before_auto_reset": true,
+  "heading_estimator": "ZYX yaw rate from body gyro and projected gravity; no world pose input",
+  "navigation_mode": "rgbd",
+  "axis_heading_enabled": true,
+  "visual_recovery_enabled": true,
+  "sensor_archive_compression": "stored",
+  "speed_profile": {
+    "cruise_mps": 0.6,
+    "rough_mps": null,
+    "rough_relative_x_bounds_m": [
+      26.0,
+      112.0
+    ],
+    "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+    "speed_slew_mps2": 0.1
+  },
+  "diagnostic_only": true,
+  "full_course_reached_goal": false,
+  "diagnostic_segment_exit_reached": false,
+  "diagnostic_case": {
+    "name": "original_last_stairs_109_to_131",
+    "start_x": 109.0,
+    "start_y": 0.0,
+    "exit_x": 131.0,
+    "original_tile_x_bounds": [
+      110.0,
+      130.0
+    ],
+    "reset_height_method": "Highest of nine footprint samples from the already imported USD terrain plus original 0.6 m root clearance.",
+    "world_pose_usage": "Diagnostic reset placement and local endpoint detection; original scoring/terminations, recorded diagnostics and watchdogs remain in place.",
+    "navigation_origin": "Relative xy starts at [0,0] at the diagnostic entry; world reset coordinates are not passed to navigation or the actor.",
+    "axis_prior": "The original fixed course axes, when --axis_heading is enabled.",
+    "settle_steps": 50,
+    "ramp_seconds": 2.0,
+    "root_spawn_xyz": [
+      109.0,
+      0.0,
+      0.815103268623352
+    ],
+    "reset_footprint_samples": [
+      {
+        "x": 108.55,
+        "y": -0.3,
+        "ground_z": 0.21510326862335205
+      },
+      {
+        "x": 108.55,
+        "y": 0.0,
+        "ground_z": 0.21510326862335205
+      },
+      {
+        "x": 108.55,
+        "y": 0.3,
+        "ground_z": 0.21510326862335205
+      },
+      {
+        "x": 109.0,
+        "y": -0.3,
+        "ground_z": 0.10755163431167603
+      },
+      {
+        "x": 109.0,
+        "y": 0.0,
+        "ground_z": 0.10755163431167603
+      },
+      {
+        "x": 109.0,
+        "y": 0.3,
+        "ground_z": 0.10755163431167603
+      },
+      {
+        "x": 109.45,
+        "y": -0.3,
+        "ground_z": 0.0
+      },
+      {
+        "x": 109.45,
+        "y": 0.0,
+        "ground_z": 0.0
+      },
+      {
+        "x": 109.45,
+        "y": 0.3,
+        "ground_z": 0.0
+      }
+    ],
+    "reset_height_mesh_source": {
+      "source": "existing USD geometry",
+      "source_prim_paths": [
+        "/World/ground/terrain/mesh"
+      ],
+      "coordinate_frame": "world",
+      "usage": "reset height sampling only"
+    }
+  },
+  "front_camera_mount_pitch_degrees": 30.0,
+  "policy": {
+    "kind": "D1_flat_backbone_plus_D1G2_trained_residual",
+    "trained_with_G2": true,
+    "checkpoint": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/model_1999_final.pt",
+    "sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+    "base_policy_sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+    "iteration": 1999,
+    "actor_uses_terrain_truth": false,
+    "training_is_not_full_course_success": true
+  },
+  "source_sha256": {
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/run_d1g2_taska.py": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_env.py": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_policy.py": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+    "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/source/ddt_lab/ddt_lab/assets/ddt_robot.py": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+    "/tmp/d1g2_taska_assets_8x_yjhk1/d1_with_g2_combined.usda": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_torch_policy.py": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_residual.py": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_rgbd.py": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_navigation.py": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_navigation.py": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_axis_heading.py": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_recovery.py": "1903995cdce9d7cba51eed811e20e78cc297ee8b082279d89d4ea320edbe313f",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_camera_compat.py": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+    "/home/lybm/ATEC2026_Simulation_Challenge/tools/probe_d1g2_taska_segments.py": "b968b2c9735035940d424c185f53fdc137196ff1e4171f609bd259dceefd0d59"
+  },
+  "initial": {
+    "xyz": [
+      109.0,
+      0.0,
+      0.81510329246521
+    ],
+    "velocity_world": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "projected_gravity": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "quaternion_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "diagnostic_world_yaw_radians": 0.0,
+    "tilt_degrees": 0.0,
+    "contacts_over_1n": {},
+    "contact_history_peak_over_1n": {}
+  },
+  "startup_seconds": 18.236667616001796,
+  "actual_joint_names": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "joint1",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "joint2",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint",
+    "joint3",
+    "FL_foot_joint",
+    "FR_foot_joint",
+    "RL_foot_joint",
+    "RR_foot_joint",
+    "joint4",
+    "joint5",
+    "joint6",
+    "g2_joint",
+    "g2_left_joint",
+    "g2_right_joint"
+  ],
+  "actual_body_names": [
+    "base_link",
+    "F_base_link",
+    "R_base_link",
+    "imu_link",
+    "base_link",
+    "FL_hip",
+    "FR_hip",
+    "F_docking_link",
+    "F_funtion_link",
+    "RL_hip",
+    "RR_hip",
+    "R_docking_link",
+    "R_funtion_link",
+    "link1",
+    "FL_thigh",
+    "FR_thigh",
+    "RL_thigh",
+    "RR_thigh",
+    "link2",
+    "FL_calf",
+    "FR_calf",
+    "RL_calf",
+    "RR_calf",
+    "link3",
+    "FL_foot",
+    "FR_foot",
+    "RL_foot",
+    "RR_foot",
+    "link4",
+    "link5",
+    "link6",
+    "eef_connect_base_link",
+    "end_link",
+    "g2_base_link",
+    "g2_virtual_link",
+    "g2_left_link",
+    "g2_right_link"
+  ],
+  "simulation_dt": 0.02,
+  "episode_limit_seconds": 1200,
+  "num_envs": 1,
+  "visual_yaw_source": "RGB-D PnP plus gated observed known-course grid directions",
+  "front_camera_intrinsics_raster": [
+    [
+      732.999267578125,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      732.999267578125,
+      240.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "front_camera_intrinsics": [
+    [
+      732.999267578125,
+      0.0,
+      319.5
+    ],
+    [
+      0.0,
+      732.999267578125,
+      239.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "intrinsics_pixel_convention": "opencv_pixel_centres",
+  "visual_tilt_source": "projected_gravity from original proprioception",
+  "opencv_threads": 1,
+  "visual_recovery": {
+    "budgets": {
+      "gap_seconds": 2.0,
+      "gap_path_m": 1.0,
+      "episode_seconds": 4.0,
+      "episode_path_m": 2.0,
+      "reanchors": 4
+    },
+    "source": "Original body velocity, gyro and gravity bridge disconnected RGB-D segments.",
+    "candidate_required_consecutive_visual_accepts": 2,
+    "uses_world_pose": false,
+    "inherited_uncertainty": "Unquantified short inertial drift; explicitly recorded per reanchor."
+  },
+  "navigation": {
+    "kind": "visual_anchors_with_proprioceptive_heading_prediction",
+    "visual_fields": [
+      "accepted",
+      "reason",
+      "estimated_xy",
+      "estimated_yaw"
+    ],
+    "gyro_indices": [
+      3,
+      6
+    ],
+    "gravity_indices": [
+      9,
+      12
+    ],
+    "initial_xy": [
+      0.0,
+      0.0
+    ],
+    "initial_yaw": 0.0,
+    "slow_after_seconds": 0.3,
+    "stop_after_seconds": 0.8,
+    "slowdown": "linear speed reduction between 0.3 and 0.8 seconds",
+    "uses_simulator_world_pose": false,
+    "uses_body_linear_velocity": false,
+    "startup": "At least 2 seconds of proprioceptive relative-pose estimation during settling; then RGB-D anchors.",
+    "startup_world_pose_input": false
+  }
+}

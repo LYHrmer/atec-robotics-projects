@@ -1,0 +1,4 @@
+*.pt binary
+*.onnx binary
+*.usd binary
+*.usda text

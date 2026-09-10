@@ -1,0 +1,71 @@
+{
+  "status": "training_batch_finished",
+  "full_course_reached_goal": false,
+  "args": {
+    "output": "logs/d1g2_taska_training_20260909/rough_512_01",
+    "assets_root": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab",
+    "policy": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+    "num_envs": 512,
+    "iterations": 600,
+    "resume": "logs/d1g2_taska_training_20260909/upstairs_512_01/model_1399_final.pt",
+    "profile": "rough",
+    "seed": 42,
+    "max_wall_seconds": 1800.0,
+    "gpu_memory_limit_mib": 7600,
+    "gpu_temperature_limit": 85,
+    "minimum_available_ram_gib": 2.0,
+    "enable_cameras": false,
+    "xr": false,
+    "device": "cuda:0",
+    "cpu": false,
+    "verbose": false,
+    "info": false,
+    "rendering_mode": null,
+    "kit_args": "",
+    "anim_recording_enabled": false,
+    "anim_recording_start_time": 0,
+    "anim_recording_stop_time": 10,
+    "headless": true,
+    "hide_ui": true,
+    "create_new_stage": false,
+    "physics_gpu": 0,
+    "active_gpu": 0
+  },
+  "curriculum_restart": {
+    "from": "upstairs",
+    "to": "rough",
+    "initial_levels": [
+      0,
+      1
+    ]
+  },
+  "thigh_calf_initial_noise_floor": 0.45,
+  "reason": "iterations_completed",
+  "checkpoint": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/model_1999_final.pt",
+  "latest": {
+    "status": "training",
+    "iteration": 1999,
+    "num_envs": 512,
+    "timesteps_this_run": 7372800,
+    "wall_seconds": 909.9706742900016,
+    "iteration_seconds": 1.5285348892211914,
+    "mean_episode_reward": 62.12188215494156,
+    "mean_episode_steps": 932.96,
+    "mean_terrain_level": 4.90234375,
+    "mean_forward_speed_mps": 0.575912594795227,
+    "mean_completed_forward_distance_m": 10.533256160095334,
+    "termination_counts": {
+      "time_out": 6783,
+      "bad_orientation": 226,
+      "illegal_contact": 442
+    },
+    "residual_noise_std": 0.5821009874343872,
+    "loss": {
+      "value_function": 0.0837787814438343,
+      "surrogate": -0.007027145192842,
+      "entropy": 13.413309812545776
+    },
+    "full_course_reached_goal": false,
+    "sampled_gpu_peak_mib": 4107
+  }
+}

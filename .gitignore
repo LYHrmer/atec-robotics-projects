@@ -5,3 +5,12 @@ __pycache__/
 runs/
 *.ffmpeg.log
 .*.recording.mp4
+
+# Task A generated files and external robot resources
+/task_a/assets/DDT_Lab/
+/task_a/outputs/
+/task_a/logs/
+/task_a/sensors/
+/task_a/**/*.npz
+/task_a/**/*.mp4
+/task_a/**/*.zip

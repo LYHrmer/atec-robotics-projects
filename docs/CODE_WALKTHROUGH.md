@@ -1,8 +1,10 @@
 # 跟着一次控制调用读懂 Task E
 
-[项目导读](LEARNING_GUIDE.md) · [算法原理](ALGORITHM.md) · [动手练习](HANDS_ON.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 这套程序每次接收图像、关节反馈和累计得分，返回下一步关节位置指令。阅读时可以追踪一个具体动作：看见瓶子、移到上方、下降夹紧，再抬过篮沿。下面按这条数据流解释当前入口。
+
+先记住三个文件入口：[task_e_perception.py](../task_e_perception.py) 从图像找物体，[task_e_geometry.py](../task_e_geometry.py) 处理坐标与运动学，[solution_task_e_vision.py](../solution_task_e_vision.py) 用状态机组织动作。最外层 [solution.py](../solution.py) 再加入当前版本的确认提速；下面的继承链说明这些实现怎样共同完成一次调用。
 
 ## 先跟完一次调用
 

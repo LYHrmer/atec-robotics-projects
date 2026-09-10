@@ -1,0 +1,710 @@
+{
+  "run": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/last_stairs_camera_recovery_02",
+  "scope": "Successful diagnostic 109-to-131 m last-stairs traversal; not a full-course success",
+  "outcome": {
+    "status": "finished",
+    "reason": "diagnostic_segment_exit",
+    "simulation_seconds": 48.14,
+    "steps": 2407,
+    "diagnostic_segment_exit_reached": true,
+    "full_course_reached_goal": false,
+    "goal_triggered": false,
+    "reached_goal": false
+  },
+  "final_world_xyz": [
+    131.00656127929688,
+    0.21053528785705566,
+    0.46885567903518677
+  ],
+  "trace_rows": 98,
+  "initialized_trace_rows": 94,
+  "timing": {
+    "control_dt_seconds": 0.02,
+    "camera_period_seconds": 0.1,
+    "proprio_samples_equal_step_plus_one": true,
+    "heading_timestamp_matches_control_timestamp": true,
+    "camera_snapshot_samples_equal_camera_step_plus_one": true,
+    "position_age_matches_absolute_timestamps": true,
+    "origin_metadata_preserved_across_segments": true,
+    "monotonic_episode_counters": {
+      "frames": true,
+      "accepted_frames": true,
+      "rejected_frames": true,
+      "gravity_corrected_frames": true,
+      "axis_corrected_frames": true,
+      "segment_id": true,
+      "episode_blind_seconds": true,
+      "episode_blind_path_m": true,
+      "candidate_seed_count": true,
+      "candidate_reseed_count": true,
+      "proprio_samples": true
+    },
+    "limit": "50 Hz calls are established by archived call sites plus per-trace sample counts. Full 50 Hz proprio values were not archived, so every integral cannot be independently recomputed."
+  },
+  "reanchors": [
+    {
+      "timestamp": 42.9,
+      "segment_id": 1,
+      "source": "proprio_inertial_gap_then_candidate_visual_motion",
+      "visually_connected_to_previous_segment": false,
+      "gap_reason": "insufficient_depth_matches",
+      "gap_seconds": 0.29999999999999716,
+      "gap_path_m": 0.1394544128885241,
+      "committed_displacement_m": 0.12137485566765074,
+      "candidate_consecutive_accepts": 2,
+      "candidate_seed": {
+        "timestamp": 42.7,
+        "estimated_position": [
+          19.026167948005817,
+          0.5010734958025894,
+          -0.2799015472321237
+        ],
+        "estimated_rotation": [
+          [
+            0.854903423151072,
+            -0.040542841129228485,
+            -0.5172005559913381
+          ],
+          [
+            0.016042620406770812,
+            0.9985308806526442,
+            -0.05175630119646557
+          ],
+          [
+            0.5185390741449127,
+            0.0359493868685565,
+            0.8542978814024483
+          ]
+        ],
+        "unobserved_interval_seconds": 0.10000000000000142
+      },
+      "position_uncertainty": "unquantified inertial drift; inherited by this segment",
+      "candidate_seed_error": {
+        "diagnostic_camera_step": 2135,
+        "signed_xyz_error_m": [
+          -0.14141933226761694,
+          0.0769155485007248,
+          0.3851133008809363
+        ],
+        "xy_error_m": 0.16098269826346553,
+        "xyz_error_m": 0.4174058979645551,
+        "yaw_error_deg": 0.07296419107044465
+      },
+      "first_logged_post_reanchor_camera_timestamp": 43.0,
+      "first_logged_post_reanchor_error": {
+        "diagnostic_camera_step": 2150,
+        "signed_xyz_error_m": [
+          -0.1449796050953296,
+          0.07571578503685472,
+          0.3870164097434041
+        ],
+        "xy_error_m": 0.16356028245678994,
+        "xyz_error_m": 0.4201590977332508,
+        "yaw_error_deg": 0.102735036896586
+      },
+      "event_pose_logging_limit": "Trace is 2 Hz. The seed pose is exact; the first post-event pose is explicitly timestamped, not claimed to be the event pose."
+    },
+    {
+      "timestamp": 43.7,
+      "segment_id": 2,
+      "source": "proprio_inertial_gap_then_candidate_visual_motion",
+      "visually_connected_to_previous_segment": false,
+      "gap_reason": "insufficient_pnp_inliers",
+      "gap_seconds": 0.5,
+      "gap_path_m": 0.2716720052023956,
+      "committed_displacement_m": 0.2405385356744916,
+      "candidate_consecutive_accepts": 2,
+      "candidate_seed": {
+        "timestamp": 43.5,
+        "estimated_position": [
+          19.32242821717151,
+          0.5139840407969438,
+          -0.08226147279170776
+        ],
+        "estimated_rotation": [
+          [
+            0.8403975638022337,
+            -0.06622415903514361,
+            -0.5379091889114356
+          ],
+          [
+            0.025432729723718912,
+            0.99623199716933,
+            -0.08291552372631023
+          ],
+          [
+            0.5413733563947073,
+            0.05600150512348804,
+            0.8389152045408601
+          ]
+        ],
+        "unobserved_interval_seconds": 0.29999999999999716
+      },
+      "position_uncertainty": "unquantified inertial drift; inherited by this segment",
+      "candidate_seed_error": {
+        "diagnostic_camera_step": 2175,
+        "signed_xyz_error_m": [
+          -0.15016699767224395,
+          0.07656799393910996,
+          0.38776025284054255
+        ],
+        "xy_error_m": 0.16856092336527853,
+        "xyz_error_m": 0.4228129593197408,
+        "yaw_error_deg": -0.030840802219002924
+      },
+      "first_logged_post_reanchor_camera_timestamp": 44.0,
+      "first_logged_post_reanchor_error": {
+        "diagnostic_camera_step": 2200,
+        "signed_xyz_error_m": [
+          -0.1499296869284592,
+          0.07576357835796954,
+          0.3877675718522154
+        ],
+        "xy_error_m": 0.16798521014681614,
+        "xyz_error_m": 0.42259048807117394,
+        "yaw_error_deg": -0.22677920204869026
+      },
+      "event_pose_logging_limit": "Trace is 2 Hz. The seed pose is exact; the first post-event pose is explicitly timestamped, not claimed to be the event pose."
+    }
+  ],
+  "budget_audit": {
+    "within_all_configured_bounds": true,
+    "limits": {
+      "gap_seconds": 2.0,
+      "gap_path_m": 1.0,
+      "episode_seconds": 4.0,
+      "episode_path_m": 2.0,
+      "reanchors": 4
+    },
+    "used_reanchors": 2,
+    "used_blind_seconds": 0.7999999999999972,
+    "used_3d_path_m": 0.4111264180909196,
+    "candidate_seed_count": 4,
+    "candidate_reseed_count": 2,
+    "any_sampled_budget_stop": false
+  },
+  "heading_audit": {
+    "independent_heading_updates": 4,
+    "accepted_pose_axis_corrections": 412,
+    "independent_axis_observations_including_accepted_poses": 416,
+    "source_check": "8_d1g2_taska_visual_navigation.py:85 observe_heading changes yaw/fresh-heading flag/count only; XY and visual_age remain untouched."
+  },
+  "pose_evaluation": {
+    "truth_used_only_after_run": true,
+    "xy_origin_world": [
+      109.0,
+      0.0
+    ],
+    "z_datum_world_height_used_only_in_evaluator": 0.45636680722236633,
+    "z_datum_explanation": "The policy assigned z=0 at 2-second bootstrap. It did not read this true world height.",
+    "final_same_camera_frame": {
+      "diagnostic_camera_step": 2405,
+      "signed_xyz_error_m": [
+        -0.15630027099686572,
+        0.07735629042416542,
+        0.3911088410158816
+      ],
+      "xy_error_m": 0.17439544254905714,
+      "xyz_error_m": 0.42822878920346735,
+      "yaw_error_deg": -0.0176308825078754
+    },
+    "added_signed_xyz_error_from_42_5_to_44_0_m": [
+      -0.009848284154386988,
+      -0.002694014295274383,
+      0.013335469156623092
+    ],
+    "added_error_norm_from_42_5_to_44_0_m": 0.016795271698782917,
+    "selected_samples": [
+      {
+        "requested_camera_time": 2.0,
+        "trace_step": 101,
+        "trace_seconds": 2.02,
+        "camera_step": 100,
+        "position_timestamp": 2.0,
+        "segment_id": 0,
+        "accepted": false,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 100,
+          "signed_xyz_error_m": [
+            0.001539117318515082,
+            0.002007071506155927,
+            0.0
+          ],
+          "xy_error_m": 0.0025292722571870507,
+          "xyz_error_m": 0.0025292722571870507,
+          "yaw_error_deg": 0.33782928592558953
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 100,
+          "signed_xyz_error_m": [
+            0.001539117318515082,
+            0.002007071506155927,
+            0.0
+          ],
+          "xy_error_m": 0.0025292722571870507,
+          "xyz_error_m": 0.0025292722571870507,
+          "yaw_error_deg": 0.33782928592558953
+        },
+        "independent_heading_updates": 0,
+        "accepted_frames": 0,
+        "rejected_frames": 0,
+        "proprio_samples": 102,
+        "episode_blind_seconds": 0.0,
+        "episode_blind_path_m": 0.0,
+        "heading_prediction_error_at_trace_deg": 0.3431155514375587
+      },
+      {
+        "requested_camera_time": 10.0,
+        "trace_step": 501,
+        "trace_seconds": 10.02,
+        "camera_step": 500,
+        "position_timestamp": 10.0,
+        "segment_id": 0,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 500,
+          "signed_xyz_error_m": [
+            -0.1901581875932976,
+            0.0739172916432607,
+            0.36906594139548976
+          ],
+          "xy_error_m": 0.20401936749397745,
+          "xyz_error_m": 0.4217031792751647,
+          "yaw_error_deg": -0.14121495400888484
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 500,
+          "signed_xyz_error_m": [
+            -0.1901581875932976,
+            0.0739172916432607,
+            0.36906594139548976
+          ],
+          "xy_error_m": 0.20401936749397745,
+          "xyz_error_m": 0.4217031792751647,
+          "yaw_error_deg": -0.14121495400888484
+        },
+        "independent_heading_updates": 0,
+        "accepted_frames": 80,
+        "rejected_frames": 0,
+        "proprio_samples": 502,
+        "episode_blind_seconds": 0.0,
+        "episode_blind_path_m": 0.0,
+        "heading_prediction_error_at_trace_deg": -0.14588065803976444
+      },
+      {
+        "requested_camera_time": 20.0,
+        "trace_step": 1001,
+        "trace_seconds": 20.02,
+        "camera_step": 1000,
+        "position_timestamp": 20.0,
+        "segment_id": 0,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 1000,
+          "signed_xyz_error_m": [
+            -0.1503765161679098,
+            0.05825265363981352,
+            0.40975123293678717
+          ],
+          "xy_error_m": 0.16126521097520605,
+          "xyz_error_m": 0.4403436625683342,
+          "yaw_error_deg": 0.06596710955395378
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 1000,
+          "signed_xyz_error_m": [
+            -0.1503765161679098,
+            0.05825265363981352,
+            0.40975123293678717
+          ],
+          "xy_error_m": 0.16126521097520605,
+          "xyz_error_m": 0.4403436625683342,
+          "yaw_error_deg": 0.06596710955395378
+        },
+        "independent_heading_updates": 0,
+        "accepted_frames": 180,
+        "rejected_frames": 0,
+        "proprio_samples": 1002,
+        "episode_blind_seconds": 0.0,
+        "episode_blind_path_m": 0.0,
+        "heading_prediction_error_at_trace_deg": 0.07377775164695907
+      },
+      {
+        "requested_camera_time": 30.0,
+        "trace_step": 1501,
+        "trace_seconds": 30.02,
+        "camera_step": 1500,
+        "position_timestamp": 30.0,
+        "segment_id": 0,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 1500,
+          "signed_xyz_error_m": [
+            -0.16151576586453587,
+            0.07256966516485469,
+            0.43291047381740855
+          ],
+          "xy_error_m": 0.17706975722846263,
+          "xyz_error_m": 0.4677233982449027,
+          "yaw_error_deg": 0.0014878229201980336
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 1500,
+          "signed_xyz_error_m": [
+            -0.16151576586453587,
+            0.07256966516485469,
+            0.43291047381740855
+          ],
+          "xy_error_m": 0.17706975722846263,
+          "xyz_error_m": 0.4677233982449027,
+          "yaw_error_deg": 0.0014878229201980336
+        },
+        "independent_heading_updates": 0,
+        "accepted_frames": 280,
+        "rejected_frames": 0,
+        "proprio_samples": 1502,
+        "episode_blind_seconds": 0.0,
+        "episode_blind_path_m": 0.0,
+        "heading_prediction_error_at_trace_deg": 0.0037969287830542727
+      },
+      {
+        "requested_camera_time": 40.0,
+        "trace_step": 2001,
+        "trace_seconds": 40.02,
+        "camera_step": 2000,
+        "position_timestamp": 40.0,
+        "segment_id": 0,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 2000,
+          "signed_xyz_error_m": [
+            -0.14037363118124802,
+            0.07404902724914353,
+            0.3833380827592672
+          ],
+          "xy_error_m": 0.15870732424041886,
+          "xyz_error_m": 0.41489287829643956,
+          "yaw_error_deg": 0.010564373489811568
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 2000,
+          "signed_xyz_error_m": [
+            -0.14037363118124802,
+            0.07404902724914353,
+            0.3833380827592672
+          ],
+          "xy_error_m": 0.15870732424041886,
+          "xyz_error_m": 0.41489287829643956,
+          "yaw_error_deg": 0.010564373489811568
+        },
+        "independent_heading_updates": 0,
+        "accepted_frames": 380,
+        "rejected_frames": 0,
+        "proprio_samples": 2002,
+        "episode_blind_seconds": 0.0,
+        "episode_blind_path_m": 0.0,
+        "heading_prediction_error_at_trace_deg": 0.054460164072232295
+      },
+      {
+        "requested_camera_time": 42.5,
+        "trace_step": 2126,
+        "trace_seconds": 42.52,
+        "camera_step": 2125,
+        "position_timestamp": 42.5,
+        "segment_id": 0,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 2125,
+          "signed_xyz_error_m": [
+            -0.14008140277407222,
+            0.07845759265324392,
+            0.3744321026955923
+          ],
+          "xy_error_m": 0.16055651107349775,
+          "xyz_error_m": 0.40740372209533965,
+          "yaw_error_deg": -0.12146618693551281
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 2125,
+          "signed_xyz_error_m": [
+            -0.14008140277407222,
+            0.07845759265324392,
+            0.3744321026955923
+          ],
+          "xy_error_m": 0.16055651107349775,
+          "xyz_error_m": 0.40740372209533965,
+          "yaw_error_deg": -0.12146618693551281
+        },
+        "independent_heading_updates": 0,
+        "accepted_frames": 405,
+        "rejected_frames": 0,
+        "proprio_samples": 2127,
+        "episode_blind_seconds": 0.0,
+        "episode_blind_path_m": 0.0,
+        "heading_prediction_error_at_trace_deg": -0.10139409188744124
+      },
+      {
+        "requested_camera_time": 43.0,
+        "trace_step": 2151,
+        "trace_seconds": 43.02,
+        "camera_step": 2150,
+        "position_timestamp": 43.0,
+        "segment_id": 1,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 2150,
+          "signed_xyz_error_m": [
+            -0.1449796050953296,
+            0.07571578503685472,
+            0.3870164097434041
+          ],
+          "xy_error_m": 0.16356028245678994,
+          "xyz_error_m": 0.4201590977332508,
+          "yaw_error_deg": 0.102735036896586
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 2150,
+          "signed_xyz_error_m": [
+            -0.1449796050953296,
+            0.07571578503685472,
+            0.3870164097434041
+          ],
+          "xy_error_m": 0.16356028245678994,
+          "xyz_error_m": 0.4201590977332508,
+          "yaw_error_deg": 0.102735036896586
+        },
+        "independent_heading_updates": 2,
+        "accepted_frames": 408,
+        "rejected_frames": 2,
+        "proprio_samples": 2152,
+        "episode_blind_seconds": 0.29999999999999716,
+        "episode_blind_path_m": 0.1394544128885241,
+        "heading_prediction_error_at_trace_deg": 0.09988489346560371
+      },
+      {
+        "requested_camera_time": 44.0,
+        "trace_step": 2201,
+        "trace_seconds": 44.02,
+        "camera_step": 2200,
+        "position_timestamp": 44.0,
+        "segment_id": 2,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 2200,
+          "signed_xyz_error_m": [
+            -0.1499296869284592,
+            0.07576357835796954,
+            0.3877675718522154
+          ],
+          "xy_error_m": 0.16798521014681614,
+          "xyz_error_m": 0.42259048807117394,
+          "yaw_error_deg": -0.22677920204869026
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 2200,
+          "signed_xyz_error_m": [
+            -0.1499296869284592,
+            0.07576357835796954,
+            0.3877675718522154
+          ],
+          "xy_error_m": 0.16798521014681614,
+          "xyz_error_m": 0.42259048807117394,
+          "yaw_error_deg": -0.22677920204869026
+        },
+        "independent_heading_updates": 4,
+        "accepted_frames": 414,
+        "rejected_frames": 6,
+        "proprio_samples": 2202,
+        "episode_blind_seconds": 0.7999999999999972,
+        "episode_blind_path_m": 0.4111264180909196,
+        "heading_prediction_error_at_trace_deg": -0.21825321306017298
+      },
+      {
+        "requested_camera_time": 45.0,
+        "trace_step": 2251,
+        "trace_seconds": 45.02,
+        "camera_step": 2250,
+        "position_timestamp": 45.0,
+        "segment_id": 2,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 2250,
+          "signed_xyz_error_m": [
+            -0.15320866958037982,
+            0.07785421091441302,
+            0.39185561652660383
+          ],
+          "xy_error_m": 0.17185509765990623,
+          "xyz_error_m": 0.4278843287561963,
+          "yaw_error_deg": 0.08384989513455247
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 2250,
+          "signed_xyz_error_m": [
+            -0.15320866958037982,
+            0.07785421091441302,
+            0.39185561652660383
+          ],
+          "xy_error_m": 0.17185509765990623,
+          "xyz_error_m": 0.4278843287561963,
+          "yaw_error_deg": 0.08384989513455247
+        },
+        "independent_heading_updates": 4,
+        "accepted_frames": 424,
+        "rejected_frames": 6,
+        "proprio_samples": 2252,
+        "episode_blind_seconds": 0.7999999999999972,
+        "episode_blind_path_m": 0.4111264180909196,
+        "heading_prediction_error_at_trace_deg": 0.11407065891440399
+      },
+      {
+        "requested_camera_time": 48.1,
+        "trace_step": 2407,
+        "trace_seconds": 48.14,
+        "camera_step": 2405,
+        "position_timestamp": 48.1,
+        "segment_id": 2,
+        "accepted": true,
+        "position_age_at_camera_s": 0.0,
+        "current_camera_error": {
+          "diagnostic_camera_step": 2405,
+          "signed_xyz_error_m": [
+            -0.15630027099686572,
+            0.07735629042416542,
+            0.3911088410158816
+          ],
+          "xy_error_m": 0.17439544254905714,
+          "xyz_error_m": 0.42822878920346735,
+          "yaw_error_deg": -0.0176308825078754
+        },
+        "committed_pose_error_at_its_timestamp": {
+          "diagnostic_camera_step": 2405,
+          "signed_xyz_error_m": [
+            -0.15630027099686572,
+            0.07735629042416542,
+            0.3911088410158816
+          ],
+          "xy_error_m": 0.17439544254905714,
+          "xyz_error_m": 0.42822878920346735,
+          "yaw_error_deg": -0.0176308825078754
+        },
+        "independent_heading_updates": 4,
+        "accepted_frames": 455,
+        "rejected_frames": 6,
+        "proprio_samples": 2408,
+        "episode_blind_seconds": 0.7999999999999972,
+        "episode_blind_path_m": 0.4111264180909196,
+        "heading_prediction_error_at_trace_deg": -0.01563831923297582
+      }
+    ],
+    "limitation": "XYZ error contains pre-existing VO altitude drift. Navigation uses XY and heading; do not present the short-window bridge error as whole-run localization accuracy."
+  },
+  "source_dataflow_audit": {
+    "actor_inputs": "0_run:451-452 -> angular velocity proprio[3:6], gravity[9:12], joints[12:35]/[35:58], command; residual source:38-47/106-114 builds actor331 and calls act_inference(policy only).",
+    "inertial_inputs": "11_recovery.observe_proprio consumes original body velocity/gyro/gravity only; 0_run:352 initializes t0, :461 calls once after every env.step with steps*.02.",
+    "camera_timing": "0_run:461 precedes :494-497 camera wrapper update; same absolute timestamp is passed and checked by wrapper.",
+    "axis_inputs": "0_run:468-472 uses RGB/depth/K/gravity and visual/startup estimated yaw; no true quaternion or position.",
+    "reanchor_coordinates": "Candidate reset receives full shadow XYZ/R; promotions retain original bootstrap metadata and label visually_connected_to_previous_segment=false.",
+    "actor_history": "0_run:391 policy.reset occurs once before the episode loop. Recovery module has no policy/history API.",
+    "permitted_test_harness_truth": "Diagnostic-only reset reads terrain footprint heights and sets x=109; diagnostic endpoint checks true x>=131. Logging, scoring, original terminations and stall watchdog also use world state. These are outside actor/navigation inputs.",
+    "static_prior": "Known course grid directions are an explicit prior; this is not a general unstructured-world absolute-heading estimator.",
+    "termination_priority": "0_run:557-564 handles original environment done before diagnostic exit. reached_goal explicitly requires NOT diagnostic_last_stairs; full_course_reached_goal is false.",
+    "no_world_pose_or_terrain_height_control_input_found": true,
+    "review_method": "Read archived source call paths; no GPU replay or runtime instrumentation."
+  },
+  "archived_source_hashes": [
+    {
+      "archived": "sources/0_run_d1g2_taska.py",
+      "expected": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "actual": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "matches": true
+    },
+    {
+      "archived": "sources/1_d1g2_taska_env.py",
+      "expected": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "actual": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "matches": true
+    },
+    {
+      "archived": "sources/2_d1g2_taska_policy.py",
+      "expected": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "actual": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "matches": true
+    },
+    {
+      "archived": "sources/3_ddt_robot.py",
+      "expected": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "actual": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "matches": true
+    },
+    {
+      "archived": "sources/4_d1_with_g2_combined.usda",
+      "expected": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "actual": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "matches": true
+    },
+    {
+      "archived": "sources/5_d1g2_taska_torch_policy.py",
+      "expected": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "actual": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "matches": true
+    },
+    {
+      "archived": "sources/6_d1g2_taska_residual.py",
+      "expected": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "actual": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+      "matches": true
+    },
+    {
+      "archived": "sources/7_d1g2_taska_rgbd.py",
+      "expected": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "actual": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "matches": true
+    },
+    {
+      "archived": "sources/8_d1g2_taska_visual_navigation.py",
+      "expected": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "actual": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "matches": true
+    },
+    {
+      "archived": "sources/9_d1g2_taska_navigation.py",
+      "expected": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "actual": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "matches": true
+    },
+    {
+      "archived": "sources/10_d1g2_taska_axis_heading.py",
+      "expected": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "actual": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "matches": true
+    },
+    {
+      "archived": "sources/11_d1g2_taska_visual_recovery.py",
+      "expected": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "actual": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "matches": true
+    },
+    {
+      "archived": "sources/12_d1g2_taska_camera_compat.py",
+      "expected": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "actual": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "matches": true
+    },
+    {
+      "archived": "sources/13_probe_d1g2_taska_segments.py",
+      "expected": "b968b2c9735035940d424c185f53fdc137196ff1e4171f609bd259dceefd0d59",
+      "actual": "b968b2c9735035940d424c185f53fdc137196ff1e4171f609bd259dceefd0d59",
+      "matches": true
+    }
+  ]
+}

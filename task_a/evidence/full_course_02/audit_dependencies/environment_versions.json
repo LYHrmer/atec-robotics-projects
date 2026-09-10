@@ -1,0 +1,105 @@
+{
+  "captured_utc": "2026-09-09T10:30:09.297025+00:00",
+  "python_executable": "/home/lybm/miniforge3/envs/isaaclab/bin/python",
+  "python_version": "3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "method": "Fresh metadata only; no simulator or GPU initialization",
+  "packages": {
+    "isaaclab": {
+      "version": "0.54.2",
+      "distribution_name": "isaaclab",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "isaaclab-rl": {
+      "version": "0.4.7",
+      "distribution_name": "isaaclab_rl",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "isaaclab-assets": {
+      "version": "0.2.4",
+      "distribution_name": "isaaclab_assets",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "isaaclab-tasks": {
+      "version": "0.11.12",
+      "distribution_name": "isaaclab_tasks",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "isaacsim": {
+      "status": "distribution_not_found"
+    },
+    "isaacsim-core": {
+      "version": "4.5.0.0",
+      "distribution_name": "isaacsim-core",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "isaacsim-kernel": {
+      "version": "4.5.0.0",
+      "distribution_name": "isaacsim-kernel",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "atec-rl-lab": {
+      "version": "0.2.1",
+      "distribution_name": "atec_rl_lab",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "rsl-rl-lib": {
+      "version": "3.0.1",
+      "distribution_name": "rsl-rl-lib",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "torch": {
+      "version": "2.7.0+cu128",
+      "distribution_name": "torch",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "numpy": {
+      "version": "1.26.4",
+      "distribution_name": "numpy",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "scipy": {
+      "version": "1.15.3",
+      "distribution_name": "scipy",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "trimesh": {
+      "version": "4.12.2",
+      "distribution_name": "trimesh",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "onnxruntime": {
+      "status": "distribution_not_found"
+    },
+    "opencv-python": {
+      "version": "4.11.0.86",
+      "distribution_name": "opencv-python",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "onnxruntime-gpu": {
+      "status": "distribution_not_found"
+    },
+    "isaacsim-app": {
+      "version": "4.5.0.0",
+      "distribution_name": "isaacsim-app",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "onnx": {
+      "version": "1.22.0",
+      "distribution_name": "onnx",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    },
+    "tensordict": {
+      "version": "0.13.0",
+      "distribution_name": "tensordict",
+      "location": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages"
+    }
+  },
+  "packages_match_prior": true,
+  "git_commits": {
+    "/home/lybm/ATEC2026_Simulation_Challenge": "dfa816d3c3119e4130305d18961e412461cfefd1",
+    "/home/lybm/IsaacLab": "37ddf626871758333d6ed89cf64ad702aef127d0"
+  },
+  "isaaclab_version_file": "2.3.2",
+  "version_interpretation": "Repository VERSION and individual extension/distribution versions are different identifiers. atec-rl-lab installed metadata is 0.2.1 while the copied local extension.toml declares 0.1.0; copied source hashes identify the actual inspected files."
+}

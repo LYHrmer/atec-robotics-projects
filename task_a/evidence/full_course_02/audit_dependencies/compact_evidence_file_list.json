@@ -1,0 +1,65 @@
+{
+  "archive_status": "complete",
+  "core_files": [
+    {
+      "relative_path": "README.md",
+      "bytes": 1032
+    },
+    {
+      "relative_path": "run_acceptance_audit.json",
+      "bytes": 2425
+    },
+    {
+      "relative_path": "final_result_snapshot.json",
+      "bytes": 11817
+    },
+    {
+      "relative_path": "recovery_budget_audit.json",
+      "bytes": 3145
+    },
+    {
+      "relative_path": "hardware_audit.json",
+      "bytes": 751
+    },
+    {
+      "relative_path": "run_source_hash_audit.json",
+      "bytes": 8098
+    },
+    {
+      "relative_path": "validation_lineage.json",
+      "bytes": 6243
+    },
+    {
+      "relative_path": "manifest.json",
+      "bytes": 18713
+    },
+    {
+      "relative_path": "environment_versions.json",
+      "bytes": 4008
+    },
+    {
+      "relative_path": "robot_usd_dependencies.json",
+      "bytes": 15607
+    },
+    {
+      "relative_path": "control_and_termination_audit.json",
+      "bytes": 4885
+    },
+    {
+      "relative_path": "trace.jsonl.gz",
+      "bytes": 1069124
+    }
+  ],
+  "optional_small_paths": [
+    "files/",
+    "nav_heading_checks.json",
+    "independent_static_review.json"
+  ],
+  "runtime_frozen_sources": "../sources/",
+  "excluded_large_paths": [
+    "../sensors/",
+    "../run.mp4"
+  ],
+  "trace_original_bytes": 7801097,
+  "trace_gzip_bytes": 1069124
+}

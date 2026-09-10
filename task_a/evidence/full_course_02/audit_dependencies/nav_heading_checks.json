@@ -1,0 +1,148 @@
+{
+  "cpu_only": true,
+  "gpu_started": false,
+  "tested_source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_navigation.py",
+  "tested_source_sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+  "default_reference_source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_course_01/sources/8_d1g2_taska_visual_navigation.py",
+  "default_reference_sha256": "af0c2678464449c3e9f2bd7eba0b2e3572cf3001b84f92de26b7c13f7c82c201",
+  "invalid_heading_contract": "accepted=False/empty/None is ignored; accepted=True with nonfinite/missing/malformed heading is a fail-fast contract violation, as confirmed by root. Both classes preserve state.",
+  "checks": [
+    {
+      "name": "independent_heading_does_not_refresh_xy_age",
+      "passed": true,
+      "details": {
+        "age_before": 0.4000000000000001,
+        "age_after_heading": 0.4000000000000001,
+        "xy_before": [
+          2.0,
+          0.3
+        ],
+        "xy_after_heading": [
+          2.0,
+          0.3
+        ]
+      }
+    },
+    {
+      "name": "same_timestamp_heading_no_double_integration_then_trapezoid_resumes",
+      "passed": true,
+      "details": {
+        "first_command_yaw": 1.0,
+        "first_command_age": 0.4200000000000001,
+        "second_command_yaw": 1.01,
+        "expected_yaws": [
+          1.0,
+          1.01
+        ]
+      }
+    },
+    {
+      "name": "heading_alone_cannot_clear_stale_xy_stop",
+      "passed": true,
+      "details": {
+        "age_before_heading": 0.8600000000000004,
+        "age_after_next_command": 0.8800000000000004,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stopped": true
+      }
+    },
+    {
+      "name": "heading_alone_cannot_initialize_visual_xy",
+      "passed": true,
+      "details": {
+        "visual_initialized": false,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "legal_rejected_heading_ignored_none",
+      "passed": true,
+      "details": {
+        "returned": false,
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "legal_rejected_heading_ignored_empty",
+      "passed": true,
+      "details": {
+        "returned": false,
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "legal_rejected_heading_ignored_rejected_nan",
+      "passed": true,
+      "details": {
+        "returned": false,
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "legal_rejected_heading_ignored_rejected_missing",
+      "passed": true,
+      "details": {
+        "returned": false,
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "contract_violation_fails_fast_accepted_nan",
+      "passed": true,
+      "details": {
+        "expected_exception": "ValueError",
+        "actual_exception": "ValueError",
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "contract_violation_fails_fast_accepted_inf",
+      "passed": true,
+      "details": {
+        "expected_exception": "ValueError",
+        "actual_exception": "ValueError",
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "contract_violation_fails_fast_accepted_missing",
+      "passed": true,
+      "details": {
+        "expected_exception": "KeyError",
+        "actual_exception": "KeyError",
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "contract_violation_fails_fast_accepted_invalid_string",
+      "passed": true,
+      "details": {
+        "expected_exception": "ValueError",
+        "actual_exception": "ValueError",
+        "state_unchanged": true
+      }
+    },
+    {
+      "name": "flag_off_never_observe_heading_matches_frozen_default_500_steps",
+      "passed": true,
+      "details": {
+        "steps": 500,
+        "dt": 0.02,
+        "max_abs_command_difference": 0.0,
+        "mismatch_steps": [],
+        "fixtures": "Tilted gravity/changing gyro, visual anchors, 1.7s XY outage, stop and recovery; compare all pre-existing state fields",
+        "scope": "Navigator trajectory equivalence when independent heading method is not called; no GPU integration claim"
+      }
+    }
+  ],
+  "all_passed": true,
+  "check_count": 13
+}

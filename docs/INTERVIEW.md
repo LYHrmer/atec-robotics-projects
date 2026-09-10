@@ -1,6 +1,6 @@
 # 把项目讲清楚
 
-[学习路线](LEARNING_GUIDE.md) · [算法](ALGORITHM.md) · [代码导读](CODE_WALKTHROUGH.md) · [自测](SELF_CHECK.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 下面三种讲法分别适合开场、项目介绍和深入讨论。数字对应已保存的本机评测；沿代码追一遍，再用自己的语言讲述，会比记住段落更有帮助。
 

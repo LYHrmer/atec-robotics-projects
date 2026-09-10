@@ -1,0 +1,26 @@
+{
+  "scope": "CPU only. No Simulator/AppLauncher/GPU launched. No external writes.",
+  "python_ast": "all staged .py passed",
+  "bash_syntax": "scripts/run_taska.sh passed bash -n",
+  "staged_checkpoint_cpu_inference": {
+    "actor_observation_size": 331,
+    "critic_training_only_size": 521,
+    "output_shape": [
+      23
+    ],
+    "finite": true,
+    "arm_last_seven_zero": true,
+    "checkpoint_sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+    "base_onnx_sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b"
+  },
+  "asset_relocation": "Both direct combined-layer references resolve to files inside staged assets/DDT_Lab. Ten subordinate USD bytes were checked against previously audited recursive Sdf dependency graph.",
+  "sha256sum_before_this_report": {
+    "verified_files": 133,
+    "all_match": true
+  },
+  "limitations": [
+    "No GPU run from staging directory yet.",
+    "Full-course result was still pending when package was prepared.",
+    "Original capture NPZ and videos are excluded; root publishes final evidence separately."
+  ]
+}

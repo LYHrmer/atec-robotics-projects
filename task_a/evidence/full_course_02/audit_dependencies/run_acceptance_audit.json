@@ -1,0 +1,63 @@
+{
+  "captured_utc": "2026-09-09T10:31:37.801487+00:00",
+  "verdict": "local_original_full_course_passed",
+  "all_checks_passed": true,
+  "checks": {
+    "finished": true,
+    "original_start_x_minus141": true,
+    "original_start_y_zero": true,
+    "strict_goal_x_greater145": true,
+    "sole_reason_reach_goal_x": true,
+    "sole_terminal_term_reach_goal_x": true,
+    "reported_reached_goal_true": true,
+    "reported_goal_triggered_true": true,
+    "not_diagnostic_mode": true,
+    "no_same_frame_illegal_fall_timeout": true,
+    "original1200s_budget": true,
+    "step_time_consistent": true,
+    "terminal_trace_agrees": true,
+    "all13_source_snapshots_match": true,
+    "all27_original_dependencies_match": true,
+    "both_weight_hashes_match": true,
+    "same_code_as_passed_short_segment": true,
+    "recovery_budgets_respected": true
+  },
+  "official_submission": false,
+  "robot": "D1+G2",
+  "run_directory": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02",
+  "original_result_modified": false,
+  "original_result_sha256": "0aaa96368c46039e2a42e323a81337f4e847e2822fa69d722bbdb19226035b0a",
+  "original_result_snapshot": "final_result_snapshot.json",
+  "trace_sha256": "3a624c47c768cfbfe842e1a66e502d6cf14af6a323a58e795969dd98122e06a5",
+  "trace_rows": 1013,
+  "reason": "reach_goal_x",
+  "termination_terms": [
+    "reach_goal_x"
+  ],
+  "initial_xyz": [
+    -141.0,
+    0.0,
+    0.6000000238418579
+  ],
+  "final_xyz": [
+    145.00234985351562,
+    -0.33237960934638977,
+    0.467591255903244
+  ],
+  "simulation_seconds": 505.66,
+  "wall_seconds": 1007.8762117459992,
+  "steps": 25283,
+  "maximum_forward_progress_m": 286.0023498535156,
+  "max_tilt_degrees": 42.66390549699304,
+  "gpu_sampled_peak_mib": 6210,
+  "process_ram_peak_mib": 7731.03125,
+  "recovery_summary": {
+    "inertial_reanchor_count": 2,
+    "episode_blind_seconds": 0.8999999999999773,
+    "episode_blind_path_m": 0.4843834803328588,
+    "max_completed_gap_seconds": 0.5,
+    "max_completed_gap_path_m": 0.269444637941626
+  },
+  "source_lineage": "All13 runtime modules and both policy weights match the passed last_stairs_camera_recovery_02 diagnostic.",
+  "scope": "A verified local original-course success under the preserved TaskA goal/termination rules with custom D1+G2. Prior failures remain recorded separately; no official online submission or universal success-rate claim."
+}

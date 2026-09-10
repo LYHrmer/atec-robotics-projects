@@ -1,6 +1,6 @@
 # 8.06 秒从哪里省下来
 
-[项目导读](LEARNING_GUIDE.md) · [算法原理](ALGORITHM.md) · [动手练习](HANDS_ON.md) · [面试讲解](INTERVIEW.md)
+[仓库首页](../README.md) · [Task E 总览与运行](TASK_E.md) · [Task E 学习路线](LEARNING_GUIDE.md) · [跨任务学习路线](ATEC_PROJECTS.md)
 
 seed 42 的仿真完成时间从 **61.84 秒降到 53.78 秒（−13.03%）**，两个版本都得到 18/18 分。腕关节总行程减少 **14.39%**。加速独立包在 seed 0 也达到 18/18，耗时 62.36 秒。下面以同一个 seed 42 初态为对照，拆开看时间花在哪里、动作又发生了什么变化。
 

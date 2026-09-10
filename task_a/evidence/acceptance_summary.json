@@ -1,0 +1,38 @@
+{
+  "complete_original_course_pass": true,
+  "original_start_x_m": -141.0,
+  "terminal_x_m": 145.00234985351562,
+  "forward_distance_m": 286.0023498535156,
+  "termination_terms": [
+    "reach_goal_x"
+  ],
+  "simulation_seconds": 505.66,
+  "original_time_limit_seconds": 1200,
+  "wall_seconds": 1007.8762117459992,
+  "sampled_peak_gpu_memory_mib": 6210,
+  "sampled_peak_gpu_temperature_c": 61,
+  "sampled_min_available_ram_gib": 14.680667877197266,
+  "max_process_rss_mib": 7731.03125,
+  "inertial_reanchors": 2,
+  "episode_blind_seconds": 0.8999999999999773,
+  "episode_blind_path_m": 0.4843834803328588,
+  "recovery_budgets": {
+    "gap_seconds": 2.0,
+    "gap_path_m": 1.0,
+    "episode_seconds": 4.0,
+    "episode_path_m": 2.0,
+    "reanchors": 4
+  },
+  "recovery_stop_required": false,
+  "trace_sha256": "3a624c47c768cfbfe842e1a66e502d6cf14af6a323a58e795969dd98122e06a5",
+  "video_filename": "d1g2_taska_full_run.mp4",
+  "video_bytes": 129304309,
+  "video_sha256": "e58f33cc1ae3677e0768ce414fcc06106a447f2f47292bf12b590c127db02c55",
+  "limitations": [
+    "One complete local pass, not a measured repeat-run success rate.",
+    "Previous identical configuration failed in rough terrain.",
+    "Official online submission/robot eligibility has not been evaluated.",
+    "Segment connections include explicitly budgeted proprioceptive integration."
+  ],
+  "opus_assistance": "Fault timeline, bounded-walking prototype and CPU checks; the deployed recovery uses candidate RGB-D reference reseeding rather than the independent Opus prototype."
+}

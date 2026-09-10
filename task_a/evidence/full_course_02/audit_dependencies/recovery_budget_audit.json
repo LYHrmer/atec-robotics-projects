@@ -1,0 +1,102 @@
+{
+  "budgets_respected_in_recorded_events_and_totals": true,
+  "budgets": {
+    "gap_seconds": 2.0,
+    "gap_path_m": 1.0,
+    "episode_seconds": 4.0,
+    "episode_path_m": 2.0,
+    "reanchors": 4
+  },
+  "inertial_reanchor_count": 2,
+  "candidate_seed_count": 5,
+  "candidate_reseed_count": 3,
+  "episode_blind_seconds": 0.8999999999999773,
+  "episode_blind_path_m": 0.4843834803328588,
+  "max_completed_gap_seconds": 0.5,
+  "max_completed_gap_path_m": 0.269444637941626,
+  "events": [
+    {
+      "timestamp": 476.7,
+      "segment_id": 1,
+      "source": "proprio_inertial_gap_then_candidate_visual_motion",
+      "visually_connected_to_previous_segment": false,
+      "gap_reason": "insufficient_depth_matches",
+      "gap_seconds": 0.39999999999997726,
+      "gap_path_m": 0.2149388423912328,
+      "committed_displacement_m": 0.2043654710278159,
+      "candidate_consecutive_accepts": 2,
+      "candidate_seed": {
+        "timestamp": 476.5,
+        "estimated_position": [
+          269.007112124946,
+          0.29497313213418136,
+          -1.7551381210361159
+        ],
+        "estimated_rotation": [
+          [
+            0.8462560356968193,
+            -0.03687867504250641,
+            -0.5314985281012665
+          ],
+          [
+            -0.001320233781242971,
+            0.9974532135114084,
+            -0.07131159680253567
+          ],
+          [
+            0.532774792036435,
+            0.06104957152080402,
+            0.844052113786619
+          ]
+        ],
+        "unobserved_interval_seconds": 0.19999999999998863
+      },
+      "position_uncertainty": "unquantified inertial drift; inherited by this segment"
+    },
+    {
+      "timestamp": 477.40000000000003,
+      "segment_id": 2,
+      "source": "proprio_inertial_gap_then_candidate_visual_motion",
+      "visually_connected_to_previous_segment": false,
+      "gap_reason": "insufficient_pnp_inliers",
+      "gap_seconds": 0.5,
+      "gap_path_m": 0.269444637941626,
+      "committed_displacement_m": 0.24216030779749992,
+      "candidate_consecutive_accepts": 2,
+      "candidate_seed": {
+        "timestamp": 477.2,
+        "estimated_position": [
+          269.2726894570742,
+          0.31041900340334405,
+          -1.5624509731219314
+        ],
+        "estimated_rotation": [
+          [
+            0.857886198079448,
+            -0.006608931482269121,
+            -0.5137972296241513
+          ],
+          [
+            -0.009133123167484124,
+            0.9995631999418533,
+            -0.02810685651598702
+          ],
+          [
+            0.513758559253272,
+            0.02880505765773416,
+            0.8574511131530106
+          ]
+        ],
+        "unobserved_interval_seconds": 0.2999999999999545
+      },
+      "position_uncertainty": "unquantified inertial drift; inherited by this segment"
+    }
+  ],
+  "all_event_ids_observed": true,
+  "recovery_stop_rows": [],
+  "final_recovery_stop_required": false,
+  "frames": 5037,
+  "accepted_frames": 5029,
+  "rejected_frames": 7,
+  "provenance": "Inertial reanchors are explicitly disconnected visual segments with inherited unquantified inertial drift; not pure visual relocalization."
+}

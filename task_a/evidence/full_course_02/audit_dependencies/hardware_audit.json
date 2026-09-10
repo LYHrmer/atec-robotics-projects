@@ -1,0 +1,11 @@
+{
+  "gpu_peak_mib": 6210,
+  "gpu_peak_method": "Maximum sampled by runner hardware_record every250 control steps (~5s) and on termination; not continuous hardware peak.",
+  "process_ram_peak_mib": 7731.03125,
+  "process_ram_peak_gib": 7.549835205078125,
+  "process_ram_peak_method": "OS getrusage(RUSAGE_SELF).ru_maxrss high-water value; not whole-system RAM peak.",
+  "reported_stdout_gpu_max_temperature_c": 61,
+  "reported_stdout_min_available_system_ram_gib": 14.68,
+  "stdout_metrics_provenance": "Parent/root reports these values extracted from stdout into its evidence/acceptance_summary.json; this audit directly verifies GPU/process-RAM fields in original result, not that separate stdout extraction.",
+  "wall_seconds": 1007.8762117459992
+}

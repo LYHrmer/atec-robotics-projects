@@ -1,75 +1,68 @@
-# ATEC Task E：RGB-D 三物体抓取与入篮
+# ATEC 机器人仿真：Task A 越障与 Task E 抓取
 
-ATEC 项目统一入口：[Task A / Task E 工作与复习总览](docs/ATEC_PROJECTS.md) · [D1+G2 Task A 通关及强化学习复习](docs/TASKA_D1G2.md)。Task A 的模型和完整复现资料在关联私有仓库，本仓库公开结果摘要与方法说明。
+这个仓库记录两项机器人任务：让 D1+G2 走完整条复杂赛道，让 Piper 机械臂把三个物体放入篮中。两项任务的代码、文档和验收证据统一管理，便于复现、学习和回顾工程取舍。
 
-一台固定在桌边的 Piper 机械臂，依次把芥末瓶、糖盒和香蕉放入篮中。策略从 RGB-D 图像估计夹持点，用运动学规划关节路径，再根据关节位置、夹爪开度和公开得分推进抓放过程。
+## 已经完成什么
 
-当前 v3 独立包在本机 **seed 42 和 seed 0 均得到 18/18 分**。seed 42 用时 **53.78 秒**，相比满分基线缩短 **13.03%**。这是已知机器人、相机和物体配置下的几何控制方案，成绩来自本地比赛环境。
+| 任务 | 机器人怎样完成任务 | 已验证的本机结果 | 代码与运行 | 视频与证据 |
+| --- | --- | --- | --- | --- |
+| **Task A：连续越障** | D1+G2 用相机估计行进方向，在已有行走策略上训练动作修正 | 连续前进 **286.002 m**，用时 **505.66 s**，唯一终止项 `reach_goal_x` | [Task A 入口](task_a/README.md) | [完整视频](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-a-local-pass-20260909) · [验收记录](task_a/evidence/acceptance_summary.json) |
+| **Task E：三物体抓取入篮** | Piper 从彩色与深度图像定位物体，用运动学规划动作并检查抓放反馈 | seed 42 / seed 0 均为 **18/18 分**，分别 **53.78 s / 62.36 s** | [Task E 入口](docs/TASK_E.md) | [演示视频](media/task_e_fast_seed42_color.mp4) · [seed 42](results/fast_seed42_package.json) · [seed 0](results/fast_seed0_package.json) |
 
-[![播放三物体抓放视频](media/fast_preview.jpg)](media/task_e_fast_seed42_color.mp4)
+Task A 已有一次完整通过，也存在同配置失败；Task E 只验证了少量指定初态。这些结果来自 Isaac Sim / Isaac Lab 本机仿真，尚未证明广泛场景成功率、实机效果或官方线上成绩。
 
-[彩色演示视频](media/task_e_fast_seed42_color.mp4) · [原始录像](media/task_e_fast_seed42_original.mp4) · [视频与代码包下载](https://github.com/LYHrmer/atec-taske-rgbd-manipulation/releases/tag/fast-smooth-18)
+## 先选一条阅读路线
 
-## 从哪里开始读
+| 你想做什么 | Task A | Task E |
+| --- | --- | --- |
+| **先看懂机器人在做什么** | [行走与导航导读](task_a/docs/LEARNING_GUIDE.md) | [从抓取视频开始](docs/LEARNING_GUIDE.md) |
+| **跟着代码理解实现** | [代码、模型与运行入口](task_a/README.md) | [一次控制调用的代码导读](docs/CODE_WALKTHROUGH.md) |
+| **复现已有结果** | [环境、依赖与启动](task_a/README.md) | [本地复现](docs/TASK_E.md#本地复现) |
+| **复习或准备项目介绍** | [训练过程、失败分析与自测](docs/TASKA_D1G2.md) | [算法原理](docs/ALGORITHM.md) · [面试讲解](docs/INTERVIEW.md) · [自测题](docs/SELF_CHECK.md) |
 
-第一次接触项目，建议从 [项目导读](docs/LEARNING_GUIDE.md) 开始。它从视频中的具体动作讲起，再把感知、运动学和状态机连到一起。
+想把两项任务一起学习，按 [跨任务学习路线](docs/ATEC_PROJECTS.md) 连接坐标系、感知、控制和实验验证。
 
-| 想弄清楚的事情 | 对应资料 |
+## 本地运行从哪里开始
+
+本机验证环境为 Ubuntu、Python 3.10、Isaac Sim 4.5、Isaac Lab 2.3.2、PyTorch 2.7.0+cu128，硬件为 i9-14900HX、RTX 5060 Laptop 8 GB、32 GB 内存。Task A 完整通过时显存采样峰值为 6210 MiB。
+
+先按各任务运行文档配置环境与外部资产：[Task A](task_a/README.md) · [Task E](docs/TASK_E.md#本地复现)。Task A 的机器人原始资源及基础策略需要按其说明准备；训练后的 [残差模型](task_a/weights/model_1999_final.pt) 已随本仓库保存。
+
+配置完成后，从仓库根目录使用统一入口 `bash run.sh task-a` 或 `bash run.sh task-e`，按对应运行文档追加参数。Task A 的相对输出路径以 `task_a/` 为起点，Task E 以仓库根目录为起点。
+
+还没有配置仿真时，可以从仓库根目录运行 Task E 几何算例，只需 Python、NumPy 和 SciPy：
+
+```bash
+PYTHONNOUSERSITE=1 python3 tools/task_e/learn_geometry.py
+```
+
+算例检查像素反投影、夹持点换算、正逆运动学和已有运动指标，不生成新的比赛成绩；逐项解释见 [五个动手练习](docs/HANDS_ON.md)。
+
+## 文件放在哪里
+
+```text
+task_a/              Task A 代码、训练权重、运行说明与验收证据
+run.sh               两项任务的统一启动入口
+solution.py          Task E 官方策略入口；同目录策略文件共同运行
+scripts/evaluate.sh  Task E 评测入口
+tools/task_e/        Task E 评测、几何学习和运动分析工具
+docs/               跨任务学习路线、Task E 深入文档、Task A 成果说明
+results/            Task E 结果、源码记录和逐步运动数据
+media/              Task E 视频、截图与教学图
+```
+
+Task A 的运行说明集中在 `task_a/`；Task E 保留根目录的官方调用接口。完整视频和历史版本见 [Releases](https://github.com/LYHrmer/atec-robotics-projects/releases)。
+
+## 几个常用词
+
+| 术语 | 这里指什么 |
 | --- | --- |
-| 整个任务怎么完成，各模块怎样配合 | [项目导读](docs/LEARNING_GUIDE.md) |
-| 像素怎样变成夹持点，IK 又在求什么 | [算法原理与公式](docs/ALGORITHM.md) |
-| 一次 `predicts` 调用会经过哪些代码 | [代码导读](docs/CODE_WALKTHROUGH.md) |
-| 不开仿真，先自己算一遍关键步骤 | [五个动手练习](docs/HANDS_ON.md) |
-| 为什么能省下 8.06 秒，动作指标怎样比较 | [优化记录](docs/OPTIMIZATION.md) |
-| 怎样讲项目，以及如何检查自己是否读懂 | [面试讲解](docs/INTERVIEW.md) · [自测题](docs/SELF_CHECK.md) |
+| RGB-D | 彩色图像加深度图，帮助估计三维位置 |
+| 残差策略 | 在已有策略的动作上学习一份修正，Task A 用它适应复杂地形 |
+| IK，逆运动学 | 给定机械臂末端的位置和朝向，反求关节角 |
+| seed，随机种子 | 固定一次随机场景生成过程，便于重复比较 |
+| 仿真时间 | 模拟世界里经过的时间，与电脑实际计算耗时不同 |
 
-## 实测结果
+## 来源与许可
 
-| 运行版本 | 种子 | 得分 | 仿真时间 | 记录 |
-| --- | ---: | ---: | ---: | --- |
-| v3 独立包 | 42 | **18/18** | **53.78 s** | [结果与源码哈希](results/fast_seed42_package.json) |
-| v3 独立包 | 0 | **18/18** | **62.36 s** | [结果与源码哈希](results/fast_seed0_package.json) |
-| v2 满分基线 | 42 | 18/18 | 61.84 s | [基线结果](results/seed42_video.json) |
-
-视频对应 v3 的 seed 42 源版本，打包时只规范化了导入路径；独立包随后复现相同步数和分数。详细对应关系见 [录像源码记录](results/fast_seed42_source.json)，旧版代码与视频保留在 [baseline-18](https://github.com/LYHrmer/atec-taske-rgbd-manipulation/releases/tag/baseline-18)。
-
-加速主要来自满足反馈条件后结束等待，以及减少糖盒回撤时的多余转腕。全程腕关节行程减少 14.39%，但差分加速度 RMS 增加 4.36%；[逐步数据与对比报告](results/motion_comparison/analysis.md) 同时保留这些变化。有限种子的结果还不足以估计随机场景成功率；另一个远端香蕉实验分支在 seed 5 得到 15/18，失败记录见 [far5_experiment.json](results/far5_experiment.json)。
-
-官方入篮计分可能早于最后一次松爪。seed 42 另外观察了 3 秒：夹爪最终张开到约 70 mm，三个物体在最后 1 秒持续留在篮区。[释放报告](results/fast42_release/post_terminal_release.json) 和 [最终截图](media/fast_release_final.png) 单独保存，额外诊断时间不计入 53.78 秒。
-
-## 几个决定成败的细节
-
-瓶子的夹持点在瓶颈，瓶身悬在下方，所以需要先抬高，再越过篮沿。香蕉的弯曲外形、碰撞几何和手指厚度共同影响接触位置，刚离桌时采用小幅姿态变化。糖盒则需要检查中间 IK 路径，避免端点可达、手腕却在中途绕行。
-
-当前决策使用固定外部 RGB-D；视频中的腕部相机用于观察和诊断。机器人尺寸、标定和固定桌篮配置来自公开任务定义，随机物体位置由图像估计。运行策略不读取真实物体位姿，也不需要训练权重 `policy.pt`。
-
-## 本地复现
-
-先按 [ATEC 官方项目](https://github.com/atecup/ATEC2026_Simulation_Challenge) 配置 Isaac Lab 与比赛资产。策略依赖 NumPy/SciPy，录像评测另需官方环境、Pillow、PyTorch 和 FFmpeg。官方机器人与物体资产不在本仓库中。
-
-本机已验证环境：Ubuntu、Python 3.10.20、Isaac Sim 4.5、Isaac Lab 2.3.2、PyTorch 2.7.0+cu128、RTX 5060 Laptop。评测工具包含该环境所需的相机接口兼容处理。
-
-```bash
-export ATEC_TASK_ROOT=/path/to/ATEC2026_Simulation_Challenge
-export ATEC_PYTHON=/path/to/isaaclab/environment/bin/python
-
-"$ATEC_PYTHON" -m pip install -r requirements.txt
-bash scripts/evaluate.sh --check
-bash scripts/evaluate.sh --solution solution.py --headless --seed 42 \
-  --max_steps 6000 --output runs/seed42 --video runs/seed42.mp4
-```
-
-每次使用新的输出目录。评测会保存源码快照、得分、逐步遥测和录像；MP4 编码封装完成后才显示最终文件。视频按 1 倍仿真时间连续展示，结尾定格 2 秒。彩色版只调整饱和度、对比度与编码，处理参数和文件哈希见 [视频来源记录](media/provenance.json)。
-
-不启动仿真，可以先跑学习算例和已有的 20 项检查：
-
-```bash
-PYTHONNOUSERSITE=1 "$ATEC_PYTHON" tools/task_e/learn_geometry.py
-PYTHONNOUSERSITE=1 "$ATEC_PYTHON" -m unittest discover -s tests -p 'test_*.py' -v
-```
-
-官方入口是 [solution.py](solution.py) 中的 `AlgSolution.predicts(obs, current_score)`，返回八维 `action` 和布尔 `giveup`。运行时需要根目录的七个策略 Python 文件；继承关系、调用顺序和动作尺度见 [代码导读](docs/CODE_WALKTHROUGH.md)。
-
-## 许可与来源
-
-代码采用 MIT 许可，保留 ATEC 版权与来源说明。任务、Piper/YCB 等资产由各自项目提供。详见 [LICENSE](LICENSE) 与 [ATTRIBUTIONS.md](ATTRIBUTIONS.md)。
+项目基于 [ATEC 官方仿真环境](https://github.com/atecup/ATEC2026_Simulation_Challenge)。Task E 代码许可与来源见 [LICENSE](LICENSE)、[ATTRIBUTIONS.md](ATTRIBUTIONS.md)；Task A 的依赖来源与使用范围见 [任务说明](task_a/README.md)。开发使用 Codex / Opus 辅助分析、实现和检查，结论以保存的运行证据为准。

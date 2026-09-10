@@ -1,0 +1,1446 @@
+{
+  "created_utc": "2026-09-09T10:22:51.218394+00:00",
+  "publication_state": "validated_private_github_release_payload",
+  "github_account": "LYHrmer",
+  "proposed_repository": "LYHrmer/atec-taska-d1g2",
+  "visibility": "private",
+  "official_upstream": "https://github.com/atecup/ATEC2026_Simulation_Challenge",
+  "official_commit": "dfa816d3c3119e4130305d18961e412461cfefd1",
+  "full_course_result_pending": false,
+  "frozen_source_run": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02",
+  "asset_usd_count": 11,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "source": "publication_package",
+      "category": "generated",
+      "bytes": 51,
+      "sha256": "0799810a0388acbf83cc8ed0a408065992726ed7663f6334bdcbc93b1d92be0d"
+    },
+    {
+      "path": ".gitignore",
+      "source": "publication_package",
+      "category": "generated",
+      "bytes": 87,
+      "sha256": "875de7b27d91631e93450529efe58f2567ec4e73c97b34b46ad6793d9a1c5efb"
+    },
+    {
+      "path": "LICENSE",
+      "source": "official_git:dfa816d3c3119e4130305d18961e412461cfefd1:LICENSE",
+      "category": "official_ATEC_MIT_notice",
+      "bytes": 1097,
+      "sha256": "3eb85a256e02b435b1a92e1abc099285107c81c5a6f46eace46e5ba0e16f210a"
+    },
+    {
+      "path": "README.md",
+      "source": "publication_package",
+      "category": "publication_readme",
+      "bytes": 4368,
+      "sha256": "56532a55894f06bb8d59e7bfbd4d4f075b0d7684999aa78f29bb2d3ea189a891"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "source": "publication_package",
+      "category": "license_scope",
+      "bytes": 1636,
+      "sha256": "ed5959753dea3c54ee595d287b61f4c9708dba7c84dde8cd54295ee2506c0215"
+    },
+    {
+      "path": "assets/DDT_Lab/.github/LICENSE_HEADER.txt",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/.github/LICENSE_HEADER.txt",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 185,
+      "sha256": "44c9548dc93bb56da36c399947f5c38ede66211a1849ac2b6c2c37eb58b6fb3b"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1024945,
+      "sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/controller/rl_controller/package.xml",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/controller/rl_controller/package.xml",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1307,
+      "sha256": "031e0874e1baa7eb4aa9a914bb341d8d5544aa0a21c6a585a9b990ee011b8220"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/package.xml",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/package.xml",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1189,
+      "sha256": "ad284b9e380707a5d943b1b7f30695cc3a58536027d72d4c2070662d997ab767"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 30139119,
+      "sha256": "9536f33f2c7235c1222edf90c2a76391ea47029064615d82efa4b02457e3fdee"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 7095,
+      "sha256": "7f9ab722a728f5fa81b5c18735b184e4b2a89434a0a135d09953c0b81ae868af"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_robot.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_robot.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 2321,
+      "sha256": "d49e8589b64b0d6ff9941cf8db7beb89a555ee1ce800ca222d75c057ece8fe59"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_sensor.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_sensor.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 654,
+      "sha256": "6279b1bc88820eeb9cd770e5da51bb3e49283f98699ee91ee8d5b14ee19d6fea"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1459,
+      "sha256": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f"
+    },
+    {
+      "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1_with_g2_combined.usda",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1_with_g2_combined.usda",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1785,
+      "sha256": "9c0a6bd04216ed0eb5097e7d2fd0048c7a9c275275e55be275e3d8825e88015a"
+    },
+    {
+      "path": "assets/DDT_Lab/ros2_play_g2/play_g2/package.xml",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/package.xml",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 843,
+      "sha256": "17f72039208959c0bd5a1b9362ab49b9ef0fb206cae1296525c0450fdfe55f5a"
+    },
+    {
+      "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 96926891,
+      "sha256": "5e582987c344b3e560d74b1b93a6ea63165c2fc5c453587d0d1bffb6436feaf8"
+    },
+    {
+      "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 6018,
+      "sha256": "466ec75c70de1fde61f8ba83b2143e186d1d07b7bf8ac971345612eb3d8d0c38"
+    },
+    {
+      "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_robot.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_robot.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1945,
+      "sha256": "2b834759dc9782c093be1eac389d2ccad89c565b4734d92c5f4f06ec53a701f2"
+    },
+    {
+      "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_sensor.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_sensor.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 647,
+      "sha256": "51138b9504bc42c330d7801e056cf1ed8d2891839e051b480fbc5425cfa0f88c"
+    },
+    {
+      "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1456,
+      "sha256": "fb2a98599adf35ee462ce3833ffd103b9a3d60aa74c37f202b63a2c28261fe79"
+    },
+    {
+      "path": "assets/DDT_Lab/source/ddt_lab/ddt_lab/assets/ddt_robot.py",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/source/ddt_lab/ddt_lab/assets/ddt_robot.py",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 8389,
+      "sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55"
+    },
+    {
+      "path": "assets/DDT_Lab/source/ddt_lab/setup.py",
+      "source": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/source/ddt_lab/setup.py",
+      "category": "user_supplied_DDT_dependency",
+      "bytes": 1491,
+      "sha256": "83e49cd5e841abf71cf76eb6b2045d2e1c5deb6fbc0e72b3c0c2c7db89f72f78"
+    },
+    {
+      "path": "docs/training_history.md",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/docs/d1g2_taska_training_20260909.md",
+      "category": "development_history",
+      "bytes": 3201,
+      "sha256": "3766f83afe224fec85477938723665d74f5993da1149a0c722f90ce116c88a49"
+    },
+    {
+      "path": "evidence/README.md",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1542,
+      "sha256": "b351922dea58989049c2b326e304794683024a263a83952813a45405a081b9aa"
+    },
+    {
+      "path": "evidence/acceptance_summary.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1546,
+      "sha256": "bf553daf4f832063109c0ba0006a8f6930aafe239eb6f30082de605b1eb5d370"
+    },
+    {
+      "path": "evidence/axis_course_01_stalled/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 9658,
+      "sha256": "64cab7dc7e42d09e0ab4359250ce97da2e0ad9f6b8ea1680f03c6e72ff693d1a"
+    },
+    {
+      "path": "evidence/full_course_01_failed/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 11531,
+      "sha256": "d1f08211a35e43b6bd124c9ab1354ddde4ea9a11b8bd2dbb76aef803b63b7eb5"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/EVIDENCE_FILES.md",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 864,
+      "sha256": "7777372bb429792f081d5e8b4d2db237821127d5b8094beb16133ddb9a4089c2"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/README.md",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1032,
+      "sha256": "e2ba732b63d641445faec0b4b4c419a08d3fd8f5c011d7d7ca036824a6b47dd0"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/compact_evidence_file_list.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1342,
+      "sha256": "82ef3fea594d7ed99f86a96a4ffb548cb32721b69b60487a014d5acde870d713"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/control_and_termination_audit.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 4885,
+      "sha256": "06972863000c90e5cd48131a3ca137ad69d6f1856f5ce254713bdf67fc4c5c1c"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/environment_versions.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 4008,
+      "sha256": "f353afd4c0deb5f071a876b060a24a4a8b47a790d523410c0f93cfd9a988b98e"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 8799,
+      "sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 452,
+      "sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 3217,
+      "sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 551,
+      "sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 13889,
+      "sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 7076,
+      "sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/atec/source/atec_rl_lab/config/extension.toml",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 918,
+      "sha256": "879a5a0f0b7de25ed1b802a10f14138290e7f9296bb227f7e3bc9719af43ba77"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/VERSION",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 6,
+      "sha256": "e1d31f14bed34a1c7e6227931673f0bb4ec1e26ee4278d00dac169809c4d9539"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/config/extension.toml",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 763,
+      "sha256": "20788530c894de99bba947129657eaba3029d59f92a3b8ca11c3b2a1874c75f7"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/envs/manager_based_env.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 25693,
+      "sha256": "74d495925e264521b05a92296bbaf98adcabb7d94f3787ab3ed61f4d0680a198"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 18417,
+      "sha256": "974977825dbbd916460b4f9bb12176ab2cde41026fadc05e1de02d8fbbc94725"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/envs/mdp/terminations.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 6834,
+      "sha256": "c04d1240b9f2f533da3e6ed66c6da826fbfac9d924fc1038df8a082b283ea300"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/managers/termination_manager.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 11189,
+      "sha256": "cb6333f11fa6472f7d8034bae9835714e83ae3edde97894b767f1351a7eea99d"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/sensors/camera/camera.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 34548,
+      "sha256": "a3689cffa01d046b510f7564f7adad972edf6316568b0e323abc2c4f0c4ec354"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/sensors/contact_sensor/contact_sensor.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 26330,
+      "sha256": "5bf3b77d2159850526e3833bf50253dbce06cb78b850eae13fb4088dc233760d"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/sensors/sensor_base.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 14173,
+      "sha256": "4716a4b89ed1ac4f640f8744f1e2fcaac2e74d00c2193e0ce24e52c61e5659fc"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/sim/views/xform_prim_view.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 51055,
+      "sha256": "5a05ccc9322e6f042f2ab669cbaf7fb60712726dfeb0d323913b78c87d3755b3"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/terrains/height_field/hf_terrains.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 18808,
+      "sha256": "830971981a5920d3feed55512d6f2bd820396a16af3476a593d26b97daaaeed1"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/terrains/height_field/utils.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 8076,
+      "sha256": "a8820498ecb5ba6535a27bf3d8c5baf9069d2314d8e7fd9d950f60912e301725"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/terrains/terrain_generator.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 19469,
+      "sha256": "a364d85812a7713b21a94a450f40e8ef5d448bbe652bcb2ee36184b6300c409b"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/terrains/terrain_importer.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 16874,
+      "sha256": "fdc32823ccf4eabfe1cd175bb8f65d85927407f02600d966f9d28d94cee954e5"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/terrains/trimesh/mesh_terrains.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 39258,
+      "sha256": "50c1bbc1b319c71cb9a3305f4c52211be9e8c8db9859949e9784806fc26806c3"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/terrains/utils.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 12496,
+      "sha256": "66e0aa81e6ae33aba16317845537b02eba87684a9ae8cd832323c9bab4481afb"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/isaacsim/isaacsim/core/utils/xforms.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 7770,
+      "sha256": "b69b4a84adfa456a24020d403d889bea69dcb07188f3c709a918d7a917e0727e"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/rsl_rl/modules/actor_critic.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 5975,
+      "sha256": "20c6396d32802112dc217ba51add5fe7f7953518a0c7cdb4b7da51f77dc30b6e"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/rsl_rl/networks/mlp.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 4090,
+      "sha256": "ea52cb5b27e6d986731ac657bcc37f8b74a1e5630e8a8fb323986ed2b6c01b23"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/files/rsl_rl/networks/normalization.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 3999,
+      "sha256": "7db82f8021d62a660b4229782b52ac47e32d781206dba709d6bc436bf13f6672"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/final_result_snapshot.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 11817,
+      "sha256": "0aaa96368c46039e2a42e323a81337f4e847e2822fa69d722bbdb19226035b0a"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/hardware_audit.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 751,
+      "sha256": "4f44ba5e680613e908db68ceaf9b0cc33f470bbf815bfeb586282aa64005bd02"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/independent_static_review.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 919,
+      "sha256": "9c38a4e2c9a07d3339ee4bbe0dbac028bec3d59bc62ac1c5518348e30e7c393a"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/manifest.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 18713,
+      "sha256": "df43f73b924f79accbf4d7a20186efa6743ed0f5f237dd301eda7a7faa927536"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/nav_heading_checks.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 4231,
+      "sha256": "874b2fc8ca0c909e7cf6b304e577a99a950ab34946dc45e47b9501b292f03b0e"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/recovery_budget_audit.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 3145,
+      "sha256": "a33bf37f113b770ac451b49e95f45f64f8e0ae484d54b4c9c30fc8928f00ac30"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/robot_usd_dependencies.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 15607,
+      "sha256": "9c1e76193cbfdc2044e4e625362bd970545fbfcbfa23cd5a377d00bca7f356fa"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/run_acceptance_audit.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 2425,
+      "sha256": "f3e74070560480ae214a09cfb0bbd23101c328e822c0b6704c2f4613c18e6a8b"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/run_source_hash_audit.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 8098,
+      "sha256": "b465fc075bfc52ea5eb281497789f07713caeeb151ed46c076ac104f88ccec20"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/trace.jsonl.gz",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1069124,
+      "sha256": "f089237941bf6b805eb06bb487e267d41f592ce630ea28c0a871790c14fa250f"
+    },
+    {
+      "path": "evidence/full_course_02/audit_dependencies/validation_lineage.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 6243,
+      "sha256": "c89763977260e8b435c0573a2b1e05f4ce3d0889be4fabfc201d39d082bf7f1e"
+    },
+    {
+      "path": "evidence/full_course_02/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 11817,
+      "sha256": "0aaa96368c46039e2a42e323a81337f4e847e2822fa69d722bbdb19226035b0a"
+    },
+    {
+      "path": "evidence/full_course_02/sources/0_run_d1g2_taska.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 37218,
+      "sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b"
+    },
+    {
+      "path": "evidence/full_course_02/sources/10_d1g2_taska_axis_heading.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 7681,
+      "sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad"
+    },
+    {
+      "path": "evidence/full_course_02/sources/11_d1g2_taska_visual_recovery.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 22020,
+      "sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b"
+    },
+    {
+      "path": "evidence/full_course_02/sources/12_d1g2_taska_camera_compat.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1925,
+      "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+    },
+    {
+      "path": "evidence/full_course_02/sources/1_d1g2_taska_env.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 8713,
+      "sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5"
+    },
+    {
+      "path": "evidence/full_course_02/sources/2_d1g2_taska_policy.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 8655,
+      "sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a"
+    },
+    {
+      "path": "evidence/full_course_02/sources/3_ddt_robot.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 8389,
+      "sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55"
+    },
+    {
+      "path": "evidence/full_course_02/sources/4_d1_with_g2_combined.usda",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 1925,
+      "sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b"
+    },
+    {
+      "path": "evidence/full_course_02/sources/5_d1g2_taska_torch_policy.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 19324,
+      "sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2"
+    },
+    {
+      "path": "evidence/full_course_02/sources/6_d1g2_taska_residual.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 5544,
+      "sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6"
+    },
+    {
+      "path": "evidence/full_course_02/sources/7_d1g2_taska_rgbd.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 38014,
+      "sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b"
+    },
+    {
+      "path": "evidence/full_course_02/sources/8_d1g2_taska_visual_navigation.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 7133,
+      "sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff"
+    },
+    {
+      "path": "evidence/full_course_02/sources/9_d1g2_taska_navigation.py",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 6604,
+      "sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378"
+    },
+    {
+      "path": "evidence/full_course_02/trace.jsonl",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 7801097,
+      "sha256": "3a624c47c768cfbfe842e1a66e502d6cf14af6a323a58e795969dd98122e06a5"
+    },
+    {
+      "path": "evidence/last_stairs_camera_baseline_01/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 11914,
+      "sha256": "7114e2751a1a83eb25abbe0998c9008f8ce502dbbb15338b2c4817fc956a1e1e"
+    },
+    {
+      "path": "evidence/last_stairs_camera_recovery_01/interruption.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 545,
+      "sha256": "fd8279d228d826c27965536873680e9736ad3ac32d488867e8a654643ffa2e38"
+    },
+    {
+      "path": "evidence/last_stairs_camera_recovery_01/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 9946,
+      "sha256": "f69c762c5de0485e088b6d6abff7e22c79a66e9fba1e0fbd8235b3a2ad910d85"
+    },
+    {
+      "path": "evidence/last_stairs_camera_recovery_02/cpu_acceptance_audit.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 26259,
+      "sha256": "3b8ecb1b4bdf426cc29004cac21922c2776b2e20621fbba257f4460b6eacbf1e"
+    },
+    {
+      "path": "evidence/last_stairs_camera_recovery_02/cpu_acceptance_readme.md",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 4216,
+      "sha256": "5c999f5373434fdfee06ae6a725885ddd2c9e3a2957c7e8bcc8bca85fd310678"
+    },
+    {
+      "path": "evidence/last_stairs_camera_recovery_02/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 12588,
+      "sha256": "b2a2d1f6d5af828eb41b236c29774a3c58bbd751e773aac55c3f55a0ed968872"
+    },
+    {
+      "path": "evidence/package_smoke/result.json",
+      "source": "local_verified_task_a_delivery",
+      "category": "verified_evidence_or_delivery_documentation",
+      "bytes": 9156,
+      "sha256": "7f16e855070cfa69e414a7c4c0747138e246389124581bde3990c9671e2f6c31"
+    },
+    {
+      "path": "licenses/IsaacLab-BSD-3-Clause.txt",
+      "source": "/home/lybm/IsaacLab/LICENSE",
+      "category": "external_license",
+      "bytes": 1630,
+      "sha256": "df351ebfa8af317bf5a9ad83df63a8b68e4f5c04b71f30767cdb27aa434eac62"
+    },
+    {
+      "path": "licenses/RSL-RL-BSD-3-Clause.txt",
+      "source": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl_lib-3.0.1.dist-info/licenses/LICENSE",
+      "category": "external_license",
+      "bytes": 1632,
+      "sha256": "d96416ef724b3972dd9a8316008b1b51d8972c1be5fd0d38f0b4b1664b125e4e"
+    },
+    {
+      "path": "provenance/environment_versions.json",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/environment_versions.json",
+      "category": "dependency_audit",
+      "bytes": 4066,
+      "sha256": "b393a87ad7696a081e9440ea7c1ee777e9705f963bfef661adb971a6434721b2"
+    },
+    {
+      "path": "provenance/files/isaaclab/source/isaaclab/isaaclab/sim/views/xform_prim_view.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/files/isaaclab/source/isaaclab/isaaclab/sim/views/xform_prim_view.py",
+      "category": "external_dependency_reference_only",
+      "bytes": 51055,
+      "sha256": "5a05ccc9322e6f042f2ab669cbaf7fb60712726dfeb0d323913b78c87d3755b3"
+    },
+    {
+      "path": "provenance/files/rsl_rl/modules/actor_critic.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/files/rsl_rl/modules/actor_critic.py",
+      "category": "external_dependency_reference_only",
+      "bytes": 5975,
+      "sha256": "20c6396d32802112dc217ba51add5fe7f7953518a0c7cdb4b7da51f77dc30b6e"
+    },
+    {
+      "path": "provenance/files/rsl_rl/networks/mlp.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/files/rsl_rl/networks/mlp.py",
+      "category": "external_dependency_reference_only",
+      "bytes": 4090,
+      "sha256": "ea52cb5b27e6d986731ac657bcc37f8b74a1e5630e8a8fb323986ed2b6c01b23"
+    },
+    {
+      "path": "provenance/files/rsl_rl/networks/normalization.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/files/rsl_rl/networks/normalization.py",
+      "category": "external_dependency_reference_only",
+      "bytes": 3999,
+      "sha256": "7db82f8021d62a660b4229782b52ac47e32d781206dba709d6bc436bf13f6672"
+    },
+    {
+      "path": "provenance/github_route.json",
+      "source": "read_only_GitHub_API",
+      "category": "publication_route",
+      "bytes": 768,
+      "sha256": "ad936097b0ad54b01f3147cedc4e680dfe63204a0b36e075b02f5a2213944e0e"
+    },
+    {
+      "path": "provenance/robot_usd_dependencies.json",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/audit_dependencies/robot_usd_dependencies.json",
+      "category": "dependency_audit",
+      "bytes": 15598,
+      "sha256": "e0b3ada2a04a27ae190abbb4df4fee0c9ff1d4b8f78d5696d5899f3ba8b63196"
+    },
+    {
+      "path": "provenance/staging_cpu_validation.json",
+      "source": "CPU_staging_checks",
+      "category": "validation",
+      "bytes": 1108,
+      "sha256": "3f85e2badb81e835f2d6abdb3cb5db31af104e4033fca0d8ad6453e0bbe3cfef"
+    },
+    {
+      "path": "provenance/training_rough_512_01/env.yaml",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/env.yaml",
+      "category": "training_provenance",
+      "bytes": 33639,
+      "sha256": "534b9435ae17d55e33a70d6cdd2d1c5e38394b430a7bcb2f32bad51f0c9afcb4"
+    },
+    {
+      "path": "provenance/training_rough_512_01/metadata.json",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/metadata.json",
+      "category": "training_provenance",
+      "bytes": 1439,
+      "sha256": "f08d57ea654e989badc4a4dbe8af57ac4a53ae2fe986e8e73886fa8ddcd8c728"
+    },
+    {
+      "path": "provenance/training_rough_512_01/result.json",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/result.json",
+      "category": "training_provenance",
+      "bytes": 2233,
+      "sha256": "f0ff6a923effc1c0402756e41f6b8f51b49667f15b66a6e382a5fc6f272f7c32"
+    },
+    {
+      "path": "provenance/training_rough_512_01/runner_cfg.json",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/runner_cfg.json",
+      "category": "training_provenance",
+      "bytes": 877,
+      "sha256": "551064d22731400271bb5076bf8028a2453905fb15fbda022d5949da70bcbe6f"
+    },
+    {
+      "path": "provenance/training_rough_512_01/terrain_diagnostics.json",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/terrain_diagnostics.json",
+      "category": "training_provenance",
+      "bytes": 34484,
+      "sha256": "a9a4d848098ec562c7e5cd6903470066f3206f1da285efbe8859a6cf18822301"
+    },
+    {
+      "path": "scripts/run_taska.sh",
+      "source": "publication_package",
+      "category": "portable_launcher",
+      "bytes": 1289,
+      "sha256": "fd7b84f34209f203bd6e0e902f0ab61166f5a9a529c66dae014904426861f9b4"
+    },
+    {
+      "path": "source/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/atec_rl_lab/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 226,
+      "sha256": "7819fb5ec56a872b678aa079eb9ae92223c0d0d86e882a90cfcbfaa84cd1ba17"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/objects/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/objects/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 284,
+      "sha256": "8c456f8c597caca327777acfa0865a4c14ce5075d8b81fce4a953feea64b0304"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/objects/task_b/object.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/objects/task_b/object.py",
+      "category": "pristine_official_framework",
+      "bytes": 4001,
+      "sha256": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/basket.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/basket.py",
+      "category": "pristine_official_framework",
+      "bytes": 900,
+      "sha256": "54e43ded35a8f2ad6dc8c1cb98fce2088eaa04a0cd8dbba982b549e5757bcc44"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/table.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/objects/task_e/table.py",
+      "category": "pristine_official_framework",
+      "bytes": 523,
+      "sha256": "730f1310f6be9014e41b2876628872a10d568f3e943528399d9d15a170b05832"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 1039,
+      "sha256": "240b58db48b6e173423c9a913419137fa2a441a86c68752aaaff8e4efd25ba5c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/b2.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/b2.py",
+      "category": "pristine_official_framework",
+      "bytes": 4051,
+      "sha256": "dde3e56631517debf6bfe40415b1f2ab94ee78a48c620bceb0b33dda88107c3c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/b2w.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/b2w.py",
+      "category": "pristine_official_framework",
+      "bytes": 2713,
+      "sha256": "4b88d079b53a6bfc0bd3cf3cd2107c74fd313d73e8f04b6bcec6702d6cdd61c8"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 798,
+      "sha256": "ac2b0a22772584b70b3b5cd19dad8ab3ecd1d378927993bcc1d0f7933984369e"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/g1/g1_29dof_dex1.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/g1/g1_29dof_dex1.py",
+      "category": "pristine_official_framework",
+      "bytes": 7795,
+      "sha256": "b47e37c20aebf1331bbd6f19b7fb09ed35cdb30fcc82d40875a790d58b7fb4ab"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/piper.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/piper.py",
+      "category": "pristine_official_framework",
+      "bytes": 2122,
+      "sha256": "18258c1e075c06f7a53a51380aabd675a095bf1b8e38cf107a57e35a707bde12"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/tron1a.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/tron1a.py",
+      "category": "pristine_official_framework",
+      "bytes": 4031,
+      "sha256": "d963e700cae7327ea74f38a76c871ec3577251ffb2dc0cc8a00eef9fc6af6701"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/assets/robots/tron2a.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/assets/robots/tron2a.py",
+      "category": "pristine_official_framework",
+      "bytes": 6448,
+      "sha256": "16e8537bbbefb36e435b9f13beab74d77f1e80ea020baad4b9c8b3be06a25d90"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 98,
+      "sha256": "8d56cc8c7dc3ed0dc89f9c4ea4fb57d2aed76481199db1858b66ff26bfbfbf96"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_a/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_a/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 1641,
+      "sha256": "68675ddfd91af67a30b9abcfad277d31b043c62e63ca847d4ec51f8d54adea7c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 8799,
+      "sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 51,
+      "sha256": "7a4ca2a473feccca88008dc0586fcf021e78f584fd9cb0de71f3748103e3de4c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/rewards.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/rewards.py",
+      "category": "pristine_official_framework",
+      "bytes": 11359,
+      "sha256": "6f0941e0ff0749e10cc79e9a14bd7aa49bdfb7afe9ff756049670feb65d5af30"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+      "category": "pristine_official_framework",
+      "bytes": 452,
+      "sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+      "category": "pristine_official_framework",
+      "bytes": 3217,
+      "sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_b/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_b/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 1641,
+      "sha256": "0f750f36dbc286a07498f3ce03cc591faa2adf66b473a96e5810e17199e9e912"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_b/env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_b/env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 10153,
+      "sha256": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 51,
+      "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/rewards.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/rewards.py",
+      "category": "pristine_official_framework",
+      "bytes": 4708,
+      "sha256": "58e54fa477cb84171e9cf550622b31376d597a0a32dfe7447e247ba009360d3c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/terminations.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_b/mdp/terminations.py",
+      "category": "pristine_official_framework",
+      "bytes": 1301,
+      "sha256": "d42f497cd8120735ac481f474b7adba464ca069b3c213233036422cd00f26cee"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_b/terrain.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_b/terrain.py",
+      "category": "pristine_official_framework",
+      "bytes": 3615,
+      "sha256": "d7fd6b801199327dba95de156bc235fa7197790728b16227cbafc8cf25e905fc"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 405,
+      "sha256": "3e3664c14bd4346f354ac48ba28ac517842f52da5ff3d538ea627f298e83952b"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/action_base.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/action_base.py",
+      "category": "pristine_official_framework",
+      "bytes": 8110,
+      "sha256": "a5e6d366cfd6fbdbff61b55f5e9a30ee0a9a50684abab1c8dc846502f2a09ee6"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+      "category": "pristine_official_framework",
+      "bytes": 551,
+      "sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 13889,
+      "sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 62,
+      "sha256": "c37a82c7da7532b69b3050948577a5f16906ee138890a3f4bb92d09aad1fc9a8"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/rewards.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/mdp/rewards.py",
+      "category": "pristine_official_framework",
+      "bytes": 1081,
+      "sha256": "017f3fcc8439a155239a288dec44dcdf0587a3cf8385ce17003821a08d77638d"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+      "category": "pristine_official_framework",
+      "bytes": 7076,
+      "sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_d/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_d/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 1683,
+      "sha256": "051a9e6351a6157a297f45cfc07f39e3c48485ec0d1d3e668e3271a30119c813"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_d/env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_d/env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 11603,
+      "sha256": "536c02b9d63250805c2fd0d42b5b089a9809a54591fc6cf0bd08599e394c3c19"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 51,
+      "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/rewards.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/rewards.py",
+      "category": "pristine_official_framework",
+      "bytes": 13055,
+      "sha256": "c572549f2c2609ef6bc9ff1376ccd67ae641faaec793d94bdf48774a62e48d46"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/terminations.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_d/mdp/terminations.py",
+      "category": "pristine_official_framework",
+      "bytes": 569,
+      "sha256": "e3d4e08f7242c0a415a347c022d7edffafb5797dc5178fae95b3e0ed27a70ade"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_d/terrain.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_d/terrain.py",
+      "category": "pristine_official_framework",
+      "bytes": 6739,
+      "sha256": "42b0a2a0a8b5b85ccf474f8cc9ed71315bf4d69ecae626fef5f016b92a661fea"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_e/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_e/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 327,
+      "sha256": "25acc6ac000ecb422731e56ff4c8ecf1c144fc2a5a0f9a0462a88ed444b77782"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_e/env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_e/env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 10008,
+      "sha256": "af5d1cfa3977e4b32c4704e78b60af590e99330628032bab9f4ec83fdd902e51"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 51,
+      "sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/rewards.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/rewards.py",
+      "category": "pristine_official_framework",
+      "bytes": 4416,
+      "sha256": "80121ef00a27cf335242eb0ead7925e31c111bab877bf094a6d630aca4eb8d74"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/terminations.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_e/mdp/terminations.py",
+      "category": "pristine_official_framework",
+      "bytes": 1472,
+      "sha256": "7e8f205d6baba71769e3101554ebef0d5a245ac75cb3130cd30aa56801298a3c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/tasks/task_e/terrain.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/tasks/task_e/terrain.py",
+      "category": "pristine_official_framework",
+      "bytes": 724,
+      "sha256": "1c950bcad48280d4ae9409a5ba2e3eae1901dd0d35d15f59896d594f08af049d"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 27,
+      "sha256": "d6559fe7c4ecb8560cfcf290996602f62785d9b059f7911c0c4d915ede113c7f"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/act/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/act/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 20,
+      "sha256": "70aa567ee926fd71c83e2f34c15d26ab6e6ee45eeef3300ef0ccf7b9eb14e067"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/act/act/detr/backbone.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/act/act/detr/backbone.py",
+      "category": "pristine_official_framework",
+      "bytes": 4915,
+      "sha256": "963baa9c29c9ca708e760acaab35654044af0f455d0aa7b9f3efe51ced20d104"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/act/act/detr/detr_vae.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/act/act/detr/detr_vae.py",
+      "category": "pristine_official_framework",
+      "bytes": 6920,
+      "sha256": "63a1828961edacf3d75ca280789fe3f52ee8fb36883a64d28bfb89c144451884"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/act/act/detr/position_encoding.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/act/act/detr/position_encoding.py",
+      "category": "pristine_official_framework",
+      "bytes": 3411,
+      "sha256": "4159656ad8186cfed4865b11a5994c8cadf70234de410fce34cb4f046b79d19d"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/act/act/detr/transformer.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/act/act/detr/transformer.py",
+      "category": "pristine_official_framework",
+      "bytes": 12985,
+      "sha256": "a8c5d6de698b88da50838e6c8cdbdf4702159695cf2c716c962466289e38ef01"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/act/act/utils.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/act/act/utils.py",
+      "category": "pristine_official_framework",
+      "bytes": 5800,
+      "sha256": "f1900cf70987c35833add73ab254d3ffc6e3e7860f543e1f50e8da120c770c8b"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 74,
+      "sha256": "23121db629ed99ae7cc52df2b9b08bc748ef89c4c947d602e45dec88043caf05"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 235,
+      "sha256": "f51ce66c21ee30a0aa502f85c5e3013210453b5285123ea1dcd5c775caaf38b2"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 143,
+      "sha256": "79ac319f30a0a26ae7a5632ec025723a3685632b873ee8c403a24deb6c551416"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 143,
+      "sha256": "e1129ca88ec9e6998536c10a17f630d74681cbe3f3c95fd3396e4d5e59736d22"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 824,
+      "sha256": "70bb9089d75a59d2ceea99c0aa03df7284094b1048bd1350df289932a3a5af49"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/agents/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/agents/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/agents/rsl_rl_ppo_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/agents/rsl_rl_ppo_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 1238,
+      "sha256": "5d952747da80e8219d0b72de6097207dc51aa4194d0d8e98b2025f53ee408c48"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/flat_env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/flat_env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 1005,
+      "sha256": "83dd879ccdccab201273a9865857a8cb79838022f2b71f24eaa95d479cda155a"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/rough_env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/config/quadruped/unitree_b2/rough_env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 7907,
+      "sha256": "326aa211c433ce5c3b4666ab70fb935d44543ae6a30064518d8975e1020900b3"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 625,
+      "sha256": "0f97001f3acef3568bef4c6cb0685a0823563f0a5ea812e163b76eac29c0a908"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/commands.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/commands.py",
+      "category": "pristine_official_framework",
+      "bytes": 6886,
+      "sha256": "43316190956dfc334bc032deb7ca8b638b4e60058c68ad4db46d55381c14d2ba"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/curriculums.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/curriculums.py",
+      "category": "pristine_official_framework",
+      "bytes": 4619,
+      "sha256": "64930b3b1fd1a1d2d00f1a1717fb0f7900bfada133d8de48a6317863b8fa1351"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/events.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/events.py",
+      "category": "pristine_official_framework",
+      "bytes": 11655,
+      "sha256": "44d086b2b9455473dbce5bea9ee3de110640a28e6d32cb9608bf83d4ae4a13d8"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/observations.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/observations.py",
+      "category": "pristine_official_framework",
+      "bytes": 1368,
+      "sha256": "6b38a88fb763efe1903691e4e0dd79558fdcaf71d429cf9f898e7fc3a87ca9f6"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/rewards.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/rewards.py",
+      "category": "pristine_official_framework",
+      "bytes": 32774,
+      "sha256": "f7fc314c395f1dffeb6407d4224ba5adc6c54f25cd6b9f73d1b13ce1419c5455"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/utils.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/mdp/utils.py",
+      "category": "pristine_official_framework",
+      "bytes": 5469,
+      "sha256": "dd20f44a8e3516f1eaa1d4178664672fc483f3247cca874d029bbdf3498c1553"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/velocity_env_cfg.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/train/locomotion/velocity/velocity_env_cfg.py",
+      "category": "pristine_official_framework",
+      "bytes": 23295,
+      "sha256": "5a9a7a39b4614c5cd10320afc07173c4749c85e8ffd14d38490ed08c755c2334"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/utils/__init__.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/utils/__init__.py",
+      "category": "pristine_official_framework",
+      "bytes": 89,
+      "sha256": "b62fb2ae236a9a9fb31f654d26fc9662e63c61b4bf6e8a82602ca826704e783c"
+    },
+    {
+      "path": "source/atec_rl_lab/atec_rl_lab/utils/cartesian_controller.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/atec_rl_lab/utils/cartesian_controller.py",
+      "category": "pristine_official_framework",
+      "bytes": 9897,
+      "sha256": "dfa688b5ffa64663488a2e1eca6efa9be4cd124df261dcfedccf1051cecca19d"
+    },
+    {
+      "path": "source/atec_rl_lab/config/extension.toml",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/config/extension.toml",
+      "category": "pristine_official_framework",
+      "bytes": 918,
+      "sha256": "879a5a0f0b7de25ed1b802a10f14138290e7f9296bb227f7e3bc9719af43ba77"
+    },
+    {
+      "path": "source/atec_rl_lab/pyproject.toml",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/pyproject.toml",
+      "category": "pristine_official_framework",
+      "bytes": 562,
+      "sha256": "a4dc9ccd10411548674a89684de71d7f233f294a481f5cb8354f8179052f93d4"
+    },
+    {
+      "path": "source/atec_rl_lab/setup.py",
+      "source": "https://github.com/atecup/ATEC2026_Simulation_Challenge/tree/dfa816d3c3119e4130305d18961e412461cfefd1/source/atec_rl_lab/setup.py",
+      "category": "pristine_official_framework",
+      "bytes": 1227,
+      "sha256": "bde46b939ca888b225ce550fda91b09ae764db5ec7f7766597c9f44a2f28f31a"
+    },
+    {
+      "path": "tools/__init__.py",
+      "source": "publication_package",
+      "category": "package_marker",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tools/d1g2_taska_axis_heading.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_axis_heading.py",
+      "category": "frozen_deployment_source",
+      "bytes": 7681,
+      "sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad"
+    },
+    {
+      "path": "tools/d1g2_taska_camera_compat.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_camera_compat.py",
+      "category": "frozen_deployment_source",
+      "bytes": 1925,
+      "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+    },
+    {
+      "path": "tools/d1g2_taska_env.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_env.py",
+      "category": "frozen_deployment_source",
+      "bytes": 8713,
+      "sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5"
+    },
+    {
+      "path": "tools/d1g2_taska_navigation.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_navigation.py",
+      "category": "frozen_deployment_source",
+      "bytes": 6604,
+      "sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378"
+    },
+    {
+      "path": "tools/d1g2_taska_policy.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_policy.py",
+      "category": "frozen_deployment_source",
+      "bytes": 8655,
+      "sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a"
+    },
+    {
+      "path": "tools/d1g2_taska_residual.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_residual.py",
+      "category": "frozen_deployment_source",
+      "bytes": 5544,
+      "sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6"
+    },
+    {
+      "path": "tools/d1g2_taska_rgbd.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_rgbd.py",
+      "category": "frozen_deployment_source",
+      "bytes": 38014,
+      "sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b"
+    },
+    {
+      "path": "tools/d1g2_taska_torch_policy.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_torch_policy.py",
+      "category": "frozen_deployment_source",
+      "bytes": 19324,
+      "sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2"
+    },
+    {
+      "path": "tools/d1g2_taska_train_env.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_train_env.py",
+      "category": "diagnostics_or_training_source",
+      "bytes": 19276,
+      "sha256": "0dcffdbbccdf3774b51dc45bcb2282b78b2d3e42ce172095f8924262cd9d1cb5"
+    },
+    {
+      "path": "tools/d1g2_taska_visual_navigation.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_navigation.py",
+      "category": "frozen_deployment_source",
+      "bytes": 7133,
+      "sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff"
+    },
+    {
+      "path": "tools/d1g2_taska_visual_recovery.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/d1g2_taska_visual_recovery.py",
+      "category": "frozen_deployment_source",
+      "bytes": 22020,
+      "sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b"
+    },
+    {
+      "path": "tools/probe_d1g2_taska_segments.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/probe_d1g2_taska_segments.py",
+      "category": "diagnostics_or_training_source",
+      "bytes": 20309,
+      "sha256": "b968b2c9735035940d424c185f53fdc137196ff1e4171f609bd259dceefd0d59"
+    },
+    {
+      "path": "tools/replay_d1g2_taska_rgbd.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/replay_d1g2_taska_rgbd.py",
+      "category": "diagnostics_or_training_source",
+      "bytes": 19773,
+      "sha256": "3b8986ec673536782afdd3c01fad50ca81cfaea3c60869cb7afeb70161e0ed41"
+    },
+    {
+      "path": "tools/run_d1g2_taska.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/run_d1g2_taska.py",
+      "category": "frozen_deployment_source",
+      "bytes": 37218,
+      "sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b"
+    },
+    {
+      "path": "tools/train_d1g2_taska_residual.py",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/tools/train_d1g2_taska_residual.py",
+      "category": "diagnostics_or_training_source",
+      "bytes": 21709,
+      "sha256": "6f0156c0e9213278fb949a81aa2aa9e105d02478a4abaaa73c0679653efa95be"
+    },
+    {
+      "path": "weights/model_1999_final.pt",
+      "source": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_training_20260909/rough_512_01/model_1999_final.pt",
+      "category": "trained_residual_checkpoint",
+      "bytes": 3669293,
+      "sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a"
+    }
+  ],
+  "repository": "https://github.com/LYHrmer/atec-taska-d1g2",
+  "complete_original_course_pass": true,
+  "package_gpu_smoke_passed": true,
+  "finalized_utc": "2026-09-09T10:33:51.975574+00:00"
+}

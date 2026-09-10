@@ -2,7 +2,7 @@
 
 2026-09-09，本机从原始 x=−141 m 连续运行到 x=145.00234985 m，前进 **286.00234985 m**，仿真用时 **505.66 s**，唯一终止项为 `reach_goal_x`，没有同帧失败终止。
 
-[公开结果摘要](taska/acceptance_summary.json) · [完整私有复现仓库](https://github.com/LYHrmer/atec-taska-d1g2) · [完整录像](https://github.com/LYHrmer/atec-taska-d1g2/releases/tag/v2026.09.09-local-pass)
+[先读白话原理](../task_a/docs/LEARNING_GUIDE.md) · [运行与源码](../task_a/README.md) · [通关证据](../task_a/evidence/acceptance_summary.json) · [完整录像](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-a-local-pass-20260909)
 
 机器为 i9-14900HX、RTX 5060 Laptop 8 GB、32 GB 内存。显存采样峰值 **6210 MiB**、GPU 采样最高 **61°C**；不含启动的实际运行约 **16.8 分钟**。独立交付目录另通过 100 控制步 GPU 启动检查。
 

@@ -1,0 +1,276 @@
+{
+  "root_layers": [
+    "/tmp/d1g2_taska_assets_fab7s6z4/d1_with_g2_combined.usda"
+  ],
+  "method": "Local Sdf authored composition dependencies and asset-valued attributes, recursively; file SHA256; no network requests",
+  "nodes": [
+    {
+      "absolute_path": "/tmp/d1g2_taska_assets_fab7s6z4/d1_with_g2_combined.usda",
+      "bytes": 1925,
+      "sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "status": "hashed",
+      "authored_dependency_count": 2,
+      "prior_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "bytes": 1459,
+      "sha256": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f",
+      "status": "hashed",
+      "authored_dependency_count": 4,
+      "prior_sha256": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "bytes": 1456,
+      "sha256": "fb2a98599adf35ee462ce3833ffd103b9a3d60aa74c37f202b63a2c28261fe79",
+      "status": "hashed",
+      "authored_dependency_count": 4,
+      "prior_sha256": "fb2a98599adf35ee462ce3833ffd103b9a3d60aa74c37f202b63a2c28261fe79",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "bytes": 30139119,
+      "sha256": "9536f33f2c7235c1222edf90c2a76391ea47029064615d82efa4b02457e3fdee",
+      "status": "hashed",
+      "authored_dependency_count": 2,
+      "prior_sha256": "9536f33f2c7235c1222edf90c2a76391ea47029064615d82efa4b02457e3fdee",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "bytes": 7095,
+      "sha256": "7f9ab722a728f5fa81b5c18735b184e4b2a89434a0a135d09953c0b81ae868af",
+      "status": "hashed",
+      "authored_dependency_count": 2,
+      "prior_sha256": "7f9ab722a728f5fa81b5c18735b184e4b2a89434a0a135d09953c0b81ae868af",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_robot.usd",
+      "bytes": 2321,
+      "sha256": "d49e8589b64b0d6ff9941cf8db7beb89a555ee1ce800ca222d75c057ece8fe59",
+      "status": "hashed",
+      "authored_dependency_count": 0,
+      "prior_sha256": "d49e8589b64b0d6ff9941cf8db7beb89a555ee1ce800ca222d75c057ece8fe59",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_sensor.usd",
+      "bytes": 654,
+      "sha256": "6279b1bc88820eeb9cd770e5da51bb3e49283f98699ee91ee8d5b14ee19d6fea",
+      "status": "hashed",
+      "authored_dependency_count": 0,
+      "prior_sha256": "6279b1bc88820eeb9cd770e5da51bb3e49283f98699ee91ee8d5b14ee19d6fea",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "bytes": 96926891,
+      "sha256": "5e582987c344b3e560d74b1b93a6ea63165c2fc5c453587d0d1bffb6436feaf8",
+      "status": "hashed",
+      "authored_dependency_count": 2,
+      "prior_sha256": "5e582987c344b3e560d74b1b93a6ea63165c2fc5c453587d0d1bffb6436feaf8",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "bytes": 6018,
+      "sha256": "466ec75c70de1fde61f8ba83b2143e186d1d07b7bf8ac971345612eb3d8d0c38",
+      "status": "hashed",
+      "authored_dependency_count": 2,
+      "prior_sha256": "466ec75c70de1fde61f8ba83b2143e186d1d07b7bf8ac971345612eb3d8d0c38",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_robot.usd",
+      "bytes": 1945,
+      "sha256": "2b834759dc9782c093be1eac389d2ccad89c565b4734d92c5f4f06ec53a701f2",
+      "status": "hashed",
+      "authored_dependency_count": 0,
+      "prior_sha256": "2b834759dc9782c093be1eac389d2ccad89c565b4734d92c5f4f06ec53a701f2",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    },
+    {
+      "absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_sensor.usd",
+      "bytes": 647,
+      "sha256": "51138b9504bc42c330d7801e056cf1ed8d2891839e051b480fbc5425cfa0f88c",
+      "status": "hashed",
+      "authored_dependency_count": 0,
+      "prior_sha256": "51138b9504bc42c330d7801e056cf1ed8d2891839e051b480fbc5425cfa0f88c",
+      "matches_prior_content": true,
+      "verified_utc": "2026-09-09T10:08:05.829565+00:00"
+    }
+  ],
+  "edges": [
+    {
+      "from_layer": "/tmp/d1g2_taska_assets_fab7s6z4/d1_with_g2_combined.usda",
+      "authored_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/tmp/d1g2_taska_assets_fab7s6z4/d1_with_g2_combined.usda",
+      "authored_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "authored_path": "configuration/d1_base.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "authored_path": "configuration/d1_physics.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "authored_path": "configuration/d1_robot.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_robot.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+      "authored_path": "configuration/d1_sensor.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_sensor.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "authored_path": "configuration/play_g2_base.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "authored_path": "configuration/play_g2_physics.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "authored_path": "configuration/play_g2_robot.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_robot.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+      "authored_path": "configuration/play_g2_sensor.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_sensor.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "authored_path": "",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "status": "internal_same_layer_reference"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "authored_path": "OmniPBR.mdl",
+      "kind": "asset_attribute",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/OmniPBR.mdl",
+      "status": "missing_or_resolver_managed"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "authored_path": "",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "status": "internal_same_layer_reference"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "authored_path": "d1_base.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "status": "resolved_local"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "authored_path": "",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "status": "internal_same_layer_reference"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "authored_path": "OmniPBR.mdl",
+      "kind": "asset_attribute",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/OmniPBR.mdl",
+      "status": "missing_or_resolver_managed"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "authored_path": "",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "status": "internal_same_layer_reference"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+      "authored_path": "play_g2_base.usd",
+      "kind": "composition",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "status": "resolved_local"
+    }
+  ],
+  "unresolved_or_limited": [
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+      "authored_path": "OmniPBR.mdl",
+      "kind": "asset_attribute",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/OmniPBR.mdl",
+      "status": "missing_or_resolver_managed"
+    },
+    {
+      "from_layer": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+      "authored_path": "OmniPBR.mdl",
+      "kind": "asset_attribute",
+      "resolved_absolute_path": "/home/lybm/ATEC_D1G2_workspace2_20260908/workspace2/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/OmniPBR.mdl",
+      "status": "missing_or_resolver_managed"
+    }
+  ],
+  "scope_limitations": [
+    "USD assets are listed and hashed, not copied.",
+    "This graph covers the composed D1+G2 root layer and its local authored dependencies, not all scene lighting/material assets or MDL internal imports.",
+    "Generated terrain mesh and the live USD stage are not copied. Original terrain generator source and fixed course seed are archived.",
+    "Resolver-managed URLs, package-internal paths, UDIM patterns and missing local dependencies are reported without network resolution."
+  ],
+  "internal_reference_note": "Empty composition asset paths refer to the same layer and are not missing external files.",
+  "captured_utc": "2026-09-09T10:08:05.829565+00:00",
+  "verification_method": "Every current local USD layer was re-hashed before reusing prior recursively discovered dependency graph. Current temporary root path is substituted only after identical content verification.",
+  "prior_graph_absolute_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_course_01/audit_dependencies/robot_usd_dependencies.json",
+  "prior_graph_sha256": "f69cc44770ff0c8b0df506d59f38a416442b2fc99e1cb95932f98bc3ba5293bc",
+  "all_current_layer_hashes_match_prior": true,
+  "graph_reuse_validated": true,
+  "status": "current_assets_verified_same_dependency_graph"
+}
