@@ -6,10 +6,12 @@
 
 | 任务 | 机器人怎样完成任务 | 已验证的本机结果 | 代码与运行 | 视频与证据 |
 | --- | --- | --- | --- | --- |
-| **Task A：连续越障** | D1+G2 用相机估计行进方向，在已有行走策略上训练动作修正 | 连续前进 **286.002 m**，用时 **505.66 s**，唯一终止项 `reach_goal_x` | [Task A 入口](task_a/README.md) | [完整视频](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-a-local-pass-20260909) · [验收记录](task_a/evidence/acceptance_summary.json) |
+| **Task A：连续越障** | D1+G2 用相机估计行进方向，在已有行走策略上训练动作修正 | 提速版 **457.32 s / 286.005 m**，比原 505.66 s 少 **9.56%**；均只触发终点 | [Task A 入口](task_a/README.md) | [新旧横屏视频](docs/VIDEO_COMPARISON.md) · [速度验收](task_a/evidence/speed_070_050_02/speed_acceptance_audit.json) |
 | **Task E：三物体抓取入篮** | Piper 从彩色与深度图像定位物体，用运动学规划动作并检查抓放反馈 | seed 42 / seed 0 均为 **18/18 分**，分别 **53.78 s / 62.36 s** | [Task E 入口](docs/TASK_E.md) | [演示视频](media/task_e_fast_seed42_color.mp4) · [seed 42](results/fast_seed42_package.json) · [seed 0](results/fast_seed0_package.json) |
 
-Task A 已有一次完整通过，也存在同配置失败；Task E 只验证了少量指定初态。这些结果来自 Isaac Sim / Isaac Lab 本机仿真，尚未证明广泛场景成功率、实机效果或官方线上成绩。
+Task A 两个速度配置各有一次完整通过，原配置也存在失败；Task E 只验证了少量指定初态。这些结果来自 Isaac Sim / Isaac Lab 本机仿真，尚未证明广泛场景成功率、实机效果或官方线上成绩。
+
+Task B 的要求、旧方案与硬件可行性见 [评估说明](docs/TASK_B_FEASIBILITY.md)：可以继续研发，当前尚无正分或通关证据。
 
 ## 先选一条阅读路线
 

@@ -1,0 +1,738 @@
+{
+  "captured_utc": "2026-09-10T06:43:41.137441+00:00",
+  "run_directory": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/outputs/speed_070_050_seed42_02",
+  "old_success_directory": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/evidence/full_course_02",
+  "method": "Independent CPU-only source/hash and full-duration trace audit; no simulation replay.",
+  "all_checks_passed": true,
+  "passed_checks": 15,
+  "total_checks": 15,
+  "verdict": "local_original_course_speed_variant_passed",
+  "official_submission": false,
+  "input_evidence_sha256": {
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/outputs/speed_070_050_seed42_02/result.json": "0bcaee6cb8b9da8a56c774e64f4d457bdf168512f5da2ede27db840631d934b2",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/outputs/speed_070_050_seed42_02/trace.jsonl": "3b497ace98aad84c62161c003aa622c36580749857398c486576f000223b9d1b",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/evidence/full_course_02/result.json": "0aaa96368c46039e2a42e323a81337f4e847e2822fa69d722bbdb19226035b0a",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/evidence/full_course_02/trace.jsonl": "3a624c47c768cfbfe842e1a66e502d6cf14af6a323a58e795969dd98122e06a5",
+    "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/4_d1_with_g2_combined.usda": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b"
+  },
+  "input_evidence_unchanged_after_audit": true,
+  "checks": [
+    {
+      "id": "01_finished",
+      "check": "完整赛道完成且非诊断入口",
+      "passed": true,
+      "evidence": {
+        "status": "finished",
+        "reason": "reach_goal_x",
+        "reached_goal": true,
+        "goal_triggered": true,
+        "official_submission": false
+      }
+    },
+    {
+      "id": "02_original_start",
+      "check": "原始起点、初态、单环境与时限",
+      "passed": true,
+      "evidence": {
+        "initial": {
+          "xyz": [
+            -141.0,
+            0.0,
+            0.6000000238418579
+          ],
+          "velocity_world": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "projected_gravity": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "diagnostic_world_yaw_radians": 0.0,
+          "tilt_degrees": 0.0,
+          "contacts_over_1n": {},
+          "contact_history_peak_over_1n": {}
+        },
+        "episode_limit_seconds": 1200,
+        "seed": 42
+      }
+    },
+    {
+      "id": "03_terminal",
+      "check": "唯一原始终点，无同帧非法接触/摔落/超时",
+      "passed": true,
+      "evidence": {
+        "final_xyz": [
+          145.0045166015625,
+          -0.041199781000614166,
+          0.450489342212677
+        ],
+        "termination_terms": [
+          "reach_goal_x"
+        ],
+        "forbidden_body_contact_history_over_1n": {},
+        "captured_before_auto_reset": true
+      }
+    },
+    {
+      "id": "04_complete_trace",
+      "check": "全时段 trace 顺序与采样点完整",
+      "passed": true,
+      "evidence": {
+        "rows": 916,
+        "first_step": 1,
+        "last_step": 22866,
+        "cadence_control_steps": 25,
+        "terminal_rows": [
+          22866
+        ],
+        "scope": "Full-duration 2Hz trace plus terminal row, not a recording of every 50Hz action or raw image."
+      }
+    },
+    {
+      "id": "05_timing",
+      "check": "仿真步数与时间一致",
+      "passed": true,
+      "evidence": {
+        "steps": 22866,
+        "control_dt": 0.02,
+        "simulation_seconds": 457.32,
+        "wall_seconds": 1000.1806823369989
+      }
+    },
+    {
+      "id": "06_speed_comparison",
+      "check": "同模型通过运行的速度与耗时比较",
+      "passed": true,
+      "evidence": {
+        "old_sim_seconds": 505.66,
+        "new_sim_seconds": 457.32,
+        "saved_sim_seconds": 48.34,
+        "saved_sim_percent": 9.559783253569599,
+        "old_wall_seconds": 1007.8762117459992,
+        "new_wall_seconds": 1000.1806823369989,
+        "old_speed_profile": {
+          "cruise_mps": 0.6,
+          "rough_mps": 0.45,
+          "rough_relative_x_bounds_m": [
+            26.0,
+            112.0
+          ],
+          "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+          "speed_slew_mps2": 0.1
+        },
+        "new_speed_profile": {
+          "cruise_mps": 0.7,
+          "rough_mps": 0.5,
+          "rough_relative_x_bounds_m": [
+            26.0,
+            112.0
+          ],
+          "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+          "speed_slew_mps2": 0.1
+        },
+        "limitation": "9.56% is simulated episode duration reduction for two successful seed42 runs, not measured wall-clock speedup or a multi-seed success-rate claim."
+      }
+    },
+    {
+      "id": "07_weights",
+      "check": "1999 残差与基础 ONNX 原样",
+      "passed": true,
+      "evidence": [
+        {
+          "path": "weights/model_1999_final.pt",
+          "sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+          "matches_both_reports": true
+        },
+        {
+          "path": "assets/DDT_Lab/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+          "sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+          "matches_both_reports": true
+        }
+      ]
+    },
+    {
+      "id": "08_frozen_sources",
+      "check": "12 份 Python 配置/控制文件与旧通过版本完全一致",
+      "passed": true,
+      "evidence": [
+        {
+          "name": "run_d1g2_taska.py",
+          "sha256": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_env.py",
+          "sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_policy.py",
+          "sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "ddt_robot.py",
+          "sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_torch_policy.py",
+          "sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_residual.py",
+          "sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_rgbd.py",
+          "sha256": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_visual_navigation.py",
+          "sha256": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_navigation.py",
+          "sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_axis_heading.py",
+          "sha256": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_visual_recovery.py",
+          "sha256": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        },
+        {
+          "name": "d1g2_taska_camera_compat.py",
+          "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+          "actual_matches": true,
+          "snapshot_matches": true,
+          "matches_old_bytes": true
+        }
+      ]
+    },
+    {
+      "id": "09_robot_physics",
+      "check": "11 层机器人 USD 物理不变，只有根层引用路径迁移",
+      "passed": true,
+      "evidence": {
+        "root_old_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+        "root_new_sha256": "31840a3a94911dc8fada84b13890de391d5b77434ac3ce6472d2d3a4b3444e87",
+        "old_root_snapshot": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/sources/4_d1_with_g2_combined.usda",
+        "root_equal_after_only_DDT_path_prefix_normalization": true,
+        "dependent_layers": [
+          {
+            "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+            "sha256": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd",
+            "sha256": "fb2a98599adf35ee462ce3833ffd103b9a3d60aa74c37f202b63a2c28261fe79",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_base.usd",
+            "sha256": "9536f33f2c7235c1222edf90c2a76391ea47029064615d82efa4b02457e3fdee",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_physics.usd",
+            "sha256": "7f9ab722a728f5fa81b5c18735b184e4b2a89434a0a135d09953c0b81ae868af",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_robot.usd",
+            "sha256": "d49e8589b64b0d6ff9941cf8db7beb89a555ee1ce800ca222d75c057ece8fe59",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/configuration/d1_sensor.usd",
+            "sha256": "6279b1bc88820eeb9cd770e5da51bb3e49283f98699ee91ee8d5b14ee19d6fea",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_base.usd",
+            "sha256": "5e582987c344b3e560d74b1b93a6ea63165c2fc5c453587d0d1bffb6436feaf8",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_physics.usd",
+            "sha256": "466ec75c70de1fde61f8ba83b2143e186d1d07b7bf8ac971345612eb3d8d0c38",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_robot.usd",
+            "sha256": "2b834759dc9782c093be1eac389d2ccad89c565b4734d92c5f4f06ec53a701f2",
+            "matches_old": true
+          },
+          {
+            "path": "assets/DDT_Lab/ros2_play_g2/play_g2/usd/configuration/play_g2_sensor.usd",
+            "sha256": "51138b9504bc42c330d7801e056cf1ed8d2891839e051b480fbc5425cfa0f88c",
+            "matches_old": true
+          }
+        ],
+        "direct_root_references": [
+          "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/assets/DDT_Lab/ddt_ros2_control/urdfs/d1_description/usd/d1.usd",
+          "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/assets/DDT_Lab/ros2_play_g2/play_g2/usd/play_g2.usd"
+        ],
+        "material_external_dependency": "OmniPBR.mdl is supplied by Isaac Sim."
+      }
+    },
+    {
+      "id": "10_original_framework",
+      "check": "27 份任务、物理、终止、传感器与推理依赖匹配旧证据",
+      "passed": true,
+      "evidence": {
+        "dependencies": [
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/atec_rl_lab/tasks/task_a/terrain.py",
+            "sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/atec_rl_lab/tasks/task_a/env_cfg.py",
+            "sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/atec_rl_lab/tasks/task_a/mdp/terminations.py",
+            "sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base_cfg.py",
+            "sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/atec_rl_lab/tasks/task_base/envs_base.py",
+            "sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/atec_rl_lab/tasks/task_base/terrain_base.py",
+            "sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/source/atec_rl_lab/config/extension.toml",
+            "sha256": "879a5a0f0b7de25ed1b802a10f14138290e7f9296bb227f7e3bc9719af43ba77",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/mdp/terminations.py",
+            "sha256": "c04d1240b9f2f533da3e6ed66c6da826fbfac9d924fc1038df8a082b283ea300",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_env.py",
+            "sha256": "74d495925e264521b05a92296bbaf98adcabb7d94f3787ab3ed61f4d0680a198",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/envs/manager_based_rl_env.py",
+            "sha256": "974977825dbbd916460b4f9bb12176ab2cde41026fadc05e1de02d8fbbc94725",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/managers/termination_manager.py",
+            "sha256": "cb6333f11fa6472f7d8034bae9835714e83ae3edde97894b767f1351a7eea99d",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/contact_sensor/contact_sensor.py",
+            "sha256": "5bf3b77d2159850526e3833bf50253dbce06cb78b850eae13fb4088dc233760d",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/sensor_base.py",
+            "sha256": "4716a4b89ed1ac4f640f8744f1e2fcaac2e74d00c2193e0ce24e52c61e5659fc",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/terrain_generator.py",
+            "sha256": "a364d85812a7713b21a94a450f40e8ef5d448bbe652bcb2ee36184b6300c409b",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/terrain_importer.py",
+            "sha256": "fdc32823ccf4eabfe1cd175bb8f65d85927407f02600d966f9d28d94cee954e5",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/utils.py",
+            "sha256": "66e0aa81e6ae33aba16317845537b02eba87684a9ae8cd832323c9bab4481afb",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/height_field/hf_terrains.py",
+            "sha256": "830971981a5920d3feed55512d6f2bd820396a16af3476a593d26b97daaaeed1",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/height_field/utils.py",
+            "sha256": "a8820498ecb5ba6535a27bf3d8c5baf9069d2314d8e7fd9d950f60912e301725",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/terrains/trimesh/mesh_terrains.py",
+            "sha256": "50c1bbc1b319c71cb9a3305f4c52211be9e8c8db9859949e9784806fc26806c3",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/config/extension.toml",
+            "sha256": "20788530c894de99bba947129657eaba3029d59f92a3b8ca11c3b2a1874c75f7",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/VERSION",
+            "sha256": "e1d31f14bed34a1c7e6227931673f0bb4ec1e26ee4278d00dac169809c4d9539",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/camera/camera.py",
+            "sha256": "a3689cffa01d046b510f7564f7adad972edf6316568b0e323abc2c4f0c4ec354",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sim/views/xform_prim_view.py",
+            "sha256": "5a05ccc9322e6f042f2ab669cbaf7fb60712726dfeb0d323913b78c87d3755b3",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/isaacsim/exts/isaacsim.core.utils/isaacsim/core/utils/xforms.py",
+            "sha256": "b69b4a84adfa456a24020d403d889bea69dcb07188f3c709a918d7a917e0727e",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl/modules/actor_critic.py",
+            "sha256": "20c6396d32802112dc217ba51add5fe7f7953518a0c7cdb4b7da51f77dc30b6e",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl/networks/mlp.py",
+            "sha256": "ea52cb5b27e6d986731ac657bcc37f8b74a1e5630e8a8fb323986ed2b6c01b23",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          },
+          {
+            "source": "/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/rsl_rl/networks/normalization.py",
+            "sha256": "7db82f8021d62a660b4229782b52ac47e32d781206dba709d6bc436bf13f6672",
+            "matches_old": true,
+            "old_snapshot_matches": true
+          }
+        ],
+        "physics_dt": 0.005,
+        "control_dt": 0.02,
+        "terrain_seed": 0,
+        "task_geometry_rewards_terminations_action_scales_unchanged": true,
+        "scope": "Static byte-level configuration/source evidence; the live physics stage was not replayed."
+      }
+    },
+    {
+      "id": "11_scene_reproduction",
+      "check": "公开复现必须补齐的 5 个原始场景资源",
+      "passed": true,
+      "evidence": {
+        "scene_files": [
+          {
+            "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned.mdl",
+            "bytes": 2000,
+            "sha256": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+            "installed_sha256": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+            "original_sha256": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+            "original_bytes_preserved": true
+          },
+          {
+            "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_COL_8K.jpg",
+            "bytes": 935107,
+            "sha256": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+            "installed_sha256": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+            "original_sha256": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+            "original_bytes_preserved": true
+          },
+          {
+            "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_GLOSS_8K.jpg",
+            "bytes": 653707,
+            "sha256": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+            "installed_sha256": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+            "original_sha256": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+            "original_bytes_preserved": true
+          },
+          {
+            "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png",
+            "bytes": 3842435,
+            "sha256": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+            "installed_sha256": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+            "original_sha256": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+            "original_bytes_preserved": true
+          },
+          {
+            "path": "scene/kloofendal_43d_clear_puresky_4k.hdr",
+            "bytes": 18429221,
+            "sha256": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb",
+            "installed_sha256": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb",
+            "original_sha256": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb",
+            "original_bytes_preserved": true
+          }
+        ],
+        "total_bytes": 23862470,
+        "setup_script": "scripts/setup_scene_assets.py",
+        "preflight_manifest": "provenance/external_scene_assets.json",
+        "prior_attempt": {
+          "run": "speed_070_050_seed42_01",
+          "reason": "stalled_no_0.1m_forward_progress",
+          "simulation_seconds": 69.9,
+          "reached_goal": false,
+          "sampled_visual_failure_reasons": {
+            "insufficient_initial_features": 136
+          }
+        },
+        "interpretation": "The previous migrated attempt never initialized visual navigation. Root diagnosed omitted original texture/HDR resources; this audit confirms that failure signature and that the second run has all five byte-identical resources. It is a configuration failure, not a completed-controller speed trial. Do not omit this setup requirement when publishing the second run."
+      }
+    },
+    {
+      "id": "12_input_boundary",
+      "check": "部署输入边界与历史状态语义保持原样",
+      "passed": true,
+      "evidence": {
+        "basis": "Unchanged12 Python files plus unchanged27 dependencies preserve the prior independently inspected call graph.",
+        "actor": "331 values from base policy proprio/history, arm joint state, base action and previous residual; critic excluded.",
+        "navigation": "Observed RGB/depth/K, projected gravity, gyro and bounded body velocity integration; known fixed course grid prior.",
+        "simulator_world_truth_exceptions": [
+          "Official score/goal/fall evaluation",
+          "Diagnostic pose/yaw and sensor records",
+          "Initial start assertion",
+          "No-progress watchdog",
+          "Internal camera sensor assembly/render poses and overview video"
+        ],
+        "important_limit": "The runner and camera assembly do read simulator poses for sensor generation, original termination/score, start assertion, diagnostics and watchdog; these are not actor/navigation pose inputs.",
+        "source_lines": {
+          "actor_call": "run_d1g2_taska.py:451",
+          "post_step_proprio": "run_d1g2_taska.py:460",
+          "axis_inputs": "run_d1g2_taska.py:471",
+          "vo_inputs": "run_d1g2_taska.py:494",
+          "independent_heading": "run_d1g2_taska.py:500",
+          "policy_reset_once": "run_d1g2_taska.py:391"
+        }
+      }
+    },
+    {
+      "id": "13_recovery_budget",
+      "check": "全部重锚事件与本轮盲行总预算",
+      "passed": true,
+      "evidence": {
+        "budgets": {
+          "gap_seconds": 2.0,
+          "gap_path_m": 1.0,
+          "episode_seconds": 4.0,
+          "episode_path_m": 2.0,
+          "reanchors": 4
+        },
+        "events": [
+          {
+            "timestamp": 431.7,
+            "segment_id": 1,
+            "source": "proprio_inertial_gap_then_candidate_visual_motion",
+            "visually_connected_to_previous_segment": false,
+            "gap_reason": "insufficient_pnp_inliers",
+            "gap_seconds": 0.2999999999999545,
+            "gap_path_m": 0.1502646526775351,
+            "committed_displacement_m": 0.13637783114468757,
+            "candidate_consecutive_accepts": 2,
+            "candidate_seed": {
+              "timestamp": 431.5,
+              "estimated_position": [
+                268.8163472651356,
+                0.43443131231174237,
+                -1.8742805689002067
+              ],
+              "estimated_rotation": [
+                [
+                  0.853421996394672,
+                  -0.024103441942481905,
+                  -0.5206629621513882
+                ],
+                [
+                  0.006232711748895306,
+                  0.9993306707829859,
+                  -0.03604668829008697
+                ],
+                [
+                  0.521183316477022,
+                  0.027517894522526874,
+                  0.8530010059238262
+                ]
+              ],
+              "unobserved_interval_seconds": 0.0999999999999659
+            },
+            "position_uncertainty": "unquantified inertial drift; inherited by this segment"
+          },
+          {
+            "timestamp": 432.40000000000003,
+            "segment_id": 2,
+            "source": "proprio_inertial_gap_then_candidate_visual_motion",
+            "visually_connected_to_previous_segment": false,
+            "gap_reason": "insufficient_pnp_inliers",
+            "gap_seconds": 0.4000000000000341,
+            "gap_path_m": 0.22930450589478324,
+            "committed_displacement_m": 0.20456779284761198,
+            "candidate_consecutive_accepts": 2,
+            "candidate_seed": {
+              "timestamp": 432.2,
+              "estimated_position": [
+                269.0946773632304,
+                0.4416273315957731,
+                -1.6818354402522
+              ],
+              "estimated_rotation": [
+                [
+                  0.8652080524429695,
+                  -0.02328002689459865,
+                  -0.5008723054188868
+                ],
+                [
+                  0.013868298247396474,
+                  0.9996505007980034,
+                  -0.02250658921343368
+                ],
+                [
+                  0.5012212049500352,
+                  0.012526635705078717,
+                  0.8652285172752613
+                ]
+              ],
+              "unobserved_interval_seconds": 0.19999999999998863
+            },
+            "position_uncertainty": "unquantified inertial drift; inherited by this segment"
+          }
+        ],
+        "episode_blind_seconds": 0.6999999999999886,
+        "episode_blind_path_m": 0.3795691585723184,
+        "recorded_stop_rows": [],
+        "all_event_ids_observed": true,
+        "scope": "Recorded event summaries, all2Hz state snapshots and unchanged budget implementation; no raw50Hz proprio archive is available to independently reintegrate each motion."
+      }
+    },
+    {
+      "id": "14_visual_timing",
+      "check": "50Hz 本体采样、10Hz 视觉与重锚计数时序",
+      "passed": true,
+      "evidence": {
+        "proprio_sample_counter_consistent": true,
+        "terminal_sample_exception": "No observe_proprio on the terminal auto-reset observation; final count equals step, nonterminal counts equal step+1 including t0.",
+        "counters_monotonic": true,
+        "original_bootstrap_preserved": true,
+        "frames": 4554,
+        "accepted_frames": 4548,
+        "rejected_frames": 5,
+        "gravity_corrected_frames": 4548,
+        "axis_corrected_frames": 4497,
+        "final_camera_timestamp": 457.3,
+        "final_physics_timestamp": 457.32,
+        "independent_heading_updates": 4,
+        "camera_raw_frames_available": false
+      }
+    },
+    {
+      "id": "15_hardware",
+      "check": "本机完成且未触发硬件保护",
+      "passed": true,
+      "evidence": {
+        "sampled_gpu_peak_mib": 6212,
+        "max_process_rss_mib": 7800.05859375,
+        "final_hardware_sample": {
+          "gpu_memory_mib": 6212,
+          "gpu_temperature_c": 60,
+          "available_ram_gib": 17.490596771240234
+        },
+        "maximum_recorded_tilt_degrees": 37.70422236040435,
+        "scope": "GPU peak is periodic sampling, not a continuous allocator peak; no new GPU work was performed for this audit."
+      }
+    }
+  ],
+  "summary": {
+    "simulation_seconds": 457.32,
+    "saved_sim_seconds": 48.34,
+    "saved_sim_percent": 9.559783253569599,
+    "final_xyz": [
+      145.0045166015625,
+      -0.041199781000614166,
+      0.450489342212677
+    ],
+    "reanchors": 2,
+    "episode_blind_seconds": 0.6999999999999886,
+    "episode_blind_path_m": 0.3795691585723184
+  },
+  "publication_requirements": [
+    "Include original5 scene assets setup/check step, alongside user robot assets and weights.",
+    "Keep speed_070_050_seed42_01 configuration failure separate from the successful second attempt.",
+    "Label9.56% as simulation-time improvement; one successfulseed42 comparison does not establish cross-seed robustness.",
+    "Keep private assets external to public source delivery; this audit makes no redistribution-license changes."
+  ]
+}

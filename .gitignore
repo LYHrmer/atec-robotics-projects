@@ -8,6 +8,7 @@ runs/
 
 # Task A generated files and external robot resources
 /task_a/assets/DDT_Lab/
+/task_a/atec_robot_model/
 /task_a/outputs/
 /task_a/logs/
 /task_a/sensors/

@@ -15,6 +15,8 @@
 
 [完整视频](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-a-local-pass-20260909) · [结果 JSON](evidence/full_course_02/result.json) · [训练权重](weights/model_1999_final.pt) · [完整轨迹](evidence/full_course_02/trace.jsonl)
 
+**2026-09-10 提速实验：457.32 仿真秒完整通过，比上述原版少 48.34 秒（9.56%）。** 使用同一个训练模型，只把巡航/碎石段指令从 0.60/0.45 调为 0.70/0.50 m/s。新旧完整录像均保留；这是新配置的一次成功记录，仍需更多重复实验评估稳定性。见 [速度对比与复现](docs/SPEED_COMPARISON.md)。
+
 ## 跑一次项目
 
 下面命令都从**统一仓库根目录**执行。先准备现有的 Isaac Lab 环境；本项目没有把仿真器和显卡驱动打包进 Git。原验证机器为 Ubuntu、Python 3.10、Isaac Sim 4.5、Isaac Lab 2.3.2、PyTorch 2.7.0+cu128，完整版本见 [环境记录](provenance/environment_versions.json)。
@@ -50,11 +52,22 @@ python3 task_a/scripts/setup_assets.py --check
 
 已有 DDT_Lab 目录时，可改用 `--from-directory /绝对路径/DDT_Lab`。也可设置 `ATEC_D1G2_ASSET_ROOT` 直接使用外部目录，详见 [资源说明](assets/README.md)。导入的资源保留在本地，不提交 Git。
 
+还需从官方任务资源目录导入 **5 个原始赛道材质、纹理与天空文件**。它们提供视觉导航所需的图像特征，仅有机器人模型不足以完成视觉闭环：
+
+```bash
+python3 task_a/scripts/setup_scene_assets.py --from-directory /绝对路径/ATEC2026_Simulation_Challenge/atec_robot_model
+python3 task_a/scripts/setup_scene_assets.py --check
+```
+
+两个导入器都核对原始文件 SHA-256，启动器会在进入仿真前检查资源完整性。
+
 **3. 启动。** 每次使用一个不存在的输出目录。
 
 ```bash
 bash run.sh task-a --output outputs/course_01 --video
 ```
+
+复现提速配置时改用 `bash run.sh task-a-fast --output outputs/fast_course_01 --video`。两个入口分别保留原参数和提速参数，均使用原任务终点判定。
 
 结果位于 `task_a/outputs/course_01/`：`result.json` 给出最终判定，`trace.jsonl` 记录过程，`run.mp4` 是录像。只有 `reason=reach_goal_x` 且没有同帧失败才算原始任务通过。
 

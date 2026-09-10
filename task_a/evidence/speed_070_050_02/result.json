@@ -1,0 +1,430 @@
+{
+  "status": "finished",
+  "robot": "D1+G2",
+  "mode": "policy",
+  "assets_root": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/assets/DDT_Lab",
+  "official_submission": false,
+  "seed": 42,
+  "speed_command_mps": 0.7,
+  "video": true,
+  "action_joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint",
+    "FL_foot_joint",
+    "FR_foot_joint",
+    "RL_foot_joint",
+    "RR_foot_joint",
+    "joint1",
+    "joint2",
+    "joint3",
+    "joint4",
+    "joint5",
+    "joint6",
+    "g2_joint"
+  ],
+  "action_scales": [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    5.0,
+    5.0,
+    5.0,
+    5.0,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "scope": "Original Task A terrain, reward, goal and time limit; custom D1+G2 robot; front RGB-D enabled only for visual navigation/capture.",
+  "terminal_state_captured_before_auto_reset": true,
+  "heading_estimator": "ZYX yaw rate from body gyro and projected gravity; no world pose input",
+  "navigation_mode": "rgbd",
+  "axis_heading_enabled": true,
+  "visual_recovery_enabled": true,
+  "sensor_archive_compression": "deflated",
+  "speed_profile": {
+    "cruise_mps": 0.7,
+    "rough_mps": 0.5,
+    "rough_relative_x_bounds_m": [
+      26.0,
+      112.0
+    ],
+    "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+    "speed_slew_mps2": 0.1
+  },
+  "front_camera_mount_pitch_degrees": 30.0,
+  "policy": {
+    "kind": "D1_flat_backbone_plus_D1G2_trained_residual",
+    "trained_with_G2": true,
+    "checkpoint": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/weights/model_1999_final.pt",
+    "sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+    "base_policy_sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+    "iteration": 1999,
+    "actor_uses_terrain_truth": false,
+    "training_is_not_full_course_success": true
+  },
+  "source_sha256": {
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/run_d1g2_taska.py": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_env.py": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_policy.py": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/assets/DDT_Lab/source/ddt_lab/ddt_lab/assets/ddt_robot.py": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+    "/tmp/d1g2_taska_assets_i38uqz0z/d1_with_g2_combined.usda": "31840a3a94911dc8fada84b13890de391d5b77434ac3ce6472d2d3a4b3444e87",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_torch_policy.py": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_residual.py": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_rgbd.py": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_visual_navigation.py": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_navigation.py": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_axis_heading.py": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_visual_recovery.py": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_camera_compat.py": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+  },
+  "initial": {
+    "xyz": [
+      -141.0,
+      0.0,
+      0.6000000238418579
+    ],
+    "velocity_world": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "projected_gravity": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "quaternion_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "diagnostic_world_yaw_radians": 0.0,
+    "tilt_degrees": 0.0,
+    "contacts_over_1n": {},
+    "contact_history_peak_over_1n": {}
+  },
+  "startup_seconds": 19.58722812400083,
+  "actual_joint_names": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "joint1",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "joint2",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint",
+    "joint3",
+    "FL_foot_joint",
+    "FR_foot_joint",
+    "RL_foot_joint",
+    "RR_foot_joint",
+    "joint4",
+    "joint5",
+    "joint6",
+    "g2_joint",
+    "g2_left_joint",
+    "g2_right_joint"
+  ],
+  "actual_body_names": [
+    "base_link",
+    "F_base_link",
+    "R_base_link",
+    "imu_link",
+    "base_link",
+    "FL_hip",
+    "FR_hip",
+    "F_docking_link",
+    "F_funtion_link",
+    "RL_hip",
+    "RR_hip",
+    "R_docking_link",
+    "R_funtion_link",
+    "link1",
+    "FL_thigh",
+    "FR_thigh",
+    "RL_thigh",
+    "RR_thigh",
+    "link2",
+    "FL_calf",
+    "FR_calf",
+    "RL_calf",
+    "RR_calf",
+    "link3",
+    "FL_foot",
+    "FR_foot",
+    "RL_foot",
+    "RR_foot",
+    "link4",
+    "link5",
+    "link6",
+    "eef_connect_base_link",
+    "end_link",
+    "g2_base_link",
+    "g2_virtual_link",
+    "g2_left_link",
+    "g2_right_link"
+  ],
+  "simulation_dt": 0.02,
+  "episode_limit_seconds": 1200,
+  "num_envs": 1,
+  "visual_yaw_source": "RGB-D PnP plus gated observed known-course grid directions",
+  "front_camera_intrinsics_raster": [
+    [
+      732.999267578125,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      732.999267578125,
+      240.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "front_camera_intrinsics": [
+    [
+      732.999267578125,
+      0.0,
+      319.5
+    ],
+    [
+      0.0,
+      732.999267578125,
+      239.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "intrinsics_pixel_convention": "opencv_pixel_centres",
+  "visual_tilt_source": "projected_gravity from original proprioception",
+  "opencv_threads": 1,
+  "visual_recovery": {
+    "budgets": {
+      "gap_seconds": 2.0,
+      "gap_path_m": 1.0,
+      "episode_seconds": 4.0,
+      "episode_path_m": 2.0,
+      "reanchors": 4
+    },
+    "source": "Original body velocity, gyro and gravity bridge disconnected RGB-D segments.",
+    "candidate_required_consecutive_visual_accepts": 2,
+    "uses_world_pose": false,
+    "inherited_uncertainty": "Unquantified short inertial drift; explicitly recorded per reanchor."
+  },
+  "navigation": {
+    "kind": "visual_anchors_with_proprioceptive_heading_prediction",
+    "visual_fields": [
+      "accepted",
+      "reason",
+      "estimated_xy",
+      "estimated_yaw"
+    ],
+    "gyro_indices": [
+      3,
+      6
+    ],
+    "gravity_indices": [
+      9,
+      12
+    ],
+    "initial_xy": [
+      0.0,
+      0.0
+    ],
+    "initial_yaw": 0.0,
+    "slow_after_seconds": 0.3,
+    "stop_after_seconds": 0.8,
+    "slowdown": "linear speed reduction between 0.3 and 0.8 seconds",
+    "uses_simulator_world_pose": false,
+    "uses_body_linear_velocity": false,
+    "startup": "At least 2 seconds of proprioceptive relative-pose estimation during settling; then RGB-D anchors.",
+    "startup_world_pose_input": false
+  },
+  "visual_startup": {
+    "step": 100,
+    "estimated_xy": [
+      -0.20000239478627724,
+      0.030283110910432356
+    ],
+    "estimated_yaw": -0.018755408857139944,
+    "initial_rotation": [
+      [
+        0.9995855976395747,
+        0.027059613898510592,
+        -0.009818874029024819
+      ],
+      [
+        -0.026833656105918122,
+        0.9993876211521601,
+        0.02245746174027824
+      ],
+      [
+        0.01042055140209234,
+        -0.02218467902608173,
+        0.9996995809366863
+      ]
+    ],
+    "uses_world_pose": false,
+    "axis_heading": {
+      "source": "known_course_grid+RGBD+gravity",
+      "algorithm_version": "axis_heading_cpu_candidate_v1",
+      "accepted": true,
+      "reason": "known_grid_direction_candidate",
+      "heading_rad": -0.026838334938826206,
+      "yaw_mod45_radians": -0.026838334938826203,
+      "ambiguity_degrees": 45.0,
+      "detected_lines": 26,
+      "valid_lines": 21,
+      "mode_support_fraction": 1.0,
+      "mode_peak_ratio": 3594.5110351385947,
+      "eightfold_concentration": 0.9991127444675607,
+      "candidate_heading_rad": -0.026838334938826206,
+      "prior_innovation_radians": -0.00808292608168626
+    }
+  },
+  "reason": "reach_goal_x",
+  "steps": 22866,
+  "simulation_seconds": 457.32,
+  "wall_seconds": 1000.1806823369989,
+  "final": {
+    "xyz": [
+      145.0045166015625,
+      -0.041199781000614166,
+      0.450489342212677
+    ],
+    "velocity_world": [
+      0.6772427558898926,
+      -0.0013055546442046762,
+      -0.0005161616718396544
+    ],
+    "projected_gravity": [
+      0.008548266254365444,
+      -0.0391826257109642,
+      -0.9991955161094666
+    ],
+    "quaternion_wxyz": [
+      0.999796450138092,
+      0.01960458979010582,
+      0.0042319707572460175,
+      -0.002194569678977132
+    ],
+    "diagnostic_world_yaw_radians": -0.004222480671885314,
+    "tilt_degrees": 2.2983990091306294,
+    "contacts_over_1n": {
+      "FL_foot": 103.64277648925781,
+      "FR_foot": 161.9159698486328,
+      "RL_foot": 141.788818359375,
+      "RR_foot": 127.43382263183594
+    },
+    "contact_history_peak_over_1n": {
+      "FL_foot": 104.42149353027344,
+      "FR_foot": 162.30416870117188,
+      "RL_foot": 142.22369384765625,
+      "RR_foot": 127.43382263183594
+    },
+    "termination_terms": [
+      "reach_goal_x"
+    ],
+    "joint_positions": [
+      0.10796637833118439,
+      -0.03882298991084099,
+      0.04602188616991043,
+      -0.0672653466463089,
+      -0.004185957834124565,
+      0.755584716796875,
+      0.7785174250602722,
+      0.6739783883094788,
+      0.7764395475387573,
+      -0.0996682420372963,
+      -1.355465054512024,
+      -1.5407239198684692,
+      -1.4127267599105835,
+      -1.4997822046279907,
+      -0.08726877719163895,
+      3614.594970703125,
+      3711.974609375,
+      3617.03466796875,
+      3653.321533203125,
+      0.007002911996096373,
+      -0.004441242199391127,
+      0.0003809296467807144,
+      0.07199858129024506,
+      0.0,
+      0.03660000115633011
+    ],
+    "joint_velocities": [
+      -0.008436551317572594,
+      -0.008563913404941559,
+      -0.0038845802191644907,
+      -0.0017218012362718582,
+      -0.008003114722669125,
+      -0.0394759401679039,
+      0.0068364376202225685,
+      0.03994870185852051,
+      -0.0004207105375826359,
+      0.041087061166763306,
+      -0.02746262028813362,
+      -0.005921876057982445,
+      -0.001400659792125225,
+      0.0035633021034300327,
+      -4.530209116637707e-05,
+      8.037107467651367,
+      7.75184440612793,
+      7.393184185028076,
+      7.723422050476074,
+      -0.01796739175915718,
+      0.0056040165945887566,
+      -0.0009198570623993874,
+      -0.0001278030249522999,
+      2.622266038088128e-06,
+      -1.0026406016550027e-06
+    ]
+  },
+  "max_x": 145.0045166015625,
+  "maximum_forward_progress_m": 286.0045166015625,
+  "net_forward_progress_m": 286.0045166015625,
+  "raw_progress_score": 25.999999404452012,
+  "aggregate_reward": 0.5199999880890402,
+  "max_tilt_degrees": 37.70422236040435,
+  "sampled_gpu_peak_mib": 6212,
+  "goal_triggered": true,
+  "reached_goal": true,
+  "max_process_rss_mib": 7800.05859375
+}

@@ -3,6 +3,10 @@ set -euo pipefail
 ATEC_PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ATEC_PROJECT_DIR"
 case "${1:-help}" in
+  task-a-fast)
+    shift
+    exec bash "$ATEC_PROJECT_DIR/task_a/scripts/run_taska.sh" --speed .70 --rough_speed .50 "$@"
+    ;;
   task-a|a)
     shift
     exec bash "$ATEC_PROJECT_DIR/task_a/scripts/run_taska.sh" "$@"
@@ -13,11 +17,12 @@ case "${1:-help}" in
     ;;
   help|-h|--help)
     echo 'Usage: bash run.sh task-a [Task A options]'
+    echo '       bash run.sh task-a-fast [Task A options]'
     echo '       bash run.sh task-e [Task E options]'
     echo 'Run setup first: task_a/README.md or docs/TASK_E.md'
     ;;
   *)
-    echo "Unknown task: $1. Use task-a or task-e." >&2
+    echo "Unknown task: $1. Use task-a, task-a-fast or task-e." >&2
     exit 2
     ;;
 esac

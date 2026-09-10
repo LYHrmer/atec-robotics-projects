@@ -12,6 +12,11 @@ if ! (cd "$ATEC_PACKAGE_ROOT" && "$ATEC_EXECUTABLE" "$ATEC_PACKAGE_ROOT/scripts/
   echo "Or use --from-directory /path/to/DDT_Lab instead of --from-zip." >&2
   exit 2
 fi
+if ! "$ATEC_EXECUTABLE" "$ATEC_PACKAGE_ROOT/scripts/setup_scene_assets.py" --check; then
+  echo "Import the original ATEC scene textures and lighting before visual navigation:" >&2
+  printf '  %q %q --from-directory %q\n' "$ATEC_EXECUTABLE" "$ATEC_PACKAGE_ROOT/scripts/setup_scene_assets.py" /path/to/ATEC2026_Simulation_Challenge/atec_robot_model >&2
+  exit 2
+fi
 if [[ ! -f "$ATEC_EXPERIENCE_PATH" ]]; then
   echo "Set ISAACLAB_PATH or ATEC_EXPERIENCE to the Isaac Sim 4.5 rendering experience." >&2
   exit 2

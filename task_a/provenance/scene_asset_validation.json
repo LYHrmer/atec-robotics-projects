@@ -1,0 +1,120 @@
+{
+  "created_utc": "2026-09-10T06:46:37.142318+00:00",
+  "method": "CPU subprocess tests of byte-identical script/manifest copies under isolated /tmp directories; no Simulator/GPU/git operations.",
+  "all_checks_passed": true,
+  "passed_checks": 5,
+  "total_checks": 5,
+  "script_sha256": "e75966fd23879106542393f43d60f602268179b65a24edcdfe02289f6b2242f8",
+  "helper_sha256": "4420addcc74029c6f7b65d773cc2058ad7856b784536df4a61960bb67c94eb29",
+  "manifest_sha256": "e7c1060d0687dc31e06a749a52db92a7c1311f1d7a9fb0a6559a74a7d9088663",
+  "scene_files": 5,
+  "scene_total_bytes": 23862470,
+  "production_and_original_assets_unchanged": true,
+  "protected_file_sha256": {
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/scripts/setup_scene_assets.py": "e75966fd23879106542393f43d60f602268179b65a24edcdfe02289f6b2242f8",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/scripts/setup_assets.py": "4420addcc74029c6f7b65d773cc2058ad7856b784536df4a61960bb67c94eb29",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/provenance/external_scene_assets.json": "e7c1060d0687dc31e06a749a52db92a7c1311f1d7a9fb0a6559a74a7d9088663",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned.mdl": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_COL_8K.jpg": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_GLOSS_8K.jpg": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/scene/kloofendal_43d_clear_puresky_4k.hdr": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned.mdl": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_COL_8K.jpg": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_GLOSS_8K.jpg": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/atec_robot_model/scene/kloofendal_43d_clear_puresky_4k.hdr": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb"
+  },
+  "temporary_directories_removed": true,
+  "cases": [
+    {
+      "id": "missing_check",
+      "passed": true,
+      "expected": "Missing scene causes check failure without creating assets.",
+      "assets_directory_not_created": true,
+      "return_code": 2,
+      "stdout": "",
+      "stderr": "Scene asset check failed: Required scene asset missing: /tmp/taska_scene_import_validation_1na2l15x/missing/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned.mdl"
+    },
+    {
+      "id": "existing_mismatch_not_overwritten",
+      "passed": true,
+      "expected": "An existing same-size wrong-hash file must remain untouched, with no other missing assets imported.",
+      "same_size_corrupt_asset": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png",
+      "destination_snapshot_unchanged": true,
+      "file_count_before": 1,
+      "file_count_after": 1,
+      "return_code": 2,
+      "stdout": "",
+      "stderr": "Scene asset check failed: SHA256 mismatch (file left unchanged): /tmp/taska_scene_import_validation_1na2l15x/mismatch/atec_robot_model/scene/TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png"
+    },
+    {
+      "id": "five_file_import",
+      "passed": true,
+      "expected": "All five actual original scene files are imported and match the audited bytes.",
+      "verified_files": [
+        {
+          "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned.mdl",
+          "bytes": 2000,
+          "sha256": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+          "actual_sha256": "7f326c41515d7676550d323ab4b495d216571f8efe7e6e1f5019384c8db6f4cd",
+          "actual_bytes": 2000,
+          "matches": true
+        },
+        {
+          "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_COL_8K.jpg",
+          "bytes": 935107,
+          "sha256": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+          "actual_sha256": "38b53f7e407016bad8ebb2c90f6d532bda14156f762f311c3b270c3faf7a0ef1",
+          "actual_bytes": 935107,
+          "matches": true
+        },
+        {
+          "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_GLOSS_8K.jpg",
+          "bytes": 653707,
+          "sha256": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+          "actual_sha256": "9cf6eb03faa9719699c8d25c6acf96c1a22728233e5a011fe928f3af71af851d",
+          "actual_bytes": 653707,
+          "matches": true
+        },
+        {
+          "path": "scene/TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png",
+          "bytes": 3842435,
+          "sha256": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+          "actual_sha256": "f8726eb8ec7145cbe2e111343f91a22332de42d64d37e5661634fcc7ed925f0e",
+          "actual_bytes": 3842435,
+          "matches": true
+        },
+        {
+          "path": "scene/kloofendal_43d_clear_puresky_4k.hdr",
+          "bytes": 18429221,
+          "sha256": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb",
+          "actual_sha256": "1f92cbf17e46659ff37c9770d065280da226896b0f56091c4c1fca071da7fbeb",
+          "actual_bytes": 18429221,
+          "matches": true
+        }
+      ],
+      "return_code": 0,
+      "stdout": "{\"status\": \"verified\", \"scene_files\": 5, \"imported\": 5, \"destination\": \"/tmp/taska_scene_import_validation_1na2l15x/import_success/atec_robot_model\"}",
+      "stderr": ""
+    },
+    {
+      "id": "second_import_idempotent",
+      "passed": true,
+      "expected": "Second import changes neither bytes, inode nor mtime.",
+      "destination_snapshot_unchanged": true,
+      "return_code": 0,
+      "stdout": "{\"status\": \"verified\", \"scene_files\": 5, \"imported\": 0, \"destination\": \"/tmp/taska_scene_import_validation_1na2l15x/import_success/atec_robot_model\"}",
+      "stderr": ""
+    },
+    {
+      "id": "complete_check_read_only",
+      "passed": true,
+      "expected": "Check succeeds on a complete resource set without changing it.",
+      "destination_snapshot_unchanged": true,
+      "return_code": 0,
+      "stdout": "{\"status\": \"verified\", \"scene_files\": 5, \"imported\": 0, \"destination\": \"/tmp/taska_scene_import_validation_1na2l15x/import_success/atec_robot_model\"}",
+      "stderr": ""
+    }
+  ]
+}

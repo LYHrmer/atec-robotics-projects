@@ -1,0 +1,137 @@
+{
+  "scope": "All 12 run.mp4 recordings found in the original 2026-09-09 Task A experiment directory; originals retained unchanged.",
+  "files": [
+    {
+      "name": "task_a_last_stairs_camera_baseline_01.mp4",
+      "run_id": "last_stairs_camera_baseline_01",
+      "bytes": 13115544,
+      "sha256": "12e6402f893599547f0544f8fb895f0b4b765cc9eeb392e8e5ddc28b656bf3a4",
+      "simulation_seconds": 73.68,
+      "reason": "stalled_no_0.1m_forward_progress",
+      "diagnostic_only": true,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_last_stairs_camera_recovery_01.mp4",
+      "run_id": "last_stairs_camera_recovery_01",
+      "bytes": 14492099,
+      "sha256": "749bb84b83779e8c9057c0f39ac03115ab2f311dbbe4756514f7e7a7a64ca296",
+      "simulation_seconds": null,
+      "reason": null,
+      "diagnostic_only": true,
+      "reached_goal": false,
+      "note": "Interrupted local diagnostic; original result retained running status."
+    },
+    {
+      "name": "task_a_last_stairs_camera_recovery_02.mp4",
+      "run_id": "last_stairs_camera_recovery_02",
+      "bytes": 11252766,
+      "sha256": "04c3d708615a2910a5c6d519335ee8e036544073e884c3f2316e15f89a950c31",
+      "simulation_seconds": 48.14,
+      "reason": "diagnostic_segment_exit",
+      "diagnostic_only": true,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1399_rgbd_course_01.mp4",
+      "run_id": "residual_1399_rgbd_course_01",
+      "bytes": 60155478,
+      "sha256": "7de4fdb9c96e6605cd95a22bae5b68d9ff8a8dc16fb20b6cc51e8c6e46af4bac",
+      "simulation_seconds": 227.32,
+      "reason": "stalled_no_0.1m_forward_progress",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1399_rgbd_gravity_course_01.mp4",
+      "run_id": "residual_1399_rgbd_gravity_course_01",
+      "bytes": 16443993,
+      "sha256": "e25b07a0b3de924620c0992ab1b74c7f79d3d01b74bacb196d1dbad4176d5736",
+      "simulation_seconds": 83.7,
+      "reason": "stalled_no_0.1m_forward_progress",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1399_rgbd_gravity_course_02.mp4",
+      "run_id": "residual_1399_rgbd_gravity_course_02",
+      "bytes": 38027605,
+      "sha256": "2bb96eb1f75b9b3ae2a8961d5cd4bb58ca1e7a8b695ff3e4a89bb877f41091a0",
+      "simulation_seconds": 139.86,
+      "reason": "illegal_contact",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1399_rgbd_gravity_course_03.mp4",
+      "run_id": "residual_1399_rgbd_gravity_course_03",
+      "bytes": 52206337,
+      "sha256": "8cd745a1c5feff116d0ff08b0905e7576469f4380bea2b8ac6b6dff5e36dacf1",
+      "simulation_seconds": 180.4,
+      "reason": "illegal_contact",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1399_rgbd_pitch30_course_01.mp4",
+      "run_id": "residual_1399_rgbd_pitch30_course_01",
+      "bytes": 63290699,
+      "sha256": "cd5e0dab2a047ea6f89739c35b480cf46bd3aa8cd43a9876c149a47fc8dc686f",
+      "simulation_seconds": 243.34,
+      "reason": "illegal_contact",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1999_axis_course_01.mp4",
+      "run_id": "residual_1999_axis_course_01",
+      "bytes": 127353945,
+      "sha256": "6f9452fe23fd8181050560e24fdf9fde82cb9b9c79f1802fedabd622d8c71b28",
+      "simulation_seconds": 508.26,
+      "reason": "stalled_no_0.1m_forward_progress",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1999_axis_recovery_course_01.mp4",
+      "run_id": "residual_1999_axis_recovery_course_01",
+      "bytes": 16042109,
+      "sha256": "3d07b6a8cef504cfb0a9f257f6617dd12853233b828f6933abbe546294e992f5",
+      "simulation_seconds": 69.3,
+      "reason": "illegal_contact",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1999_axis_recovery_course_02.mp4",
+      "run_id": "residual_1999_axis_recovery_course_02",
+      "bytes": 129304309,
+      "sha256": "e58f33cc1ae3677e0768ce414fcc06106a447f2f47292bf12b590c127db02c55",
+      "simulation_seconds": 505.66,
+      "reason": "reach_goal_x",
+      "diagnostic_only": false,
+      "reached_goal": true,
+      "note": ""
+    },
+    {
+      "name": "task_a_residual_1999_rgbd_course_01.mp4",
+      "run_id": "residual_1999_rgbd_course_01",
+      "bytes": 66808409,
+      "sha256": "84b29a291b3a01510e2a81e7126ece8af8fb08dac6ef344fb66ad3d280d0c7a7",
+      "simulation_seconds": 233.72,
+      "reason": "illegal_contact",
+      "diagnostic_only": false,
+      "reached_goal": false,
+      "note": ""
+    }
+  ]
+}

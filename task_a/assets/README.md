@@ -3,6 +3,15 @@
 D1/G2 原始 USD、机器人配置和基础 ONNX 是外部依赖，导入目录 `DDT_Lab/` 不提交到 Git。
 自训残差权重保存在仓库的 `../weights/`。完整运行说明见 [Task A](../README.md)。
 
+视觉导航还需要原始 ATEC 场景资源：
+
+```bash
+python3 task_a/scripts/setup_scene_assets.py --from-directory /path/to/ATEC2026_Simulation_Challenge/atec_robot_model
+python3 task_a/scripts/setup_scene_assets.py --check
+```
+
+[场景资源清单](../provenance/external_scene_assets.json) 固定了 5 个文件的 SHA-256：原赛道 MDL 材质、3 张纹理及天空 HDR。它们会导入本地 `task_a/atec_robot_model/`，不提交 Git。缺少它们时仿真仍可能启动，但相机图像无法支持既有视觉导航；启动器现在会提前报错。
+
 在统一仓库根目录执行以下任一导入方式（仅使用 Python 标准库，不下载文件）：
 
 ```bash

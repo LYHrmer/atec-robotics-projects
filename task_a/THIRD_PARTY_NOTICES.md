@@ -17,3 +17,15 @@ RSL-RL 参考代码保留原许可证头，仅用于明确已使用的依赖；�
 Isaac Sim、CUDA、OmniPBR.mdl、Isaac 内置材质与运行环境均为外部依赖，没有随包复制。
 `provenance/robot_usd_dependencies.json` 保留实际运行中的全部 11 层 USD 依赖证据；其中临时根层是
 原始 combined USDA 重写引用路径的生成副本。导入资源后，由适配器在启动时按本地 assets_root 重定位原始层。
+
+## 原始场景资源的本地依赖
+
+视觉导航还需要从用户已有的 ATEC 官方资源目录本地导入以下 5 个文件，放入 `atec_robot_model/scene/`：
+
+- `TilesMarbleSpiderWhiteBrickBondHoned.mdl`
+- `TilesMarbleSpiderWhiteBrickBondHoned001_COL_8K.jpg`
+- `TilesMarbleSpiderWhiteBrickBondHoned001_GLOSS_8K.jpg`
+- `TilesMarbleSpiderWhiteBrickBondHoned001_NRM_8K.png`
+- `kloofendal_43d_clear_puresky_4k.hdr`
+
+它们是原场景的材质、纹理和环境光文件，属于本地外部依赖，不随公开源码复制，也不在此重新授予许可证。`provenance/external_scene_assets.json` 记录来源、大小和 SHA256；`scripts/setup_scene_assets.py` 只导入并核验原始字节，不生成或替换场景纹理。此次导入器 CPU 检查记录在 [scene_asset_validation.json](provenance/scene_asset_validation.json)。上面的既有来源与许可证声明保持不变。
