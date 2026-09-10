@@ -18,6 +18,8 @@ Task E 的学习实验每组只运行一次，省时主要来自放置阶段减�
 
 **[直接播放 Task A 新横屏视频](https://lyhrmer.github.io/atec-robotics-projects/)**。网页使用约 21 MB 的完整 720p 版本；原 1080p 视频及全部历史录像仍可从 [视频对比页](docs/VIDEO_COMPARISON.md) 下载。
 
+[Task A 方法与性能对比](https://lyhrmer.github.io/atec-robotics-projects/comparison.html) 可切换进展与成功运行用时、查看每次实验条件，并单独列出论文方法和轮腿控制仓库的参考指标；[完整说明与证据](docs/TASK_A_COMPARISON.md) 包含新增的关闭残差实验。
+
 ## 先选一条阅读路线
 
 | 你想做什么 | Task A | Task E |

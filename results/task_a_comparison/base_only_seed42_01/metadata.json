@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "kind": "metadata_extracted_from_original_result",
+  "original_result_path": "task_a/outputs/base_only_seed42_01/result.json",
+  "original_result_sha256": "7c8c0006beb52654adea5c683d73aacfef6dc8546e57ad2128b77c73d1ce5b07",
+  "note": "Original result.json already contains run metadata. This file is a derived subset, not a separately recorded environment log. No sensor/image/third-party asset snapshots copied.",
+  "recorded_metadata": {
+    "robot": "D1+G2",
+    "mode": "policy",
+    "official_submission": false,
+    "seed": 42,
+    "scope": "Original Task A terrain, reward, goal and time limit; custom D1+G2 robot; front RGB-D enabled only for visual navigation/capture.",
+    "simulation_dt": 0.02,
+    "episode_limit_seconds": 1200,
+    "num_envs": 1,
+    "initial": {
+      "xyz": [
+        -141.0,
+        0.0,
+        0.6000000238418579
+      ],
+      "velocity_world": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected_gravity": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "quaternion_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "diagnostic_world_yaw_radians": 0.0,
+      "tilt_degrees": 0.0,
+      "contacts_over_1n": {},
+      "contact_history_peak_over_1n": {}
+    },
+    "action_joint_names": [
+      "FL_hip_joint",
+      "FL_thigh_joint",
+      "FL_calf_joint",
+      "FR_hip_joint",
+      "FR_thigh_joint",
+      "FR_calf_joint",
+      "RL_hip_joint",
+      "RL_thigh_joint",
+      "RL_calf_joint",
+      "RR_hip_joint",
+      "RR_thigh_joint",
+      "RR_calf_joint",
+      "FL_foot_joint",
+      "FR_foot_joint",
+      "RL_foot_joint",
+      "RR_foot_joint",
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "g2_joint"
+    ],
+    "action_scales": [
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      0.25,
+      5.0,
+      5.0,
+      5.0,
+      5.0,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "heading_estimator": "ZYX yaw rate from body gyro and projected gravity; no world pose input",
+    "navigation_mode": "rgbd",
+    "axis_heading_enabled": true,
+    "visual_recovery_enabled": true,
+    "speed_profile": {
+      "cruise_mps": 0.6,
+      "rough_mps": 0.45,
+      "rough_relative_x_bounds_m": [
+        26.0,
+        112.0
+      ],
+      "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+      "speed_slew_mps2": 0.1
+    },
+    "front_camera_mount_pitch_degrees": 30.0,
+    "policy": {
+      "kind": "D1_16_action_flat_policy_with_G2_held_at_default_pose",
+      "backend": "torch_fixed_onnx_conversion",
+      "policy_path": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/assets/DDT_Lab/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx",
+      "sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+      "trained_with_G2": false,
+      "action_joint_names": [
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint",
+        "FL_foot_joint",
+        "FR_foot_joint",
+        "RL_foot_joint",
+        "RR_foot_joint",
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "g2_joint"
+      ],
+      "policy_joint_names": [
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "FL_foot_joint",
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "FR_foot_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint",
+        "RL_foot_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint",
+        "RR_foot_joint"
+      ],
+      "history": "10 preceding frames oldest-to-newest; append after inference",
+      "effective_encoder_history": "last 4 preceding frames and current frame",
+      "reset_history": "repeat first observation ten times",
+      "action_filter": "none",
+      "parameters_frozen": true,
+      "normalization_backend": "onnx",
+      "single_robot_numpy_adapter": true
+    },
+    "source_sha256": {
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/run_d1g2_taska.py": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_env.py": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_policy.py": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/assets/DDT_Lab/source/ddt_lab/ddt_lab/assets/ddt_robot.py": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "/tmp/d1g2_taska_assets_4yv9tw4c/d1_with_g2_combined.usda": "31840a3a94911dc8fada84b13890de391d5b77434ac3ce6472d2d3a4b3444e87",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_torch_policy.py": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_rgbd.py": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_visual_navigation.py": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_navigation.py": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_axis_heading.py": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_visual_recovery.py": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/tools/d1g2_taska_camera_compat.py": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+    },
+    "visual_yaw_source": "RGB-D PnP plus gated observed known-course grid directions",
+    "visual_tilt_source": "projected_gravity from original proprioception",
+    "visual_recovery": {
+      "budgets": {
+        "gap_seconds": 2.0,
+        "gap_path_m": 1.0,
+        "episode_seconds": 4.0,
+        "episode_path_m": 2.0,
+        "reanchors": 4
+      },
+      "source": "Original body velocity, gyro and gravity bridge disconnected RGB-D segments.",
+      "candidate_required_consecutive_visual_accepts": 2,
+      "uses_world_pose": false,
+      "inherited_uncertainty": "Unquantified short inertial drift; explicitly recorded per reanchor."
+    },
+    "navigation": {
+      "kind": "visual_anchors_with_proprioceptive_heading_prediction",
+      "visual_fields": [
+        "accepted",
+        "reason",
+        "estimated_xy",
+        "estimated_yaw"
+      ],
+      "gyro_indices": [
+        3,
+        6
+      ],
+      "gravity_indices": [
+        9,
+        12
+      ],
+      "initial_xy": [
+        0.0,
+        0.0
+      ],
+      "initial_yaw": 0.0,
+      "slow_after_seconds": 0.3,
+      "stop_after_seconds": 0.8,
+      "slowdown": "linear speed reduction between 0.3 and 0.8 seconds",
+      "uses_simulator_world_pose": false,
+      "uses_body_linear_velocity": false,
+      "startup": "At least 2 seconds of proprioceptive relative-pose estimation during settling; then RGB-D anchors.",
+      "startup_world_pose_input": false
+    }
+  },
+  "read_only_comparison_audit": {
+    "compared_original_run_id": "residual_1999_axis_recovery_course_02",
+    "shared_python_snapshots_byte_identical": true,
+    "shared_python_count": 11,
+    "shared_python_sha256": {
+      "d1g2_taska_axis_heading.py": "854dd31d245b9831f2e1daef31ac1c1fc8dfec7cad7cc58d9f308bb6ddf56cad",
+      "d1g2_taska_camera_compat.py": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "d1g2_taska_env.py": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5",
+      "d1g2_taska_navigation.py": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378",
+      "d1g2_taska_policy.py": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a",
+      "d1g2_taska_rgbd.py": "579a2ecbb591ec3ece7459a52f4acaee9a8a4597799891f4053959791ca9048b",
+      "d1g2_taska_torch_policy.py": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2",
+      "d1g2_taska_visual_navigation.py": "4c209acf39c8a54b49d6c79146aa06e9655e0d25a54ed43edf0712ce2876a1ff",
+      "d1g2_taska_visual_recovery.py": "e97117fbcbc19c0402cbc342ef3b4590615e5e44b3877337b8ab872e0124792b",
+      "ddt_robot.py": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55",
+      "run_d1g2_taska.py": "d9d321b53d46618b6abc794ad4a00395ee118b23c70653174bf7a770e7bc910b"
+    },
+    "combined_usda_difference": "Only the two absolute D1/G2 asset reference paths changed during repository migration.",
+    "old_combined_usda_sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b",
+    "new_combined_usda_sha256": "31840a3a94911dc8fada84b13890de391d5b77434ac3ce6472d2d3a4b3444e87",
+    "referenced_primary_asset_sha256": {
+      "d1.usd": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f",
+      "play_g2.usd": "fb2a98599adf35ee462ce3833ffd103b9a3d60aa74c37f202b63a2c28261fe79"
+    },
+    "backbone_semantics": "Both paths instantiate the PyTorch conversion with ONNX fixed BatchNormalization semantics.",
+    "base_only_branch_verified": true,
+    "original_complete_argv_recorded": false,
+    "limits": [
+      "The baseline and residual policy wrappers differ; this is a base-only ablation, not a pure checkpoint swap.",
+      "Byte identity of shared files is not evidence of an identical entire runtime environment or deterministic pixels."
+    ]
+  },
+  "trace_sampling_note": {
+    "last_recorded_sim_seconds": 86.52,
+    "final_result_sim_seconds": 86.96000000000001,
+    "scope": "Periodic trace; final terminal state and exact exit time are in result.json, not a new interpolated trace frame."
+  }
+}

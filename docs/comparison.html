@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Task A 同赛道实测、关闭残差的消融实验、轮腿控制参考与论文方法对照。">
+  <title>Task A 方法与性能对比 · ATEC</title>
+  <link rel="stylesheet" href="comparison.css">
+  <script src="comparison.js" defer></script>
+</head>
+<body>
+<main>
+  <nav class="topnav" aria-label="页面导航"><a href="index.html">← 完整通关视频</a><a href="https://github.com/LYHrmer/atec-robotics-projects">源码仓库</a></nav>
+  <header>
+    <p class="eyebrow">ATEC · D1 + G2</p>
+    <h1>方法怎样改变实际表现</h1>
+    <p class="intro">从基础策略到残差、视觉恢复和速度调整，查看完整运行与失败记录，再对照论文中的控制思路。</p>
+  </header>
+  <p id="loading" role="status">正在加载实验记录…</p>
+  <p id="load-error" role="alert" hidden>实验数据暂时无法加载。请刷新，或直接查看<a href="data/task_a_comparison.json">原始数据</a>与<a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/TASK_A_COMPARISON.md">实验说明</a>。</p>
+  <div id="content" hidden>
+    <section aria-labelledby="local-title">
+      <h2 id="local-title">Task A：本机同赛道记录</h2>
+      <p class="boundary">每行是一条单次运行记录。通过与失败都保留；这些记录不能估计普遍成功率。不同配置之间的可比范围见下方条件说明。</p>
+      <div class="switch" role="group" aria-label="图表指标">
+        <button type="button" data-metric="distance" aria-pressed="true">最大纵向进展</button>
+        <button type="button" data-metric="time" aria-pressed="false">成功运行用时</button>
+      </div>
+      <p id="chart-note" class="muted"></p>
+      <div id="bars" class="bars" aria-label="实验性能比较"></div>
+      <article id="detail" class="detail" aria-live="polite"></article>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="所有 Task A 实验，窄屏可横向滚动">
+        <table><thead><tr><th scope="col">配置</th><th scope="col">结果</th><th scope="col">最大进展</th><th scope="col">运行时间</th><th scope="col">证据</th></tr></thead><tbody id="runs-table"></tbody></table>
+      </div>
+      <p class="muted">时间均为仿真时间。未完成运行的时间表示结束或停止时刻，不能当作更快的通关成绩；进展采用最远纵向位置，不是累计路程。</p>
+    </section>
+    <section aria-labelledby="comparability-title">
+      <h2 id="comparability-title">哪些对比能回答具体问题</h2>
+      <div id="pairs" class="cards"></div>
+    </section>
+    <section aria-labelledby="reference-title">
+      <h2 id="reference-title">你的轮腿控制仓库：另一组测试条件</h2>
+      <p>下面是 <a href="https://github.com/LYHrmer/wheel-legged-control-lab">wheel-legged-control-lab</a> 的 MuJoCo D1 控制实验。它没有 G2 机械臂，采用真值状态与短时命令跟踪测试；指标单独列出，不能与上方 ATEC 长赛道作胜负排名。</p>
+      <div id="external"></div>
+    </section>
+    <section aria-labelledby="paper-title">
+      <h2 id="paper-title">论文方法：原理、平台与复现范围</h2>
+      <p>这些文献用于解释控制方法的选择。未移植到 D1+G2 的原论文方法，没有本地 Task A 成绩；论文中的数字只对应其自身实验。</p>
+      <div id="papers" class="cards"></div>
+    </section>
+  </div>
+  <footer><a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/TASK_A_COMPARISON.md">完整实验说明</a><a href="data/task_a_comparison.json">下载比较数据 JSON</a><a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/VIDEO_COMPARISON.md">全部新旧录像</a><p>原始结果、条件和来源可以独立复核。未测量的指标保持缺失，不用估计值填充。</p></footer>
+</main>
+</body>
+</html>

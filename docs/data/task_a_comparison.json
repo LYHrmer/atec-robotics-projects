@@ -1,0 +1,621 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-09-10",
+  "title": "Task A：实测工程对比与外部方法参考",
+  "protocol": {
+    "robot": "D1+G2，G2 保持默认姿态",
+    "simulator": "Isaac Sim / Isaac Lab",
+    "course": "原始 ATEC Task A，起点 x=-141 m，终点阈值 x=145 m",
+    "nominal_forward_distance_m": 286.0,
+    "control_dt_seconds": 0.02,
+    "time_limit_seconds": 1200,
+    "official_online_result": false,
+    "observation_scope": "RGB-D、本体状态和固定赛道先验；世界真值只用于原终止/奖励、本地看门狗及离线指标。",
+    "sampling_scope": "7 个选定工程演进运行及新增 1 次基础策略对照；不是全部尝试，也不是随机成功率样本。",
+    "score_definition": "原 result.json 的 raw_progress_score，保存浮点原值；本地原始进度累计分，不是官方线上成绩。",
+    "max_forward_definition": "原 maximum_forward_progress_m，世界 x 相对起点的最大前向进展；不是轨迹弧长或最终净位移。",
+    "sim_seconds_definition": "通过时为完整任务仿真用时；失败时为退出时间，禁止混排成完成时间。",
+    "status_values": [
+      "passed",
+      "failed",
+      "pending"
+    ],
+    "pending_rule": "pending 时 completed 与全部结果数值为 null；不能用 0 表示待测。",
+    "world_truth_metrics_are_offline_only": true,
+    "history_video_index_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/media/task_a_historical_video_manifest.json",
+    "history_release_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-a-experiment-history-20260909"
+  },
+  "task_a_runs": [
+    {
+      "id": "residual_1399_rgbd_course_01",
+      "label": "1399 + 初版 RGB-D",
+      "group": "engineering_history",
+      "status": "failed",
+      "completed": false,
+      "score": 7.4271949045549235,
+      "max_forward_m": 120.27195167541504,
+      "sim_seconds": 227.32,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/TASK_A_COMPARISON.md#数据来源",
+      "notes": [
+        "初版导航的历史参照；与后续运行同时存在代码/观测处理变化，不是单因素消融。"
+      ],
+      "reason": "stalled_no_0.1m_forward_progress",
+      "net_forward_m": 120.16610908508301,
+      "steps": 11366,
+      "checkpoint_iteration": 1399,
+      "policy_sha256": "aa3391ac64fcbae3aa8b33f3bfb77c864a6786ef504ac71d6ed9f29e97c800a5",
+      "speed_profile": null,
+      "source_result_sha256": "9f238db700b52edfb7df8c935ae0ae3f1e47f60d4ff964adfc64f9e8eb0e37dc",
+      "original_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1399_rgbd_course_01/result.json",
+      "public_result_path": null,
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-experiment-history-20260909/task_a_residual_1399_rgbd_course_01.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": null,
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "residual_1399_rgbd_gravity_course_03",
+      "label": "1399 + 重力辅助 RGB-D",
+      "group": "engineering_history",
+      "status": "failed",
+      "completed": false,
+      "score": 5.235223174034687,
+      "max_forward_m": 90.7044677734375,
+      "sim_seconds": 180.4,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/TASK_A_COMPARISON.md#数据来源",
+      "notes": [
+        "与下一行源码及已记录配置一致；两次均未通关。"
+      ],
+      "reason": "illegal_contact",
+      "net_forward_m": 90.7044677734375,
+      "steps": 9020,
+      "checkpoint_iteration": 1399,
+      "policy_sha256": "aa3391ac64fcbae3aa8b33f3bfb77c864a6786ef504ac71d6ed9f29e97c800a5",
+      "speed_profile": {
+        "cruise_mps": 0.6,
+        "rough_mps": 0.45,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "accepted RGB-D relative x only",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "2b1991308365cdf1e56412c5fcedb62d12f1b953d690223f156e2b5ff92e67fc",
+      "original_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1399_rgbd_gravity_course_03/result.json",
+      "public_result_path": null,
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-experiment-history-20260909/task_a_residual_1399_rgbd_gravity_course_03.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": [
+        "illegal_contact"
+      ],
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "residual_1999_rgbd_course_01",
+      "label": "1999 + 相同 RGB-D",
+      "group": "engineering_history",
+      "status": "failed",
+      "completed": false,
+      "score": 7.555321517463476,
+      "max_forward_m": 121.5532169342041,
+      "sim_seconds": 233.72,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/TASK_A_COMPARISON.md#数据来源",
+      "notes": [
+        "更换为碎石专项训练后的 1999 检查点；最远进展增加，但本次仍非法接触终止。"
+      ],
+      "reason": "illegal_contact",
+      "net_forward_m": 119.82833480834961,
+      "steps": 11686,
+      "checkpoint_iteration": 1999,
+      "policy_sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+      "speed_profile": {
+        "cruise_mps": 0.6,
+        "rough_mps": 0.45,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "accepted RGB-D relative x only",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "f3259d103681310b099af6c5b9098c96e3d611a254e5799c60c558918debd2aa",
+      "original_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_rgbd_course_01/result.json",
+      "public_result_path": null,
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-experiment-history-20260909/task_a_residual_1999_rgbd_course_01.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": [
+        "illegal_contact"
+      ],
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "residual_1999_axis_course_01",
+      "label": "1999 + 赛道方向约束",
+      "group": "engineering_history",
+      "status": "failed",
+      "completed": false,
+      "score": 22.909394700683094,
+      "max_forward_m": 269.4102325439453,
+      "sim_seconds": 508.26,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/task_a/evidence/axis_course_01_stalled/result.json",
+      "notes": [
+        "加入已知赛道网格方向约束；末段仍触发停滞看门狗。"
+      ],
+      "reason": "stalled_no_0.1m_forward_progress",
+      "net_forward_m": 268.79683685302734,
+      "steps": 25413,
+      "checkpoint_iteration": 1999,
+      "policy_sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+      "speed_profile": {
+        "cruise_mps": 0.6,
+        "rough_mps": 0.45,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "accepted RGB-D relative x only",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "64cab7dc7e42d09e0ab4359250ce97da2e0ad9f6b8ea1680f03c6e72ff693d1a",
+      "original_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_course_01/result.json",
+      "public_result_path": "task_a/evidence/axis_course_01_stalled/result.json",
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-experiment-history-20260909/task_a_residual_1999_axis_course_01.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": null,
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "residual_1999_axis_recovery_course_01",
+      "label": "1999 + 有预算恢复，第 1 次",
+      "group": "engineering_history",
+      "status": "failed",
+      "completed": false,
+      "score": 2.5675415375744137,
+      "max_forward_m": 37.350830078125,
+      "sim_seconds": 69.3,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/task_a/evidence/full_course_01_failed/result.json",
+      "notes": [
+        "完整恢复配置第一次在碎石段非法接触失败；保留同配置失败证据。"
+      ],
+      "reason": "illegal_contact",
+      "net_forward_m": 37.3203125,
+      "steps": 3465,
+      "checkpoint_iteration": 1999,
+      "policy_sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+      "speed_profile": {
+        "cruise_mps": 0.6,
+        "rough_mps": 0.45,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "d1f08211a35e43b6bd124c9ab1354ddde4ea9a11b8bd2dbb76aef803b63b7eb5",
+      "original_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_01/result.json",
+      "public_result_path": "task_a/evidence/full_course_01_failed/result.json",
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-experiment-history-20260909/task_a_residual_1999_axis_recovery_course_01.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": [
+        "illegal_contact"
+      ],
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "residual_1999_axis_recovery_course_02",
+      "label": "1999 + 有预算恢复，第 2 次",
+      "group": "engineering_history",
+      "status": "passed",
+      "completed": true,
+      "score": 25.99999939919968,
+      "max_forward_m": 286.0023498535156,
+      "sim_seconds": 505.66,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/task_a/evidence/full_course_02/result.json",
+      "notes": [
+        "同恢复配置第二次完整通过；不能按挑出的成功运行估计成功率。"
+      ],
+      "reason": "reach_goal_x",
+      "net_forward_m": 286.0023498535156,
+      "steps": 25283,
+      "checkpoint_iteration": 1999,
+      "policy_sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+      "speed_profile": {
+        "cruise_mps": 0.6,
+        "rough_mps": 0.45,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "0aaa96368c46039e2a42e323a81337f4e847e2822fa69d722bbdb19226035b0a",
+      "original_result_path": "/home/lybm/ATEC2026_Simulation_Challenge/logs/d1g2_taska_20260909/residual_1999_axis_recovery_course_02/result.json",
+      "public_result_path": "task_a/evidence/full_course_02/result.json",
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-experiment-history-20260909/task_a_residual_1999_axis_recovery_course_02.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": [
+        "reach_goal_x"
+      ],
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "speed_070_050_seed42_02",
+      "label": "1999 + 提速指令 0.70/0.50",
+      "group": "engineering_history",
+      "status": "passed",
+      "completed": true,
+      "score": 25.999999404452012,
+      "max_forward_m": 286.0045166015625,
+      "sim_seconds": 457.32,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/task_a/evidence/speed_070_050_02/result.json",
+      "notes": [
+        "相同检查点，将巡航/碎石指令从 0.60/0.45 改为 0.70/0.50 m/s；一次完整通过。"
+      ],
+      "reason": "reach_goal_x",
+      "net_forward_m": 286.0045166015625,
+      "steps": 22866,
+      "checkpoint_iteration": 1999,
+      "policy_sha256": "252908eba2d86ce08fb4d2e20b538fc926f0a97e180a2502ce9cd9aa255bea4a",
+      "speed_profile": {
+        "cruise_mps": 0.7,
+        "rough_mps": 0.5,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "0bcaee6cb8b9da8a56c774e64f4d457bdf168512f5da2ede27db840631d934b2",
+      "original_result_path": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/outputs/speed_070_050_seed42_02/result.json",
+      "public_result_path": "task_a/evidence/speed_070_050_02/result.json",
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/robotics-comparison-20260910/d1g2_taska_faster_full_run.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": [
+        "reach_goal_x"
+      ],
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    },
+    {
+      "id": "base_only_seed42_01",
+      "label": "基础策略，不加残差",
+      "group": "base_only_ablation",
+      "status": "failed",
+      "completed": false,
+      "score": 2.2647919107085634,
+      "max_forward_m": 31.29583740234375,
+      "sim_seconds": 86.96000000000001,
+      "seed": 42,
+      "source_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/results/task_a_comparison/base_only_seed42_01/result.json",
+      "notes": [
+        "同冻结导航、方向约束、恢复、0.60/0.45 指令和 seed 42；原 ONNX 的数值对齐 PyTorch 后端，仅不加载残差。此次因停滞结束，并非非法接触或摔倒。"
+      ],
+      "reason": "stalled_no_0.1m_forward_progress",
+      "net_forward_m": 31.265518188476562,
+      "steps": 4348,
+      "checkpoint_iteration": null,
+      "policy_sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+      "speed_profile": {
+        "cruise_mps": 0.6,
+        "rough_mps": 0.45,
+        "rough_relative_x_bounds_m": [
+          26.0,
+          112.0
+        ],
+        "position_source": "RGB-D relative x, including explicitly recorded bounded inertial reanchors",
+        "speed_slew_mps2": 0.1
+      },
+      "source_result_sha256": "7c8c0006beb52654adea5c683d73aacfef6dc8546e57ad2128b77c73d1ce5b07",
+      "original_result_path": "/home/lybm/ATEC_Robotics_Projects_20260910/task_a/outputs/base_only_seed42_01/result.json",
+      "public_result_path": "results/task_a_comparison/base_only_seed42_01/result.json",
+      "video_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-method-comparison-20260910/d1g2_taska_base_only_seed42.mp4",
+      "raw_result_status": "finished",
+      "terminal_terms": null,
+      "raw_source_field_map": {
+        "score": "raw_progress_score",
+        "max_forward_m": "maximum_forward_progress_m",
+        "sim_seconds": "simulation_seconds",
+        "net_forward_m": "net_forward_progress_m",
+        "completed": "reached_goal"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "checkpoint_1399_vs_1999",
+      "label": "同源码检查点对照",
+      "kind": "checkpoint",
+      "baseline_run_id": "residual_1399_rgbd_gravity_course_03",
+      "candidate_run_id": "residual_1999_rgbd_course_01",
+      "same_recorded_configuration": true,
+      "same_source_snapshots": true,
+      "both_completed": false,
+      "max_forward_delta_m": 30.8487491607666,
+      "saved_sim_seconds": null,
+      "time_reduction_percent": null,
+      "notes": [
+        "11 个保存的源码/资产快照逐字节一致，seed、初态、相机和速度配置相同；只更换残差检查点。",
+        "两次均非法接触失败；较长存活与较远进展不是通关率提升的证明。"
+      ],
+      "snapshot_verification": {
+        "files": [
+          {
+            "filename": "d1_with_g2_combined.usda",
+            "sha256": "32e1b38c522bd655104894ef398e5dd1e04124bc886a93b89ab7a5887b42ec6b"
+          },
+          {
+            "filename": "d1g2_taska_camera_compat.py",
+            "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+          },
+          {
+            "filename": "d1g2_taska_env.py",
+            "sha256": "182e84cd99061ce826799b7904e9ac06d8ce319dacd64f408907806dd5c261a5"
+          },
+          {
+            "filename": "d1g2_taska_navigation.py",
+            "sha256": "98e337d364a7b5ef3bd97cb2e7dbea9c9b9c0fae8593e6be1dd2af22df7d9378"
+          },
+          {
+            "filename": "d1g2_taska_policy.py",
+            "sha256": "3d02707e1599d75658738e593ffe5e31843e0ecc2075f5b18199dd73fab5938a"
+          },
+          {
+            "filename": "d1g2_taska_residual.py",
+            "sha256": "dab18fe3f046bb3fa7fb8db95c7d00fd2d279172e86f1ef5e10083c43543ffe6"
+          },
+          {
+            "filename": "d1g2_taska_rgbd.py",
+            "sha256": "8b7f80ca0895d989da434ff4db6c760fe3223425d2b62073aa3499479fd000c7"
+          },
+          {
+            "filename": "d1g2_taska_torch_policy.py",
+            "sha256": "e87befdcc986036e97479c33ad491f718c66317ee555e78215cb908e33b31ff2"
+          },
+          {
+            "filename": "d1g2_taska_visual_navigation.py",
+            "sha256": "af0c2678464449c3e9f2bd7eba0b2e3572cf3001b84f92de26b7c13f7c82c201"
+          },
+          {
+            "filename": "ddt_robot.py",
+            "sha256": "f82a6493ee714fbbb7298dbbaa1902ccd84ecb365435e81834d8fbe845cd6c55"
+          },
+          {
+            "filename": "run_d1g2_taska.py",
+            "sha256": "36d2c4152f91b85863cec566950f153c312c1b62589c817d83172931ce0440a4"
+          }
+        ],
+        "all_byte_identical": true
+      }
+    },
+    {
+      "id": "speed_060_045_vs_070_050",
+      "label": "相同检查点的速度指令对照",
+      "kind": "speed",
+      "baseline_run_id": "residual_1999_axis_recovery_course_02",
+      "candidate_run_id": "speed_070_050_seed42_02",
+      "same_checkpoint": true,
+      "both_completed": true,
+      "max_forward_delta_m": 0.002166748046875,
+      "saved_sim_seconds": 48.34000000000003,
+      "time_reduction_percent": 9.559783253569599,
+      "notes": [
+        "机器人、原始赛道、计分和终点保持；两个速度配置各展示一次完整通过。",
+        "视频倍速、CPU墙钟、任务仿真用时分别记录；不能由这两次运行推断成功率。"
+      ]
+    },
+    {
+      "id": "base_only_vs_residual_1999",
+      "label": "同配置基础策略与残差",
+      "kind": "base_only",
+      "baseline_run_id": "base_only_seed42_01",
+      "candidate_run_id": "residual_1999_axis_recovery_course_02",
+      "same_recorded_configuration": true,
+      "same_navigation_and_recovery_sources": true,
+      "both_completed": false,
+      "max_forward_delta_m": 254.70651245117188,
+      "saved_sim_seconds": null,
+      "time_reduction_percent": null,
+      "notes": [
+        "使用同一个基础 ONNX、数值对齐的 PyTorch 后端、导航/恢复/相机及 0.60/0.45 m/s 指令；基础策略测试不加载残差。",
+        "基础策略一次停滞，残差配置也曾失败，不能用单次对照宣称稳定成功或统计显著。",
+        "失败回合的 86.96 s 是退出时间，不是完成时间，不能与 505.66 s 做完成时间排名。",
+        "共同 11 个 Python 快照相同；合成 USD 仅资产引用路径变化，主资产哈希相同。基础与残差适配分支不同，未保存原始完整 argv，也不声称整个环境逐字节相同。"
+      ],
+      "audit_metadata_url": "https://github.com/LYHrmer/atec-robotics-projects/blob/main/results/task_a_comparison/base_only_seed42_01/metadata.json"
+    }
+  ],
+  "external_reference": {
+    "repository": "LYHrmer/wheel-legged-control-lab",
+    "commit": "05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe",
+    "source_url": "https://github.com/LYHrmer/wheel-legged-control-lab/blob/05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe/results/d1_v3_locomotion_report/README.md",
+    "audit_url": "https://github.com/LYHrmer/wheel-legged-control-lab/blob/05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe/results/d1_v3_locomotion_report/arithmetic_audit.json",
+    "audit_content_sha256": "2d186e8b9242207050440e54b61390d1f532844e890c8deb794afb49351ad94b",
+    "ranking_scope": "external_reference_only",
+    "comparable_to_task_a": false,
+    "protocol": {
+      "robot": "D1，不含 G2，公开模型质量 48.14686526 kg，16 执行器",
+      "simulator": "MuJoCo 3.12.0",
+      "physics_hz": 500,
+      "control_hz": 100,
+      "observation": "82 维、oracle 真值、单帧",
+      "task": "60 s 连续速度/偏航/净空命令跟踪，12×6 m 固定道路",
+      "training_seeds": [
+        24000,
+        25000,
+        26000
+      ],
+      "training_samples_per_model": 32768,
+      "holdout_road_count": 2,
+      "aggregation": "两条留出道路等权；PPO 再对 3 个训练种子等权，重复 oracle 评测标签不算独立样本。",
+      "quality_thresholds": {
+        "completed_seconds": 60,
+        "velocity_rmse_mps": 0.08,
+        "yaw_rmse_radps": 0.08,
+        "height_rmse_mm": 25,
+        "attitude_rmse_rad": 0.15
+      },
+      "mechanical_activity_definition": "各物理子步 sum(abs(torque * joint_velocity)) 的均值，单位 W；不是电池功率、能量或 CoT。"
+    },
+    "rows": [
+      {
+        "id": "lqr_zero",
+        "label": "LQR 零残差",
+        "velocity_rmse_mps": 0.07968934937157517,
+        "yaw_rmse_radps": 0.056837045856292734,
+        "height_rmse_mm": 15.30420517236538,
+        "attitude_rmse_rad": 0.014683831558588706,
+        "mechanical_activity_w": 47.44253681048869,
+        "quality_pass_n": 1,
+        "quality_total_n": 2,
+        "quality_unit": "道路",
+        "source_url": "https://github.com/LYHrmer/wheel-legged-control-lab/blob/05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe/results/d1_v3_locomotion_report/arithmetic_audit.json"
+      },
+      {
+        "id": "lqr_policy",
+        "label": "LQR + PPO",
+        "velocity_rmse_mps": 0.08481653375130856,
+        "yaw_rmse_radps": 0.053715171848495814,
+        "height_rmse_mm": 15.985202930747043,
+        "attitude_rmse_rad": 0.016138164445303964,
+        "mechanical_activity_w": 44.63063885449611,
+        "quality_pass_n": 2,
+        "quality_total_n": 6,
+        "quality_unit": "训练种子×道路",
+        "source_url": "https://github.com/LYHrmer/wheel-legged-control-lab/blob/05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe/results/d1_v3_locomotion_report/arithmetic_audit.json"
+      },
+      {
+        "id": "wheel_leg_zero",
+        "label": "轮腿零残差",
+        "velocity_rmse_mps": 0.04015720986306996,
+        "yaw_rmse_radps": 0.03265142554771126,
+        "height_rmse_mm": 9.840316020747608,
+        "attitude_rmse_rad": 0.018023282157051186,
+        "mechanical_activity_w": 16.025107862342516,
+        "quality_pass_n": 2,
+        "quality_total_n": 2,
+        "quality_unit": "道路",
+        "source_url": "https://github.com/LYHrmer/wheel-legged-control-lab/blob/05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe/results/d1_v3_locomotion_report/arithmetic_audit.json"
+      },
+      {
+        "id": "wheel_leg_policy",
+        "label": "轮腿 + PPO",
+        "velocity_rmse_mps": 0.03328256116350314,
+        "yaw_rmse_radps": 0.030547965876768987,
+        "height_rmse_mm": 11.758117014775909,
+        "attitude_rmse_rad": 0.02399852671272945,
+        "mechanical_activity_w": 20.497710761646683,
+        "quality_pass_n": 6,
+        "quality_total_n": 6,
+        "quality_unit": "训练种子×道路",
+        "source_url": "https://github.com/LYHrmer/wheel-legged-control-lab/blob/05ce03d2ab68c1e4c503832f8e0602e9a4d0cabe/results/d1_v3_locomotion_report/arithmetic_audit.json"
+      }
+    ],
+    "notes": [
+      "数据只在该仓库自身协议内比较，不与 D1+G2 Task A 混排。",
+      "LQR 与轮腿两组同时改变低层结构，不能将其差别全部归因于动作维数。",
+      "轮腿 PPO 降低速度误差，同时增加高度误差与机械活动量。",
+      "只有 3 个独立训练种子和 2 条不同留出道路，不给置信区间；实际轨迹/地形曝光也不同。"
+    ]
+  },
+  "papers": [
+    {
+      "id": "rudin_2022",
+      "authors": "Rudin et al.",
+      "year": 2022,
+      "title": "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning",
+      "idea": "GPU 大规模并行 PPO 与课程学习",
+      "inputs": "本体状态、命令和地形相关训练信息；原论文的部署设置按其正文区分。",
+      "original_platform": "ANYmal 四足机器人，仿真训练与实机验证",
+      "local_status": "concept_reference_not_reproduced",
+      "local_performance": null,
+      "transfer_status": "Task A 采用并行残差 PPO/分阶段地形训练，但未按该论文完整协议复现。",
+      "reported_results": "原论文报告平地训练少于 4 分钟、崎岖地形约 20 分钟。",
+      "limits": "机器人、基础模型、GPU、环境数和训练目标不同，不与本项目训练墙钟排名。",
+      "source_url": "https://proceedings.mlr.press/v164/rudin22a.html"
+    },
+    {
+      "id": "johannink_2018",
+      "authors": "Johannink et al.",
+      "year": 2018,
+      "version": "arXiv v2, 2018-12-18",
+      "title": "Residual Reinforcement Learning for Robot Control",
+      "idea": "反馈控制与学习残差叠加",
+      "inputs": "机器人/任务状态、已有反馈控制信号和学习残差；围绕接触装配任务。",
+      "original_platform": "实体机器人积木装配，含接触与不稳定物体",
+      "local_status": "concept_reference_not_reproduced",
+      "local_performance": null,
+      "transfer_status": "借鉴残差组合思想；Task A 的基础项是冻结行走网络，不是原论文装配反馈器。",
+      "reported_results": null,
+      "limits": "不是 ATEC Task A 复现，不移植原任务分数或成功率。",
+      "source_url": "https://arxiv.org/abs/1812.03201v2"
+    },
+    {
+      "id": "bjelonic_2021",
+      "authors": "Bjelonic et al.",
+      "year": 2021,
+      "version": "arXiv v2, 2021-07-06",
+      "title": "Whole-Body MPC and Online Gait Sequence Generation for Wheeled-Legged Robots",
+      "idea": "联合优化轮/机身运动的全身 MPC 与在线步态序列生成",
+      "inputs": "机器人状态、速度目标、运动学/动力学模型和滚动接触约束",
+      "original_platform": "带非转向轮的 ANYmal 轮足机器人，室内/室外实验",
+      "local_status": "not_ported",
+      "local_performance": null,
+      "transfer_status": "尚未移植到 D1+G2 或 ATEC Task A。参考仓的 LQR/轮腿控制也不能称为此论文复现。",
+      "reported_results": "原论文报告 CoT 最多减少 85%、预测误差最多改善 71%。",
+      "limits": "百分比仅相对于原论文自己的基线和实验条件，不能作为本项目预计收益。",
+      "source_url": "https://arxiv.org/abs/2010.06322v2"
+    }
+  ]
+}
