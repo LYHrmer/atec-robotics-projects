@@ -1,0 +1,117 @@
+{
+  "module": "task_b.brake_wheel_hold",
+  "device": "cpu",
+  "requires_simulator": false,
+  "count": 11,
+  "passed": 11,
+  "failed": 0,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "error_sign_positive",
+      "passed": true,
+      "detail": {
+        "command_rad_s": 0.04
+      }
+    },
+    {
+      "name": "error_sign_negative",
+      "passed": true,
+      "detail": {
+        "command_rad_s": -0.04
+      }
+    },
+    {
+      "name": "wrap_equivalence_2pi_4pi",
+      "passed": true,
+      "detail": {
+        "+0": 0.14687499999999998,
+        "+2pi": 0.1468750000000004,
+        "-2pi": 0.14687499999999945,
+        "+4pi": 0.14687500000000048,
+        "-4pi": 0.1468749999999985
+      }
+    },
+    {
+      "name": "speed_cap",
+      "passed": true,
+      "detail": {
+        "peak_rad_s": 0.6,
+        "max_speed": 0.6
+      }
+    },
+    {
+      "name": "slew_per_step",
+      "passed": true,
+      "detail": {
+        "slew_limit_rad_s": 0.04,
+        "first_steps": [
+          0.04,
+          0.04,
+          0.039999999999999994,
+          0.04000000000000001,
+          0.04000000000000001,
+          0.04000000000000001
+        ]
+      }
+    },
+    {
+      "name": "bad_inputs_rejected",
+      "passed": true,
+      "detail": {
+        "rejected": 7
+      }
+    },
+    {
+      "name": "bad_parameters_rejected",
+      "passed": true,
+      "detail": {
+        "rejected": 7,
+        "kd_zero_allowed": true
+      }
+    },
+    {
+      "name": "engage_copies_input",
+      "passed": true,
+      "detail": {
+        "anchor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "repeat_engage_does_not_relatch",
+      "passed": true,
+      "detail": {
+        "anchor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "first": 0.04,
+        "second": 0.08
+      }
+    },
+    {
+      "name": "release_and_inactive_zero",
+      "passed": true,
+      "detail": {
+        "inactive_command": 0.0
+      }
+    },
+    {
+      "name": "no_hidden_unit_scaling",
+      "passed": true,
+      "detail": {
+        "command_rad_s": 0.6,
+        "normalized_scale5": 0.12,
+        "normalized_scale5_pre_gain8": 0.015,
+        "forbidden_pre_multiplied": 4.8
+      }
+    }
+  ]
+}

@@ -1,14 +1,30 @@
-# Task B：移动抓取实验（尚未通关）
+# Task B：已取得首个接近分，移动抓取继续推进
 
-[返回项目首页](../README.md) · [实际实验记录](../docs/TASK_B_EXPERIMENTS.md) · [分工与验收](../docs/COLLABORATION.md)
+[返回项目首页](../README.md) · [首分说明与复现命令](../docs/TASK_B_FIRST_SCORE.md) · [具体执行方案](../docs/TASK_B_EXECUTION_PLAN.md) · [实验记录](../docs/TASK_B_EXPERIMENTS.md) · [分工与验收](../docs/COLLABORATION.md)
 
-这是原始 Task B 官方环境 `ATEC-TaskB-B2wPiper` 的**引导实验**：在完全不改动官方物理、资源、动作、奖励与终止条件的前提下，先用四种开环策略检查站立、轮驱、转向与下蹲，再尝试公开 RGB-D 驱动的目标接近。Claude Opus 实现的稳定控制器可独立开启，所有尝试均保留实际奖励与终止记录。
+**2026-09-14，seed 42 在第 3278 步（65.56 仿真秒）取得 1 个有效接近分，投递分为 0。** 全回合 3378 步，无非法接触或官方终止；首分后的 100 步记录完成后由评测器收尾。[独立得分审计](../results/task_b_positive/plan_p2_lower02_seed42_01/independent_positive_audit.json) 已通过。该回合没有证明抓起、投递或通关，单次运行不能估计成功率。
 
-**它不是抓取方案，也不是通关记录。** 站住 30 秒、开走几米、或者蹲下去，都不能算“抓取成功”，更不能算 Task B 通过。唯一与投递计分相关的官方奖励项是 `objects_in_circle`；`grasped_objects` 只表示夹爪本体进入了官方距离阈值，属于“接近”，不是“抓住”。任何结论都只能来自 `result.json` 里实际记录的数字。
+当前 `first_reach` 路线使用原始 `ATEC-TaskB-B2wPiper` 环境：紧凑站姿与腿反馈保持 → RGB-D 接近 → 轮角保持和静止复测 → 固定目标有界伸臂 → 公开状态授权后缓降。首分时真实夹爪—物体根距离为 **0.199966689 m**；固定 0.02 m 参考最终使机身实际下降约 **20.273 mm**，最终距离 **0.191444200 m**。下降到位后的保持仅记录 **0.74 秒**，没有完成计划的 2 秒保持。[下降审计](../results/task_b_lowering_runtime_audit.json) · [完整视频](https://lyhrmer.github.io/atec-robotics-projects/task-b.html)。
 
-## 基础模式
+官方 `grasped_objects` 只表示夹爪本体进入物体根位置的 0.20 m 阈值，属于接近；`objects_in_circle` 才记录投递。后续按 [真实抓起 → 单件投递 → 18 件通关](../docs/TASK_B_EXECUTION_PLAN.md) 分别验收，原规则保持不变。
 
-前 100 次调用全零动作（settle），随后 100 次调用线性增到目标（ramp）。全零是官方的静止指令：腿和臂是 `use_default_offset=True` 的位置项，全零即请求默认关节角；轮子是速度项，默认偏置为零。
+## 首分配置与模块
+
+完整参数与审计命令统一放在 [首分复现说明](../docs/TASK_B_FIRST_SCORE.md#复现命令)。关键配置为 `first_reach`、seed 42、`compact`、`stance_hold`、`brake_wheel_hold`、wheel gain 8、standoff 0.50 m、固定参考下降 0.02 m；该回合未开启旧 `--stabilize` 模块。
+
+| 模块 | 职责 |
+| --- | --- |
+| `first_reach.py` / `visual_approach.py` | 视觉接近、停车复测、一次固定关节目标、有界停稳与缓降 |
+| `stationary_target_gate.py` | 清除旧确认，按相机更新周期检查停稳后的两次新定位 |
+| `stance_reference.py` / `stance_hold.py` | 紧凑站姿参考与公开腿关节反馈 |
+| `brake_wheel_hold.py` | 用公开轮角、轮速保持同一制动锚点；输出物理轮速，经原动作 scale 归一化 |
+| `evaluate.py` / `audit_positive.py` | 原环境执行与独立得分审计；诊断真值、奖励不进入策略 |
+
+GPT-6 Astra ultra 制定阶段合同，Claude Opus 实际编写指定控制模块，原生代理完成基础模块、集成修复和独立验收。以下保留早期基础模式与记录口径，历史零分结果见 [实验档案](../docs/TASK_B_EXPERIMENTS.md)。
+
+## 历史基础模式
+
+基础模式前 100 次调用全零动作（settle），随后 100 次调用线性增到目标（ramp）。腿和臂是 `use_default_offset=True` 的位置项，全零即请求默认关节角；轮子是速度项，全零请求零速度，**不等于锁住轮位置或保证底盘静止**。
 
 | `--mode` | 动作 | 想测的问题 |
 | --- | --- | --- |
@@ -23,7 +39,7 @@
 
 基础策略只接收公开 `proprio` 与静态关节/动作 schema。`visual_approach` 另外接收公开 RGB-D，使用移动 Piper FK 将黄色高物体候选投影到机身坐标；这只是颜色/形状启发式，不是已验证的芥末瓶语义识别。机器人根位姿、物体位姿、接触力都只写进产物文件做诊断，不进策略。
 
-## 视觉与稳定控制
+## 历史视觉与稳定控制
 
 - `--mode visual_approach`：腕部 RGB-D 检测、两帧确认、差速接近；目标丢失立即停车。默认腕部视角存在近场盲区。`--vision_head` 可启用原头部 RGB-D 接续，需查具体运行记录是否已经验证。
 - `--stabilize`：加入 [Claude 稳定模块](STABILITY_DESIGN.md)，默认使用未校准参考的 baseline。限速带来的存活改善，不等于有效转向。
@@ -32,7 +48,7 @@
 
 观测关节顺序从 **ObservationManager 已解析的配置副本**读取；每一步另外核对观测相对角加默认值与记录关节角的一致性。原 `task.cfg` 中未解析的 `slice(None)` 不能代表观察顺序。这个一致性核对只用于诊断，不向策略提供真实位姿。
 
-## 跑一次
+## 基础模式运行示例
 
 需要已装好的 Isaac Lab 环境和官方任务仓库（只读引用，不修改、不复制其中任何文件）。本机验证环境：Python 3.10、Isaac Sim 4.5、Isaac Lab 2.3.2、单张 8 GB GPU。
 
@@ -60,13 +76,14 @@ bash run.sh task-b --mode hold --seed 42 --max_steps 500 --output runs/task_b_ho
 | `telemetry.npz` | 每一步的 `action`/`q`/`qdot`/`base_xyz`/`base_quat`/`alpha`/`illegal_force`，以及关节名、奖励项名、终止项名、非法接触体名 |
 | `environment_metadata.json` | 真实动作 schema、关节限位、奖励与终止项参数、非法接触体与阈值、观测维度；诊断真值（env origin、初始机身位姿、18 个物体初始位置）单独放在 `diagnostics_not_visible_to_policy` 下 |
 | `source_manifest.json` | 本进程实际加载的引导代码与 `atec_rl_lab` 源码的 SHA-256 |
+| `scoring_events.json` | 得分步执行后、任何复位前的原分项、同期末端/物体根位置和终止标志；用于独立复算 |
 | `head_rgb_*.png` / `ee_rgb_*.png` | 稀疏公开 RGB 帧（step 0、每 `--rgb_interval` 步、最后一帧）；不保存原始相机大数组 |
 
 几个必须注意的语义：
 
 - **分数定义。** 官方奖励按 dt 缩放，`score_raw_total` = Σ(env reward / step_dt)，与官方 `scripts/play_atec_task.py` 的累加方式一致。逐项数值取自 `RewardManager.get_active_iterable_terms`（已去掉 dt）；`reward_term_sum_vs_env_reward_max_abs_error` 是两者的一致性自检。
 - **首个终止即停止。** 包含 settle 阶段：没有“忽略预热”，也不会跨过终止继续跑。`terminated_during_settle` 会标出这种情况。官方终止项为 `time_out` / `illegal_contact` / `fall`（`minimum_height=0.0`，即世界系 base z < 0；旧报告里 0.24 的说法是错的）/ `objects_in_circle_done`。
-- **逐步状态是“步前”状态。** 每行记录的 `q`/`base_xyz` 是算这一步动作时的状态。终止那一步之后官方环境已经把该 env 的关节复位（Task B 没有根位姿复位事件，所以机身位姿不变），`terminal_pre_reset` 通过实例级只读观察器，在官方复位之前复制状态、各接触体的历史最大接触力和终止项；复位后的状态另记在 `terminal_post_step_state_after_official_reset` 里。
+- **逐步状态是“步前”状态。** 每行记录的 `q`/`base_xyz` 是算这一步动作时的状态，不能拿来替代同一得分步执行后的距离。得分事件与最终状态另行标明时序。终止那一步之后官方环境已经把该 env 的关节复位（Task B 没有根位姿复位事件，所以机身位姿不变），`terminal_pre_reset` 通过实例级只读观察器，在官方复位之前复制状态、各接触体的历史最大接触力和终止项；复位后的状态另记在 `terminal_post_step_state_after_official_reset` 里。
 - **线速度不作声明。** 轮半径未经本仓库核实，只报告轮关节角速度（rad/s）与实测机身位移，不换算 m/s。
 - **哈希覆盖范围。** `source_manifest.json` 里的“未改动物理”是**配置层面的断言**（只设 `num_envs`/`device`/`use_fabric`），不是测量结论；哈希只覆盖本进程加载的 `.py`，**不覆盖** USD/USDA 资源与贴图、Isaac Lab/Isaac Sim 与 Kit、以及运行期打的相机 Fabric 补丁（该补丁是有意安装的），也不能证明本地原始仓库与上游一致。
 

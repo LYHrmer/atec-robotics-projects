@@ -1,0 +1,970 @@
+{
+  "task": "ATEC-TaskB-B2wPiper",
+  "mode": "first_reach",
+  "seed": 42,
+  "device": "cuda:0",
+  "headless": true,
+  "enable_cameras": true,
+  "use_fabric": true,
+  "experience": "/home/lybm/IsaacLab/apps/isaacsim_4_5/isaaclab.python.headless.rendering.kit",
+  "camera_fabric_compatibility": "task_a.tools.d1g2_taska_camera_compat.prepare_camera_views (read-only recursive world-pose reader; preserves moving camera inheritance)",
+  "action_spec": null,
+  "apply_safe_action_spec": "called with no participant spec",
+  "steps": 3378,
+  "max_steps": 5000,
+  "sim_seconds": 67.56,
+  "wall_seconds": 169.3048777490003,
+  "stop_reason": "positive_score_observation_window_complete",
+  "policy_stop_record": null,
+  "terminated": false,
+  "truncated": false,
+  "active_termination_terms_at_stop": [],
+  "terminated_during_settle": false,
+  "score_definition": "sum over steps of env reward / step_dt, matching the official scripts/play_atec_task.py accumulation",
+  "score_raw_total": 0.9999999776482582,
+  "first_positive_step": 3278,
+  "scoring_events": [
+    {
+      "step": 3278,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 1.0
+      },
+      "env_reward": 0.019999999552965164,
+      "reward_raw_total": 0.9999999776482582,
+      "state": {
+        "q": [
+          0.27020153403282166,
+          -0.27027660608291626,
+          0.21177510917186737,
+          -0.19831974804401398,
+          0.8679336309432983,
+          0.8580439686775208,
+          0.992212176322937,
+          0.9708184003829956,
+          0.5465927124023438,
+          -1.933042049407959,
+          -1.9095540046691895,
+          -1.7991985082626343,
+          -1.7890862226486206,
+          3.1400082111358643,
+          0.9775636792182922,
+          6.113219738006592,
+          1.673232913017273,
+          5.107051849365234,
+          -1.665025234222412,
+          0.0032490387093275785,
+          -0.0862712487578392,
+          -6.633468274230836e-06,
+          0.03500000014901161,
+          -0.03485254943370819
+        ],
+        "qdot": [
+          -0.13749386370182037,
+          -0.08908872306346893,
+          -0.12318997085094452,
+          -0.08290024101734161,
+          -0.03424905985593796,
+          -0.0008546337485313416,
+          -0.05444077029824257,
+          -0.01160525158047676,
+          -0.01696387492120266,
+          0.04528135806322098,
+          0.01735686883330345,
+          0.07122812420129776,
+          0.02703775092959404,
+          0.0006812511710450053,
+          -0.04699995368719101,
+          -0.05378061532974243,
+          -0.044950488954782486,
+          -0.04733462631702423,
+          0.03272078558802605,
+          0.001981498207896948,
+          0.00713490741327405,
+          -0.00026280066231265664,
+          -1.4435256161959842e-05,
+          0.00889497622847557
+        ],
+        "base_xyz": [
+          -7.1776862144470215,
+          -9.006288528442383,
+          0.5234951972961426
+        ],
+        "base_quat": [
+          0.9916501045227051,
+          -0.009561115875840187,
+          0.03465288504958153,
+          0.12384624034166336
+        ],
+        "illegal_force": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gripper_xyz": [
+          -6.732983112335205,
+          -8.694769859313965,
+          0.33945438265800476
+        ],
+        "object_xyz": [
+          [
+            -7.25826358795166,
+            -10.602023124694824,
+            0.09020683914422989
+          ],
+          [
+            -6.411848068237305,
+            -8.01716136932373,
+            0.09020506590604782
+          ],
+          [
+            -14.056037902832031,
+            -5.234580039978027,
+            0.09020618349313736
+          ],
+          [
+            -7.386420726776123,
+            -7.1301589012146,
+            0.09020683169364929
+          ],
+          [
+            -13.716680526733398,
+            -10.486949920654297,
+            0.09020721912384033
+          ],
+          [
+            -11.289835929870605,
+            -5.7231526374816895,
+            0.09020615369081497
+          ],
+          [
+            -8.561485290527344,
+            -6.769255638122559,
+            0.14022482931613922
+          ],
+          [
+            -10.565980911254883,
+            -12.724529266357422,
+            0.14022447168827057
+          ],
+          [
+            -9.454275131225586,
+            -14.358747482299805,
+            0.14022432267665863
+          ],
+          [
+            -6.723809242248535,
+            -8.680274963378906,
+            0.14022482931613922
+          ],
+          [
+            -7.419244766235352,
+            -11.451659202575684,
+            0.14022566378116608
+          ],
+          [
+            -5.293141841888428,
+            -6.065706253051758,
+            0.14022405445575714
+          ],
+          [
+            -7.211845397949219,
+            -13.054414749145508,
+            0.06008791923522949
+          ],
+          [
+            -10.328531265258789,
+            -14.562829971313477,
+            0.0600878968834877
+          ],
+          [
+            -13.45276927947998,
+            -8.170336723327637,
+            0.06008646637201309
+          ],
+          [
+            -7.548063278198242,
+            -5.325768947601318,
+            0.060087475925683975
+          ],
+          [
+            -11.737444877624512,
+            -11.296244621276855,
+            0.060087524354457855
+          ],
+          [
+            -10.300076484680176,
+            -13.106103897094727,
+            0.06008726358413696
+          ]
+        ]
+      },
+      "state_timing": "post_step_before_any_reset",
+      "capture_error": null,
+      "termination_flags": {
+        "time_out": false,
+        "illegal_contact": false,
+        "fall": false,
+        "objects_in_circle_done": false
+      }
+    }
+  ],
+  "reward_term_totals_raw": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 1.0
+  },
+  "reward_term_total_definition": "per step, weighted term value with dt removed (RewardManager.get_active_iterable_terms), summed over steps",
+  "reward_term_sum_vs_env_reward_max_abs_error": 2.2351741790771484e-08,
+  "final_reward_terms": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 0.0
+  },
+  "base_motion": {
+    "first_recorded_base_xyz": [
+      -10.000272750854492,
+      -9.999722480773926,
+      0.7881918549537659
+    ],
+    "last_recorded_base_xyz": [
+      -7.180287837982178,
+      -9.006900787353516,
+      0.5147743225097656
+    ],
+    "delta_xyz": [
+      2.8199849128723145,
+      0.9928216934204102,
+      -0.27341753244400024
+    ],
+    "planar_distance_m": 2.989650249481201,
+    "max_planar_distance_m": 3.0128839015960693,
+    "min_base_z_m": 0.4349767565727234,
+    "max_base_z_m": 0.7898235321044922,
+    "note": "world frame, pre-step samples; the sign tells which way the wheel command drove the base"
+  },
+  "observation_joint_mapping_max_abs_error": 7.450580596923828e-09,
+  "terminal_pre_reset": null,
+  "final_state_before_close": {
+    "q": [
+      0.27530455589294434,
+      -0.27533191442489624,
+      0.21520063281059265,
+      -0.202146977186203,
+      0.8796927332878113,
+      0.8698331713676453,
+      1.008504867553711,
+      0.9868237376213074,
+      0.5466173887252808,
+      -1.959620714187622,
+      -1.936061978340149,
+      -1.8284465074539185,
+      -1.8177918195724487,
+      3.1400082111358643,
+      0.9731432795524597,
+      6.106320381164551,
+      1.6690503358840942,
+      5.099081993103027,
+      -1.665032982826233,
+      0.003248801687732339,
+      -0.08627311140298843,
+      -6.632958047703141e-06,
+      0.03500000014901161,
+      -0.034853141754865646
+    ],
+    "qdot": [
+      -0.14234553277492523,
+      -0.08465086668729782,
+      -0.12638157606124878,
+      -0.07909268140792847,
+      -0.04244006425142288,
+      -0.008864657953381538,
+      -0.06613880395889282,
+      -0.022612594068050385,
+      -0.016691939905285835,
+      0.06447017192840576,
+      0.03763109818100929,
+      0.09230812638998032,
+      0.04871043562889099,
+      0.0007023086654953659,
+      -0.04132736474275589,
+      -0.04926418513059616,
+      -0.0398857519030571,
+      -0.04251847416162491,
+      0.0330301858484745,
+      0.0019803340546786785,
+      0.007193873170763254,
+      -0.00026241849991492927,
+      -1.4017961802892387e-05,
+      0.008875910192728043
+    ],
+    "base_xyz": [
+      -7.180277347564697,
+      -9.006888389587402,
+      0.5147733688354492
+    ],
+    "base_quat": [
+      0.9916623830795288,
+      -0.009630297310650349,
+      0.03464479744434357,
+      0.12374445796012878
+    ],
+    "illegal_force": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gripper_xyz": [
+      -6.735511302947998,
+      -8.695477485656738,
+      0.33070531487464905
+    ],
+    "object_xyz": [
+      [
+        -7.25826358795166,
+        -10.602023124694824,
+        0.09020685404539108
+      ],
+      [
+        -6.411848068237305,
+        -8.01716136932373,
+        0.09020506590604782
+      ],
+      [
+        -14.056037902832031,
+        -5.234580039978027,
+        0.09020616859197617
+      ],
+      [
+        -7.386420726776123,
+        -7.1301589012146,
+        0.0902068242430687
+      ],
+      [
+        -13.716680526733398,
+        -10.486949920654297,
+        0.09020721912384033
+      ],
+      [
+        -11.289835929870605,
+        -5.7231526374816895,
+        0.09020619094371796
+      ],
+      [
+        -8.561484336853027,
+        -6.769254207611084,
+        0.14022500813007355
+      ],
+      [
+        -10.565980911254883,
+        -12.724531173706055,
+        0.14022424817085266
+      ],
+      [
+        -9.454275131225586,
+        -14.358747482299805,
+        0.14022432267665863
+      ],
+      [
+        -6.723809719085693,
+        -8.680274963378906,
+        0.14022476971149445
+      ],
+      [
+        -7.419244766235352,
+        -11.451659202575684,
+        0.14022576808929443
+      ],
+      [
+        -5.293141841888428,
+        -6.065706729888916,
+        0.14022406935691833
+      ],
+      [
+        -7.211845397949219,
+        -13.054414749145508,
+        0.06008788198232651
+      ],
+      [
+        -10.328531265258789,
+        -14.562829971313477,
+        0.060087986290454865
+      ],
+      [
+        -13.452770233154297,
+        -8.170336723327637,
+        0.06008647382259369
+      ],
+      [
+        -7.548063278198242,
+        -5.325768947601318,
+        0.060087479650974274
+      ],
+      [
+        -11.737444877624512,
+        -11.296244621276855,
+        0.06008752062916756
+      ],
+      [
+        -10.300076484680176,
+        -13.106103897094727,
+        0.06008726730942726
+      ]
+    ]
+  },
+  "final_state_timing": "post_step_before_any_reset",
+  "terminal_post_step_state_after_official_reset": null,
+  "policy": {
+    "mode": "first_reach",
+    "inputs": "public proprio and head/ee RGB-D; static action and robot geometry",
+    "target_selection": "small bearing then distance; temporal visual match",
+    "forward_cmd": 0.05,
+    "turn_cap": 0.6,
+    "turn_gain": 2.0,
+    "standoff": 0.5,
+    "lowering_m": 0.02,
+    "settle_calls": 100,
+    "calls": 3378,
+    "state": "REACH",
+    "done_reason": null,
+    "visual_reach_contract": "stationary two-sample raw localization of one yellow component, then ONE fixed bounded joint-feedback reach; the goal is never re-solved or retargeted. Shape-assisted local association within .12 m is optional diagnostics only: there is no continuous visual identity or tracking guarantee, and at every lowering amplitude a missing, rejected, unmatched or out-of-frame detection does not stop the bounded joint motion and never authorizes lowering",
+    "reach_base_budgets": {
+      "displacement_m": 0.03,
+      "yaw_rad": 0.05,
+      "gravity_rad": 0.05,
+      "basis": "approximate local integration of public twist, no vertical component, not world odometry"
+    },
+    "reach_settle_contract": {
+      "linear_norm_m_s": 0.06,
+      "angular_norm_rad_s": 0.12,
+      "quiet_s": 0.2,
+      "episode_s": 2.0,
+      "total_s": 3.0,
+      "scope": "whole reach at any amplitude; unchanged thresholds pause the fixed goal and freeze alpha instead of stopping the run on one sample, time keeps counting, and a pause is not a stillness claim",
+      "episodes": 1,
+      "settled_s": 0.4
+    },
+    "lowering_contract": {
+      "amplitude_m": 0.02,
+      "alpha": 1.0,
+      "alpha_rate_per_step": 0.006666666666666667,
+      "admission": {
+        "window_s": 0.5,
+        "max_wait_s": 3.0,
+        "joint_error_rad": 0.04,
+        "arm_speed_rad_s": 0.05,
+        "tangent_speed_m_s": 0.01,
+        "linear_norm_m_s": 0.06,
+        "angular_norm_rad_s": 0.12,
+        "tilt_rad": 0.1,
+        "leg_window_range_rad": 0.02
+      },
+      "authorized": true,
+      "authorized_step": 3191,
+      "window_s": 6.0,
+      "hold_s": 2.0,
+      "response": {
+        "increment_error_rad": 0.06,
+        "fault_s": 0.2,
+        "beta_min": 0.15,
+        "beta_after_half_alpha_s": 1.0
+      },
+      "scope": "one latched authorization from a continuous public quiet window; a fixed CLI amplitude on the original leg reference, never chosen from score or simulation truth. Leg increment error and beta measure joint response only and claim no actual chassis descent"
+    },
+    "stage_stats": {
+      "state_calls": {
+        "SETTLE": 100,
+        "STANCE_TRANSITION": 250,
+        "WAIT_FOR_STABLE_STANCE": 24,
+        "WAIT_FOR_TARGET": 560,
+        "ARC_APPROACH": 1282,
+        "RECOVER_STANCE": 143,
+        "CREEP_WITHIN_ARM_WINDOW": 399,
+        "BRAKE": 81,
+        "REACH_READY": 1,
+        "REACH": 538
+      },
+      "transitions": [
+        {
+          "from": "SETTLE",
+          "to": "STANCE_TRANSITION",
+          "step": 101,
+          "reason": "reference_transition_requires_wheel_stop"
+        },
+        {
+          "from": "STANCE_TRANSITION",
+          "to": "WAIT_FOR_STABLE_STANCE",
+          "step": 351,
+          "reason": "verify_actual_post_transition_joint_motion"
+        },
+        {
+          "from": "WAIT_FOR_STABLE_STANCE",
+          "to": "WAIT_FOR_TARGET",
+          "step": 375,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "ARC_APPROACH",
+          "step": 430,
+          "reason": "follow_visible_target_with_existing_arc_control"
+        },
+        {
+          "from": "ARC_APPROACH",
+          "to": "RECOVER_STANCE",
+          "step": 485,
+          "reason": "public_tilt_or_rate_requires_recovery"
+        },
+        {
+          "from": "RECOVER_STANCE",
+          "to": "WAIT_FOR_TARGET",
+          "step": 628,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "ARC_APPROACH",
+          "step": 635,
+          "reason": "follow_visible_target_with_existing_arc_control"
+        },
+        {
+          "from": "ARC_APPROACH",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 1862,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2026,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2065,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2091,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2285,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2311,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2485,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2531,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2545,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2571,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2625,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2651,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2665,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "WAIT_FOR_TARGET",
+          "step": 2716,
+          "reason": "missing_or_stale_visual_target"
+        },
+        {
+          "from": "WAIT_FOR_TARGET",
+          "to": "CREEP_WITHIN_ARM_WINDOW",
+          "step": 2725,
+          "reason": "straight_near_field_motion_inside_brake_lateral_window"
+        },
+        {
+          "from": "CREEP_WITHIN_ARM_WINDOW",
+          "to": "BRAKE",
+          "step": 2759,
+          "reason": "wait_for_actual_stillness_and_new_raw_visual_samples"
+        },
+        {
+          "from": "BRAKE",
+          "to": "REACH_READY",
+          "step": 2840,
+          "reason": "stationary_raw_target_accepted_for_ik"
+        },
+        {
+          "from": "REACH_READY",
+          "to": "REACH",
+          "step": 2841,
+          "reason": "waiting_for_public_quiet_window_before_fixed_lowering"
+        }
+      ],
+      "phase": "REACH",
+      "phase_age_s": 10.76,
+      "brake_retries": 0,
+      "vision_samples": 572
+    },
+    "claim": "proximity attempt only; no implemented grasp or delivery, no verified contact and no score claim",
+    "debug": {
+      "gripper_body": [
+        0.5194184258541431,
+        0.19434271219231838,
+        -0.14545860756279888
+      ],
+      "reach_goal_q": [
+        0.5495857422686986,
+        3.1399988169418163,
+        -1.676926793594718,
+        0.0031833506576024596,
+        -0.08839255959722687,
+        0.0
+      ],
+      "predicted_gripper_body": [
+        0.5223120423867686,
+        0.19739333364016873,
+        -0.14430601805855275
+      ],
+      "reach_target_body": [
+        0.5397154678108251,
+        0.20387822389278645,
+        -0.3009624417189533
+      ],
+      "reach_subphase": "LOWER_HOLD",
+      "reach_settle_episodes": 1,
+      "reach_settle_total_s": 0.4,
+      "reach_public_linear_velocity": [
+        -0.0009069113293662667,
+        -0.0016176797216758132,
+        0.02382977120578289
+      ],
+      "reach_public_linear_norm": 0.02390182778703782,
+      "reach_public_angular_velocity": [
+        -0.100746750831604,
+        -0.0050554899498820305,
+        -0.006584262941032648
+      ],
+      "reach_public_angular_norm": 0.10108817092140561,
+      "reach_base_tangent_speed_m_s": 0.0015726850230343443,
+      "reach_stationarity_thresholds": {
+        "linear_norm_m_s": 0.06,
+        "angular_norm_rad_s": 0.12
+      },
+      "reach_base_displacement_m": 0.0014793856644549756,
+      "reach_base_yaw_rad": 0.0009358803102375871,
+      "reach_gravity_change_rad": 0.004071932810305504,
+      "reach_base_budgets": {
+        "displacement_m": 0.03,
+        "yaw_rad": 0.05,
+        "gravity_rad": 0.05
+      },
+      "reach_base_integration_claim": "approximate small-angle integration of public twist in the local frame; not world odometry",
+      "reach_camera_projection": {
+        "ee": {
+          "expected_center_in_frame": false,
+          "pixel_uv": null,
+          "optical_depth_m": 0.09582817599713742,
+          "reason": "inside_detector_near_limit"
+        },
+        "head": {
+          "expected_center_in_frame": false,
+          "pixel_uv": [
+            -142.1877591458076,
+            899.2672630092633
+          ],
+          "optical_depth_m": 0.2836890575339618,
+          "reason": "center_outside_frame"
+        }
+      },
+      "expected_out_of_view": true,
+      "out_of_view_reach_allowed": true,
+      "reach_visual_valid": false,
+      "reach_valid_samples": 0,
+      "reach_visual_association": "unconfirmed_diagnostic_only",
+      "reach_camera_available": [
+        "ee",
+        "head"
+      ],
+      "reach_age_s": 10.76,
+      "reach_timeout_s": 16.721801438247624,
+      "reach_deadline_s": 22.721801438247624,
+      "reach_joint_error_rad": 0.01174909069097052,
+      "lower_elapsed_s": 3.74,
+      "lower_hold_s": 0.74,
+      "lower_response_limits": {
+        "increment_error_rad": 0.06,
+        "fault_s": 0.2,
+        "beta_after_half_alpha_s": 1.0,
+        "beta_min": 0.15,
+        "window_s": 6.0,
+        "hold_s": 2.0
+      },
+      "lower_response_claim": "leg joint response to the fixed reference increment; no claim about actual chassis descent",
+      "state": "REACH",
+      "reason": "holding_fixed_lowered_reference_after_bounded_descent",
+      "done_reason": null,
+      "state_age_s": 10.74,
+      "phase": "REACH",
+      "phase_age_s": 10.76,
+      "vision_samples": 572,
+      "last_vision_sample": 3375,
+      "wheel_action": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "arm_target": [
+        0.5495857422686986,
+        3.1399988169418163,
+        -1.676926793594718,
+        0.0031833506576024596,
+        -0.08839255959722687,
+        0.0,
+        0.035,
+        -0.035
+      ],
+      "lowering_alpha": 1.0,
+      "lowering_m": 0.02,
+      "lower_authorized": true,
+      "lower_authorized_step": 3191,
+      "lower_reference_q0": [
+        -0.2636818364262581,
+        0.8420103788375854,
+        -1.8739150762557983,
+        0.2640773728489876,
+        0.8519362807273865,
+        -1.8970520496368408,
+        -0.19354979693889618,
+        0.9490413665771484,
+        -1.7502201795578003,
+        0.20744143426418304,
+        0.9700478315353394,
+        -1.759968876838684
+      ],
+      "lower_increment_error_rad": 0.004291778793334963,
+      "lower_beta": 1.0401601611828368,
+      "lower_quiet_window_s": 0.5,
+      "lower_remaining_s": 2.26,
+      "lower_remaining_basis": "seconds left in the 3 s admission wait before authorization, then in the 6 s descent-plus-hold window"
+    }
+  },
+  "wheel_action_gain": 8.0,
+  "stance_hold": {
+    "inputs": "public q, qdot and static action schema",
+    "gain": 2.0,
+    "damping_s": 0.12,
+    "correction_cap_rad": 0.4,
+    "correction_slew_rad_s": 1.0,
+    "settle_calls": 100,
+    "reference": "mean of final 20 settling joint samples",
+    "claim": "experimental outer-loop joint holding; original physics unchanged"
+  },
+  "brake_wheel_hold": {
+    "name": "brake_wheel_hold",
+    "problem": "wheel actuators use stiffness=0 / damping=1, so a zero velocity command does not lock wheel position; the base rolled back 3.6 / 10.5 / 11.8 cm after braking in the real P1 run",
+    "parameters": {
+      "dt": 0.02,
+      "kp": 2.0,
+      "kd": 0.25,
+      "max_speed": 0.6,
+      "slew": 2.0
+    },
+    "output": {
+      "quantity": "wheel angular velocity target",
+      "unit": "rad/s (physical, never normalized here)",
+      "shape": "scalar shared by all four wheels, identical sign",
+      "range_rad_s": [
+        -0.6,
+        0.6
+      ],
+      "slew_per_step_rad_s": 0.04
+    },
+    "inputs": {
+      "wheel_positions": "public wheel joint angles, shape (4,), radians, may jump by +-2pi",
+      "wheel_velocities": "public wheel joint velocities, shape (4,), rad/s"
+    },
+    "not_used": [
+      "world pose / root state",
+      "ground truth targets",
+      "reward signals",
+      "camera images",
+      "Isaac Sim internals",
+      "official actuator configuration (unmodified)"
+    ],
+    "normalization": "none applied here; action-space scale and wheel gain belong to task_b/evaluate.py",
+    "status": "experimental brake-phase hold; not yet validated in simulation and no scored result is claimed"
+  },
+  "stance_reference": {
+    "profile": "compact",
+    "inputs": "public leg q and static action/robot geometry",
+    "settle_calls": 100,
+    "reference_samples": 20,
+    "transition_seconds": 5.0,
+    "interpolation": "quintic smoothstep",
+    "joint_names": [
+      "FR_hip_joint",
+      "FR_thigh_joint",
+      "FR_calf_joint",
+      "FL_hip_joint",
+      "FL_thigh_joint",
+      "FL_calf_joint",
+      "RR_hip_joint",
+      "RR_thigh_joint",
+      "RR_calf_joint",
+      "RL_hip_joint",
+      "RL_thigh_joint",
+      "RL_calf_joint"
+    ],
+    "compact_actual_q_rad": [
+      -0.3023523168313238,
+      0.8130831661377943,
+      -1.8754745945886573,
+      0.30696657668610144,
+      0.8173372201608101,
+      -1.8881043202266299,
+      -0.27114297155288936,
+      0.9786392186138522,
+      -1.729057945170937,
+      0.2750100973730118,
+      0.9858544286612007,
+      -1.7429508632418722
+    ],
+    "nominal_wheelbase_track_m": [
+      0.76,
+      0.7
+    ],
+    "hard_limit_source": "caller supplied articulation hard limits by joint name",
+    "composition": "add desired actual q minus settled q to incoming leg delta before StanceHold",
+    "wheel_gate": "caller zeros wheels while requires_wheel_stop is true",
+    "claim": "static geometry candidate; ramp completion is not dynamic stance success"
+  },
+  "stability_controller": null,
+  "rgb_frames": {
+    "step_00000": {
+      "head_rgb": "head_rgb_step_00000.png",
+      "ee_rgb": "ee_rgb_step_00000.png"
+    },
+    "step_00250": {
+      "head_rgb": "head_rgb_step_00250.png",
+      "ee_rgb": "ee_rgb_step_00250.png"
+    },
+    "step_00500": {
+      "head_rgb": "head_rgb_step_00500.png",
+      "ee_rgb": "ee_rgb_step_00500.png"
+    },
+    "step_00750": {
+      "head_rgb": "head_rgb_step_00750.png",
+      "ee_rgb": "ee_rgb_step_00750.png"
+    },
+    "step_01000": {
+      "head_rgb": "head_rgb_step_01000.png",
+      "ee_rgb": "ee_rgb_step_01000.png"
+    },
+    "step_01250": {
+      "head_rgb": "head_rgb_step_01250.png",
+      "ee_rgb": "ee_rgb_step_01250.png"
+    },
+    "step_01500": {
+      "head_rgb": "head_rgb_step_01500.png",
+      "ee_rgb": "ee_rgb_step_01500.png"
+    },
+    "step_01750": {
+      "head_rgb": "head_rgb_step_01750.png",
+      "ee_rgb": "ee_rgb_step_01750.png"
+    },
+    "step_02000": {
+      "head_rgb": "head_rgb_step_02000.png",
+      "ee_rgb": "ee_rgb_step_02000.png"
+    },
+    "step_02250": {
+      "head_rgb": "head_rgb_step_02250.png",
+      "ee_rgb": "ee_rgb_step_02250.png"
+    },
+    "step_02500": {
+      "head_rgb": "head_rgb_step_02500.png",
+      "ee_rgb": "ee_rgb_step_02500.png"
+    },
+    "step_02750": {
+      "head_rgb": "head_rgb_step_02750.png",
+      "ee_rgb": "ee_rgb_step_02750.png"
+    },
+    "step_03000": {
+      "head_rgb": "head_rgb_step_03000.png",
+      "ee_rgb": "ee_rgb_step_03000.png"
+    },
+    "step_03250": {
+      "head_rgb": "head_rgb_step_03250.png",
+      "ee_rgb": "ee_rgb_step_03250.png"
+    },
+    "score_03278": {
+      "head_rgb": "head_rgb_score_03278.png",
+      "ee_rgb": "ee_rgb_score_03278.png"
+    },
+    "final": {
+      "head_rgb": "head_rgb_final.png",
+      "ee_rgb": "ee_rgb_final.png"
+    }
+  },
+  "video": "public_cameras.mp4",
+  "files": {
+    "trace": "trace.jsonl",
+    "telemetry": "telemetry.npz",
+    "metadata": "environment_metadata.json",
+    "manifest": "source_manifest.json"
+  },
+  "task_physics_modified": false,
+  "manifest_coverage": [
+    "USD/USDA robot, object and scene assets, textures and MDL materials",
+    "Isaac Lab and Isaac Sim packages, Kit experience files and GPU drivers",
+    "runtime monkeypatching, including the Isaac Sim 4.5 camera Fabric pose reader that this evaluator installs on purpose (see result.json:camera_fabric_compatibility)",
+    "whether the installed original repository itself matches upstream"
+  ],
+  "interpretation": "Mobility/reachability bootstrap. Survival, driving or crouching is NOT a successful grasp and NOT a Task B pass. Any grasped_objects reward only means the gripper body came within the official distance threshold of an object; objects_in_circle is the term that scores delivery."
+}

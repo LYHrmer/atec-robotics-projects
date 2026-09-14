@@ -1,0 +1,449 @@
+{
+  "schema_version": 2,
+  "title_zh": "Task B 从首次伸臂到首次接近得分的真实阶段进展",
+  "evidence_cutoff": "2026-09-14T15:38:43+08:00",
+  "task": "ATEC-TaskB-B2wPiper",
+  "milestone_status": "M1_complete_one_original_environment_proximity_point_TaskB_incomplete",
+  "raw_run_artifacts_publication_status": "positive_run_publication_managed_by_results/task_b_positive; zero_score_videos_remain_local",
+  "scope_zh": "原始任务环境中的五个局部单 seed=42 开发回合，每个候选仅有一次记录；前四回合0分，P2固定2厘米下探获得1次原始接近奖励。不是成功率评测、夹取搬运证据、比赛服务器成绩或Task B通关。",
+  "common_conditions": {
+    "control_dt_s": 0.02,
+    "stance_profile": "compact",
+    "stance_hold": true,
+    "ordinary_wheel_action_gain": 8,
+    "reach_lowering_m_by_run": "前三回合与P1 settle为0，P2为0.02；新记录另列reach_lowering_m。"
+  },
+  "metric_definitions_zh": {
+    "score": "累计 env.reward / step_dt；进入REACH、达到关节目标和接近分分别验收。",
+    "distance": "跨回合比较统一使用已执行步的步前 gripper_base 到任一物体根的最小3D距离。最终诊断与得分事件另列timing：策略退出前状态与执行后状态不能混用。",
+    "joint_error": "六轴实际关节角与固定IK目标的最大绝对误差，不能用arm_target指令代替实测。窗口持续时间按首末观测时间差计算。",
+    "rollback": "分别报告相对该BRAKE入口的最远后退，以及从随后到达的最前点向后回退；两种参考不同。",
+    "steady_speed": "相应制动段在刹车至少1s后取最后至多1s，用步前实际位置差分计算平面速度。"
+  },
+  "runs": [
+    {
+      "run_id": "plan_p1_seed42_01",
+      "label_zh": "P1：微进与静止确认",
+      "seed": 42,
+      "steps": 3454,
+      "sim_seconds": 69.08,
+      "raw_score": 0.0,
+      "stop_reason": "policy_stop:brake_rebound_retry_limit",
+      "official_terminated": false,
+      "official_truncated": false,
+      "first_positive_step": null,
+      "task_physics_modified": false,
+      "minimum_pre_step_gripper_to_any_object_root_m": 0.7572237253189087,
+      "final_diagnostic_selected_target": null,
+      "actual_reach": {
+        "entered": false,
+        "first_step": null,
+        "maximum_measured_joint_travel_rad": null,
+        "minimum_max_joint_goal_error_rad": null,
+        "stop_max_joint_goal_error_rad": null,
+        "within_004_rad_windows": [],
+        "two_second_goal_hold_observed": false
+      },
+      "braking_windows": [
+        {
+          "steps": [
+            2211,
+            2294
+          ],
+          "entry_relative_max_rollback_m": 0.03587516453465083,
+          "furthest_forward_to_later_position_max_rollback_m": 0.040440673828555714,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.03374667465686798
+        },
+        {
+          "steps": [
+            2602,
+            2844
+          ],
+          "entry_relative_max_rollback_m": 0.10468567645063251,
+          "furthest_forward_to_later_position_max_rollback_m": 0.10953775408863087,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.019244441762566566
+        },
+        {
+          "steps": [
+            3154,
+            3454
+          ],
+          "entry_relative_max_rollback_m": 0.11865782028789372,
+          "furthest_forward_to_later_position_max_rollback_m": 0.12148765931857781,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.014433286152780056
+        }
+      ],
+      "wheel_hold_integration_replay_passed": null,
+      "evidence": {
+        "independent_report_file": "plan_p1_hold_seed42_01_independent_audit.json",
+        "independent_report_sha256": "9a45aed75aeaa29bb2b98338694c7a294a1c6564a516e3b00ca9bff822126943",
+        "artifacts_sha256": {
+          "result.json": "654c8c78507d424b07159532603a8468ba9b98e993b6853d06577cdade0b57cf",
+          "telemetry.npz": "b1d4a6daa86a1128078e9c7c5a64bbb62ddc4c3d241375fe73efe9fa736884e4",
+          "trace.jsonl": "0a3ba9e3a3ecf6a0e766314ff245aed4eadfd9fdb55e069ae84c0c31510b84b7"
+        }
+      }
+    },
+    {
+      "run_id": "plan_p1_hold_seed42_01",
+      "label_zh": "P1 + 轮角保持",
+      "seed": 42,
+      "steps": 2369,
+      "sim_seconds": 47.38,
+      "raw_score": 0.0,
+      "stop_reason": "policy_stop:reach_visual_confirmation_lost",
+      "official_terminated": false,
+      "official_truncated": false,
+      "first_positive_step": null,
+      "task_physics_modified": false,
+      "minimum_pre_step_gripper_to_any_object_root_m": 0.7612736225128174,
+      "final_diagnostic_selected_target": null,
+      "actual_reach": {
+        "entered": true,
+        "first_step": 2341,
+        "maximum_measured_joint_travel_rad": 0.02919638156890869,
+        "minimum_max_joint_goal_error_rad": 1.9872834915629767,
+        "stop_max_joint_goal_error_rad": 1.9900595182887457,
+        "within_004_rad_windows": [],
+        "two_second_goal_hold_observed": false
+      },
+      "braking_windows": [
+        {
+          "steps": [
+            2187,
+            2369
+          ],
+          "entry_relative_max_rollback_m": 0.016124769195423005,
+          "furthest_forward_to_later_position_max_rollback_m": 0.020863996628661938,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.002644619904458523
+        }
+      ],
+      "wheel_hold_integration_replay_passed": true,
+      "evidence": {
+        "independent_report_file": "plan_p1_hold_seed42_01_independent_audit.json",
+        "independent_report_sha256": "9a45aed75aeaa29bb2b98338694c7a294a1c6564a516e3b00ca9bff822126943",
+        "artifacts_sha256": {
+          "result.json": "f144e939b3637ca3269daa78d07876c461bfee318de55eea4a7bebcaccc5e2e8",
+          "telemetry.npz": "c4e4e1c4f755517114117770bbfaf3d5821812e78c68fafaded89b7a8e290b5b",
+          "trace.jsonl": "8013f4a8fc087e41ae41f17e61fe5858e76a0ddb02628aec0f173a8000e2fb30"
+        }
+      }
+    },
+    {
+      "run_id": "plan_p1_locked_seed42_01",
+      "label_zh": "P1 + 轮角保持 + 固定目标有界伸臂",
+      "seed": 42,
+      "steps": 2629,
+      "sim_seconds": 52.58,
+      "raw_score": 0.0,
+      "stop_reason": "policy_stop:reach_base_not_stationary",
+      "official_terminated": false,
+      "official_truncated": false,
+      "first_positive_step": null,
+      "task_physics_modified": false,
+      "minimum_pre_step_gripper_to_any_object_root_m": 0.21364308893680573,
+      "final_diagnostic_selected_target": {
+        "step": 2630,
+        "timing": "policy_stop_pre_unexecuted_step",
+        "object_id_1based": 10,
+        "distance_3d_m": 0.21358027759411263,
+        "horizontal_distance_m": 0.018881740735679397,
+        "signed_gripper_above_root_m": 0.21274401247501373
+      },
+      "actual_reach": {
+        "entered": true,
+        "first_step": 2321,
+        "maximum_measured_joint_travel_rad": 2.016481876373291,
+        "minimum_max_joint_goal_error_rad": 0.012845992555566399,
+        "stop_max_joint_goal_error_rad": 0.019946574678369133,
+        "within_004_rad_windows": [
+          {
+            "steps": [
+              2621,
+              2630
+            ],
+            "observations": 10,
+            "observed_span_s": 0.18,
+            "max_joint_error_rad": 0.038306855653364114,
+            "max_arm_joint_speed_rad_s": 0.33141064643859863,
+            "min_target_root_distance_m": 0.21358027759411263
+          }
+        ],
+        "two_second_goal_hold_observed": false
+      },
+      "braking_windows": [
+        {
+          "steps": [
+            2211,
+            2629
+          ],
+          "entry_relative_max_rollback_m": 0.016342737755099146,
+          "furthest_forward_to_later_position_max_rollback_m": 0.020852522360754976,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.0009286089916713536
+        }
+      ],
+      "wheel_hold_integration_replay_passed": true,
+      "evidence": {
+        "independent_report_file": "plan_p1_locked_seed42_01_independent_audit.json",
+        "independent_report_sha256": "df55b844ea88d8870d77894da4205d0811242fe2f4645955ce1d2c7654dc8734",
+        "artifacts_sha256": {
+          "result.json": "61142173d07e93c21943029d99c65763a73087df64095dba1c11238d8fd20f4b",
+          "telemetry.npz": "aa0dcad603a901a642002f60b0329bfc49603240731a6b68058423a7cf145311",
+          "trace.jsonl": "b25768f337d7325357c5f1715d3f9f644c5ebfcec32d5d2f309a450a263f98bb"
+        },
+        "reach_readiness_report_file": "plan_p1_locked_seed42_01_reach_readiness.json",
+        "reach_readiness_report_sha256": "1af2b16f8f3e3957126272b6307eaf6315f377fbf1300d7c800d2fb4a3cf0d09"
+      },
+      "stop_instant_proprio_available": false
+    },
+    {
+      "run_id": "plan_p1_settle_seed42_01",
+      "label_zh": "P1 + 有限停稳：完成静态伸臂观察",
+      "seed": 42,
+      "steps": 3316,
+      "sim_seconds": 66.32000000000001,
+      "raw_score": 0.0,
+      "stop_reason": "policy_stop:reach_observation_complete",
+      "official_terminated": false,
+      "official_truncated": false,
+      "first_positive_step": null,
+      "task_physics_modified": false,
+      "reach_lowering_m": 0.0,
+      "minimum_pre_step_gripper_to_any_object_root_m": 0.21038509905338287,
+      "final_diagnostic_selected_target": {
+        "step": 3317,
+        "timing": "before_unexecuted_step_after_last_completed_step",
+        "distance_3d_m": 0.2113459140359823,
+        "horizontal_distance_m": 0.015523967234283769,
+        "signed_gripper_above_root_m": 0.2107750028371811,
+        "object_id_1based": 10
+      },
+      "actual_reach": {
+        "entered": true,
+        "first_step": 2896,
+        "maximum_measured_joint_travel_rad": 2.016401529312134,
+        "minimum_max_joint_goal_error_rad": 0.010513018174007627,
+        "stop_max_joint_goal_error_rad": 0.011791418595150205,
+        "within_004_rad_windows": [
+          {
+            "steps": [
+              3197,
+              3317
+            ],
+            "observations": 121,
+            "observed_span_s": 2.4,
+            "max_joint_error_rad": 0.03479113528251698,
+            "max_arm_joint_speed_rad_s": 0.33153462409973145
+          }
+        ],
+        "two_second_goal_hold_observed": true,
+        "combined_actual_settled_windows": [
+          {
+            "steps": [
+              3206,
+              3206
+            ],
+            "observations": 1,
+            "observed_span_s": 0.0,
+            "max_actual_joint_error_rad": 0.019644688172176572,
+            "max_actual_arm_speed_rad_s": 0.02852221205830574,
+            "max_public_tangent_speed_m_s": 0.0020638771662115146,
+            "max_public_linear_norm_m_s": 0.021601219795865954,
+            "max_public_angular_norm_rad_s": 0.08384002296244465,
+            "max_world_planar_interval_speed_m_s": null
+          },
+          {
+            "steps": [
+              3211,
+              3211
+            ],
+            "observations": 1,
+            "observed_span_s": 0.0,
+            "max_actual_joint_error_rad": 0.012525628609493467,
+            "max_actual_arm_speed_rad_s": 0.03263653442263603,
+            "max_public_tangent_speed_m_s": 0.0021823615303792295,
+            "max_public_linear_norm_m_s": 0.02527013342394938,
+            "max_public_angular_norm_rad_s": 0.0995606930233029,
+            "max_world_planar_interval_speed_m_s": null
+          },
+          {
+            "steps": [
+              3213,
+              3317
+            ],
+            "observations": 105,
+            "observed_span_s": 2.08,
+            "max_actual_joint_error_rad": 0.011991570992305967,
+            "max_actual_arm_speed_rad_s": 0.047823768109083176,
+            "max_public_tangent_speed_m_s": 0.0020737357266403683,
+            "max_public_linear_norm_m_s": 0.02528446424624035,
+            "max_public_angular_norm_rad_s": 0.10401938029705728,
+            "max_world_planar_interval_speed_m_s": 0.0012305725002826633
+          }
+        ]
+      },
+      "braking_windows": [
+        {
+          "steps": [
+            2774,
+            3316
+          ],
+          "entry_relative_max_rollback_m": 0.015081053447519008,
+          "furthest_forward_to_later_position_max_rollback_m": 0.016001389395995987,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.0006485686753876507
+        }
+      ],
+      "wheel_hold_integration_replay_passed": true,
+      "evidence": {
+        "independent_report_file": "plan_p1_settle_seed42_01_independent_audit.json",
+        "independent_report_sha256": "08d4d1b2d76d037f82845c28183e369c330108e70ec2d900f8c8b508cee473be",
+        "artifacts_sha256": {
+          "result.json": "368de4890d645879e91774d5918aea85311b2badb12ee42222c2d1bd5ae2ebed",
+          "telemetry.npz": "ea1e443d28e4580ad886da06894560c0b4673172d06a32bf4bf1e4e9271df27f",
+          "trace.jsonl": "9deffe3083cb07f7dfc29453d31e3e11dfeda75dea0d65ab486e0d324529e01e"
+        },
+        "reach_readiness_report_file": "plan_p1_settle_seed42_01_reach_readiness.json",
+        "reach_readiness_report_sha256": "481639e2fa0f7fdcadbbf062ff2d3d4bf7f544f44f15ebfac9eac6a67e77645f"
+      },
+      "stop_instant_proprio_available": true
+    },
+    {
+      "run_id": "plan_p2_lower02_seed42_01",
+      "label_zh": "P2 + 固定2厘米腿参考下探：首次接近得分",
+      "seed": 42,
+      "steps": 3378,
+      "sim_seconds": 67.56,
+      "raw_score": 0.9999999776482582,
+      "stop_reason": "positive_score_observation_window_complete",
+      "official_terminated": false,
+      "official_truncated": false,
+      "first_positive_step": 3278,
+      "task_physics_modified": false,
+      "reach_lowering_m": 0.02,
+      "minimum_pre_step_gripper_to_any_object_root_m": 0.19115829467773438,
+      "final_diagnostic_selected_target": {
+        "step": 3378,
+        "timing": "post_step_before_any_reset",
+        "distance_3d_m": 0.19144420031473167,
+        "horizontal_distance_m": 0.01918446633332626,
+        "signed_gripper_above_root_m": 0.1904805451631546,
+        "object_id_1based": 10
+      },
+      "actual_reach": {
+        "entered": true,
+        "first_step": 2841,
+        "maximum_measured_joint_travel_rad": 2.01654314994812,
+        "minimum_max_joint_goal_error_rad": 0.010733785171866517,
+        "stop_max_joint_goal_error_rad": 0.011893810768485169,
+        "within_004_rad_windows": [
+          {
+            "steps": [
+              3141,
+              3378
+            ],
+            "observations": 238,
+            "observed_span_s": 4.74,
+            "max_joint_error_rad": 0.03808178851469224,
+            "max_arm_joint_speed_rad_s": 0.33133625984191895
+          }
+        ],
+        "two_second_goal_hold_observed": true,
+        "goal_hold_evidence_scope_zh": "仅指实际六轴关节在目标附近、速度低于门槛；下探完整幅度后的保持只记录0.74秒。",
+        "combined_actual_settled_windows": [
+          {
+            "steps": [
+              3150,
+              3150
+            ],
+            "observations": 1,
+            "observed_span_s": 0.0,
+            "max_actual_joint_error_rad": 0.019619168777823548,
+            "max_actual_arm_speed_rad_s": 0.020839033648371696,
+            "max_public_tangent_speed_m_s": 0.001825949855283514,
+            "max_public_linear_norm_m_s": 0.021330213183604542,
+            "max_public_angular_norm_rad_s": 0.07355166925071872
+          },
+          {
+            "steps": [
+              3155,
+              3155
+            ],
+            "observations": 1,
+            "observed_span_s": 0.0,
+            "max_actual_joint_error_rad": 0.013075651665091614,
+            "max_actual_arm_speed_rad_s": 0.04387526959180832,
+            "max_public_tangent_speed_m_s": 0.0017598982244982438,
+            "max_public_linear_norm_m_s": 0.02493124137761639,
+            "max_public_angular_norm_rad_s": 0.07810265335978486
+          },
+          {
+            "steps": [
+              3158,
+              3378
+            ],
+            "observations": 221,
+            "observed_span_s": 4.4,
+            "max_actual_joint_error_rad": 0.012089433212638001,
+            "max_actual_arm_speed_rad_s": 0.048260170966386795,
+            "max_public_tangent_speed_m_s": 0.0026965643461084082,
+            "max_public_linear_norm_m_s": 0.02522876265512639,
+            "max_public_angular_norm_rad_s": 0.11027104571390735
+          }
+        ]
+      },
+      "braking_windows": [
+        {
+          "steps": [
+            2759,
+            3378
+          ],
+          "entry_relative_max_rollback_m": 0.01908261497336432,
+          "furthest_forward_to_later_position_max_rollback_m": 0.023497898492597077,
+          "last_up_to_1s_after_brake_1s_world_planar_speed_max_m_s": 0.002221902599558234
+        }
+      ],
+      "wheel_hold_integration_replay_passed": true,
+      "evidence": {
+        "independent_report_file": "plan_p2_lower02_seed42_01_independent_audit.json",
+        "independent_report_sha256": "12b1bad32e518ffe5933c59e5c4b16feb1ec46bd96441fcfa12af775aaa10291",
+        "artifacts_sha256": {
+          "result.json": "b1230540a671a1354849230ae0da2d9f39e8656421ec3972a6f0faa49ed87f2c",
+          "telemetry.npz": "f42934e461316b46049551830627b349e2fac23ab6d9d1327387b80f25e39061",
+          "trace.jsonl": "511f2b9fc3ff7ee0d09783c199a83ffd4af2a942061082205cfea201c2f8df8a"
+        },
+        "lowering_runtime_report_file": "plan_p2_lower02_seed42_01_lowering_runtime_audit.json",
+        "lowering_runtime_report_sha256": "54618fafeb427b303433581fce3994ed4153438bd2c9ccdc06038a5bfc246fe4",
+        "public_lowering_summary_file": "task_b_lowering_runtime_audit.json"
+      },
+      "stop_instant_proprio_available": false,
+      "first_positive_event": {
+        "step": 3278,
+        "reward_terms": {
+          "objects_in_circle": 0.0,
+          "grasped_objects": 1.0
+        },
+        "distance_3d_m": 0.1999666892893277,
+        "horizontal_distance_m": 0.017154063674105775,
+        "signed_gripper_above_root_m": 0.19922955334186554,
+        "object_id_1based": 10,
+        "timing": "post_step_before_any_reset"
+      },
+      "lowering": {
+        "authorized_step": 3191,
+        "first_full_alpha_command_step": 3340,
+        "max_alpha_increment": 0.00666666666666671,
+        "final_base_actual_downward_m": 0.020272791385650635,
+        "final_gripper_actual_downward_m": 0.02030983567237854,
+        "maximum_base_xy_drift_from_authorization_m": 0.005490732586185346,
+        "full_amplitude_hold_recorded_s": 0.74,
+        "two_second_full_amplitude_hold_observed": false
+      },
+      "score_interpretation_zh": "原始 grasped_objects 接近阈值奖励+1；objects_in_circle=0。不是夹取、搬运或Task B通关。"
+    }
+  ],
+  "next_implementation": {
+    "status": "M1_verified_TaskB_full_completion_remaining",
+    "description_zh": "本次M1首次接近得分成立；尚未完成夹取、搬运入圈和Task B全部18物体目标。任何后续候选需另行保留原始得分与诊断证据。"
+  },
+  "video_publication": "positive_video_may_be_published; zero_score_videos_remain_local"
+}

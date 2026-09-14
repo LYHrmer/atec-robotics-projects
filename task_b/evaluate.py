@@ -38,7 +38,17 @@ ACTION_MODES = {"JointPositionAction": "position", "JointVelocityAction": "veloc
 
 parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument("--output", type=Path, required=True, help="New artifact directory; never overwritten.")
-parser.add_argument("--mode", choices=("hold", "forward", "turn", "crouch", "visual_approach"), default="hold")
+parser.add_argument("--mode", choices=("hold", "forward", "turn", "crouch", "visual_approach", "first_reach", "reach_probe"), default="hold")
+parser.add_argument("--reach_forward", type=float, default=.20)
+parser.add_argument("--reach_turn_cap", type=float, default=.20)
+parser.add_argument("--reach_turn_gain", type=float, default=.4)
+parser.add_argument("--reach_standoff", type=float, default=.56)
+parser.add_argument("--reach_lowering", type=float, default=0., help="Fixed nominal reference lowering in [0,.03] m after stationary reach; actual descent is measured independently.")
+parser.add_argument("--wheel_action_gain", type=float, default=1., help="Explicit actuator-drive probe: multiply normalized wheel requests before optional stabilization.")
+parser.add_argument("--stance_hold", action="store_true")
+parser.add_argument("--brake_wheel_hold", action="store_true", help="Hold public wheel-angle anchors during stationary first_reach phases; experimental physical wheel-speed feedback.")
+parser.add_argument("--stance_profile", choices=("off", "compact"), default="off")
+parser.add_argument("--score_hold_steps", type=int, default=0, help="If positive, stop this evaluation N steps after first positive reward; no score is fed to policy.")
 parser.add_argument("--stabilize", action="store_true", help="Apply the experimental Claude Opus stability controller.")
 parser.add_argument("--stability_profile", choices=("baseline", "neutral"), default="baseline")
 parser.add_argument("--stability_legs", choices=("raise_low_corners", "off"), default="raise_low_corners")
@@ -57,6 +67,17 @@ if args.max_steps < 1:
     parser.error("--max_steps must be >= 1")
 if args.rgb_interval < 0:
     parser.error("--rgb_interval must be >= 0")
+if not 0 < args.wheel_action_gain <= 8:
+    parser.error("--wheel_action_gain must be in (0,8]")
+if args.stance_profile != "off" and not args.stance_hold:
+    parser.error("--stance_profile requires --stance_hold")
+if args.mode in ("first_reach", "reach_probe") and not 0 <= args.reach_lowering <= .03:
+    parser.error("--reach_lowering must be in [0,.03] m")
+if args.brake_wheel_hold and args.mode != "first_reach":
+    parser.error("--brake_wheel_hold requires --mode first_reach")
+if args.mode == "first_reach" and args.reach_lowering > 0 and not (
+        args.brake_wheel_hold and args.stance_hold and args.stance_profile == "compact"):
+    parser.error("first_reach lowering requires --brake_wheel_hold --stance_hold --stance_profile compact")
 # This bootstrap is offscreen only: it shares a single 8 GB GPU and must not take
 # a display. The official image observation group always needs Kit cameras.
 args.headless = True
@@ -168,6 +189,8 @@ def sample_state(task, illegal: dict | None) -> dict:
         "base_xyz": robot.data.root_pos_w[0].detach().cpu().numpy().copy(),
         "base_quat": robot.data.root_quat_w[0].detach().cpu().numpy().copy(),
         "illegal_force": illegal_force_norms(task, illegal),
+        "gripper_xyz": robot.data.body_pos_w[0, robot.data.body_names.index("gripper_base")].detach().cpu().numpy().copy(),
+        "object_xyz": np.stack([task.scene[name].data.root_pos_w[0].detach().cpu().numpy().copy() for name in OBJECT_NAMES]),
     }
 
 
@@ -189,7 +212,7 @@ def save_rgb(obs, output: Path, tag: str) -> dict:
 
 
 def write_source_manifest(output: Path) -> dict:
-    """Hash the loaded bootstrap and original task sources. Hashes only, no copies."""
+    """Hash loaded sources and preserve exact project Python for reproducibility."""
     roots = {"project": ROOT, "atec_rl_lab": Path(atec_rl_lab.__file__).resolve().parent}
     files = {}
     for module in tuple(sys.modules.values()):
@@ -200,6 +223,10 @@ def write_source_manifest(output: Path) -> dict:
         for label, root in roots.items():
             if path.is_relative_to(root) and path.is_file():
                 data = path.read_bytes()
+                if label == "project":
+                    snapshot = output / "source_snapshots" / path.relative_to(root)
+                    snapshot.parent.mkdir(parents=True, exist_ok=True)
+                    snapshot.write_bytes(data)
                 files[str(path)] = {"root": label, "relative_path": str(path.relative_to(root)),
                                     "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
                 break
@@ -232,8 +259,8 @@ def main() -> None:
     steps, score, reason = 0, 0.0, "max_steps"
     env, trace, recorder, video, restore_camera_views = None, None, None, None, lambda: None
     telemetry = {key: [] for key in ("step", "sim_seconds", "alpha", "action", "requested_action", "proprio", "q", "qdot", "base_xyz",
-                                     "base_quat", "reward_raw_total", "score", "illegal_force",
-                                     "termination", "reward_terms")}
+                                     "base_quat", "env_reward", "reward_raw_total", "score", "illegal_force",
+                                     "termination", "reward_terms", "gripper_xyz", "object_xyz")}
     try:
         cfg = TaskBEnvB2WCfg(seed=args.seed)  # seed drives the official object layout
         cfg.scene.num_envs = 1
@@ -260,7 +287,15 @@ def main() -> None:
         else:
             observed_names = [robot.data.joint_names[int(i)] for i in observed_ids]
         defaults = dict(zip(schema.joint_names, schema.default_joint_pos.tolist()))
-        if args.mode == "visual_approach":
+        visual_mode = args.mode in ("visual_approach", "first_reach", "reach_probe")
+        if args.mode in ("first_reach", "reach_probe"):
+            from task_b.first_reach import FirstReachPolicy
+            policy = FirstReachPolicy(schema, observed_names, defaults, dt=dt,
+                                      settle_calls=args.settle_calls, ramp_calls=args.ramp_calls,
+                                      reach_only=args.mode == "reach_probe", forward_cmd=args.reach_forward,
+                                      turn_cap=args.reach_turn_cap, standoff=args.reach_standoff,
+                                      turn_gain=args.reach_turn_gain, lowering_m=args.reach_lowering)
+        elif args.mode == "visual_approach":
             from task_b.visual_approach import VisualApproachPolicy
             policy = VisualApproachPolicy(schema, observed_names, defaults, dt=dt,
                                           settle_calls=args.settle_calls, ramp_calls=args.ramp_calls,
@@ -269,6 +304,25 @@ def main() -> None:
             policy = control.BootstrapPolicy(schema, args.mode, settle_calls=args.settle_calls,
                                              ramp_calls=args.ramp_calls, wheel_cmd=args.wheel_cmd,
                                              crouch_fraction=args.crouch_fraction)
+        stance_reference = None
+        if args.stance_profile != "off":
+            from task_b.stance_reference import StanceReference
+            hard_limits = robot.data.joint_pos_limits[0].detach().cpu().numpy()
+            stance_reference = StanceReference(schema, observed_names, dt=dt, profile=args.stance_profile,
+                                               settle_calls=args.settle_calls,
+                                               hard_joint_pos_limits=dict(zip(schema.joint_names, hard_limits)))
+        stance_holder = None
+        if args.stance_hold:
+            from task_b.stance_hold import StanceHold
+            stance_holder = StanceHold(schema, observed_names, dt=dt, settle_calls=args.settle_calls)
+        brake_holder = None
+        brake_states = ("BRAKE", "REACH_READY", "REACH", "REACH_VISUAL_HOLD")
+        if args.brake_wheel_hold:
+            from task_b.brake_wheel_hold import BrakeWheelHold
+            brake_holder = BrakeWheelHold(dt=dt)
+            wheel_names = schema.term(control.WHEEL_TERM).joint_names
+            brake_observation_ids = np.array([observed_names.index(name) for name in wheel_names])
+            brake_joint_defaults = np.array([defaults[name] for name in wheel_names])
         stabilizer = None
         if args.stabilize:
             if args.stability_profile == "neutral":
@@ -304,6 +358,12 @@ def main() -> None:
         metadata = {
             "task": TASK_ID, "seed": args.seed, "device": args.device,
             "step_dt": dt, "physics_dt": float(task.cfg.sim.dt), "decimation": int(task.cfg.decimation),
+            "telemetry_timing": {
+                "proprio_q_qdot_base_gripper_object_and_contact": "pre_step",
+                "env_reward_reward_terms_and_termination": "post_step; terminal term values captured before official reset",
+                "env_reward": "unmodified scalar returned by env.step; reward_raw_total = env_reward / step_dt",
+                "scoring_event_state": "post_step_before_any_reset or terminal_pre_reset; see each event",
+            },
             "episode_length_s": float(task.max_episode_length_s),
             "max_episode_length_steps": int(task.max_episode_length),
             "action_schema": schema.to_dict(),
@@ -314,8 +374,8 @@ def main() -> None:
                              "joint_names": observed_names,
                              "proprio_expected_dim_for_this_schema": 12 + 3 * schema.total_dim,
                              "image_keys": sorted(obs["image"].keys()) if isinstance(obs.get("image"), dict) else [],
-                             "policy_inputs": ("proprio + head/ee RGB-D" if args.vision_head else "proprio + ee RGB-D")
-                             if args.mode == "visual_approach" else "proprio only"},
+                             "policy_inputs": ("proprio + head/ee RGB-D" if args.vision_head or args.mode in ("first_reach", "reach_probe") else "proprio + ee RGB-D")
+                             if visual_mode else "proprio only"},
             "reward_terms": {name: {"weight": jsonable(reward_manager.get_term_cfg(name).weight),
                                     "func": repr(reward_manager.get_term_cfg(name).func),
                                     "params": jsonable(reward_manager.get_term_cfg(name).params)}
@@ -328,6 +388,16 @@ def main() -> None:
             "contact_sensor_body_names": list(task.scene.sensors["contact_sensor"].body_names)
             if "contact_sensor" in task.scene.sensors else [],
             "policy": policy.describe(),
+            "wheel_action_gain": args.wheel_action_gain,
+            "stance_hold": stance_holder.describe() if stance_holder else None,
+            "brake_wheel_hold": brake_holder.describe() if brake_holder else None,
+            "brake_wheel_hold_integration": {
+                "active_states": brake_states,
+                "inputs": "public proprio wheel q/qdot and policy phase only",
+                "composition": "after ordinary wheel gain and leg controllers, replace wheel slice by physical speed / schema scale; then apply optional stability controller",
+                "no_second_wheel_gain": True,
+            } if brake_holder else None,
+            "stance_reference": stance_reference.describe() if stance_reference else None,
             "stability_controller": stabilizer.describe() if stabilizer else None,
             "diagnostics_not_visible_to_policy": {
                 "note": "recorded for auditing only; never passed to the policy",
@@ -351,6 +421,8 @@ def main() -> None:
 
         terminated_flag = truncated_flag = False
         active_terms, reward_step, final_state = [], {}, None
+        first_positive_step, scoring_events = None, []
+        policy_stop_record = None
         for step in range(args.max_steps):
             if not app.is_running():
                 reason = "app_stopped"
@@ -364,13 +436,47 @@ def main() -> None:
             observation_q_error_max = max(observation_q_error_max, observation_q_error)
             if observation_q_error > 1e-4:
                 raise RuntimeError(f"Observation joint mapping mismatch: {observation_q_error}")
-            if args.mode == "visual_approach":
+            if args.mode in ("first_reach", "reach_probe"):
+                policy.pause_for_stance = bool(stance_reference and stance_reference.requires_wheel_stop)
+            if visual_mode:
                 images = {key: value[0].detach().cpu().numpy()
-                          for key, value in obs["image"].items() if args.vision_head or key.startswith("ee_")}
+                          for key, value in obs["image"].items()
+                          if args.vision_head or args.mode != "visual_approach" or key.startswith("ee_")}
                 requested_action = policy.act(proprio, images)
             else:
                 requested_action = policy.act(proprio)
-            action = stabilizer.apply(requested_action, proprio) if stabilizer else requested_action.copy()
+            if getattr(policy, "done_reason", None) is not None:
+                if brake_holder:
+                    brake_holder.release()
+                reason = "policy_stop:" + str(policy.done_reason)
+                policy_stop_record = jsonable({
+                    "before_step": step + 1, "last_completed_step": steps,
+                    "reason": policy.done_reason, "policy": policy.describe(),
+                    "proprio": proprio, "proprio_timing": "same_public_observation_used_by_the_stopping_policy_call",
+                    "state": state, "state_timing": "before_unexecuted_step_after_last_completed_step",
+                })
+                break
+            drive_action = requested_action.copy()
+            wheel_term = schema.term(control.WHEEL_TERM)
+            drive_action[wheel_term.start:wheel_term.stop] *= args.wheel_action_gain
+            if stance_reference:
+                drive_action = stance_reference.apply(drive_action, proprio)
+                if stance_reference.requires_wheel_stop:
+                    drive_action[wheel_term.start:wheel_term.stop] = 0.
+            if stance_holder:
+                drive_action = stance_holder.apply(drive_action, proprio)
+            if brake_holder:
+                if policy.state in brake_states:
+                    wheel_q = proprio[12+brake_observation_ids] + brake_joint_defaults
+                    wheel_qdot = proprio[36+brake_observation_ids]
+                    brake_holder.engage(wheel_q)  # repeated engage preserves the initial anchor
+                    common_speed = brake_holder.update(wheel_q, wheel_qdot)
+                    # The normal gain has already been applied above. The
+                    # holder outputs physical rad/s, so divide only by scale.
+                    drive_action[wheel_term.start:wheel_term.stop] = common_speed / wheel_term.scale
+                else:
+                    brake_holder.release()
+            action = stabilizer.apply(drive_action, proprio) if stabilizer else drive_action
             tensor = torch.as_tensor(action, device=task.device, dtype=torch.float32).unsqueeze(0)
             if tensor.shape != (1, schema.total_dim) or not bool(torch.isfinite(tensor).all()):
                 raise ValueError(f"Expected a finite action of shape (1, {schema.total_dim}), got {tensor.shape}")
@@ -380,7 +486,8 @@ def main() -> None:
 
             # Official reward is dt-scaled; dividing by step_dt gives the raw
             # weighted term sum per step, which is what the official runner sums.
-            reward_raw_total = float(reward.item()) / dt
+            env_reward = float(reward.item())
+            reward_raw_total = env_reward / dt
             score += reward_raw_total
             reward_step = {name: float(value[0]) for name, value in
                            reward_manager.get_active_iterable_terms(0)}
@@ -394,6 +501,23 @@ def main() -> None:
                     term_flags = snapshot["termination_flags"]
             terminated_flag, truncated_flag = bool(terminated[0].item()), bool(truncated[0].item())
             active_terms = [name for name, fired in term_flags.items() if fired]
+            if reward_raw_total > 0:
+                first_positive_step = first_positive_step or steps
+                if terminated_flag or truncated_flag:
+                    snapshot = (terminal_pre_reset or {}).get("snapshot")
+                    evidence = snapshot.get("state") if isinstance(snapshot, dict) else None
+                    evidence_timing = "terminal_pre_reset" if evidence is not None else "missing_terminal_capture"
+                else:
+                    evidence = sample_state(task, illegal)
+                    evidence_timing = "post_step_before_any_reset"
+                scoring_events.append(jsonable({"step": steps, "reward_terms": reward_step,
+                                                "env_reward": env_reward, "reward_raw_total": reward_raw_total,
+                                                "state": evidence, "state_timing": evidence_timing,
+                                                "capture_error": (terminal_pre_reset or {}).get("observer_error"),
+                                                "termination_flags": term_flags}))
+                (output / "scoring_events.json").write_text(json.dumps(scoring_events, indent=2)+"\n")
+                if not (terminated_flag or truncated_flag):
+                    frames[f"score_{steps:05d}"] = save_rgb(obs, output, f"score_{steps:05d}")
             if video is not None and steps % 5 == 0 and not (terminated_flag or truncated_flag):
                 rgb = [obs["image"][key][0].detach().cpu().numpy()[..., :3].astype(np.uint8)
                        for key in ("head_rgb", "ee_rgb")]
@@ -413,6 +537,9 @@ def main() -> None:
             telemetry["qdot"].append(state["qdot"])
             telemetry["base_xyz"].append(state["base_xyz"])
             telemetry["base_quat"].append(state["base_quat"])
+            telemetry["gripper_xyz"].append(state["gripper_xyz"])
+            telemetry["object_xyz"].append(state["object_xyz"])
+            telemetry["env_reward"].append(env_reward)
             telemetry["reward_raw_total"].append(reward_raw_total)
             telemetry["score"].append(score)
             telemetry["illegal_force"].append(state["illegal_force"])
@@ -421,7 +548,7 @@ def main() -> None:
 
             row = {
                 "step": steps, "sim_seconds": round(steps * dt, 4), "alpha": policy.alpha,
-                "reward_raw_total": reward_raw_total, "score": score,
+                "env_reward": env_reward, "reward_raw_total": reward_raw_total, "score": score,
                 "reward_terms": reward_step,
                 "pre_step_base_xyz": [round(float(value), 5) for value in state["base_xyz"]],
                 "pre_step_base_quat_wxyz": [round(float(value), 5) for value in state["base_quat"]],
@@ -432,13 +559,18 @@ def main() -> None:
                 "policy_state": getattr(policy, "state", args.mode),
                 "observation_joint_mapping_max_abs_error": observation_q_error,
                 "policy_debug": getattr(policy, "debug", None),
+                "diagnostic_min_gripper_object_distance_m": float(np.min(np.linalg.norm(state["object_xyz"]-state["gripper_xyz"], axis=1))),
                 "stability_debug": stabilizer.debug if stabilizer else None,
+                "stance_debug": stance_holder.debug if stance_holder else None,
+                "brake_wheel_hold_debug": brake_holder.debug if brake_holder else None,
+                "stance_reference_debug": stance_reference.debug if stance_reference else None,
             }
+            row = jsonable(row)
             trace.write(json.dumps(row) + "\n")
             trace.flush()
             if steps % 100 == 0 or reward_raw_total or terminated_flag or truncated_flag:
                 print("TASK_B_PROGRESS " + json.dumps(row), flush=True)
-            if args.rgb_interval and steps % args.rgb_interval == 0:
+            if args.rgb_interval and steps % args.rgb_interval == 0 and not (terminated_flag or truncated_flag):
                 frames[f"step_{steps:05d}"] = save_rgb(obs, output, f"step_{steps:05d}")
             if terminated_flag or truncated_flag:
                 reason = "terminated" if terminated_flag else "truncated"
@@ -447,8 +579,18 @@ def main() -> None:
                 # has no root-state reset event.
                 final_state = sample_state(task, illegal)
                 break
+            if first_positive_step and args.score_hold_steps > 0 and steps >= first_positive_step + args.score_hold_steps:
+                reason = "positive_score_observation_window_complete"
+                break
 
-        frames["final"] = save_rgb(obs, output, "final")
+        if terminated_flag or truncated_flag:
+            terminal_snapshot = (terminal_pre_reset or {}).get("snapshot")
+            final_before_close = terminal_snapshot.get("state") if isinstance(terminal_snapshot, dict) else None
+            final_timing = "terminal_pre_reset" if final_before_close is not None else "missing_terminal_capture"
+        else:
+            final_before_close = sample_state(task, illegal)
+            final_timing = "post_step_before_any_reset"
+            frames["final"] = save_rgb(obs, output, "final")
         arrays = {key: np.asarray(value) for key, value in telemetry.items()}
         np.savez_compressed(output / "telemetry.npz", dt=dt, joint_names=np.asarray(schema.joint_names),
                             termination_term_names=np.asarray(termination_names),
@@ -482,6 +624,7 @@ def main() -> None:
             "action_spec": None, "apply_safe_action_spec": "called with no participant spec",
             "steps": steps, "max_steps": args.max_steps, "sim_seconds": steps * float(task.step_dt),
             "wall_seconds": time.monotonic() - started, "stop_reason": reason,
+            "policy_stop_record": policy_stop_record,
             "terminated": terminated_flag, "truncated": truncated_flag,
             "active_termination_terms_at_stop": active_terms,
             "terminated_during_settle": bool((terminated_flag or truncated_flag)
@@ -489,6 +632,7 @@ def main() -> None:
             "score_definition": "sum over steps of env reward / step_dt, matching the official "
                                 "scripts/play_atec_task.py accumulation",
             "score_raw_total": score,
+            "first_positive_step": first_positive_step, "scoring_events": scoring_events,
             "reward_term_totals_raw": term_totals,
             "reward_term_total_definition": "per step, weighted term value with dt removed "
                                             "(RewardManager.get_active_iterable_terms), summed over steps",
@@ -497,6 +641,8 @@ def main() -> None:
             "base_motion": displacement,
             "observation_joint_mapping_max_abs_error": observation_q_error_max,
             "terminal_pre_reset": terminal_pre_reset,
+            "final_state_before_close": jsonable(final_before_close),
+            "final_state_timing": final_timing,
             "terminal_post_step_state_after_official_reset": None if final_state is None else {
                 "base_xyz": final_state["base_xyz"].tolist(),
                 "base_quat_wxyz": final_state["base_quat"].tolist(),
@@ -508,6 +654,10 @@ def main() -> None:
                         "positions for this env, while the base pose is untouched",
             },
             "policy": policy.describe(),
+            "wheel_action_gain": args.wheel_action_gain,
+            "stance_hold": stance_holder.describe() if stance_holder else None,
+            "brake_wheel_hold": brake_holder.describe() if brake_holder else None,
+            "stance_reference": stance_reference.describe() if stance_reference else None,
             "stability_controller": stabilizer.describe() if stabilizer else None,
             "rgb_frames": frames,
             "video": "public_cameras.mp4" if args.video else None,

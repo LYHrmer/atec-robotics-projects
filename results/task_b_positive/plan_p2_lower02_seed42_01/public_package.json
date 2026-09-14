@@ -1,0 +1,126 @@
+{
+  "package_schema_version": 1,
+  "task": "ATEC-TaskB-B2wPiper",
+  "seed": 42,
+  "steps": 3378,
+  "score_raw_total": 0.9999999776482582,
+  "verified_positive_raw_score": true,
+  "auditor_sha256": "f31f81582633b4fc53157b96e403a1fea4b1e571911a504c2923aeef555904ca",
+  "audit_process_exit_code": 0,
+  "competition_server_certified": false,
+  "score_scope": "Local official-environment raw score; not competition-server certification.",
+  "interpretation": "Proximity points do not prove grasp, lift, delivery or full Task B completion.",
+  "full_task_pass_claimed": false,
+  "video_included": true,
+  "quality_limits": [],
+  "audit_scope_limits": [
+    "Recorded source/configuration/state audit, not a fresh simulation.",
+    "USD assets, Isaac packages, GPU drivers and unrecorded runtime mutations are not cryptographically attested.",
+    "AST rejects direct simulator access in policy modules; semantic absence of indirect GT input still requires human source review.",
+    "A proximity reward is not evidence of grasp, lift, delivery or full Task B completion."
+  ],
+  "files": {
+    "result.json": {
+      "bytes": 28819,
+      "sha256": "b1230540a671a1354849230ae0da2d9f39e8656421ec3972a6f0faa49ed87f2c"
+    },
+    "environment_metadata.json": {
+      "bytes": 22203,
+      "sha256": "ba49f924afb223ae0510ddafe716f82ec7b16d0d86c093f80fafffc5e32aa05b"
+    },
+    "source_manifest.json": {
+      "bytes": 19629,
+      "sha256": "02a35e4425bc537534f5a84e68ead4fc6726620ef1a3066c308a5a1696441204"
+    },
+    "telemetry.npz": {
+      "bytes": 1917102,
+      "sha256": "f42934e461316b46049551830627b349e2fac23ab6d9d1327387b80f25e39061"
+    },
+    "trace.jsonl.gz": {
+      "bytes": 1665692,
+      "sha256": "33d93694d17f27de55d0363abf8566156b7ce7f10dee548dbc98b63db1af8572",
+      "uncompressed_sha256": "511f2b9fc3ff7ee0d09783c199a83ffd4af2a942061082205cfea201c2f8df8a",
+      "uncompressed_bytes": 14917019
+    },
+    "scoring_events.json": {
+      "bytes": 4474,
+      "sha256": "540ce598e643d241bfa6db978e9a91a1dc647432cf91c2a3e84aa59070ab09d0"
+    },
+    "public_cameras.mp4": {
+      "bytes": 169710318,
+      "sha256": "874094787858d067367b3c7826d7dff98494cb113a9dbc5b1684ce8d57cda22c"
+    },
+    "source_snapshots/task_b/evaluate.py": {
+      "bytes": 42706,
+      "sha256": "950497433cca7b9a64f8506845038c80c29811e80789543db9e8cf4a6b103125"
+    },
+    "source_snapshots/tools/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_snapshots/tools/task_e/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_snapshots/tools/task_e/check_environment.py": {
+      "bytes": 6789,
+      "sha256": "fcb3f250edda2d2c060ee864245a566b8a3a84fd0f5b543c374a616111538c9b"
+    },
+    "source_snapshots/task_a/tools/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_snapshots/task_a/tools/d1g2_taska_camera_compat.py": {
+      "bytes": 1925,
+      "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578"
+    },
+    "source_snapshots/task_b/__init__.py": {
+      "bytes": 427,
+      "sha256": "e2ae23048fde81d709d2af393bbd02fbd086797893146ed79ec80e34193690ea"
+    },
+    "source_snapshots/task_b/control.py": {
+      "bytes": 14659,
+      "sha256": "4001b889d390291751371ec96d056d0fd0cb7201be68998edc33abf5991c2f0b"
+    },
+    "source_snapshots/task_b/diagnostics.py": {
+      "bytes": 5052,
+      "sha256": "bb3cc76a0a6358ac9ec5e4c31c815a1012dead33f91007683dfffffe038c3452"
+    },
+    "source_snapshots/task_e_geometry.py": {
+      "bytes": 13655,
+      "sha256": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4"
+    },
+    "source_snapshots/task_b/arm_kinematics.py": {
+      "bytes": 9129,
+      "sha256": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591"
+    },
+    "source_snapshots/task_b/visual_approach.py": {
+      "bytes": 18661,
+      "sha256": "47b9f7f32ff9aac9e5bf8cad744a7bbc4b713af78592c2810f867e41c1b54e6f"
+    },
+    "source_snapshots/task_b/stationary_target_gate.py": {
+      "bytes": 12998,
+      "sha256": "8580f44635e8365b04e99484b77e3fc0a96da321c75e0ebebc3ece354278df81"
+    },
+    "source_snapshots/task_b/first_reach.py": {
+      "bytes": 52226,
+      "sha256": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897"
+    },
+    "source_snapshots/task_b/stance_reference.py": {
+      "bytes": 11248,
+      "sha256": "5b1423345217a22bd12d9bc987a58df62095d9d0e797b7df4bd6b9ce81cf0cd2"
+    },
+    "source_snapshots/task_b/stance_hold.py": {
+      "bytes": 3131,
+      "sha256": "9c2345c4145b518410b6d3119d17496668d25b923cb0011986899a3f3bbdc680"
+    },
+    "source_snapshots/task_b/brake_wheel_hold.py": {
+      "bytes": 7758,
+      "sha256": "41503365b8d3b4d05670758c886337e47aa63c3585147c697ccce3089b31a605"
+    },
+    "independent_positive_audit.json": {
+      "bytes": 42079,
+      "sha256": "acb3071510c7bf377535bbf7ad4549854d336258b4a3e533dd49aa0d73814198"
+    }
+  }
+}

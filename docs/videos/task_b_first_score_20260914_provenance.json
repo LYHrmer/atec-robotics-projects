@@ -1,0 +1,79 @@
+{
+  "run_id": "plan_p2_lower02_seed42_01",
+  "source_video": {
+    "sha256": "874094787858d067367b3c7826d7dff98494cb113a9dbc5b1684ce8d57cda22c",
+    "bytes": 169710318,
+    "ffprobe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 480,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "10/1",
+          "nb_frames": "675"
+        }
+      ],
+      "format": {
+        "duration": "67.500000",
+        "size": "169710318"
+      }
+    }
+  },
+  "web_video": {
+    "sha256": "f8f2e7890f54e88754111092fb8fab6bce7bb9b733d2c16b5ed6e4c0d286f503",
+    "bytes": 15364754,
+    "ffprobe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "10/1",
+          "nb_frames": "675"
+        }
+      ],
+      "format": {
+        "duration": "67.500000",
+        "size": "15364754"
+      }
+    }
+  },
+  "poster_sha256": "b938c50708e50fa6a31b3a00c34925f87d3e8cd3c666df4c01cb34e4f4d3f356",
+  "transformation": "full 1x recording, unchanged frame count and timing, pad 1280x480 to 1280x720; lossy H.264 re-encode only; no generated frames or edited robot motion",
+  "ffmpeg_version": "ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers",
+  "video_arguments": [
+    "-vf",
+    "pad=1280:720:0:120:color=0x101820",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "medium",
+    "-crf",
+    "27",
+    "-maxrate",
+    "1800k",
+    "-bufsize",
+    "3600k",
+    "-threads",
+    "4",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart"
+  ],
+  "poster_source_media_time_s": 65.6,
+  "simulation_first_score_s": 65.56,
+  "simulation_duration_s": 67.56,
+  "media_duration_s": 67.5,
+  "timing_note": "Original native 10Hz recording has 675 frames; media duration and exact simulation event time differ. Score comes from post-step event evidence.",
+  "raw_score_total": 0.9999999776482582,
+  "proximity_count": 1,
+  "delivery_count": 0,
+  "claim": "local original-environment proximity point, not physical grasp, delivery or task pass",
+  "release_url": "https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-first-score-20260914"
+}

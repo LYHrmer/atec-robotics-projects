@@ -1,8 +1,8 @@
-# 视频对比：所有旧版保留
+# 视频对比与当前最佳成绩
 
 [返回首页](../README.md) · [Task A 速度实测](../task_a/docs/SPEED_COMPARISON.md) · [Task E 原满分版本](TASK_E.md)
 
-新视频使用独立文件名；已有视频、历史 Release 和原始实验记录均保留。**视频倍速不等于机器人控制提速**，下表分别写明。
+本轮新增 Task B 首分视频，保留既有 A/E 视频与历史发布。后续更高成绩通过核验后，GitHub 对应任务展示与视频更新为最佳成绩，较低成绩和失败原片在本机归档，不改写 Git 历史。**视频倍速不等于机器人控制提速**，下表分别写明。
 
 ## Task A：先看这几段
 
@@ -46,8 +46,16 @@
 
 [基础策略完整失败原片](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-method-comparison-20260910/d1g2_taska_base_only_seed42.mp4)：seed 42，最大前向进展 31.296 m，86.96 s 因停滞退出；不是通关用时。[对照条件与论文参考](TASK_A_COMPARISON.md)。全部既有录像继续保留。
 
-## Task B：得分前录像保留在本机
+## Task B：首个有效接近分
 
-按用户要求，Task B 得分前的录像暂不上传 GitHub。当前全部为 0 分；本机原片继续保留，后续取得正分再上传对应视频。[实验比较与失败分析](TASK_B_EXPERIMENTS.md)、[数据 JSON](../results/task_b_bootstrap/comparison.json) 和 [证据数据包](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-bootstrap-20260910) 可以公开核验；比较 JSON 中的 `video.published=false`、`url=null` 表示没有公开视频链接。
+**[直接播放 Task B 首分完整 1× 视频](https://lyhrmer.github.io/atec-robotics-projects/task-b.html)**：seed 42，65.56 仿真秒取得 **1 个接近分、0 个投递分**；首分后继续记录 2 秒，无非法接触或官方终止。得分时夹爪本体到物体根位置为 **0.199966689 m**；这段录像没有证明抓起、投递或 Task B 通关。[方法、复现与审计](TASK_B_FIRST_SCORE.md)。
 
-本机录像由官方头部和腕部 RGB 横向拼接，1280×480、10 fps、原速。最后一次自动复位后的图像不作为碰撞现场；终止原因以复位前记录为准。已有 Task A/E 视频继续保留。
+| 文件 | 展示与来源 | 获取位置 |
+| --- | --- | --- |
+| 当前首分网页视频 | 同次完整 1×，1280×720，约 15.36 MB；双相机原画面加上下留边，保留全部 675 帧 | [在线播放](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [转码记录](videos/task_b_first_score_20260914_provenance.json) |
+| 当前首分原片 | 官方头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 169.71 MB | [task_b_first_score_20260914_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4) |
+| 当前首分完整证据 | 原结果、得分事件、遥测、压缩逐步轨迹、源码快照、原片与独立审计 | [task_b_first_score_20260914_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_evidence.tar.gz) |
+
+原片与网页视频时长均为 **67.50 秒**；完整环境记录为 **67.56 仿真秒**，差异来自原生 10 Hz 视频采样。首分时刻取自第 3278 个环境步后的事件记录，不根据视频帧估计。网页转码没有生成帧或修改机器人动作，帧数与时间轴保持不变。
+
+零分历史录像仍只在本机归档；其 [比较数据](../results/task_b_bootstrap/comparison.json) 中 `video.published=false`、`url=null` 继续准确表示没有公开视频。[旧实验与失败分析](TASK_B_EXPERIMENTS.md) 和 [基础证据包](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-bootstrap-20260910) 保留原记录。

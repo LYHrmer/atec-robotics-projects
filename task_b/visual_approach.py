@@ -39,16 +39,34 @@ def _ee_arrays(image):
     return _camera_arrays(image, 'ee')
 
 
+LOCKED_ASSOCIATION_RADIUS_M = .12
+
+
 def detect_yellow_candidates(rgb, depth, body_from_camera, *, projected_gravity=None,
-                             focal_length=15.):
+                             focal_length=15., locked_target_body=None):
     """Return depth-supported yellow image components in current body frame.
 
     Uses the supplied official focal length (EE 15, head 24), common aperture
     and requested raster K principal
     point (width/2,height/2). Geometry is explicit in debug metadata so a future
     pixel-centre convention change cannot silently happen twice.
+
+    ``locked_target_body`` is optional. ``None`` keeps the search behavior
+    unchanged. A finite body-frame point switches on local association: only
+    the vertical aspect window is bypassed (a stationary object seen from
+    above is legitimately round), and every accepted component must then lie
+    within ``LOCKED_ASSOCIATION_RADIUS_M`` of that point. Area, height, depth
+    support, depth consistency, forward region and metric height filters all
+    stay in force. This is point geometry near an already localized position;
+    it is not object identity, semantic classification or tracking, and a
+    component further away is simply unmatched, never evidence of movement.
     """
     height, width = depth.shape
+    locked = None
+    if locked_target_body is not None:
+        locked = np.asarray(locked_target_body, dtype=float)
+        if locked.shape != (3,) or not np.isfinite(locked).all():
+            raise ValueError('invalid_locked_target_body')
     if not np.isfinite(focal_length) or focal_length <= 0.:
         raise ValueError('invalid_focal_length')
     focal = width * focal_length / 20.955
@@ -67,13 +85,17 @@ def detect_yellow_candidates(rgb, depth, body_from_camera, *, projected_gravity=
             raise ValueError('invalid_projected_gravity')
         up = -gravity / np.linalg.norm(gravity)
     candidates, rejected = [], {}
+    bypassed = 0
     def reject(reason):
         rejected[reason] = rejected.get(reason, 0) + 1
     for label in range(1, count):
         left, top, box_width, box_height, area = map(int, statistics[label])
         aspect = box_height / max(box_width, 1)
-        if area < 35 or not 1.15 <= aspect <= 6.0 or box_height < 10:
+        vertical = 1.15 <= aspect <= 6.0
+        if area < 35 or box_height < 10 or (locked is None and not vertical):
             reject('image_shape'); continue
+        if not vertical:
+            bypassed += 1
         rows, cols = np.nonzero(labels == label)
         depths = depth[rows, cols]
         valid = np.isfinite(depths) & (depths > .10) & (depths < 8.)
@@ -91,23 +113,38 @@ def detect_yellow_candidates(rgb, depth, body_from_camera, *, projected_gravity=
         body_point = pose[:3, :3] @ camera_point + pose[:3, 3]
         if not .25 < body_point[0] < 7.5 or abs(body_point[1]) > 4.:
             reject('outside_forward_region'); continue
+        locked_distance = None
+        if locked is not None:
+            locked_distance = float(np.linalg.norm(body_point-locked))
+            if locked_distance > LOCKED_ASSOCIATION_RADIUS_M:
+                reject('locked_association_distance'); continue
         camera_cloud = np.column_stack(((cols-cx)*depths/focal, (rows-cy)*depths/focal, depths))
         body_cloud = camera_cloud @ pose[:3, :3].T + pose[:3, 3]
         height_span = None if up is None else float(np.diff(np.percentile(body_cloud @ up, [2, 98]))[0])
         if height_span is not None and not .045 < height_span < .35:
             reject('metric_height'); continue
         candidates.append({
-            'kind': 'yellow_vertical_component_not_semantic_classification',
+            'kind': ('yellow_vertical_component_not_semantic_classification' if vertical else
+                     'yellow_component_near_locked_point_not_semantic_classification'),
             'body_point': body_point.tolist(), 'camera_point': camera_point.tolist(),
             'pixel_uv': [u, v], 'bbox_xywh': [left, top, box_width, box_height],
             'pixel_area': area, 'depth_samples': int(len(depths)),
             'optical_depth_m': optical_depth, 'height_span_m': height_span,
             'forward_planar_distance_m': float(np.linalg.norm(body_point[:2])),
+            'aspect': float(aspect), 'locked_association_distance_m': locked_distance,
         })
     candidates.sort(key=lambda item: item['forward_planar_distance_m'])
     return candidates, {'yellow_components': int(count-1), 'rejected': rejected,
                         'K': [[focal, 0., cx], [0., focal, cy], [0., 0., 1.]],
                         'intrinsics_pixel_convention': 'configured_raster_K_width_over_2',
+                        'association_mode': ('default_shape_filter' if locked is None
+                                             else 'locked_point_local_association'),
+                        'locked_target_body': None if locked is None else locked.tolist(),
+                        'locked_association_radius_m': (None if locked is None
+                                                        else LOCKED_ASSOCIATION_RADIUS_M),
+                        'locked_shape_bypass': int(bypassed),
+                        'association_claim': 'locked mode matches geometry near a caller-supplied '
+                                             'point only; no identity, tracking or semantic class',
                         'classification_claim': 'none; color and shape heuristic only'}
 
 
