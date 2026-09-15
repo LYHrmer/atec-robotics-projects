@@ -1,0 +1,1604 @@
+{
+  "episodes": [
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 4,
+      "drops": 4,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 3,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 4,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 5,
+      "drops": 6,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 4,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 5,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 5,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 5,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": true
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 4,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 5,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 4,
+      "drops": 4,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": true
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 3,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 3,
+      "drops": 3,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 5,
+      "drops": 6,
+      "released": true
+    },
+    {
+      "deliveries": 5,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 3,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 1,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 5,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 1,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 2,
+      "drops": 2,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 5,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 4,
+      "drops": 5,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 3,
+      "drops": 3,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 7,
+      "released": false
+    },
+    {
+      "deliveries": 6,
+      "drops": 6,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": true
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 8,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": false
+    },
+    {
+      "deliveries": 7,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 9,
+      "drops": 9,
+      "released": true
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    },
+    {
+      "deliveries": 8,
+      "drops": 8,
+      "released": false
+    },
+    {
+      "deliveries": 0,
+      "drops": 0,
+      "released": false
+    },
+    {
+      "deliveries": 4,
+      "drops": 4,
+      "released": false
+    },
+    {
+      "deliveries": 10,
+      "drops": 10,
+      "released": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Completed episodes of the Task B PROXY environment in this process.",
+  "official_task_b_success": false,
+  "objects_per_env": 1,
+  "grasping": "skipped (kinematic carry, scripted release)",
+  "episode_count_total": 1025,
+  "delivery_count_total": 2613,
+  "delivery_rate_total": 2.549268292682927,
+  "termination_counts": {
+    "time_out": 1023,
+    "bad_orientation": 0,
+    "too_far": 0,
+    "drops_exhausted": 0,
+    "illegal_contact": 2
+  },
+  "spawn_min_m": 4.0,
+  "spawn_max_m": 6.0,
+  "heading_noise_rad": 1.3707963267948964,
+  "success_ema": 0.00390625,
+  "recent_episodes": 1024,
+  "recent_delivery_rate": 0.9757281553398058,
+  "recent_deliveries_per_episode": 2.5517578125,
+  "recent_max_deliveries_in_episode": 9,
+  "recent_mean_drops_per_episode": 2.615234375,
+  "recent_episodes_with_delivery": 0.6767578125,
+  "recent_release_rate": 0.1064453125,
+  "recent_mean_final_object_dist_m": 2.3034216386295157,
+  "recent_mean_min_object_dist_m": 1.1440609635735655,
+  "recent_mean_steps": 1998.984375,
+  "iteration": 390
+}

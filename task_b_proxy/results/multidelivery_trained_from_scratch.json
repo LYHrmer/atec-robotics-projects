@@ -1,0 +1,275 @@
+{
+  "scope": "Task B PROXY, deterministic policy, multi-delivery episodes.",
+  "official_task_b_success": false,
+  "checkpoint": "/home/lybm/ATEC2026_Simulation_Challenge/logs/taskb_proxy_multi_01/model_399_final.pt",
+  "num_envs": 96,
+  "episode_length_s": 40.0,
+  "steps_run": 8000,
+  "chunks": [
+    {
+      "steps": 250,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 0.3854166865348816,
+      "deliveries_per_env_max": 1,
+      "drops_per_env_mean": 0.3854166865348816,
+      "carrying_now": 69
+    },
+    {
+      "steps": 500,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 1.1145833730697632,
+      "deliveries_per_env_max": 2,
+      "drops_per_env_mean": 1.1145833730697632,
+      "carrying_now": 74
+    },
+    {
+      "steps": 750,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 1.8541667461395264,
+      "deliveries_per_env_max": 3,
+      "drops_per_env_mean": 1.8854167461395264,
+      "carrying_now": 78
+    },
+    {
+      "steps": 1000,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 2.5833334922790527,
+      "deliveries_per_env_max": 4,
+      "drops_per_env_mean": 2.6145834922790527,
+      "carrying_now": 75
+    },
+    {
+      "steps": 1250,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 3.3229167461395264,
+      "deliveries_per_env_max": 5,
+      "drops_per_env_mean": 3.3645834922790527,
+      "carrying_now": 73
+    },
+    {
+      "steps": 1500,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 4.0729169845581055,
+      "deliveries_per_env_max": 6,
+      "drops_per_env_mean": 4.1354169845581055,
+      "carrying_now": 82
+    },
+    {
+      "steps": 1750,
+      "episodes_done": 0,
+      "deliveries_per_env_mean": 4.7916669845581055,
+      "deliveries_per_env_max": 7,
+      "drops_per_env_mean": 4.8541669845581055,
+      "carrying_now": 77
+    },
+    {
+      "steps": 2000,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 0.0,
+      "deliveries_per_env_max": 0,
+      "drops_per_env_mean": 0.0,
+      "carrying_now": 96
+    },
+    {
+      "steps": 2250,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 0.3645833432674408,
+      "deliveries_per_env_max": 1,
+      "drops_per_env_mean": 0.3645833432674408,
+      "carrying_now": 82
+    },
+    {
+      "steps": 2500,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 1.1145833730697632,
+      "deliveries_per_env_max": 2,
+      "drops_per_env_mean": 1.1145833730697632,
+      "carrying_now": 80
+    },
+    {
+      "steps": 2750,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 1.8645833730697632,
+      "deliveries_per_env_max": 3,
+      "drops_per_env_mean": 1.875,
+      "carrying_now": 69
+    },
+    {
+      "steps": 3000,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 2.6770834922790527,
+      "deliveries_per_env_max": 5,
+      "drops_per_env_mean": 2.7083334922790527,
+      "carrying_now": 73
+    },
+    {
+      "steps": 3250,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 3.375,
+      "deliveries_per_env_max": 5,
+      "drops_per_env_mean": 3.4479167461395264,
+      "carrying_now": 78
+    },
+    {
+      "steps": 3500,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 4.083333492279053,
+      "deliveries_per_env_max": 6,
+      "drops_per_env_mean": 4.1875,
+      "carrying_now": 79
+    },
+    {
+      "steps": 3750,
+      "episodes_done": 96,
+      "deliveries_per_env_mean": 4.8125,
+      "deliveries_per_env_max": 8,
+      "drops_per_env_mean": 4.9166669845581055,
+      "carrying_now": 68
+    },
+    {
+      "steps": 4000,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 0.0,
+      "deliveries_per_env_max": 0,
+      "drops_per_env_mean": 0.0,
+      "carrying_now": 96
+    },
+    {
+      "steps": 4250,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 0.3020833432674408,
+      "deliveries_per_env_max": 1,
+      "drops_per_env_mean": 0.3020833432674408,
+      "carrying_now": 69
+    },
+    {
+      "steps": 4500,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 1.1354167461395264,
+      "deliveries_per_env_max": 3,
+      "drops_per_env_mean": 1.1354167461395264,
+      "carrying_now": 75
+    },
+    {
+      "steps": 4750,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 1.9583333730697632,
+      "deliveries_per_env_max": 4,
+      "drops_per_env_mean": 1.9895833730697632,
+      "carrying_now": 78
+    },
+    {
+      "steps": 5000,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 2.6979167461395264,
+      "deliveries_per_env_max": 6,
+      "drops_per_env_mean": 2.75,
+      "carrying_now": 70
+    },
+    {
+      "steps": 5250,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 3.4270834922790527,
+      "deliveries_per_env_max": 7,
+      "drops_per_env_mean": 3.4895834922790527,
+      "carrying_now": 77
+    },
+    {
+      "steps": 5500,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 4.145833492279053,
+      "deliveries_per_env_max": 8,
+      "drops_per_env_mean": 4.239583492279053,
+      "carrying_now": 74
+    },
+    {
+      "steps": 5750,
+      "episodes_done": 192,
+      "deliveries_per_env_mean": 4.833333492279053,
+      "deliveries_per_env_max": 8,
+      "drops_per_env_mean": 4.958333492279053,
+      "carrying_now": 76
+    },
+    {
+      "steps": 6000,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 0.0,
+      "deliveries_per_env_max": 0,
+      "drops_per_env_mean": 0.0,
+      "carrying_now": 96
+    },
+    {
+      "steps": 6250,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 0.28125,
+      "deliveries_per_env_max": 1,
+      "drops_per_env_mean": 0.28125,
+      "carrying_now": 69
+    },
+    {
+      "steps": 6500,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 1.1770833730697632,
+      "deliveries_per_env_max": 2,
+      "drops_per_env_mean": 1.1770833730697632,
+      "carrying_now": 76
+    },
+    {
+      "steps": 6750,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 1.96875,
+      "deliveries_per_env_max": 3,
+      "drops_per_env_mean": 1.9895833730697632,
+      "carrying_now": 72
+    },
+    {
+      "steps": 7000,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 2.6875,
+      "deliveries_per_env_max": 4,
+      "drops_per_env_mean": 2.7291667461395264,
+      "carrying_now": 75
+    },
+    {
+      "steps": 7250,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 3.4375,
+      "deliveries_per_env_max": 5,
+      "drops_per_env_mean": 3.4791667461395264,
+      "carrying_now": 74
+    },
+    {
+      "steps": 7500,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 4.25,
+      "deliveries_per_env_max": 6,
+      "drops_per_env_mean": 4.302083492279053,
+      "carrying_now": 77
+    },
+    {
+      "steps": 7750,
+      "episodes_done": 288,
+      "deliveries_per_env_mean": 4.9375,
+      "deliveries_per_env_max": 7,
+      "drops_per_env_mean": 4.989583492279053,
+      "carrying_now": 75
+    },
+    {
+      "steps": 8000,
+      "episodes_done": 384,
+      "deliveries_per_env_mean": 0.0,
+      "deliveries_per_env_max": 0,
+      "drops_per_env_mean": 0.0,
+      "carrying_now": 96
+    }
+  ],
+  "completed_episodes": 384,
+  "total_deliveries": 2123,
+  "total_drops": 2164,
+  "deliveries_per_episode": 5.528645833333333,
+  "deliveries_per_drop": 0.9810536044362292,
+  "max_deliveries_in_episode": 9,
+  "mean_drops_per_episode": 5.635416666666667,
+  "episodes_with_delivery": 0.9635416666666666,
+  "episodes_that_released": 0.22395833333333334
+}

@@ -198,12 +198,6 @@ class RecordedTaskBEnv(ManagerBasedRLEnv):
         active = env_ids[self.episode_length_buf[env_ids] > 0]
         if len(active):
             state = taskb_state(self)
-            # Deliveries are counted by ``next_delivery`` as they land, not
-            # re-derived here: by the time an episode terminates the object has
-            # already been respawned for the next attempt, so the current
-            # object pose says nothing about the episode that just ended.
-            deliveries = state['deliveries_this_episode'][active]
-            drops = state['drops_this_episode'][active]
             distances = torch.norm(
                 self.scene['object'].data.root_pos_w[active, :2] - bin_center_w(self)[active], dim=1)
             terms = {}
@@ -211,6 +205,21 @@ class RecordedTaskBEnv(ManagerBasedRLEnv):
                 flags = self.termination_manager.get_term(name)[active]
                 self.failure_counts[name] = self.failure_counts.get(name, 0) + int(flags.sum())
                 terms[name] = flags
+            # In multi-delivery mode ``next_delivery`` credits each landed drop to
+            # the per-episode counters as it happens (and the object pose is
+            # useless by now: it has already been respawned for the next
+            # attempt).  In single-delivery mode ``next_delivery`` returns before
+            # writing those counters, so they read zero for a perfectly good run
+            # and the outcome exists only in the termination terms -- which is
+            # why those runs used to report a delivery count of 0.  Derive it: an
+            # episode attempts one drop, which happened iff the object was
+            # released and landed iff the success term fired.
+            if 'delivery_success' in terms:
+                deliveries = terms['delivery_success'].long()
+                drops = state['released'][active].long()
+            else:
+                deliveries = state['deliveries_this_episode'][active]
+                drops = state['drops_this_episode'][active]
             self.episode_count += len(active)
             self.delivery_count += int(deliveries.sum())
             for index in range(len(active)):

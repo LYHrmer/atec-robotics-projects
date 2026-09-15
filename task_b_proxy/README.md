@@ -27,11 +27,11 @@
 
 | 指标 | 训练自报 | **独立验证** |
 |---|---|---|
-| 投递率 | 91.0%（全程） / **96.2%**（最后 512 局） | **98.4%**（378 / 384 局） |
+| 投递率 | 91.0%（全程） / **96.2%**（最近 1024 局，旧版 trainer 自报） | **98.18%**（377 / 384 局，seed 42） |
 | 与环境自判的分歧局数 | — | **0 / 384** |
-| 物体最终距桶心 | — | **0.363 m**（成功圈半径 1.00 m） |
+| 物体最近距桶心（下降过程中，**不是**最终静止位） | — | **0.363 m**（成功圈半径 1.00 m） |
 | 机器人离桶壁最小间距 | — | 均值 **0.572 m**，但 **15 / 384 局为负** |
-| 撞桶次数 | — | **15 / 384 局（3.9%）** |
+| 撞桶次数 | — | **15 / 384 局（3.9%）**——**这是下界**，见限制第 6 条 |
 | 行驶距离 | — | **2.96 m / 局** |
 
 > ### ⚠️ 本表 2026-09-15 重算：上一版的"撞桶 0 次"是错的
@@ -43,22 +43,25 @@
 >
 > | | 修正前 | 修正后 |
 > |---|---|---|
-> | 投递率 | 98.5%（846/859） | **98.4%（378/384）** |
+> | 投递率 | 98.5%（846/859） | **98.18%（377/384）** |
 > | 撞桶次数 | **0**（错） | **15 / 384** |
 > | 最小间距 | 0.756 m | 均值 0.572 m，**15 局为负** |
 > | 行驶距离 | 8.38 m/局 | **2.96 m/局** |
 >
 > **"撞桶 0 次 / 7000+ 局"撤回**：每一个已提交的验证运行，其**自己的输出**都报告了
-> 12–20 局负间距。上一版引用的 0.756 m 是**平均**间距，不是最小间距。
+> 12–20 局负间距（旧文件里最低是 7 局）。上一版引用的 0.756 m 是**平均**间距，不是最小间距。
 > 行驶距离同理：8.12 m / 4.9 s 意味着平均 1.66 m/s，快于步态指令的 0.56 m/s ——
 > 旧值把回合重置时的瞬移算进了路径。
 >
 > 修正后新增了一项此前没有的自检：**独立复算与环境自身的成功判定逐局比对**，
 > 384 局分歧为 0。
 
-**外推测试**（出生点 7.0–8.5 m，**超出训练的 6.5 m 上限**）：投递率 **48.1%**（185 / 385 局），
-主要失败模式是 `too_far`（168 / 385 = 43.6%，走出 8 m 边界），另有 `bad_orientation` 25 次。
-超范围**会明显退化**。
+**外推测试**（出生点 7.0–8.5 m；注意课程的**硬上限是 7.0 m**，训练确实跑到过 7.0，
+所以只有 >7.0 那一段是真外推，7.0 本身在训练分布内）：
+按**训练配置**（`release_radius = 0.40`）投递率 **48.20%**（187 / 388 局）；
+改用 `0.50` 只为对齐旧数字时是 **47.41%**（183 / 386 局）——两者几乎一样，
+说明远距离表现主要由**出生距离**决定，与释放半径关系不大。
+主要失败模式是 `too_far`（走出 8 m 边界）。超范围**会明显退化**。
 
 > 修正前的 **64.6% 不可复现**。但这个对照**混了两个变量**：旧数字由"残差叠加两次"的
 > 控制器跑出，本次由修正后的控制器跑出，差距不能全部归给验证器。另外旧外推那次用的
@@ -144,7 +147,7 @@ batch，不是"刚结束的那几局"。第一版按调用次数调难度，`hea
 |---|---|
 | `recent_delivery_rate` | **每次投放**的成功率（`总投递 / 总投放`，最近窗口内） |
 | `delivery_rate_total` | **每局投递数**（`总投递 / 已结束局数`） |
-| `recent_deliveries_per_episode` | 每局投递数 —— **多趟模式看这个** |
+| `deliveries_per_episode` | 每局投递数 —— **多趟模式看这个**（单趟模式是"有投递的局占比"） |
 | `recent_mean_min_object_dist_m` | **最近一次投放**里，物体到桶心的最近距离 |
 | `termination_counts` | 各终止原因累计次数 |
 | `heading_noise_rad` / `spawn_max_m` | 课程当前难度 |
@@ -183,7 +186,12 @@ batch，不是"刚结束的那几局"。第一版按调用次数调难度，`hea
 1. `delivery_success` 必须在 `env.step()` **之前**读——Isaac Lab 在 step 内部就重置了
    已结束的环境，step 之后读到的已经是**下一局**的状态
 2. 必须按训练的方式调用 `ResidualState.reset(done)`，否则 5 帧历史带着上一局的
-   残差/动作跨局，**验证的就不是训练出来的策略**
+   残差/动作跨局，**验证的就不是训练出来的策略**。
+   ⚠️ **这一条长期只写在文档里，代码里并没有做到**：调用点是
+   `act_with_reset(raw, [])`，`done_ids` 恒为空，`reset()` 从未执行过。
+   2026-09-15 才真正修掉（改为按 trainer 的顺序，在 `env.step()` 之后对刚结束的环境
+   调用 reset）。**所以此前所有验证数字都是在"带着上一局历史"的条件下测出来的，
+   已全部重跑。**
 3. **残差被叠加两次**（2026-09-15 修）：`act()` 已经返回 `combine(...)` 的结果，调用点
    又 combine 了一次，等于跑的是 `base + clamp(base + r·scales)·scales`。
    全部四个已提交的验证运行都中招
@@ -192,13 +200,19 @@ batch，不是"刚结束的那几局"。第一版按调用次数调难度，`hea
 5. **跨批次窗口被截断**（2026-09-15 修）：外层批次每轮把全部追踪量清零，
    跨批次的对局只算了半截窗口
 
-修正后 384 局：投递率 **98.4%**，且**独立复算与环境自身的判定逐局分歧为 0**。
+修正后 384 局：投递率 **98.18%**，且**独立复算与环境自身的判定逐局分歧为 0**。
 
 > 第 4 条有个深层限制值得记下来：环境自身的成功判据还要求物体**已经静止**，而这一条
 > **无法**在本脚本里复现——Isaac Lab 在 `step()` 内部就重置了已结束的环境，静止状态只
 > 存在于**唯一那个终止步**上，而本脚本采样的是每步**之前**的状态。所以"要求静止"的 latch
 > 会恒为 0：那不是更严的测量，而是**不可观测**的测量。环境自身的判定因此并行记录，
 > 两者比对见 `success_disagreements`。
+>
+> **这个口子的实测代价**（seed 43，384 局）：**分歧 2 局（0.5%）**，两局都是
+> `illegal_contact` 终止——物体已释放、最近距离 0.320 / 0.390 m（都在成功圈内），
+> 但因为撞桶在物体落定前就结束了回合，环境判为不成功。所以本脚本的判据有
+> **约 0.5% 的假阳性**，且集中在撞桶终止的对局；**更紧的数字是环境自报的那个**
+> （seed 43：95.57% 而非 96.09%）。
 
 ### 每个数字的出处（不要跨行比较）
 
@@ -207,14 +221,20 @@ batch，不是"刚结束的那几局"。第一版按调用次数调难度，`hea
 
 | 数字 | 检查点 | 回合长 | release_radius | env build | 验证器 |
 |---|---|---|---|---|---|
-| **98.4%**（378/384） | 发布的单趟权重 | 20 s | 0.40 | 当前 | 修正后 |
-| **48.1%**（185/385） | 发布的单趟权重 | 20 s | **0.50** | 当前 | 修正后 |
-| **（待补）** 外推，训练配置 | 发布的单趟权重 | 20 s | 0.40 | 当前 | 修正后 |
-| **每局 2.55 次** | 多趟从零训练（seed 42） | **40 s** | 0.40 | 当前 | 环境自身计数器 |
+| **98.18%**（377/384） | 发布的单趟权重 | 20 s | 0.40 | 当前 | 修正后（含 reset 修复） |
+| **跨种子 89.6–100%**，均值 **96.0%**（seed 42 / 43 / 44 / 45） | 各 seed 自训的权重 | 20 s | 0.40 | 当前 | 同上 |
+| **48.20%**（187/388） | 发布的单趟权重 | 20 s | **0.40（训练配置）** | 当前 | 同上 |
+| **47.41%**（183/386） | 发布的单趟权重 | 20 s | **0.50（为对齐旧数字）** | 当前 | 同上 |
+| **每局 7.57 次**（**30% 的局被 10 次上限截断**） | 发布的单趟权重 | 40 s | 0.40 | 当前 | 多趟检查器 |
+| **每局 5.53 次** | 多趟从零训练（seed 42，40 s 回合） | 40 s | 0.40 | 当前 | 多趟检查器 |
+| **每局 7.08 次** | 多趟训练（**发布配置** 20 s，匹配对照） | 40 s | 0.40 | 当前 | 多趟检查器 |
 | ~~98.5% / 64.6% / 撞桶 0 次~~ | 发布的单趟权重 | 20 s | 0.40 / 0.50 | **旧 build** | **旧工具（有缺陷）** |
 
-> 外推那一行的 `release_radius` 刻意用了 **0.50**，是为了和旧数字对齐；
-> 训练配置其实是 **0.40**。按训练配置重跑的结果见上表第三行。
+> **跨种子是当前最重要的结论**：投递率不是一个点，而是 **89.6%–100%（4 个种子，均值 96.0%）**。
+> 原来那个"98.5%"只是 seed 42 一个点，落在区间上端。撞桶局同样随种子波动（14 / 25 / 10 / 29）。
+>
+> 多趟那三行说明：单趟权重每局 **7.57** 次 > 多趟从零训练 **5.53** 次，而把训练配置对齐后
+> 匹配对照是 **7.08** 次 —— **差距几乎全部来自配置（回合长 + 课程），不是训练方式**。
 >
 > 验证器现在会把 `episode_length_s`、`checkpoint_episode_length_s` 和
 > `episode_length_matches_checkpoint` 写进输出 JSON，配置不一致时还会打 WARNING。
@@ -236,38 +256,74 @@ learner/
 weights/
   taskb_delivery_residual_399.pt # 训练好的策略（400 iter）
 results/
-  training_metrics.jsonl         # 训练曲线（400 行）
-  verification_corrected.json    # ✅ 修正后：训练分布内 98.4%（378/384），与 env 判定 0 分歧
-  verification_corrected_episodes.json # ✅ 上面对应的逐局原始记录
-  verification_extrapolated_corrected.json # ✅ 修正后：外推 7.0–8.5 m 48.1%（185/385）
-  verification_matched.json      # ⚠️ 已废弃：旧工具，且残差叠加两次
-  verification_trained_range.json# ⚠️ 已废弃：同上
-  verification_shipped_config.json # ⚠️ 已废弃：同上
-  verification_extrapolated.json # ⚠️ 已废弃：64.6% 不可复现
-  multidelivery_verified.json    # ⚠️ 已废弃："每局 2.83 次"由错误方法算出
+  INDEX.json                     # ✅ 每个报告数字 → 支撑文件 + 配置（由脚本从文件本身生成）
+  training_metrics.jsonl         # 发布权重的训练曲线（400 行，旧版 trainer 产出）
   training_metadata.json         # 完整任务元数据（含 base policy SHA256）
+  verification_indist_20s.json   # ✅ 训练分布内 98.18%（377/384），与 env 判定 0 分歧
+  verification_indist_20s_episodes.json        # 上面对应的逐局原始记录
+  verification_seed43_20s.json   # ✅ 跨种子 96.09%
+  verification_seed44_20s.json   # ✅ 跨种子 100.00%
+  verification_seed45_20s.json   # ✅ 跨种子 89.58%
+  verification_extrap_7.0-8.5m_r0.40.json      # ✅ 外推 @训练配置 48.20%
+  verification_extrap_7.0-8.5m_r0.50.json      # ✅ 外推 @0.50（为对齐旧数字）47.41%
+  multidelivery_published_ckpt.json            # ✅ 每局 7.57 次（30% 局被上限截断）
+  multidelivery_published_ckpt_episodes.json   # 上面对应的逐局记录
+  multidelivery_trained_from_scratch.json      # ✅ 多趟从零训练 每局 5.53 次
+  multidelivery_matched_config.json            # ✅ 匹配对照（发布配置训多趟）每局 7.08 次
+  training_multidelivery_40s.jsonl             # 多趟从零训练曲线
+  training_multidelivery_matched_20s.jsonl     # 匹配对照的训练曲线
+  superseded/                    # ⚠️ 旧工具有缺陷时产出的结果，保留只为留痕，**不要引用**
 ```
 
-> 标 ⚠️ 的文件是**旧工具有缺陷时产出的**，保留只为留痕，**不要引用**。
-> 修正后的数字以 `verification_corrected*.json` 为准。
+> `superseded/` 里的文件来自**已被发现有缺陷的验证器**，或来自"残差叠加两次"的控制器。
+> 现役数字一律看 `results/` 顶层 + `INDEX.json`。
 
 ## 复现
 
-```bash
-# 训练
-python learner/train_d1g2_taskb_residual.py --headless \
-  --assets_root <DDT_Lab> \
-  --policy <DDT_Lab>/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx \
-  --output <out> --num_envs 256 --iterations 400
+每一行对应交付物里的一个数字。**配置全部写全**——上一版没写回合长，而 trainer 的默认值
+（40 s）和发布权重的训练值（20 s）不同，照默认跑就是在复现另一个任务。
 
-# 验证
+| 要复现的数字 | 脚本 | 关键配置 |
+|---|---|---|
+| **98.4%**（378/384） | `verify_d1g2_taskb_policy.py` | `--num_envs 128 --episodes 3 --episode_seconds 20.0` |
+| **48.1%**（185/385） | 同上 | 加 `--spawn_min 7.0 --spawn_max 8.5 --release_radius 0.5` |
+| 外推 @ 训练配置 | 同上 | 同上但**不传** `--release_radius`（从检查点解析出 0.40） |
+| **多趟 7.57 / 5.53 次/局** | `check_taskb_multidelivery.py` | `--num_envs 96 --episode_seconds 40.0` |
+| 多趟训练曲线 | `train_d1g2_taskb_residual.py` | `--multi_delivery --num_envs 256 --iterations 400 --episode_seconds 40.0` |
+| 跨种子区间 | 训练 + 第一行 | `--seed 43/44/45`，其余同发布配置 |
+
+```bash
+ASSETS=<DDT_Lab>
+POLICY=$ASSETS/ddt_ros2_control/controller/rl_controller/config/d1/flat_lab.onnx
+
+# 发布权重：seed 42，20 s 回合
+python learner/train_d1g2_taskb_residual.py --headless \
+  --assets_root "$ASSETS" --policy "$POLICY" \
+  --output logs/taskb_proxy_train_03 \
+  --num_envs 256 --iterations 400 --seed 42 --episode_seconds 20.0
+
+# 训练分布内验证
 python learner/verify_d1g2_taskb_policy.py --headless \
-  --assets_root <DDT_Lab> --policy <...>/flat_lab.onnx \
-  --checkpoint weights/taskb_delivery_residual_399.pt \
-  --output <out> --num_envs 128 --episodes 3
+  --assets_root "$ASSETS" --policy "$POLICY" \
+  --checkpoint logs/taskb_proxy_train_03/model_399_final.pt \
+  --output logs/verify_corrected --num_envs 128 --episodes 3 --episode_seconds 20.0
+
+# 多趟 head-to-head（96 而不是 256：多趟模式 256 环境会 OOM）
+python learner/check_taskb_multidelivery.py --headless \
+  --checkpoint <ckpt> --assets_root "$ASSETS" --policy "$POLICY" \
+  --output logs/md_verify --num_envs 96 --episode_seconds 40.0
 ```
 
-**要求**：Isaac Sim 4.5 / Isaac Lab、8 GB 显存可跑（256 环境约 3.7 GB）。
+> 每个结果 JSON 都带 `episode_length_s` / `checkpoint_episode_length_s` /
+> `episode_length_matches_checkpoint`。**跑完先看这三个字段**，不一致就说明复现的是另一个任务。
+
+**要求**：Isaac Sim 4.5 / Isaac Lab、8 GB 显存可跑。
+
+> ⚠️ **显存要按工具分别看，不能照搬训练的参数。**
+> 训练 256 环境约 **3.8 GB**；但 `check_taskb_multidelivery.py` 在多趟模式下持有更多
+> 状态，**同样 256 环境会 OOM**（实测：`Tried to allocate 2.00 MiB. GPU 0 has a total
+> capacity of 7.53 GiB of which 13.69 MiB is free`）。该工具实测安全值是 **96 环境**
+> （约 5.7 GB）。单趟验证 128 环境也正常。
 `metadata.json` 记录了底座策略的 SHA256，残差检查点与底座**强绑定**，换底座会拒绝加载。
 
 ---
@@ -365,7 +421,10 @@ state["deliveries_this_episode"][ids] = 0   # ← 每个“投递周期”都被
 4. **外推会退化**：出生点超过 6.5 m 后投递率降到 **48.1%**（修正后；旧值 64.6% 不可复现）
 5. **未做跨种子统计**（原是单 run 结果）。跨种子复现正在跑，完成后这里会给出区间而不是单点
 6. **机器人会撞进桶的占地范围**：384 局里 **15 局（3.9%）**机器人根节点进到桶半径以内。
-   早期版本"撞桶 0 次 / 7000+ 局"的说法**已撤回**，详见开头
+   早期版本"撞桶 0 次 / 7000+ 局"的说法**已撤回**，详见开头。
+   ⚠️ **这个数是下界，不是撞桶率**：`min_robot_clearance_m` 算的是**根节点**到桶心的距离
+   减去**外壁半径**，而实际接触体（`base_link`/髋/大腿）会伸出根节点之前——所以只有
+   "根节点已经进墙"的局才会被记为负，接触体先碰到桶壁的局不计入
 7. **多趟投递**的旧数字（每局 2.83 次）由错误方法算出，**已撤回**。
    从零训练可达**每局 2.55 次**，见上一节
 8. **回合长度必须显式指定**：发布的单趟权重是 **20 s** 回合训的，而
@@ -381,3 +440,8 @@ state["deliveries_this_episode"][ids] = 0   # ← 每个“投递周期”都被
     也就是说 **1.00 m 这个判据并不约束结果**，有 **0.60 m 的余量从未被用到**。
     好消息：这个数字对成功半径的选择在 **[0.40, 1.00] m 区间内不敏感**；
     坏消息：它测的确实是**导航到释放区**的能力，**不是投放精度**
+
+    > **根治办法**：把环境包一层子类，在 `_reset_idx` 里采样物体**终止时刻**的位姿
+    > （trainer 已经这么做，见 `train_d1g2_taskb_residual.py:197`），就能真正判
+    > "静止在圈内"、并拿到真实的最终落点。现在这个脚本做不到——它在 `step()` **之前**
+    > 采样，而环境在 `step()` 内部就重置了，终止态根本观测不到。

@@ -104,6 +104,10 @@ RELEASE_SPEED = 0.55
 # to turn toward the bin before it can close the distance.
 SPAWN_MIN_DEFAULT = 4.0
 SPAWN_MAX_DEFAULT = 6.5
+# Ceiling the spawn curriculum may widen to.  Was a literal inside
+# ``delivery_curriculum``; raised to 8.5 only by runs that intend to train on
+# the extrapolation range, so the default keeps every existing result reproducible.
+SPAWN_MAX_CEILING_DEFAULT = 7.0
 # pi/2, not pi: the release radius is measured along a 2.8 m tray, so a robot
 # facing away cannot bring the tray into the release band at all and the episode
 # is unsolvable rather than merely hard.
@@ -145,6 +149,23 @@ DROP_SETTLE_STEPS = 400       # time a drop gets to settle before the next hando
 # against that checkpoint scores nothing.  It is meant to be enabled *with* a
 # training run, not against an existing single-delivery policy.
 MULTI_DELIVERY_DEFAULT = False
+
+# -- G2 夹爪 ---------------------------------------------------------------
+# 两个手指关节（g2_left_joint / g2_right_joint）各 3.66 cm 行程，反向对置，
+# 钳口总行程 7.32 cm。
+FINGER_JOINT_NAMES = ("g2_left_joint", "g2_right_joint")
+GRIPPER_JOINT_NAME = "g2_joint"
+GRIPPER_GEARING = 0.0366 / 0.072      # 手指行程 / 夹爪行程
+#
+# 坑：DDT 源配置把这两个关节的 actuator 设成**零增益**，注释称"实际驱动力来自
+# USD 上的 PhysxMimicJointAPI"。但该 mimic 在 play_g2.usd 里并不存在（已实测：
+# 补上 transX / transZ 两种实例后 PhysX 都不执行）。结果是手指既没有驱动力、
+# 也没有约束，钳口永远张不开（实测行程恒为 0）。
+#
+# 因此要真正抓取，必须显式补两件事：
+#   1. 给手指配真实增益的 actuator（见 enable_gripper）；
+#   2. 每步把手指目标设成 GRIPPER_GEARING × g2_joint 的目标（见 drive_gripper）。
+# 实测这样做钳口行程 7.32 cm，可夹 4–8 cm 的物体。
 
 
 def command_from_action(action):
@@ -236,6 +257,7 @@ def taskb_state(env):
         # spawn curriculum, widened/narrowed by ``delivery_curriculum``
         "spawn_min": SPAWN_MIN_DEFAULT,
         "spawn_max": SPAWN_MAX_DEFAULT,
+        "spawn_max_ceiling": SPAWN_MAX_CEILING_DEFAULT,
         "heading_noise": HEADING_NOISE_DEFAULT,
         "bin_scale": 1.0,
         "bin_radius": BIN_RADIUS,
@@ -552,7 +574,7 @@ def delivery_curriculum(env, env_ids, window: int = 512,
         state["episodes"] = state["curriculum_samples"]
         if rate > success_rate_up:
             state["heading_noise"] = min(HEADING_NOISE_DEFAULT, state["heading_noise"] + 0.15)
-            state["spawn_max"] = min(7.0, state["spawn_max"] + 0.25)
+            state["spawn_max"] = min(state["spawn_max_ceiling"], state["spawn_max"] + 0.25)
         elif rate < success_rate_down:
             state["heading_noise"] = max(1.2, state["heading_noise"] - 0.10)
             state["spawn_max"] = max(4.0, state["spawn_max"] - 0.25)
@@ -839,6 +861,39 @@ def global_ground_plane(env, thickness: float = 0.20, margin: float = 100.0):
 # ---------------------------------------------------------------------------
 # builder
 # ---------------------------------------------------------------------------
+def enable_gripper(robot_cfg, stiffness: float = 200.0, damping: float = 10.0):
+    """把两个手指关节换成真实增益的 actuator。
+
+    DDT 源配置给它们的是零增益（stiffness=0, damping=0），指望 USD 上的 mimic
+    约束来驱动；实测那个约束不存在，PhysX 也不执行补上的 mimic。零增益下手指
+    不产生任何力，钳口永远张不开。这里换成真实增益。
+    """
+    from isaaclab.actuators import ImplicitActuatorCfg
+
+    robot_cfg.actuators["gripper_mimic"] = ImplicitActuatorCfg(
+        joint_names_expr=list(FINGER_JOINT_NAMES),
+        effort_limit_sim=20.0,
+        velocity_limit_sim=10.0,
+        stiffness=stiffness,
+        damping=damping,
+        friction=0.0,
+    )
+    return robot_cfg
+
+
+def drive_gripper(robot, g2_target, joint_targets):
+    """把两个手指的目标写成 ``GRIPPER_GEARING × g2_joint`` 的目标。
+
+    两个手指的局部坐标系本来就是反向的（-X 与 +X），所以**同号**即可张开：
+    实测 g2_joint 从 0 走到 0.072 时，钳口由 0 张到 7.32 cm。
+    """
+    index = {name: i for i, name in enumerate(robot.joint_names)}
+    for name in FINGER_JOINT_NAMES:
+        if name in index:
+            joint_targets[:, index[name]] = GRIPPER_GEARING * g2_target
+    return joint_targets
+
+
 def build_d1g2_taskb_train_cfg(
     device: str = "cuda:0",
     seed: int = 42,
@@ -847,11 +902,13 @@ def build_d1g2_taskb_train_cfg(
     episode_length_s: float = 40.0,
     spawn_min: float = SPAWN_MIN_DEFAULT,
     spawn_max: float = SPAWN_MAX_DEFAULT,
+    spawn_max_ceiling: float = SPAWN_MAX_CEILING_DEFAULT,
     heading_noise: float = HEADING_NOISE_DEFAULT,
     release_radius: float = RELEASE_RADIUS,
     tile_size: float = 20.0,
     bin_scale: float = BIN_SCALE_DEFAULT,
     multi_delivery: bool = MULTI_DELIVERY_DEFAULT,
+    gripper_actuated: bool = False,
 ):
     """Build the camera-free Task B delivery training configuration.
 
@@ -920,6 +977,10 @@ def build_d1g2_taskb_train_cfg(
         function = scaled_flat_terrain_with_bin
 
     cfg = build_d1g2_taska_cfg(device=device, cameras=False, seed=seed, ddt_root=ddt_root)
+    if gripper_actuated:
+        # 默认关闭：proxy 不使用夹爪，而给手指加真实增益会改变关节受力，
+        # 从而影响已发布的 proxy 结果。只有要做真实抓取时才打开。
+        enable_gripper(cfg.scene.robot)
     original_terrain = cfg.scene.terrain
     cfg.scene.num_envs = num_envs
     cfg.scene.robot.init_state.pos = (0.0, 0.0, 0.6)
@@ -1121,6 +1182,7 @@ def build_d1g2_taskb_train_cfg(
     cfg.d1g2_taskb_initial_curriculum = {
         "spawn_min": spawn_min,
         "spawn_max": spawn_max,
+        "spawn_max_ceiling": spawn_max_ceiling,
         "heading_noise": heading_noise,
         "bin_scale": bin_scale,
         "bin_radius": BIN_RADIUS * bin_scale,

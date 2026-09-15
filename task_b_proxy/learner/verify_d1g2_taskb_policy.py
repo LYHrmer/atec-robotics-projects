@@ -107,14 +107,6 @@ class Verifier:
         # never trained.
         return action[:, :NUM_RESIDUAL_ACTIONS]
 
-    @torch.inference_mode()
-    def act_with_reset(self, raw, done_ids):
-        """act() plus the residual-state reset that training performs on done."""
-        residual_action = self.act(raw)
-        if len(done_ids):
-            self.state.reset(done_ids)
-        return residual_action
-
 
 torch.set_num_threads(4)
 torch.manual_seed(args.seed)
@@ -214,7 +206,7 @@ while len(records) < target_records and total_steps < args.max_steps:
                   & ((object_pos[:, 2] - ground_z) >= 0.0)
                   & ((object_pos[:, 2] - ground_z) <= SUCCESS_HEIGHT_FRACTION * bin_height))
 
-    residual_action = verifier.act_with_reset(raw, [])
+    residual_action = verifier.act(raw)
     raw, _, terminated, truncated, _ = env.step(verifier.state.combine(residual_action))
     done = terminated | truncated
     episode_steps = episode_steps + 1
@@ -223,16 +215,21 @@ while len(records) < target_records and total_steps < args.max_steps:
         continue
 
     ids = done.nonzero().flatten()
-    # The env's own verdict for the episode that just ended.  The manager does
-    # not clear its term flags when it resets, so this is still the terminating
-    # step's value, not the next episode's.
+    # Clear the 5-frame residual history for the environments that just
+    # finished, exactly as the trainer does.  Without this the next episode's
+    # observation blends in the previous episode's frames, and the script
+    # measures a controller that training never produced.
+    verifier.state.reset(ids)
+    # The env's own verdict for the episode that just ended.  The manager state
+    # was reset by step() for exactly these ids, so a *state* flag read here
+    # would belong to the next episode -- which is why the verdict comes from
+    # this script's own bookkeeping.  The termination term flags are the
+    # exception: the manager does not clear them on reset, so
+    # ``delivery_success`` still holds the terminating step's value.
     if 'delivery_success' in env.termination_manager.active_terms:
         env_success = env.termination_manager.get_term('delivery_success')
     else:
         env_success = torch.zeros_like(delivered)
-    # The manager state was reset by step() for exactly these ids, so the
-    # environment's own success flag read here is the *next* episode's.  That is
-    # why the verdict comes from this script's own bookkeeping.
     for index in ids.tolist():
         records.append({
             'success': bool(delivered[index]),

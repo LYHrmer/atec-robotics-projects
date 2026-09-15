@@ -1,0 +1,151 @@
+{
+  "scope": "Task B PROXY environment, deterministic policy, fresh spawns.",
+  "official_task_b_success": false,
+  "note": "One object, kinematic carry, scripted release. Not the official 18-object task.",
+  "checkpoint": "/home/lybm/ATEC2026_Simulation_Challenge/logs/taskb_proxy_seed44/model_399_final.pt",
+  "checkpoint_iteration": 399,
+  "seed": 1234,
+  "num_envs": 128,
+  "episodes_per_env": 3,
+  "evaluation_settings": {
+    "bin_scale": 2.0,
+    "release_radius": 0.4,
+    "heading_noise": 1.5707963267948966,
+    "spawn_min": 4.0,
+    "spawn_max": 6.5
+  },
+  "checkpoint_task_metadata": {
+    "proxy": true,
+    "official_task_b": false,
+    "objects": 1,
+    "official_objects": 18,
+    "grasping": "skipped: object kinematically carried on a virtual tray",
+    "carried_object_loads_robot": false,
+    "release": "scripted: dropped when the tray is within 0.4 m of the bin centre and the robot is still moving forward (>0.55 m/s)",
+    "success_test": "object settled within 0.5 x bin radius of the bin centre and below the rim; the official test is the same form at the full 1.0 m radius",
+    "bin_geometry_source": "atec_rl_lab.tasks.task_b.terrain.flat_terrain_with_trash_bin",
+    "carry_offset_m": [
+      2.8,
+      0.0,
+      1.0
+    ],
+    "spawn_distance_m": [
+      4.0,
+      6.5
+    ],
+    "spawn_heading_noise_rad": 1.5707963267948966,
+    "episode_length_s": 20.0,
+    "multi_delivery": false,
+    "drops_per_episode_cap": 1,
+    "drop_settle_steps": null,
+    "base_policy_sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b",
+    "base_normalization_backend": "onnx",
+    "interface_version": 1,
+    "task": "task_b_delivery_proxy",
+    "actor_obs_dim": 340,
+    "goal_obs_dim": 9,
+    "privileged_obs_dim": 10,
+    "num_actions": 18,
+    "residual_scales": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "residual_clip": 3.0,
+    "release_radius_m": 0.4,
+    "release_speed_mps": 0.55,
+    "spawn_ring_m": [
+      4.0,
+      6.5
+    ],
+    "bin_scale": 2.0,
+    "official_bin_radius_m": 1.0,
+    "training_bin_radius_m": 2.0,
+    "policy_cfg": {
+      "class_name": "ActorCritic",
+      "init_noise_std": 0.25,
+      "noise_std_type": "log",
+      "actor_hidden_dims": [
+        256,
+        128,
+        64
+      ],
+      "critic_hidden_dims": [
+        256,
+        128,
+        64
+      ],
+      "activation": "elu",
+      "actor_obs_normalization": true,
+      "critic_obs_normalization": true
+    },
+    "seed": 44,
+    "actor_observation": "5x57 history,7 arm positions,7 arm velocities*.05,16 base actions,16 last residuals,9 goal values",
+    "action_layout": "16 residual joint deltas + forward command + yaw-rate command",
+    "training_model": "Original D1+G2 combined USD with original actuators; arm held at default",
+    "object_model": "006_mustard_bottle.usd, one per environment, kinematically carried",
+    "evaluation_required": "Proxy deliveries only; the official 18-object Task B is not attempted",
+    "critic_obs_dim": 353,
+    "env_metadata": {
+      "proxy": true,
+      "official_task_b": false,
+      "objects": 1,
+      "official_objects": 18,
+      "grasping": "skipped: object kinematically carried on a virtual tray",
+      "carried_object_loads_robot": false,
+      "release": "scripted: dropped when the tray is within 0.4 m of the bin centre and the robot is still moving forward (>0.55 m/s)",
+      "success_test": "object settled within 0.5 x bin radius of the bin centre and below the rim; the official test is the same form at the full 1.0 m radius",
+      "bin_geometry_source": "atec_rl_lab.tasks.task_b.terrain.flat_terrain_with_trash_bin",
+      "carry_offset_m": [
+        2.8,
+        0.0,
+        1.0
+      ],
+      "spawn_distance_m": [
+        4.0,
+        6.5
+      ],
+      "spawn_heading_noise_rad": 1.5707963267948966,
+      "episode_length_s": 20.0,
+      "multi_delivery": false,
+      "drops_per_episode_cap": 1,
+      "drop_settle_steps": null
+    }
+  },
+  "episode_length_s": 20.0,
+  "checkpoint_episode_length_s": 20.0,
+  "episode_length_matches_checkpoint": true,
+  "episodes": 385,
+  "deliveries": 385,
+  "delivery_rate": 1.0,
+  "env_delivery_success": 385,
+  "env_delivery_rate": 1.0,
+  "success_disagreements": 0,
+  "release_rate": 1.0,
+  "termination_counts": {
+    "delivery_success": 385
+  },
+  "mean_min_object_distance_m": 0.3724223099407051,
+  "mean_min_robot_clearance_m": 0.38917539026830106,
+  "negative_clearance_episodes": 10,
+  "mean_path_length_m": 2.98196953364781,
+  "mean_steps": 183.62857142857143,
+  "success_mean_final_object_distance_m": 0.3724223099407051,
+  "success_mean_path_length_m": 2.98196953364781,
+  "success_mean_start_distance_m": 5.174645307466581,
+  "success_min_start_distance_m": 4.009394645690918,
+  "success_max_start_distance_m": 6.498523712158203
+}

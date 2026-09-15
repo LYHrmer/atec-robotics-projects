@@ -1,0 +1,223 @@
+{
+  "scope": "Task B PROXY results only. NOT the official Task B: 1 object, no grasping, scripted release.",
+  "note": "Every number this deliverable reports, with the file that backs it and the config it was measured under. Files under results/superseded/ came from tools since found defective, or from a differently-driven controller -- do not cite them.",
+  "checkpoints": {
+    "published_single_delivery": {
+      "file": "weights/taskb_delivery_residual_399.pt",
+      "sha256": "10ca825de264a19a2eda2643bf81708a16d2366666472e424620fc07e9619e93",
+      "trained_with": {
+        "seed": 42,
+        "iterations": 400,
+        "num_envs": 256,
+        "episode_seconds": 20.0,
+        "multi_delivery": false
+      }
+    },
+    "multidelivery_trained_40s": {
+      "file": "logs/taskb_proxy_multi_01/model_399_final.pt",
+      "trained_with": {
+        "seed": 42,
+        "iterations": 400,
+        "num_envs": 256,
+        "episode_seconds": 40.0,
+        "multi_delivery": true
+      },
+      "note": "trained from scratch; not shipped, used only for the head-to-head"
+    },
+    "multidelivery_matched_20s_train": {
+      "file": "logs/taskb_proxy_md_matched/model_399_final.pt",
+      "trained_with": {
+        "seed": 42,
+        "iterations": 400,
+        "num_envs": 256,
+        "episode_seconds": 20.0,
+        "multi_delivery": true
+      },
+      "note": "matched-config control: published config with multi-delivery on"
+    }
+  },
+  "numbers": [
+    {
+      "reported_as": "headline single-delivery delivery rate",
+      "file": "verification_indist_20s.json",
+      "metric": "delivery_rate",
+      "value": 0.9818,
+      "numerator": "377/384",
+      "env_self_report": 0.9818,
+      "success_disagreements": 0,
+      "negative_clearance_episodes": 14,
+      "config": {
+        "checkpoint": "published_single_delivery",
+        "episode_seconds": 20.0,
+        "matches_checkpoint_training": true,
+        "num_envs": 128,
+        "episodes_per_env": 3,
+        "bin_scale": 2.0,
+        "release_radius": 0.4,
+        "heading_noise": 1.5707963267948966,
+        "spawn_min": 4.0,
+        "spawn_max": 6.5
+      }
+    },
+    {
+      "reported_as": "cross-seed 43",
+      "file": "verification_seed43_20s.json",
+      "metric": "delivery_rate",
+      "value": 0.9609,
+      "numerator": "369/384",
+      "env_self_report": 0.9609,
+      "success_disagreements": 0,
+      "negative_clearance_episodes": 25,
+      "config": {
+        "checkpoint": "seed43_20s",
+        "episode_seconds": 20.0,
+        "matches_checkpoint_training": true,
+        "num_envs": 128,
+        "episodes_per_env": 3,
+        "bin_scale": 2.0,
+        "release_radius": 0.4,
+        "heading_noise": 1.5707963267948966,
+        "spawn_min": 4.0,
+        "spawn_max": 6.5
+      }
+    },
+    {
+      "reported_as": "cross-seed 44",
+      "file": "verification_seed44_20s.json",
+      "metric": "delivery_rate",
+      "value": 1.0,
+      "numerator": "385/385",
+      "env_self_report": 1.0,
+      "success_disagreements": 0,
+      "negative_clearance_episodes": 10,
+      "config": {
+        "checkpoint": "seed44_20s",
+        "episode_seconds": 20.0,
+        "matches_checkpoint_training": true,
+        "num_envs": 128,
+        "episodes_per_env": 3,
+        "bin_scale": 2.0,
+        "release_radius": 0.4,
+        "heading_noise": 1.5707963267948966,
+        "spawn_min": 4.0,
+        "spawn_max": 6.5
+      }
+    },
+    {
+      "reported_as": "cross-seed 45",
+      "file": "verification_seed45_20s.json",
+      "metric": "delivery_rate",
+      "value": 0.8958,
+      "numerator": "344/384",
+      "env_self_report": 0.8906,
+      "success_disagreements": 2,
+      "negative_clearance_episodes": 29,
+      "config": {
+        "checkpoint": "seed45_20s",
+        "episode_seconds": 20.0,
+        "matches_checkpoint_training": true,
+        "num_envs": 128,
+        "episodes_per_env": 3,
+        "bin_scale": 2.0,
+        "release_radius": 0.4,
+        "heading_noise": 1.5707963267948966,
+        "spawn_min": 4.0,
+        "spawn_max": 6.5
+      }
+    },
+    {
+      "reported_as": "extrapolation at the trained config",
+      "file": "verification_extrap_7.0-8.5m_r0.40.json",
+      "metric": "delivery_rate",
+      "value": 0.482,
+      "numerator": "187/388",
+      "env_self_report": 0.482,
+      "success_disagreements": 0,
+      "negative_clearance_episodes": 1,
+      "config": {
+        "checkpoint": "published_single_delivery",
+        "episode_seconds": 20.0,
+        "matches_checkpoint_training": true,
+        "num_envs": 128,
+        "episodes_per_env": 3,
+        "bin_scale": 2.0,
+        "release_radius": 0.4,
+        "heading_noise": 1.5707963267948966,
+        "spawn_min": 7.0,
+        "spawn_max": 8.5
+      }
+    },
+    {
+      "reported_as": "extrapolation at r=0.50 (bridges the old figure)",
+      "file": "verification_extrap_7.0-8.5m_r0.50.json",
+      "metric": "delivery_rate",
+      "value": 0.4741,
+      "numerator": "183/386",
+      "env_self_report": 0.4741,
+      "success_disagreements": 0,
+      "negative_clearance_episodes": 3,
+      "config": {
+        "checkpoint": "published_single_delivery",
+        "episode_seconds": 20.0,
+        "matches_checkpoint_training": true,
+        "num_envs": 128,
+        "episodes_per_env": 3,
+        "bin_scale": 2.0,
+        "release_radius": 0.5,
+        "heading_noise": 1.5707963267948966,
+        "spawn_min": 7.0,
+        "spawn_max": 8.5
+      },
+      "note": "release_radius 0.50 is NOT the trained value (0.40); used only for comparability"
+    },
+    {
+      "reported_as": "deliveries per episode, published checkpoint",
+      "file": "multidelivery_published_ckpt.json",
+      "metric": "deliveries_per_episode",
+      "value": 7.569,
+      "stdev": 3.048,
+      "deliveries_per_drop": 0.982,
+      "max_in_episode": 10,
+      "capped_episodes": "96/320",
+      "config": {
+        "checkpoint": "published_single_delivery",
+        "num_envs": 96,
+        "episode_seconds": 40.0,
+        "drop_cap": 10
+      },
+      "note": "RIGHT-CENSORED: 30% of episodes hit the 10-drop cap, so this is a lower bound"
+    },
+    {
+      "reported_as": "deliveries per episode, multi-delivery-trained",
+      "file": "multidelivery_trained_from_scratch.json",
+      "metric": "deliveries_per_episode",
+      "value": 5.529,
+      "stdev": NaN,
+      "deliveries_per_drop": 0.981,
+      "max_in_episode": 9,
+      "capped_episodes": "None/384",
+      "config": {
+        "checkpoint": "multidelivery_trained_40s",
+        "num_envs": 96,
+        "episode_seconds": 40.0,
+        "drop_cap": null
+      }
+    },
+    {
+      "reported_as": "matched-config multi-delivery control",
+      "file": "multidelivery_matched_config.json",
+      "metric": "deliveries_per_episode",
+      "value": 7.083,
+      "stdev": 1.971,
+      "deliveries_per_drop": 0.985,
+      "max_in_episode": 10,
+      "capped_episodes": "16/384",
+      "config": {
+        "checkpoint": "multidelivery_matched_20s_train",
+        "num_envs": 96,
+        "episode_seconds": 40.0,
+        "drop_cap": 10
+      }
+    }
+  ]
+}
