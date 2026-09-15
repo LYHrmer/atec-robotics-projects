@@ -7,13 +7,15 @@
 | 任务 | 机器人怎样完成任务 | 已验证的本机结果 | 代码与运行 | 视频与证据 |
 | --- | --- | --- | --- | --- |
 | **Task A：连续越障** | D1+G2 用相机估计行进方向，在已有行走策略上训练动作修正 | 提速版 **457.32 s / 286.005 m**，比原 505.66 s 少 **9.56%**；均只触发终点 | [Task A 入口](task_a/README.md) | [新旧横屏视频](docs/VIDEO_COMPARISON.md) · [速度验收](task_a/evidence/speed_070_050_02/speed_acceptance_audit.json) |
-| **Task B：首个接近分** | B2wPiper 用 RGB-D 接近目标，停稳伸臂后缓降机身 | seed 42 在 **65.56 s** 取得 **1 个接近分、0 个投递分**；尚未抓起或通关 | [首分方法与复现](docs/TASK_B_FIRST_SCORE.md) | [完整 1× 视频](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [独立得分审计](results/task_b_positive/plan_p2_lower02_seed42_01/independent_positive_audit.json) |
+| **Task B：抓起与投递** | B2wPiper 按真值泊车到物体旁，两段式伸臂夹取、抬升、直行搬运、抬过桶沿后松爪 | seed 42 在 **43.9 s** 触发官方 `objects_in_circle`，累计 **2 分**（1 接近 + 1 投递），全程 **0 非法接触**；**定位用真值，不是视觉策略** | [投递探针与复现](task_b/results/first_delivery_video.json) · [相机挂载标定](task_b/results/camera_mount_calibration.json) | [完整 1× 双相机录像](docs/videos/task_b_first_delivery_20260915_720p_1x.mp4) · [转码与出处](docs/videos/task_b_first_delivery_20260915_provenance.json) |
 | **Task E：三物体抓取入篮** | Piper 从彩色与深度图像定位物体，用运动学规划动作并检查抓放反馈 | seed 42 / seed 0 均为 **18/18 分**，分别 **53.78 s / 62.36 s** | [Task E 入口](docs/TASK_E.md) | [演示视频](media/task_e_fast_seed42_color.mp4) · [seed 42](results/fast_seed42_package.json) · [seed 0](results/fast_seed0_package.json) |
 | **Task E：模仿学习实验** | 从规则教师演示中学习六轴关节动作修正，保留感知、规划与抓放规则 | 独立 seed 1 **18/18 分、52.84 s**；同场景原规则 / 纯 DLS 为 62.96 / 63.16 s | [方法、数据与复现](docs/TASK_E_IMITATION.md) | [三组视频](docs/VIDEO_COMPARISON.md#task-e) · [比较记录](results/task_e_il/closed_loop/comparison_summary.json) |
 
 Task A 两个速度配置各有一次完整通过，原配置也存在失败；Task E 只验证了少量指定初态。这些结果来自 Isaac Sim / Isaac Lab 本机仿真，尚未证明广泛场景成功率、实机效果或官方线上成绩。
 
-**Task B 已取得首个有效接近分。** 2026-09-14 的完整回合运行 3378 步，首分时夹爪本体到物体根距离为 **0.199966689 m**；最终实测机身下降 **20.273 mm**，距离降至 **0.191444200 m**，无非法接触或官方终止。该奖励只证明接近，单次 seed 42 不能估计成功率；抓起、投递与 18 件通关仍待验证。[首分说明与证据](docs/TASK_B_FIRST_SCORE.md) · [后续执行方案](docs/TASK_B_EXECUTION_PLAN.md) · [保留的零分实验](docs/TASK_B_EXPERIMENTS.md)。
+**Task B 已在真值定位下打通抓起与投递，并且第一次留下录像。** 2026-09-15 的 oracle 探针回合 2369 步、47.3 秒：0.7 秒时官方 `grasped_objects` 被触发（这是出生时夹爪本体就在某物体 0.20 m 阈值内的**接近**项，不是夹住），6.2 秒抬升离地，10.2–40.7 秒直行搬运，40.7 秒抬过桶沿，**43.9 秒 `objects_in_circle` 触发、累计 2 分**，46.6 秒松爪，全程 0 非法接触。这段录像把相机打开重跑，**步数、总分（1.9999999552965164）和两个得分步（37、2195）与之前的无相机回合完全一致**。[录像与出处](docs/videos/task_b_first_delivery_20260915_provenance.json) · [探针与复现命令](task_b/results/first_delivery_video.json)。
+
+**这一步的定位仍来自真值**：底座按物体真实位姿泊车，所以它验证的是抓取与投递的机构与几何，不是感知或导航；**不是策略成绩，也不是 Task B 通关**。把真值换成视觉是当前的主线，交接与已确证约束见 [task_b/HANDOVER.md](task_b/HANDOVER.md)。相机挂载已单独实测标定：两个挂载模型与仿真差 3e-06 / 9e-06，模型引入的定位误差 0.6 mm；原先"挂载差 0.39 m"的结论是诊断读数 bug（`CameraCfg.update_latest_camera_pose` 默认 False，`pos_w` 冻结在初始化位姿）造成的，[证据](task_b/results/camera_mount_calibration.json)。
 
 Task E 的学习实验每组只运行一次，省时主要来自放置阶段减少等待；本轮满分终止时尚未完成独立的松爪留篮检查。原规则方案和历史视频继续保留。
 

@@ -46,16 +46,20 @@
 
 [基础策略完整失败原片](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-a-method-comparison-20260910/d1g2_taska_base_only_seed42.mp4)：seed 42，最大前向进展 31.296 m，86.96 s 因停滞退出；不是通关用时。[对照条件与论文参考](TASK_A_COMPARISON.md)。全部既有录像继续保留。
 
-## Task B：首个有效接近分
+## Task B：投递（真值定位）
 
-**[直接播放 Task B 首分完整 1× 视频](https://lyhrmer.github.io/atec-robotics-projects/task-b.html)**：seed 42，65.56 仿真秒取得 **1 个接近分、0 个投递分**；首分后继续记录 2 秒，无非法接触或官方终止。得分时夹爪本体到物体根位置为 **0.199966689 m**；这段录像没有证明抓起、投递或 Task B 通关。[方法、复现与审计](TASK_B_FIRST_SCORE.md)。
+**[完整 1× 双相机录像](videos/task_b_first_delivery_20260915_720p_1x.mp4)**：seed 42 的 oracle 探针回合，2369 步 / 47.3 媒体秒。0.7 秒官方 `grasped_objects` 触发（出生时夹爪本体已在某物体 0.20 m 阈值内的**接近**项，**不是夹住**），6.2 秒抬升离地，10.2–40.7 秒直行搬运，40.7 秒抬过桶沿，**43.9 秒 `objects_in_circle` 触发、累计 2 分**，46.6 秒松爪，全程 0 非法接触。这段录像把相机打开重跑，**步数、总分与两个得分步与之前的无相机回合完全一致**。
+
+**底座按物体真实位姿泊车**，所以这段录像是抓取与投递的机构与几何验证，**不是感知或导航结果，也不是 Task B 通关**。[探针、复现命令与逐步时间轴](../task_b/results/first_delivery_video.json)。
 
 | 文件 | 展示与来源 | 获取位置 |
 | --- | --- | --- |
-| 当前首分网页视频 | 同次完整 1×，1280×720，约 15.36 MB；双相机原画面加上下留边，保留全部 675 帧 | [在线播放](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [转码记录](videos/task_b_first_score_20260914_provenance.json) |
-| 当前首分原片 | 官方头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 169.71 MB | [task_b_first_score_20260914_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4) |
-| 当前首分完整证据 | 原结果、得分事件、遥测、压缩逐步轨迹、源码快照、原片与独立审计 | [task_b_first_score_20260914_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_evidence.tar.gz) |
+| 本次网页视频 | 完整 1×，1280×720，约 10.80 MB；双相机原画面加上下留边，保留全部 473 帧 | [转码与出处](videos/task_b_first_delivery_20260915_provenance.json) |
+| 本次原片 | 头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 105.76 MB | 本机保留（超过 GitHub 单文件 100 MB 上限）；sha256 记在转码记录里 |
+| 首次接近分网页视频 | 同次完整 1×，1280×720，约 15.36 MB；双相机原画面加上下留边，保留全部 675 帧 | [在线播放](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [转码记录](videos/task_b_first_score_20260914_provenance.json) |
+| 首次接近分原片 | 官方头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 169.71 MB | [task_b_first_score_20260914_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4) |
+| 首次接近分完整证据 | 原结果、得分事件、遥测、压缩逐步轨迹、源码快照、原片与独立审计 | [task_b_first_score_20260914_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_evidence.tar.gz) |
 
-原片与网页视频时长均为 **67.50 秒**；完整环境记录为 **67.56 仿真秒**，差异来自原生 10 Hz 视频采样。首分时刻取自第 3278 个环境步后的事件记录，不根据视频帧估计。网页转码没有生成帧或修改机器人动作，帧数与时间轴保持不变。
+本次媒体时长 **47.30 秒**，回合仿真时长 **47.38 秒**（2369 步 × 0.02 s），差异来自原生 10 Hz 视频采样；帧数与时间轴未改动，没有生成帧或修改机器人动作。得分时刻取自第 **2195** 个环境步后的事件记录，不根据视频帧估计。[首分历史与方法](TASK_B_FIRST_SCORE.md) 继续保留。
 
 零分历史录像仍只在本机归档；其 [比较数据](../results/task_b_bootstrap/comparison.json) 中 `video.published=false`、`url=null` 继续准确表示没有公开视频。[旧实验与失败分析](TASK_B_EXPERIMENTS.md) 和 [基础证据包](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-bootstrap-20260910) 保留原记录。

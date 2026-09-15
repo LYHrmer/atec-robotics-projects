@@ -1,0 +1,66 @@
+{
+  "run_id": "delivery_video_record_01",
+  "scope": "B2wPiper, OFFICIAL ATEC-TaskB-B2wPiper env, single env, seed 42, cameras ENABLED and recorded. ORACLE probe: the base is parked from the object's true pose, so this measures the delivery mechanics and shows them, not perception or a policy.",
+  "claim": "The official objects_in_circle reward fires while the run is on camera. This is the same oracle delivery as task_b/results/oracle_delivery.json, re-run with the cameras kept alive so the run could be recorded; it is not a policy result and not a Task B pass.",
+  "command": "bash run.sh task-b --mode grasp_probe --probe_object 10 --probe_standoff 0.60 --probe_drop 0.06 --probe_clearance 0.03 --probe_preload 0.025 --probe_deliver --probe_carry_cmd 0.30 --probe_carry_stop 1.58 --probe_place_lift 0.40 --probe_place_forward 0.12 --settle_calls 200 --probe_park_settle 150 --max_steps 3800 --rgb_interval 0 --video",
+  "reproduces_the_camera_free_run_exactly": {
+    "camera_free_reference": "/tmp/atec-m2/run_deliver08 (task_b/results/oracle_delivery.json)",
+    "steps": 2369,
+    "score_raw_total": 1.9999999552965164,
+    "scoring_steps": [37, 2195],
+    "reward_term_totals_raw": {"grasped_objects": 1.0, "objects_in_circle": 1.0},
+    "terminated": false,
+    "truncated": false,
+    "max_official_illegal_contact_force_n": 0.0,
+    "note": "identical step count, identical score to six significant figures and the same two scoring steps, so keeping the cameras on changed nothing the probe consumes -- same oracle plan, same action terms, same physics"
+  },
+  "source_video": {
+    "path_in_run_dir": "public_cameras.mp4",
+    "sha256": "d90187256b95f3ffe7e1657ceda484bea2793f9a0e6e86e286927b4aab33a0d3",
+    "bytes": 105758691,
+    "ffprobe": {
+      "codec_name": "h264", "width": 1280, "height": 480,
+      "r_frame_rate": "10/1", "nb_frames": "473",
+      "duration_s": "47.300000"
+    },
+    "layout": "head RGB (640x480) | wrist RGB (640x480), one row",
+    "kept_local": "over GitHub's 100 MB per-file limit, so only the re-encode below is committed"
+  },
+  "web_video": {
+    "path": "docs/videos/task_b_first_delivery_20260915_720p_1x.mp4",
+    "sha256": "536e809902b2a5c855348da0a54dec5bb9b6b16319e5139e2f10855f219d08c2",
+    "bytes": 10798983,
+    "ffprobe": {
+      "codec_name": "h264", "width": 1280, "height": 720, "pix_fmt": "yuv420p",
+      "r_frame_rate": "10/1", "nb_frames": "473",
+      "duration_s": "47.300000"
+    }
+  },
+  "poster": {
+    "path": "docs/videos/task_b_first_delivery_20260915_poster.jpg",
+    "sha256": "f338a719fb20d55fd7539db49d26a78e6531376dfb05319391268b418346befb",
+    "source_media_time_s": 43.9
+  },
+  "transformation": "full 1x recording, unchanged frame count and timing, pad 1280x480 to 1280x720; lossy H.264 re-encode only; no generated frames or edited robot motion",
+  "ffmpeg_version": "ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers",
+  "video_arguments": [
+    "-vf", "pad=1280:720:0:120:color=0x101820",
+    "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "27",
+    "-maxrate", "1800k", "-bufsize", "3600k", "-threads", "4",
+    "-pix_fmt", "yuv420p", "-movflags", "+faststart"
+  ],
+  "what_to_watch": {
+    "timeline_source": "the probe's own phase record in trace.jsonl, in policy seconds; the recording is 10 fps against a 50 Hz policy, so media time equals policy time exactly",
+    "0.0_s": "REACH -- the two-stage reach begins from the settled stance",
+    "2.7_s": "CLOSE -- the jaws close on the bottle; the wrist view fills with yellow",
+    "6.2_s": "LIFT -- the bottle leaves the ground",
+    "10.2_s": "CARRY -- the drive to the bin, bottle held, 30 s long; the wrist view keeps it in frame with its label legible (verified stills at 12.1 s, 38.1 s and 42.1 s)",
+    "40.7_s": "PLACE_RAISE -- the bottle comes up over the bin's 0.50 m lip",
+    "43.2_s": "PLACE_DRIVE -- the inward move past the wall",
+    "43.9_s": "objects_in_circle fires (step 2195). The on-frame raw score flips 1 -> 2.",
+    "44.1_s": "PLACE_IN",
+    "46.6_s": "RELEASE -- the jaws open and the object drops",
+    "watch_out": "The raw score reads 1 from 0.7 s onward. That is the official grasped_objects proximity term firing at spawn -- the gripper body starts within its 0.20 m threshold of an object -- and it is NOT a grasp. The grasp itself is the LIFT at 6.2 s; the second point, at 43.9 s, is the delivery."
+  },
+  "caveat": "The overlay and the score come from the evaluator. The raw recording is 105 MB and is not in git; the committed file is a re-encode of it, so its hash is a hash of the re-encode."
+}

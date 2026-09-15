@@ -135,8 +135,13 @@ if args.mode == "camera_calibration":
                      "steps and the fit keeps only steps still for 25, so a shorter hold has no "
                      "usable sample in it")
 if args.mode == "grasp_probe":
-    if not args.camera_free:
-        parser.error("grasp_probe is an oracle probe and consumes no images; pass --camera_free")
+    # The probe never reads an image, so --camera_free is the normal way to run it.
+    # --video is the one reason to keep the cameras alive, and it changes nothing
+    # the probe consumes: the same oracle plan, the same action terms, the same
+    # physics. The extra image observation group is computed and thrown away.
+    if not args.camera_free and not args.video:
+        parser.error("grasp_probe is an oracle probe and consumes no images; pass --camera_free, "
+                     "or --video to keep the cameras alive purely so the run can be recorded")
     if not 1 <= args.probe_object <= 18 and args.probe_object != 0:
         parser.error("--probe_object must be 0 (nearest) or 1-18")
     if not .1 <= args.probe_standoff <= .9:
