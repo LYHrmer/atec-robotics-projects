@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import numpy as np
 
+from task_b import leg_kinematics as legs
 from task_b.arm_kinematics import (arm_joints_from_proprio, arm_targets_to_action,
                                   ee_camera_transform, head_camera_transform,
                                   fk, solve_ik)
@@ -18,7 +19,8 @@ from task_b.stationary_target_gate import StationaryTargetGate
 class FirstReachPolicy:
     def __init__(self, schema, observation_joint_names, defaults, dt=.02, *,
                  settle_calls=100, ramp_calls=100, reach_only=False,
-                 forward_cmd=.20, turn_cap=.20, standoff=.56, turn_gain=.4, lowering_m=0.):
+                 forward_cmd=.20, turn_cap=.20, standoff=.56, turn_gain=.4, lowering_m=0.,
+                 grasp=False):
         schema.validate()
         if dt <= 0 or not np.isfinite(dt) or not 0 < forward_cmd <= .6:
             raise ValueError('Invalid timestep or forward command')
@@ -35,17 +37,19 @@ class FirstReachPolicy:
         self.pause_for_stance = False
         self.near_view = False
         self.view_locked = False
-        if not np.isfinite(lowering_m) or not 0 <= lowering_m <= .03:
-            raise ValueError('Reach lowering must lie in [0,.03] m')
+        if not np.isfinite(lowering_m) or not 0 <= lowering_m <= .25:
+            raise ValueError('Reach lowering must lie in [0,.25] m')
+        if grasp and lowering_m <= 0.:
+            raise ValueError('grasp requires a lowering amplitude: the jaws cannot reach an object '
+                             'from the unlowered stance')
+        self.grasp = bool(grasp)
         self.lowering_m, self.lowering_alpha = lowering_m, 0.
         self.leg = schema.term(LEG_TERM)
-        # Static leg-chain solution for about 2 cm lowering at the compact
-        # stance, keeping wheel positions approximately fixed. Actual descent
-        # is not guaranteed; the outer joint loop and original contacts decide.
-        deltas = {'FR': [-.01361, .02854, -.05819], 'FL': [.01298, .02856, -.05866],
-                  'RR': [-.00992, .03810, -.06400], 'RL': [.00944, .03883, -.06426]}
-        self.lower_delta = np.array([deltas[n[:2]][('hip','thigh','calf').index(n.split('_')[1])]
-                                     for n in self.leg.joint_names]) * (lowering_m/.02)
+        # The descent reference is solved from the leg geometry at the moment it is
+        # authorized, against the pose actually measured then -- see
+        # _solve_lower_delta. It is zero until then, and lowering_alpha is zero with
+        # it, so no descent is commanded before authorization.
+        self.lower_delta = np.zeros(len(self.leg.joint_names))
         self.arm, self.wheel = schema.term(ARM_TERM), schema.term(WHEEL_TERM)
         self.sides = np.array([1. if wheel_side(n) == 'right' else -1. for n in self.wheel.joint_names])
         self.calls, self.alpha, self.state, self.debug = 0, 0., 'SETTLE', {}
@@ -92,6 +96,19 @@ class FirstReachPolicy:
         self.lower_increment_error_rad, self.lower_increment_fault_start = 0., None
         self.lower_beta, self.lower_alpha_half_call = None, None
         self.lower_hold_start = None
+        # The descent window is bounded on its own; when a grasp follows, the same
+        # budget has to cover the close-and-lift sequence too, or the window would
+        # expire mid-grasp.
+        self.grasp_close_s = 2.5      # long enough for the 0.02 m/s finger slew
+        self.grasp_hold_s = 1.5
+        self.grasp_lift_s = 3.
+        self.grasp_budget_s = 12.
+        self.lower_window_s = 6. + (self.grasp_budget_s if grasp else 0.)
+        # Jaw command, in metres of finger travel. The grip closes by driving both
+        # finger joints to their zero stops; see task_b/arm_kinematics.gripper_targets.
+        self.jaw_target = np.array([.035, -.035])
+        self.grasp_stage, self.grasp_stage_start = None, None
+        self.grasp_start = None
         arm_joints_from_proprio(np.zeros(84), self.names, self.defaults)
 
     def _phase(self, phase):
@@ -156,9 +173,12 @@ class FirstReachPolicy:
         """Total per-target deadline; only authorization adds the descent window.
 
         The original arm-reach deadline is never reset by a detection, a pause or
-        the admission wait, all of which keep counting inside it.
+        the admission wait, all of which keep counting inside it. The grasp
+        sequence is itself bounded, so its budget extends the deadline rather than
+        being cut off by the reach's own.
         """
-        return self.reach_timeout_s + (6. if self.lower_authorized else 0.)
+        return (self.reach_timeout_s + (6. if self.lower_authorized else 0.)
+                + (self.grasp_budget_s if self.grasp else 0.))
 
     def _detect(self, obs, images, q):
         candidates, errors, detectors = [], {}, {}
@@ -374,7 +394,7 @@ class FirstReachPolicy:
             motion = self._public_motion(obs)
             # Admission and descent deadlines also run during a rate-settle
             # early return; pausing must never extend either bounded window.
-            if self.lower_authorized and (self.calls-self.lower_authorized_call)*self.dt >= 6.:
+            if self.lower_authorized and (self.calls-self.lower_authorized_call)*self.dt >= self.lower_window_s:
                 return self._finish('lower_window_expired')
             if (not self.lower_authorized and self.lower_wait_start is not None
                     and (self.calls-self.lower_wait_start)*self.dt >= 3.):
@@ -443,7 +463,7 @@ class FirstReachPolicy:
         step = np.clip(self.reach_q-self.arm_command[:6], -.30*self.dt, .30*self.dt)
         proposed = self.arm_command[:6] + step
         self.arm_command[:6] = np.clip(proposed, q[:6]-.10, q[:6]+.10)
-        self.arm_command[6:] += np.clip(np.array([.035, -.035])-self.arm_command[6:],
+        self.arm_command[6:] += np.clip(self.jaw_target - self.arm_command[6:],
                                        -.02*self.dt, .02*self.dt)
         if self.lowering_m > 0. and not self.reach_only:
             outcome = self._lowering(obs, error, motion)
@@ -472,6 +492,33 @@ class FirstReachPolicy:
         else:
             self.reach_at_goal_start = None
         return self._action()
+
+    def _solve_lower_delta(self, leg_q):
+        """Leg-angle delta that lowers the body by lowering_m with the wheels planted.
+
+        Solved from the pose measured at authorization rather than from nominal
+        defaults: the loaded legs sit well below their unloaded angles, so the
+        descent must be relative to where the robot actually is. Holding each
+        wheel's (x, y) keeps the wheelbase and track, which makes the body drop by
+        the requested amount. Raises instead of commanding an unsolvable descent.
+        """
+        by_corner = {corner: np.array([leg_q[self.leg.joint_names.index(name)]
+                                       for name in legs.leg_joint_names(corner)])
+                     for corner in legs.CORNERS}
+        solved, residual = legs.descend_all(by_corner, self.lowering_m)
+        if residual > 1e-6:
+            raise RuntimeError(f"Lowering IK residual {residual:.2e} m at {self.lowering_m:.4f} m")
+        delta = np.array([solved[name.split('_')[0]][legs.LEG_LINKS.index(name.split('_')[1])]
+                          for name in self.leg.joint_names]) - leg_q
+        rise = {corner: float(legs.foot_body_xyz(corner, *solved[corner])[2]
+                              - legs.foot_body_xyz(corner, *by_corner[corner])[2])
+                for corner in legs.CORNERS}
+        if max(abs(value - self.lowering_m) for value in rise.values()) > 1e-4:
+            raise RuntimeError(f"Solved descent misses {self.lowering_m:.4f} m: {rise}")
+        self.debug['lower_solved_delta_rad'] = delta.tolist()
+        self.debug['lower_solved_residual_m'] = residual
+        self.debug['lower_solved_rise_per_corner_m'] = rise
+        return delta
 
     def _lowering(self, obs, error, motion):
         """Admit and drive the fixed-amplitude original leg reference descent.
@@ -525,6 +572,7 @@ class FirstReachPolicy:
             if self.lower_quiet_calls >= self.lower_window_calls and leg_range is not None and leg_range < .02:
                 self.lower_authorized, self.lower_authorized_call = True, self.calls
                 self.lower_reference_q0 = leg_q.copy()
+                self.lower_delta = self._solve_lower_delta(leg_q)
                 self.debug.update(lower_authorized_quiet_window_s=self.lower_quiet_window_s,
                                   lower_authorized_leg_window_range_rad=leg_range)
             elif self.lower_wait_start is not None and (self.calls-self.lower_wait_start)*self.dt >= 3.:
@@ -532,6 +580,10 @@ class FirstReachPolicy:
             else:
                 self.state_reason = 'waiting_for_public_quiet_window_before_fixed_lowering'
                 return None
+        if self.grasp_start is not None:
+            # Once the grasp has begun it owns the leg reference: re-entering the
+            # alpha gate below would ramp alpha straight back up and cancel the lift.
+            return self._grasp(obs)
         # Bounded joint response check against the commanded increment. Both
         # measures describe leg joints only, never actual body height.
         increment_error = float(np.max(np.abs((leg_q-self.lower_reference_q0)
@@ -545,7 +597,7 @@ class FirstReachPolicy:
                                                                  (self.calls-self.lower_hold_start)*self.dt),
                           lower_response_limits={'increment_error_rad': .06, 'fault_s': .2,
                                                  'beta_after_half_alpha_s': 1., 'beta_min': .15,
-                                                 'window_s': 6., 'hold_s': 2.},
+                                                 'window_s': self.lower_window_s, 'hold_s': 2.},
                           lower_response_claim='leg joint response to the fixed reference increment; '
                                                'no claim about actual chassis descent')
         if increment_error > .06:
@@ -567,6 +619,8 @@ class FirstReachPolicy:
             self.state_reason = 'holding_fixed_lowered_reference_after_bounded_descent'
             self.debug.update(reach_subphase='LOWER_HOLD', lower_hold_s=hold_s)
             if hold_s >= 2.:
+                if self.grasp:
+                    return self._grasp(obs)
                 return self._finish('reach_lowering_hold_complete')
         else:
             self.state_reason = 'incrementing_fixed_leg_reference_after_authorized_quiet_window'
@@ -575,9 +629,59 @@ class FirstReachPolicy:
             # no rate settle is running; a stop never clears or reverses it.
             if error < .04 and self.reach_settle_start is None:
                 self.lowering_alpha = min(1., self.lowering_alpha+self.dt/3.)
-        if elapsed >= 6.:
+        if elapsed >= self.lower_window_s:
             return self._finish('lower_window_expired')
         return None
+
+    def _grasp(self, obs):
+        """Close the jaws on whatever the reach placed them around, then lift.
+
+        This asserts no grasp. The policy cannot see the object, so it commands the
+        only two things it controls -- finger closure, and a bounded return of the
+        leg reference along the path it descended -- and the evaluator's own object
+        and gripper records decide whether anything was actually held.
+        """
+        if self.grasp_start is None:
+            self.grasp_start = self.calls
+        if self.grasp_stage is None:
+            self.grasp_stage, self.grasp_stage_start = 'CLOSE', self.calls
+        stage_s = (self.calls-self.grasp_stage_start)*self.dt
+        total_s = (self.calls-self.grasp_start)*self.dt
+        slack = float(np.max(np.abs(self.arm_command[6:])))
+        self.debug.update(reach_subphase='GRASP_'+self.grasp_stage, grasp_stage_s=stage_s,
+                          grasp_total_s=total_s, grasp_budget_s=self.grasp_budget_s,
+                          grasp_jaw_target=self.jaw_target.tolist(),
+                          grasp_jaw_command=self.arm_command[6:].tolist(),
+                          grasp_finger_slack_m=slack, lowering_alpha=self.lowering_alpha,
+                          grasp_claim='the two controlled actions only; whether an object is '
+                                      'between the fingers is measured, not claimed')
+        if total_s >= self.grasp_budget_s:
+            return self._finish('reach_grasp_timeout')
+
+        if self.grasp_stage == 'CLOSE':
+            self.jaw_target = np.zeros(2)
+            self.state_reason = 'closing_jaws_at_the_lowered_reach_goal'
+            if slack <= 1e-3:
+                self.grasp_stage, self.grasp_stage_start = 'CLOSE_HOLD', self.calls
+            return self._action()
+
+        if self.grasp_stage == 'CLOSE_HOLD':
+            self.state_reason = 'holding_closed_jaws_before_lifting'
+            if stage_s >= self.grasp_hold_s:
+                self.grasp_stage, self.grasp_stage_start = 'LIFT', self.calls
+            return self._action()
+
+        if self.grasp_stage == 'LIFT':
+            self.state_reason = 'raising_the_body_along_the_descent_reference'
+            self.lowering_alpha = max(0., self.lowering_alpha-self.dt/self.grasp_lift_s)
+            if self.lowering_alpha <= 0.:
+                self.grasp_stage, self.grasp_stage_start = 'LIFT_HOLD', self.calls
+            return self._action()
+
+        self.state_reason = 'holding_the_lifted_stance_after_the_grasp_attempt'
+        if stage_s >= self.grasp_hold_s:
+            return self._finish('reach_grasp_lift_complete')
+        return self._action()
 
     def act(self, proprio, image):
         self.calls += 1
@@ -769,6 +873,16 @@ class FirstReachPolicy:
                     target_selection='small bearing then distance; temporal visual match',
                     forward_cmd=self.forward_cmd, turn_cap=self.turn_cap, turn_gain=self.turn_gain, standoff=self.standoff,
                     lowering_m=self.lowering_m,
+                    grasp_contract={'enabled': self.grasp,
+                                    'close_travel_m': [0., 0.],
+                                    'stages': ['CLOSE', 'CLOSE_HOLD', 'LIFT', 'LIFT_HOLD'],
+                                    'budget_s': self.grasp_budget_s,
+                                    'lift_s': self.grasp_lift_s,
+                                    'jaw_target_m': self.jaw_target.tolist(),
+                                    'scope': 'commands finger closure and a bounded return of the '
+                                             'leg reference along the descent path; it makes no '
+                                             'contact, force or held-object claim -- the evaluator '
+                                             'records decide'},
                     settle_calls=self.settle_calls, calls=self.calls, state=self.state,
                     done_reason=self.done_reason,
                     visual_reach_contract='stationary two-sample raw localization of one yellow '
@@ -798,7 +912,7 @@ class FirstReachPolicy:
                                                      'leg_window_range_rad': .02},
                                        'authorized': bool(self.lower_authorized),
                                        'authorized_step': self.lower_authorized_call,
-                                       'window_s': 6., 'hold_s': 2.,
+                                       'window_s': self.lower_window_s, 'hold_s': 2.,
                                        'response': {'increment_error_rad': .06, 'fault_s': .2,
                                                     'beta_min': .15, 'beta_after_half_alpha_s': 1.},
                                        'scope': 'one latched authorization from a continuous public quiet '

@@ -38,12 +38,24 @@ ACTION_MODES = {"JointPositionAction": "position", "JointVelocityAction": "veloc
 
 parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument("--output", type=Path, required=True, help="New artifact directory; never overwritten.")
-parser.add_argument("--mode", choices=("hold", "forward", "turn", "crouch", "visual_approach", "first_reach", "reach_probe"), default="hold")
+parser.add_argument("--mode", choices=("hold", "forward", "turn", "crouch", "visual_approach", "first_reach", "reach_probe", "stance_descend", "grasp_probe"), default="hold")
+parser.add_argument("--camera_free", action="store_true", help="Build the official task with the three scene cameras and the lidar nulled and the image/extero observation groups removed, so Kit never creates a render product. Required for modes that do not consume images.")
+parser.add_argument("--stance_drop_max", type=float, default=.24, help="stance_descend: maximum commanded wheels-planted body drop, in metres.")
+parser.add_argument("--stance_drop_rate", type=float, default=.03, help="stance_descend: commanded descent rate, m/s.")
+parser.add_argument("--stance_hold_s", type=float, default=2., help="stance_descend: seconds to hold the final commanded drop.")
+parser.add_argument("--stance_grid_step", type=float, default=.005, help="stance_descend: leg-solution grid spacing, m.")
+parser.add_argument("--probe_object", type=int, default=0, help="grasp_probe: object index 1-18; 0 picks the one nearest the robot after settling.")
+parser.add_argument("--probe_standoff", type=float, default=.50, help="grasp_probe: body-frame forward distance to park the object at, m.")
+parser.add_argument("--probe_drop", type=float, default=.05, help="grasp_probe: wheels-planted body descent after the reach, m.")
+parser.add_argument("--probe_clearance", type=float, default=.03, help="grasp_probe: how far below the object's top the jaw midpoint aims, m. Negative aims above the object, which isolates the gripper from the object.")
+parser.add_argument("--probe_park_settle", type=int, default=100, help="grasp_probe: steps to settle after parking, before measuring the object.")
+parser.add_argument("--probe_preload", type=float, default=.025, help="grasp_probe: finger travel commanded past the closed stop, m. The position servo only presses as hard as its error, so closing exactly at the stop leaves a weak grip.")
 parser.add_argument("--reach_forward", type=float, default=.20)
 parser.add_argument("--reach_turn_cap", type=float, default=.20)
 parser.add_argument("--reach_turn_gain", type=float, default=.4)
 parser.add_argument("--reach_standoff", type=float, default=.56)
-parser.add_argument("--reach_lowering", type=float, default=0., help="Fixed nominal reference lowering in [0,.03] m after stationary reach; actual descent is measured independently.")
+parser.add_argument("--reach_lowering", type=float, default=0., help="Fixed nominal reference lowering in [0,.25] m after stationary reach; actual descent is measured independently. The wheels-planted envelope was measured at 0.253 m with no official contact.")
+parser.add_argument("--reach_grasp", action="store_true", help="After the fixed lowering hold, close the jaws and lift back along the descent reference. Opt-in: the default path ends at the lowering hold.")
 parser.add_argument("--wheel_action_gain", type=float, default=1., help="Explicit actuator-drive probe: multiply normalized wheel requests before optional stabilization.")
 parser.add_argument("--stance_hold", action="store_true")
 parser.add_argument("--brake_wheel_hold", action="store_true", help="Hold public wheel-angle anchors during stationary first_reach phases; experimental physical wheel-speed feedback.")
@@ -71,24 +83,79 @@ if not 0 < args.wheel_action_gain <= 8:
     parser.error("--wheel_action_gain must be in (0,8]")
 if args.stance_profile != "off" and not args.stance_hold:
     parser.error("--stance_profile requires --stance_hold")
-if args.mode in ("first_reach", "reach_probe") and not 0 <= args.reach_lowering <= .03:
-    parser.error("--reach_lowering must be in [0,.03] m")
+if args.mode in ("first_reach", "reach_probe") and not 0 <= args.reach_lowering <= .25:
+    parser.error("--reach_lowering must be in [0,.25] m")
+if args.reach_grasp:
+    if args.mode != "first_reach":
+        parser.error("--reach_grasp requires --mode first_reach")
+    if args.reach_lowering <= 0:
+        parser.error("--reach_grasp requires --reach_lowering > 0: from the unlowered stance the "
+                     "fingertips stop above every Task B object")
 if args.brake_wheel_hold and args.mode != "first_reach":
     parser.error("--brake_wheel_hold requires --mode first_reach")
 if args.mode == "first_reach" and args.reach_lowering > 0 and not (
         args.brake_wheel_hold and args.stance_hold and args.stance_profile == "compact"):
     parser.error("first_reach lowering requires --brake_wheel_hold --stance_hold --stance_profile compact")
+if args.mode == "stance_descend":
+    if not args.stance_hold:
+        parser.error("stance_descend requires --stance_hold so the commanded leg geometry is tracked")
+    if not args.camera_free:
+        parser.error("stance_descend consumes no images; pass --camera_free")
+    for name in ("stance_drop_max", "stance_drop_rate", "stance_grid_step"):
+        if not getattr(args, name) > 0:
+            parser.error(f"--{name} must be positive")
+    if args.stance_drop_rate <= 0 or args.stance_hold_s < 0:
+        parser.error("--stance_drop_rate must be positive and --stance_hold_s non-negative")
+    if args.stance_grid_step > args.stance_drop_max:
+        parser.error("--stance_grid_step must not exceed --stance_drop_max")
+if args.camera_free and (args.video or args.vision_head):
+    parser.error("--camera_free cannot be combined with --video or --vision_head")
+if args.mode == "grasp_probe":
+    if not args.camera_free:
+        parser.error("grasp_probe is an oracle probe and consumes no images; pass --camera_free")
+    if not 1 <= args.probe_object <= 18 and args.probe_object != 0:
+        parser.error("--probe_object must be 0 (nearest) or 1-18")
+    if not .1 <= args.probe_standoff <= .9:
+        parser.error("--probe_standoff must be in [0.1, 0.9] m")
+    if not 0. < args.probe_drop <= .25:
+        parser.error("--probe_drop must be in (0, 0.25] m")
+    if not -.12 <= args.probe_clearance <= .08:
+        parser.error("--probe_clearance must be in [-0.12, 0.08] m")
+    if args.probe_park_settle < 1:
+        parser.error("--probe_park_settle must be >= 1")
+    if not 0. <= args.probe_preload <= .08:
+        parser.error("--probe_preload must be in [0, 0.08] m")
 # This bootstrap is offscreen only: it shares a single 8 GB GPU and must not take
-# a display. The official image observation group always needs Kit cameras.
+# a display. The official image observation group always needs Kit cameras, so
+# image-free modes must remove that group rather than rely on headless alone.
 args.headless = True
-args.enable_cameras = True
-if not getattr(args, "experience", ""):
+args.enable_cameras = not args.camera_free
+if not args.camera_free and not getattr(args, "experience", ""):
+    # The rendering experience is only correct when the image observation group
+    # is present. An image-free run must take AppLauncher's plain headless
+    # experience so Kit builds no render product at all.
     experience = compatible_experience(headless=True)
     if experience is not None:
         args.experience = str(experience)
 args.output.mkdir(parents=True, exist_ok=False)
 selected_experience = getattr(args, "experience", "")
+if args.camera_free:
+    # Isaac Lab 2.3.2 drops the `create_new_stage=False` it computes for headless
+    # runs: AppLauncher._sim_app_config keeps only the keys listed in
+    # _SIM_APP_CFG_TYPES, and `create_new_stage` is absent from that dict. The app
+    # then falls back to its own default of True, so SimulationApp._wait_for_viewport
+    # never takes its "no new stage" exit and spins forever -- a renderer-free
+    # experience never produces a viewport handle. Declaring the key lets the value
+    # Isaac Lab already computed reach the app. It changes nothing else: with a
+    # viewport present the loop exits on its own, which is why camera runs are fine.
+    AppLauncher._SIM_APP_CFG_TYPES["create_new_stage"] = [bool]
 app = AppLauncher(args).app
+if args.camera_free:
+    # With create_new_stage=False, SimulationApp skips its own new_stage() call, so
+    # the stage that SimulationContext requires has to be created here -- the same
+    # single call SimulationApp would have made. Nothing else about the app changes.
+    import omni.usd  # noqa: E402  (importable only after the app exists)
+    omni.usd.get_context().new_stage()
 
 import gymnasium as gym  # noqa: E402
 import numpy as np  # noqa: E402
@@ -253,6 +320,155 @@ def write_source_manifest(output: Path) -> dict:
     return manifest
 
 
+#: Vertical half-extent of each Task B object type, from its USD bounds and the
+#: spawn rotation in task_b/env_cfg.py. The origin is the bounding-box centre, so
+#: top-of-object = resting root z + this.
+OBJECT_VERTICAL_HALF_EXTENT = {"sugar": 0.04635, "mustard": 0.09565, "banana": 0.01930}
+#: World-frame direction of each type's narrowest horizontal extent, from the spawn
+#: quaternions in task_b/env_cfg.py. The fingers must close across this axis.
+NARROW_HORIZONTAL_AXIS = {"sugar": (1., 0.), "mustard": (0., 1.), "banana": (0., 1.)}
+
+
+def object_kind(index: int) -> str:
+    return "sugar" if index <= 6 else "mustard" if index <= 12 else "banana"
+
+
+def park_and_measure(env, robot, schema, args, dt) -> dict:
+    """Probe setup: settle, park the base beside one object, measure the plan.
+
+    This is ORACLE setup, not policy behaviour. It reads true object poses and
+    writes the root pose so the chosen object ends up at the requested standoff,
+    then re-measures the object in the settled body frame and picks the grasp
+    point. Everything after this -- reach, descent, finger closure, lift -- is
+    commanded through the ordinary action terms and executed by the environment.
+    """
+    from scipy.spatial.transform import Rotation
+    from task_b.control import LEG_TERM
+
+    zero = torch.zeros(1, schema.total_dim, device=env.unwrapped.device)
+
+    def object_xyz(index):
+        return task_object(index).data.root_pos_w[0].detach().cpu().numpy().copy()
+
+    def task_object(index):
+        return env.unwrapped.scene[f"object_{index}"]
+
+    def base_pose():
+        position = robot.data.root_pos_w[0].detach().cpu().numpy().copy()
+        quaternion = robot.data.root_quat_w[0].detach().cpu().numpy().copy()
+        return position, quaternion
+
+    with torch.inference_mode():
+        for _ in range(args.settle_calls):
+            obs = env.step(zero)[0]
+    base, _ = base_pose()
+
+    if args.probe_object:
+        target = int(args.probe_object)
+    else:
+        target = int(np.argmin([np.linalg.norm(object_xyz(i)[:2] - base[:2])
+                                for i in range(1, 19)])) + 1
+    obj = object_xyz(target)
+    # Aim the JAWS, not just the base. The fingers slide along the gripper's local
+    # +Y, so that axis must line up with the object's narrow horizontal side or the
+    # jaws close across the wide side and cannot straddle it. Each type's narrow
+    # side is fixed in the WORLD by its spawn quaternion (env_cfg.py): sugar has its
+    # 45 mm axis along world x, mustard and banana their 58 mm / 74 mm axis along
+    # world y. Park so body +Y is that axis, and place the base behind the object
+    # along the perpendicular.
+    narrow = np.array(NARROW_HORIZONTAL_AXIS[object_kind(target)])
+    approach = np.array([-narrow[1], narrow[0]])          # body +X, perpendicular to the jaws
+    parked = np.array([obj[0] - args.probe_standoff * approach[0],
+                       obj[1] - args.probe_standoff * approach[1], base[2]])
+    yaw = float(np.arctan2(approach[1], approach[0]))
+    quaternion = np.array([np.cos(yaw / 2.), 0., 0., np.sin(yaw / 2.)])
+    pose = torch.tensor(np.r_[parked, quaternion], device=env.unwrapped.device,
+                        dtype=torch.float32).unsqueeze(0)
+    with torch.inference_mode():
+        robot.write_root_pose_to_sim(pose)
+        robot.write_root_velocity_to_sim(torch.zeros(1, 6, device=env.unwrapped.device))
+        for _ in range(args.probe_park_settle):
+            obs = env.step(zero)[0]
+
+    # Descend BEFORE measuring. The descent slides the base several centimetres, so
+    # aiming the arm on the standing stance and lowering afterwards carries the jaws
+    # off the object -- measured 4.4 cm off on a mustard bottle, wider than the
+    # fingers' 2.2 cm half-span.
+    parked_leg_q = leg_pose(robot, schema)
+    delta = solve_descent(parked_leg_q, schema, args.probe_drop)
+    leg_term = schema.term(LEG_TERM)
+    with torch.inference_mode():
+        for fraction in np.linspace(0., 1., max(2, int(2. / dt))):
+            action = torch.zeros(1, schema.total_dim, device=env.unwrapped.device)
+            action[0, leg_term.start:leg_term.stop] = torch.as_tensor(
+                fraction * delta / leg_term.scale, device=env.unwrapped.device)
+            obs = env.step(action)[0]
+        for _ in range(args.probe_park_settle):
+            action = torch.zeros(1, schema.total_dim, device=env.unwrapped.device)
+            action[0, leg_term.start:leg_term.stop] = torch.as_tensor(
+                delta / leg_term.scale, device=env.unwrapped.device)
+            obs = env.step(action)[0]
+
+    base, quaternion = base_pose()
+    rotation = Rotation.from_quat(quaternion[[1, 2, 3, 0]]).as_matrix()
+    obj_body = rotation.T @ (object_xyz(target) - base)
+
+    # A wheel standing on the object ruins the experiment: it tips it over during the
+    # reach and the object can never be gripped. Measured on a mustard bottle, the
+    # front wheel edge reaches body x 0.563 in the descended stance.
+    from task_b import leg_kinematics as legs
+    leg_q = leg_pose(robot, schema)
+    leg_names = list(schema.term(LEG_TERM).joint_names)
+    wheel_front = max(
+        legs.foot_body_xyz(corner, *[leg_q[leg_names.index(n)] for n in legs.leg_joint_names(corner)])[0]
+        + legs.WHEEL_RADIUS_M for corner in legs.CORNERS)
+    if obj_body[0] <= wheel_front + 0.01:
+        raise RuntimeError(
+            f"target object sits at body x {obj_body[0]:.4f} but the furthest-forward wheel edge reaches "
+            f"{wheel_front:.4f}; the wheel would stand on it. Increase --probe_standoff to at least "
+            f"{wheel_front + 0.02:.2f} m (the top-down IK stays solvable to about 0.62 m).")
+
+    kind = object_kind(target)
+    top = float(obj_body[2] + OBJECT_VERTICAL_HALF_EXTENT[kind])
+    grasp_point = np.array([obj_body[0], obj_body[1], top - args.probe_clearance])
+    return {
+        "target_object": target, "target_kind": kind,
+        "standoff_m": float(args.probe_standoff), "park_settle_steps": int(args.probe_park_settle),
+        "settled_base_xyz": base.tolist(),
+        "descended_base_z_m": float(base[2]),
+        "object_body_xyz": obj_body.tolist(), "object_top_body_z": top,
+        "front_wheel_edge_body_x_m": wheel_front,
+        "grasp_point_body": grasp_point.tolist(),
+        "drop_m": float(args.probe_drop), "clearance_m": float(args.probe_clearance),
+        "descent_leg_delta_rad": delta.tolist(),
+        "oracle": "the object's true pose is read, the base pose is written and the body is "
+                  "lowered before the measurement; this is probe setup, not a policy result. The "
+                  "descent is commanded through the same leg action term the policy uses.",
+    }, obs, delta
+
+
+def leg_pose(robot, schema) -> np.ndarray:
+    """Current leg joint angles in action-term order."""
+    from task_b.control import LEG_TERM
+    q = robot.data.joint_pos[0].detach().cpu().numpy()
+    names = list(schema.joint_names)
+    return np.array([q[names.index(name)] for name in schema.term(LEG_TERM).joint_names])
+
+
+def solve_descent(leg_q, schema, drop_m) -> np.ndarray:
+    """Joint delta that lowers the body by drop_m with the wheels planted."""
+    from task_b import leg_kinematics as legs
+    from task_b.control import LEG_TERM
+    by_corner = {corner: np.array([leg_q[schema.term(LEG_TERM).joint_names.index(name)]
+                                   for name in legs.leg_joint_names(corner)])
+                 for corner in legs.CORNERS}
+    solved, residual = legs.descend_all(by_corner, drop_m)
+    if residual > 1e-6:
+        raise RuntimeError(f"Probe descent IK residual {residual:.2e} m at {drop_m:.4f} m")
+    return np.array([solved[name.split('_')[0]][legs.LEG_LINKS.index(name.split('_')[1])]
+                     for name in schema.term(LEG_TERM).joint_names]) - leg_q
+
+
 def main() -> None:
     output = args.output
     started = time.monotonic()
@@ -266,6 +482,19 @@ def main() -> None:
         cfg.scene.num_envs = 1
         cfg.sim.device = args.device
         cfg.sim.use_fabric = True
+        if args.camera_free:
+            # Null the sensors and drop the observation groups that read them, so
+            # Kit creates no render product at all. Task B's object layout, terrain,
+            # robot, actions, rewards and terminations are untouched.
+            for name in ("head_camera", "ee_camera", "ee_dual_camera", "lidar_sensor"):
+                if getattr(cfg.scene, name, None) is not None:
+                    setattr(cfg.scene, name, None)
+            cfg.observations.image = None
+            cfg.observations.extero = None
+            # The terrain's MDL material exists only for appearance. Leaving it set
+            # makes a renderer-free app drive MDL compilation, which stalls startup.
+            if getattr(cfg.scene, "terrain", None) is not None:
+                cfg.scene.terrain.visual_material = None
         # Mirror the official runner, which always applies the action spec helper.
         cfg = apply_safe_action_spec(cfg, None)
 
@@ -287,6 +516,9 @@ def main() -> None:
         else:
             observed_names = [robot.data.joint_names[int(i)] for i in observed_ids]
         defaults = dict(zip(schema.joint_names, schema.default_joint_pos.tolist()))
+        probe_plan, probe_descent_delta = None, None
+        if args.mode == "grasp_probe":
+            probe_plan, obs, probe_descent_delta = park_and_measure(env, robot, schema, args, dt)
         visual_mode = args.mode in ("visual_approach", "first_reach", "reach_probe")
         if args.mode in ("first_reach", "reach_probe"):
             from task_b.first_reach import FirstReachPolicy
@@ -294,7 +526,20 @@ def main() -> None:
                                       settle_calls=args.settle_calls, ramp_calls=args.ramp_calls,
                                       reach_only=args.mode == "reach_probe", forward_cmd=args.reach_forward,
                                       turn_cap=args.reach_turn_cap, standoff=args.reach_standoff,
-                                      turn_gain=args.reach_turn_gain, lowering_m=args.reach_lowering)
+                                      turn_gain=args.reach_turn_gain, lowering_m=args.reach_lowering,
+                                      grasp=args.reach_grasp)
+        elif args.mode == "stance_descend":
+            from task_b.stance_descend import StanceDescendPolicy
+            policy = StanceDescendPolicy(schema, observed_names, defaults, dt=dt,
+                                         settle_calls=args.settle_calls, drop_max=args.stance_drop_max,
+                                         drop_rate=args.stance_drop_rate, hold_s=args.stance_hold_s,
+                                         grid_step=args.stance_grid_step)
+        elif args.mode == "grasp_probe":
+            from task_b.grasp_probe import GraspProbePolicy
+            policy = GraspProbePolicy(schema, observed_names, defaults, dt=dt,
+                                      grasp_point_body=probe_plan["grasp_point_body"],
+                                      descent_delta_rad=probe_descent_delta,
+                                      preload_m=args.probe_preload)
         elif args.mode == "visual_approach":
             from task_b.visual_approach import VisualApproachPolicy
             policy = VisualApproachPolicy(schema, observed_names, defaults, dt=dt,
@@ -617,7 +862,21 @@ def main() -> None:
                     if steps else None)
         result = {
             "task": TASK_ID, "mode": args.mode, "seed": args.seed, "device": args.device,
-            "headless": True, "enable_cameras": True, "use_fabric": True,
+            "headless": True, "enable_cameras": not args.camera_free,
+            "camera_free": args.camera_free,
+            "camera_free_scope": ("scene head_camera/ee_camera/ee_dual_camera and lidar_sensor set to None, "
+                                  "observations.image and observations.extero group set to None, and the "
+                                  "terrain visual_material set to None; object layout, terrain geometry, "
+                                  "robot, actions, rewards and terminations untouched"
+                                  if args.camera_free else None),
+            "camera_free_launcher_patch": ("AppLauncher._SIM_APP_CFG_TYPES['create_new_stage']=[bool] added "
+                                           "in-process so the create_new_stage=False Isaac Lab already "
+                                           "computes survives AppLauncher's config filter; without it a "
+                                           "renderer-free app spins in SimulationApp._wait_for_viewport. "
+                                           "omni.usd.get_context().new_stage() is then called once to create "
+                                           "the stage SimulationApp would otherwise have created"
+                                           if args.camera_free else None),
+            "use_fabric": True,
             "experience": selected_experience or None,
             "camera_fabric_compatibility": "task_a.tools.d1g2_taska_camera_compat.prepare_camera_views "
                                            "(read-only recursive world-pose reader; preserves moving camera inheritance)",
@@ -659,6 +918,7 @@ def main() -> None:
             "brake_wheel_hold": brake_holder.describe() if brake_holder else None,
             "stance_reference": stance_reference.describe() if stance_reference else None,
             "stability_controller": stabilizer.describe() if stabilizer else None,
+            "grasp_probe": probe_plan,
             "rgb_frames": frames,
             "video": "public_cameras.mp4" if args.video else None,
             "files": {"trace": "trace.jsonl", "telemetry": "telemetry.npz",

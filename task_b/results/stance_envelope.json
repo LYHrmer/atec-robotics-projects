@@ -1,0 +1,39 @@
+{
+  "scope": "B2wPiper, OFFICIAL ATEC-TaskB-B2wPiper env, single env, camera-free. One run, seed 42, `--mode stance_descend`.",
+  "question": "How far below its settled height can this chassis carry its body, wheels planted, before the official illegal_contact fires?",
+  "command": "bash run.sh task-b --mode stance_descend --camera_free --stance_hold --seed 42 --settle_calls 200 --max_steps 1000 --stance_drop_max 0.24 --stance_drop_rate 0.03 --stance_hold_s 2 --rgb_interval 0",
+  "result": {
+    "settled_base_z_m": 0.5192,
+    "commanded_drop_m": 0.24,
+    "achieved_drop_m": 0.2534,
+    "deepest_body_z_m": 0.2659,
+    "stop_reason": "policy_stop:stance_descend_complete",
+    "terminated": false,
+    "truncated": false,
+    "active_termination_terms_at_stop": [],
+    "official_illegal_contact_forces_n": {
+      "base_link": 0.0, "FR_hip": 0.0, "FL_hip": 0.0, "RR_hip": 0.0, "RL_hip": 0.0,
+      "FR_thigh": 0.0, "FL_thigh": 0.0, "RR_thigh": 0.0, "RL_thigh": 0.0
+    },
+    "leg_tracking_error_max_rad": 0.0610,
+    "base_planar_drift_m": 0.2550,
+    "wall_seconds": 20.4
+  },
+  "interpretation": "The chassis carried a full 0.253 m of vertical body travel with every wheel still on the ground and ZERO force on all nine official contact bodies. The earlier belief that a deep crouch necessarily trips illegal_contact came from a full-amplitude open-loop crouch probe (left-rear thigh, 1082 N at body z 0.326); this run shows the reachable envelope is much larger when the descent is solved geometrically instead of driven open-loop. Only 0.10 m of the 0.255 m drift happens while the body is moving; the rest accumulates once it has already stopped at the bottom, so a descent that must hold an aim needs a wheel-angle brake, not just a zero wheel velocity.",
+  "settled_object_heights": {
+    "note": "Measured from the same run's telemetry, not derived. All six objects of each type settle to the same height within 2e-6 m.",
+    "sugar_root_z_m": 0.0902, "mustard_root_z_m": 0.1402, "banana_root_z_m": 0.0601
+  },
+  "ground_height_correction": {
+    "finding": "The Task B ground surface is at world z = +0.0449, not 0.",
+    "basis": "task_b/terrain.py builds the ground as a box of height 0.10 translated to z = -0.005, so its top face is at +0.045; independently, all 18 settled object roots sit 0.0408-0.0446 m above the height their resting geometry predicts for a z=0 ground.",
+    "consequence": "Every earlier object-top figure in this project that assumed the ground at z=0 is 4.5 cm too low. With the corrected tops the Piper's fingertips reach 1.5 cm BELOW the tallest object from the unmodified natural stance, not 3 cm above it -- see piper_gripper_and_reach.json for the reach limit itself, which is unaffected."
+  },
+  "grasp_envelope_by_object_type": {
+    "note": "required_body_z = object top - 0.03 m clearance + 0.2937 m of fingertip reach below the body origin. All three types are reachable inside the measured envelope.",
+    "sugar": {"settled_top_m": 0.1366, "required_drop_m": 0.119, "graspable": true},
+    "mustard": {"settled_top_m": 0.2359, "required_drop_m": 0.020, "graspable": true},
+    "banana": {"settled_top_m": 0.0794, "required_drop_m": 0.176, "graspable": true}
+  },
+  "not_shown": "One seed, one run. This measures the stance only: no grasp, no delivery, no score, and no claim that the body can hold any of these depths under a load or while a task is performed."
+}
