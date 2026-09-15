@@ -49,6 +49,12 @@ parser.add_argument("--probe_standoff", type=float, default=.50, help="grasp_pro
 parser.add_argument("--probe_drop", type=float, default=.05, help="grasp_probe: wheels-planted body descent after the reach, m.")
 parser.add_argument("--probe_clearance", type=float, default=.03, help="grasp_probe: how far below the object's top the jaw midpoint aims, m. Negative aims above the object, which isolates the gripper from the object.")
 parser.add_argument("--probe_park_settle", type=int, default=100, help="grasp_probe: steps to settle after parking, before measuring the object.")
+parser.add_argument("--probe_deliver", action="store_true", help="grasp_probe: after the lift, carry to the official TARGET_CENTER, raise the held object above the bin lip and release. Without it the probe stays a grip test.")
+parser.add_argument("--probe_place_forward", type=float, default=.10, help="grasp_probe: how far to move the held object inward past the bin wall before releasing, m.")
+parser.add_argument("--probe_place_lift", type=float, default=.40, help="grasp_probe: how far to raise the held object before releasing, m.")
+parser.add_argument("--probe_carry_stop", type=float, default=1.2, help="grasp_probe: stop the carry at this distance from the target, m. The object is held about 0.6 m ahead, so it must end up inside the bin's 1.0 m wall.")
+parser.add_argument("--probe_carry_s", type=float, default=0., help="grasp_probe: seconds to drive while holding, to test whether the grip survives motion. 0 keeps it a stationary grip test.")
+parser.add_argument("--probe_carry_cmd", type=float, default=.10, help="grasp_probe: normalized wheel command during the carry.")
 parser.add_argument("--probe_preload", type=float, default=.025, help="grasp_probe: finger travel commanded past the closed stop, m. The position servo only presses as hard as its error, so closing exactly at the stop leaves a weak grip.")
 parser.add_argument("--reach_forward", type=float, default=.20)
 parser.add_argument("--reach_turn_cap", type=float, default=.20)
@@ -125,6 +131,14 @@ if args.mode == "grasp_probe":
         parser.error("--probe_park_settle must be >= 1")
     if not 0. <= args.probe_preload <= .08:
         parser.error("--probe_preload must be in [0, 0.08] m")
+    if args.probe_carry_s < 0:
+        parser.error("--probe_carry_s must be >= 0")
+    if not 0. < args.probe_place_lift <= 1.0:
+        parser.error("--probe_place_lift must be in (0, 1.0] m")
+    if not 0.3 <= args.probe_carry_stop <= 2.0:
+        parser.error("--probe_carry_stop must be in [0.3, 2.0] m")
+    if not 0. < abs(args.probe_carry_cmd) <= .6:
+        parser.error("--probe_carry_cmd must be non-zero, in [-0.6, 0.6]")
 # This bootstrap is offscreen only: it shares a single 8 GB GPU and must not take
 # a display. The official image observation group always needs Kit cameras, so
 # image-free modes must remove that group rather than rely on headless alone.
@@ -324,6 +338,10 @@ def write_source_manifest(output: Path) -> dict:
 #: spawn rotation in task_b/env_cfg.py. The origin is the bounding-box centre, so
 #: top-of-object = resting root z + this.
 OBJECT_VERTICAL_HALF_EXTENT = {"sugar": 0.04635, "mustard": 0.09565, "banana": 0.01930}
+#: The official task's target, from task_b/env_cfg.py TARGET_CENTER. It is also where
+#: task_b/terrain.py builds the trash bin (trash_bin_x=7 from the terrain centre at the
+#: env origin), and the 1.0 m reward radius equals the bin's outer wall radius.
+TARGET_CENTER = (-3.0, -10.0)
 #: World-frame direction of each type's narrowest horizontal extent, from the spawn
 #: quaternions in task_b/env_cfg.py. The fingers must close across this axis.
 NARROW_HORIZONTAL_AXIS = {"sugar": (1., 0.), "mustard": (0., 1.), "banana": (0., 1.)}
@@ -376,8 +394,18 @@ def park_and_measure(env, robot, schema, args, dt) -> dict:
     # 45 mm axis along world x, mustard and banana their 58 mm / 74 mm axis along
     # world y. Park so body +Y is that axis, and place the base behind the object
     # along the perpendicular.
-    narrow = np.array(NARROW_HORIZONTAL_AXIS[object_kind(target)])
-    approach = np.array([-narrow[1], narrow[0]])          # body +X, perpendicular to the jaws
+    if args.probe_deliver:
+        # This chassis cannot skid-steer: a differential wheel command stalls the
+        # wheels and the yaw never moves (confirmed in a delivery run -- commanded
+        # +/-1.75 rad/s produced 0.05). So the only usable motion is a straight
+        # drive, and the park has to line the bin up along the body's forward axis.
+        # The jaws therefore sit at whatever angle that leaves, and the grasp is
+        # aimed high on the object where its cross-section is thin enough to take it.
+        to_bin = np.array(TARGET_CENTER) - obj[:2]
+        approach = to_bin / max(float(np.linalg.norm(to_bin)), 1e-9)
+    else:
+        narrow = np.array(NARROW_HORIZONTAL_AXIS[object_kind(target)])
+        approach = np.array([-narrow[1], narrow[0]])      # body +X, perpendicular to the jaws
     parked = np.array([obj[0] - args.probe_standoff * approach[0],
                        obj[1] - args.probe_standoff * approach[1], base[2]])
     yaw = float(np.arctan2(approach[1], approach[0]))
@@ -539,7 +567,12 @@ def main() -> None:
             policy = GraspProbePolicy(schema, observed_names, defaults, dt=dt,
                                       grasp_point_body=probe_plan["grasp_point_body"],
                                       descent_delta_rad=probe_descent_delta,
-                                      preload_m=args.probe_preload)
+                                      preload_m=args.probe_preload,
+                                      carry_s=args.probe_carry_s, carry_cmd=args.probe_carry_cmd,
+                                      target_xy=TARGET_CENTER if args.probe_deliver else None,
+                                      carry_stop_m=args.probe_carry_stop,
+                                      place_lift_m=args.probe_place_lift,
+                                      place_forward_m=args.probe_place_forward)
         elif args.mode == "visual_approach":
             from task_b.visual_approach import VisualApproachPolicy
             policy = VisualApproachPolicy(schema, observed_names, defaults, dt=dt,
@@ -674,6 +707,13 @@ def main() -> None:
                 break
             state = sample_state(task, illegal)
             proprio = obs["proprio"][0].detach().cpu().numpy().copy()
+            if probe_plan is not None and hasattr(policy, "set_pose"):
+                # ORACLE: the probe is told where it is, so the delivery mechanics are
+                # tested without odometry error mixed in. Diagnostic only; the real
+                # policies never receive this.
+                from scipy.spatial.transform import Rotation as _Rotation
+                _yaw = float(_Rotation.from_quat(state["base_quat"][[1, 2, 3, 0]]).as_euler("zyx")[0])
+                policy.set_pose(state["base_xyz"], _yaw)
             # Audit the declared public ordering against the simulator buffer.
             # This diagnostic is never supplied to the controller.
             observed_q = proprio[12:36] + np.asarray([defaults[name] for name in observed_names])

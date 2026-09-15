@@ -262,6 +262,46 @@ def main() -> int:
                 bad_calls.append(f"{node.func.id}:{unexpected}")
     record("evaluator_policy_calls_match_signatures", not bad_calls, json.dumps(bad_calls))
 
+    # 9. The delivery phases must run on CPU too, including the carry controller.
+    # A missing attribute in _carry_command reached a GPU run once; nothing but
+    # exercising it here would have caught that without the simulator.
+    from task_b.grasp_probe import GraspProbePolicy as _GPP
+    deliver = _GPP(schema, ALL_NAMES, dict(zip(ALL_NAMES, schema.default_joint_pos)), dt=0.02,
+                   grasp_point_body=[0.50, 0.0, -0.25], descent_delta_rad=restore_delta,
+                   target_xy=(-3.0, -10.0), carry_cmd=0.30, carry_stop_m=1.2,
+                   place_lift_m=0.45)
+    d_phases, d_actions = [], []
+    # Start the synthetic arm where a real run would be at that point -- at the solved
+    # grasp pose -- so the place-raise is asked for the same reach it would really get.
+    measured_arm[:6] = deliver.reach_q
+    pose = np.array([-6.7, -8.7, 0.5])
+    for _ in range(4000):
+        obs = np.zeros(84)
+        obs[9:12] = [0., 0., -1.]
+        obs[12 + leg_idx] = (base_legs + (1. - deliver.alpha) * deliver.descent_delta) \
+            - schema.default_joint_pos[leg_idx]
+        obs[12 + arm_idx] = measured_arm - schema.default_joint_pos[arm_idx]
+        yaw = float(np.arctan2(deliver.target_xy[1] - pose[1], deliver.target_xy[0] - pose[0]))
+        deliver.set_pose(pose, yaw)
+        a = deliver.act(obs)
+        d_actions.append(a.copy())
+        d_phases.append(deliver.phase)
+        measured_arm = np.r_[a[deliver.arm.start:deliver.arm.stop].astype(float) * deliver.arm.scale
+                             + schema.default_joint_pos[arm_idx]]
+        # Drive the synthetic pose toward the target at a plausible speed.
+        if deliver.phase == "CARRY":
+            direction = deliver.target_xy - pose[:2]
+            norm = float(np.linalg.norm(direction))
+            if norm > 1e-9:
+                pose[:2] += direction / norm * 0.01        # 0.5 m/s at dt 0.02
+        if deliver.done_reason is not None:
+            break
+    record("probe_delivery_runs_on_cpu", deliver.done_reason == "grasp_probe_complete",
+           f"done_reason={deliver.done_reason}")
+    record("probe_delivery_reaches_the_place_phases",
+           "PLACE_RAISE" in d_phases and "RELEASE" in d_phases,
+           json.dumps({p: d_phases.index(p) for p in set(d_phases)}))
+
     report = {"checks": checks, "passed": all(checks.values()), "count": len(checks),
               "notes": notes,
               "grasp_wall_seconds": round((len(rows) - 1) * policy.dt, 2),

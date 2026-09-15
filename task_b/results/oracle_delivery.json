@@ -1,0 +1,58 @@
+{
+  "scope": "B2wPiper, OFFICIAL ATEC-TaskB-B2wPiper env, single env, camera-free, ORACLE probe. seed 42. NOT the visual policy path.",
+  "headline": "First delivery point: the official objects_in_circle reward fired.",
+  "run": {
+    "command": "bash run.sh task-b --mode grasp_probe --camera_free --probe_object 10 --probe_standoff 0.60 --probe_drop 0.06 --probe_clearance 0.03 --probe_preload 0.025 --probe_deliver --probe_carry_cmd 0.30 --probe_carry_stop 1.58 --probe_place_lift 0.40 --probe_place_forward 0.12 --settle_calls 200 --probe_park_settle 150 --max_steps 3800 --rgb_interval 0",
+    "target_object": "object_10 (mustard bottle)",
+    "stop_reason": "policy_stop:grasp_probe_complete",
+    "steps": 2369,
+    "terminated": false,
+    "active_termination_terms_at_stop": [],
+    "max_official_illegal_contact_force_n": 0.0,
+    "score_raw_total": 2.0,
+    "reward_term_totals_raw": {"grasped_objects": 1.0, "objects_in_circle": 1.0},
+    "scoring_events": [
+      {"step": 37, "terms": {"grasped_objects": 1.0}},
+      {"step": 2195, "terms": {"objects_in_circle": 1.0}}
+    ],
+    "object_final_xyz": [-3.455, -9.967, 0.0783],
+    "object_final_distance_to_target_center_m": 0.457,
+    "object_inside_the_wall": true,
+    "steps_with_the_object_scoring": 174
+  },
+  "sequence": [
+    "settle, then park the base 0.60 m behind the object along the line to the bin",
+    "descend the body 0.06 m on solved wheels-planted leg geometry",
+    "two-stage reach: arrive above the grasp point, then descend vertically onto it",
+    "close the jaws 25 mm PAST the stop, so the position servo keeps pressing",
+    "lift: the object leaves the ground and travels with the jaws",
+    "carry: drive straight at the bin, since this chassis cannot steer",
+    "the held object meets the bin wall and the wheels stall -- that is the cue to raise",
+    "raise the object 0.40 m clear of the 0.55 m lip, then drive further in",
+    "release: the object falls inside the wall"
+  ],
+  "what_made_delivery_possible": {
+    "the_target_is_the_bin": "TARGET_CENTER (-3,-10) is where task_b/terrain.py builds the trash bin, and the 1.0 m reward radius equals the bin's outer wall radius (bin_diameter 2.0). The wall stands 0.50 m above the bin floor.",
+    "pushing_alone_cannot_score": "An object pushed against the OUTSIDE of the wall has its root at r = 1.0 + its radial half-extent, i.e. 1.02-1.03 m, outside the 1.0 m threshold. It has to go over the lip.",
+    "the_reward_also_bounds_height": "ObjectsInCircle requires 0 <= root z <= 0.5, so an object merely held above the lip does not score. It has to be released and fall inside: the measuring step is the one where it is at r = 0.944 and z = 0.496.",
+    "this_chassis_cannot_steer": "A differential wheel command of +/-1.75 rad/s produced 0.05 rad/s and no yaw change at all -- the wheels stall and the robot spins on nothing. This project reached the same conclusion at F0.8 (differential steering torque insufficient). Only a straight drive is usable, so the park has to line the bin up along the body's forward axis.",
+    "the_body_must_stay_clear_of_the_bin": "base_link is about 0.43 m long and 0.24 m half-wide, so its front corner reaches ~0.49 m ahead of the origin. At 1.484 m from the centre that corner touches the wall: an earlier run tripped illegal_contact at 3.16 N and terminated. The drive now stops at 1.58 m."
+  },
+  "defects_found_and_fixed_on_the_way": [
+    "The jaw axis was pointed along the approach instead of across it, so the fingers closed front-to-back across the bottle's 96 mm side and could not close at all.",
+    "The arm's 0.084 rad position-servo sag was unmeasured and uncompensated; an integral trim plus a convergence-gated reach fixed it.",
+    "The probe's leg command started at alpha 0, which meant 'return to standing' and silently erased the evaluator's descent within 30 steps.",
+    "The front wheel stood on the object: in the descended stance the furthest wheel edge reaches body x 0.563 m. Parking at 0.50 put the object 35 mm inside it.",
+    "A single-stage reach raked the finger tips (21 mm beyond the jaw midpoint) across the object's top; the reach is now two-stage and vertical.",
+    "A 0.40 m raise commanded at once moved at ~0.57 m/s and threw the object out of the jaws; the place motions are interpolated over 2.5 s.",
+    "Raising and moving inward as one IK target exceeded the arm's reach from the real grasp pose; they are now separate targets.",
+    "Driving in after the raise, rather than only reaching in, was needed: the arm's inward move achieved 47% of its target."
+  ],
+  "harnesses": {
+    "task_b/leg_kinematics.py": "B2w leg FK and the wheels-planted vertical solver, frames read from b2w_piper.usda.",
+    "task_b/grasp_probe.py": "The oracle probe policy: reach, close, lift, carry, raise, release.",
+    "task_b/audit_stance.py": "14 CPU checks. Pass.",
+    "task_b/audit_grasp.py": "27 CPU checks covering the first_reach grasp sequence, the oracle probe, the delivery phases and a static check that the evaluator's policy constructions match the policy signatures. Pass."
+  },
+  "not_shown": "This is ORACLE-targeted: the evaluator read the object's true pose and supplied the base's true pose, so the probe proves the delivery MECHANICS end to end and earns a genuine official reward. It demonstrates nothing about perception, navigation, or the official visual policy path, and it is one object of one type on one seed. No claim of a policy score is made."
+}
