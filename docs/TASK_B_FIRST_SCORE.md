@@ -1,6 +1,6 @@
 # Task B 首个有效接近分
 
-[项目首页](../README.md) · [在线播放](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [后续执行方案](TASK_B_EXECUTION_PLAN.md) · [历史实验](TASK_B_EXPERIMENTS.md)
+[项目首页](../README.md) · [本地视频](videos/task_b_first_score_20260914_720p_1x.mp4) · [后续执行方案](TASK_B_EXECUTION_PLAN.md) · [历史实验](TASK_B_EXPERIMENTS.md)
 
 **2026 年 9 月 14 日，B2wPiper 在本机原始 Task B 环境取得了 1 个有效接近分。** 机器人用公开 RGB-D 接近一个黄色物体，停稳后伸臂，再缓慢降低机身，使夹爪本体进入官方 0.20 m 距离阈值。此次没有抓起、投递或通关证明。
 
@@ -72,7 +72,7 @@ bash run.sh task-b \
 
 ## 视频、来源与分工
 
-[网页视频](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) 保留同一次运行的全部 675 帧，按 1× 播放；原双相机录像为 1280×480、10 fps。媒体时长 67.50 秒与仿真记录 67.56 秒来自不同采样口径，得分时刻以事件记录为准。[转码记录](videos/task_b_first_score_20260914_provenance.json) 保存来源哈希及处理参数。
+[视频](videos/task_b_first_score_20260914_720p_1x.mp4) 保留同一次运行的全部 675 帧，按 1× 播放；原双相机录像为 1280×480、10 fps。媒体时长 67.50 秒与仿真记录 67.56 秒来自不同采样口径，得分时刻以事件记录为准。[转码记录](videos/task_b_first_score_20260914_provenance.json) 保存来源哈希及处理参数。
 
 - [原始录像：task_b_first_score_20260914_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4)
 - [完整证据：task_b_first_score_20260914_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_evidence.tar.gz)

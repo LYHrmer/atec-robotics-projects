@@ -1,0 +1,289 @@
+{
+  "run": "run_grasp10",
+  "target_object": 10,
+  "target_kind": "mustard",
+  "steps": 475,
+  "stop_reason": "policy_stop:grasp_probe_complete",
+  "terminated": false,
+  "truncated": false,
+  "active_termination_terms_at_stop": [],
+  "oracle_plan": {
+    "target_object": 10,
+    "target_kind": "mustard",
+    "standoff_m": 0.6,
+    "park_settle_steps": 150,
+    "settled_base_xyz": [
+      -7.293479919433594,
+      -8.882511138916016,
+      0.44504329562187195
+    ],
+    "descended_base_z_m": 0.44504329562187195,
+    "object_body_xyz": [
+      0.628264653709514,
+      0.003815725015544228,
+      -0.2522040793802506
+    ],
+    "object_top_body_z": -0.15655407938025057,
+    "front_wheel_edge_body_x_m": 0.5633468891751109,
+    "grasp_point_body": [
+      0.628264653709514,
+      0.003815725015544228,
+      -0.18655407938025056
+    ],
+    "drop_m": 0.06,
+    "clearance_m": 0.03,
+    "descent_leg_delta_rad": [
+      -0.052685329206003384,
+      0.04052128824830825,
+      -0.16325587886665316,
+      0.05336763786759341,
+      0.037163777279710986,
+      -0.161750798397589,
+      -0.036192398079706145,
+      0.13917453515280265,
+      -0.1870533525113225,
+      0.03749467947443502,
+      0.13845486054614153,
+      -0.1853026718458457
+    ],
+    "oracle": "the object's true pose is read, the base pose is written and the body is lowered before the measurement; this is probe setup, not a policy result. The descent is commanded through the same leg action term the policy uses."
+  },
+  "object_rest_z_m": 0.14022479951381683,
+  "object_peak_rise_m": 0.0060670822858810425,
+  "object_final_rise_m": -0.06799141317605972,
+  "object_peak_rise_step": 51,
+  "left_the_ground": false,
+  "min_jaw_to_object_m": 0.06266580004430236,
+  "jaw_distance_at_peak_rise_m": 0.06818895109678234,
+  "jaw_distance_first_m": 0.6283732227196566,
+  "gripper_base_min_z_m": 0.44504329562187195,
+  "base_z_start_m": 0.44504329562187195,
+  "verdict": "no_grasp_observed",
+  "verdict_basis": "either the object never rose >30 mm or the jaw was not on it",
+  "trace_sample": [
+    {
+      "step": 1,
+      "phase": "REACH",
+      "base_z_m": 0.445,
+      "object_rise_m": 0.0,
+      "jaw_to_object_m": 0.6284
+    },
+    {
+      "step": 16,
+      "phase": "REACH",
+      "base_z_m": 0.5302,
+      "object_rise_m": -0.0,
+      "jaw_to_object_m": 0.744
+    },
+    {
+      "step": 31,
+      "phase": "REACH",
+      "base_z_m": 0.513,
+      "object_rise_m": -0.0,
+      "jaw_to_object_m": 0.6155
+    },
+    {
+      "step": 46,
+      "phase": "REACH",
+      "base_z_m": 0.4942,
+      "object_rise_m": 0.0018,
+      "jaw_to_object_m": 0.0759
+    },
+    {
+      "step": 61,
+      "phase": "REACH",
+      "base_z_m": 0.5122,
+      "object_rise_m": -0.0098,
+      "jaw_to_object_m": 0.1293
+    },
+    {
+      "step": 76,
+      "phase": "REACH",
+      "base_z_m": 0.5054,
+      "object_rise_m": -0.036,
+      "jaw_to_object_m": 0.1679
+    },
+    {
+      "step": 91,
+      "phase": "REACH",
+      "base_z_m": 0.5046,
+      "object_rise_m": -0.0509,
+      "jaw_to_object_m": 0.1891
+    },
+    {
+      "step": 106,
+      "phase": "CLOSE",
+      "base_z_m": 0.5073,
+      "object_rise_m": -0.0632,
+      "jaw_to_object_m": 0.2126
+    },
+    {
+      "step": 121,
+      "phase": "CLOSE",
+      "base_z_m": 0.5053,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2137
+    },
+    {
+      "step": 136,
+      "phase": "CLOSE",
+      "base_z_m": 0.506,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2175
+    },
+    {
+      "step": 151,
+      "phase": "CLOSE",
+      "base_z_m": 0.5061,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2179
+    },
+    {
+      "step": 166,
+      "phase": "CLOSE",
+      "base_z_m": 0.5057,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2176
+    },
+    {
+      "step": 181,
+      "phase": "CLOSE",
+      "base_z_m": 0.506,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2186
+    },
+    {
+      "step": 196,
+      "phase": "CLOSE",
+      "base_z_m": 0.5059,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2183
+    },
+    {
+      "step": 211,
+      "phase": "CLOSE_HOLD",
+      "base_z_m": 0.5058,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2185
+    },
+    {
+      "step": 226,
+      "phase": "CLOSE_HOLD",
+      "base_z_m": 0.5059,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2187
+    },
+    {
+      "step": 241,
+      "phase": "CLOSE_HOLD",
+      "base_z_m": 0.5058,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2187
+    },
+    {
+      "step": 256,
+      "phase": "CLOSE_HOLD",
+      "base_z_m": 0.5058,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2188
+    },
+    {
+      "step": 271,
+      "phase": "CLOSE_HOLD",
+      "base_z_m": 0.5058,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2188
+    },
+    {
+      "step": 286,
+      "phase": "LIFT",
+      "base_z_m": 0.5088,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2198
+    },
+    {
+      "step": 301,
+      "phase": "LIFT",
+      "base_z_m": 0.521,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2333
+    },
+    {
+      "step": 316,
+      "phase": "LIFT",
+      "base_z_m": 0.5301,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2401
+    },
+    {
+      "step": 331,
+      "phase": "LIFT",
+      "base_z_m": 0.5389,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2474
+    },
+    {
+      "step": 346,
+      "phase": "LIFT",
+      "base_z_m": 0.5488,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.257
+    },
+    {
+      "step": 361,
+      "phase": "LIFT",
+      "base_z_m": 0.5577,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2645
+    },
+    {
+      "step": 376,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.5672,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2739
+    },
+    {
+      "step": 391,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.5699,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2784
+    },
+    {
+      "step": 406,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.5688,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2731
+    },
+    {
+      "step": 421,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.5699,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2773
+    },
+    {
+      "step": 436,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.5697,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2753
+    },
+    {
+      "step": 451,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.57,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2765
+    },
+    {
+      "step": 466,
+      "phase": "LIFT_HOLD",
+      "base_z_m": 0.5702,
+      "object_rise_m": -0.068,
+      "jaw_to_object_m": 0.2765
+    }
+  ]
+}

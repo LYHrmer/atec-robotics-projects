@@ -2,7 +2,7 @@
 
 [返回首页](../README.md) · [Task A 速度实测](../task_a/docs/SPEED_COMPARISON.md) · [Task E 原满分版本](TASK_E.md)
 
-本轮新增 Task B 首分视频，保留既有 A/E 视频与历史发布。后续更高成绩通过核验后，GitHub 对应任务展示与视频更新为最佳成绩，较低成绩和失败原片在本机归档，不改写 Git 历史。**视频倍速不等于机器人控制提速**，下表分别写明。
+本轮新增 Task B 官方投递分录像（真值定位），保留既有 A/E 视频与历史发布。后续更高成绩通过核验后，GitHub 对应任务展示与视频更新为最佳成绩，较低成绩和失败原片在本机归档，不改写 Git 历史。**视频倍速不等于机器人控制提速**，下表分别写明。
 
 ## Task A：先看这几段
 
@@ -55,8 +55,9 @@
 | 文件 | 展示与来源 | 获取位置 |
 | --- | --- | --- |
 | 本次网页视频 | 完整 1×，1280×720，约 10.80 MB；双相机原画面加上下留边，保留全部 473 帧 | [转码与出处](videos/task_b_first_delivery_20260915_provenance.json) |
-| 本次原片 | 头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 105.76 MB | 本机保留（超过 GitHub 单文件 100 MB 上限）；sha256 记在转码记录里 |
-| 首次接近分网页视频 | 同次完整 1×，1280×720，约 15.36 MB；双相机原画面加上下留边，保留全部 675 帧 | [在线播放](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [转码记录](videos/task_b_first_score_20260914_provenance.json) |
+| 本次原片 | 头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 105.76 MB，全部 473 帧 | [task_b_first_delivery_20260915_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_original.mp4) （Release 附件，超过仓库单文件 100 MB 上限故不进 git；sha256 记在转码记录里） |
+| 本次完整证据 | 原结果、得分事件、逐步遥测、压缩逐步轨迹、源码快照、抓取复核、独立成绩复核与原片 | [task_b_first_delivery_20260915_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_evidence.tar.gz) |
+| 首次接近分网页视频 | 同次完整 1×，1280×720，约 15.36 MB；双相机原画面加上下留边，保留全部 675 帧 | [本地文件](videos/task_b_first_score_20260914_720p_1x.mp4) · [转码记录](videos/task_b_first_score_20260914_provenance.json) |
 | 首次接近分原片 | 官方头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 169.71 MB | [task_b_first_score_20260914_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4) |
 | 首次接近分完整证据 | 原结果、得分事件、遥测、压缩逐步轨迹、源码快照、原片与独立审计 | [task_b_first_score_20260914_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_evidence.tar.gz) |
 

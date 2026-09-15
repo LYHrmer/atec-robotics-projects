@@ -1,12 +1,14 @@
-# Task B：已取得首个接近分，移动抓取继续推进
+# Task B：抓取与投递已在真值定位下打通
 
-[返回项目首页](../README.md) · [首分说明与复现命令](../docs/TASK_B_FIRST_SCORE.md) · [具体执行方案](../docs/TASK_B_EXECUTION_PLAN.md) · [实验记录](../docs/TASK_B_EXPERIMENTS.md) · [分工与验收](../docs/COLLABORATION.md)
+[返回项目首页](../README.md) · [交接与已确证约束](HANDOVER.md) · [投递探针与复现](results/first_delivery_video.json) · [相机挂载标定](results/camera_mount_calibration.json) · [执行方案](../docs/TASK_B_EXECUTION_PLAN.md) · [实验记录](../docs/TASK_B_EXPERIMENTS.md)
 
-**2026-09-14，seed 42 在第 3278 步（65.56 仿真秒）取得 1 个有效接近分，投递分为 0。** 全回合 3378 步，无非法接触或官方终止；首分后的 100 步记录完成后由评测器收尾。[独立得分审计](../results/task_b_positive/plan_p2_lower02_seed42_01/independent_positive_audit.json) 已通过。该回合没有证明抓起、投递或通关，单次运行不能估计成功率。
+**2026-09-15，seed 42 在第 2195 步（43.9 仿真秒）触发官方 `objects_in_circle`，累计 2 分（1 接近 + 1 投递），全程 0 非法接触。** 这是本仓库第一次留下投递录像：[完整 1× 双相机录像](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) · [Release 原片与证据包](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-first-delivery-20260915)。
 
-当前 `first_reach` 路线使用原始 `ATEC-TaskB-B2wPiper` 环境：紧凑站姿与腿反馈保持 → RGB-D 接近 → 轮角保持和静止复测 → 固定目标有界伸臂 → 公开状态授权后缓降。首分时真实夹爪—物体根距离为 **0.199966689 m**；固定 0.02 m 参考最终使机身实际下降约 **20.273 mm**，最终距离 **0.191444200 m**。下降到位后的保持仅记录 **0.74 秒**，没有完成计划的 2 秒保持。[下降审计](../results/task_b_lowering_runtime_audit.json) · [完整视频](https://lyhrmer.github.io/atec-robotics-projects/task-b.html)。
+**定位用的是真值**：探针按物体真实位姿泊车，所以它验证的是抓取与投递的机构与几何，**不是感知或导航结果，不是策略成绩，也不是 Task B 通关**。把真值换成视觉是当前主线。
 
-官方 `grasped_objects` 只表示夹爪本体进入物体根位置的 0.20 m 阈值，属于接近；`objects_in_circle` 才记录投递。后续按 [真实抓起 → 单件投递 → 18 件通关](../docs/TASK_B_EXECUTION_PLAN.md) 分别验收，原规则保持不变。
+2026-09-14 的首个接近分（`first_reach`，65.56 秒、1 分）保留为历史：[首分说明](../docs/TASK_B_FIRST_SCORE.md) · [独立得分审计](../results/task_b_positive/plan_p2_lower02_seed42_01/independent_positive_audit.json)。
+
+官方 `grasped_objects` 只表示夹爪本体进入物体根位置的 0.20 m 阈值，属于接近——**它在出生时就会触发**，不等于夹住；`objects_in_circle` 才记录投递。投递录像里画面上 0.7 秒出现的 1 分就是前者。
 
 ## 首分配置与模块
 
@@ -15,10 +17,18 @@
 | 模块 | 职责 |
 | --- | --- |
 | `first_reach.py` / `visual_approach.py` | 视觉接近、停车复测、一次固定关节目标、有界停稳与缓降 |
+| `grasp_probe.py` | oracle 抓取/投递全序列：两段式伸臂、合爪预压、抬升、直行搬运、抬过桶沿、松爪 |
+| `stance_descend.py` | 轮子落地、机身垂直升降的站姿下降策略 |
+| `arm_kinematics.py` | Piper 静态几何、`fk`、有界 IK、钳口宽度与两个相机挂载（已实测标定） |
+| `leg_kinematics.py` | 腿部 FK 与"轮子不动、机身垂直升降"求解器（关节系从 USD 读出） |
+| `camera_calibration.py` | 相机挂载标定：手臂扫描策略与闭式拟合 |
 | `stationary_target_gate.py` | 清除旧确认，按相机更新周期检查停稳后的两次新定位 |
 | `stance_reference.py` / `stance_hold.py` | 紧凑站姿参考与公开腿关节反馈 |
 | `brake_wheel_hold.py` | 用公开轮角、轮速保持同一制动锚点；输出物理轮速，经原动作 scale 归一化 |
-| `evaluate.py` / `audit_positive.py` | 原环境执行与独立得分审计；诊断真值、奖励不进入策略 |
+| `evaluate.py` | 原环境执行；`--camera_free` 与各 `--mode` 入口；诊断真值只记录，不进入策略 |
+| `audit_stance.py` / `audit_grasp.py` / `audit_camera_calibration.py` | 上 GPU 前的 CPU 审计（14 / 27 / 33 项） |
+| `audit_delivery_score.py` / `grasp_evidence.py` | 从 run 自己的遥测重算官方得分与抓取结论，不依赖评测器记账 |
+| `derivation/` | M2/M3 设计所依据的一次性 CPU 几何推导（归档，不被 import） |
 
 GPT-6 Astra ultra 制定阶段合同，Claude Opus 实际编写指定控制模块，原生代理完成基础模块、集成修复和独立验收。以下保留早期基础模式与记录口径，历史零分结果见 [实验档案](../docs/TASK_B_EXPERIMENTS.md)。
 

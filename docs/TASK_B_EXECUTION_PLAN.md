@@ -51,4 +51,4 @@
 | 原生集成代理 | 接入动作/观测接口，处理单位和状态交接，保存运行源码快照与配置 |
 | 独立验收代理与主代理 | 分别复核 CPU 行为、原奖励和真实运动；主代理独占 GPU 运行与 GitHub 发布 |
 
-当前最佳成绩通过 [task-b-first-score-20260914](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-first-score-20260914) 发布，附同次原片与完整证据包；[网页](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) 展示当前最好结果。后续更高成绩通过独立核验后，更新对应任务的 GitHub 展示与视频，只保留最佳成绩展示；较低成绩和失败原片在本机归档。本轮保留既有 A/E 发布与旧基础实验数据，不改写 Git 历史。
+当前最佳成绩通过 [task-b-first-delivery-20260915](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-first-delivery-20260915) 发布，附同次原片与完整证据包；[网页](https://lyhrmer.github.io/atec-robotics-projects/task-b.html) 展示当前最好结果。**该成绩的定位用真值**，验证的是抓取与投递的机构与几何，不是感知或导航结果。后续更高成绩通过独立核验后，更新对应任务的 GitHub 展示与视频，只保留最佳成绩展示；较低成绩和失败原片在本机归档。本轮保留既有 A/E 发布与旧基础实验数据，不改写 Git 历史。

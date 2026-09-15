@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="task-b-publication-status" content="verified-local-positive">
-  <meta name="description" content="ATEC Task B 本机首次接近得分：seed 42，65.56 仿真秒获得 1 个接近分，0 投递分。完整 1× 录像与原始环境证据；尚未通关。">
-  <title>Task B 首次接近得分 · ATEC</title>
+  <meta name="task-b-publication-status" content="verified-local-oracle-delivery">
+  <meta name="description" content="ATEC Task B 本机官方投递分：seed 42，43.9 仿真秒触发 objects_in_circle，累计 2 分，全程 0 非法接触。完整 1× 双相机录像与原始环境证据；定位用真值，不是策略成绩。">
+  <title>Task B 抓起与投递 · ATEC</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; background: #101820; color: #edf3f7; }
     * { box-sizing: border-box; }
@@ -49,25 +49,25 @@
   </style>
 </head>
 <body>
-  <main data-run-id="plan_p2_lower02_seed42_01" data-score="0.9999999776482582">
+  <main data-run-id="delivery_video/record_01" data-score="1.9999999552965164" data-oracle-localisation="true">
     <header>
       <p class="eyebrow">ATEC · B2w + Piper</p>
-      <h1>Task B 首次接近得分</h1>
-      <p class="intro">双相机完整录像 · 1× 仿真时间播放 · 本机原始环境</p>
+      <h1>Task B 抓起与投递</h1>
+      <p class="intro">双相机完整录像 · 1× 仿真时间播放 · 本机原始环境 · 真值定位</p>
     </header>
     <dl class="stats" aria-label="本次运行记录">
-      <div><dt>原始累计得分</dt><dd>1 <small>分</small></dd></div>
-      <div><dt>首次得分时刻</dt><dd>65.56 <small>s</small></dd></div>
-      <div><dt>回合仿真时长</dt><dd>67.56 <small>s</small></dd></div>
+      <div><dt>官方累计得分</dt><dd>2 <small>分</small></dd></div>
+      <div><dt>投递分触发时刻</dt><dd>43.9 <small>s</small></dd></div>
+      <div><dt>回合仿真时长</dt><dd>47.38 <small>s</small></dd></div>
     </dl>
     <aside class="scope" aria-label="得分范围与限制">
-      <p>本回合接近计分物体 1 个，投递计分物体 0 个。原始环境的接近分表示 <code>gripper_base</code> 距物体根位置不超过 0.20 m；<strong>接近分不等于抓起、投递或通关</strong>。</p>
-      <p>这里只展示 seed 42 的一次局部任务进展，不能据此估计多场景成功率，也不代表比赛服务器认证。首分后继续观察 2.00 秒，整段记录未触发官方非法接触或跌倒终止。</p>
+      <p>本回合 2 分 = 1 个 <code>grasped_objects</code> + 1 个 <code>objects_in_circle</code>。<strong>注意画面上的分数从 0.7 秒就是 1</strong>：那是官方接近项在出生时触发（夹爪本体一开始就在某物体 0.20 m 阈值内），<strong>不是夹住</strong>；真正的夹取是 6.2 秒的抬升，1 → 2 的那一分是 43.9 秒的投递。</p>
+      <p><strong>底座按物体真实位姿泊车</strong>，所以这段录像是抓取与投递机构、几何的验证，<strong>不是感知或导航结果，不是策略成绩，也不是 Task B 通关</strong>。只有 seed 42 的一次局部进展，不能据此估计多场景成功率，也不代表比赛服务器认证。全程未触发官方非法接触或跌倒终止。</p>
     </aside>
     <figure>
       <div class="player">
         <video id="task-video" controls playsinline preload="metadata" width="1280" height="720"
-               src="videos/task_b_first_score_20260914_720p_1x.mp4" poster="videos/task_b_first_score_20260914_poster.jpg"
+               src="videos/task_b_first_delivery_20260915_720p_1x.mp4" poster="videos/task_b_first_delivery_20260915_poster.jpg"
                aria-label="Task B 双相机单次仿真录像" aria-describedby="video-caption">
           你的浏览器不支持视频播放，请使用下方下载入口观看。
         </video>
@@ -76,17 +76,18 @@
         <strong>视频暂时无法播放。</strong>
         <span id="error-detail">请刷新页面重试，或使用下方下载入口观看。</span>
       </div>
-      <figcaption id="video-caption">完整 1× 录像未做倍速处理，媒体时长 67.50 秒。原片共 675 帧、10 fps。相机按固定间隔采样，媒体时长与回合仿真时长略有差异。得分时刻以动作后或官方复位前的记录为准。</figcaption>
+      <figcaption id="video-caption">完整 1× 录像未做倍速处理，媒体时长 47.30 秒，原片共 473 帧、10 fps；回合仿真时长为 2369 步 × 0.02 s = 47.38 秒，差异来自原生 10 Hz 采样，帧数与时间轴均未改动。画面左侧为头部相机、右侧为腕部相机。得分时刻取自第 2195 个环境步后的事件记录，不根据视频帧估计。</figcaption>
     </figure>
     <nav class="links" aria-label="视频与证据">
-      <a class="button primary" href="videos/task_b_first_score_20260914_720p_1x.mp4" download>下载完整网页视频</a>
-      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4">下载原始录像</a>
-      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_evidence.tar.gz">下载证据与校验记录</a>
-      <a class="button" href="videos/task_b_first_score_20260914_provenance.json">查看视频来源</a>
+      <a class="button primary" href="videos/task_b_first_delivery_20260915_720p_1x.mp4" download>下载 720p 完整视频 · 约 10.8 MB</a>
+      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_original.mp4">下载原始录像 1280×480 · Release</a>
+      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_evidence.tar.gz">下载证据与校验记录 · Release</a>
+      <a class="button" href="videos/task_b_first_delivery_20260915_provenance.json">查看视频来源</a>
     </nav>
     <div class="run-details">
-      <p>运行编号：plan_p2_lower02_seed42_01 · 随机种子：42</p>
-      <p>结束原因：首分后继续观察 2.00 秒，完成观察窗口后主动结束；未触发官方终止条件。</p>
+      <p>运行编号：delivery_video/record_01 · 随机种子：42 · 目标物：<code>object_10</code>（芥末瓶）</p>
+      <p>结束原因：探针序列完成；未触发官方终止条件，全程 0 非法接触。</p>
+      <p>复核：独立成绩复核从遥测重算两个计分项，逐步<strong>零处不一致</strong>；抓取复核判定 <code>real_grasp_observed</code>（物体离地，搬运段钳口–物体距离<strong>恒定 53.9 mm</strong>，是夹住而非推铲）。</p>
     </div>
     <footer>
       <nav aria-label="项目资料">
@@ -94,6 +95,7 @@
         <a href="https://lyhrmer.github.io/atec-robotics-projects/comparison.html">Task A 方法与性能对比</a>
         <a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/docs/VIDEO_COMPARISON.md#task-e">Task E 新旧视频</a>
         <a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/task_b/README.md">Task B 代码与运行方法</a>
+        <a href="https://github.com/LYHrmer/atec-robotics-projects/blob/main/task_b/HANDOVER.md">Task B 交接与已确证约束</a>
         <a href="https://github.com/LYHrmer/atec-robotics-projects">源码主页</a>
       </nav>
       <p>后续更高成绩通过核验后，本页更新为最佳成绩；较低分实验记录保留在本机。</p>
