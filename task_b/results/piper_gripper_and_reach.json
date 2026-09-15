@@ -9,10 +9,16 @@
     "teleported_object_lands_normally": true
   },
   "gripper": {
-    "joints": ["arm_joint7", "arm_joint8"],
+    "joints": [
+      "arm_joint7",
+      "arm_joint8"
+    ],
     "type": "prismatic, opposite directions written into the limits ([0,+0.035] and [-0.035,0])",
     "jaw_travel_m": 0.07,
-    "measured": {"closed_gap_m": 0.0, "open_gap_m": 0.07},
+    "measured": {
+      "closed_gap_m": 0.0,
+      "open_gap_m": 0.07
+    },
     "actuated": true,
     "in_action_space": "joint_arm action term has dim 8 = arm_joint1..8, so both fingers are commandable",
     "verdict": "WORKS. Unlike the D1+G2 asset, whose finger joints carry zero-gain actuators and no mimic."
@@ -21,27 +27,44 @@
     "objective": "minimise |object - finger midpoint| (grasping needs the object between the fingers; gripper_base distance only matches the official score metric)",
     "oracle": true,
     "uses_true_object_pose": true,
-    "best": {"root_z_m": 0.49, "standoff_m": 0.5, "finger_mid_to_object_m": 0.053},
+    "best": {
+      "root_z_m": 0.49,
+      "standoff_m": 0.5,
+      "finger_mid_to_object_m": 0.053
+    },
     "by_stance_height": {
-      "0.60": {"best_finger_mid_m": 0.1628, "best_gripper_base_m": 0.3089},
-      "0.50": {"best_finger_mid_m": 0.0636, "best_gripper_base_m": 0.2206},
-      "0.42": {"best_finger_mid_m": 0.0090, "best_gripper_base_m": 0.1456}
+      "0.60": {
+        "best_finger_mid_m": 0.1628,
+        "best_gripper_base_m": 0.3089
+      },
+      "0.50": {
+        "best_finger_mid_m": 0.0636,
+        "best_gripper_base_m": 0.2206
+      },
+      "0.42": {
+        "best_finger_mid_m": 0.009,
+        "best_gripper_base_m": 0.1456
+      }
     },
     "verdict": "At the natural stance (~0.52) and a 0.4-0.5 m standoff the object can be placed between the fingers (0.05-0.09 m from the jaw midpoint). The official 0.20 m grasped_objects threshold needs a further slight crouch."
   },
   "grasp_hold_test": {
-    "status": "INCONCLUSIVE - harness defect, not a robot finding",
-    "what_was_tried": [
-      "hold the body at 0.42 m with default legs -> wheels penetrate the ground, solver ejects the object (object fell through the floor)",
-      "hold the body at the natural 0.52 m -> same signature",
-      "place the object into the open jaws, close, lift -> object still ends up falling through the floor",
-      "writing the object pose every step vs once -> the failure moves but does not go away"
-    ],
-    "what_is_ruled_out": [
-      "the environment: objects land and rest normally (0.0902 m)",
-      "teleporting an object: a teleported object falls and lands at 0.066 m",
-      "the gripper mechanism: it opens and closes 0.07 m as commanded"
-    ],
-    "conclusion": "Whether the closed jaws actually hold a Task B object is NOT established by this harness. The recurring signature is the object passing through the floor whenever it is teleported into the jaw region."
+    "status": "HARNESS NOW WORKS; this run's outcome is 'jaws missed the object', not 'jaws cannot hold'",
+    "environment_finding": "with num_envs=128 the Task B objects are NOT supported by the ground and fall through it (measured object z=-4.9); with num_envs=1 they rest at 0.090 m. Per-step writes of the object pose had been masking this and looked like a fix.",
+    "preflight_assertions": 14,
+    "preflight_all_passed": true,
+    "run": {
+      "natural_stance_m": 0.5344,
+      "commanded_root_z_m": 0.51,
+      "standoff_m": 0.5,
+      "approach_finger_mid_to_object_m": 0.1299,
+      "object_z_through_settle": "0.090 -> 0.090 (stable)",
+      "object_rose_with_body_m": -0.0,
+      "gap_after_lift_m": 0.3794,
+      "held": false
+    },
+    "interpretation": "The jaw half-width is 0.035 m but the approach left the object 0.130 m from the jaw midpoint, so the object was never between the fingers and the jaws closed on nothing. This run therefore does NOT test whether the jaws can hold an object.",
+    "next_step": "Re-solve the pose against the 1-env geometry (the object layout differs between 1 and 128 envs, so absolute base coordinates cannot be carried across) so the object really sits between the fingers, then re-run this same self-checking harness.",
+    "harness_note": "The probe now measures the natural stance first and refuses any commanded height below it, carries 14 preflight assertions (tensor widths, radians, joint-velocity width, search-box width), and aborts rather than emitting a number when they fail."
   }
 }

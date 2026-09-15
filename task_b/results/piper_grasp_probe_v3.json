@@ -1,0 +1,21 @@
+{
+  "scope": "ORACLE gripper-hold test v3, official Task B env, camera-free",
+  "natural_stance_m": 0.5344,
+  "commanded_root_z_m": 0.51,
+  "clearance_target_m": 0.03,
+  "pose": {
+    "standoff_m": null
+  },
+  "best": {
+    "finger_mid_m": 0.053,
+    "finger_clearance_m": 0.0
+  },
+  "object_z_rest": 0.0902,
+  "object_z_after_settle": 0.0902,
+  "object_z_after_close": 0.0902,
+  "object_z_after_lift": 0.0902,
+  "object_rose_with_body_m": -0.0,
+  "gap_after_close_m": 0.1297,
+  "gap_after_lift_m": 0.3794,
+  "held": false
+}
