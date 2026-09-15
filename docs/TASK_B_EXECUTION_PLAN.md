@@ -1,10 +1,10 @@
-# Task B 执行方案：首分已完成，继续推进 18 件通关
+# Task B 执行方案：投递已打通，继续推进 18 件通关
 
 [项目首页](../README.md) · [首分说明与复现](TASK_B_FIRST_SCORE.md) · [Astra 决策依据](TASK_B_ASTRA_DECISIONS.md) · [实验档案](TASK_B_EXPERIMENTS.md)
 
-**M1 已完成：2026-09-14，在本机原始 Task B 环境取得 1 个有效接近分。最终目标仍是让原环境判定 18 件物体全部入圈。** 接近、物理抓起、单件投递与全任务通关分别验收。
+**M1 已完成：2026-09-14，在本机原始 Task B 环境取得 1 个有效接近分。最终目标仍是让原环境判定 18 件物体全部入圈。** 接近、物理抓起、单件投递与全任务通关分别验收；其中物理抓起与单件投递已于 2026-09-15 在真值定位下完成，余下 18 件通关与视觉化。
 
-用户指定 GPT-6 Astra ultra 制定方案，实际 Claude Opus 编写明确的控制模块，原生代理负责集成与独立实测。当前发布基准为 `plan_p2_lower02_seed42_01`，seed 42；此前失败与方案变更见 [实测对照](../results/task_b_first_reach_progress.json)，完整首分证据见 [独立得分审计](../results/task_b_positive/plan_p2_lower02_seed42_01/independent_positive_audit.json)。
+用户指定 GPT-6 Astra ultra 制定方案，实际 Claude Opus 编写明确的控制模块，原生代理负责集成与独立实测。当前发布基准是 2026-09-15 的投递探针 `delivery_video/record_03_overview`，seed 42，见 [投递探针与复现](../task_b/results/first_delivery_video.json) 与 [Release](https://github.com/LYHrmer/atec-robotics-projects/releases/tag/task-b-first-delivery-20260915)；此前失败与方案变更见 [实测对照](../results/task_b_first_reach_progress.json)，首分（已过时，仅作历史）证据见 [独立得分审计](../results/task_b_positive/plan_p2_lower02_seed42_01/independent_positive_audit.json)。
 
 ## 当前基准与范围
 
@@ -15,7 +15,7 @@
 | 最终几何 | 距离 0.191444200 m；相对下降授权前，机身 / 夹爪实际下降 20.273 / 20.310 mm |
 | 运行收尾 | 3378 步，首分后观察 2 秒，由评测器结束；没有官方终止 |
 | 下降到位保持 | 只记录 0.74 秒，尚未观察到计划的完整 2 秒 `LOWER_HOLD` |
-| 尚未验证 | 物理夹持、抬升、运输、投递、18 件通关、多种子成功率 |
+| 尚未验证 | 18 件通关、多种子成功率、以及把真值定位换成视觉 |
 
 当前方法依次完成紧凑站姿、公开 RGB-D 接近、制动后新定位、轮角保持、一次固定目标的有界关节运动，以及公开状态授权后的固定幅度缓降。名义 2 cm 参考与实际下降分别记录；首分结论来自原始奖励及同期几何，不来自静态 FK 预测。参数和完整命令只维护在 [首分报告](TASK_B_FIRST_SCORE.md#复现命令)。
 

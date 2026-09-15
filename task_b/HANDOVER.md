@@ -23,7 +23,7 @@ M2（真实抓起）与 M3（投递）已在 oracle 定位下打通并推送，*
 
 | 项目 | 值 |
 | --- | --- |
-| 交付物仓库 | `/tmp/atec-upload`（GitHub `LYHrmer/atec-robotics-projects`），本地=远端=`e04446f` |
+| 交付物仓库 | `/tmp/atec-upload`（GitHub `LYHrmer/atec-robotics-projects`）。本地/远端是否同步以 `git log -1` 和 `git ls-remote <repo> main` 为准 —— 这里原来写死的 `e04446f` 早已过期，不要再写死哈希 |
 | 官方 cfg（只读） | `/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/env_cfg.py` |
 | Python | `/home/lybm/miniforge3/envs/isaaclab/bin/python` |
 | 无渲染跑（快、稳） | 加 `--camera_free` |
@@ -186,5 +186,6 @@ bash run.sh task-b --mode <MODE> --output <必须是不存在的新目录> ...
   `git ls-remote <repo> main` 核对远端哈希 == 本地 HEAD（这条也会偶尔需要重试）。
   代理本身是活的，`curl -x http://127.0.0.1:7890 https://github.com` 能返回 200 可用来判断。
 - 提交信息用英文，结尾加 `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`。
-- **大文件**：GitHub 单文件上限 100 MB。原片（如 105 MB 的投递录像）**不进 git**，
-  留在本机并把 sha256 写进转码记录；仓库只放转码后的 720p 版本（见 `docs/VIDEO_COMPARISON.md` 的约定）。
+- **大文件**：仓库单文件上限 100 MB，Release 附件宽松得多。**原片不进 git**，作为
+  Release 附件发布并把 sha256 写进转码记录；仓库只放转码后的版本
+  （投递录像现在是 1080p / 19 MB，原片 355 MB 在 Release；见 `docs/VIDEO_COMPARISON.md`）。

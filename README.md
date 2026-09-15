@@ -7,7 +7,7 @@
 | 任务 | 机器人怎样完成任务 | 已验证的本机结果 | 代码与运行 | 视频与证据 |
 | --- | --- | --- | --- | --- |
 | **Task A：连续越障** | D1+G2 用相机估计行进方向，在已有行走策略上训练动作修正 | 提速版 **457.32 s / 286.005 m**，比原 505.66 s 少 **9.56%**；均只触发终点 | [Task A 入口](task_a/README.md) | [新旧横屏视频](docs/VIDEO_COMPARISON.md) · [速度验收](task_a/evidence/speed_070_050_02/speed_acceptance_audit.json) |
-| **Task B：抓起与投递** | B2wPiper 按真值泊车到物体旁，两段式伸臂夹取、抬升、直行搬运、抬过桶沿后松爪 | seed 42 在 **43.9 s** 触发官方 `objects_in_circle`，累计 **2 分**（1 接近 + 1 投递），全程 **0 非法接触**；**定位用真值，不是视觉策略** | [投递探针与复现](task_b/results/first_delivery_video.json) · [相机挂载标定](task_b/results/camera_mount_calibration.json) | [完整 1× 双相机录像](docs/videos/task_b_first_delivery_20260915_720p_1x.mp4) · [转码与出处](docs/videos/task_b_first_delivery_20260915_provenance.json) |
+| **Task B：抓起与投递** | B2wPiper 按真值泊车到物体旁，两段式伸臂夹取、抬升、直行搬运、抬过桶沿后松爪 | seed 42 在 **43.9 s** 触发官方 `objects_in_circle`，累计 **2 分**（1 接近 + 1 投递），全程 **0 非法接触**；**定位用真值，不是视觉策略** | [投递探针与复现](task_b/results/first_delivery_video.json) · [相机挂载标定](task_b/results/camera_mount_calibration.json) | [完整 1× 第三人称录像](docs/videos/task_b_first_delivery_20260915_1080p_1x.mp4) · [转码与出处](docs/videos/task_b_first_delivery_20260915_provenance.json) |
 | **Task E：三物体抓取入篮** | Piper 从彩色与深度图像定位物体，用运动学规划动作并检查抓放反馈 | seed 42 / seed 0 均为 **18/18 分**，分别 **53.78 s / 62.36 s** | [Task E 入口](docs/TASK_E.md) | [演示视频](media/task_e_fast_seed42_color.mp4) · [seed 42](results/fast_seed42_package.json) · [seed 0](results/fast_seed0_package.json) |
 | **Task E：模仿学习实验** | 从规则教师演示中学习六轴关节动作修正，保留感知、规划与抓放规则 | 独立 seed 1 **18/18 分、52.84 s**；同场景原规则 / 纯 DLS 为 62.96 / 63.16 s | [方法、数据与复现](docs/TASK_E_IMITATION.md) | [三组视频](docs/VIDEO_COMPARISON.md#task-e) · [比较记录](results/task_e_il/closed_loop/comparison_summary.json) |
 
@@ -32,7 +32,7 @@ Task E 的学习实验每组只运行一次，省时主要来自放置阶段减�
 | **复现已有结果** | [环境、依赖与启动](task_a/README.md) | [首分复现命令](docs/TASK_B_FIRST_SCORE.md#复现命令) | [本地复现](docs/TASK_E.md#本地复现) |
 | **复习或准备项目介绍** | [训练过程、失败分析与自测](docs/TASKA_D1G2.md) | [方案决策与证据](docs/TASK_B_ASTRA_DECISIONS.md) | [算法原理](docs/ALGORITHM.md) · [面试讲解](docs/INTERVIEW.md) · [自测题](docs/SELF_CHECK.md) |
 
-想把 Task A/E 一起学习，按 [跨任务学习路线](docs/ATEC_PROJECTS.md) 连接坐标系、感知、控制和实验验证；Task B 的新进展从上表首分说明开始。
+想把 Task A/E 一起学习，按 [跨任务学习路线](docs/ATEC_PROJECTS.md) 连接坐标系、感知、控制和实验验证；Task B 的新进展从上表投递记录开始，页面见 [Task B 抓起与投递](https://lyhrmer.github.io/atec-robotics-projects/task-b.html)。
 
 ## 本地运行从哪里开始
 
@@ -54,7 +54,7 @@ PYTHONNOUSERSITE=1 python3 tools/task_e/learn_geometry.py
 
 ```text
 task_a/              Task A 代码、训练权重、运行说明与验收证据
-task_b/              Task B 视觉接近、站姿/轮保持、有界伸臂与缓降控制
+task_b/              Task B 视觉接近、站姿/轮保持、有界伸臂、抓取/投递探针、相机标定与审计
 run.sh               三项任务的统一启动入口
 solution.py          Task E 官方策略入口；同目录策略文件共同运行
 scripts/evaluate.sh  Task E 评测入口
