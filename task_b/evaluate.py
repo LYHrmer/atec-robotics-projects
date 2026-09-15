@@ -261,10 +261,34 @@ def illegal_force_norms(task, illegal: dict | None):
     return torch.max(norms, dim=0)[0].detach().cpu().numpy().astype(np.float64)
 
 
+#: Scene sensor key -> the name task_b/arm_kinematics models it under.
+CAMERA_ENTITIES = {"head_camera": "head", "ee_camera": "ee"}
+
+
+def camera_state(task) -> dict:
+    """True world poses of the scene cameras, for auditing the modelled mount.
+
+    The visual policies back-project from a camera pose they derive from joint FK and
+    a hardcoded mount offset. This records the simulator's own pose so that model can
+    be checked rather than trusted -- a mount error shows up directly as a
+    localisation error, which is what a grip needs to a centimetre.
+    """
+    out = {}
+    for name, label in CAMERA_ENTITIES.items():
+        sensor = task.scene.sensors.get(name) if hasattr(task.scene, "sensors") else None
+        if sensor is None:
+            continue
+        out[label] = {"pos_w": sensor.data.pos_w[0].detach().cpu().numpy().copy(),
+                      "quat_w": sensor.data.quat_w_world[0].detach().cpu().numpy().copy()
+                      if hasattr(sensor.data, "quat_w_world") else None}
+    return out
+
+
 def sample_state(task, illegal: dict | None) -> dict:
     """Diagnostic simulator state. Not visible to the policy."""
     robot = task.scene[ROBOT]
     return {
+        "cameras": camera_state(task),
         "q": robot.data.joint_pos[0].detach().cpu().numpy().copy(),
         "qdot": robot.data.joint_vel[0].detach().cpu().numpy().copy(),
         "base_xyz": robot.data.root_pos_w[0].detach().cpu().numpy().copy(),
@@ -504,7 +528,9 @@ def main() -> None:
     env, trace, recorder, video, restore_camera_views = None, None, None, None, lambda: None
     telemetry = {key: [] for key in ("step", "sim_seconds", "alpha", "action", "requested_action", "proprio", "q", "qdot", "base_xyz",
                                      "base_quat", "env_reward", "reward_raw_total", "score", "illegal_force",
-                                     "termination", "reward_terms", "gripper_xyz", "object_xyz")}
+                                     "termination", "reward_terms", "gripper_xyz", "object_xyz",
+                                     "camera_head_pos", "camera_ee_pos",
+                                     "camera_head_quat", "camera_ee_quat")}
     try:
         cfg = TaskBEnvB2WCfg(seed=args.seed)  # seed drives the official object layout
         cfg.scene.num_envs = 1
@@ -824,6 +850,13 @@ def main() -> None:
             telemetry["base_quat"].append(state["base_quat"])
             telemetry["gripper_xyz"].append(state["gripper_xyz"])
             telemetry["object_xyz"].append(state["object_xyz"])
+            for label in ("head", "ee"):
+                camera = state["cameras"].get(label)
+                telemetry[f"camera_{label}_pos"].append(
+                    camera["pos_w"] if camera else np.full(3, np.nan))
+                telemetry[f"camera_{label}_quat"].append(
+                    camera["quat_w"] if camera and camera["quat_w"] is not None
+                    else np.full(4, np.nan))
             telemetry["env_reward"].append(env_reward)
             telemetry["reward_raw_total"].append(reward_raw_total)
             telemetry["score"].append(score)
@@ -876,7 +909,7 @@ def main() -> None:
             final_before_close = sample_state(task, illegal)
             final_timing = "post_step_before_any_reset"
             frames["final"] = save_rgb(obs, output, "final")
-        arrays = {key: np.asarray(value) for key, value in telemetry.items()}
+        arrays = {key: np.asarray(value, dtype=np.float64) for key, value in telemetry.items()}
         np.savez_compressed(output / "telemetry.npz", dt=dt, joint_names=np.asarray(schema.joint_names),
                             termination_term_names=np.asarray(termination_names),
                             reward_term_names=np.asarray(reward_names),
