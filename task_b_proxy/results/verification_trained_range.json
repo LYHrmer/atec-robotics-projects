@@ -1,0 +1,58 @@
+{
+  "scope": "Task B PROXY environment, deterministic policy, fresh spawns.",
+  "official_task_b_success": false,
+  "note": "One object, kinematic carry, scripted release. Not the official 18-object task.",
+  "checkpoint": "/home/lybm/ATEC2026_Simulation_Challenge/logs/taskb_proxy_train_03/model_399_final.pt",
+  "checkpoint_iteration": 399,
+  "seed": 1234,
+  "num_envs": 128,
+  "episodes_per_env": 3,
+  "evaluation_settings": {
+    "bin_scale": 2.0,
+    "release_radius": 0.5,
+    "heading_noise": 1.5707963267948966,
+    "spawn_min": 4.0,
+    "spawn_max": 6.5
+  },
+  "checkpoint_task_metadata": {
+    "proxy": true,
+    "official_task_b": false,
+    "objects": 1,
+    "official_objects": 18,
+    "grasping": "skipped: object kinematically carried on a virtual tray",
+    "carried_object_loads_robot": false,
+    "release": "scripted: dropped when the tray is within 0.4 m of the bin centre and the robot is still moving forward (>0.55 m/s)",
+    "success_test": "object settled within 0.5 x bin radius of the bin centre and below the rim; the official test is the same form at the full 1.0 m radius",
+    "bin_geometry_source": "atec_rl_lab.tasks.task_b.terrain.flat_terrain_with_trash_bin",
+    "carry_offset_m": [
+      2.8,
+      0.0,
+      1.0
+    ],
+    "spawn_distance_m": [
+      4.0,
+      6.5
+    ],
+    "spawn_heading_noise_rad": 1.5707963267948966,
+    "episode_length_s": 20.0
+  },
+  "episodes": 885,
+  "deliveries": 873,
+  "delivery_rate": 0.9864406779661017,
+  "release_rate": 0.831638418079096,
+  "termination_counts": {
+    "delivery_success": 698,
+    "delivery_resolved": 36,
+    "time_out": 151
+  },
+  "mean_min_object_distance_m": 0.37580069635118657,
+  "mean_min_robot_clearance_m": 0.8750989295668521,
+  "negative_clearance_episodes": 17,
+  "mean_path_length_m": 8.175468810668773,
+  "mean_steps": 302.2971751412429,
+  "success_mean_final_object_distance_m": 0.3600556958470235,
+  "success_mean_path_length_m": 8.19743872235048,
+  "success_mean_start_distance_m": 4.862392396588232,
+  "success_min_start_distance_m": 1.984130620956421,
+  "success_max_start_distance_m": 6.748813152313232
+}
