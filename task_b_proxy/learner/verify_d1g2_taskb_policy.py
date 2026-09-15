@@ -34,7 +34,9 @@ parser.add_argument('--assets_root', type=Path, required=True)
 parser.add_argument('--policy', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
 parser.add_argument('--num_envs', type=int, default=64)
-parser.add_argument('--episodes', type=int, default=3, help='sequential episode batches per environment')
+parser.add_argument('--episodes', type=int, default=3, help='completed episodes per environment')
+parser.add_argument('--max_steps', type=int, default=40000,
+                    help='Hard step cap, in case episodes never end.')
 parser.add_argument('--seed', type=int, default=1234)
 parser.add_argument('--episode_seconds', type=float, default=20.0)
 # default None means "use whatever the checkpoint was trained with"
@@ -56,7 +58,8 @@ from tensordict import TensorDict
 from rsl_rl.modules import ActorCritic
 from tools.d1g2_taska_residual import ResidualState, ACTOR_OBS_DIM, RESIDUAL_SCALES, RESIDUAL_CLIP
 from tools.d1g2_taskb_train_env import (
-    GOAL_OBS_DIM, NUM_ACTIONS, NUM_RESIDUAL_ACTIONS, RELEASE_SPEED, SUCCESS_SPEED,
+    GOAL_OBS_DIM, NUM_ACTIONS, NUM_RESIDUAL_ACTIONS,
+    SUCCESS_HEIGHT_FRACTION,
     build_d1g2_taskb_train_cfg, bin_center_w, command_from_action,
     delivery_success, taskb_state,
 )
@@ -97,16 +100,20 @@ class Verifier:
         action = self.actor_critic.act_inference(TensorDict(
             {'policy': actor}, batch_size=[env.num_envs], device=args.device))
         self.task['command'][:] = command_from_action(action[:, NUM_RESIDUAL_ACTIONS:])
-        self._last_action = action
-        return self.state.combine(action[:, :NUM_RESIDUAL_ACTIONS])
+        # Return the raw residual, not the combined joint target.  The caller
+        # combines once, as the trainer and the multi-delivery checker both do;
+        # returning the combined action here and combining it again at the call
+        # site applied the residual twice and so verified a controller that was
+        # never trained.
+        return action[:, :NUM_RESIDUAL_ACTIONS]
 
     @torch.inference_mode()
     def act_with_reset(self, raw, done_ids):
         """act() plus the residual-state reset that training performs on done."""
-        out = self.act(raw)
+        residual_action = self.act(raw)
         if len(done_ids):
             self.state.reset(done_ids)
-        return out, self._last_action
+        return residual_action
 
 
 torch.set_num_threads(4)
@@ -130,6 +137,19 @@ spawn = trained.get('spawn_ring_m') or trained.get('spawn_distance_m', (4.0, 6.5
 resolved['spawn_min'] = args.spawn_min if args.spawn_min is not None else spawn[0]
 resolved['spawn_max'] = args.spawn_max if args.spawn_max is not None else spawn[1]
 
+# Provenance.  Every reported number has to say which task it measured: runs from
+# different environment builds were compared once already, and the episode length
+# is the setting most easily left to a default -- the trainer's is 40 s while the
+# published checkpoint was trained at 20 s, which silently reproduces a different
+# task.  Recorded in the summary rather than only warned about, so a result file
+# carries the fact even when nobody reads the log.
+trained_episode_s = trained.get('episode_length_s')
+episode_length_matches = (trained_episode_s is None
+                          or abs(args.episode_seconds - float(trained_episode_s)) < 1e-6)
+if not episode_length_matches:
+    print(f'D1G2_TASKB_VERIFY_STAGE WARNING running at {args.episode_seconds}s but the '
+          f'checkpoint was trained at {trained_episode_s}s', flush=True)
+
 print('D1G2_TASKB_VERIFY_STAGE building ' + json.dumps(resolved), flush=True)
 cfg = build_d1g2_taskb_train_cfg(
     device=args.device, seed=args.seed, ddt_root=args.assets_root, num_envs=args.num_envs,
@@ -146,63 +166,104 @@ verifier = Verifier(env, args.checkpoint)
 
 raw, _ = env.reset(seed=args.seed)
 records = []
-for _ in range(args.episodes):
-    # per-episode tracking
-    start_distance = torch.norm(env.scene['robot'].data.root_pos_w[:, :2] - bin_center_w(env), dim=1)
-    path_length = torch.zeros(env.num_envs, device=args.device)
-    previous_xy = env.scene['robot'].data.root_pos_w[:, :2].clone()
-    min_object_distance = torch.full((env.num_envs,), 1.0e3, device=args.device)
-    min_robot_clearance = torch.full((env.num_envs,), 1.0e3, device=args.device)
-    released = torch.zeros(env.num_envs, dtype=torch.bool, device=args.device)
-    episode_steps = torch.zeros(env.num_envs, dtype=torch.long, device=args.device)
-    bin_radius = state['bin_radius']
-    finished = 0
-    for _ in range(env.max_episode_length):
-        last_action, _ = verifier.act_with_reset(raw, [])
-        raw, _, terminated, truncated, _ = env.step(
-            verifier.state.combine(last_action[:, :NUM_RESIDUAL_ACTIONS]))
-        done = terminated | truncated
-        robot_pos = env.scene['robot'].data.root_pos_w
-        object_pos = env.scene['object'].data.root_pos_w
-        path_length += torch.norm(robot_pos[:, :2] - previous_xy, dim=1)
-        previous_xy = robot_pos[:, :2].clone()
-        min_object_distance = torch.minimum(
-            min_object_distance, torch.norm(object_pos[:, :2] - bin_center_w(env), dim=1))
-        min_robot_clearance = torch.minimum(
-            min_robot_clearance, torch.norm(robot_pos[:, :2] - bin_center_w(env), dim=1) - bin_radius)
-        released |= ~state['carrying']
-        episode_steps = episode_steps + 1
-        if not bool(done.any()):
-            continue
-        ids = done.nonzero().flatten()
-        # The manager state was reset by step() for exactly these ids, so the
-        # success flag read here is the *next* episode's.  Recompute it from
-        # this script's own bookkeeping instead: an episode counts as delivered
-        # when the object came to rest inside the success circle at any point
-        # during that episode.
-        success = min_object_distance <= state['success_radius']
-        for index in ids.tolist():
-            records.append({
-                'success': bool(success[index]),
-                'released': bool(released[index]),
-                'start_distance_m': float(start_distance[index]),
-                'min_object_distance_m': float(min_object_distance[index]),
-                'min_robot_clearance_m': float(min_robot_clearance[index]),
-                'path_length_m': float(path_length[index]),
-                'steps': int(episode_steps[index]),
-                'terminations': [name for name in env.termination_manager.active_terms
-                                 if bool(env.termination_manager.get_term(name)[index])],
-            })
-        finished += len(ids)
-        # restart tracking for the environments that just finished
-        start_distance[ids] = torch.norm(robot_pos[ids, :2] - bin_center_w(env)[ids], dim=1)
-        path_length[ids] = 0.0
-        previous_xy[ids] = robot_pos[ids, :2]
-        min_object_distance[ids] = 1.0e3
-        min_robot_clearance[ids] = 1.0e3
-        released[ids] = False
-        episode_steps[ids] = 0
-    print(f'D1G2_TASKB_VERIFY_STAGE batch_done finished={finished}', flush=True)
+# Trackers persist across episode endings and are re-armed only for the
+# environments that actually finish.  Re-zeroing them per outer batch, as this
+# loop used to, scored every episode that straddled a batch boundary on a
+# truncated window -- which is what made the reported release rate incoherent.
+start_distance = torch.norm(env.scene['robot'].data.root_pos_w[:, :2] - bin_center_w(env), dim=1)
+path_length = torch.zeros(env.num_envs, device=args.device)
+previous_xy = env.scene['robot'].data.root_pos_w[:, :2].clone()
+min_object_distance = torch.full((env.num_envs,), 1.0e3, device=args.device)
+min_robot_clearance = torch.full((env.num_envs,), 1.0e3, device=args.device)
+released = torch.zeros(env.num_envs, dtype=torch.bool, device=args.device)
+delivered = torch.zeros(env.num_envs, dtype=torch.bool, device=args.device)
+episode_steps = torch.zeros(env.num_envs, dtype=torch.long, device=args.device)
+bin_radius = state['bin_radius']
+bin_height = state['bin_scale'] * (0.05 + 0.5)
+ground_z = env.scene.env_origins[:, 2]
+target_records = args.episodes * env.num_envs
+total_steps = 0
+next_report = max(1, target_records // 4)
+
+while len(records) < target_records and total_steps < args.max_steps:
+    # Track the state the episode is in *before* the step.  For an environment
+    # that finishes, the post-step pose already belongs to the next episode.
+    robot_pos = env.scene['robot'].data.root_pos_w
+    object_pos = env.scene['object'].data.root_pos_w
+    carrying = state['carrying'].clone()
+    object_to_bin = torch.norm(object_pos[:, :2] - bin_center_w(env), dim=1)
+    path_length += torch.norm(robot_pos[:, :2] - previous_xy, dim=1)
+    previous_xy = robot_pos[:, :2].clone()
+    min_object_distance = torch.minimum(min_object_distance, object_to_bin)
+    min_robot_clearance = torch.minimum(
+        min_robot_clearance, torch.norm(robot_pos[:, :2] - bin_center_w(env), dim=1) - bin_radius)
+    released |= ~carrying
+    # The object rides 2.8 m ahead of the robot while carried, so an ungated
+    # radius test scores a robot that merely walks near the bin, released or
+    # not.  Gate on the drop having happened and on the legal height band.
+    #
+    # The environment's own test additionally requires the object to have
+    # settled, and that clause cannot be reproduced here: a finished
+    # environment is reset inside step(), so the settled state exists only on
+    # the single terminating step, while this loop samples the state before
+    # each step.  A settled-gated latch therefore reads zero for every episode
+    # -- not a stricter measurement, an unobservable one.  The environment's
+    # own verdict is recorded alongside instead, and the two are compared.
+    delivered |= ((object_to_bin <= state['success_radius'])
+                  & (~carrying)
+                  & ((object_pos[:, 2] - ground_z) >= 0.0)
+                  & ((object_pos[:, 2] - ground_z) <= SUCCESS_HEIGHT_FRACTION * bin_height))
+
+    residual_action = verifier.act_with_reset(raw, [])
+    raw, _, terminated, truncated, _ = env.step(verifier.state.combine(residual_action))
+    done = terminated | truncated
+    episode_steps = episode_steps + 1
+    total_steps += 1
+    if not bool(done.any()):
+        continue
+
+    ids = done.nonzero().flatten()
+    # The env's own verdict for the episode that just ended.  The manager does
+    # not clear its term flags when it resets, so this is still the terminating
+    # step's value, not the next episode's.
+    if 'delivery_success' in env.termination_manager.active_terms:
+        env_success = env.termination_manager.get_term('delivery_success')
+    else:
+        env_success = torch.zeros_like(delivered)
+    # The manager state was reset by step() for exactly these ids, so the
+    # environment's own success flag read here is the *next* episode's.  That is
+    # why the verdict comes from this script's own bookkeeping.
+    for index in ids.tolist():
+        records.append({
+            'success': bool(delivered[index]),
+            'env_reports_success': bool(env_success[index]),
+            'released': bool(released[index]),
+            'start_distance_m': float(start_distance[index]),
+            'min_object_distance_m': float(min_object_distance[index]),
+            'min_robot_clearance_m': float(min_robot_clearance[index]),
+            'path_length_m': float(path_length[index]),
+            'steps': int(episode_steps[index]),
+            'terminations': [name for name in env.termination_manager.active_terms
+                             if bool(env.termination_manager.get_term(name)[index])],
+        })
+    # Re-arm from the post-step state: for these ids that is the fresh spawn.
+    respawn_pos = env.scene['robot'].data.root_pos_w
+    start_distance[ids] = torch.norm(respawn_pos[ids, :2] - bin_center_w(env)[ids], dim=1)
+    path_length[ids] = 0.0
+    previous_xy[ids] = respawn_pos[ids, :2]
+    min_object_distance[ids] = 1.0e3
+    min_robot_clearance[ids] = 1.0e3
+    released[ids] = False
+    delivered[ids] = False
+    episode_steps[ids] = 0
+
+    if len(records) >= next_report:
+        print(f'D1G2_TASKB_VERIFY_STAGE progress episodes={len(records)}/{target_records} '
+              f'steps={total_steps}', flush=True)
+        next_report += max(1, target_records // 4)
+
+print(f'D1G2_TASKB_VERIFY_STAGE done episodes={len(records)} steps={total_steps}',
+      flush=True)
 
 successes = [row for row in records if row['success']]
 summary = {
@@ -216,9 +277,17 @@ summary = {
     'episodes_per_env': args.episodes,
     'evaluation_settings': resolved,
     'checkpoint_task_metadata': trained,
+    'episode_length_s': args.episode_seconds,
+    'checkpoint_episode_length_s': trained_episode_s,
+    'episode_length_matches_checkpoint': episode_length_matches,
     'episodes': len(records),
     'deliveries': len(successes),
     'delivery_rate': len(successes) / len(records) if records else None,
+    'env_delivery_success': sum(row['env_reports_success'] for row in records),
+    'env_delivery_rate': (sum(row['env_reports_success'] for row in records) / len(records)
+                          if records else None),
+    'success_disagreements': sum(1 for row in records
+                                 if row['success'] != row['env_reports_success']),
     'release_rate': sum(row['released'] for row in records) / len(records) if records else None,
     'termination_counts': dict(Counter(t for row in records for t in row['terminations'])),
 }

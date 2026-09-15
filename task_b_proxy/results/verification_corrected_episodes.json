@@ -1,0 +1,4996 @@
+{
+  "episodes": [
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.058563709259033,
+      "min_object_distance_m": 0.3882312774658203,
+      "min_robot_clearance_m": 0.5488390922546387,
+      "path_length_m": 1.5538551807403564,
+      "steps": 110,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.111730575561523,
+      "min_object_distance_m": 0.37319740653038025,
+      "min_robot_clearance_m": 0.4740769863128662,
+      "path_length_m": 1.7304972410202026,
+      "steps": 118,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.070059299468994,
+      "min_object_distance_m": 0.35147255659103394,
+      "min_robot_clearance_m": 0.541231632232666,
+      "path_length_m": 1.5765364170074463,
+      "steps": 118,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.18863582611084,
+      "min_object_distance_m": 0.3959832489490509,
+      "min_robot_clearance_m": 0.39298033714294434,
+      "path_length_m": 1.8732805252075195,
+      "steps": 119,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.25309944152832,
+      "min_object_distance_m": 0.38509947061538696,
+      "min_robot_clearance_m": 0.6447577476501465,
+      "path_length_m": 1.6846404075622559,
+      "steps": 120,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.472505569458008,
+      "min_object_distance_m": 0.39436933398246765,
+      "min_robot_clearance_m": 0.5531167984008789,
+      "path_length_m": 1.9520891904830933,
+      "steps": 127,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.385477542877197,
+      "min_object_distance_m": 0.3779693841934204,
+      "min_robot_clearance_m": 0.734835147857666,
+      "path_length_m": 1.7303094863891602,
+      "steps": 127,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.373128414154053,
+      "min_object_distance_m": 0.3853961229324341,
+      "min_robot_clearance_m": 0.7520246505737305,
+      "path_length_m": 1.756127119064331,
+      "steps": 129,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.362056732177734,
+      "min_object_distance_m": 0.3980168104171753,
+      "min_robot_clearance_m": 0.7896125316619873,
+      "path_length_m": 1.7291979789733887,
+      "steps": 130,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.406948566436768,
+      "min_object_distance_m": 0.39570048451423645,
+      "min_robot_clearance_m": 0.4962944984436035,
+      "path_length_m": 1.9646129608154297,
+      "steps": 131,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.231721878051758,
+      "min_object_distance_m": 0.37817028164863586,
+      "min_robot_clearance_m": 0.40958285331726074,
+      "path_length_m": 1.9445934295654297,
+      "steps": 132,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.565026760101318,
+      "min_object_distance_m": 0.38947203755378723,
+      "min_robot_clearance_m": 0.5452289581298828,
+      "path_length_m": 2.050842046737671,
+      "steps": 132,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.565123558044434,
+      "min_object_distance_m": 0.38460853695869446,
+      "min_robot_clearance_m": 0.5816552639007568,
+      "path_length_m": 2.0382368564605713,
+      "steps": 135,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.58894157409668,
+      "min_object_distance_m": 0.38853713870048523,
+      "min_robot_clearance_m": 0.9236268997192383,
+      "path_length_m": 1.8166618347167969,
+      "steps": 136,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.486976623535156,
+      "min_object_distance_m": 0.3919336497783661,
+      "min_robot_clearance_m": 0.3533961772918701,
+      "path_length_m": 2.289984703063965,
+      "steps": 138,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.128901958465576,
+      "min_object_distance_m": 0.3726053535938263,
+      "min_robot_clearance_m": 0.4176058769226074,
+      "path_length_m": 1.9284179210662842,
+      "steps": 139,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.5432000160217285,
+      "min_object_distance_m": 0.3974018096923828,
+      "min_robot_clearance_m": 0.644707441329956,
+      "path_length_m": 2.027585744857788,
+      "steps": 140,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.296374320983887,
+      "min_object_distance_m": 0.3740687370300293,
+      "min_robot_clearance_m": 0.6284184455871582,
+      "path_length_m": 1.8909461498260498,
+      "steps": 141,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.7206010818481445,
+      "min_object_distance_m": 0.3827170729637146,
+      "min_robot_clearance_m": 0.893547773361206,
+      "path_length_m": 1.9838706254959106,
+      "steps": 143,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.628543376922607,
+      "min_object_distance_m": 0.37627166509628296,
+      "min_robot_clearance_m": 0.6995503902435303,
+      "path_length_m": 2.049001455307007,
+      "steps": 143,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.074589729309082,
+      "min_object_distance_m": 0.39278680086135864,
+      "min_robot_clearance_m": 0.7516758441925049,
+      "path_length_m": 1.6470398902893066,
+      "steps": 143,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.278585910797119,
+      "min_object_distance_m": 0.3953183889389038,
+      "min_robot_clearance_m": 0.4689500331878662,
+      "path_length_m": 1.980018973350525,
+      "steps": 144,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.752748966217041,
+      "min_object_distance_m": 0.36733338236808777,
+      "min_robot_clearance_m": 0.8068680763244629,
+      "path_length_m": 2.0555620193481445,
+      "steps": 144,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.813846588134766,
+      "min_object_distance_m": 0.34223467111587524,
+      "min_robot_clearance_m": 0.7845847606658936,
+      "path_length_m": 2.138767957687378,
+      "steps": 145,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.3418803215026855,
+      "min_object_distance_m": 0.36918655037879944,
+      "min_robot_clearance_m": 0.3621366024017334,
+      "path_length_m": 2.2331795692443848,
+      "steps": 151,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.978817939758301,
+      "min_object_distance_m": 0.39174601435661316,
+      "min_robot_clearance_m": 0.2894754409790039,
+      "path_length_m": 2.718615770339966,
+      "steps": 152,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.654578685760498,
+      "min_object_distance_m": 0.39887046813964844,
+      "min_robot_clearance_m": 0.782141923904419,
+      "path_length_m": 2.145709276199341,
+      "steps": 154,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.267694473266602,
+      "min_object_distance_m": 0.3775235414505005,
+      "min_robot_clearance_m": -0.10163164138793945,
+      "path_length_m": 2.663133382797241,
+      "steps": 155,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.072920799255371,
+      "min_object_distance_m": 0.3462536931037903,
+      "min_robot_clearance_m": 0.7377989292144775,
+      "path_length_m": 2.405961513519287,
+      "steps": 157,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.079639911651611,
+      "min_object_distance_m": 0.34280282258987427,
+      "min_robot_clearance_m": 0.5364701747894287,
+      "path_length_m": 1.8960078954696655,
+      "steps": 158,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.836315155029297,
+      "min_object_distance_m": 0.39131662249565125,
+      "min_robot_clearance_m": 0.2846801280975342,
+      "path_length_m": 2.822857618331909,
+      "steps": 159,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.129826545715332,
+      "min_object_distance_m": 0.38449332118034363,
+      "min_robot_clearance_m": 0.7348196506500244,
+      "path_length_m": 2.4841184616088867,
+      "steps": 160,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.947527885437012,
+      "min_object_distance_m": 0.3863051235675812,
+      "min_robot_clearance_m": 0.4770474433898926,
+      "path_length_m": 2.691012382507324,
+      "steps": 162,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.570369720458984,
+      "min_object_distance_m": 0.3893364369869232,
+      "min_robot_clearance_m": 0.17379069328308105,
+      "path_length_m": 2.7723259925842285,
+      "steps": 162,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.209951877593994,
+      "min_object_distance_m": 0.38518890738487244,
+      "min_robot_clearance_m": 0.3272860050201416,
+      "path_length_m": 2.906160354614258,
+      "steps": 163,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.9516520500183105,
+      "min_object_distance_m": 0.3817605674266815,
+      "min_robot_clearance_m": 0.8435587882995605,
+      "path_length_m": 2.3966777324676514,
+      "steps": 165,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.133011817932129,
+      "min_object_distance_m": 0.39364248514175415,
+      "min_robot_clearance_m": 0.6708683967590332,
+      "path_length_m": 2.561476469039917,
+      "steps": 166,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.338541030883789,
+      "min_object_distance_m": 0.3973567485809326,
+      "min_robot_clearance_m": 0.4562976360321045,
+      "path_length_m": 2.240039587020874,
+      "steps": 166,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.10938835144043,
+      "min_object_distance_m": 0.08499082177877426,
+      "min_robot_clearance_m": -0.08153378963470459,
+      "path_length_m": 2.3676750659942627,
+      "steps": 168,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.286561965942383,
+      "min_object_distance_m": 0.3825569450855255,
+      "min_robot_clearance_m": 0.7666974067687988,
+      "path_length_m": 1.9480372667312622,
+      "steps": 168,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.076123237609863,
+      "min_object_distance_m": 0.334797203540802,
+      "min_robot_clearance_m": 0.4627211093902588,
+      "path_length_m": 2.0829458236694336,
+      "steps": 171,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.732161045074463,
+      "min_object_distance_m": 0.3693525791168213,
+      "min_robot_clearance_m": 0.4335012435913086,
+      "path_length_m": 2.7438859939575195,
+      "steps": 171,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.507556438446045,
+      "min_object_distance_m": 0.36824503540992737,
+      "min_robot_clearance_m": 0.1739363670349121,
+      "path_length_m": 2.680211067199707,
+      "steps": 172,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.104904651641846,
+      "min_object_distance_m": 0.3826031982898712,
+      "min_robot_clearance_m": 0.8155930042266846,
+      "path_length_m": 2.5399720668792725,
+      "steps": 173,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.4532365798950195,
+      "min_object_distance_m": 0.37969452142715454,
+      "min_robot_clearance_m": 0.941739559173584,
+      "path_length_m": 1.9603064060211182,
+      "steps": 173,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.487133026123047,
+      "min_object_distance_m": 0.39361169934272766,
+      "min_robot_clearance_m": 0.6535875797271729,
+      "path_length_m": 2.8905017375946045,
+      "steps": 174,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.063075542449951,
+      "min_object_distance_m": 0.38335132598876953,
+      "min_robot_clearance_m": 0.5681214332580566,
+      "path_length_m": 2.014991521835327,
+      "steps": 174,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.8889360427856445,
+      "min_object_distance_m": 0.3774036169052124,
+      "min_robot_clearance_m": 0.6278476715087891,
+      "path_length_m": 2.5263724327087402,
+      "steps": 175,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.412829875946045,
+      "min_object_distance_m": 0.3978918790817261,
+      "min_robot_clearance_m": 0.5133647918701172,
+      "path_length_m": 2.279507637023926,
+      "steps": 178,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.547670364379883,
+      "min_object_distance_m": 0.3909715712070465,
+      "min_robot_clearance_m": 0.588212251663208,
+      "path_length_m": 2.307514190673828,
+      "steps": 178,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.329196929931641,
+      "min_object_distance_m": 0.3841843008995056,
+      "min_robot_clearance_m": 0.4790937900543213,
+      "path_length_m": 2.344074249267578,
+      "steps": 179,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.575432777404785,
+      "min_object_distance_m": 0.3905266523361206,
+      "min_robot_clearance_m": 0.7351493835449219,
+      "path_length_m": 2.931771755218506,
+      "steps": 183,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.421590328216553,
+      "min_object_distance_m": 0.396039754152298,
+      "min_robot_clearance_m": 0.5875260829925537,
+      "path_length_m": 2.291668653488159,
+      "steps": 184,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.769961833953857,
+      "min_object_distance_m": 0.3919661045074463,
+      "min_robot_clearance_m": 0.5805017948150635,
+      "path_length_m": 3.2165639400482178,
+      "steps": 185,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.428140163421631,
+      "min_object_distance_m": 0.38475409150123596,
+      "min_robot_clearance_m": 0.3112974166870117,
+      "path_length_m": 3.3505501747131348,
+      "steps": 186,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.874543190002441,
+      "min_object_distance_m": 0.39729854464530945,
+      "min_robot_clearance_m": 0.7598230838775635,
+      "path_length_m": 2.4885809421539307,
+      "steps": 186,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.285531520843506,
+      "min_object_distance_m": 0.3927405774593353,
+      "min_robot_clearance_m": 0.48586463928222656,
+      "path_length_m": 3.265010356903076,
+      "steps": 190,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.774216175079346,
+      "min_object_distance_m": 0.3977317214012146,
+      "min_robot_clearance_m": 0.5291504859924316,
+      "path_length_m": 2.6103296279907227,
+      "steps": 192,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.093320369720459,
+      "min_object_distance_m": 0.3239787817001343,
+      "min_robot_clearance_m": 0.44796061515808105,
+      "path_length_m": 2.3155481815338135,
+      "steps": 192,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.4288411140441895,
+      "min_object_distance_m": 0.343650221824646,
+      "min_robot_clearance_m": 0.35628366470336914,
+      "path_length_m": 2.418532371520996,
+      "steps": 196,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.491209506988525,
+      "min_object_distance_m": 0.3821568191051483,
+      "min_robot_clearance_m": 0.660660982131958,
+      "path_length_m": 2.298043966293335,
+      "steps": 196,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.011818885803223,
+      "min_object_distance_m": 0.3234665095806122,
+      "min_robot_clearance_m": -0.01830601692199707,
+      "path_length_m": 2.6522927284240723,
+      "steps": 196,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.588066101074219,
+      "min_object_distance_m": 0.36476269364356995,
+      "min_robot_clearance_m": 0.13211750984191895,
+      "path_length_m": 2.927746534347534,
+      "steps": 197,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.222082138061523,
+      "min_object_distance_m": 0.2932654619216919,
+      "min_robot_clearance_m": -0.35560786724090576,
+      "path_length_m": 3.0439655780792236,
+      "steps": 197,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.842606067657471,
+      "min_object_distance_m": 0.3853335678577423,
+      "min_robot_clearance_m": 0.7758603096008301,
+      "path_length_m": 3.178194522857666,
+      "steps": 197,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.901983737945557,
+      "min_object_distance_m": 0.16206620633602142,
+      "min_robot_clearance_m": 0.5399820804595947,
+      "path_length_m": 2.853419303894043,
+      "steps": 202,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.180908203125,
+      "min_object_distance_m": 0.3865911364555359,
+      "min_robot_clearance_m": 0.4496273994445801,
+      "path_length_m": 3.022996187210083,
+      "steps": 202,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.8732380867004395,
+      "min_object_distance_m": 0.3956405222415924,
+      "min_robot_clearance_m": 0.8346235752105713,
+      "path_length_m": 3.1624505519866943,
+      "steps": 202,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.038366317749023,
+      "min_object_distance_m": 0.3798683285713196,
+      "min_robot_clearance_m": 0.6644370555877686,
+      "path_length_m": 2.7509522438049316,
+      "steps": 202,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.4340033531188965,
+      "min_object_distance_m": 0.37252044677734375,
+      "min_robot_clearance_m": 0.517120361328125,
+      "path_length_m": 3.1683707237243652,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.521087646484375,
+      "min_object_distance_m": 0.39043548703193665,
+      "min_robot_clearance_m": 0.3699605464935303,
+      "path_length_m": 3.5118517875671387,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.721381187438965,
+      "min_object_distance_m": 0.3978365957736969,
+      "min_robot_clearance_m": 0.6046183109283447,
+      "path_length_m": 2.6702635288238525,
+      "steps": 204,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.066568374633789,
+      "min_object_distance_m": 0.3802911341190338,
+      "min_robot_clearance_m": 0.6406753063201904,
+      "path_length_m": 3.4765632152557373,
+      "steps": 208,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.757630825042725,
+      "min_object_distance_m": 0.38144180178642273,
+      "min_robot_clearance_m": 0.4494194984436035,
+      "path_length_m": 2.869767665863037,
+      "steps": 208,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.55208158493042,
+      "min_object_distance_m": 0.3092830181121826,
+      "min_robot_clearance_m": 0.7892935276031494,
+      "path_length_m": 3.1035919189453125,
+      "steps": 209,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.031662940979004,
+      "min_object_distance_m": 0.3972913920879364,
+      "min_robot_clearance_m": 0.19166898727416992,
+      "path_length_m": 2.4714016914367676,
+      "steps": 210,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.820527076721191,
+      "min_object_distance_m": 0.39671093225479126,
+      "min_robot_clearance_m": 0.7359142303466797,
+      "path_length_m": 2.6317195892333984,
+      "steps": 211,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.431275367736816,
+      "min_object_distance_m": 0.39231258630752563,
+      "min_robot_clearance_m": 0.4932739734649658,
+      "path_length_m": 3.954956293106079,
+      "steps": 212,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.801448822021484,
+      "min_object_distance_m": 0.39136719703674316,
+      "min_robot_clearance_m": 0.8078896999359131,
+      "path_length_m": 3.292537212371826,
+      "steps": 216,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.401909351348877,
+      "min_object_distance_m": 0.3946431875228882,
+      "min_robot_clearance_m": 0.3936808109283447,
+      "path_length_m": 4.020687580108643,
+      "steps": 216,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.9118499755859375,
+      "min_object_distance_m": 0.393436461687088,
+      "min_robot_clearance_m": 0.7421391010284424,
+      "path_length_m": 3.4989631175994873,
+      "steps": 217,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.311178207397461,
+      "min_object_distance_m": 0.38529518246650696,
+      "min_robot_clearance_m": 0.34642505645751953,
+      "path_length_m": 4.026741027832031,
+      "steps": 218,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.069069862365723,
+      "min_object_distance_m": 0.38376742601394653,
+      "min_robot_clearance_m": 0.6585118770599365,
+      "path_length_m": 2.0560505390167236,
+      "steps": 220,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.724799633026123,
+      "min_object_distance_m": 0.3977835178375244,
+      "min_robot_clearance_m": 0.8530495166778564,
+      "path_length_m": 2.5351712703704834,
+      "steps": 220,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.858752727508545,
+      "min_object_distance_m": 0.3985399305820465,
+      "min_robot_clearance_m": 0.6584551334381104,
+      "path_length_m": 3.420494794845581,
+      "steps": 220,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.086419582366943,
+      "min_object_distance_m": 0.3570424020290375,
+      "min_robot_clearance_m": 0.5052924156188965,
+      "path_length_m": 3.039914131164551,
+      "steps": 220,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.658001899719238,
+      "min_object_distance_m": 0.38049039244651794,
+      "min_robot_clearance_m": 0.6137354373931885,
+      "path_length_m": 2.837407350540161,
+      "steps": 221,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.439767360687256,
+      "min_object_distance_m": 0.3905069828033447,
+      "min_robot_clearance_m": 0.6899354457855225,
+      "path_length_m": 3.172710657119751,
+      "steps": 221,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.421099662780762,
+      "min_object_distance_m": 0.3915577530860901,
+      "min_robot_clearance_m": 0.34008145332336426,
+      "path_length_m": 4.109440803527832,
+      "steps": 224,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.85721492767334,
+      "min_object_distance_m": 0.36636701226234436,
+      "min_robot_clearance_m": 0.1369938850402832,
+      "path_length_m": 3.507455348968506,
+      "steps": 224,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.896526336669922,
+      "min_object_distance_m": 0.397166907787323,
+      "min_robot_clearance_m": 0.6926028728485107,
+      "path_length_m": 3.4542551040649414,
+      "steps": 224,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.030980587005615,
+      "min_object_distance_m": 0.3942597806453705,
+      "min_robot_clearance_m": 0.8853223323822021,
+      "path_length_m": 1.2897497415542603,
+      "steps": 108,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.705126762390137,
+      "min_object_distance_m": 0.28322386741638184,
+      "min_robot_clearance_m": 0.2305903434753418,
+      "path_length_m": 3.6811835765838623,
+      "steps": 226,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.451997756958008,
+      "min_object_distance_m": 0.3994700610637665,
+      "min_robot_clearance_m": 0.44182324409484863,
+      "path_length_m": 4.085555076599121,
+      "steps": 226,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.86699104309082,
+      "min_object_distance_m": 0.3968223035335541,
+      "min_robot_clearance_m": 0.7607040405273438,
+      "path_length_m": 3.392634868621826,
+      "steps": 226,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.882917404174805,
+      "min_object_distance_m": 0.3859064280986786,
+      "min_robot_clearance_m": 0.635124921798706,
+      "path_length_m": 3.476125955581665,
+      "steps": 227,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.4653425216674805,
+      "min_object_distance_m": 0.3859623074531555,
+      "min_robot_clearance_m": 0.8543407917022705,
+      "path_length_m": 3.7401888370513916,
+      "steps": 227,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.520845413208008,
+      "min_object_distance_m": 0.3948979079723358,
+      "min_robot_clearance_m": 0.46865391731262207,
+      "path_length_m": 3.5882339477539062,
+      "steps": 229,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.384908676147461,
+      "min_object_distance_m": 0.39487046003341675,
+      "min_robot_clearance_m": 0.682720422744751,
+      "path_length_m": 3.209399461746216,
+      "steps": 230,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.404669284820557,
+      "min_object_distance_m": 0.3747292757034302,
+      "min_robot_clearance_m": 0.7762274742126465,
+      "path_length_m": 3.133352041244507,
+      "steps": 230,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.9045939445495605,
+      "min_object_distance_m": 0.3996143639087677,
+      "min_robot_clearance_m": 0.7661261558532715,
+      "path_length_m": 3.463383436203003,
+      "steps": 231,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.557102680206299,
+      "min_object_distance_m": 0.38787010312080383,
+      "min_robot_clearance_m": 0.6354687213897705,
+      "path_length_m": 3.333022117614746,
+      "steps": 233,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": false,
+      "env_reports_success": false,
+      "released": false,
+      "start_distance_m": 5.983146667480469,
+      "min_object_distance_m": 2.8077785968780518,
+      "min_robot_clearance_m": 3.4390692710876465,
+      "path_length_m": 0.8304095268249512,
+      "steps": 69,
+      "terminations": [
+        "illegal_contact"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.9539666175842285,
+      "min_object_distance_m": 0.39310652017593384,
+      "min_robot_clearance_m": 0.38111400604248047,
+      "path_length_m": 3.2604048252105713,
+      "steps": 239,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.702905654907227,
+      "min_object_distance_m": 0.3408487141132355,
+      "min_robot_clearance_m": 0.649181604385376,
+      "path_length_m": 3.465172290802002,
+      "steps": 240,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.888564586639404,
+      "min_object_distance_m": 0.15384620428085327,
+      "min_robot_clearance_m": 0.3768754005432129,
+      "path_length_m": 3.869960308074951,
+      "steps": 242,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.883101940155029,
+      "min_object_distance_m": 0.39463457465171814,
+      "min_robot_clearance_m": 0.7587769031524658,
+      "path_length_m": 3.6033003330230713,
+      "steps": 247,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.738491535186768,
+      "min_object_distance_m": 0.38262319564819336,
+      "min_robot_clearance_m": 0.6855330467224121,
+      "path_length_m": 3.603759765625,
+      "steps": 249,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.133577346801758,
+      "min_object_distance_m": 0.3965455889701843,
+      "min_robot_clearance_m": 0.3690159320831299,
+      "path_length_m": 1.8312861919403076,
+      "steps": 130,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.37964391708374,
+      "min_object_distance_m": 0.32438042759895325,
+      "min_robot_clearance_m": 0.7850213050842285,
+      "path_length_m": 3.332510232925415,
+      "steps": 251,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.588683128356934,
+      "min_object_distance_m": 0.38321030139923096,
+      "min_robot_clearance_m": 0.5300159454345703,
+      "path_length_m": 3.8418283462524414,
+      "steps": 251,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.14988899230957,
+      "min_object_distance_m": 0.3992602825164795,
+      "min_robot_clearance_m": 0.7626588344573975,
+      "path_length_m": 3.777702569961548,
+      "steps": 254,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.100043773651123,
+      "min_object_distance_m": 0.357497900724411,
+      "min_robot_clearance_m": 0.7549922466278076,
+      "path_length_m": 3.6617486476898193,
+      "steps": 255,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": false,
+      "env_reports_success": false,
+      "released": false,
+      "start_distance_m": 6.062680244445801,
+      "min_object_distance_m": 1.8135520219802856,
+      "min_robot_clearance_m": 2.4336347579956055,
+      "path_length_m": 1.8950053453445435,
+      "steps": 99,
+      "terminations": [
+        "bad_orientation"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.240395545959473,
+      "min_object_distance_m": 0.3893527388572693,
+      "min_robot_clearance_m": 0.6517598628997803,
+      "path_length_m": 4.028788089752197,
+      "steps": 257,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.775038719177246,
+      "min_object_distance_m": 0.3913773000240326,
+      "min_robot_clearance_m": 0.39145350456237793,
+      "path_length_m": 4.118599891662598,
+      "steps": 257,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.047839164733887,
+      "min_object_distance_m": 0.3892391324043274,
+      "min_robot_clearance_m": 0.5582783222198486,
+      "path_length_m": 2.5506606101989746,
+      "steps": 157,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.321784019470215,
+      "min_object_distance_m": 0.3341706097126007,
+      "min_robot_clearance_m": 0.7010536193847656,
+      "path_length_m": 4.225814342498779,
+      "steps": 270,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.461878776550293,
+      "min_object_distance_m": 0.3978175222873688,
+      "min_robot_clearance_m": 0.7146081924438477,
+      "path_length_m": 4.176554203033447,
+      "steps": 276,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.399926662445068,
+      "min_object_distance_m": 0.39553093910217285,
+      "min_robot_clearance_m": 0.5642635822296143,
+      "path_length_m": 4.256433486938477,
+      "steps": 278,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.539260387420654,
+      "min_object_distance_m": 0.3928382694721222,
+      "min_robot_clearance_m": 0.6339564323425293,
+      "path_length_m": 2.0802929401397705,
+      "steps": 147,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.307333946228027,
+      "min_object_distance_m": 0.3006303608417511,
+      "min_robot_clearance_m": 0.4707951545715332,
+      "path_length_m": 4.543249607086182,
+      "steps": 285,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.208339691162109,
+      "min_object_distance_m": 0.3878616690635681,
+      "min_robot_clearance_m": 0.3003551959991455,
+      "path_length_m": 2.125023365020752,
+      "steps": 145,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.853033542633057,
+      "min_object_distance_m": 0.3820957541465759,
+      "min_robot_clearance_m": 0.4849853515625,
+      "path_length_m": 2.7560458183288574,
+      "steps": 173,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.242822647094727,
+      "min_object_distance_m": 0.3549639582633972,
+      "min_robot_clearance_m": 0.5618448257446289,
+      "path_length_m": 4.607549667358398,
+      "steps": 297,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.939969539642334,
+      "min_object_distance_m": 0.31311988830566406,
+      "min_robot_clearance_m": 0.6150381565093994,
+      "path_length_m": 2.4212636947631836,
+      "steps": 157,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.515592098236084,
+      "min_object_distance_m": 0.3814936578273773,
+      "min_robot_clearance_m": 0.46785593032836914,
+      "path_length_m": 2.2895073890686035,
+      "steps": 168,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.009394645690918,
+      "min_object_distance_m": 0.18010854721069336,
+      "min_robot_clearance_m": 0.009949922561645508,
+      "path_length_m": 3.505134105682373,
+      "steps": 300,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.782478332519531,
+      "min_object_distance_m": 0.39935168623924255,
+      "min_robot_clearance_m": 0.37834835052490234,
+      "path_length_m": 2.421339273452759,
+      "steps": 141,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.57494592666626,
+      "min_object_distance_m": 0.09416026622056961,
+      "min_robot_clearance_m": 0.24451947212219238,
+      "path_length_m": 4.128460884094238,
+      "steps": 303,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.58583927154541,
+      "min_object_distance_m": 0.3903001844882965,
+      "min_robot_clearance_m": 0.23401737213134766,
+      "path_length_m": 2.5909621715545654,
+      "steps": 151,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.30588960647583,
+      "min_object_distance_m": 0.17750318348407745,
+      "min_robot_clearance_m": 0.4455838203430176,
+      "path_length_m": 2.2005207538604736,
+      "steps": 168,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.460198402404785,
+      "min_object_distance_m": 0.3911120295524597,
+      "min_robot_clearance_m": 0.4681973457336426,
+      "path_length_m": 3.0788981914520264,
+      "steps": 184,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.35270357131958,
+      "min_object_distance_m": 0.38610562682151794,
+      "min_robot_clearance_m": 0.5468227863311768,
+      "path_length_m": 2.230217218399048,
+      "steps": 177,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.250093460083008,
+      "min_object_distance_m": 0.35071074962615967,
+      "min_robot_clearance_m": 0.9001171588897705,
+      "path_length_m": 2.6697442531585693,
+      "steps": 186,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.6882195472717285,
+      "min_object_distance_m": 0.0605902299284935,
+      "min_robot_clearance_m": 0.10348725318908691,
+      "path_length_m": 3.740009069442749,
+      "steps": 327,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.540379524230957,
+      "min_object_distance_m": 0.39642223715782166,
+      "min_robot_clearance_m": 0.49440693855285645,
+      "path_length_m": 3.253530502319336,
+      "steps": 201,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.906355857849121,
+      "min_object_distance_m": 0.3949736952781677,
+      "min_robot_clearance_m": 0.5430116653442383,
+      "path_length_m": 2.7966349124908447,
+      "steps": 179,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.793087959289551,
+      "min_object_distance_m": 0.387637734413147,
+      "min_robot_clearance_m": 0.6851067543029785,
+      "path_length_m": 2.5905678272247314,
+      "steps": 174,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.958797931671143,
+      "min_object_distance_m": 0.3829563856124878,
+      "min_robot_clearance_m": 0.48944830894470215,
+      "path_length_m": 3.4883573055267334,
+      "steps": 195,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.09569787979126,
+      "min_object_distance_m": 0.39279118180274963,
+      "min_robot_clearance_m": 0.6200177669525146,
+      "path_length_m": 2.84567928314209,
+      "steps": 206,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.448298931121826,
+      "min_object_distance_m": 0.3737187087535858,
+      "min_robot_clearance_m": 0.008576154708862305,
+      "path_length_m": 2.851620674133301,
+      "steps": 169,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.771475315093994,
+      "min_object_distance_m": 0.3749496340751648,
+      "min_robot_clearance_m": 0.2977595329284668,
+      "path_length_m": 2.874652147293091,
+      "steps": 170,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.426858901977539,
+      "min_object_distance_m": 0.3869515061378479,
+      "min_robot_clearance_m": 0.9561192989349365,
+      "path_length_m": 1.9347789287567139,
+      "steps": 170,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.08945369720459,
+      "min_object_distance_m": 0.3177303373813629,
+      "min_robot_clearance_m": 0.5569882392883301,
+      "path_length_m": 1.6724621057510376,
+      "steps": 123,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.057740688323975,
+      "min_object_distance_m": 0.39140740036964417,
+      "min_robot_clearance_m": 0.6003327369689941,
+      "path_length_m": 2.8230340480804443,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.304106712341309,
+      "min_object_distance_m": 0.39476144313812256,
+      "min_robot_clearance_m": 0.43615174293518066,
+      "path_length_m": 2.932115316390991,
+      "steps": 178,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.004486560821533,
+      "min_object_distance_m": 0.39133232831954956,
+      "min_robot_clearance_m": 0.28112268447875977,
+      "path_length_m": 2.1227633953094482,
+      "steps": 154,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.4879679679870605,
+      "min_object_distance_m": 0.3876245319843292,
+      "min_robot_clearance_m": 0.8007209300994873,
+      "path_length_m": 3.2039999961853027,
+      "steps": 233,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.861974716186523,
+      "min_object_distance_m": 0.27414414286613464,
+      "min_robot_clearance_m": 0.40442991256713867,
+      "path_length_m": 3.600996732711792,
+      "steps": 223,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.492535591125488,
+      "min_object_distance_m": 0.32278159260749817,
+      "min_robot_clearance_m": 0.5781121253967285,
+      "path_length_m": 3.0043423175811768,
+      "steps": 189,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.786336421966553,
+      "min_object_distance_m": 0.3905116617679596,
+      "min_robot_clearance_m": 0.6083543300628662,
+      "path_length_m": 3.475529670715332,
+      "steps": 216,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.671238899230957,
+      "min_object_distance_m": 0.3067170977592468,
+      "min_robot_clearance_m": 0.7057485580444336,
+      "path_length_m": 2.5133609771728516,
+      "steps": 183,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": false,
+      "env_reports_success": false,
+      "released": true,
+      "start_distance_m": 6.049699783325195,
+      "min_object_distance_m": 0.3679808974266052,
+      "min_robot_clearance_m": 1.0383529663085938,
+      "path_length_m": 3.6475799083709717,
+      "steps": 154,
+      "terminations": [
+        "bad_orientation"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.0712571144104,
+      "min_object_distance_m": 0.2778511643409729,
+      "min_robot_clearance_m": -0.1287550926208496,
+      "path_length_m": 3.8826019763946533,
+      "steps": 357,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.590879917144775,
+      "min_object_distance_m": 0.3888518214225769,
+      "min_robot_clearance_m": 0.6554450988769531,
+      "path_length_m": 2.4562957286834717,
+      "steps": 191,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.429889678955078,
+      "min_object_distance_m": 0.3949558138847351,
+      "min_robot_clearance_m": 0.5044584274291992,
+      "path_length_m": 3.31396222114563,
+      "steps": 198,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.435875415802002,
+      "min_object_distance_m": 0.24718375504016876,
+      "min_robot_clearance_m": 0.6065659523010254,
+      "path_length_m": 2.2694690227508545,
+      "steps": 183,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.361140727996826,
+      "min_object_distance_m": 0.33496594429016113,
+      "min_robot_clearance_m": 0.3037879467010498,
+      "path_length_m": 2.2094454765319824,
+      "steps": 137,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.134328842163086,
+      "min_object_distance_m": 0.37389689683914185,
+      "min_robot_clearance_m": 0.9459555149078369,
+      "path_length_m": 1.6245805025100708,
+      "steps": 149,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.906416416168213,
+      "min_object_distance_m": 0.3370179533958435,
+      "min_robot_clearance_m": 0.35138750076293945,
+      "path_length_m": 3.0212807655334473,
+      "steps": 179,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.799139976501465,
+      "min_object_distance_m": 0.3885441720485687,
+      "min_robot_clearance_m": 0.5483691692352295,
+      "path_length_m": 3.2772159576416016,
+      "steps": 190,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.0828471183776855,
+      "min_object_distance_m": 0.39013558626174927,
+      "min_robot_clearance_m": -0.5510300397872925,
+      "path_length_m": 4.398405075073242,
+      "steps": 369,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.110469818115234,
+      "min_object_distance_m": 0.38082361221313477,
+      "min_robot_clearance_m": 0.8599426746368408,
+      "path_length_m": 2.5712146759033203,
+      "steps": 178,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.57659387588501,
+      "min_object_distance_m": 0.3948700428009033,
+      "min_robot_clearance_m": 0.7820613384246826,
+      "path_length_m": 2.032559871673584,
+      "steps": 146,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.459273338317871,
+      "min_object_distance_m": 0.3964422047138214,
+      "min_robot_clearance_m": 0.34360289573669434,
+      "path_length_m": 4.135593414306641,
+      "steps": 217,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.3394904136657715,
+      "min_object_distance_m": 0.368806928396225,
+      "min_robot_clearance_m": 0.4613814353942871,
+      "path_length_m": 2.941035270690918,
+      "steps": 179,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.517144203186035,
+      "min_object_distance_m": 0.3826993703842163,
+      "min_robot_clearance_m": -0.01869964599609375,
+      "path_length_m": 3.0066440105438232,
+      "steps": 202,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.312121868133545,
+      "min_object_distance_m": 0.3935379683971405,
+      "min_robot_clearance_m": 0.7353661060333252,
+      "path_length_m": 3.9815316200256348,
+      "steps": 247,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.44446325302124,
+      "min_object_distance_m": 0.2510012090206146,
+      "min_robot_clearance_m": 0.902324914932251,
+      "path_length_m": 1.7054523229599,
+      "steps": 135,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.387660980224609,
+      "min_object_distance_m": 0.3930371105670929,
+      "min_robot_clearance_m": 0.8576693534851074,
+      "path_length_m": 1.7005560398101807,
+      "steps": 132,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.798238754272461,
+      "min_object_distance_m": 0.13710951805114746,
+      "min_robot_clearance_m": 0.7712185382843018,
+      "path_length_m": 2.494772434234619,
+      "steps": 197,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.733989238739014,
+      "min_object_distance_m": 0.38125133514404297,
+      "min_robot_clearance_m": 0.9356288909912109,
+      "path_length_m": 3.2822866439819336,
+      "steps": 217,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.797583103179932,
+      "min_object_distance_m": 0.2646908462047577,
+      "min_robot_clearance_m": 0.6860418319702148,
+      "path_length_m": 2.440481662750244,
+      "steps": 179,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.363645553588867,
+      "min_object_distance_m": 0.39729776978492737,
+      "min_robot_clearance_m": 0.32535433769226074,
+      "path_length_m": 4.097362995147705,
+      "steps": 214,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.560807228088379,
+      "min_object_distance_m": 0.37888216972351074,
+      "min_robot_clearance_m": 0.4200754165649414,
+      "path_length_m": 2.367601156234741,
+      "steps": 167,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.489973545074463,
+      "min_object_distance_m": 0.3943357765674591,
+      "min_robot_clearance_m": 0.7070839405059814,
+      "path_length_m": 3.232635259628296,
+      "steps": 232,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.850771903991699,
+      "min_object_distance_m": 0.3894982635974884,
+      "min_robot_clearance_m": 0.8300857543945312,
+      "path_length_m": 2.50555157661438,
+      "steps": 188,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.469412803649902,
+      "min_object_distance_m": 0.308419793844223,
+      "min_robot_clearance_m": 0.3646109104156494,
+      "path_length_m": 3.8096213340759277,
+      "steps": 264,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.334381580352783,
+      "min_object_distance_m": 0.3869646489620209,
+      "min_robot_clearance_m": 0.4585425853729248,
+      "path_length_m": 2.893049955368042,
+      "steps": 167,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.4031453132629395,
+      "min_object_distance_m": 0.26265770196914673,
+      "min_robot_clearance_m": 0.5099480152130127,
+      "path_length_m": 3.188007116317749,
+      "steps": 211,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.87994909286499,
+      "min_object_distance_m": 0.39132919907569885,
+      "min_robot_clearance_m": 0.81876540184021,
+      "path_length_m": 3.276116371154785,
+      "steps": 209,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.495234966278076,
+      "min_object_distance_m": 0.39437195658683777,
+      "min_robot_clearance_m": 0.3582143783569336,
+      "path_length_m": 4.169303894042969,
+      "steps": 226,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.582991123199463,
+      "min_object_distance_m": 0.39879110455513,
+      "min_robot_clearance_m": 0.5023033618927002,
+      "path_length_m": 3.4260268211364746,
+      "steps": 236,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.486886978149414,
+      "min_object_distance_m": 0.3748856484889984,
+      "min_robot_clearance_m": 0.4923279285430908,
+      "path_length_m": 4.009644508361816,
+      "steps": 221,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": false,
+      "env_reports_success": false,
+      "released": false,
+      "start_distance_m": 6.221847057342529,
+      "min_object_distance_m": 1.0610939264297485,
+      "min_robot_clearance_m": 1.8063921928405762,
+      "path_length_m": 2.4868853092193604,
+      "steps": 149,
+      "terminations": [
+        "illegal_contact"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.589779853820801,
+      "min_object_distance_m": 0.3888101875782013,
+      "min_robot_clearance_m": 0.41962504386901855,
+      "path_length_m": 2.57855486869812,
+      "steps": 196,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.484656810760498,
+      "min_object_distance_m": 0.3850553631782532,
+      "min_robot_clearance_m": 0.7644815444946289,
+      "path_length_m": 3.148181438446045,
+      "steps": 202,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.978353023529053,
+      "min_object_distance_m": 0.3848571479320526,
+      "min_robot_clearance_m": 0.7596156597137451,
+      "path_length_m": 2.536234140396118,
+      "steps": 189,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.1797308921813965,
+      "min_object_distance_m": 0.3931376039981842,
+      "min_robot_clearance_m": 0.8569903373718262,
+      "path_length_m": 2.790694236755371,
+      "steps": 188,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.397325038909912,
+      "min_object_distance_m": 0.3063555359840393,
+      "min_robot_clearance_m": 0.7124197483062744,
+      "path_length_m": 4.191766262054443,
+      "steps": 280,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.77948522567749,
+      "min_object_distance_m": 0.39407792687416077,
+      "min_robot_clearance_m": 0.701470136642456,
+      "path_length_m": 3.663336753845215,
+      "steps": 261,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.599278926849365,
+      "min_object_distance_m": 0.3525402843952179,
+      "min_robot_clearance_m": 0.3550429344177246,
+      "path_length_m": 3.2654387950897217,
+      "steps": 177,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.224682807922363,
+      "min_object_distance_m": 0.3968428075313568,
+      "min_robot_clearance_m": 0.5335321426391602,
+      "path_length_m": 3.7393712997436523,
+      "steps": 209,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.145506858825684,
+      "min_object_distance_m": 0.38608697056770325,
+      "min_robot_clearance_m": 0.6808490753173828,
+      "path_length_m": 2.7356579303741455,
+      "steps": 188,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.601216793060303,
+      "min_object_distance_m": 0.3959541320800781,
+      "min_robot_clearance_m": 0.503638744354248,
+      "path_length_m": 2.463468551635742,
+      "steps": 184,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.703526496887207,
+      "min_object_distance_m": 0.39304959774017334,
+      "min_robot_clearance_m": 0.8107454776763916,
+      "path_length_m": 2.0000369548797607,
+      "steps": 141,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.369404315948486,
+      "min_object_distance_m": 0.3693149983882904,
+      "min_robot_clearance_m": 0.510230541229248,
+      "path_length_m": 2.468905210494995,
+      "steps": 180,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.049123287200928,
+      "min_object_distance_m": 0.1679401397705078,
+      "min_robot_clearance_m": 0.491898775100708,
+      "path_length_m": 3.010465621948242,
+      "steps": 218,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.776765823364258,
+      "min_object_distance_m": 0.38729819655418396,
+      "min_robot_clearance_m": 0.9123120307922363,
+      "path_length_m": 3.009765863418579,
+      "steps": 194,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.482401371002197,
+      "min_object_distance_m": 0.39592984318733215,
+      "min_robot_clearance_m": 0.6890623569488525,
+      "path_length_m": 3.438647508621216,
+      "steps": 256,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.647777080535889,
+      "min_object_distance_m": 0.38469117879867554,
+      "min_robot_clearance_m": 0.6768758296966553,
+      "path_length_m": 3.3186564445495605,
+      "steps": 226,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.07069206237793,
+      "min_object_distance_m": 0.3854641318321228,
+      "min_robot_clearance_m": 0.23296189308166504,
+      "path_length_m": 2.27720308303833,
+      "steps": 173,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.491742134094238,
+      "min_object_distance_m": 0.386852502822876,
+      "min_robot_clearance_m": 0.6997356414794922,
+      "path_length_m": 2.271491289138794,
+      "steps": 160,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.0602803230285645,
+      "min_object_distance_m": 0.3982374668121338,
+      "min_robot_clearance_m": 0.4968857765197754,
+      "path_length_m": 3.7762186527252197,
+      "steps": 219,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.417987823486328,
+      "min_object_distance_m": 0.10372156649827957,
+      "min_robot_clearance_m": 0.35860371589660645,
+      "path_length_m": 2.5751163959503174,
+      "steps": 192,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.3480305671691895,
+      "min_object_distance_m": 0.39770859479904175,
+      "min_robot_clearance_m": 0.797266960144043,
+      "path_length_m": 3.681326150894165,
+      "steps": 220,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.054025173187256,
+      "min_object_distance_m": 0.3907550871372223,
+      "min_robot_clearance_m": 0.3418123722076416,
+      "path_length_m": 2.9876534938812256,
+      "steps": 181,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.209330081939697,
+      "min_object_distance_m": 0.3915254473686218,
+      "min_robot_clearance_m": 0.33348560333251953,
+      "path_length_m": 3.336214542388916,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.268707275390625,
+      "min_object_distance_m": 0.3895934522151947,
+      "min_robot_clearance_m": 0.3840444087982178,
+      "path_length_m": 3.901932716369629,
+      "steps": 215,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.41663932800293,
+      "min_object_distance_m": 0.37633565068244934,
+      "min_robot_clearance_m": 0.5790913105010986,
+      "path_length_m": 3.002460479736328,
+      "steps": 180,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.215534210205078,
+      "min_object_distance_m": 0.3947333097457886,
+      "min_robot_clearance_m": 0.6069495677947998,
+      "path_length_m": 3.9456546306610107,
+      "steps": 242,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.26153039932251,
+      "min_object_distance_m": 0.3969310224056244,
+      "min_robot_clearance_m": 0.5411510467529297,
+      "path_length_m": 3.1336004734039307,
+      "steps": 217,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.13738489151001,
+      "min_object_distance_m": 0.39075762033462524,
+      "min_robot_clearance_m": 0.5801143646240234,
+      "path_length_m": 4.19083833694458,
+      "steps": 271,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.6952691078186035,
+      "min_object_distance_m": 0.3943905830383301,
+      "min_robot_clearance_m": 0.3714916706085205,
+      "path_length_m": 3.444003105163574,
+      "steps": 220,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.3449811935424805,
+      "min_object_distance_m": 0.3972174823284149,
+      "min_robot_clearance_m": 0.45735836029052734,
+      "path_length_m": 3.4510393142700195,
+      "steps": 228,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.905245780944824,
+      "min_object_distance_m": 0.28661563992500305,
+      "min_robot_clearance_m": 0.7933361530303955,
+      "path_length_m": 3.543477773666382,
+      "steps": 224,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.931009292602539,
+      "min_object_distance_m": 0.399054616689682,
+      "min_robot_clearance_m": 0.8024659156799316,
+      "path_length_m": 3.6717898845672607,
+      "steps": 252,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.753727436065674,
+      "min_object_distance_m": 0.3914739489555359,
+      "min_robot_clearance_m": 0.8406538963317871,
+      "path_length_m": 3.41991925239563,
+      "steps": 232,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.243795394897461,
+      "min_object_distance_m": 0.3846980035305023,
+      "min_robot_clearance_m": 0.6090734004974365,
+      "path_length_m": 2.028578042984009,
+      "steps": 158,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.223501682281494,
+      "min_object_distance_m": 0.39511194825172424,
+      "min_robot_clearance_m": 0.40848350524902344,
+      "path_length_m": 1.8439984321594238,
+      "steps": 121,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.276498794555664,
+      "min_object_distance_m": 0.3943850100040436,
+      "min_robot_clearance_m": 0.8783307075500488,
+      "path_length_m": 3.9304192066192627,
+      "steps": 270,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.750931262969971,
+      "min_object_distance_m": 0.3918505609035492,
+      "min_robot_clearance_m": 0.8084766864776611,
+      "path_length_m": 3.3676486015319824,
+      "steps": 238,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.053973197937012,
+      "min_object_distance_m": 0.3878023624420166,
+      "min_robot_clearance_m": 0.7427895069122314,
+      "path_length_m": 3.9131832122802734,
+      "steps": 283,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.30426025390625,
+      "min_object_distance_m": 0.39191803336143494,
+      "min_robot_clearance_m": 0.9967725276947021,
+      "path_length_m": 3.778284788131714,
+      "steps": 286,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.210887908935547,
+      "min_object_distance_m": 0.022692272439599037,
+      "min_robot_clearance_m": -0.4988741874694824,
+      "path_length_m": 5.7360405921936035,
+      "steps": 472,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.468582630157471,
+      "min_object_distance_m": 0.38424888253211975,
+      "min_robot_clearance_m": 0.7083666324615479,
+      "path_length_m": 4.086312294006348,
+      "steps": 263,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.3029985427856445,
+      "min_object_distance_m": 0.39206743240356445,
+      "min_robot_clearance_m": 0.3137705326080322,
+      "path_length_m": 4.011443614959717,
+      "steps": 207,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.233170509338379,
+      "min_object_distance_m": 0.3964605927467346,
+      "min_robot_clearance_m": 0.38481998443603516,
+      "path_length_m": 1.8771955966949463,
+      "steps": 126,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.418949604034424,
+      "min_object_distance_m": 0.3308415710926056,
+      "min_robot_clearance_m": 0.46038317680358887,
+      "path_length_m": 3.378873348236084,
+      "steps": 232,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.371578693389893,
+      "min_object_distance_m": 0.3799278438091278,
+      "min_robot_clearance_m": 0.6975648403167725,
+      "path_length_m": 2.176170825958252,
+      "steps": 179,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.792989730834961,
+      "min_object_distance_m": 0.3908465802669525,
+      "min_robot_clearance_m": 0.6785483360290527,
+      "path_length_m": 3.427583694458008,
+      "steps": 228,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.374961853027344,
+      "min_object_distance_m": 0.03895598277449608,
+      "min_robot_clearance_m": -0.09145009517669678,
+      "path_length_m": 3.800025224685669,
+      "steps": 340,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.157019138336182,
+      "min_object_distance_m": 0.3890346884727478,
+      "min_robot_clearance_m": 0.5379924774169922,
+      "path_length_m": 4.146213531494141,
+      "steps": 261,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.246688365936279,
+      "min_object_distance_m": 0.3595937192440033,
+      "min_robot_clearance_m": 0.5362646579742432,
+      "path_length_m": 3.031634569168091,
+      "steps": 188,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.06001615524292,
+      "min_object_distance_m": 0.3900319039821625,
+      "min_robot_clearance_m": 0.7090778350830078,
+      "path_length_m": 2.955785036087036,
+      "steps": 235,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.059475898742676,
+      "min_object_distance_m": 0.384969562292099,
+      "min_robot_clearance_m": 0.7111649513244629,
+      "path_length_m": 3.875675678253174,
+      "steps": 270,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.1685004234313965,
+      "min_object_distance_m": 0.39526820182800293,
+      "min_robot_clearance_m": 0.5909566879272461,
+      "path_length_m": 3.9621422290802,
+      "steps": 256,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.469642162322998,
+      "min_object_distance_m": 0.08142730593681335,
+      "min_robot_clearance_m": 0.7087666988372803,
+      "path_length_m": 2.1663005352020264,
+      "steps": 175,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.078329086303711,
+      "min_object_distance_m": 0.3344700038433075,
+      "min_robot_clearance_m": -0.7801891565322876,
+      "path_length_m": 5.371399879455566,
+      "steps": 488,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.008161544799805,
+      "min_object_distance_m": 0.38859161734580994,
+      "min_robot_clearance_m": 0.6081945896148682,
+      "path_length_m": 3.9208569526672363,
+      "steps": 270,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.1266984939575195,
+      "min_object_distance_m": 0.3815404772758484,
+      "min_robot_clearance_m": 0.4857199192047119,
+      "path_length_m": 4.264704704284668,
+      "steps": 274,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.654510974884033,
+      "min_object_distance_m": 0.31346505880355835,
+      "min_robot_clearance_m": 0.39992427825927734,
+      "path_length_m": 2.6430811882019043,
+      "steps": 192,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.885986804962158,
+      "min_object_distance_m": 0.37555816769599915,
+      "min_robot_clearance_m": 0.9629631042480469,
+      "path_length_m": 3.6907849311828613,
+      "steps": 291,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.753889560699463,
+      "min_object_distance_m": 0.39544835686683655,
+      "min_robot_clearance_m": 0.7129034996032715,
+      "path_length_m": 3.4031479358673096,
+      "steps": 237,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.199570178985596,
+      "min_object_distance_m": 0.38913989067077637,
+      "min_robot_clearance_m": 0.5665323734283447,
+      "path_length_m": 3.6760103702545166,
+      "steps": 208,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.108137130737305,
+      "min_object_distance_m": 0.39970412850379944,
+      "min_robot_clearance_m": 0.7700684070587158,
+      "path_length_m": 1.6252692937850952,
+      "steps": 138,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.096121311187744,
+      "min_object_distance_m": 0.39267751574516296,
+      "min_robot_clearance_m": 0.7200331687927246,
+      "path_length_m": 2.9029319286346436,
+      "steps": 224,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.292018413543701,
+      "min_object_distance_m": 0.387788325548172,
+      "min_robot_clearance_m": 0.5422754287719727,
+      "path_length_m": 2.094836473464966,
+      "steps": 168,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.0998969078063965,
+      "min_object_distance_m": 0.38599562644958496,
+      "min_robot_clearance_m": 0.5868349075317383,
+      "path_length_m": 1.8123236894607544,
+      "steps": 150,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.1090593338012695,
+      "min_object_distance_m": 0.1876111775636673,
+      "min_robot_clearance_m": 0.6011826992034912,
+      "path_length_m": 3.025941848754883,
+      "steps": 221,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.771501064300537,
+      "min_object_distance_m": 0.38528919219970703,
+      "min_robot_clearance_m": 0.8433771133422852,
+      "path_length_m": 3.048459768295288,
+      "steps": 196,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.664316177368164,
+      "min_object_distance_m": 0.3994157910346985,
+      "min_robot_clearance_m": 0.6166024208068848,
+      "path_length_m": 3.376216411590576,
+      "steps": 229,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.224403381347656,
+      "min_object_distance_m": 0.13405059278011322,
+      "min_robot_clearance_m": 0.5681607723236084,
+      "path_length_m": 3.204810619354248,
+      "steps": 239,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.964104652404785,
+      "min_object_distance_m": 0.34846189618110657,
+      "min_robot_clearance_m": 0.36185336112976074,
+      "path_length_m": 2.614488124847412,
+      "steps": 148,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.374683380126953,
+      "min_object_distance_m": 0.3869602084159851,
+      "min_robot_clearance_m": 0.34857869148254395,
+      "path_length_m": 2.333942413330078,
+      "steps": 147,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.11798095703125,
+      "min_object_distance_m": 0.39899390935897827,
+      "min_robot_clearance_m": -0.13206958770751953,
+      "path_length_m": 2.595136880874634,
+      "steps": 166,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.866883277893066,
+      "min_object_distance_m": 0.3893633186817169,
+      "min_robot_clearance_m": 0.7437744140625,
+      "path_length_m": 2.4083027839660645,
+      "steps": 173,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.385686874389648,
+      "min_object_distance_m": 0.3842015266418457,
+      "min_robot_clearance_m": 0.5370564460754395,
+      "path_length_m": 3.253708600997925,
+      "steps": 223,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.140130996704102,
+      "min_object_distance_m": 0.38538381457328796,
+      "min_robot_clearance_m": 0.6791186332702637,
+      "path_length_m": 3.9932198524475098,
+      "steps": 268,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.9229350090026855,
+      "min_object_distance_m": 0.3831254839897156,
+      "min_robot_clearance_m": 0.6129319667816162,
+      "path_length_m": 2.3862133026123047,
+      "steps": 159,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.162281036376953,
+      "min_object_distance_m": 0.389672189950943,
+      "min_robot_clearance_m": 0.5986554622650146,
+      "path_length_m": 1.63014817237854,
+      "steps": 118,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.463004112243652,
+      "min_object_distance_m": 0.3996369540691376,
+      "min_robot_clearance_m": 0.6543357372283936,
+      "path_length_m": 2.2710988521575928,
+      "steps": 186,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.841525077819824,
+      "min_object_distance_m": 0.382283091545105,
+      "min_robot_clearance_m": 0.6086010932922363,
+      "path_length_m": 3.4565210342407227,
+      "steps": 215,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.183230400085449,
+      "min_object_distance_m": 0.39308419823646545,
+      "min_robot_clearance_m": 0.44859886169433594,
+      "path_length_m": 2.445347547531128,
+      "steps": 197,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.381312847137451,
+      "min_object_distance_m": 0.39292460680007935,
+      "min_robot_clearance_m": 0.301846981048584,
+      "path_length_m": 3.2847836017608643,
+      "steps": 189,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.882894992828369,
+      "min_object_distance_m": 0.3939553499221802,
+      "min_robot_clearance_m": 0.3850109577178955,
+      "path_length_m": 2.810100793838501,
+      "steps": 165,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.0800065994262695,
+      "min_object_distance_m": 0.13342899084091187,
+      "min_robot_clearance_m": -0.4606684446334839,
+      "path_length_m": 4.414623260498047,
+      "steps": 392,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.437931060791016,
+      "min_object_distance_m": 0.39930957555770874,
+      "min_robot_clearance_m": 0.8560128211975098,
+      "path_length_m": 1.784705638885498,
+      "steps": 137,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.4617767333984375,
+      "min_object_distance_m": 0.39120709896087646,
+      "min_robot_clearance_m": 0.7052590847015381,
+      "path_length_m": 3.8681979179382324,
+      "steps": 233,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": false,
+      "env_reports_success": false,
+      "released": false,
+      "start_distance_m": 5.2785139083862305,
+      "min_object_distance_m": 1.3196133375167847,
+      "min_robot_clearance_m": 0.14385747909545898,
+      "path_length_m": 3.2997570037841797,
+      "steps": 143,
+      "terminations": [
+        "bad_orientation"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.5090813636779785,
+      "min_object_distance_m": 0.3764815628528595,
+      "min_robot_clearance_m": 0.6024281978607178,
+      "path_length_m": 2.433168888092041,
+      "steps": 187,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.47519588470459,
+      "min_object_distance_m": 0.3806841969490051,
+      "min_robot_clearance_m": 0.7965707778930664,
+      "path_length_m": 3.86802339553833,
+      "steps": 245,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.908057689666748,
+      "min_object_distance_m": 0.3858695924282074,
+      "min_robot_clearance_m": 0.7262086868286133,
+      "path_length_m": 2.283902645111084,
+      "steps": 153,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.138495922088623,
+      "min_object_distance_m": 0.364124059677124,
+      "min_robot_clearance_m": 0.6030411720275879,
+      "path_length_m": 2.049774169921875,
+      "steps": 173,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.403534889221191,
+      "min_object_distance_m": 0.39821064472198486,
+      "min_robot_clearance_m": 0.6861984729766846,
+      "path_length_m": 1.7781894207000732,
+      "steps": 125,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.226754665374756,
+      "min_object_distance_m": 0.3952415883541107,
+      "min_robot_clearance_m": 0.6306557655334473,
+      "path_length_m": 3.4254074096679688,
+      "steps": 223,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.650136470794678,
+      "min_object_distance_m": 0.3891904950141907,
+      "min_robot_clearance_m": 0.8863205909729004,
+      "path_length_m": 2.9508211612701416,
+      "steps": 195,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.030642032623291,
+      "min_object_distance_m": 0.3920513987541199,
+      "min_robot_clearance_m": 0.7552800178527832,
+      "path_length_m": 3.552682638168335,
+      "steps": 223,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.06693172454834,
+      "min_object_distance_m": 0.3860236406326294,
+      "min_robot_clearance_m": 0.4965991973876953,
+      "path_length_m": 2.9462063312530518,
+      "steps": 207,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.669124126434326,
+      "min_object_distance_m": 0.3965435028076172,
+      "min_robot_clearance_m": 0.8671791553497314,
+      "path_length_m": 1.948979139328003,
+      "steps": 141,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.485389232635498,
+      "min_object_distance_m": 0.37020817399024963,
+      "min_robot_clearance_m": 0.6410109996795654,
+      "path_length_m": 1.9178556203842163,
+      "steps": 131,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.882158279418945,
+      "min_object_distance_m": 0.3937220871448517,
+      "min_robot_clearance_m": 0.5256977081298828,
+      "path_length_m": 2.376408576965332,
+      "steps": 145,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.022132396697998,
+      "min_object_distance_m": 0.3873981237411499,
+      "min_robot_clearance_m": 0.602595329284668,
+      "path_length_m": 2.7023115158081055,
+      "steps": 189,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.364278316497803,
+      "min_object_distance_m": 0.38921499252319336,
+      "min_robot_clearance_m": 0.6207411289215088,
+      "path_length_m": 3.168747901916504,
+      "steps": 224,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.575747966766357,
+      "min_object_distance_m": 0.38509780168533325,
+      "min_robot_clearance_m": 0.8627195358276367,
+      "path_length_m": 2.0694849491119385,
+      "steps": 166,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.4678239822387695,
+      "min_object_distance_m": 0.3825954794883728,
+      "min_robot_clearance_m": 0.7184386253356934,
+      "path_length_m": 3.8344438076019287,
+      "steps": 230,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.9875407218933105,
+      "min_object_distance_m": 0.3651285767555237,
+      "min_robot_clearance_m": 0.44373631477355957,
+      "path_length_m": 2.725849151611328,
+      "steps": 160,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.8439178466796875,
+      "min_object_distance_m": 0.33906298875808716,
+      "min_robot_clearance_m": 0.6455247402191162,
+      "path_length_m": 3.383845567703247,
+      "steps": 212,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.251471519470215,
+      "min_object_distance_m": 0.3802946209907532,
+      "min_robot_clearance_m": 0.36742663383483887,
+      "path_length_m": 2.1188552379608154,
+      "steps": 151,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.336371898651123,
+      "min_object_distance_m": 0.38638776540756226,
+      "min_robot_clearance_m": 0.6765909194946289,
+      "path_length_m": 3.758423328399658,
+      "steps": 226,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.861330032348633,
+      "min_object_distance_m": 0.3849796950817108,
+      "min_robot_clearance_m": 0.605104923248291,
+      "path_length_m": 2.2955493927001953,
+      "steps": 143,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.795786380767822,
+      "min_object_distance_m": 0.3983619511127472,
+      "min_robot_clearance_m": 0.5828254222869873,
+      "path_length_m": 2.2431063652038574,
+      "steps": 140,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.777536392211914,
+      "min_object_distance_m": 0.24853850901126862,
+      "min_robot_clearance_m": 0.6416256427764893,
+      "path_length_m": 3.3472588062286377,
+      "steps": 209,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.901851177215576,
+      "min_object_distance_m": 0.3922537863254547,
+      "min_robot_clearance_m": 0.3510909080505371,
+      "path_length_m": 2.590801477432251,
+      "steps": 152,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.870189666748047,
+      "min_object_distance_m": 0.3931083679199219,
+      "min_robot_clearance_m": 0.7006423473358154,
+      "path_length_m": 2.5194592475891113,
+      "steps": 176,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.755898475646973,
+      "min_object_distance_m": 0.3882182836532593,
+      "min_robot_clearance_m": 0.4239683151245117,
+      "path_length_m": 3.6923041343688965,
+      "steps": 209,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.566180229187012,
+      "min_object_distance_m": 0.3912486135959625,
+      "min_robot_clearance_m": 0.6289660930633545,
+      "path_length_m": 3.4191672801971436,
+      "steps": 238,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.24526834487915,
+      "min_object_distance_m": 0.3817060589790344,
+      "min_robot_clearance_m": 0.8291890621185303,
+      "path_length_m": 1.6441630125045776,
+      "steps": 129,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.423399448394775,
+      "min_object_distance_m": 0.3891090154647827,
+      "min_robot_clearance_m": 0.41724491119384766,
+      "path_length_m": 3.7170464992523193,
+      "steps": 237,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.5782976150512695,
+      "min_object_distance_m": 0.3976746201515198,
+      "min_robot_clearance_m": 0.7037312984466553,
+      "path_length_m": 2.5261247158050537,
+      "steps": 198,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.702695369720459,
+      "min_object_distance_m": 0.395406574010849,
+      "min_robot_clearance_m": 0.6659829616546631,
+      "path_length_m": 3.158247709274292,
+      "steps": 194,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.356232643127441,
+      "min_object_distance_m": 0.3877607583999634,
+      "min_robot_clearance_m": 0.6020052433013916,
+      "path_length_m": 3.0733532905578613,
+      "steps": 208,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.203319549560547,
+      "min_object_distance_m": 0.3857508599758148,
+      "min_robot_clearance_m": 0.8148972988128662,
+      "path_length_m": 3.7189435958862305,
+      "steps": 246,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.044890403747559,
+      "min_object_distance_m": 0.3938392400741577,
+      "min_robot_clearance_m": 0.7857165336608887,
+      "path_length_m": 3.9190590381622314,
+      "steps": 261,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.366138458251953,
+      "min_object_distance_m": 0.38623103499412537,
+      "min_robot_clearance_m": 0.4138038158416748,
+      "path_length_m": 4.0382232666015625,
+      "steps": 225,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.795990943908691,
+      "min_object_distance_m": 0.38205888867378235,
+      "min_robot_clearance_m": 0.6471631526947021,
+      "path_length_m": 3.4289329051971436,
+      "steps": 227,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.270570278167725,
+      "min_object_distance_m": 0.39185822010040283,
+      "min_robot_clearance_m": 0.8168234825134277,
+      "path_length_m": 3.5539259910583496,
+      "steps": 215,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.955417633056641,
+      "min_object_distance_m": 0.395174115896225,
+      "min_robot_clearance_m": 0.6402637958526611,
+      "path_length_m": 2.6364903450012207,
+      "steps": 184,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.2726240158081055,
+      "min_object_distance_m": 0.38787609338760376,
+      "min_robot_clearance_m": 0.5577352046966553,
+      "path_length_m": 3.7494921684265137,
+      "steps": 214,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.511530876159668,
+      "min_object_distance_m": 0.013623149134218693,
+      "min_robot_clearance_m": 0.44525837898254395,
+      "path_length_m": 3.497076988220215,
+      "steps": 231,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.388282775878906,
+      "min_object_distance_m": 0.3437553644180298,
+      "min_robot_clearance_m": -1.2850826978683472,
+      "path_length_m": 6.863310813903809,
+      "steps": 619,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.939036846160889,
+      "min_object_distance_m": 0.3065372407436371,
+      "min_robot_clearance_m": 0.5456514358520508,
+      "path_length_m": 3.4367027282714844,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.39816951751709,
+      "min_object_distance_m": 0.39974528551101685,
+      "min_robot_clearance_m": 0.9336190223693848,
+      "path_length_m": 1.6404470205307007,
+      "steps": 129,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.112916469573975,
+      "min_object_distance_m": 0.37362104654312134,
+      "min_robot_clearance_m": 0.6239328384399414,
+      "path_length_m": 1.7308083772659302,
+      "steps": 130,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.972937107086182,
+      "min_object_distance_m": 0.39331743121147156,
+      "min_robot_clearance_m": 0.5963039398193359,
+      "path_length_m": 3.7329089641571045,
+      "steps": 244,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.307063579559326,
+      "min_object_distance_m": 0.39987912774086,
+      "min_robot_clearance_m": 0.753488302230835,
+      "path_length_m": 4.213102340698242,
+      "steps": 269,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.155622959136963,
+      "min_object_distance_m": 0.38421693444252014,
+      "min_robot_clearance_m": 0.41265106201171875,
+      "path_length_m": 2.1139023303985596,
+      "steps": 152,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.373324394226074,
+      "min_object_distance_m": 0.38871559500694275,
+      "min_robot_clearance_m": 0.6756715774536133,
+      "path_length_m": 3.0836074352264404,
+      "steps": 222,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.473486423492432,
+      "min_object_distance_m": 0.3695129156112671,
+      "min_robot_clearance_m": 0.37433767318725586,
+      "path_length_m": 2.3329434394836426,
+      "steps": 148,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.226650714874268,
+      "min_object_distance_m": 0.39921045303344727,
+      "min_robot_clearance_m": 0.67118239402771,
+      "path_length_m": 3.945066213607788,
+      "steps": 257,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.2781662940979,
+      "min_object_distance_m": 0.3908994197845459,
+      "min_robot_clearance_m": 0.8511819839477539,
+      "path_length_m": 1.6024504899978638,
+      "steps": 127,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.994447231292725,
+      "min_object_distance_m": 0.38527801632881165,
+      "min_robot_clearance_m": 0.653557300567627,
+      "path_length_m": 2.4290597438812256,
+      "steps": 160,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.034740924835205,
+      "min_object_distance_m": 0.3935260474681854,
+      "min_robot_clearance_m": 0.6151266098022461,
+      "path_length_m": 1.47805655002594,
+      "steps": 111,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.620898246765137,
+      "min_object_distance_m": 0.24140067398548126,
+      "min_robot_clearance_m": 0.6108188629150391,
+      "path_length_m": 3.5234079360961914,
+      "steps": 251,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.333025932312012,
+      "min_object_distance_m": 0.384768009185791,
+      "min_robot_clearance_m": 0.6769845485687256,
+      "path_length_m": 1.7360460758209229,
+      "steps": 126,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.925454139709473,
+      "min_object_distance_m": 0.3457960784435272,
+      "min_robot_clearance_m": 0.25243139266967773,
+      "path_length_m": 3.8123605251312256,
+      "steps": 240,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.764001369476318,
+      "min_object_distance_m": 0.39223313331604004,
+      "min_robot_clearance_m": 0.36458778381347656,
+      "path_length_m": 3.621535539627075,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.591970920562744,
+      "min_object_distance_m": 0.37077221274375916,
+      "min_robot_clearance_m": 0.38164830207824707,
+      "path_length_m": 2.5790700912475586,
+      "steps": 162,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.705713748931885,
+      "min_object_distance_m": 0.3886236548423767,
+      "min_robot_clearance_m": 0.542827844619751,
+      "path_length_m": 2.551318407058716,
+      "steps": 190,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.066622257232666,
+      "min_object_distance_m": 0.3816945552825928,
+      "min_robot_clearance_m": 0.4216907024383545,
+      "path_length_m": 1.7088340520858765,
+      "steps": 111,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.959461212158203,
+      "min_object_distance_m": 0.3856550455093384,
+      "min_robot_clearance_m": 0.3881678581237793,
+      "path_length_m": 3.8511297702789307,
+      "steps": 214,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.323821544647217,
+      "min_object_distance_m": 0.3985351324081421,
+      "min_robot_clearance_m": 0.7433624267578125,
+      "path_length_m": 3.2499985694885254,
+      "steps": 241,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.76032018661499,
+      "min_object_distance_m": 0.3926350474357605,
+      "min_robot_clearance_m": 0.7693936824798584,
+      "path_length_m": 3.4570982456207275,
+      "steps": 237,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.91672420501709,
+      "min_object_distance_m": 0.3913812041282654,
+      "min_robot_clearance_m": 0.8236055374145508,
+      "path_length_m": 2.394029140472412,
+      "steps": 167,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.011176586151123,
+      "min_object_distance_m": 0.31467512249946594,
+      "min_robot_clearance_m": 0.45908331871032715,
+      "path_length_m": 4.1554484367370605,
+      "steps": 259,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.8986101150512695,
+      "min_object_distance_m": 0.3931586742401123,
+      "min_robot_clearance_m": 0.6691975593566895,
+      "path_length_m": 2.7266945838928223,
+      "steps": 178,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.219454288482666,
+      "min_object_distance_m": 0.364396333694458,
+      "min_robot_clearance_m": 0.9335062503814697,
+      "path_length_m": 2.8955159187316895,
+      "steps": 296,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": false,
+      "env_reports_success": false,
+      "released": false,
+      "start_distance_m": 6.273111820220947,
+      "min_object_distance_m": 2.4092636108398438,
+      "min_robot_clearance_m": 2.506713390350342,
+      "path_length_m": 1.9544997215270996,
+      "steps": 101,
+      "terminations": [
+        "bad_orientation"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.411901950836182,
+      "min_object_distance_m": 0.3803202509880066,
+      "min_robot_clearance_m": 0.6248199939727783,
+      "path_length_m": 1.8260937929153442,
+      "steps": 121,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.407710075378418,
+      "min_object_distance_m": 0.3881669044494629,
+      "min_robot_clearance_m": 0.5559055805206299,
+      "path_length_m": 2.1285645961761475,
+      "steps": 160,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.781583309173584,
+      "min_object_distance_m": 0.3969796895980835,
+      "min_robot_clearance_m": 0.6265137195587158,
+      "path_length_m": 3.649991273880005,
+      "steps": 253,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.38738489151001,
+      "min_object_distance_m": 0.3727661371231079,
+      "min_robot_clearance_m": 0.7562990188598633,
+      "path_length_m": 2.9247965812683105,
+      "steps": 197,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.072324275970459,
+      "min_object_distance_m": 0.39603152871131897,
+      "min_robot_clearance_m": 0.46012330055236816,
+      "path_length_m": 3.9966061115264893,
+      "steps": 258,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.634822845458984,
+      "min_object_distance_m": 0.39641547203063965,
+      "min_robot_clearance_m": 0.4371016025543213,
+      "path_length_m": 2.422731399536133,
+      "steps": 169,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.721096038818359,
+      "min_object_distance_m": 0.20684053003787994,
+      "min_robot_clearance_m": 0.734846830368042,
+      "path_length_m": 2.4417612552642822,
+      "steps": 194,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.232390403747559,
+      "min_object_distance_m": 0.3954736292362213,
+      "min_robot_clearance_m": 0.4861900806427002,
+      "path_length_m": 1.9710752964019775,
+      "steps": 140,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.924187660217285,
+      "min_object_distance_m": 0.38517463207244873,
+      "min_robot_clearance_m": 0.655707597732544,
+      "path_length_m": 2.6451499462127686,
+      "steps": 201,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.1707682609558105,
+      "min_object_distance_m": 0.39964789152145386,
+      "min_robot_clearance_m": 0.6940114498138428,
+      "path_length_m": 3.8607065677642822,
+      "steps": 260,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.102084636688232,
+      "min_object_distance_m": 0.3992486596107483,
+      "min_robot_clearance_m": 0.9805681705474854,
+      "path_length_m": 2.6054420471191406,
+      "steps": 205,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.0682525634765625,
+      "min_object_distance_m": 0.37730690836906433,
+      "min_robot_clearance_m": 0.7427804470062256,
+      "path_length_m": 1.8586088418960571,
+      "steps": 174,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.305886745452881,
+      "min_object_distance_m": 0.3934038579463959,
+      "min_robot_clearance_m": 0.611046552658081,
+      "path_length_m": 3.87638521194458,
+      "steps": 221,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.777019500732422,
+      "min_object_distance_m": 0.3019601106643677,
+      "min_robot_clearance_m": 0.6062884330749512,
+      "path_length_m": 3.735401153564453,
+      "steps": 259,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.11974573135376,
+      "min_object_distance_m": 0.37002718448638916,
+      "min_robot_clearance_m": 0.22680115699768066,
+      "path_length_m": 2.2316906452178955,
+      "steps": 167,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.153124809265137,
+      "min_object_distance_m": 0.39397016167640686,
+      "min_robot_clearance_m": 0.9735050201416016,
+      "path_length_m": 1.6568996906280518,
+      "steps": 158,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.573977470397949,
+      "min_object_distance_m": 0.3998725712299347,
+      "min_robot_clearance_m": 0.38489627838134766,
+      "path_length_m": 3.4878954887390137,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.246515274047852,
+      "min_object_distance_m": 0.284714013338089,
+      "min_robot_clearance_m": -1.1544564962387085,
+      "path_length_m": 8.83815860748291,
+      "steps": 691,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.719210147857666,
+      "min_object_distance_m": 0.3908584415912628,
+      "min_robot_clearance_m": 0.5945887565612793,
+      "path_length_m": 2.6745548248291016,
+      "steps": 196,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.157817363739014,
+      "min_object_distance_m": 0.38473767042160034,
+      "min_robot_clearance_m": 0.34198951721191406,
+      "path_length_m": 3.9594976902008057,
+      "steps": 211,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.99397611618042,
+      "min_object_distance_m": 0.3928447961807251,
+      "min_robot_clearance_m": 0.4657895565032959,
+      "path_length_m": 2.936244010925293,
+      "steps": 203,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.611503601074219,
+      "min_object_distance_m": 0.38761913776397705,
+      "min_robot_clearance_m": 0.5408966541290283,
+      "path_length_m": 3.205446243286133,
+      "steps": 189,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.2452287673950195,
+      "min_object_distance_m": 0.3859049081802368,
+      "min_robot_clearance_m": 0.7866661548614502,
+      "path_length_m": 4.027059078216553,
+      "steps": 283,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.257591724395752,
+      "min_object_distance_m": 0.3874765634536743,
+      "min_robot_clearance_m": 0.8623597621917725,
+      "path_length_m": 1.5369380712509155,
+      "steps": 124,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.432798385620117,
+      "min_object_distance_m": 0.29854246973991394,
+      "min_robot_clearance_m": 0.8461177349090576,
+      "path_length_m": 3.000030994415283,
+      "steps": 219,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.481635093688965,
+      "min_object_distance_m": 0.35124140977859497,
+      "min_robot_clearance_m": 0.07125616073608398,
+      "path_length_m": 4.436995983123779,
+      "steps": 235,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.294920444488525,
+      "min_object_distance_m": 0.38035568594932556,
+      "min_robot_clearance_m": 0.5664184093475342,
+      "path_length_m": 2.3732264041900635,
+      "steps": 181,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.8118815422058105,
+      "min_object_distance_m": 0.39076659083366394,
+      "min_robot_clearance_m": 0.6350114345550537,
+      "path_length_m": 3.2229976654052734,
+      "steps": 187,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.348113059997559,
+      "min_object_distance_m": 0.2778770625591278,
+      "min_robot_clearance_m": 0.666008710861206,
+      "path_length_m": 3.797762632369995,
+      "steps": 225,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.1883769035339355,
+      "min_object_distance_m": 0.385231077671051,
+      "min_robot_clearance_m": 0.9738442897796631,
+      "path_length_m": 2.7106785774230957,
+      "steps": 200,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.98347806930542,
+      "min_object_distance_m": 0.13857091963291168,
+      "min_robot_clearance_m": 0.70550537109375,
+      "path_length_m": 2.656651735305786,
+      "steps": 200,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.231877326965332,
+      "min_object_distance_m": 0.27459415793418884,
+      "min_robot_clearance_m": 0.682502031326294,
+      "path_length_m": 3.9725451469421387,
+      "steps": 264,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.929204940795898,
+      "min_object_distance_m": 0.38056471943855286,
+      "min_robot_clearance_m": 0.4947984218597412,
+      "path_length_m": 3.805314064025879,
+      "steps": 247,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.149209976196289,
+      "min_object_distance_m": 0.3878936767578125,
+      "min_robot_clearance_m": 0.8887286186218262,
+      "path_length_m": 1.6085420846939087,
+      "steps": 146,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.7803850173950195,
+      "min_object_distance_m": 0.3991278111934662,
+      "min_robot_clearance_m": 0.6320328712463379,
+      "path_length_m": 2.3721818923950195,
+      "steps": 165,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.096655368804932,
+      "min_object_distance_m": 0.3976965546607971,
+      "min_robot_clearance_m": 0.6135501861572266,
+      "path_length_m": 2.9588863849639893,
+      "steps": 217,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.408266067504883,
+      "min_object_distance_m": 0.2882397770881653,
+      "min_robot_clearance_m": 0.5782260894775391,
+      "path_length_m": 2.4287514686584473,
+      "steps": 195,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.212265968322754,
+      "min_object_distance_m": 0.13302192091941833,
+      "min_robot_clearance_m": 0.013857841491699219,
+      "path_length_m": 4.548166275024414,
+      "steps": 292,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.484830856323242,
+      "min_object_distance_m": 0.3499840497970581,
+      "min_robot_clearance_m": 0.5555250644683838,
+      "path_length_m": 4.390570163726807,
+      "steps": 284,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 6.359267711639404,
+      "min_object_distance_m": 0.38937413692474365,
+      "min_robot_clearance_m": 0.47101593017578125,
+      "path_length_m": 4.571832180023193,
+      "steps": 274,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.939084529876709,
+      "min_object_distance_m": 0.12281786650419235,
+      "min_robot_clearance_m": -0.08556032180786133,
+      "path_length_m": 4.366178035736084,
+      "steps": 351,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.97807502746582,
+      "min_object_distance_m": 0.3875420391559601,
+      "min_robot_clearance_m": 0.5792062282562256,
+      "path_length_m": 2.717336654663086,
+      "steps": 193,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 4.65669584274292,
+      "min_object_distance_m": 0.3877105414867401,
+      "min_robot_clearance_m": 0.37210893630981445,
+      "path_length_m": 2.3311221599578857,
+      "steps": 140,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.969876289367676,
+      "min_object_distance_m": 0.38174790143966675,
+      "min_robot_clearance_m": 0.3814878463745117,
+      "path_length_m": 3.680626153945923,
+      "steps": 201,
+      "terminations": [
+        "delivery_success"
+      ]
+    },
+    {
+      "success": true,
+      "env_reports_success": true,
+      "released": true,
+      "start_distance_m": 5.003833770751953,
+      "min_object_distance_m": 0.3884483277797699,
+      "min_robot_clearance_m": 0.8938381671905518,
+      "path_length_m": 2.6787805557250977,
+      "steps": 215,
+      "terminations": [
+        "delivery_success"
+      ]
+    }
+  ]
+}
