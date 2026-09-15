@@ -38,12 +38,15 @@ parser.add_argument('--num_envs', type=int, default=128)
 parser.add_argument('--iterations', type=int, default=500)
 parser.add_argument('--resume', type=Path)
 parser.add_argument('--seed', type=int, default=42)
-parser.add_argument('--episode_seconds', type=float, default=20.0)
+parser.add_argument('--episode_seconds', type=float, default=40.0)
 parser.add_argument('--spawn_min', type=float, default=4.0)
 parser.add_argument('--spawn_max', type=float, default=6.5)
 parser.add_argument('--heading_noise', type=float, default=1.5707963267948966)
 parser.add_argument('--release_radius', type=float, default=0.40)
 parser.add_argument('--bin_scale', type=float, default=2.0)
+parser.add_argument('--multi_delivery', action='store_true',
+                    help='hand over a new object inside the same episode instead '
+                         'of ending it on the first delivery')
 parser.add_argument('--probe_only', action='store_true')
 parser.add_argument('--max_wall_seconds', type=float, default=3600)
 parser.add_argument('--gpu_memory_limit_mib', type=int, default=7600)
@@ -195,7 +198,12 @@ class RecordedTaskBEnv(ManagerBasedRLEnv):
         active = env_ids[self.episode_length_buf[env_ids] > 0]
         if len(active):
             state = taskb_state(self)
-            success = delivery_success(self)[active]
+            # Deliveries are counted by ``next_delivery`` as they land, not
+            # re-derived here: by the time an episode terminates the object has
+            # already been respawned for the next attempt, so the current
+            # object pose says nothing about the episode that just ended.
+            deliveries = state['deliveries_this_episode'][active]
+            drops = state['drops_this_episode'][active]
             distances = torch.norm(
                 self.scene['object'].data.root_pos_w[active, :2] - bin_center_w(self)[active], dim=1)
             terms = {}
@@ -204,10 +212,12 @@ class RecordedTaskBEnv(ManagerBasedRLEnv):
                 self.failure_counts[name] = self.failure_counts.get(name, 0) + int(flags.sum())
                 terms[name] = flags
             self.episode_count += len(active)
-            self.delivery_count += int(success.sum())
+            self.delivery_count += int(deliveries.sum())
             for index in range(len(active)):
                 self.episode_outcomes.append({
-                    'success': bool(success[index]),
+                    'deliveries': int(deliveries[index]),
+                    'drops': int(drops[index]),
+                    'success': bool(deliveries[index] > 0),
                     'final_object_dist_m': float(distances[index]),
                     'min_object_dist_m': float(state['min_dist'][active[index]]),
                     'released': bool(state['released'][active[index]]),
@@ -235,9 +245,15 @@ class RecordedTaskBEnv(ManagerBasedRLEnv):
             'success_ema': state['success_ema'],
         }
         if recent:
+            total_deliveries = sum(row['deliveries'] for row in recent)
+            total_drops = sum(row['drops'] for row in recent)
             summary.update(
                 recent_episodes=len(recent),
-                recent_delivery_rate=sum(row['success'] for row in recent) / len(recent),
+                recent_delivery_rate=total_deliveries / total_drops if total_drops else None,
+                recent_deliveries_per_episode=total_deliveries / len(recent),
+                recent_max_deliveries_in_episode=max(row['deliveries'] for row in recent),
+                recent_mean_drops_per_episode=total_drops / len(recent),
+                recent_episodes_with_delivery=sum(row['success'] for row in recent) / len(recent),
                 recent_release_rate=sum(row['released'] for row in recent) / len(recent),
                 recent_mean_final_object_dist_m=statistics.mean(row['final_object_dist_m'] for row in recent),
                 recent_mean_min_object_dist_m=statistics.mean(row['min_object_dist_m'] for row in recent),
@@ -273,6 +289,8 @@ class GuardedRunner(OnPolicyRunner):
         diagnostics = inner.delivery_diagnostics()
         self.latest = {
             'status': 'training', 'iteration': locs['it'],
+            'deliveries_per_episode': diagnostics.get('recent_deliveries_per_episode'),
+            'max_deliveries_in_episode': diagnostics.get('recent_max_deliveries_in_episode'),
             'num_envs': self.env.num_envs, 'timesteps_this_run': self.tot_timesteps,
             'wall_seconds': time.monotonic() - self.started,
             'iteration_seconds': locs['collection_time'] + locs['learn_time'],
@@ -298,6 +316,8 @@ class GuardedRunner(OnPolicyRunner):
             print('D1G2_TASKB_DIAGNOSTICS ' + json.dumps({
                 'iteration': locs['it'], 'episodes': diagnostics['episode_count_total'],
                 'deliveries': diagnostics['delivery_count_total'],
+                'deliveries_per_episode': diagnostics.get('recent_deliveries_per_episode'),
+                'max_deliveries_in_episode': diagnostics.get('recent_max_deliveries_in_episode'),
                 'recent_delivery_rate': diagnostics.get('recent_delivery_rate'),
                 'recent_mean_min_object_dist_m': diagnostics.get('recent_mean_min_object_dist_m'),
                 'heading_noise_rad': diagnostics['heading_noise_rad'],
@@ -342,6 +362,7 @@ metadata = {'base_policy_sha256': hashlib.sha256(args.policy.read_bytes()).hexdi
             'actor_observation': '5x57 history,7 arm positions,7 arm velocities*.05,16 base actions,'
                                  '16 last residuals,9 goal values',
             'action_layout': '16 residual joint deltas + forward command + yaw-rate command',
+            'multi_delivery': args.multi_delivery,
             'training_model': 'Original D1+G2 combined USD with original actuators; arm held at default',
             'object_model': '006_mustard_bottle.usd, one per environment, kinematically carried',
             'evaluation_required': 'Proxy deliveries only; the official 18-object Task B is not attempted'}
@@ -397,7 +418,8 @@ def main():
         cfg = build_d1g2_taskb_train_cfg(
             device=args.device, seed=args.seed, ddt_root=args.assets_root, num_envs=args.num_envs,
             episode_length_s=args.episode_seconds, spawn_min=args.spawn_min, spawn_max=args.spawn_max,
-            heading_noise=args.heading_noise, release_radius=args.release_radius, bin_scale=args.bin_scale)
+            heading_noise=args.heading_noise, release_radius=args.release_radius,
+            bin_scale=args.bin_scale, multi_delivery=args.multi_delivery)
         cfg.sim.use_fabric = True
         print('D1G2_TASKB_STAGE creating_environment', flush=True)
         env = RecordedTaskBEnv(cfg=cfg)

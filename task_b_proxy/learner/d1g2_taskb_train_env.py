@@ -21,6 +21,12 @@ Differences that matter, stated once and repeated in the training metadata:
 * The release is scripted, not learned: the object is dropped when the tray
   crosses the release radius *while the robot is still driving forward*, which
   is a state the learned forward command makes easy to reach and hold.
+* Two episode shapes.  ``multi_delivery=False`` (the shipped default) ends the
+  episode on the first successful delivery.  ``multi_delivery=True`` instead
+  hands over a fresh object inside the same episode, up to
+  ``DROPS_PER_EPISODE`` times, so one rollout contains many deliveries.  The
+  two are not interchangeable: a policy trained under one does not work under
+  the other, because the termination semantics differ.
 * Rewards here are training signals, not competition scores.  Nothing in
   this file establishes an official Task B result.
 
@@ -77,9 +83,10 @@ SUCCESS_DISTANCE_FRACTION = 0.5
 #   object held 1.00 m above the root (~0.43 m) -> 1.43 m, 0.33 m above the rim
 #   object dropped with no horizontal velocity -> lands at its release radius,
 #     0.40 m from the centre, 0.60 m inside the 1.00 m success circle
-# The trained checkpoint in weights/ used 0.40 m; the maximum the wall clearance
-# permits is 0.53 m (CARRY_OFFSET[0] - 0.27 - wall radius), and the builder
-# refuses anything larger.
+# The published checkpoint in weights/ was trained and verified at 0.40 m.
+# Two multi-delivery attempts widened this (tray 2.95 m, release 0.50 m) to give
+# the policy room, and still delivered nothing -- see the README.  Restored to
+# the verified values so the shipped configuration is the one that was measured.
 #
 # Heading matters: the release radius is measured along the tray, so a robot
 # that is 45 deg off still clears the wall (2.48 m), while 60 deg off does not.
@@ -130,7 +137,7 @@ FAILURE_TERMS = ("illegal_contact", "bad_orientation", "too_far")
 # away if the drop landed, after a settle window if it did not -- so a single
 # rollout contains many deliveries, the way the official task asks for many
 # objects in the circle.
-DROPS_PER_EPISODE = 10        # cap, so one episode cannot run on forever
+DROPS_PER_EPISODE = 10       # cap, so one episode cannot run on forever
 DROP_SETTLE_STEPS = 400       # time a drop gets to settle before the next handover
 # The multi-delivery loop hands the robot a new object inside the same episode.
 # OFF by default: the shipped checkpoint was trained one-delivery-per-episode
@@ -427,6 +434,20 @@ def update_carried_object(env, env_ids, release_radius: float = RELEASE_RADIUS,
         dist = torch.norm(pos[ids, :2] - bin_center_w(env)[ids], dim=1)
         forward_speed = robot.data.root_lin_vel_b[ids, 0]
         drop = ids[(dist <= release_radius) & (forward_speed > release_speed)]
+        if not hasattr(env, "_rp"):
+            env._rp = 0
+        env._rp += 1
+        if env._rp % 100 == 1:
+            import sys
+            near = dist <= release_radius
+            print(f"REL_PROBE n={env._rp} carrying={len(ids)} "
+                  f"dist[min={float(dist.min()):.2f} mean={float(dist.mean()):.2f}] "
+                  f"near={int(near.sum())} "
+                  f"fspeed[min={float(forward_speed.min()):.2f} mean={float(forward_speed.mean()):.2f} "
+                  f"max={float(forward_speed.max()):.2f}] "
+                  f"near_and_fast={int((near & (forward_speed > release_speed)).sum())} "
+                  f"drops_so_far={int(state['drops_this_episode'].sum())}",
+                  file=sys.stderr, flush=True)
         state["carrying"][drop] = False
         state["released"][drop] = True
         state["release_height"][drop] = pos[drop, 2]
@@ -796,6 +817,7 @@ def build_d1g2_taskb_train_cfg(
     release_radius: float = RELEASE_RADIUS,
     tile_size: float = 20.0,
     bin_scale: float = BIN_SCALE_DEFAULT,
+    multi_delivery: bool = MULTI_DELIVERY_DEFAULT,
 ):
     """Build the camera-free Task B delivery training configuration.
 
@@ -973,6 +995,7 @@ def build_d1g2_taskb_train_cfg(
             mode="interval",
             interval_range_s=(step_dt, step_dt),
             is_global_time=False,
+            params={"multi_delivery": multi_delivery},
         )
 
     cfg.events = TaskBEventsCfg()
@@ -1014,7 +1037,9 @@ def build_d1g2_taskb_train_cfg(
         time_out = TerminationTermCfg(func=mdp.time_out, time_out=True)
         bad_orientation = TerminationTermCfg(func=mdp.bad_orientation, params={"limit_angle": 1.0})
         too_far = TerminationTermCfg(func=too_far_from_bin, params={"max_dist": 8.0})
-        delivery_success = TerminationTermCfg(func=delivery_done)
+        # In multi-delivery mode a successful delivery starts the next attempt
+        # instead of ending the episode, so only the attempt cap terminates.
+        delivery_success = (None if multi_delivery else TerminationTermCfg(func=delivery_done))
         # NOTE: an unresolved drop no longer ends the episode.  ``next_delivery``
         # hands the robot its next object instead, so episodes contain many
         # attempts.  Dropping this term is what makes that loop observable in
@@ -1047,6 +1072,9 @@ def build_d1g2_taskb_train_cfg(
         "spawn_distance_m": (spawn_min, spawn_max),
         "spawn_heading_noise_rad": heading_noise,
         "episode_length_s": episode_length_s,
+        "multi_delivery": multi_delivery,
+        "drops_per_episode_cap": DROPS_PER_EPISODE if multi_delivery else 1,
+        "drop_settle_steps": DROP_SETTLE_STEPS if multi_delivery else None,
     }
 
     cfg.viewer.eye = (4.0, -4.0, 3.0)
