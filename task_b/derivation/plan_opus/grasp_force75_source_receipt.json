@@ -1,0 +1,10 @@
+{
+  "actual_claude_session": "3287eee7-6502-4347-9582-ed9066ee7caa",
+  "opus_source_sha256": "e873ac218a51ee02e0062c5c99d85a075719c357e615c3994d74f1d1cdb1942a",
+  "integrated_source_sha256": "bf8a4204c5badd5c1708c2804e9e4a085e29535f88cfba40cb527b20abb4e306",
+  "root_changes": [
+    "Astra-approved q2 gain3 from new official payload static torque bound; cap/tether/filter/goal thresholds unchanged",
+    "ceil window sample count so non50Hz still covers full.5s"
+  ],
+  "basis": "official .5kg payload+original arm COM torque bound10.163Nm needs .12704rad reference difference; gain3 closed-loop static estimate .03176rad <.04, not actual grasp proof"
+}

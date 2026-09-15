@@ -1,0 +1,21 @@
+{
+  "session": "894c3f54-7de8-4c5e-8516-1029c6669a07",
+  "production_files": [
+    {
+      "file": "first_reach.py",
+      "sha256": "de61286e5925e5a2698efd03e2875aa86db16f1bc2e7a0d39b254cbbd55eb562",
+      "original_opus_copy": "/home/lybm/ATEC_Experiments_20260910/task_b_plan_opus/first_reach_opus_de61286e5925.py"
+    },
+    {
+      "file": "visual_approach.py",
+      "sha256": "47b9f7f32ff9aac9e5bf8cad744a7bbc4b713af78592c2810f867e41c1b54e6f",
+      "original_opus_copy": "/home/lybm/ATEC_Experiments_20260910/task_b_plan_opus/visual_approach_opus_47b9f7f32ff9.py"
+    },
+    {
+      "file": "audit_first_reach.py",
+      "sha256": "76939260a8e77a5d263dcab88e9f6bbb3d3912a608bb1cbcb5bee8000fb7f4d0",
+      "original_opus_copy": "/home/lybm/ATEC_Experiments_20260910/task_b_plan_opus/audit_first_reach_opus_76939260a8e7.py"
+    }
+  ],
+  "additional_private_memory_writes": "Claude also wrote its own project memory task-b-p1-reach-vision-gate-decision.md and MEMORY.md; no simulator or Git changes"
+}

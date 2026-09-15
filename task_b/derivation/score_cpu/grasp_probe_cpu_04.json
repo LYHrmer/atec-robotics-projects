@@ -1,0 +1,186 @@
+{
+  "scope": "Independent CPU counterexamples for the bounded Task B grasp probe.\n\nAll images, detections, jaw obstructions and actuator responses here are\nSYNTHETIC. The real controllers and FK execute, but there is no physics,\ncontact, object pose or reward. Passing does not demonstrate a grasp, score,\ndelivery or success rate. Real grasp evidence belongs to the original task.\n",
+  "fixture_classification": "SYNTHETIC_CPU_ONLY",
+  "passed": true,
+  "count": 41,
+  "checks": {
+    "rejects_{'reach_only': True}": true,
+    "rejects_{'lowering_m': 0.0}": true,
+    "rejects_{'lowering_m': 0.03}": true,
+    "entire_first_reach_action_prefix_exact": true,
+    "exactly_one_child_call_per_prefix_step": true,
+    "normal_completion_only_enters_close_without_action_jump": true,
+    "prefix_error_nonfinite_propagates_unchanged": true,
+    "prefix_error_tilt_propagates_unchanged": true,
+    "close_slew_and_six_joint_hold": true,
+    "preload_maps_to_physical_targets_with_nonzero_defaults_and_permuted_actions": true,
+    "stable_repeated_measured_width_authorizes_only_after_active_minimum": true,
+    "lift_rate_and_measured_tether": true,
+    "lower_reference_and_wheel_anchor_request_continuous": true,
+    "synthetic_response_ends_as_observation_only": true,
+    "actual_empty_jaws_stop_without_lift": true,
+    "varying_measured_width_cannot_authorize_lift_and_close_deadline_is_finite": true,
+    "hard_legal_q2_goal_above_soft_limit_is_not_rejected": true,
+    "lift_goal_uses_latched_measured_q_and_exact_paired_delta": true,
+    "out_of_limits_paired_goal_stops_before_moving_or_clipping": true,
+    "frozen_actual_arm_cannot_arrive_from_command_and_stops_for_no_progress": true,
+    "actual_arm_velocity_blocks_arrival_until_original_lift_deadline": true,
+    "near_goal_quiet_actual_joints_without_fk_rise_cannot_authorize_observation": true,
+    "empty_width_stops_lift": true,
+    "empty_width_stops_observe": true,
+    "incompatible_speed_and_measured_tether_stops_without_command_jump": true,
+    "probe_tangent_budget_terminates": true,
+    "probe_yaw_budget_terminates": true,
+    "probe_gravity_budget_terminates": true,
+    "probe_hard_tilt_terminates": true,
+    "probe_reach_tilt_terminates": true,
+    "probe_reach_angular_rate_terminates": true,
+    "probe_invalid_public_state_terminates": true,
+    "soft_pause_freezes_commands_and_waits_point_two_seconds_quiet": true,
+    "quiet_resumption_restarts_bounded_close": true,
+    "pause_has_finite_two_second_budget": true,
+    "separate_pause_episodes_share_two_second_cumulative_budget": true,
+    "body_drift_budget_continues_while_commands_are_paused": true,
+    "pause_discards_pre_pause_stable_width_window": true,
+    "pause_cannot_reset_close_phase_deadline": true,
+    "poisoned_truth_and_score_extras_are_not_read": true,
+    "probe_public_diagnostics_are_finite_json": true
+  },
+  "evidence": {
+    "entire_first_reach_action_prefix_exact": {
+      "calls": 721,
+      "max_action_difference": 0.0,
+      "original_reason": "reach_lowering_hold_complete"
+    },
+    "stable_repeated_measured_width_authorizes_only_after_active_minimum": {
+      "lift_entry_s": 1.4000000000000001
+    },
+    "synthetic_response_ends_as_observation_only": {
+      "reason": "grasp_probe_observation_complete",
+      "probe_elapsed_s": 4.72,
+      "notice": "Synthetic actuator and artificial jaw obstruction, NOT a grasp."
+    },
+    "happy_path_measurements": {
+      "probe_lift_latched_q_rad": [
+        0.5378966999053956,
+        3.139998769760132,
+        -1.5861420512199402,
+        -0.003451877050101757,
+        -0.08834008455276489,
+        6.705522526129215e-10
+      ],
+      "probe_lift_goal_rad": [
+        0.5378966999053956,
+        3.039998769760132,
+        -1.4861420512199401,
+        -0.003451877050101757,
+        -0.08834008455276489,
+        6.705522526129215e-10
+      ],
+      "probe_lift_limit_violations": {},
+      "probe_lift_max_q_error_rad": 2.3841857821338408e-08,
+      "probe_lift_max_qdot_rad_s": 0.0,
+      "probe_pinch_rise_m": 0.028389942090598363
+    },
+    "actual_empty_jaws_stop_without_lift": {
+      "reason": "grasp_probe_empty_close",
+      "elapsed_s": 1.2
+    },
+    "varying_measured_width_cannot_authorize_lift_and_close_deadline_is_finite": {
+      "reason": "grasp_probe_close_not_confirmed",
+      "elapsed_s": 3.0
+    },
+    "hard_legal_q2_goal_above_soft_limit_is_not_rejected": {
+      "state": "PROBE_LIFT",
+      "reason": null,
+      "goal": [
+        0.5378966999053956,
+        3.04,
+        -1.4861420512199401,
+        -0.003451877050101757,
+        -0.08834008455276489,
+        6.705522526129215e-10
+      ]
+    },
+    "out_of_limits_paired_goal_stops_before_moving_or_clipping": {
+      "reason": "grasp_probe_lift_goal_outside_joint_limits",
+      "elapsed_s": 1.4000000000000001
+    },
+    "frozen_actual_arm_cannot_arrive_from_command_and_stops_for_no_progress": {
+      "reason": "no_joint_lift_progress",
+      "elapsed_s": 2.02
+    },
+    "actual_arm_velocity_blocks_arrival_until_original_lift_deadline": {
+      "reason": "grasp_probe_lift_not_reached",
+      "elapsed_s": 5.0
+    },
+    "near_goal_quiet_actual_joints_without_fk_rise_cannot_authorize_observation": {
+      "reason": "grasp_probe_lift_not_reached",
+      "independent_measured_fk_rise_m": 0.011099210639567814,
+      "actual_max_goal_error_rad": 0.039000000000000146
+    },
+    "empty_width_stops_lift": {
+      "reason": "grasp_probe_empty_during_lift",
+      "elapsed_s": 0.22
+    },
+    "empty_width_stops_observe": {
+      "reason": "grasp_probe_empty_during_observation",
+      "elapsed_s": 0.22
+    },
+    "incompatible_speed_and_measured_tether_stops_without_command_jump": {
+      "reason": "grasp_probe_rate_tether_intersection_empty",
+      "maximum_command_change_rad": 0.0
+    },
+    "probe_tangent_budget_terminates": {
+      "reason": "grasp_probe_base_displacement_budget_exceeded",
+      "elapsed_s": 0.56
+    },
+    "probe_yaw_budget_terminates": {
+      "reason": "grasp_probe_base_yaw_budget_exceeded",
+      "elapsed_s": 0.46
+    },
+    "probe_gravity_budget_terminates": {
+      "reason": "grasp_probe_gravity_changed",
+      "elapsed_s": 0.02
+    },
+    "probe_hard_tilt_terminates": {
+      "reason": "tilt_limit_exceeded",
+      "elapsed_s": 0.02
+    },
+    "probe_reach_tilt_terminates": {
+      "reason": "reach_unstable_posture",
+      "elapsed_s": 0.02
+    },
+    "probe_reach_angular_rate_terminates": {
+      "reason": "reach_unstable_posture",
+      "elapsed_s": 0.02
+    },
+    "probe_invalid_public_state_terminates": {
+      "reason": "invalid_proprio",
+      "elapsed_s": 0.02
+    },
+    "pause_has_finite_two_second_budget": {
+      "reason": "grasp_probe_pause_timeout",
+      "elapsed_s": 2.0
+    },
+    "separate_pause_episodes_share_two_second_cumulative_budget": {
+      "reason": "grasp_probe_pause_budget_exceeded",
+      "elapsed_s": 2.0,
+      "pause_episodes": 3
+    },
+    "body_drift_budget_continues_while_commands_are_paused": {
+      "reason": "grasp_probe_base_displacement_budget_exceeded",
+      "elapsed_s": 0.48
+    },
+    "pause_cannot_reset_close_phase_deadline": {
+      "reason": "grasp_probe_close_not_confirmed",
+      "elapsed_s": 3.0
+    }
+  },
+  "source_sha256": {
+    "first_reach.py": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897",
+    "grasp_probe.py": "91fb3367f59123c7dfe84c2d2c49ec9c45317b6c9993dbb29e4d4db8068e348c",
+    "arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "audit_grasp_probe.py": "12eca92dd1e725fa81fb0a1ab6372f1197e74363665620fd26f4550975ba0b6f"
+  }
+}

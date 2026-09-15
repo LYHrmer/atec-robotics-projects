@@ -1,0 +1,245 @@
+{
+  "scope": "Read-only force75 P3 completed-run command/state audit. Explicit candidate tether: q2 .18 rad; others .10 rad. No simulation or policy edits.",
+  "runs": [
+    {
+      "run_id": "plan_p4_grasp_force75_seed42_01",
+      "steps": 3238,
+      "sim_seconds": 64.76,
+      "stop_reason": "policy_stop:grasp_probe_empty_during_lift",
+      "score_raw_total": 0.9999999776482582,
+      "official_terminated": false,
+      "official_truncated": false,
+      "timing": "telemetry actual q/qdot and trace diagnostics are pre_step; same row action is computed from this observation. final_state and policy_stop_record are after the last completed action. No same-index prestate is labelled post-action.",
+      "phases": {
+        "PROBE_CLOSE": {
+          "first_step": 2924,
+          "last_step": 3077,
+          "tail_mean_actual_rad_m": [
+            0.5443781018257141,
+            3.139641761779785,
+            -1.6720141172409058,
+            0.0046520354226231575,
+            -0.08996591717004776,
+            0.0011526074958965182,
+            0.03163318708539009,
+            -0.024494536221027374
+          ],
+          "tail_mean_command_minus_actual_rad_m": [
+            0.007139018774032593,
+            0.00035713672637939454,
+            -0.004175939559936523,
+            -0.001413582405075431,
+            0.0015735463798046113,
+            -0.0011526074772700667,
+            -0.09841318484395742,
+            0.09127454254776239
+          ],
+          "tail_actual_range_rad_m": [
+            0.0018846392631530762,
+            0.001583099365234375,
+            0.005410671234130859,
+            0.0011736978776752949,
+            0.0024257823824882507,
+            0.0008814998436719179,
+            0.005589062348008156,
+            0.0021544266492128372
+          ],
+          "tail_max_abs_qdot_rad_m_per_s": [
+            0.05736647546291351,
+            0.10342535376548767,
+            0.08131761848926544,
+            0.09512583166360855,
+            0.0539226196706295,
+            0.05993961915373802,
+            0.7743641138076782,
+            0.24370312690734863
+          ],
+          "width_min_max_m": [
+            0.052024759352207184,
+            0.06985435634851456
+          ]
+        },
+        "PROBE_LIFT": {
+          "first_step": 3078,
+          "last_step": 3238,
+          "tail_mean_actual_rad_m": [
+            0.5401036739349365,
+            2.9921882152557373,
+            -1.4638655185699463,
+            0.004723670892417431,
+            -0.08873970806598663,
+            0.0011555851669982076,
+            0.011387464590370655,
+            -0.010374555364251137
+          ],
+          "tail_mean_command_minus_actual_rad_m": [
+            0.003387500047683716,
+            -0.11958343982696533,
+            -0.010742855072021485,
+            -0.00010832601226866245,
+            -0.0025313758850097658,
+            -3.6090072244405745e-05,
+            -0.08638746815733611,
+            0.08537455819547177
+          ],
+          "tail_actual_range_rad_m": [
+            0.0028883814811706543,
+            0.09301948547363281,
+            0.00748896598815918,
+            0.0008235094137489796,
+            0.0024832487106323242,
+            0.0007415383588522673,
+            0.022977907210588455,
+            0.020895326510071754
+          ],
+          "tail_max_abs_qdot_rad_m_per_s": [
+            0.053620800375938416,
+            0.17622359097003937,
+            0.08003698289394379,
+            0.029320690780878067,
+            0.025380032137036324,
+            0.012797693721950054,
+            0.5664613246917725,
+            0.06757295876741409
+          ],
+          "width_min_max_m": [
+            0.0,
+            0.05544915050268173
+          ]
+        }
+      },
+      "checks": {
+        "arm_commands_not_changed_by_outer_base_control": true,
+        "probe_lowering_alpha_held_at_one": true,
+        "continuous_wheel_hold_request": true,
+        "continuous_active_wheel_hold": true,
+        "reconstructed_wheel_anchor_unchanged_modulo_2pi": true,
+        "goal_latched_once_and_fixed": true,
+        "complete_preload_command_before_lift": true,
+        "lift_arm_slew_at_most_point_one_rad_per_s": true,
+        "lift_arm_tether_within_explicit_force75_per_axis_limits": true,
+        "lift_commands_inside_original_hard_limits": true,
+        "close_finger_slew_at_most_point_zero_five_m_per_s": true,
+        "q2_raw_and_filtered_correction_match_public_q_and_phase_pause_timing": true
+      },
+      "wheel_anchor_max_change_rad": 0.0,
+      "last_trace_actual": {
+        "probe_lift_max_q_error_rad": 0.0166844844818117,
+        "probe_lift_max_qdot_rad_s": 0.1688564568758011,
+        "probe_pinch_rise_m": 0.04886136704115966,
+        "probe_measured_width_m": 0.0,
+        "probe_base_displacement_m": 0.001918789386502294,
+        "probe_base_yaw_rad": 0.00021158788539778754,
+        "probe_base_gravity_change_rad": 0.0006869036349364214,
+        "probe_q2_position_feedback_rad": -0.07722723880714508
+      },
+      "per_axis_max_measured_tether_rad": [
+        0.008025884628295898,
+        0.12624120712280273,
+        0.01609480381011963,
+        0.0015611406415700912,
+        0.008842363953590393,
+        0.0014336577150970697
+      ],
+      "candidate_tether_limits_rad": [
+        0.1,
+        0.18,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "max_arm_command_step_rad": 0.002000093460083008,
+      "max_measured_tether_rad": 0.12624120712280273,
+      "max_close_finger_command_step_m": 0.0010000020265579224,
+      "q2_filter_independent_reconstruction": {
+        "gain": 3.0,
+        "raw_cap_rad": 0.12,
+        "tau_s": 0.1,
+        "max_filtered_difference_rad": 0.0,
+        "max_raw_difference_rad": 0.0,
+        "paused_ticks": 6,
+        "active_ticks": 154,
+        "timing": "same-row pre-step public measured q to same-row computed correction"
+      },
+      "final_policy_stop_probe_state": {
+        "phase": "PROBE_LIFT",
+        "phase_order": [
+          "PROBE_CLOSE",
+          "PROBE_LIFT",
+          "PROBE_OBSERVE"
+        ],
+        "entry_call": 2924,
+        "calls": 3239,
+        "state": "STOPPED",
+        "done_reason": "grasp_probe_empty_during_lift",
+        "phase_elapsed_s": 3.22,
+        "phase_remaining_s": 1.7799999999999998,
+        "probe_elapsed_s": 6.3,
+        "pause_episodes": 4,
+        "pause_total_s": 0.78,
+        "held_arm_command_rad": [
+          0.5515170248682245,
+          3.1399988169418163,
+          -1.6761901266843884,
+          0.003238453248845782,
+          -0.08839237346822092,
+          0.0
+        ],
+        "finger_target_m": [
+          -0.075,
+          0.075
+        ],
+        "finger_preload_m": 0.075,
+        "measured_width_m": 0.0,
+        "latched_lift_q_rad": [
+          0.5434911251068115,
+          3.1394259929656982,
+          -1.674608588218689,
+          0.004615344572812319,
+          -0.09127109497785568,
+          0.0011194951366633177
+        ],
+        "lift_goal_rad": [
+          0.5434911251068115,
+          2.939425992965698,
+          -1.474608588218689,
+          0.004615344572812319,
+          -0.09127109497785568,
+          0.0011194951366633177
+        ],
+        "lift_tether_rad": [
+          0.1,
+          0.18,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "lift_max_q_error_rad": 0.0166844844818117,
+        "lift_max_qdot_rad_s": 0.1688564568758011,
+        "lift_qdot_cap_rad_s": 0.12,
+        "lift_position_window_samples": 0,
+        "lift_position_window_required_samples": 26,
+        "lift_position_window_span_rad": null,
+        "lift_position_window_ready": false,
+        "q2_raw_correction_rad": -0.0500534534454351,
+        "q2_filtered_correction_rad": -0.07722723880714508,
+        "q2_correction_filter_tau_s": 0.1,
+        "q2_filter_history_resets": 1,
+        "pinch_rise_m": 0.04886136704115966,
+        "predicted_pinch_travel_m": 0.05691103896371127,
+        "wheel_hold_requested": true,
+        "lowering_alpha": 1.0,
+        "first_reach_lowering_m": 0.03
+      },
+      "source_sha256": {
+        "result.json": "79622409e304d75aeab67d52d0ce81fe724ab8940800d6923350dc43a10c7041",
+        "telemetry.npz": "a7cfe38fa1c780ff2ebef90d35ab6a67d3b5bf108451f953dd59712488fac6e1",
+        "trace.jsonl": "6e08db789f7b841f66a8432cf28c638c59a749b14af54eb188b2921c5284b416",
+        "source_manifest.json": "b91f9c1cf0ab2d1015b4954abc73224dd1b3b5d784710c380333df4f3ddc4a54"
+      },
+      "all_command_checks_pass": true
+    }
+  ]
+}

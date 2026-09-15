@@ -1,0 +1,57 @@
+{
+  "run_directory": "runs/delivery_video/record_01",
+  "steps": 2369,
+  "step_dt_s": 0.02,
+  "rebuilt_score_raw_total": 2.0,
+  "recorded_score_raw_total": 1.9999999552965164,
+  "rebuilt_term_totals": {
+    "grasped_objects": 1.0,
+    "objects_in_circle": 1.0
+  },
+  "recorded_term_totals": {
+    "objects_in_circle": 1.0,
+    "grasped_objects": 1.0
+  },
+  "rebuilt_scoring_events": [
+    [
+      37,
+      "grasped_objects"
+    ],
+    [
+      2195,
+      "objects_in_circle"
+    ]
+  ],
+  "recorded_scoring_events": [
+    [
+      37,
+      "grasped_objects"
+    ],
+    [
+      2195,
+      "objects_in_circle"
+    ]
+  ],
+  "state_term_lag_steps": 1,
+  "mismatches_at_each_lag": {
+    "0": {
+      "grasped_objects": 2,
+      "objects_in_circle": 2
+    },
+    "1": {
+      "grasped_objects": 0,
+      "objects_in_circle": 0
+    }
+  },
+  "max_official_illegal_contact_force_n": 0.0,
+  "checks": {
+    "term_values_match_the_recorded_terms": true,
+    "score_total_matches": true,
+    "per_term_totals_match": true,
+    "scoring_events_match": true,
+    "no_illegal_contact_all_run": true,
+    "no_official_termination": true
+  },
+  "passed": true,
+  "scope": "Re-derives the two scored terms from the recorded object and gripper positions and the official term geometry, then checks them against the run's own accounting. It does not re-simulate, so it validates the scoring, not the physics."
+}

@@ -1,0 +1,1908 @@
+{
+  "status": "completed",
+  "scope": "Offline read-only runtime replay; world states are diagnosis only, never policy inputs.",
+  "run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p3_multi_window_seed42_01",
+  "steps": 3687,
+  "score_raw_total": 0.9999999776482582,
+  "stop_reason": "policy_stop:multi_stationary_displacement_budget_exceeded",
+  "terminated": false,
+  "truncated": false,
+  "active_termination_terms": [],
+  "max_recorded_illegal_force_n": 0.0,
+  "scoring_events": [
+    {
+      "step": 2794,
+      "reward_terms": {
+        "objects_in_circle": 0.0,
+        "grasped_objects": 1.0
+      },
+      "env_reward": 0.019999999552965164,
+      "reward_raw_total": 0.9999999776482582,
+      "state": {
+        "q": [
+          0.2604998052120209,
+          -0.25970274209976196,
+          0.20411817729473114,
+          -0.19022522866725922,
+          0.8714048862457275,
+          0.8613473176956177,
+          0.9975606203079224,
+          0.975843608379364,
+          0.5493937730789185,
+          -1.9428738355636597,
+          -1.9195425510406494,
+          -1.8097498416900635,
+          -1.7990431785583496,
+          3.1400058269500732,
+          0.9847618937492371,
+          6.118647575378418,
+          1.6800395250320435,
+          5.108354091644287,
+          -1.6630772352218628,
+          0.0032747958321124315,
+          -0.08632179349660873,
+          1.9917290501325624e-06,
+          0.034870442003011703,
+          -0.03495684266090393
+        ],
+        "qdot": [
+          0.08528390526771545,
+          0.1416577398777008,
+          0.08277662098407745,
+          0.1235203817486763,
+          -0.0008608163334429264,
+          -0.028243763372302055,
+          0.0012585390359163284,
+          -0.035961657762527466,
+          0.017206750810146332,
+          0.02919768914580345,
+          0.059961121529340744,
+          0.018090561032295227,
+          0.06625466793775558,
+          0.0008670975803397596,
+          -0.0802215188741684,
+          -0.03062639757990837,
+          -0.06635448336601257,
+          -0.03917466849088669,
+          -0.032735083252191544,
+          -0.001884992467239499,
+          -0.007612124551087618,
+          0.0002763636002782732,
+          -0.006790423300117254,
+          -0.009011692367494106
+        ],
+        "base_xyz": [
+          -7.1790547370910645,
+          -9.006996154785156,
+          0.5230645537376404
+        ],
+        "base_quat": [
+          0.9917101263999939,
+          -0.009722641669213772,
+          0.034176409244537354,
+          0.12348449975252151
+        ],
+        "illegal_force": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gripper_xyz": [
+          -6.7351508140563965,
+          -8.695564270019531,
+          0.3392919898033142
+        ],
+        "gripper_quat": [
+          0.08752850443124771,
+          -0.3828984498977661,
+          0.9181843400001526,
+          0.05162438750267029
+        ],
+        "object_xyz": [
+          [
+            -7.25826358795166,
+            -10.602023124694824,
+            0.09020683914422989
+          ],
+          [
+            -6.4118475914001465,
+            -8.01716136932373,
+            0.09020508825778961
+          ],
+          [
+            -14.056036949157715,
+            -5.234580039978027,
+            0.09020614624023438
+          ],
+          [
+            -7.386420726776123,
+            -7.1301589012146,
+            0.09020683169364929
+          ],
+          [
+            -13.716680526733398,
+            -10.486949920654297,
+            0.09020721912384033
+          ],
+          [
+            -11.289835929870605,
+            -5.7231526374816895,
+            0.09020626544952393
+          ],
+          [
+            -8.561485290527344,
+            -6.769255638122559,
+            0.14022484421730042
+          ],
+          [
+            -10.565979957580566,
+            -12.724531173706055,
+            0.1402243971824646
+          ],
+          [
+            -9.454275131225586,
+            -14.358745574951172,
+            0.14022448658943176
+          ],
+          [
+            -6.723809242248535,
+            -8.680274963378906,
+            0.14022478461265564
+          ],
+          [
+            -7.419244766235352,
+            -11.451659202575684,
+            0.14022579789161682
+          ],
+          [
+            -5.293142318725586,
+            -6.0657057762146,
+            0.14022418856620789
+          ],
+          [
+            -7.211845397949219,
+            -13.054414749145508,
+            0.060087792575359344
+          ],
+          [
+            -10.328531265258789,
+            -14.562829971313477,
+            0.060087982565164566
+          ],
+          [
+            -13.45276927947998,
+            -8.170336723327637,
+            0.06008646637201309
+          ],
+          [
+            -7.5480637550354,
+            -5.325768947601318,
+            0.060087475925683975
+          ],
+          [
+            -11.737444877624512,
+            -11.296244621276855,
+            0.06008752062916756
+          ],
+          [
+            -10.300076484680176,
+            -13.106104850769043,
+            0.06008726730942726
+          ]
+        ],
+        "object_quat": [
+          [
+            -0.011822451837360859,
+            0.7125632762908936,
+            0.016691019758582115,
+            0.7013097405433655
+          ],
+          [
+            -0.011839150451123714,
+            0.7125997543334961,
+            0.01670156791806221,
+            0.7012720704078674
+          ],
+          [
+            -0.011861593462526798,
+            0.7125983834266663,
+            0.016724519431591034,
+            0.7012724876403809
+          ],
+          [
+            -0.01183020044118166,
+            0.7125648260116577,
+            0.016698502004146576,
+            0.7013078927993774
+          ],
+          [
+            -0.011818980798125267,
+            0.712563157081604,
+            0.01668727770447731,
+            0.7013099193572998
+          ],
+          [
+            -0.011836285702884197,
+            0.7125961780548096,
+            0.01669929176568985,
+            0.7012758851051331
+          ],
+          [
+            0.0005355349858291447,
+            0.0008909751777537167,
+            -0.698583722114563,
+            0.7155275940895081
+          ],
+          [
+            0.0005061080446466804,
+            0.0009209996787831187,
+            -0.6985801458358765,
+            0.7155309915542603
+          ],
+          [
+            0.0004986648564226925,
+            0.0009283383842557669,
+            -0.6985800862312317,
+            0.7155311107635498
+          ],
+          [
+            0.0005052989581599832,
+            0.0009217240149155259,
+            -0.6985809206962585,
+            0.715530276298523
+          ],
+          [
+            0.0005020150565542281,
+            0.0009248540154658258,
+            -0.6985812783241272,
+            0.7155298590660095
+          ],
+          [
+            0.0005007892614230514,
+            0.0009259835933335125,
+            -0.6985809803009033,
+            0.7155300974845886
+          ],
+          [
+            0.02225448749959469,
+            -0.021492261439561844,
+            -0.7795562744140625,
+            0.6255676746368408
+          ],
+          [
+            0.02290116250514984,
+            -0.02230128087103367,
+            -0.779538094997406,
+            0.6255384683609009
+          ],
+          [
+            0.02230757847428322,
+            -0.021561291068792343,
+            -0.7795584797859192,
+            0.6255604028701782
+          ],
+          [
+            0.022805919870734215,
+            -0.022182470187544823,
+            -0.7795412540435791,
+            0.625542402267456
+          ],
+          [
+            0.022283658385276794,
+            -0.02153707481920719,
+            -0.7795628905296326,
+            0.6255568861961365
+          ],
+          [
+            0.021964043378829956,
+            -0.02113306149840355,
+            -0.7795698642730713,
+            0.6255732774734497
+          ]
+        ]
+      },
+      "state_timing": "post_step_before_any_reset",
+      "capture_error": null,
+      "termination_flags": {
+        "time_out": false,
+        "illegal_contact": false,
+        "fall": false,
+        "objects_in_circle_done": false
+      }
+    }
+  ],
+  "phase_windows": [
+    {
+      "phase": "ATTEMPT",
+      "attempt": 1,
+      "steps": [
+        1,
+        2935
+      ],
+      "control_duration_s": 58.7,
+      "all_wheel_hold_active": false,
+      "world_base_displacement_m": [
+        2.8196606636047363,
+        0.9923563003540039,
+        -0.27100932598114014
+      ],
+      "public_tangent_speed_max_m_s": 0.7127699343167957,
+      "last_debug": {
+        "gripper_body": [
+          0.518299931405977,
+          0.19484565826481073,
+          -0.1456495938421895
+        ],
+        "candidates": [],
+        "camera_errors": {},
+        "detector_rejections": {
+          "ee": {
+            "yellow_components": 4,
+            "rejected": {
+              "missing_depth": 1,
+              "image_shape": 3
+            },
+            "association_mode": "locked_point_local_association",
+            "locked_shape_bypass": 1,
+            "accepted": 0
+          },
+          "head": {
+            "yellow_components": 0,
+            "rejected": {},
+            "association_mode": "locked_point_local_association",
+            "locked_shape_bypass": 0,
+            "accepted": 0
+          }
+        },
+        "locked_target_body": [
+          0.5390585755256899,
+          0.20474786124874667,
+          -0.3037878840957215
+        ],
+        "association_claim": "locked mode is local geometry near the already localized point; not object identity or continuous tracking",
+        "reach_goal_q": [
+          0.552270348390174,
+          3.1399988169418163,
+          -1.6747511691355867,
+          0.0032512938011714427,
+          -0.08839268629228382,
+          0.0
+        ],
+        "predicted_gripper_body": [
+          0.5211714271626842,
+          0.1978816594909159,
+          -0.14451298813391888
+        ],
+        "reach_target_body": [
+          0.5390585755256899,
+          0.20474786124874667,
+          -0.3037878840957215
+        ],
+        "reach_subphase": "LOWER_HOLD",
+        "reach_settle_episodes": 1,
+        "reach_settle_total_s": 0.28,
+        "reach_public_linear_velocity": [
+          -0.0014547412283718586,
+          -0.0017455043271183968,
+          0.023762786760926247
+        ],
+        "reach_public_linear_norm": 0.023871177014189428,
+        "reach_public_angular_velocity": [
+          -0.10033412277698517,
+          -0.00522515457123518,
+          -0.006753108464181423
+        ],
+        "reach_public_angular_norm": 0.1006967869777851,
+        "reach_base_tangent_speed_m_s": 0.0015009607289838793,
+        "reach_stationarity_thresholds": {
+          "linear_norm_m_s": 0.06,
+          "angular_norm_rad_s": 0.12
+        },
+        "reach_base_displacement_m": 0.0019486717699809728,
+        "reach_base_yaw_rad": 0.0009273376790057289,
+        "reach_gravity_change_rad": 0.003986801479687866,
+        "reach_base_budgets": {
+          "displacement_m": 0.03,
+          "yaw_rad": 0.05,
+          "gravity_rad": 0.05
+        },
+        "reach_base_integration_claim": "approximate small-angle integration of public twist in the local frame; not world odometry",
+        "reach_camera_projection": {
+          "ee": {
+            "expected_center_in_frame": false,
+            "pixel_uv": null,
+            "optical_depth_m": 0.0985630903872993,
+            "reason": "inside_detector_near_limit"
+          },
+          "head": {
+            "expected_center_in_frame": false,
+            "pixel_uv": [
+              -143.05737034402506,
+              904.4618012778938
+            ],
+            "optical_depth_m": 0.2845328933158688,
+            "reason": "center_outside_frame"
+          }
+        },
+        "expected_out_of_view": true,
+        "out_of_view_reach_allowed": true,
+        "reach_visual_valid": false,
+        "reach_valid_samples": 0,
+        "reach_visual_association": "unconfirmed_diagnostic_only",
+        "reach_camera_available": [
+          "ee",
+          "head"
+        ],
+        "reach_age_s": 11.9,
+        "reach_timeout_s": 16.72145414185073,
+        "reach_deadline_s": 22.72145414185073,
+        "reach_joint_error_rad": 0.011673814704434404,
+        "lower_elapsed_s": 4.98,
+        "lower_hold_s": 1.98,
+        "lower_response_limits": {
+          "increment_error_rad": 0.06,
+          "fault_s": 0.2,
+          "beta_after_half_alpha_s": 1.0,
+          "beta_min": 0.15,
+          "window_s": 6.0,
+          "hold_s": 2.0
+        },
+        "lower_response_claim": "leg joint response to the fixed reference increment; no claim about actual chassis descent",
+        "state": "REACH",
+        "reason": "holding_fixed_lowered_reference_after_bounded_descent",
+        "done_reason": null,
+        "state_age_s": 11.88,
+        "phase": "REACH",
+        "phase_age_s": 11.9,
+        "vision_samples": 484,
+        "last_vision_sample": 2935,
+        "wheel_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "arm_target": [
+          0.552270348390174,
+          3.1399988169418163,
+          -1.6747511691355867,
+          0.0032512938011714427,
+          -0.08839268629228382,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "lowering_alpha": 1.0,
+        "lowering_m": 0.02,
+        "lower_authorized": true,
+        "lower_authorized_step": 2686,
+        "lower_reference_q0": [
+          -0.25221971422433853,
+          0.8414615988731384,
+          -1.87513267993927,
+          0.25265101343393326,
+          0.8514580130577087,
+          -1.8979500532150269,
+          -0.18492946028709412,
+          0.9487900137901306,
+          -1.7507563829421997,
+          0.19849269092082977,
+          0.96991366147995,
+          -1.7608731985092163
+        ],
+        "lower_increment_error_rad": 0.0042763059997558625,
+        "lower_beta": 1.0413091721213823,
+        "lower_quiet_window_s": 0.5,
+        "lower_remaining_s": 1.0199999999999996,
+        "lower_remaining_basis": "seconds left in the 3 s admission wait before authorization, then in the 6 s descent-plus-hold window",
+        "outer_phase": "ATTEMPT",
+        "attempt_index": 1,
+        "completed_attempts": 0,
+        "max_attempts": 2,
+        "global_control_calls": 2935,
+        "child_local_calls": 2935,
+        "child_state": "REACH",
+        "wheel_hold_requested": true,
+        "visited_local_points": [],
+        "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+        "new_target_body": null,
+        "phase_elapsed_s": 58.7
+      }
+    },
+    {
+      "phase": "RESTORE_HEIGHT",
+      "attempt": 1,
+      "steps": [
+        2936,
+        3110
+      ],
+      "control_duration_s": 3.5,
+      "all_wheel_hold_active": true,
+      "world_base_displacement_m": [
+        0.005536079406738281,
+        0.0012197494506835938,
+        0.019911885261535645
+      ],
+      "public_tangent_speed_max_m_s": 0.003160367662164349,
+      "last_debug": {
+        "public_tangent_speed_m_s": 0.0012394992401046892,
+        "public_displacement_m": 0.00661581510583443,
+        "public_yaw_rad": 0.00037946510430946276,
+        "gravity_change_rad": 0.00032490097199240045,
+        "phase_remaining_s": 2.52,
+        "restore_increment_error_rad": 0.0015157461166381836,
+        "recovery_actual_arm_error_rad": 0.011786467483059893,
+        "recovery_arm_qdot_rad_s": 0.032529350370168686,
+        "recovery_quiet_calls": 24,
+        "recovery_leg_range_rad": 0.0014129877090454102,
+        "recovery_quiet_basis": "original_instantaneous_qdot",
+        "recovery_arm_position_range_rad": null,
+        "recovery_arm_position_window_s": 0.0,
+        "recovery_arm_position_quiet": null,
+        "recovery_arm_hard_qdot_limit_rad_s": 0.05,
+        "outer_phase": "RESTORE_HEIGHT",
+        "state": "RESTORE_HEIGHT",
+        "attempt_index": 1,
+        "completed_attempts": 1,
+        "max_attempts": 2,
+        "global_control_calls": 3110,
+        "child_local_calls": 2936,
+        "child_state": "STOPPED",
+        "done_reason": null,
+        "lowering_alpha": 0.0,
+        "arm_target": [
+          0.552270348390174,
+          3.1399988169418163,
+          -1.6747511691355867,
+          0.0032512938011714427,
+          -0.08839268629228382,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "wheel_hold_requested": true,
+        "visited_local_points": [
+          [
+            0.5343261041968838,
+            0.20308418358257352,
+            -0.3041341818075714
+          ]
+        ],
+        "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+        "new_target_body": null,
+        "phase_elapsed_s": 3.48
+      }
+    },
+    {
+      "phase": "RETRACT_FOR_VIEW",
+      "attempt": 1,
+      "steps": [
+        3111,
+        3581
+      ],
+      "control_duration_s": 9.42,
+      "all_wheel_hold_active": true,
+      "world_base_displacement_m": [
+        -0.0004367828369140625,
+        -0.000701904296875,
+        9.459257125854492e-05
+      ],
+      "public_tangent_speed_max_m_s": 0.005843211315455115,
+      "last_debug": {
+        "public_tangent_speed_m_s": 0.0019627524504627863,
+        "public_displacement_m": 0.00816936976156299,
+        "public_yaw_rad": -9.836133796282876e-05,
+        "gravity_change_rad": 0.0028546748556311373,
+        "phase_remaining_s": 2.5999999999999996,
+        "retract_fixed_goal_rad": [
+          0.5493321418762207,
+          1.1,
+          -0.8,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "retract_feedback_raw_correction_rad": [
+          0.0,
+          -0.015776896476745517,
+          -0.028368341922760054,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "retract_feedback_correction_rad": [
+          0.0,
+          -0.016081053860354765,
+          -0.0284322950330044,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "retract_actual_goal_error_rad": [
+          -0.0008794069290161133,
+          0.015776896476745517,
+          0.028368341922760054,
+          0.00012928112118970603,
+          0.009959486313164234,
+          1.7501037063993863e-06
+        ],
+        "recovery_actual_arm_error_rad": 0.028368341922760054,
+        "recovery_arm_qdot_rad_s": 0.06423837691545486,
+        "recovery_quiet_calls": 51,
+        "recovery_leg_range_rad": 0.0003904104232788086,
+        "recovery_quiet_basis": "measured_position_window_and_instantaneous_rate_cap",
+        "recovery_arm_position_range_rad": 0.0020374059677124023,
+        "recovery_arm_position_window_s": 0.5,
+        "recovery_arm_position_quiet": false,
+        "recovery_arm_hard_qdot_limit_rad_s": 0.12,
+        "outer_phase": "RETRACT_FOR_VIEW",
+        "state": "RETRACT_FOR_VIEW",
+        "attempt_index": 1,
+        "completed_attempts": 1,
+        "max_attempts": 2,
+        "global_control_calls": 3581,
+        "child_local_calls": 2936,
+        "child_state": "STOPPED",
+        "done_reason": null,
+        "lowering_alpha": 0.0,
+        "arm_target": [
+          0.5493321418762207,
+          1.0839189461396452,
+          -0.8284322950330044,
+          0.0,
+          0.0,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "wheel_hold_requested": true,
+        "visited_local_points": [
+          [
+            0.5327173334581708,
+            0.20398815150760757,
+            -0.30423589126680667
+          ]
+        ],
+        "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+        "new_target_body": null,
+        "phase_elapsed_s": 9.4
+      }
+    },
+    {
+      "phase": "CONFIRM_NEXT_TARGET",
+      "attempt": 1,
+      "steps": [
+        3582,
+        3629
+      ],
+      "control_duration_s": 0.96,
+      "all_wheel_hold_active": true,
+      "world_base_displacement_m": [
+        -6.771087646484375e-05,
+        -1.430511474609375e-05,
+        3.2782554626464844e-06
+      ],
+      "public_tangent_speed_max_m_s": 0.002212705524078027,
+      "last_debug": {
+        "public_tangent_speed_m_s": 0.002041078186583332,
+        "public_displacement_m": 0.008323089604980086,
+        "public_yaw_rad": -6.640787369616665e-05,
+        "gravity_change_rad": 0.002863014363440202,
+        "phase_remaining_s": 7.06,
+        "recovery_actual_arm_error_rad": 0.02838819026947026,
+        "recovery_arm_qdot_rad_s": 0.05983857437968254,
+        "recovery_quiet_calls": 47,
+        "recovery_leg_range_rad": 0.00023952126502990723,
+        "recovery_quiet_basis": "measured_position_window_and_instantaneous_rate_cap",
+        "recovery_arm_position_range_rad": 0.0002485513687133789,
+        "recovery_arm_position_window_s": 0.5,
+        "recovery_arm_position_quiet": true,
+        "recovery_arm_hard_qdot_limit_rad_s": 0.12,
+        "next_stationary_gate": {
+          "ready": false,
+          "target_body": null,
+          "confirmations": 1,
+          "last_fresh_step": 3625,
+          "age_s": 0.08,
+          "reason": "no_candidate",
+          "freshness_basis": "sensor_period_elapsed_assumption",
+          "step": 3629,
+          "source": "ee",
+          "quiet_s": 0.42,
+          "settled": true,
+          "sample_steps": [
+            3625
+          ],
+          "params": {
+            "dt": 0.02,
+            "sensor_period": 0.1,
+            "quiet_required_s": 0.2,
+            "match_tol_m": 0.04,
+            "stale_s": 0.5,
+            "min_confirmations": 2
+          },
+          "scope": "BRAKE standstill confirmation only; not valid during REACH arm motion",
+          "claims": "confirms a post-stop detection sample only; no ground truth, IK, action or pixel-change requirement, and no verified Task B score"
+        },
+        "outer_phase": "CONFIRM_NEXT_TARGET",
+        "state": "CONFIRM_NEXT_TARGET",
+        "attempt_index": 1,
+        "completed_attempts": 1,
+        "max_attempts": 2,
+        "global_control_calls": 3629,
+        "child_local_calls": 2936,
+        "child_state": "STOPPED",
+        "done_reason": null,
+        "lowering_alpha": 0.0,
+        "arm_target": [
+          0.5493321418762207,
+          1.0839472637776426,
+          -0.8283982073546253,
+          0.0,
+          0.0,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "wheel_hold_requested": true,
+        "visited_local_points": [
+          [
+            0.5325674709266046,
+            0.20394689910328742,
+            -0.30424629380426355
+          ]
+        ],
+        "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+        "new_target_body": null,
+        "phase_elapsed_s": 0.9400000000000001
+      }
+    },
+    {
+      "phase": "BACKOFF_CLEARANCE",
+      "attempt": 1,
+      "steps": [
+        3630,
+        3679
+      ],
+      "control_duration_s": 1.0,
+      "all_wheel_hold_active": false,
+      "world_base_displacement_m": [
+        -0.15588998794555664,
+        -0.038066864013671875,
+        -0.0015704631805419922
+      ],
+      "public_tangent_speed_max_m_s": 0.23785729034475203,
+      "last_debug": {
+        "public_tangent_speed_m_s": 0.23555263862512,
+        "public_displacement_m": 0.16257065541890114,
+        "public_yaw_rad": -0.0021743761439116075,
+        "gravity_change_rad": 0.002405334464178266,
+        "phase_remaining_s": 5.02,
+        "backward_distance_m": 0.1625648038605737,
+        "backoff_elapsed_s": 0.98,
+        "path_clearance": [
+          {
+            "along_m": 0.6353158550282383,
+            "clearance_m": 0.2976379510215207,
+            "blocks": true
+          }
+        ],
+        "path_blocked": true,
+        "outer_phase": "BACKOFF_CLEARANCE",
+        "state": "BACKOFF_CLEARANCE",
+        "attempt_index": 1,
+        "completed_attempts": 1,
+        "max_attempts": 2,
+        "global_control_calls": 3679,
+        "child_local_calls": 2936,
+        "child_state": "STOPPED",
+        "done_reason": null,
+        "lowering_alpha": 0.0,
+        "arm_target": [
+          0.5493321418762207,
+          1.0839472637776426,
+          -0.8283982073546253,
+          0.0,
+          0.0,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "wheel_hold_requested": false,
+        "visited_local_points": [
+          [
+            0.6942800966376135,
+            0.2039833234918004,
+            -0.2925029589552854
+          ]
+        ],
+        "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+        "new_target_body": [
+          2.698315291610258,
+          2.3885939055400724,
+          -0.23333888325983046
+        ],
+        "phase_elapsed_s": 0.98
+      }
+    },
+    {
+      "phase": "RECONFIRM_NEXT_TARGET",
+      "attempt": 1,
+      "steps": [
+        3680,
+        3687
+      ],
+      "control_duration_s": 0.16,
+      "all_wheel_hold_active": true,
+      "world_base_displacement_m": [
+        -0.028660297393798828,
+        -0.00714874267578125,
+        -0.0015371441841125488
+      ],
+      "public_tangent_speed_max_m_s": 0.23597079384491584,
+      "last_debug": {
+        "public_tangent_speed_m_s": 0.1739672848046328,
+        "public_displacement_m": 0.02896572160851704,
+        "public_yaw_rad": -0.0002840250417288689,
+        "gravity_change_rad": 0.006061306354102203,
+        "phase_remaining_s": 7.86,
+        "recovery_pause_active": true,
+        "recovery_pause_episode_s": 0.14,
+        "recovery_pause_total_s": 0.14,
+        "recovery_pause_quiet_s": 0.0,
+        "outer_phase": "RECONFIRM_NEXT_TARGET",
+        "state": "RECONFIRM_NEXT_TARGET",
+        "attempt_index": 1,
+        "completed_attempts": 1,
+        "max_attempts": 2,
+        "global_control_calls": 3687,
+        "child_local_calls": 2936,
+        "child_state": "STOPPED",
+        "done_reason": null,
+        "lowering_alpha": 0.0,
+        "arm_target": [
+          0.5493321418762207,
+          1.0839472637776426,
+          -0.8283982073546253,
+          0.0,
+          0.0,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "wheel_hold_requested": true,
+        "visited_local_points": [
+          [
+            0.7278132947780301,
+            0.20415540468426893,
+            -0.29025795335640825
+          ]
+        ],
+        "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+        "new_target_body": [
+          2.7311541361226257,
+          2.3894039069685884,
+          -0.2311346205535538
+        ],
+        "phase_elapsed_s": 0.14
+      }
+    }
+  ],
+  "retraction": [
+    {
+      "steps": [
+        3111,
+        3581
+      ],
+      "fixed_goal_rad": [
+        0.5493321418762207,
+        1.1,
+        -0.8,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "last_actual_rad": [
+        0.5484527349472046,
+        1.1157768964767456,
+        -0.77163165807724,
+        0.00012928112118970603,
+        0.009959486313164234,
+        1.7501037063993863e-06
+      ],
+      "last_actual_error_rad": [
+        -0.0008794069290161133,
+        0.015776896476745517,
+        0.028368341922760054,
+        0.00012928112118970603,
+        0.009959486313164234,
+        1.7501037063993863e-06
+      ],
+      "last_actual_qdot_rad_s": [
+        -0.02634769305586815,
+        -0.06423837691545486,
+        0.010185878723859787,
+        0.0006672506569884717,
+        0.0022585757542401552,
+        0.0005192027310840786
+      ],
+      "goal_changed_max_rad": 0.0,
+      "max_command_step_rad": 0.006000041961669922,
+      "max_actual_command_error_rad": 0.09999990463256836,
+      "legacy_pointwise_qdot_005_and_planar_quiet_windows": [
+        [
+          3513,
+          3514,
+          0.04
+        ],
+        [
+          3522,
+          3522,
+          0.02
+        ],
+        [
+          3525,
+          3525,
+          0.02
+        ],
+        [
+          3527,
+          3527,
+          0.02
+        ],
+        [
+          3529,
+          3529,
+          0.02
+        ],
+        [
+          3531,
+          3531,
+          0.02
+        ],
+        [
+          3533,
+          3533,
+          0.02
+        ],
+        [
+          3536,
+          3536,
+          0.02
+        ],
+        [
+          3538,
+          3538,
+          0.02
+        ],
+        [
+          3540,
+          3540,
+          0.02
+        ],
+        [
+          3542,
+          3542,
+          0.02
+        ],
+        [
+          3545,
+          3545,
+          0.02
+        ],
+        [
+          3547,
+          3547,
+          0.02
+        ],
+        [
+          3549,
+          3549,
+          0.02
+        ],
+        [
+          3551,
+          3551,
+          0.02
+        ],
+        [
+          3558,
+          3558,
+          0.02
+        ],
+        [
+          3560,
+          3560,
+          0.02
+        ]
+      ],
+      "entered_confirmation": true,
+      "last_or_confirmation_entry_actual_position_window": {
+        "full_position_span_s": 0.5,
+        "arm_position_span_per_axis_rad": [
+          0.0001679062843322754,
+          0.001582026481628418,
+          0.0008407831192016602,
+          1.7405705875717103e-05,
+          0.00021051708608865738,
+          1.208231333293952e-05
+        ],
+        "arm_goal_error_max_rad": 0.028802442550659224,
+        "arm_qdot_abs_max_rad_s": 0.07389899343252182,
+        "public_tangent_speed_max_m_s": 0.0026087558356517357,
+        "public_linear_norm_max_m_s": 0.023978893693019296,
+        "public_angular_norm_max_rad_s": 0.07437466133813915,
+        "tilt_max_rad": 0.0692739737508436,
+        "leg_position_span_max_rad": 0.00038743019104003906,
+        "passes_new_view_contract": true
+      }
+    }
+  ],
+  "hold_windows": [
+    {
+      "steps": [
+        2211,
+        3629
+      ],
+      "phases": [
+        "ATTEMPT",
+        "RESTORE_HEIGHT",
+        "RETRACT_FOR_VIEW",
+        "CONFIRM_NEXT_TARGET"
+      ],
+      "entry_rollback_m": 0.020245230676106014,
+      "peak_drawdown_m": 0.024785852032707938,
+      "world_forward_net_m": -0.014768902359297752,
+      "public_forward_integral_m": -0.007280453310578324,
+      "integral_world_max_error_m": 0.007488449048719428,
+      "last_up_to_1s_public_speed_max_m_s": 0.0022218616133994557,
+      "last_up_to_1s_world_speed_max_m_s": 0.000631246657576412
+    },
+    {
+      "steps": [
+        3680,
+        3687
+      ],
+      "phases": [
+        "RECONFIRM_NEXT_TARGET"
+      ],
+      "entry_rollback_m": 0.029538390121280973,
+      "peak_drawdown_m": 0.029538390121280973,
+      "world_forward_net_m": -0.029538390121280973,
+      "public_forward_integral_m": -0.030193157626887287,
+      "integral_world_max_error_m": 0.0006547675056063143,
+      "last_up_to_1s_public_speed_max_m_s": 0.23597079384491584,
+      "last_up_to_1s_world_speed_max_m_s": 0.2358914166688919
+    }
+  ],
+  "new_target_events": [
+    {
+      "step": 3630,
+      "phase": "BACKOFF_CLEARANCE",
+      "attempt": 1,
+      "public_target_body": [
+        2.5413447253651245,
+        2.3841356943656113,
+        -0.2447825314550189
+      ],
+      "offline_nearest_root": "Object12",
+      "offline_target_to_root_distance_m": 0.05061266703353642,
+      "identity_claim": "Nearest simulated root is an offline diagnostic, not a policy object ID.",
+      "path_clearance": [
+        {
+          "along_m": 0.5091018211912748,
+          "clearance_m": 0.20448248932171673,
+          "blocks": true
+        }
+      ],
+      "selected_visual_candidate": {
+        "kind": "yellow_vertical_component_not_semantic_classification",
+        "body_point": [
+          2.5411731597361564,
+          2.3842874587200704,
+          -0.24496617486558825
+        ],
+        "camera_point": [
+          -0.8135512861281633,
+          -0.09185256456285715,
+          3.0057082176208496
+        ],
+        "pixel_uv": [
+          196.0,
+          226.0
+        ],
+        "bbox_xywh": [
+          190,
+          214,
+          16,
+          20
+        ],
+        "pixel_area": 171,
+        "depth_samples": 163,
+        "optical_depth_m": 3.0057082176208496,
+        "height_span_m": 0.12116697020164185,
+        "forward_planar_distance_m": 3.484592904999557,
+        "aspect": 1.25,
+        "locked_association_distance_m": null,
+        "source": "ee"
+      }
+    }
+  ],
+  "holder_replay": {
+    "activation_source": "brake_wheel_hold_debug.active, independently checked against policy_debug.wheel_hold_requested",
+    "activation_mismatch_count": 0,
+    "active_samples": 1427,
+    "inactive_samples": 2260,
+    "errors": {
+      "active_physical_command_rad_s": 2.9802322387695312e-08,
+      "replay_debug": 0.0,
+      "inactive_normalized_action": 0.0,
+      "contiguous_anchor_change_rad": 0.0
+    },
+    "transitions": [
+      {
+        "step": 2211,
+        "from_phase": "ATTEMPT",
+        "to_phase": "ATTEMPT",
+        "active_before": false,
+        "active_after": true,
+        "requested_wheels": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "anchor_changed_inside_continuous_hold": false
+      },
+      {
+        "step": 2936,
+        "from_phase": "ATTEMPT",
+        "to_phase": "RESTORE_HEIGHT",
+        "active_before": true,
+        "active_after": true,
+        "requested_wheels": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "anchor_changed_inside_continuous_hold": false
+      },
+      {
+        "step": 3111,
+        "from_phase": "RESTORE_HEIGHT",
+        "to_phase": "RETRACT_FOR_VIEW",
+        "active_before": true,
+        "active_after": true,
+        "requested_wheels": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "anchor_changed_inside_continuous_hold": false
+      },
+      {
+        "step": 3582,
+        "from_phase": "RETRACT_FOR_VIEW",
+        "to_phase": "CONFIRM_NEXT_TARGET",
+        "active_before": true,
+        "active_after": true,
+        "requested_wheels": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "anchor_changed_inside_continuous_hold": false
+      },
+      {
+        "step": 3630,
+        "from_phase": "CONFIRM_NEXT_TARGET",
+        "to_phase": "BACKOFF_CLEARANCE",
+        "active_before": true,
+        "active_after": false,
+        "requested_wheels": [
+          -0.009999999776482582,
+          -0.009999999776482582,
+          -0.009999999776482582,
+          -0.009999999776482582
+        ],
+        "anchor_changed_inside_continuous_hold": false
+      },
+      {
+        "step": 3680,
+        "from_phase": "BACKOFF_CLEARANCE",
+        "to_phase": "RECONFIRM_NEXT_TARGET",
+        "active_before": false,
+        "active_after": true,
+        "requested_wheels": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "anchor_changed_inside_continuous_hold": false
+      }
+    ],
+    "source_matches_manifest": true,
+    "passed": true
+  },
+  "object_distance_diagnostics": [
+    {
+      "object": "Object1",
+      "minimum_pre_step_distance_m": 1.6649103164672852,
+      "closest_step": 1617,
+      "last_pre_step_distance_m": 1.9929739236831665,
+      "final_distance_m": 1.9916958443743824
+    },
+    {
+      "object": "Object2",
+      "minimum_pre_step_distance_m": 0.7627301216125488,
+      "closest_step": 2598,
+      "last_pre_step_distance_m": 1.2916544675827026,
+      "final_distance_m": 1.2941626747019168
+    },
+    {
+      "object": "Object3",
+      "minimum_pre_step_distance_m": 6.092349052429199,
+      "closest_step": 508,
+      "last_pre_step_distance_m": 7.981739521026611,
+      "final_distance_m": 7.978968933926916
+    },
+    {
+      "object": "Object4",
+      "minimum_pre_step_distance_m": 1.7067759037017822,
+      "closest_step": 2606,
+      "last_pre_step_distance_m": 1.9314589500427246,
+      "final_distance_m": 1.9317492191047225
+    },
+    {
+      "object": "Object5",
+      "minimum_pre_step_distance_m": 3.7746188640594482,
+      "closest_step": 490,
+      "last_pre_step_distance_m": 6.996874809265137,
+      "final_distance_m": 6.993120156623631
+    },
+    {
+      "object": "Object6",
+      "minimum_pre_step_distance_m": 4.257181644439697,
+      "closest_step": 509,
+      "last_pre_step_distance_m": 5.377420425415039,
+      "final_distance_m": 5.375114047130236
+    },
+    {
+      "object": "Object7",
+      "minimum_pre_step_distance_m": 2.6398746967315674,
+      "closest_step": 1616,
+      "last_pre_step_distance_m": 2.7106075286865234,
+      "final_distance_m": 2.7093427636952874
+    },
+    {
+      "object": "Object8",
+      "minimum_pre_step_distance_m": 2.8574743270874023,
+      "closest_step": 486,
+      "last_pre_step_distance_m": 5.365372180938721,
+      "final_distance_m": 5.36220985893154
+    },
+    {
+      "object": "Object9",
+      "minimum_pre_step_distance_m": 4.400576591491699,
+      "closest_step": 19,
+      "last_pre_step_distance_m": 6.121621131896973,
+      "final_distance_m": 6.119243341484527
+    },
+    {
+      "object": "Object10",
+      "minimum_pre_step_distance_m": 0.19401055574417114,
+      "closest_step": 2843,
+      "last_pre_step_distance_m": 0.8426661491394043,
+      "final_distance_m": 0.8443117515773804
+    },
+    {
+      "object": "Object11",
+      "minimum_pre_step_distance_m": 2.3456273078918457,
+      "closest_step": 1539,
+      "last_pre_step_distance_m": 2.785708427429199,
+      "final_distance_m": 2.7842591683777558
+    },
+    {
+      "object": "Object12",
+      "minimum_pre_step_distance_m": 2.888690948486328,
+      "closest_step": 2549,
+      "last_pre_step_distance_m": 3.321399211883545,
+      "final_distance_m": 3.324217445702048
+    },
+    {
+      "object": "Object13",
+      "minimum_pre_step_distance_m": 3.9175994396209717,
+      "closest_step": 1401,
+      "last_pre_step_distance_m": 4.331460952758789,
+      "final_distance_m": 4.330331704210273
+    },
+    {
+      "object": "Object14",
+      "minimum_pre_step_distance_m": 4.63215446472168,
+      "closest_step": 17,
+      "last_pre_step_distance_m": 6.709072113037109,
+      "final_distance_m": 6.70639636318394
+    },
+    {
+      "object": "Object15",
+      "minimum_pre_step_distance_m": 3.8522191047668457,
+      "closest_step": 504,
+      "last_pre_step_distance_m": 6.569243431091309,
+      "final_distance_m": 6.565757322035719
+    },
+    {
+      "object": "Object16",
+      "minimum_pre_step_distance_m": 3.4370100498199463,
+      "closest_step": 2566,
+      "last_pre_step_distance_m": 3.6455719470977783,
+      "final_distance_m": 3.6460753779427457
+    },
+    {
+      "object": "Object17",
+      "minimum_pre_step_distance_m": 2.2626214027404785,
+      "closest_step": 487,
+      "last_pre_step_distance_m": 5.439721584320068,
+      "final_distance_m": 5.436082950979292
+    },
+    {
+      "object": "Object18",
+      "minimum_pre_step_distance_m": 3.2090365886688232,
+      "closest_step": 486,
+      "last_pre_step_distance_m": 5.496152400970459,
+      "final_distance_m": 5.493178322116911
+    }
+  ],
+  "stop_public_proprio": [
+    -0.1629866063594818,
+    0.0016542579978704453,
+    0.0053773499093949795,
+    0.07435433566570282,
+    -0.03804640471935272,
+    0.007030460052192211,
+    0.45790839195251465,
+    0.5867487192153931,
+    -0.25178778171539307,
+    0.06242747604846954,
+    0.010380154475569725,
+    -0.9979954957962036,
+    -0.16206112504005432,
+    0.027456581592559814,
+    -0.36992526054382324,
+    0.16340675950050354,
+    0.03495889902114868,
+    -0.39242470264434814,
+    -0.09728693217039108,
+    -0.05791741609573364,
+    -0.27095723152160645,
+    0.10516022890806198,
+    -0.039996981620788574,
+    -0.2798953056335449,
+    4.3720784187316895,
+    -0.7341703176498413,
+    3.4481258392333984,
+    0.038464080542325974,
+    0.5495986938476562,
+    1.1132714748382568,
+    -0.770176112651825,
+    0.00011961128620896488,
+    0.010269585065543652,
+    -1.154531491920352e-05,
+    0.03493073210120201,
+    -0.03500000014901161,
+    -0.07169096171855927,
+    -0.04567013308405876,
+    0.07687123864889145,
+    -0.10132205486297607,
+    -0.07166841626167297,
+    0.09179392457008362,
+    -0.07327312231063843,
+    -0.05995912104845047,
+    -0.038989871740341187,
+    -0.07995165139436722,
+    -0.10070738196372986,
+    -0.008110575377941132,
+    -1.2994301319122314,
+    -1.2594048976898193,
+    -0.851879358291626,
+    -0.8009719252586365,
+    0.033413443714380264,
+    0.002125901635736227,
+    -0.009737287648022175,
+    -0.0006124706123955548,
+    -0.0032735266722738743,
+    -0.0005222457693889737,
+    -0.005483102053403854,
+    -4.430847184266895e-06,
+    -0.3819510042667389,
+    0.23211951553821564,
+    0.04332144558429718,
+    0.34072062373161316,
+    0.2523823082447052,
+    0.04208972677588463,
+    -0.36915281414985657,
+    -0.13649886846542358,
+    0.10836835205554962,
+    0.3249090611934662,
+    -0.13383948802947998,
+    0.11652793735265732,
+    0.06400000303983688,
+    0.06400000303983688,
+    0.06400000303983688,
+    0.06400000303983688,
+    1.0986642837524414,
+    2.1678946018218994,
+    -1.6567964553833008,
+    0.0,
+    0.0,
+    0.0,
+    0.07000000029802322,
+    -0.07000000029802322
+  ],
+  "stop_policy": {
+    "mode": "multi_reach",
+    "implementation": "native fallback after external implementation timeout",
+    "inputs": "public proprio84, original RGB-D, static action/robot geometry only",
+    "max_attempts": 2,
+    "attempt_index": 1,
+    "completed_attempts": 1,
+    "outer_phase": "STOPPED",
+    "global_control_calls": 3688,
+    "child_local_calls": 2936,
+    "child_state": "STOPPED",
+    "state": "STOPPED",
+    "done_reason": "multi_stationary_displacement_budget_exceeded",
+    "alpha": 1.0,
+    "lowering_alpha": 0.0,
+    "wheel_hold_requested": false,
+    "completed_attempts_claim": "normal controller completions, no score input or score certification",
+    "target_memory": "public visual points with bounded local tangent/yaw propagation, no world map or object IDs",
+    "claim": "bounded proximity attempts only; no grasp or delivery implementation",
+    "retract_position_feedback": {
+      "axes": [
+        "arm_joint2",
+        "arm_joint3"
+      ],
+      "gain": 1.0,
+      "correction_cap_rad": 0.08,
+      "filter_tau_s": 0.1,
+      "filter_update": "exact first-order dt update; zero at retract entry; frozen during pause",
+      "acceptance": "fixed measured goal error < .04 rad plus the explicit view_quiet position/rate conditions",
+      "command_bounds": "intersection of .30 rad/s slew, measured q +/- .10 rad, original joint limits"
+    },
+    "view_quiet": {
+      "phases": [
+        "CONFIRM_NEXT_TARGET",
+        "RECONFIRM_NEXT_TARGET",
+        "RETRACT_FOR_VIEW"
+      ],
+      "measured_position_window_s": 0.5,
+      "maximum_arm_position_span_rad": 0.002,
+      "instantaneous_arm_qdot_hard_cap_rad_s": 0.12,
+      "actual_goal_error_rad": 0.04,
+      "unchanged": "body/leg checks and deadlines; restore and FirstReach use original quiet thresholds"
+    },
+    "parameters": {
+      "settle_calls": 100,
+      "ramp_calls": 100,
+      "reach_only": false,
+      "forward_cmd": 0.05,
+      "turn_cap": 0.6,
+      "standoff": 0.5,
+      "turn_gain": 2.0,
+      "lowering_m": 0.02
+    },
+    "transitions": [
+      {
+        "step": 2936,
+        "from": "ATTEMPT",
+        "to": "RESTORE_HEIGHT"
+      },
+      {
+        "step": 3111,
+        "from": "RESTORE_HEIGHT",
+        "to": "RETRACT_FOR_VIEW"
+      },
+      {
+        "step": 3582,
+        "from": "RETRACT_FOR_VIEW",
+        "to": "CONFIRM_NEXT_TARGET"
+      },
+      {
+        "step": 3630,
+        "from": "CONFIRM_NEXT_TARGET",
+        "to": "BACKOFF_CLEARANCE"
+      },
+      {
+        "step": 3680,
+        "from": "BACKOFF_CLEARANCE",
+        "to": "RECONFIRM_NEXT_TARGET"
+      }
+    ],
+    "child": {
+      "mode": "first_reach",
+      "inputs": "public proprio and head/ee RGB-D; static action and robot geometry",
+      "target_selection": "small bearing then distance; temporal visual match",
+      "forward_cmd": 0.05,
+      "turn_cap": 0.6,
+      "turn_gain": 2.0,
+      "standoff": 0.5,
+      "lowering_m": 0.02,
+      "settle_calls": 100,
+      "calls": 2936,
+      "state": "STOPPED",
+      "done_reason": "reach_lowering_hold_complete",
+      "visual_reach_contract": "stationary two-sample raw localization of one yellow component, then ONE fixed bounded joint-feedback reach; the goal is never re-solved or retargeted. Shape-assisted local association within .12 m is optional diagnostics only: there is no continuous visual identity or tracking guarantee, and at every lowering amplitude a missing, rejected, unmatched or out-of-frame detection does not stop the bounded joint motion and never authorizes lowering",
+      "reach_base_budgets": {
+        "displacement_m": 0.03,
+        "yaw_rad": 0.05,
+        "gravity_rad": 0.05,
+        "basis": "approximate local integration of public twist, no vertical component, not world odometry"
+      },
+      "reach_settle_contract": {
+        "linear_norm_m_s": 0.06,
+        "angular_norm_rad_s": 0.12,
+        "quiet_s": 0.2,
+        "episode_s": 2.0,
+        "total_s": 3.0,
+        "scope": "whole reach at any amplitude; unchanged thresholds pause the fixed goal and freeze alpha instead of stopping the run on one sample, time keeps counting, and a pause is not a stillness claim",
+        "episodes": 1,
+        "settled_s": 0.28
+      },
+      "lowering_contract": {
+        "amplitude_m": 0.02,
+        "alpha": 1.0,
+        "alpha_rate_per_step": 0.006666666666666667,
+        "admission": {
+          "window_s": 0.5,
+          "max_wait_s": 3.0,
+          "joint_error_rad": 0.04,
+          "arm_speed_rad_s": 0.05,
+          "tangent_speed_m_s": 0.01,
+          "linear_norm_m_s": 0.06,
+          "angular_norm_rad_s": 0.12,
+          "tilt_rad": 0.1,
+          "leg_window_range_rad": 0.02
+        },
+        "authorized": true,
+        "authorized_step": 2686,
+        "window_s": 6.0,
+        "hold_s": 2.0,
+        "response": {
+          "increment_error_rad": 0.06,
+          "fault_s": 0.2,
+          "beta_min": 0.15,
+          "beta_after_half_alpha_s": 1.0
+        },
+        "scope": "one latched authorization from a continuous public quiet window; a fixed CLI amplitude on the original leg reference, never chosen from score or simulation truth. Leg increment error and beta measure joint response only and claim no actual chassis descent"
+      },
+      "stage_stats": {
+        "state_calls": {
+          "SETTLE": 100,
+          "STANCE_TRANSITION": 250,
+          "WAIT_FOR_STABLE_STANCE": 24,
+          "WAIT_FOR_TARGET": 130,
+          "ARC_APPROACH": 1282,
+          "RECOVER_STANCE": 143,
+          "CREEP_WITHIN_ARM_WINDOW": 281,
+          "BRAKE": 129,
+          "REACH_READY": 1,
+          "REACH": 595,
+          "STOPPED": 1
+        },
+        "transitions": [
+          {
+            "from": "SETTLE",
+            "to": "STANCE_TRANSITION",
+            "step": 101,
+            "reason": "reference_transition_requires_wheel_stop"
+          },
+          {
+            "from": "STANCE_TRANSITION",
+            "to": "WAIT_FOR_STABLE_STANCE",
+            "step": 351,
+            "reason": "verify_actual_post_transition_joint_motion"
+          },
+          {
+            "from": "WAIT_FOR_STABLE_STANCE",
+            "to": "WAIT_FOR_TARGET",
+            "step": 375,
+            "reason": "missing_or_stale_visual_target"
+          },
+          {
+            "from": "WAIT_FOR_TARGET",
+            "to": "ARC_APPROACH",
+            "step": 430,
+            "reason": "follow_visible_target_with_existing_arc_control"
+          },
+          {
+            "from": "ARC_APPROACH",
+            "to": "RECOVER_STANCE",
+            "step": 485,
+            "reason": "public_tilt_or_rate_requires_recovery"
+          },
+          {
+            "from": "RECOVER_STANCE",
+            "to": "WAIT_FOR_TARGET",
+            "step": 628,
+            "reason": "missing_or_stale_visual_target"
+          },
+          {
+            "from": "WAIT_FOR_TARGET",
+            "to": "ARC_APPROACH",
+            "step": 635,
+            "reason": "follow_visible_target_with_existing_arc_control"
+          },
+          {
+            "from": "ARC_APPROACH",
+            "to": "CREEP_WITHIN_ARM_WINDOW",
+            "step": 1862,
+            "reason": "straight_near_field_motion_inside_brake_lateral_window"
+          },
+          {
+            "from": "CREEP_WITHIN_ARM_WINDOW",
+            "to": "WAIT_FOR_TARGET",
+            "step": 2026,
+            "reason": "missing_or_stale_visual_target"
+          },
+          {
+            "from": "WAIT_FOR_TARGET",
+            "to": "CREEP_WITHIN_ARM_WINDOW",
+            "step": 2065,
+            "reason": "straight_near_field_motion_inside_brake_lateral_window"
+          },
+          {
+            "from": "CREEP_WITHIN_ARM_WINDOW",
+            "to": "WAIT_FOR_TARGET",
+            "step": 2091,
+            "reason": "missing_or_stale_visual_target"
+          },
+          {
+            "from": "WAIT_FOR_TARGET",
+            "to": "CREEP_WITHIN_ARM_WINDOW",
+            "step": 2120,
+            "reason": "straight_near_field_motion_inside_brake_lateral_window"
+          },
+          {
+            "from": "CREEP_WITHIN_ARM_WINDOW",
+            "to": "BRAKE",
+            "step": 2211,
+            "reason": "wait_for_actual_stillness_and_new_raw_visual_samples"
+          },
+          {
+            "from": "BRAKE",
+            "to": "REACH_READY",
+            "step": 2340,
+            "reason": "stationary_raw_target_accepted_for_ik"
+          },
+          {
+            "from": "REACH_READY",
+            "to": "REACH",
+            "step": 2341,
+            "reason": "waiting_for_public_quiet_window_before_fixed_lowering"
+          },
+          {
+            "from": "REACH",
+            "to": "STOPPED",
+            "step": 2936,
+            "reason": "reach_lowering_hold_complete"
+          }
+        ],
+        "phase": "REACH",
+        "phase_age_s": 11.92,
+        "brake_retries": 0,
+        "vision_samples": 484
+      },
+      "claim": "proximity attempt only; no implemented grasp or delivery, no verified contact and no score claim",
+      "debug": {
+        "gripper_body": [
+          0.518267476912519,
+          0.19479957823376756,
+          -0.1456641786637023
+        ],
+        "reach_goal_q": [
+          0.552270348390174,
+          3.1399988169418163,
+          -1.6747511691355867,
+          0.0032512938011714427,
+          -0.08839268629228382,
+          0.0
+        ],
+        "predicted_gripper_body": [
+          0.5211714271626842,
+          0.1978816594909159,
+          -0.14451298813391888
+        ],
+        "reach_target_body": [
+          0.5390585755256899,
+          0.20474786124874667,
+          -0.3037878840957215
+        ],
+        "reach_subphase": "LOWER_HOLD",
+        "reach_settle_episodes": 1,
+        "reach_settle_total_s": 0.28,
+        "reach_public_linear_velocity": [
+          -0.001399926608428359,
+          0.0011665194761008024,
+          0.023184124380350113
+        ],
+        "reach_public_linear_norm": 0.023255626963826468,
+        "reach_public_angular_velocity": [
+          0.10004928708076477,
+          0.004687645006924868,
+          0.0067056999541819096
+        ],
+        "reach_public_angular_norm": 0.10038326689720627,
+        "reach_base_tangent_speed_m_s": 0.0014330101712359514,
+        "reach_stationarity_thresholds": {
+          "linear_norm_m_s": 0.06,
+          "angular_norm_rad_s": 0.12
+        },
+        "reach_base_displacement_m": 0.0019608590766231142,
+        "reach_base_yaw_rad": 0.0009195501159740973,
+        "reach_gravity_change_rad": 0.003755324558699188,
+        "reach_base_budgets": {
+          "displacement_m": 0.03,
+          "yaw_rad": 0.05,
+          "gravity_rad": 0.05
+        },
+        "reach_base_integration_claim": "approximate small-angle integration of public twist in the local frame; not world odometry",
+        "reach_camera_projection": {
+          "ee": {
+            "expected_center_in_frame": false,
+            "pixel_uv": null,
+            "optical_depth_m": 0.09856631656180499,
+            "reason": "inside_detector_near_limit"
+          },
+          "head": {
+            "expected_center_in_frame": false,
+            "pixel_uv": [
+              -143.05737034402506,
+              904.4618012778938
+            ],
+            "optical_depth_m": 0.2845328933158688,
+            "reason": "center_outside_frame"
+          }
+        },
+        "expected_out_of_view": true,
+        "out_of_view_reach_allowed": true,
+        "reach_visual_valid": false,
+        "reach_valid_samples": 0,
+        "reach_visual_association": "unconfirmed_diagnostic_only",
+        "reach_camera_available": [
+          "ee",
+          "head"
+        ],
+        "reach_age_s": 11.92,
+        "reach_timeout_s": 16.72145414185073,
+        "reach_deadline_s": 22.72145414185073,
+        "reach_joint_error_rad": 0.011819369246975908,
+        "lower_elapsed_s": 5.0,
+        "lower_hold_s": 2.0,
+        "lower_response_limits": {
+          "increment_error_rad": 0.06,
+          "fault_s": 0.2,
+          "beta_after_half_alpha_s": 1.0,
+          "beta_min": 0.15,
+          "window_s": 6.0,
+          "hold_s": 2.0
+        },
+        "lower_response_claim": "leg joint response to the fixed reference increment; no claim about actual chassis descent",
+        "state": "STOPPED",
+        "reason": "reach_lowering_hold_complete",
+        "done_reason": "reach_lowering_hold_complete",
+        "state_age_s": 0.0,
+        "phase": "REACH",
+        "phase_age_s": 11.92,
+        "vision_samples": 484,
+        "last_vision_sample": 2935,
+        "wheel_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "arm_target": [
+          0.552270348390174,
+          3.1399988169418163,
+          -1.6747511691355867,
+          0.0032512938011714427,
+          -0.08839268629228382,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "lowering_alpha": 1.0,
+        "lowering_m": 0.02,
+        "lower_authorized": true,
+        "lower_authorized_step": 2686,
+        "lower_reference_q0": [
+          -0.25221971422433853,
+          0.8414615988731384,
+          -1.87513267993927,
+          0.25265101343393326,
+          0.8514580130577087,
+          -1.8979500532150269,
+          -0.18492946028709412,
+          0.9487900137901306,
+          -1.7507563829421997,
+          0.19849269092082977,
+          0.96991366147995,
+          -1.7608731985092163
+        ],
+        "lower_increment_error_rad": 0.0042506760025024445,
+        "lower_beta": 1.0413178238339391,
+        "lower_quiet_window_s": 0.5,
+        "lower_remaining_s": 1.0,
+        "lower_remaining_basis": "seconds left in the 3 s admission wait before authorization, then in the 6 s descent-plus-hold window"
+      }
+    },
+    "debug": {
+      "public_tangent_speed_m_s": 0.1623431064495907,
+      "public_displacement_m": 0.03221236381876434,
+      "public_yaw_rad": -0.00022863420996468617,
+      "gravity_change_rad": 0.006776403046955475,
+      "outer_phase": "STOPPED",
+      "state": "STOPPED",
+      "attempt_index": 1,
+      "completed_attempts": 1,
+      "max_attempts": 2,
+      "global_control_calls": 3688,
+      "child_local_calls": 2936,
+      "child_state": "STOPPED",
+      "done_reason": "multi_stationary_displacement_budget_exceeded",
+      "lowering_alpha": 0.0,
+      "arm_target": [
+        0.5493321418762207,
+        1.0839472637776426,
+        -0.8283982073546253,
+        0.0,
+        0.0,
+        0.0,
+        0.035,
+        -0.035
+      ],
+      "wheel_hold_requested": false,
+      "visited_local_points": [
+        [
+          0.7310647629013614,
+          0.20407986695451188,
+          -0.29005535038280794
+        ]
+      ],
+      "visited_basis": "short local tangent/yaw dead reckoning of public visual points; not world pose",
+      "new_target_body": [
+        2.7345264383445165,
+        2.3892174205104766,
+        -0.2309256130391701
+      ],
+      "phase_elapsed_s": 0.16
+    }
+  },
+  "source_hashes": {
+    "source_snapshots/task_b/multi_reach.py": "fcf0ce8af62deed9cf21e3d7a0c553e4d683f34ebe60444027911038d0e91d3c",
+    "source_snapshots/task_b/brake_wheel_hold.py": "41503365b8d3b4d05670758c886337e47aa63c3585147c697ccce3089b31a605"
+  },
+  "artifact_sha256": {
+    "result.json": "8464f253683c7f7cf7308873be025aefb4ed6c89a026e191af4284b7b10754f3",
+    "trace.jsonl": "fb04deb960f5e67d18ab204011629c2df9360b810fbbdce92a6340ecdcd37b03",
+    "telemetry.npz": "d497482a6a89768e4152bcc14a7696ce0c9c816e7aac9fcf96eab456a80c88b2",
+    "environment_metadata.json": "118e6987468278ca2aa7278f27bf9aa8220224729ab1530c16d2345c6af81274",
+    "source_manifest.json": "5219ea119dd771ab20e0257b064dbacc382cd5d7a05b540d0ac71ac81a51ab5b"
+  },
+  "timing": {
+    "proprio_q_qdot_base_gripper_object_and_contact": "pre_step",
+    "env_reward_reward_terms_and_termination": "post_step; terminal term values captured before official reset",
+    "env_reward": "unmodified scalar returned by env.step; reward_raw_total = env_reward / step_dt",
+    "scoring_event_state": "post_step_before_any_reset or terminal_pre_reset; see each event"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "CPU failure-branch and public-telemetry checks only; no dynamics, collision-free path or score claim.",
+  "passed": true,
+  "count": 27,
+  "checks": {
+    "gate_pre_settle_detection_and_repeated_frame_cannot_fake_two_samples": true,
+    "gate_explicit_frame_tokens_have_honest_distinct_basis": true,
+    "gate_repeated_control_call_cannot_increment_confirmation": true,
+    "gate_camera_switch_requires_new_confirmation": true,
+    "gate_motion_clears_samples_and_quiet_clock": true,
+    "gate_stale_confirmation_expires_without_new_detection": true,
+    "gate_no_token_does_not_claim_proven_frame_update": true,
+    "gate_short_interval_and_spatial_jump_do_not_authorize_reach": true,
+    "gate_sparse_call_gap_cannot_join_expired_sample_to_new_detection": true,
+    "brake_requires_sensor_period_samples_after_one_second_stop": true,
+    "stationary_ik_uses_unfiltered_raw_target": true,
+    "periodic_detection_not_control_tick_count": true,
+    "hard_arm_joint2_limit_preserved_above_soft_limit": true,
+    "moving_period_target_cannot_authorize_reach_without_new_detections": true,
+    "unexpected_visible_target_loss_holds_arm_immediately": true,
+    "persistent_unexpected_loss_stops_normally": true,
+    "predicted_two_camera_loss_allows_bounded_p1_joint_reach": true,
+    "p1_never_changes_leg_lowering_action": true,
+    "out_of_view_never_authorizes_lowering": true,
+    "reach_tilt_stops_arm_wheels_and_lowering_progress": true,
+    "frozen_body_target_cannot_be_used_after_base_motion": true,
+    "joint_stall_has_normal_explicit_stop": true,
+    "far_stationary_visual_distance_has_correct_scope": true,
+    "near_stationary_visual_distance_has_correct_scope": true,
+    "synthetic_reach_probe_does_not_require_images_or_visual_timeout": true,
+    "phase_records_are_json_safe": true,
+    "recorded_post_compact_public_motion_satisfies_half_second_gate": true
+  },
+  "evidence": {
+    "first_reach_ready_step": 80,
+    "public_replay": {
+      "path": "/home/lybm/ATEC_Experiments_20260910/task_b_score/first_reach_side_seed42_01",
+      "steps": [
+        351,
+        375
+      ],
+      "max_leg_speed_rad_s": 0.14209428429603577,
+      "max_tilt_rad": 0.03263602778315544
+    }
+  },
+  "source_sha256": {
+    "first_reach.py": "f737feac5a41220f0c2eafb60b8bbf0a43e71eb37e7fc1e627860d2acd3d8605",
+    "stationary_target_gate.py": "8580f44635e8365b04e99484b77e3fc0a96da321c75e0ebebc3ece354278df81"
+  }
+}

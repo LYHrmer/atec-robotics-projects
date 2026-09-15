@@ -1,0 +1,1263 @@
+{
+  "status": "static_cpu_candidate_only",
+  "assumptions": [
+    "640 x 480 public image geometry; focal length EE 15 / head 24; aperture 20.955",
+    "target x=.50 is the planned standoff, not a measured successful stop",
+    "target y=.179 and z=-.280 approximate the latest visual surface estimate",
+    "body is fixed and level, measured joint tracking and collisions are not simulated",
+    "point projection does not certify full-object visibility or detector success"
+  ],
+  "source_sha256": {
+    "task_b/arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "task_b/visual_approach.py": "028850d002029db7be80843b4ef80d581b84de5601e5cfccafb8707410c9dbf4",
+    "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4"
+  },
+  "cases": [
+    {
+      "initial_q_rad": [
+        0.0,
+        1.1,
+        -0.8,
+        0.0,
+        0.95,
+        0.0
+      ],
+      "visual_target_body_m": [
+        0.5,
+        0.179,
+        -0.28
+      ],
+      "assumed_up_body": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "goal_q_rad": [
+        0.5378966977849166,
+        3.1399988169418163,
+        -1.5861420230658447,
+        -0.003451877279376377,
+        -0.08834008427695762,
+        0.0
+      ],
+      "requested_gripper_body_m": [
+        0.5,
+        0.179,
+        -0.16000000000000003
+      ],
+      "ik_position_residual_m": 0.008547672712964121,
+      "predicted_gripper_to_visual_surface_m": 0.12840161446217682,
+      "minimum_command_duration_s": 6.799996056472721,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "joints_rad": [
+            0.0,
+            1.1,
+            -0.8,
+            0.0,
+            0.95,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.17900620210672166,
+              0.21168512508188467,
+              0.5860362383813633
+            ],
+            "pixel_uv": [
+              180.06473510656573,
+              405.4814956337258
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": true,
+            "point_inside_observable_range": true
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 0.4857140040337658,
+          "joints_rad": [
+            0.14571420121012973,
+            1.2457142012101299,
+            -0.9457142012101298,
+            -0.003451877279376377,
+            0.8042857987898702,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.1359918927363859,
+              0.33700565243797925,
+              0.5544643157514807
+            ],
+            "pixel_uv": [
+              207.63708817874388,
+              518.4499549657485
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 0.9714280080675316,
+          "joints_rad": [
+            0.29142840242025947,
+            1.3914284024202597,
+            -1.0914284024202594,
+            -0.003451877279376377,
+            0.6585715975797405,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.08773956487773071,
+              0.4589470032462639,
+              0.4928370825306244
+            ],
+            "pixel_uv": [
+              238.44029126288547,
+              666.6214901190763
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 1.4571420121012975,
+          "joints_rad": [
+            0.4371426036303892,
+            1.5371426036303892,
+            -1.2371426036303892,
+            -0.003451877279376377,
+            0.5128573963696108,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.03766514032692183,
+              0.5690287170326666,
+              0.40144480556051465
+            ],
+            "pixel_uv": [
+              277.0169415013988,
+              889.3695342511944
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 1.9428560161350632,
+          "joints_rad": [
+            0.5378966977849166,
+            1.682856804840519,
+            -1.382856804840519,
+            -0.003451877279376377,
+            0.367143195159481,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0025308698765479257,
+              0.6592269246211633,
+              0.2836009307279279
+            ],
+            "pixel_uv": [
+              315.9116719859185,
+              1304.9049674737312
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 2.428570020168829,
+          "joints_rad": [
+            0.5378966977849166,
+            1.8285710060506486,
+            -1.5285710060506488,
+            -0.003451877279376377,
+            0.22142899394935134,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0025149331917680316,
+              0.7205692764028278,
+              0.14929359453512597
+            ],
+            "pixel_uv": [
+              312.28263846873494,
+              2451.149637105587
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 2.914284024202595,
+          "joints_rad": [
+            0.5378966977849166,
+            1.9742852072607784,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            0.07571479273922155,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0023611946823457195,
+              0.7113075464310951,
+              0.06431512205622975
+            ],
+            "pixel_uv": [
+              303.18091884307574,
+              5306.731447604365
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 3.3999980282363604,
+          "joints_rad": [
+            0.5378966977849166,
+            2.119999408470908,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.06999940847090813,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0021052945444958054,
+              0.665125786081539,
+              0.020660924680139137
+            ],
+            "pixel_uv": [
+              273.31829837014385,
+              14988.151783967065
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 3.8857120322701264,
+          "joints_rad": [
+            0.5378966977849166,
+            2.265713609681038,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0018275293785137952,
+              0.5913613671382169,
+              0.05462058849192575
+            ],
+            "pixel_uv": [
+              304.671785822263,
+              5199.982476071326
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 4.371426036303892,
+          "joints_rad": [
+            0.5378966977849166,
+            2.4114278108911673,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0015335025254858312,
+              0.5087928742763089,
+              0.08825947534990547
+            ],
+            "pixel_uv": [
+              312.04011630894587,
+              2880.9686549381304
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 4.857140040337658,
+          "joints_rad": [
+            0.5378966977849166,
+            2.5571420121012975,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0012294043173990909,
+              0.42221508476295266,
+              0.10955292649297024
+            ],
+            "pixel_uv": [
+              314.85892051523814,
+              2005.6041057542197
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 5.342854044371424,
+          "joints_rad": [
+            0.5378966977849166,
+            2.702856213311427,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0009216801420188434,
+              0.33346302231893354,
+              0.11804962538642308
+            ],
+            "pixel_uv": [
+              316.42316270524145,
+              1534.0964226924514
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 5.82856804840519,
+          "joints_rad": [
+            0.5378966977849166,
+            2.848570414521557,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0006168522398003228,
+              0.24441779456745025,
+              0.1135694837639141
+            ],
+            "pixel_uv": [
+              317.511698151467,
+              1225.9496501681292
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 6.314282052438956,
+          "joints_rad": [
+            0.5378966977849166,
+            2.9942846157316865,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.00032138146443887064,
+              0.1569667227956959,
+              0.09620745861378893
+            ],
+            "pixel_uv": [
+              318.4696327942189,
+              987.4504647767493
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 6.799996056472721,
+          "joints_rad": [
+            0.5378966977849166,
+            3.1399988169418163,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -4.153034451895511e-05,
+              0.07296334001728959,
+              0.06633153955752431
+            ],
+            "pixel_uv": [
+              319.71316706005143,
+              743.9276598361485
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        }
+      ]
+    },
+    {
+      "initial_q_rad": [
+        0.0,
+        1.1,
+        -0.8,
+        0.0,
+        1.21,
+        0.0
+      ],
+      "visual_target_body_m": [
+        0.5,
+        0.179,
+        -0.28
+      ],
+      "assumed_up_body": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "goal_q_rad": [
+        0.5378966977849166,
+        3.1399988169418163,
+        -1.5861420230658447,
+        -0.003451877279376377,
+        -0.08834008427695762,
+        0.0
+      ],
+      "requested_gripper_body_m": [
+        0.5,
+        0.179,
+        -0.16000000000000003
+      ],
+      "ik_position_residual_m": 0.008547672712964121,
+      "predicted_gripper_to_visual_surface_m": 0.12840161446217682,
+      "minimum_command_duration_s": 6.799996056472721,
+      "samples": [
+        {
+          "time_s": 0.0,
+          "joints_rad": [
+            0.0,
+            1.1,
+            -0.8,
+            0.0,
+            1.21,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.17900626394194669,
+              0.0167700659693142,
+              0.6028532030329332
+            ],
+            "pixel_uv": [
+              183.96826927234108,
+              252.74402944336438
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": true,
+            "point_inside_observable_range": true
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 0.4857140040337658,
+          "joints_rad": [
+            0.14571420121012973,
+            1.2457142012101299,
+            -0.9457142012101298,
+            -0.003451877279376377,
+            1.0642857987898702,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.13599207693556292,
+              0.1459951356150015,
+              0.6045598890646827
+            ],
+            "pixel_uv": [
+              216.94766303241033,
+              350.63247396504516
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": true,
+            "point_inside_observable_range": true
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 0.9714280080675316,
+          "joints_rad": [
+            0.29142840242025947,
+            1.3914284024202597,
+            -1.0914284024202594,
+            -0.003451877279376377,
+            0.9185715975797405,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.08773987196092727,
+              0.2796812436958648,
+              0.5763527042270634
+            ],
+            "pixel_uv": [
+              250.25834824128236,
+              462.309783059272
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": true,
+            "point_inside_observable_range": true
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 1.4571420121012975,
+          "joints_rad": [
+            0.4371426036303892,
+            1.5371426036303892,
+            -1.2371426036303892,
+            -0.003451877279376377,
+            0.7728573963696108,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.03766556276197597,
+              0.4095583330109485,
+              0.5163319976057901
+            ],
+            "pixel_uv": [
+              286.58057379893074,
+              603.3877601029717
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 1.9428560161350632,
+          "joints_rad": [
+            0.5378966977849166,
+            1.682856804840519,
+            -1.382856804840519,
+            -0.003451877279376377,
+            0.627143195159481,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.002531392137053803,
+              0.5270203784605352,
+              0.4256370673113464
+            ],
+            "pixel_uv": [
+              317.2753949800456,
+              807.2461203277214
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 2.428570020168829,
+          "joints_rad": [
+            0.5378966977849166,
+            1.8285710060506486,
+            -1.5285710060506488,
+            -0.003451877279376377,
+            0.48142899394935135,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.002515530035625735,
+              0.6208288165839795,
+              0.3116137292768747
+            ],
+            "pixel_uv": [
+              316.30174808141714,
+              1152.7226984082067
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 2.914284024202595,
+          "joints_rad": [
+            0.5378966977849166,
+            1.9742852072607784,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            0.33571479273922156,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.002361793273189906,
+              0.6337246863081134,
+              0.22711037448245747
+            ],
+            "pixel_uv": [
+              315.23581655347283,
+              1518.3424757946486
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 3.3999980282363604,
+          "joints_rad": [
+            0.5378966977849166,
+            2.119999408470908,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            0.19000059152909188,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.002105854875835124,
+              0.6003177413293668,
+              0.17305096322836772
+            ],
+            "pixel_uv": [
+              314.4250883967274,
+              1829.2445297116062
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 3.8857120322701264,
+          "joints_rad": [
+            0.5378966977849166,
+            2.265713609681038,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            0.04428639031896209,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.001827786009601796,
+              0.5594154956455379,
+              0.12441504519711094
+            ],
+            "pixel_uv": [
+              313.26967533071235,
+              2299.8953547878336
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 4.371426036303892,
+          "joints_rad": [
+            0.5378966977849166,
+            2.4114278108911673,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0015335025254858312,
+              0.5087928742763089,
+              0.08825947534990547
+            ],
+            "pixel_uv": [
+              312.04011630894587,
+              2880.9686549381304
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 4.857140040337658,
+          "joints_rad": [
+            0.5378966977849166,
+            2.5571420121012975,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0012294043173990909,
+              0.42221508476295266,
+              0.10955292649297024
+            ],
+            "pixel_uv": [
+              314.85892051523814,
+              2005.6041057542197
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 5.342854044371424,
+          "joints_rad": [
+            0.5378966977849166,
+            2.702856213311427,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0009216801420188434,
+              0.33346302231893354,
+              0.11804962538642308
+            ],
+            "pixel_uv": [
+              316.42316270524145,
+              1534.0964226924514
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 5.82856804840519,
+          "joints_rad": [
+            0.5378966977849166,
+            2.848570414521557,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.0006168522398003228,
+              0.24441779456745025,
+              0.1135694837639141
+            ],
+            "pixel_uv": [
+              317.511698151467,
+              1225.9496501681292
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 6.314282052438956,
+          "joints_rad": [
+            0.5378966977849166,
+            2.9942846157316865,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -0.00032138146443887064,
+              0.1569667227956959,
+              0.09620745861378893
+            ],
+            "pixel_uv": [
+              318.4696327942189,
+              987.4504647767493
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        },
+        {
+          "time_s": 6.799996056472721,
+          "joints_rad": [
+            0.5378966977849166,
+            3.1399988169418163,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695772,
+            0.0
+          ],
+          "ee": {
+            "camera_xyz_m": [
+              -4.153034451895511e-05,
+              0.07296334001728959,
+              0.06633153955752431
+            ],
+            "pixel_uv": [
+              319.71316706005143,
+              743.9276598361485
+            ],
+            "optical_depth_above_detector_minimum": false,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          },
+          "head": {
+            "camera_xyz_m": [
+              -0.15399999962747096,
+              0.2568566479286076,
+              0.23881323262712745
+            ],
+            "pixel_uv": [
+              -152.67853731943262,
+              1028.3806814114378
+            ],
+            "optical_depth_above_detector_minimum": true,
+            "point_inside_image": false,
+            "point_inside_observable_range": false
+          }
+        }
+      ]
+    }
+  ]
+}

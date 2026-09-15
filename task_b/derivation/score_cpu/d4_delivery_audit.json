@@ -1,0 +1,56 @@
+{
+  "scope": "independent measured audit of one delivery attempt; telemetry and official scoring events only, never a policy input",
+  "run": "plan_d4_first_delivery_seed42_01",
+  "samples": 14114,
+  "carry_handoff_sample": 4666,
+  "carried_object_index": 9,
+  "carried_object_identified_by": "closest to the gripper at the carry handoff, from the data",
+  "phases_reached": [
+    "CARRY_READY",
+    "DOCK_BRAKE",
+    "PREFIX",
+    "RELEASE_OBSERVE",
+    "RELEASE_OPEN",
+    "TURN_APPROACH"
+  ],
+  "reached_a_release_phase": true,
+  "answer_1_object_left_the_gripper": {
+    "released": true,
+    "release_sample": 13941,
+    "separation_threshold_m": 0.3,
+    "relative_displacement_at_end_m": 0.9247202326699213,
+    "relative_displacement_at_handoff_m": 0.17571768893685338,
+    "highest_object_z_after_release_m": 0.4380778670310974
+  },
+  "answer_2_official_circle_event": {
+    "events": 1,
+    "first_event_step": 2881,
+    "reward_term_totals_raw": {
+      "objects_in_circle": 0.0,
+      "grasped_objects": 1.0
+    },
+    "score_raw_total": 0.9999999776482582
+  },
+  "answer_3_inside_the_solid_barrel": {
+    "samples_inside_solid_barrel": 0,
+    "samples_inside_scoring_radius_only": 0,
+    "final_distance_to_axis_m": 2.8199969390860633,
+    "final_object_z_m": 0.07380817830562592,
+    "inner_wall_inscribed_m": 0.975281032138753,
+    "floor_top_z": 0.05,
+    "rim_z": 0.55,
+    "note": "the solid barrel uses the inscribed inner wall, not the 1 m scoring radius"
+  },
+  "answer_4_did_it_stay": {
+    "longest_continuous_inside_s_barrel": 0.0,
+    "longest_continuous_after_release_s": 0.0,
+    "still_inside_at_end": false
+  },
+  "original_failure": {
+    "terminated": false,
+    "truncated": false,
+    "illegal_force_max_n": 0.0,
+    "task_physics_modified": false
+  },
+  "verdict": "SEQUENCE_ONLY_NOT_A_DELIVERY"
+}

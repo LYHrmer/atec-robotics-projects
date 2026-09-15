@@ -1,0 +1,103 @@
+{
+  "scope": "Real zero-score rejection plus negative filesystem/report fixtures; no positive score fabricated.",
+  "tool_sha256": "872dd8defc64ca44cb885d2d3a82e3b41e2722d8b70c7287630f43277a09d323",
+  "auditor_sha256": "f31f81582633b4fc53157b96e403a1fea4b1e571911a504c2923aeef555904ca",
+  "real_zero_run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/p0_evaluator_seed42_01",
+  "checks": [
+    {
+      "name": "real_zero_fresh_audit",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Independent audit rejected run (exit 2, status not_achieved_zero_score)",
+      "output_directory_created": false
+    },
+    {
+      "name": "real_first_reach_shared_geometry_snapshot_accepted_then_zero_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Independent audit rejected run (exit 2, status not_achieved_zero_score)",
+      "output_directory_created": false
+    },
+    {
+      "name": "cached_positive_boolean_is_ignored",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Independent audit rejected run (exit 2, status not_achieved_zero_score)",
+      "output_directory_created": false
+    },
+    {
+      "name": "explicit_synthetic_marker_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Synthetic audit fixtures cannot be published as real runs",
+      "output_directory_created": false
+    },
+    {
+      "name": "explicit_fixture_notice_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Synthetic fixture_notice is not real-run evidence",
+      "output_directory_created": false
+    },
+    {
+      "name": "unreviewed_auditor_cannot_substitute_boolean",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Auditor is not the reviewed v2 script (SHA-256 mismatch)",
+      "output_directory_created": false
+    },
+    {
+      "name": "existing_output_is_not_overwritten",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Output must be a new directory",
+      "output_directory_created": false
+    },
+    {
+      "name": "existing_sentinel_unchanged",
+      "passed": true
+    },
+    {
+      "name": "output_inside_input_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Output must be outside the recorded run",
+      "output_directory_created": false
+    },
+    {
+      "name": "snapshot_hash_tampering_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Snapshot does not match source manifest: task_b/evaluate.py",
+      "output_directory_created": false
+    },
+    {
+      "name": "snapshot_symlink_escape_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Symlink artifact is forbidden: source_snapshots/task_b/evaluate.py",
+      "output_directory_created": false
+    },
+    {
+      "name": "manifest_parent_traversal_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Unsafe artifact path: 'source_snapshots/task_b/../../../outside.py'",
+      "output_directory_created": false
+    },
+    {
+      "name": "raw_trace_symlink_escape_rejected",
+      "passed": true,
+      "exit": 2,
+      "message": "Package rejected: Symlink artifact is forbidden: trace.jsonl",
+      "output_directory_created": false
+    },
+    {
+      "name": "boolean_only_report_rejected",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "positive_packaging_verified": false,
+  "limitation": "The successful packaging branch still requires a real independently verified positive run."
+}

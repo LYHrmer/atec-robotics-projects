@@ -1,0 +1,86 @@
+{
+  "scope": "Independent CPU counterexamples for the bounded two-target wrapper.\n\nRGB-D arrays and detected components below are explicitly synthetic. The real\nFirstReachPolicy, wrapper, stationary gates, FK and public observation mapping\nexecute. A small position-actuator fixture follows returned commands; this is\nnot Isaac physics, collision validation, a score signal or a success-rate test.\n",
+  "passed": true,
+  "count": 48,
+  "checks": {
+    "attempt_limit_rejects_0": true,
+    "attempt_limit_rejects_4": true,
+    "synthetic_reach_only_cannot_create_real_multi_attempt_experiment": true,
+    "first_attempt_action_prefix_exact_for_limit_1": true,
+    "first_attempt_detector_schedule_and_arguments_unchanged_for_limit_1": true,
+    "one_attempt_stops_only_after_original_normal_completion": true,
+    "first_attempt_action_prefix_exact_for_limit_2": true,
+    "first_attempt_detector_schedule_and_arguments_unchanged_for_limit_2": true,
+    "two_attempt_wrapper_intercepts_only_normal_finish_without_action_jump": true,
+    "first_attempt_error_nonfinite_public_state_is_terminal_not_a_restart": true,
+    "first_attempt_error_hard_tilt_is_terminal_not_a_restart": true,
+    "height_restore_is_monotone_at_most_dt_over_three_and_reaches_zero": true,
+    "height_restore_keeps_arm_fingers_and_wheel_anchor_request": true,
+    "restoration_checks_actual_leg_response_before_allowing_retraction": true,
+    "restoration_soft_pause_freezes_commands_and_requires_point_two_seconds_quiet": true,
+    "stationary_recovery_has_finite_continuous_angular_rate_guard": true,
+    "stationary_recovery_has_finite_net_tangent_drift_guard": true,
+    "stationary_recovery_has_finite_net_yaw_guard": true,
+    "restoration_six_second_budget_includes_wait_for_actual_quiet": true,
+    "view_retraction_respects_joint_speed_and_actual_state_tether": true,
+    "view_retraction_retains_measured_shoulder_yaw_and_open_fingers": true,
+    "public_vertical_velocity_never_changes_the_completed_point_memory": true,
+    "completed_point_memory_is_propagated_once_by_public_tangent_and_yaw": true,
+    "frozen_actual_arm_cannot_be_replaced_by_command_arrival": true,
+    "retraction_stall_is_terminal_and_does_not_try_next_target": true,
+    "disjoint_actual_tether_and_command_slew_stop_without_an_arm_jump": true,
+    "new_target_acquisition_rejects_previous_point_exclusion_disk": true,
+    "new_target_acquisition_rejects_low_sugar_like_component": true,
+    "new_target_acquisition_rejects_too_close_new_component": true,
+    "one_control_tick_cannot_confirm_a_second_target": true,
+    "stale_single_candidate_cannot_authorize_navigation": true,
+    "fresh_distinct_tall_target_hands_off_to_second_child_without_reach_authorization": true,
+    "second_child_obtains_its_own_brake_and_reach_before_normal_completion": true,
+    "two_real_child_normal_completions_end_the_experiment_without_a_score_input": true,
+    "acquisition_height_threshold_does_not_reject_later_partial_views": true,
+    "second_attempt_lost_target_is_terminal_not_an_arbitrary_third_selection": true,
+    "remembered_old_target_blocking_new_ray_requires_bounded_backoff": true,
+    "first_backoff_hold_release_coincides_with_first_nonzero_reverse_command": true,
+    "backoff_releases_hold_only_for_equal_slewed_reverse_wheel_commands": true,
+    "backoff_without_public_backward_progress_cannot_advance_to_navigation": true,
+    "finite_public_reverse_can_clear_blocker_and_engage_reconfirmation_hold": true,
+    "post_backoff_reconfirmation_does_not_reuse_pre_motion_visual_gate": true,
+    "failed_post_backoff_reconfirmation_stops_without_repeating_backoff": true,
+    "backoff_distance_limit_cannot_be_bypassed_when_ray_remains_blocked": true,
+    "backoff_stops_on_excessive_reverse_speed": true,
+    "backoff_stops_on_reverse_yaw_drift": true,
+    "reward_and_simulator_truth_extras_cannot_trigger_another_attempt": true,
+    "multi_phase_public_diagnostics_are_finite_json": true
+  },
+  "evidence": {
+    "first_attempt_limit_1": {
+      "control_calls": 897,
+      "maximum_action_difference": 0.0,
+      "original_reason": "reach_lowering_hold_complete",
+      "wrapper_reason": "multi_reach_attempts_complete"
+    },
+    "first_attempt_limit_2": {
+      "control_calls": 897,
+      "maximum_action_difference": 0.0,
+      "original_reason": "reach_lowering_hold_complete",
+      "wrapper_reason": null
+    },
+    "two_synthetic_public_attempts": {
+      "terminal_reason": "multi_reach_attempts_complete",
+      "completed_attempts": 2,
+      "basis": "real child controllers on synthetic public positions/rates and zero reward input; no dynamics claim"
+    },
+    "fixtures": {
+      "classification": "synthetic CPU observations and detector components",
+      "actual_q_basis": "position response to returned commands with finite-difference qdot",
+      "no_original_environment_or_score_claim": true,
+      "observation_order_differs_from_action_order": true
+    }
+  },
+  "source_sha256": {
+    "first_reach.py": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897",
+    "multi_reach.py": "d2b73464c1903e1bbb563a86114349751ef714dbf044596c0f2bd264fc79ca12",
+    "stationary_target_gate.py": "8580f44635e8365b04e99484b77e3fc0a96da321c75e0ebebc3ece354278df81",
+    "audit_multi_reach.py": "0aa27e2a1e4aa40172af3dd9c9700868aec0e3a5f1478825ff623a0677840c6a"
+  }
+}

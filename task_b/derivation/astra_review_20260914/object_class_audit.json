@@ -1,0 +1,144 @@
+{
+  "verdict": "reject_opus_object_class_and_impossibility_claim",
+  "mode": "read_only_cpu_diagnostic_never_policy_input",
+  "source_run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/first_reach_side_seed42_01",
+  "state_timing": "pre_step_5000_trace_and_telemetry; result final policy debug from same call",
+  "object_array_order": "object_1 through object_18 numerically, evaluate.OBJECT_NAMES",
+  "official_mapping": [
+    {
+      "names": "object_1..6",
+      "config": "Sugar_cfg",
+      "usd": "objects/task_b/004_sugar_box.usd",
+      "spawn_z_m": 0.15
+    },
+    {
+      "names": "object_7..12",
+      "config": "Mustard_cfg",
+      "usd": "objects/task_b/006_mustard_bottle.usd",
+      "spawn_z_m": 0.1
+    },
+    {
+      "names": "object_13..18",
+      "config": "Banana_cfg",
+      "usd": "objects/task_b/011_banana.usd",
+      "spawn_z_m": 0.1
+    }
+  ],
+  "initial_recorded_z_m": [
+    0.1492740362882614,
+    0.1492740362882614,
+    0.1492740362882614,
+    0.1492740362882614,
+    0.1492740362882614,
+    0.1492740362882614,
+    0.10508875548839569,
+    0.10508875548839569,
+    0.10508875548839569,
+    0.10508875548839569,
+    0.10508875548839569,
+    0.10508875548839569,
+    0.09927403181791306,
+    0.09927403181791306,
+    0.09927403181791306,
+    0.09927403181791306,
+    0.09927403181791306,
+    0.09927403181791306
+  ],
+  "final_recorded_z_m": [
+    0.09020685404539108,
+    0.09020508825778961,
+    0.09020614624023438,
+    0.09020686149597168,
+    0.09020723402500153,
+    0.09020620584487915,
+    0.1402248591184616,
+    0.14022427797317505,
+    0.14022432267665863,
+    0.14022482931613922,
+    0.14022578299045563,
+    0.14022406935691833,
+    0.060087863355875015,
+    0.0600878968834877,
+    0.06008647009730339,
+    0.060087475925683975,
+    0.060087524354457855,
+    0.06008726730942726
+  ],
+  "initial_height_interpretation": "Initial metadata precedes settling; it is not object class evidence or settled root height.",
+  "step": 5000,
+  "base_xyz_m": [
+    -7.299442291259766,
+    -9.023667335510254,
+    0.5230040550231934
+  ],
+  "base_quat_wxyz": [
+    0.9906061291694641,
+    -0.006637223996222019,
+    0.03396345302462578,
+    0.13229429721832275
+  ],
+  "visual_surface_body_m": [
+    0.6594439176406083,
+    0.17907878078866182,
+    -0.2802271926396263
+  ],
+  "visual_surface_world_m": [
+    -6.7299844978311105,
+    -8.684530885128218,
+    0.19717120574438013
+  ],
+  "nearest": [
+    {
+      "name": "object_10",
+      "root_world_m": [
+        -6.723809719085693,
+        -8.68027400970459,
+        0.14022482931613922
+      ],
+      "root_body_m": [
+        0.6704339981079102,
+        0.1818021535873413,
+        -0.33653831481933594
+      ],
+      "distance_3d_m": 0.057438129054087926,
+      "distance_xy_m": 0.007499925394772138
+    },
+    {
+      "name": "object_2",
+      "root_world_m": [
+        -6.4118475914001465,
+        -8.01716136932373,
+        0.09020508825778961
+      ],
+      "root_body_m": [
+        1.1477150917053223,
+        0.7399464845657349,
+        -0.35131579637527466
+      ],
+      "distance_3d_m": 0.7470173439410464,
+      "distance_xy_m": 0.7393193909661646
+    },
+    {
+      "name": "object_4",
+      "root_world_m": [
+        -7.386421203613281,
+        -7.1301589012146,
+        0.09020686149597168
+      ],
+      "root_body_m": [
+        0.44158950448036194,
+        1.851700782775879,
+        -0.3955456614494324
+      ],
+      "distance_3d_m": 1.690687074539283,
+      "distance_xy_m": 1.6873000364706057
+    }
+  ],
+  "caveat": "The visual point is on a yellow component surface; its root offset alone does not establish camera-latency error. This diagnostic does not prove physical reachability or score.",
+  "source_sha256": {
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/env_cfg.py": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1",
+    "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/assets/objects/task_b/object.py": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25",
+    "/home/lybm/ATEC_Experiments_20260910/task_b_score/first_reach_side_seed42_01/telemetry.npz": "cfcaccfe6329b60c0371512ddda87d0e64f88933eff661165ce5682b406968d2",
+    "/home/lybm/ATEC_Experiments_20260910/task_b_score/first_reach_side_seed42_01/result.json": "4279f6650f1b04918a1fa0ee6c29cc05eb975dd0a43f16fc4e0a523072dc7c99"
+  }
+}

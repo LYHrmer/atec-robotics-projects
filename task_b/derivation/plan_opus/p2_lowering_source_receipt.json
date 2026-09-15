@@ -1,0 +1,7 @@
+{
+  "session": "5d693a0c-95a4-44c8-8af3-b8c69a3da3ec",
+  "sha256": "891162454c1eebfa090871d32774ec43fbcc55be22bcf8cb8afe1f398722f8e8",
+  "original_opus_copy": "/home/lybm/ATEC_Experiments_20260910/task_b_plan_opus/first_reach_opus_891162454c1e.py",
+  "root_integration_fix": "Check both 3s admission and 6s descent deadlines before soft-settle early returns; preserve alpha on stop.",
+  "integrated_sha256": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897"
+}

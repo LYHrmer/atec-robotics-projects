@@ -1,0 +1,896 @@
+{
+  "scope": "Read-only offline geometry diagnosis using final original-environment truth. No GT, reward, object id or generated coordinate may be fed into production policy. No GPU or simulation was run.",
+  "run_id": "plan_p2_lower02_seed42_01",
+  "scored_object_id_1based": 10,
+  "final_base_world_m": [
+    -7.180277347564697,
+    -9.006888389587402,
+    0.5147733688354492
+  ],
+  "final_base_yaw_degrees": 14.204238396414329,
+  "final_arm_actual_q_rad": [
+    0.5466173887252808,
+    3.1400082111358643,
+    -1.665032982826233,
+    0.003248801687732339,
+    -0.08627311140298843,
+    -6.632958047703141e-06
+  ],
+  "public_generation_rules": {
+    "source": "tasks/task_b/env_cfg.py:TaskBEnvCfg.__post_init__",
+    "seed": 42,
+    "count": 18,
+    "xy_independent_uniform_m": [
+      -15.0,
+      -5.0
+    ],
+    "sampling": "np.random.default_rng(seed=self.seed), one x and one y uniform draw for each object",
+    "classes": {
+      "sugar_object_ids_1based": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mustard_object_ids_1based": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "banana_object_ids_1based": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "initial_sugar_quat_wxyz": [
+      0.0,
+      0.707,
+      0.0,
+      0.707
+    ],
+    "initial_other_quat_wxyz": [
+      0.0,
+      0.0,
+      -0.707,
+      0.707
+    ],
+    "per_object_proximity_score_once": true,
+    "proximity_threshold_m": 0.2,
+    "delivery_circle_center_xy_m": [
+      -3.0,
+      -10.0
+    ],
+    "delivery_circle_radius_m": 1.0
+  },
+  "static_usd_aabb_nominal_world_heights": {
+    "basis": "CPU Usd BBoxCache default/render/proxy bounds, rotated by configured initial root quaternion; actual post-settle orientation not recorded here",
+    "sugar_local_dimensions_m": [
+      0.09267732889926439,
+      0.17625345789819669,
+      0.0451341380521475
+    ],
+    "mustard_local_dimensions_m": [
+      0.0960241582388246,
+      0.1913009982265308,
+      0.0582489382121949
+    ],
+    "sugar_nominal_vertical_height_m": 0.09267732889926439,
+    "mustard_nominal_vertical_height_m": 0.1913009982265308,
+    "height_point12_admission_heuristic": "A full upright mustard can support 0.12 m color/depth span, while nominal lying sugar is below it. Actual visible yellow support still must be verified in real images; clipping/occlusion can reject a mustard, so lock once at far range and do not demand this span near the target."
+  },
+  "strict_arm_envelope": {
+    "shoulder_body_m": [
+      0.2,
+      0,
+      0.223
+    ],
+    "shoulder_world_m": [
+      -6.972091274599369,
+      -8.951765405651205,
+      0.7229776331175352
+    ],
+    "sum_remaining_link_translation_norms_m": 0.6277419067685579,
+    "proof": "Every revolute-joint rotation preserves subsequent link lengths. Any gripper_base lies within radius sum(norm(link_translation)) of the shoulder pivot. Triangle inequality gives distance(root,shoulder)-radius as a global lower bound for any arm posture at this unchanged base pose.",
+    "unscored_inside_possible_point20_score_envelope_count": 0
+  },
+  "objects_by_base_distance": [
+    {
+      "object_id_1based": 10,
+      "kind": "mustard",
+      "already_scored": true,
+      "root_world_m": [
+        -6.723809719085693,
+        -8.680274963378906,
+        0.14022476971149445
+      ],
+      "root_body_m": [
+        0.5479623140231856,
+        0.20815924204619368,
+        -0.33426443348900536
+      ],
+      "distance_xy_from_base_m": 0.5612833740891482,
+      "body_bearing_degrees": 20.80072052706899,
+      "gripper_current_distance_m": 0.19144420031473167,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 0.06142548281211446,
+      "fixed_base_reach_score_geometrically_excluded": false,
+      "local_ik_position_only": {
+        "minimum_distance_found_m": 0.1907618134809192,
+        "q_found": [
+          0.5391824479467368,
+          3.1399988169418163,
+          -1.6272035040373696,
+          0.0027145771244164686,
+          -0.08849787456391749,
+          -6.632958047703141e-06
+        ],
+        "note": "multi-start position IK local optimum, not a proof of global minimum or collision freedom"
+      }
+    },
+    {
+      "object_id_1based": 2,
+      "kind": "sugar",
+      "already_scored": false,
+      "root_world_m": [
+        -6.411848068237305,
+        -8.01716136932373,
+        0.09020506590604782
+      ],
+      "root_body_m": [
+        1.0154797859295588,
+        0.7745967332128564,
+        -0.3451116936361378
+      ],
+      "distance_xy_from_base_m": 1.2530136200247874,
+      "body_bearing_degrees": 37.3359870014545,
+      "gripper_current_distance_m": 0.7891204045862983,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 0.6323208999239776,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": {
+        "minimum_distance_found_m": 0.6524001126184664,
+        "q_found": [
+          0.7596871838295601,
+          3.139998813991412,
+          -2.403675559033072,
+          -0.0010072799172578587,
+          -0.08852242379338161,
+          -6.632958047703141e-06
+        ],
+        "note": "multi-start position IK local optimum, not a proof of global minimum or collision freedom"
+      }
+    },
+    {
+      "object_id_1based": 1,
+      "kind": "sugar",
+      "already_scored": false,
+      "root_world_m": [
+        -7.25826358795166,
+        -10.602023124694824,
+        0.09020685404539108
+      ],
+      "root_body_m": [
+        -0.43564826506216947,
+        -1.5223264988498353,
+        -0.4727853872158274
+      ],
+      "distance_xy_from_base_m": 1.5970399734621292,
+      "body_bearing_degrees": -105.96967520897536,
+      "gripper_current_distance_m": 1.991488321550728,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 1.1626893237008,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 4,
+      "kind": "sugar",
+      "already_scored": false,
+      "root_world_m": [
+        -7.386420726776123,
+        -7.1301589012146,
+        0.0902068242430687
+      ],
+      "root_body_m": [
+        0.29019425250728403,
+        1.8741051162487083,
+        -0.3852047834204782
+      ],
+      "distance_xy_from_base_m": 1.888017125272106,
+      "body_bearing_degrees": 81.19798611017187,
+      "gripper_current_distance_m": 1.7122338837975,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 1.3446470124130736,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 11,
+      "kind": "mustard",
+      "already_scored": false,
+      "root_world_m": [
+        -7.419244766235352,
+        -11.451659202575684,
+        0.14022576808929443
+      ],
+      "root_body_m": [
+        -0.8028243778202796,
+        -2.306694743093026,
+        -0.45708646995364055
+      ],
+      "distance_xy_from_base_m": 2.4564221451585837,
+      "body_bearing_degrees": -109.18999267265862,
+      "gripper_current_distance_m": 2.846104629707196,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 1.977831922002684,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 7,
+      "kind": "mustard",
+      "already_scored": false,
+      "root_world_m": [
+        -8.561484336853027,
+        -6.769254207611084,
+        0.14022500813007355
+      ],
+      "root_body_m": [
+        -0.7612834994958764,
+        2.512538156833329,
+        -0.40326839445552476
+      ],
+      "distance_xy_from_base_m": 2.6295892225988,
+      "body_bearing_degrees": 106.85648350848527,
+      "gripper_current_distance_m": 2.6609765847693567,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 2.134345357935503,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 12,
+      "kind": "mustard",
+      "already_scored": false,
+      "root_world_m": [
+        -5.293141841888428,
+        -6.065706729888916,
+        0.14022406935691833
+      ],
+      "root_body_m": [
+        2.5713180847936257,
+        2.390093398948379,
+        -0.16701497234458032
+      ],
+      "distance_xy_from_base_m": 3.4945428845745723,
+      "body_bearing_degrees": 42.90809621687536,
+      "gripper_current_distance_m": 3.0053963124657828,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 2.76162493581707,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": {
+        "minimum_distance_found_m": 2.7616251238379887,
+        "q_found": [
+          0.789398185410117,
+          3.1199553044046544,
+          -2.8297064219548353,
+          -0.0002073082563607968,
+          -0.0882298658314552,
+          0.0
+        ],
+        "note": "multi-start position IK local optimum, not a proof of global minimum or collision freedom"
+      }
+    },
+    {
+      "object_id_1based": 16,
+      "kind": "banana",
+      "already_scored": false,
+      "root_world_m": [
+        -7.548063278198242,
+        -5.325768947601318,
+        0.060087479650974274
+      ],
+      "root_body_m": [
+        0.5776706267419458,
+        3.6629963373075625,
+        -0.376032677615065
+      ],
+      "distance_xy_from_base_m": 3.69944682850557,
+      "body_bearing_degrees": 81.03801412175504,
+      "gripper_current_distance_m": 3.476839132986716,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 3.1030780323712213,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 13,
+      "kind": "banana",
+      "already_scored": false,
+      "root_world_m": [
+        -7.211845397949219,
+        -13.054414749145508,
+        0.06008788198232651
+      ],
+      "root_body_m": [
+        -0.9888646577171792,
+        -3.9102639622622926,
+        -0.5676156263073805
+      ],
+      "distance_xy_from_base_m": 4.047649462728062,
+      "body_bearing_degrees": -104.19195421781126,
+      "gripper_current_distance_m": 4.393229112176694,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 3.535025982208389,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 8,
+      "kind": "mustard",
+      "already_scored": false,
+      "root_world_m": [
+        -10.565980911254883,
+        -12.724531173706055,
+        0.14022424817085266
+      ],
+      "root_body_m": [
+        -4.157182420867596,
+        -2.7659595101114367,
+        -0.7010319845328613
+      ],
+      "distance_xy_from_base_m": 5.028305528853026,
+      "body_bearing_degrees": -146.36239991468616,
+      "gripper_current_distance_m": 5.562558231436244,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 4.615292116460093,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 17,
+      "kind": "banana",
+      "already_scored": false,
+      "root_world_m": [
+        -11.737444877624512,
+        -11.296244621276855,
+        0.06008752062916756
+      ],
+      "root_body_m": [
+        -4.9346755760215775,
+        -1.0925474330018468,
+        -0.819136215304304
+      ],
+      "distance_xy_from_base_m": 5.099894886427249,
+      "body_bearing_degrees": -167.51597946212266,
+      "gripper_current_distance_m": 5.644161866013423,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 4.724323213874147,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 18,
+      "kind": "banana",
+      "already_scored": false,
+      "root_world_m": [
+        -10.300076484680176,
+        -13.106103897094727,
+        0.06008726730942726
+      ],
+      "root_body_m": [
+        -3.9877554111866544,
+        -3.2003692877205916,
+        -0.7738844142520906
+      ],
+      "distance_xy_from_base_m": 5.151379857177591,
+      "body_bearing_degrees": -141.2512479086075,
+      "gripper_current_distance_m": 5.677410008424591,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 4.73634585324125,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 6,
+      "kind": "sugar",
+      "already_scored": false,
+      "root_world_m": [
+        -11.289835929870605,
+        -5.7231526374816895,
+        0.09020619094371796
+      ],
+      "root_body_m": [
+        -3.1399307958600384,
+        4.1983624184894595,
+        -0.6051752802531287
+      ],
+      "distance_xy_from_base_m": 5.260360465886479,
+      "body_bearing_degrees": 126.79260042180779,
+      "gripper_current_distance_m": 5.443751246988065,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 4.800633449905046,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 9,
+      "kind": "mustard",
+      "already_scored": false,
+      "root_world_m": [
+        -9.454275131225586,
+        -14.358747482299805,
+        0.14022432267665863
+      ],
+      "root_body_m": [
+        -3.4821795372799955,
+        -4.623406910806933,
+        -0.6725197867517996
+      ],
+      "distance_xy_from_base_m": 5.814934364921331,
+      "body_bearing_degrees": -126.98571075123819,
+      "gripper_current_distance_m": 6.284949229486018,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 5.350242142735489,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 15,
+      "kind": "banana",
+      "already_scored": false,
+      "root_world_m": [
+        -13.452770233154297,
+        -8.170336723327637,
+        0.06008647382259369
+      ],
+      "root_body_m": [
+        -5.828259172377439,
+        2.359177646155215,
+        -0.8464051725210409
+      ],
+      "distance_xy_from_base_m": 6.328031739023923,
+      "body_bearing_degrees": 157.96275638978838,
+      "gripper_current_distance_m": 6.743187296288619,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 5.933451219369854,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 14,
+      "kind": "banana",
+      "already_scored": false,
+      "root_world_m": [
+        -10.328531265258789,
+        -14.562829971313477,
+        0.060087986290454865
+      ],
+      "root_body_m": [
+        -4.371816112272195,
+        -4.605209860441395,
+        -0.8160848048454925
+      ],
+      "distance_xy_from_base_m": 6.385921201348246,
+      "body_bearing_degrees": -133.51070221222324,
+      "gripper_current_distance_m": 6.885408584756332,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 5.944103926389664,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 5,
+      "kind": "sugar",
+      "already_scored": false,
+      "root_world_m": [
+        -13.716680526733398,
+        -10.486949920654297,
+        0.09020721912384033
+      ],
+      "root_body_m": [
+        -6.65260504867955,
+        0.17857067193006165,
+        -0.897977534953712
+      ],
+      "distance_xy_from_base_m": 6.701876502621545,
+      "body_bearing_degrees": 178.4624234282321,
+      "gripper_current_distance_m": 7.211375496432306,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 6.318240678289721,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    },
+    {
+      "object_id_1based": 3,
+      "kind": "sugar",
+      "already_scored": false,
+      "root_world_m": [
+        -14.056037902832031,
+        -5.234580039978027,
+        0.09020616859197617
+      ],
+      "root_body_m": [
+        -5.695194302628695,
+        5.352623874348833,
+        -0.775132453508367
+      ],
+      "distance_xy_from_base_m": 7.842601194623042,
+      "body_bearing_degrees": 136.77605680628307,
+      "gripper_current_distance_m": 8.10097282235151,
+      "rigorous_any_arm_at_fixed_base_distance_lower_bound_m": 7.397229532479159,
+      "fixed_base_reach_score_geometrically_excluded": true,
+      "local_ik_position_only": null
+    }
+  ],
+  "recovery_view_candidates": [
+    {
+      "label": "old_far_zero_yaw",
+      "joint_target_rad": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.35,
+        0.0
+      ],
+      "gripper_body_at_goal_m": [
+        0.2533333582134535,
+        -1.5052815819325591e-07,
+        0.28163018844168064
+      ],
+      "ee_root_projection": [
+        {
+          "object_id_1based": 2,
+          "root_pixel_uv": [
+            -103.07113752603834,
+            489.7280923485159
+          ],
+          "optical_depth_m": 0.8387874276248026,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 7,
+          "root_pixel_uv": [
+            1655.5036818945432,
+            -278.2269371363416
+          ],
+          "optical_depth_m": -0.8618861446681201,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 10,
+          "root_pixel_uv": [
+            71.98113547529465,
+            916.9946046790018
+          ],
+          "optical_depth_m": 0.3845094569107079,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 11,
+          "root_pixel_uv": [
+            -870.0868082543866,
+            -295.39103098221597
+          ],
+          "optical_depth_m": -0.8879662168676346,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 12,
+          "root_pixel_uv": [
+            -157.12767354910534,
+            216.258130645194
+          ],
+          "optical_depth_m": 2.294925395161331,
+          "root_geometrically_in_frame": false
+        }
+      ],
+      "minimum_point_path_gripper_world_z_m": 0.33070530477784343,
+      "minimum_point_path_finger_axis_end_world_z_m": 0.1977451596136438,
+      "maximum_gripper_body_xy_during_path_m": 0.5550623191981053,
+      "minimum_slew_time_from_final_s": 10.466694037119549,
+      "path_caveat": "CPU FK of root and nominal finger-axis endpoint at current base pose; ignores collision volume, contact, base response, tracking lag and recovery; not a collision-free certificate."
+    },
+    {
+      "label": "retain_yaw_far",
+      "joint_target_rad": [
+        0.5466173887252808,
+        0.0,
+        0.0,
+        0.0,
+        0.35,
+        0.0
+      ],
+      "gripper_body_at_goal_m": [
+        0.24556210958409674,
+        0.027722576875066393,
+        0.28163018844168064
+      ],
+      "ee_root_projection": [
+        {
+          "object_id_1based": 2,
+          "root_pixel_uv": [
+            222.0834248031121,
+            397.8745653905787
+          ],
+          "optical_depth_m": 1.1128597533209712,
+          "root_geometrically_in_frame": true
+        },
+        {
+          "object_id_1based": 7,
+          "root_pixel_uv": [
+            -1947.77916814335,
+            753.6058909821536
+          ],
+          "optical_depth_m": 0.5345536698395762,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 10,
+          "root_pixel_uv": [
+            323.1613480844395,
+            816.0155199002708
+          ],
+          "optical_depth_m": 0.44003660039964676,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 11,
+          "root_pixel_uv": [
+            -28.593207541090408,
+            -75.38231441925734
+          ],
+          "optical_depth_m": -1.9047241904543029,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 12,
+          "root_pixel_uv": [
+            202.7148889352818,
+            188.9970918419367
+          ],
+          "optical_depth_m": 3.160993510458201,
+          "root_geometrically_in_frame": true
+        }
+      ],
+      "minimum_point_path_gripper_world_z_m": 0.33070530477784343,
+      "minimum_point_path_finger_axis_end_world_z_m": 0.1977451596136438,
+      "maximum_gripper_body_xy_during_path_m": 0.5545381924836925,
+      "minimum_slew_time_from_final_s": 10.466694037119549,
+      "path_caveat": "CPU FK of root and nominal finger-axis endpoint at current base pose; ignores collision volume, contact, base response, tracking lag and recovery; not a collision-free certificate."
+    },
+    {
+      "label": "retain_yaw_near_level_camera",
+      "joint_target_rad": [
+        0.5466173887252808,
+        1.1,
+        -0.8,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "gripper_body_at_goal_m": [
+        0.4092878035730948,
+        0.12734238084932747,
+        0.44142134757304274
+      ],
+      "ee_root_projection": [
+        {
+          "object_id_1based": 2,
+          "root_pixel_uv": [
+            204.2184665070261,
+            550.7407275171703
+          ],
+          "optical_depth_m": 0.9411442669389772,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 7,
+          "root_pixel_uv": [
+            -3116.3146263356275,
+            1311.3451866509724
+          ],
+          "optical_depth_m": 0.3527760121908226,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 10,
+          "root_pixel_uv": [
+            325.33768181859125,
+            1600.7830678120974
+          ],
+          "optical_depth_m": 0.26067702101291046,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 11,
+          "root_pixel_uv": [
+            6.662186898970674,
+            -65.72948400670555
+          ],
+          "optical_depth_m": -2.11903654228729,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 12,
+          "root_pixel_uv": [
+            197.38037117736235,
+            240.9447132099177
+          ],
+          "optical_depth_m": 3.0234738667565293,
+          "root_geometrically_in_frame": true
+        }
+      ],
+      "minimum_point_path_gripper_world_z_m": 0.33070530477784343,
+      "minimum_point_path_finger_axis_end_world_z_m": 0.1977451596136438,
+      "maximum_gripper_body_xy_during_path_m": 0.5545381924836925,
+      "minimum_slew_time_from_final_s": 6.800027370452881,
+      "path_caveat": "CPU FK of root and nominal finger-axis endpoint at current base pose; ignores collision volume, contact, base response, tracking lag and recovery; not a collision-free certificate."
+    },
+    {
+      "label": "retain_yaw_near_wrist_point35",
+      "joint_target_rad": [
+        0.5466173887252808,
+        1.1,
+        -0.8,
+        0.0,
+        0.35,
+        0.0
+      ],
+      "gripper_body_at_goal_m": [
+        0.3990268616056709,
+        0.1210989730866113,
+        0.41209826786094306
+      ],
+      "ee_root_projection": [
+        {
+          "object_id_1based": 2,
+          "root_pixel_uv": [
+            218.79606773577862,
+            337.0944269848203
+          ],
+          "optical_depth_m": 1.0767106809833868,
+          "root_geometrically_in_frame": true
+        },
+        {
+          "object_id_1based": 7,
+          "root_pixel_uv": [
+            -1741.638671175354,
+            711.5583708635821
+          ],
+          "optical_depth_m": 0.5880030209470571,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 10,
+          "root_pixel_uv": [
+            322.8733938400902,
+            797.5915547990433
+          ],
+          "optical_depth_m": 0.48410858439941573,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 11,
+          "root_pixel_uv": [
+            -113.42305734174613,
+            -359.975802889149
+          ],
+          "optical_depth_m": -1.5319288529059802,
+          "root_geometrically_in_frame": false
+        },
+        {
+          "object_id_1based": 12,
+          "root_pixel_uv": [
+            188.34801361519283,
+            64.35998194512501
+          ],
+          "optical_depth_m": 2.8160372209292475,
+          "root_geometrically_in_frame": true
+        }
+      ],
+      "minimum_point_path_gripper_world_z_m": 0.33070530477784343,
+      "minimum_point_path_finger_axis_end_world_z_m": 0.1977451596136438,
+      "maximum_gripper_body_xy_during_path_m": 0.5545381924836925,
+      "minimum_slew_time_from_final_s": 6.800027370452881,
+      "path_caveat": "CPU FK of root and nominal finger-axis endpoint at current base pose; ignores collision volume, contact, base response, tracking lag and recovery; not a collision-free certificate."
+    }
+  ],
+  "nominal_routing_comparisons": [
+    {
+      "object_id_1based": 2,
+      "kind": "sugar",
+      "nominal_base_translation_m": 0.6917302459356391,
+      "nominal_delta_yaw_degrees_to_reuse_winning_lateral_offset": 16.589426860588997,
+      "nominal_stop_world_xy_m": [
+        -6.756063463630404,
+        -8.460506367720319
+      ],
+      "minimum_base_center_distance_to_any_other_object_along_straight_segment_m": 0.16026115207867456,
+      "geometry_only_no_obstacle_or_dynamic_plan": true
+    },
+    {
+      "object_id_1based": 7,
+      "kind": "mustard",
+      "nominal_base_translation_m": 2.068305848509652,
+      "nominal_delta_yaw_degrees_to_reuse_winning_lateral_offset": 86.10084514495198,
+      "nominal_stop_world_xy_m": [
+        -8.266666989489131,
+        -7.2468751427910805
+      ],
+      "minimum_base_center_distance_to_any_other_object_along_straight_segment_m": 0.5599932959704842,
+      "geometry_only_no_obstacle_or_dynamic_plan": true
+    },
+    {
+      "object_id_1based": 11,
+      "kind": "mustard",
+      "nominal_base_translation_m": 1.8951387710694356,
+      "nominal_delta_yaw_degrees_to_reuse_winning_lateral_offset": -131.16733852755854,
+      "nominal_stop_world_xy_m": [
+        -7.36464159498761,
+        -10.893038114790244
+      ],
+      "minimum_base_center_distance_to_any_other_object_along_straight_segment_m": 0.07763029769281728,
+      "geometry_only_no_obstacle_or_dynamic_plan": true
+    },
+    {
+      "object_id_1based": 12,
+      "kind": "mustard",
+      "nominal_base_translation_m": 2.9332595104854238,
+      "nominal_delta_yaw_degrees_to_reuse_winning_lateral_offset": 21.730136989207313,
+      "nominal_stop_world_xy_m": [
+        -5.596248090395193,
+        -6.53811082401285
+      ],
+      "minimum_base_center_distance_to_any_other_object_along_straight_segment_m": 0.11228048609156904,
+      "geometry_only_no_obstacle_or_dynamic_plan": true
+    }
+  ],
+  "recommendation": {
+    "no_same_base_second_point": "All 17 unscored roots are outside even the rigorous outer score envelope. Arm-only reach cannot earn the second point from the recorded final base pose.",
+    "minimal_new_implementation_route": "Recover the fixed descent gradually, keep wheel anchor throughout recovery, then retract at bounded joint speed while preserving measured q1. A near posture q\u2248[q1,1.1,-.8,0,0,0] projects forward-left Object12 mustard inside EE frame while the nearer Object2 sugar root remains below the image. Require fresh valid public detections; perform bounded visual turning/approach, then repeat one full stationary localization and fixed reach/lowering sequence.",
+    "shortest_euclidean_route_note": "Object2 sugar is spatially nearest but its root is ~5 cm lower and its appearance/pose differs; it is not a safe reuse of the mustard reach primitive. Among mustard, Objects11/7 need over90\u00b0 turns; Object12 is farther but visible after restoring arm yaw, with smallest needed directional change.",
+    "control_separation": "Object numbers, world positions and nominal route endpoints exist only in this offline report. Production must use RGB-D, public proprioception, tracked local exclusion of the prior target, bounded search and timeouts.",
+    "known_risk": "A straight approach toward Object12 passes close to already-reached Object10; visual exclusion does not provide collision avoidance. Retracting first reduces arm sweep; coarse route-clearance estimates use base centers only and cannot certify body/leg/object clearance.",
+    "no_grasp_or_delivery_claim": true
+  },
+  "artifact_sha256": {
+    "env_cfg.py": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1",
+    "rewards.py": "58e54fa477cb84171e9cf550622b31376d597a0a32dfe7447e247ba009360d3c",
+    "terrain.py": "d7fd6b801199327dba95de156bc235fa7197790728b16227cbafc8cf25e905fc",
+    "object.py": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25",
+    "arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+    "winning_result.json": "b1230540a671a1354849230ae0da2d9f39e8656421ec3972a6f0faa49ed87f2c"
+  },
+  "recovery_point_path_refinement": {
+    "joint_target_rad": [
+      0.5466173887252808,
+      1.1,
+      -0.8,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rate_rad_s": 0.3,
+    "samples": 1001,
+    "duration_s": 6.800027370452881,
+    "gripper_body_min_xyz_m": [
+      0.4092878035730948,
+      0.12734238084932747,
+      -0.1454733047541325
+    ],
+    "gripper_body_max_xyz_m": [
+      0.5193847142698689,
+      0.19429906203038513,
+      0.44142134757304274
+    ],
+    "finger_axis_endpoint_body_min_xyz_m": [
+      0.47398926617758685,
+      0.16670742631952504,
+      -0.2763788001260816
+    ],
+    "finger_axis_endpoint_body_max_xyz_m": [
+      0.5611091274328086,
+      0.21971678567397082,
+      0.41274121757604754
+    ],
+    "minimum_root_z_when_root_x_less_than_point45_m": 0.37196545767014033,
+    "minimum_root_x_when_root_z_less_than_point15_m": 0.45287388873581685,
+    "minimum_root_z_change_per_sample_m": 0.0004334359279039163,
+    "caveat": "Reference points only; no link or finger mesh collision audit and no actual base response. Actual alpha restoration is performed before this sampled frozen-base arm path."
+  }
+}

@@ -1,0 +1,3375 @@
+{
+  "output": "/home/lybm/ATEC_Experiments_20260910/task_b_score_cpu/payload_raise_geometry.json",
+  "initial": {
+    "gripper_body": [
+      0.5214971104254336,
+      0.19463919838166635,
+      -0.144918345189269
+    ],
+    "payload_lowest_world_z": 0.04411219457039267,
+    "payload_root_body": [
+      0.5504209354091711,
+      0.20873076689694853,
+      -0.33902309833649635
+    ],
+    "payload_highest_world_z": 0.23600596472994612,
+    "payload_body_aabb_min": [
+      0.5012229076370683,
+      0.17739967676829943,
+      -0.43606000526941985
+    ],
+    "payload_body_aabb_max": [
+      0.6039114560442485,
+      0.23869108997359742,
+      -0.24318428345563575
+    ],
+    "arm_only_gravity_torque_nm": [
+      -0.23461892306087068,
+      8.134841392348585,
+      1.0235058814925266,
+      0.0034769624742345714,
+      0.18044217346842192,
+      3.9582564372549374e-05
+    ],
+    "gravity_plus_payload_absolute_upper_nm": [
+      0.2995453540459043,
+      10.163062881013321,
+      1.6812298911437433,
+      0.035376558352736336,
+      0.5771816309006753,
+      0.048055112825218085
+    ],
+    "gravity_plus_payload_tilt_cone_012_upper_nm": [
+      1.282788922451605,
+      11.648708245617883,
+      3.020345141233666,
+      0.08064239637394081,
+      1.0456465956197838,
+      0.0948543764573422
+    ],
+    "static_position_error_required_at_K80_rad": [
+      0.003744316925573804,
+      0.1270382860126665,
+      0.021015373639296793,
+      0.0004422069794092042,
+      0.007214770386258442,
+      0.000600688910315226
+    ]
+  },
+  "collision_envelope": [
+    [
+      -0.6299791731249382,
+      -0.38210201726379744,
+      -0.4994213726995165
+    ],
+    [
+      0.480488946537745,
+      0.37938454708831776,
+      0.12362192232025891
+    ]
+  ],
+  "front_feasible": 16,
+  "side_feasible": 42,
+  "side_pass_mesh_inner_and_height": [
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.2,
+      "success": true,
+      "position_error_m": 3.1735048987627977e-12,
+      "orientation_error_rad": 5.212964078806429e-12,
+      "q_rad": [
+        -1.570696488461136,
+        2.020196871524969,
+        -1.926382227042684,
+        -0.0005273229733998704,
+        1.0878754489110574,
+        0.006458238519412526
+      ],
+      "gripper_body": [
+        0.19999999999999418,
+        -0.44999999999728246,
+        0.3999999999983611
+      ],
+      "payload_lowest_world_z": 0.6222160113051147,
+      "payload_root_body": [
+        0.19707137331111943,
+        -0.5199643234021356,
+        0.21612985085643216
+      ],
+      "payload_highest_world_z": 0.8184890204965856,
+      "payload_body_aabb_min": [
+        0.15120561819422393,
+        -0.582159468778208,
+        0.11468627416993077
+      ],
+      "payload_body_aabb_max": [
+        0.2394262917979653,
+        -0.4737607619279973,
+        0.3105142226444961
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.5463166842731438,
+        7.975005353726286,
+        4.148599881120557,
+        0.0622249559206262,
+        0.3957861836477201,
+        -1.7652615522199128e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7390944229136711,
+        10.827331422646983,
+        6.240659243859533,
+        0.41437685695201737,
+        1.2609685338271421,
+        0.1181944317092954
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3050087430131923,
+        11.454530838731735,
+        6.430144367014313,
+        0.5389739254086245,
+        1.5244378891022838,
+        0.1369177508780131
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.00923868028642089,
+        0.1353416427830873,
+        0.07800824054824416,
+        0.005179710711900217,
+        0.015762106672839275,
+        0.0014774303963661925
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.854583119786216,
+        0.9726096876007249
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8584575554839982,
+          "all_payload_vertices_radius_max_m": 0.9088302184647895,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.9069985150570825,
+          "all_payload_vertices_radius_max_m": 0.9572220433101423,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9264583525528975,
+          "all_payload_vertices_radius_max_m": 0.9766250854827301,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9556899277819894,
+          "all_payload_vertices_radius_max_m": 1.005773500191325,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9849677137413483,
+          "all_payload_vertices_radius_max_m": 1.0349705840167962,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 5.49475231437898e-14,
+      "orientation_error_rad": 1.0476458823729376e-13,
+      "q_rad": [
+        -1.5706945978463362,
+        1.9849162008830645,
+        -1.8514232136900282,
+        -0.0005862812564955698,
+        0.9481971297094344,
+        0.006552476223567801
+      ],
+      "gripper_body": [
+        0.19999999999999998,
+        -0.4499999999999536,
+        0.3999999999999706
+      ],
+      "payload_lowest_world_z": 0.6295072990731428,
+      "payload_root_body": [
+        0.1970713733111215,
+        -0.537971178415943,
+        0.22403321318190025
+      ],
+      "payload_highest_world_z": 0.8243656004786075,
+      "payload_body_aabb_min": [
+        0.1512056181942241,
+        -0.6074968496397865,
+        0.12177072792364707
+      ],
+      "payload_body_aabb_max": [
+        0.2394262917979683,
+        -0.4894719565732827,
+        0.316334891352938
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.5372762123822074,
+        7.841947952752553,
+        4.233630848598286,
+        0.05799238730354276,
+        0.468642785257436,
+        -1.060463642523022e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7384897692240179,
+        10.817707460877216,
+        6.490846625861125,
+        0.401743949844939,
+        1.4955553582617307,
+        0.13861641540294653
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3039416660887568,
+        11.456322201896475,
+        6.686085392061489,
+        0.5166549066238404,
+        1.7428526348080382,
+        0.15612064894998412
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009231122115300224,
+        0.1352213432609652,
+        0.08113558282326407,
+        0.005021799373061737,
+        0.018694441978271633,
+        0.0017327051925368317
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.8302310816979419,
+        0.9570934631906448
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8412243229604762,
+          "all_payload_vertices_radius_max_m": 0.8933849342204196,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8896975186618254,
+          "all_payload_vertices_radius_max_m": 0.9417221833774007,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.909133103556398,
+          "all_payload_vertices_radius_max_m": 0.9611047199209504,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9383309586098646,
+          "all_payload_vertices_radius_max_m": 0.9902245708111741,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9675778913293369,
+          "all_payload_vertices_radius_max_m": 1.0193954672363512,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.6662456748592115e-08,
+      "orientation_error_rad": 6.381669233189778e-08,
+      "q_rad": [
+        -1.5706927418362553,
+        1.9539793267877612,
+        -1.7814743482080775,
+        -0.000670606805559355,
+        0.8091851042044963,
+        0.006669536290652194
+      ],
+      "gripper_body": [
+        0.20000000004748203,
+        -0.44999998675216046,
+        0.39999998989406327
+      ],
+      "payload_lowest_world_z": 0.6395048889667876,
+      "payload_root_body": [
+        0.19707137382345347,
+        -0.5550990518546661,
+        0.2336947740640236
+      ],
+      "payload_highest_world_z": 0.8310711662835039,
+      "payload_body_aabb_min": [
+        0.15120561892525444,
+        -0.6312866041308973,
+        0.13161419896041232
+      ],
+      "payload_body_aabb_max": [
+        0.23942629223707323,
+        -0.5043284197842324,
+        0.32299150856063835
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.5290771729631578,
+        7.721371954577899,
+        4.307996671653017,
+        0.052856569524672915,
+        0.536815324194751,
+        -4.004949094485455e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7382378935999423,
+        10.812812122325225,
+        6.7182167777952255,
+        0.385844649452171,
+        1.7152475488016408,
+        0.1577270861249635
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3034560898472916,
+        11.463516324261395,
+        6.917012515741086,
+        0.48891406925475506,
+        1.94446928632522,
+        0.1738373935636714
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009227973669999279,
+        0.1351601515290653,
+        0.08397770972244031,
+        0.004823058118152137,
+        0.02144059436002051,
+        0.0019715885765620436
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.8074729706643375,
+        0.9423766373172602
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8249163424634665,
+          "all_payload_vertices_radius_max_m": 0.8787264105701202,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8733190240690124,
+          "all_payload_vertices_radius_max_m": 0.9270182374775169,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8927293969036036,
+          "all_payload_vertices_radius_max_m": 0.94638464474489,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9218922190464576,
+          "all_payload_vertices_radius_max_m": 0.9754821990166692,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9511071185628521,
+          "all_payload_vertices_radius_max_m": 1.0046328410856782,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.2,
+      "success": true,
+      "position_error_m": 3.902835494226249e-10,
+      "orientation_error_rad": 6.239157006129762e-10,
+      "q_rad": [
+        -1.5706966745433117,
+        2.03174869986566,
+        -2.025384561923281,
+        -0.0005059887411430549,
+        1.1753259429779235,
+        0.00640812949739616
+      ],
+      "gripper_body": [
+        0.2000000000000351,
+        -0.4499999996734432,
+        0.4199999997862668
+      ],
+      "payload_lowest_world_z": 0.6421690674593199,
+      "payload_root_body": [
+        0.19707137331135466,
+        -0.5199643231920625,
+        0.23612985068762388
+      ],
+      "payload_highest_world_z": 0.8384420766476608,
+      "payload_body_aabb_min": [
+        0.15120561819456196,
+        -0.582159468614663,
+        0.13468627399291072
+      ],
+      "payload_body_aabb_max": [
+        0.23942629179814895,
+        -0.4737607617030458,
+        0.3305142224657039
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.5480345901007933,
+        7.9977548901282445,
+        4.100963187139454,
+        0.06432776155759933,
+        0.3957891011890264,
+        -1.7652602165206966e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7408123286870847,
+        10.849215191547435,
+        6.178698671119191,
+        0.41956830922622723,
+        1.260983804190323,
+        0.11819444096019813
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3080371303677671,
+        11.525167241303729,
+        6.320277641218568,
+        0.5491435595080749,
+        1.5244433192797193,
+        0.13691776211256296
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009260154108588558,
+        0.13561518989434293,
+        0.0772337333889899,
+        0.00524460386532784,
+        0.015762297552379036,
+        0.0014774305120024765
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.8550438565468806,
+        0.9731097213461974
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8589648246993541,
+          "all_payload_vertices_radius_max_m": 0.9093551245926712,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.907488405783588,
+          "all_payload_vertices_radius_max_m": 0.9577271785299306,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.926941778784394,
+          "all_payload_vertices_radius_max_m": 0.9771238139640903,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9561641298398954,
+          "all_payload_vertices_radius_max_m": 1.0062630604354774,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9854332169807307,
+          "all_payload_vertices_radius_max_m": 1.035451469542738,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 9.83543388051079e-12,
+      "orientation_error_rad": 1.611381000432589e-11,
+      "q_rad": [
+        -1.5706947892321375,
+        1.9921697246807466,
+        -1.9427669360764206,
+        -0.0005546704920370143,
+        1.032287314420209,
+        0.006494893052657485
+      ],
+      "gripper_body": [
+        0.2000000000000122,
+        -0.44999999999176754,
+        0.41999999999461834
+      ],
+      "payload_lowest_world_z": 0.6494603554009866,
+      "payload_root_body": [
+        0.19707137331114868,
+        -0.5379711784105743,
+        0.24403321317795626
+      ],
+      "payload_highest_world_z": 0.8443186568060788,
+      "payload_body_aabb_min": [
+        0.15120561819425893,
+        -0.6074968496355447,
+        0.14177072791965395
+      ],
+      "payload_body_aabb_max": [
+        0.239426291797992,
+        -0.48947195656755,
+        0.33633489134858613
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.5382954817732744,
+        7.854367121432969,
+        4.200836362294052,
+        0.06065098447611713,
+        0.46864613995398163,
+        -1.0604623371010188e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7395090386136774,
+        10.829260874500655,
+        6.448533589129907,
+        0.40953423431167074,
+        1.4955723135260752,
+        0.13861642620779904
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3057384827527814,
+        11.517638840516728,
+        6.597404697324943,
+        0.5306958576460438,
+        1.7428584302447985,
+        0.15612066149659154
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009243862982670967,
+        0.13536576093125818,
+        0.08060666986412383,
+        0.005119177928895885,
+        0.01869465391907594,
+        0.001732705327597488
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.8307015935245466,
+        0.9575987875127859
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8417390881474218,
+          "all_payload_vertices_radius_max_m": 0.8939132281169825,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8901941981839031,
+          "all_payload_vertices_radius_max_m": 0.9422327706930813,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9096230635083379,
+          "all_payload_vertices_radius_max_m": 0.9616086980025375,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9388113380468471,
+          "all_payload_vertices_radius_max_m": 0.9907190968853874,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9680492442145332,
+          "all_payload_vertices_radius_max_m": 1.0198810566887981,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.0125162845452131e-13,
+      "orientation_error_rad": 1.6807520612973146e-13,
+      "q_rad": [
+        -1.5706929392525961,
+        1.9575420944492612,
+        -1.8665984451811783,
+        -0.0006240361463796175,
+        0.8907464800030674,
+        0.006599019579418139
+      ],
+      "gripper_body": [
+        0.19999999999999932,
+        -0.4499999999999169,
+        0.41999999999994214
+      ],
+      "payload_lowest_world_z": 0.6594579482922394,
+      "payload_root_body": [
+        0.19707137331112035,
+        -0.5550990544926652,
+        0.2536947774730943
+      ],
+      "payload_highest_world_z": 0.851024228313473,
+      "payload_body_aabb_min": [
+        0.15120561819422268,
+        -0.6312866026932761,
+        0.15161420195149544
+      ],
+      "payload_body_aabb_max": [
+        0.23942629179796723,
+        -0.5043284238531959,
+        0.3429915141696146
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.5294693653165236,
+        7.72452704714716,
+        4.288531774016717,
+        0.055996404937619496,
+        0.5368193948911313,
+        -4.0049411179250705e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7386300854266397,
+        10.815101465018028,
+        6.693553943955737,
+        0.3959280937375149,
+        1.7152676520994372,
+        0.15772708654428144
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.304147468081885,
+        11.516356965779556,
+        6.8471650977210015,
+        0.5063089380098561,
+        1.9444754181257686,
+        0.17383739636183598
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009232876067832995,
+        0.13518876831272536,
+        0.08366942429944671,
+        0.004949101171718937,
+        0.021440845651242966,
+        0.001971588581803518
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.807954312106658,
+        0.9428860487738943
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8254387161467222,
+          "all_payload_vertices_radius_max_m": 0.8792594370724635,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8738225931975689,
+          "all_payload_vertices_radius_max_m": 0.9275330560600445,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8932259873570374,
+          "all_payload_vertices_radius_max_m": 0.9468926734563564,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9223788671967176,
+          "all_payload_vertices_radius_max_m": 0.9759805236208285,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.951584407613032,
+          "all_payload_vertices_radius_max_m": 1.0051219975351484,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.2,
+      "success": true,
+      "position_error_m": 0.004625965320369679,
+      "orientation_error_rad": 0.024495093365649475,
+      "q_rad": [
+        -1.5707084849130628,
+        2.2546737373770163,
+        -2.317477717970978,
+        -0.0004888543874165387,
+        1.219998954319697,
+        0.006359338627932512
+      ],
+      "gripper_body": [
+        0.19999909943915858,
+        -0.4966184390224754,
+        0.396843324582803
+      ],
+      "payload_lowest_world_z": 0.6210204976144789,
+      "payload_root_body": [
+        0.19707106745719696,
+        -0.5710652723855544,
+        0.21474194957377293
+      ],
+      "payload_highest_world_z": 0.8171110069798455,
+      "payload_body_aabb_min": [
+        0.15120568594915273,
+        -0.6350970225494237,
+        0.11300354445589894
+      ],
+      "payload_body_aabb_max": [
+        0.23942571995410622,
+        -0.5242877333249949,
+        0.3087027269808147
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6296751570916775,
+        9.203940404330725,
+        4.061445650077817,
+        0.06516636961274094,
+        0.4140333454982386,
+        -1.5889693620488136e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8400882785612576,
+        12.315383738634308,
+        6.16172643158419,
+        0.4200721760303403,
+        1.319681645492222,
+        0.1233072258069774
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.4830351295398667,
+        12.873651876249285,
+        6.262367825571249,
+        0.5518878521103413,
+        1.5794467012011988,
+        0.14174951056921345
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.01050110348201572,
+        0.15394229673292886,
+        0.07702158039480238,
+        0.005250902200379254,
+        0.016496020568652774,
+        0.0015413403225872173
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.8029237149410788,
+        0.9235170834586057
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8090048017812491,
+          "all_payload_vertices_radius_max_m": 0.859981570144295,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.857364903503636,
+          "all_payload_vertices_radius_max_m": 0.9081842575896741,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8767604582448227,
+          "all_payload_vertices_radius_max_m": 0.9275186163264066,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.905903077715536,
+          "all_payload_vertices_radius_max_m": 0.9565714769318436,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9350999258300094,
+          "all_payload_vertices_radius_max_m": 0.9856810829711024,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 3.4595976019753793e-12,
+      "orientation_error_rad": 5.460577106334493e-12,
+      "q_rad": [
+        -1.570705164059815,
+        2.237096122756,
+        -2.2836100585349515,
+        -0.0005206879334033055,
+        1.1282040192621814,
+        0.006424729566277402
+      ],
+      "gripper_body": [
+        0.19999999999999923,
+        -0.49999999999697264,
+        0.39999999999832553
+      ],
+      "payload_lowest_world_z": 0.6299488972602891,
+      "payload_root_body": [
+        0.19707137331112093,
+        -0.5879711784139046,
+        0.2240332131807264
+      ],
+      "payload_highest_world_z": 0.824807198665629,
+      "payload_body_aabb_min": [
+        0.15120561819422357,
+        -0.657496849638124,
+        0.12177072792245675
+      ],
+      "payload_body_aabb_max": [
+        0.23942629179796768,
+        -0.5394719565711231,
+        0.3163348913516276
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6283585166729703,
+        9.184032153531126,
+        4.131250971010026,
+        0.06315431910747756,
+        0.46865022614941476,
+        -1.0604610915899461e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8462253502682453,
+        12.404467568963593,
+        6.3575675744013225,
+        0.4148702782413426,
+        1.4955930040908334,
+        0.13861641277773465
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.493865956062958,
+        12.978784969046954,
+        6.454416174744783,
+        0.5421402127281716,
+        1.7428655226735636,
+        0.1561206465990458
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010577816878353066,
+        0.1550558446120449,
+        0.07946959468001653,
+        0.005185878478016782,
+        0.018694912551135416,
+        0.0017327051597216831
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.7815246637063279,
+        0.9087106786263748
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.792950689258937,
+          "all_payload_vertices_radius_max_m": 0.8452513789596375,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8412337990625703,
+          "all_payload_vertices_radius_max_m": 0.8933947165293612,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8606019453387574,
+          "all_payload_vertices_radius_max_m": 0.9127079543196396,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8897065885865222,
+          "all_payload_vertices_radius_max_m": 0.9417315675987437,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9188688259091611,
+          "all_payload_vertices_radius_max_m": 0.9708145450834739,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.91308793412189e-09,
+      "orientation_error_rad": 3.041274298261222e-09,
+      "q_rad": [
+        -1.570703695413623,
+        2.1861636671993656,
+        -2.1699647604239587,
+        -0.0005818616282551855,
+        0.9654911992801243,
+        0.006529304032504712
+      ],
+      "gripper_body": [
+        0.2000000000015036,
+        -0.4999999983156984,
+        0.39999999909278927
+      ],
+      "payload_lowest_world_z": 0.6399464895736073,
+      "payload_root_body": [
+        0.1970713733159871,
+        -0.605099053314261,
+        0.233694776885539
+      ],
+      "payload_highest_world_z": 0.8315127694656552,
+      "payload_body_aabb_min": [
+        0.15120561820079245,
+        -0.681286601706892,
+        0.13161420138307844
+      ],
+      "payload_body_aabb_max": [
+        0.2394262918020819,
+        -0.554328422607897,
+        0.3229915134769448
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6181143762061596,
+        9.032896636627417,
+        4.248784217992829,
+        0.058541542510032255,
+        0.5368234606358149,
+        -4.004930587689533e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8439283727427813,
+        12.369012697388364,
+        6.641882668590512,
+        0.4028413580848241,
+        1.715287694488924,
+        0.15772706893526883
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.489775097702774,
+        12.963026654262972,
+        6.754518185970131,
+        0.519334966808778,
+        1.944481635337769,
+        0.17383737688589493
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010549104659284766,
+        0.15461265871735455,
+        0.0830235333573814,
+        0.005035516976060301,
+        0.02144109618111155,
+        0.0019715883616908602
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.7588687650296778,
+        0.894036992982197
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7767261708947185,
+          "all_payload_vertices_radius_max_m": 0.8306470826978916,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8249259882334813,
+          "all_payload_vertices_radius_max_m": 0.8787362969880778,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8442645454281918,
+          "all_payload_vertices_radius_max_m": 0.8980304232620628,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8733282473235365,
+          "all_payload_vertices_radius_max_m": 0.9270277144153355,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9024532300786168,
+          "all_payload_vertices_radius_max_m": 0.9560868817654604,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 0.001474035222633486,
+      "orientation_error_rad": 0.0071164564626972305,
+      "q_rad": [
+        -1.5707058574256376,
+        2.2628043474298436,
+        -2.4082296880231544,
+        -0.000499813078489807,
+        1.219998954319697,
+        0.006369536162289163
+      ],
+      "gripper_body": [
+        0.1999997389483274,
+        -0.4989143466343686,
+        0.4190029360406125
+      ],
+      "payload_lowest_world_z": 0.6495187445835076,
+      "payload_root_body": [
+        0.19707129414338617,
+        -0.5881355562767016,
+        0.24366664455981224
+      ],
+      "payload_highest_world_z": 0.8442064972970593,
+      "payload_body_aabb_min": [
+        0.15120565166718325,
+        -0.6581591795592557,
+        0.14138478337201565
+      ],
+      "payload_body_aabb_max": [
+        0.2394261342608845,
+        -0.5394766011810402,
+        0.33578465308210725
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6304483070078315,
+        9.212712003099059,
+        4.029254158364392,
+        0.06499136011301858,
+        0.4736683002576931,
+        -1.0119859441433225e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8485374107362869,
+        12.435517140711582,
+        6.233118169668467,
+        0.4159979651096291,
+        1.5117659723800698,
+        0.14002211919661467
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.497938958870019,
+        13.051777598191942,
+        6.277137391032361,
+        0.548063703107482,
+        1.7577760941385292,
+        0.1574326815492137
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010606717634203585,
+        0.15544396425889478,
+        0.07791397712085583,
+        0.005199974563870364,
+        0.01889707465475087,
+        0.0017502764899576834
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.7813779719602094,
+        0.9091858052117351
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7933175418032737,
+          "all_payload_vertices_radius_max_m": 0.8457511808592366,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8415801651478954,
+          "all_payload_vertices_radius_max_m": 0.8938754830398657,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8609407385327904,
+          "all_payload_vertices_radius_max_m": 0.9131816395886074,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8900346210164687,
+          "all_payload_vertices_radius_max_m": 0.9421951488066121,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9191867590160723,
+          "all_payload_vertices_radius_max_m": 0.9712685982711939,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 4.607914501241972e-12,
+      "orientation_error_rad": 7.286727299929254e-12,
+      "q_rad": [
+        -1.57070387043842,
+        2.2121190666776154,
+        -2.2979886932472042,
+        -0.0005460702462542613,
+        1.0675597192551745,
+        0.006461430409116128
+      ],
+      "gripper_body": [
+        0.19999999999999785,
+        -0.49999999999604,
+        0.41999999999764387
+      ],
+      "payload_lowest_world_z": 0.6598995464790718,
+      "payload_root_body": [
+        0.19707137331111962,
+        -0.6050990544899721,
+        0.25369477747154423
+      ],
+      "payload_highest_world_z": 0.8514658265000028,
+      "payload_body_aabb_min": [
+        0.15120561819422232,
+        -0.6812866026910311,
+        0.15161420194999004
+      ],
+      "payload_body_aabb_max": [
+        0.23942629179796637,
+        -0.5543284238503472,
+        0.3429915141678184
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6217225792510704,
+        9.083712258424226,
+        4.16108987995819,
+        0.061494109609355085,
+        0.536827411845903,
+        -4.004916170243129e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8475365761144574,
+        12.418962504967872,
+        6.526966991411224,
+        0.4086660990770019,
+        1.7153071556713781,
+        0.15772708196139795
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.4961359058509838,
+        13.057316672927179,
+        6.584744589467249,
+        0.532481002085029,
+        1.9444876401621394,
+        0.17383739168335316
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010594207201430717,
+        0.1552370313120984,
+        0.0815870873926403,
+        0.005108326238462524,
+        0.021441339445892226,
+        0.0019715885245174744
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.7593693098490335,
+        0.8945640845761321
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7772695971655369,
+          "all_payload_vertices_radius_max_m": 0.8312003434165465,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8254484071478001,
+          "all_payload_vertices_radius_max_m": 0.8792693666990146,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8447791967945388,
+          "all_payload_vertices_radius_max_m": 0.8985559874282106,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8738318597120416,
+          "all_payload_vertices_radius_max_m": 0.9275425745133147,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9029464805617129,
+          "all_payload_vertices_radius_max_m": 0.9565916540125617,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.52,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 0.0030696789720311662,
+      "orientation_error_rad": 0.012946794787544662,
+      "q_rad": [
+        -1.5707095605427523,
+        2.3654335599697243,
+        -2.5166892414199875,
+        -0.0004970125826242348,
+        1.219998954319697,
+        0.006362738231876788
+      ],
+      "gripper_body": [
+        0.19999954636715392,
+        -0.5175382958213929,
+        0.39816616758601675
+      ],
+      "payload_lowest_world_z": 0.6294146468012326,
+      "payload_root_body": [
+        0.19707123968651133,
+        -0.6077802607342171,
+        0.22335304468640846
+      ],
+      "payload_highest_world_z": 0.8239553653188726,
+      "payload_body_aabb_min": [
+        0.15120568468468493,
+        -0.6782092012215731,
+        0.1210591684534022
+      ],
+      "payload_body_aabb_max": [
+        0.23942601673781228,
+        -0.5589922768674306,
+        0.31531709975342676
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6630259501551015,
+        9.69611083461303,
+        4.025940299791321,
+        0.06497340134722661,
+        0.4777593835988796,
+        -9.724500732111174e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8877943958996661,
+        13.017892743320514,
+        6.236554816047224,
+        0.41563940655372145,
+        1.5249477669703182,
+        0.14116876489147367
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.567142485904733,
+        13.549415861646919,
+        6.2771382156808455,
+        0.5477238880960281,
+        1.7699217945722538,
+        0.15850192466135057
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.011097429948745827,
+        0.16272365929150642,
+        0.0779569352005903,
+        0.005195492581921518,
+        0.019061847087128977,
+        0.0017646095611434209
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.761412654736835,
+        0.8897914908307689
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7738676368827831,
+          "all_payload_vertices_radius_max_m": 0.8264396439625468,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8220664181061201,
+          "all_payload_vertices_radius_max_m": 0.8744992969673828,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8414047933801776,
+          "all_payload_vertices_radius_max_m": 0.8937827669573011,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8704684211050447,
+          "all_payload_vertices_radius_max_m": 0.9227651682199286,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.899593529300361,
+          "all_payload_vertices_radius_max_m": 0.9518106307717185,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.52,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.9274851832525937e-09,
+      "orientation_error_rad": 2.9891914016990415e-09,
+      "q_rad": [
+        -1.5707074190735415,
+        2.320180474948831,
+        -2.417348601987842,
+        -0.0005402092202031506,
+        1.078858213148121,
+        0.006450472926388498
+      ],
+      "gripper_body": [
+        0.19999999999984944,
+        -0.5199999982927513,
+        0.39999999910529277
+      ],
+      "payload_lowest_world_z": 0.6401231288556549,
+      "payload_root_body": [
+        0.197071373311221,
+        -0.6250990532825949,
+        0.23369477689258727
+      ],
+      "payload_highest_world_z": 0.8316894087498337,
+      "payload_body_aabb_min": [
+        0.1512056181944445,
+        -0.7012866016713084,
+        0.13161420138977953
+      ],
+      "payload_body_aabb_max": [
+        0.23942629179802224,
+        -0.5743284225777371,
+        0.3229915134857841
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6573407185283622,
+        9.611668986467437,
+        4.14904290461685,
+        0.0617802154467863,
+        0.5368280520300561,
+        -4.004916259412253e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8898160257544406,
+        13.045655312185353,
+        6.511141298417329,
+        0.4090444283046318,
+        1.7153103190386785,
+        0.1577270699880434
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.5706700417297932,
+        13.600689741638764,
+        6.563021645819809,
+        0.5335935675036123,
+        1.9444886305558071,
+        0.17383737825360435
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.011122700321930508,
+        0.16307069140231692,
+        0.08138926623021661,
+        0.005113055353807897,
+        0.02144137898798348,
+        0.0019715883748505423
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.7394791231962903,
+        0.8747533393922373
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7575157195437869,
+          "all_payload_vertices_radius_max_m": 0.8114802875346869,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8056236622864158,
+          "all_payload_vertices_radius_max_m": 0.8594784692339069,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8249298474341384,
+          "all_payload_vertices_radius_max_m": 0.8787402527962246,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.853949006156464,
+          "all_payload_vertices_radius_max_m": 0.9076928010598861,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8830337236162127,
+          "all_payload_vertices_radius_max_m": 0.936711273716459,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": -1.0,
+      "desired_side_extension_m": 0.52,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 0.0008514728714700525,
+      "orientation_error_rad": 0.003020143419608317,
+      "q_rad": [
+        -1.570707755835315,
+        2.385555988862489,
+        -2.6268850174942653,
+        -0.0005064370998067881,
+        1.219998954319697,
+        0.0063676379577134665
+      ],
+      "gripper_body": [
+        0.19999989575476296,
+        -0.5193070733957467,
+        0.41950516794657144
+      ],
+      "payload_lowest_world_z": 0.6599203733878028,
+      "payload_root_body": [
+        0.1970713467261119,
+        -0.6249079173431937,
+        0.25351811873058416
+      ],
+      "payload_highest_world_z": 0.8513574078290584,
+      "payload_body_aabb_min": [
+        0.15120563963021516,
+        -0.701285169153497,
+        0.15145698232471783
+      ],
+      "payload_body_aabb_max": [
+        0.23942623188685955,
+        -0.5740714545380613,
+        0.3427100462761266
+      ],
+      "arm_only_gravity_torque_nm": [
+        0.6645401820870451,
+        9.716193276541986,
+        3.957438860377768,
+        0.06469049822706527,
+        0.5388117578140785,
+        -3.8135973956581956e-06
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8970157316977325,
+        13.14930444481057,
+        6.262642447250134,
+        0.4091825909167529,
+        1.721713798897605,
+        0.1582818323043566
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.5833610396778004,
+        13.734689622056798,
+        6.27713729823132,
+        0.5415703527777532,
+        1.950297854745031,
+        0.1743476125824397
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.011212696646221657,
+        0.16436630556013213,
+        0.07828303059062668,
+        0.005114782386459411,
+        0.021521422486220063,
+        0.0019785229038044574
+      ],
+      "non_arm_near_side_support_m": 0.38586310846975846,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4158631084697586,
+      "payload_radial_range_at_that_center_m": [
+        0.7399888493019483,
+        0.8755122355765061
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7582466804390429,
+          "all_payload_vertices_radius_max_m": 0.8122645601985435,
+          "sufficient_chassis_side_support_plane_gap_m": -0.035863108469758376
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8063337457459352,
+          "all_payload_vertices_radius_max_m": 0.8602431677674163,
+          "sufficient_chassis_side_support_plane_gap_m": 0.014136891530241336
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8256322074516034,
+          "all_payload_vertices_radius_max_m": 0.879497665980367,
+          "sufficient_chassis_side_support_plane_gap_m": 0.03413689153024135
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8546403867478491,
+          "all_payload_vertices_radius_max_m": 0.9084398161829461,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0641368915302416
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8837147952476627,
+          "all_payload_vertices_radius_max_m": 0.9374484811380817,
+          "sufficient_chassis_side_support_plane_gap_m": 0.0941368915302414
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.4,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 9.687063429537113e-08,
+      "orientation_error_rad": 6.534948198317851e-07,
+      "q_rad": [
+        1.570914042210586,
+        1.7647770995760477,
+        -1.5040600446453036,
+        -0.0007486514147152459,
+        0.7209724705671163,
+        0.006780129700547741
+      ],
+      "gripper_body": [
+        0.2000000044000115,
+        0.39999994036362346,
+        0.3999999237893559
+      ],
+      "payload_lowest_world_z": 0.6317174851172221,
+      "payload_root_body": [
+        0.2029286341105035,
+        0.5050991034937615,
+        0.23369476997077968
+      ],
+      "payload_highest_world_z": 0.8222782047306992,
+      "payload_body_aabb_min": [
+        0.16057371554724392,
+        0.45432845858066195,
+        0.13161419826547804
+      ],
+      "payload_body_aabb_max": [
+        0.24879439043142654,
+        0.5812866927744554,
+        0.3229914840228188
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.4432159216836223,
+        6.562828370081402,
+        4.284170974064938,
+        -0.02703002203088982,
+        0.5251852041838717,
+        0.00010580578746589159
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.6357233950836438,
+        9.40507319339659,
+        6.662928855511991,
+        0.3001152098394143,
+        1.6777429079688608,
+        0.14109032356550377
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.1227394869993426,
+        9.989520694385778,
+        6.955331850790478,
+        0.46649909246888827,
+        1.9444605675944018,
+        0.1738374846137453
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.007946542438545548,
+        0.11756341491745737,
+        0.08328661069389989,
+        0.003751440122992679,
+        0.02097178634961076,
+        0.001763629044568797
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8554865954979768,
+        0.973869468249261
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8705941218178033,
+          "all_payload_vertices_radius_max_m": 0.9198405458450737,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.9190861319121016,
+          "all_payload_vertices_radius_max_m": 0.9683837574804901,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9385272478968972,
+          "all_payload_vertices_radius_max_m": 0.9878417335487605,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9677316316017508,
+          "all_payload_vertices_radius_max_m": 1.0170681263924766,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9969832629288462,
+          "all_payload_vertices_radius_max_m": 1.0463383090121399,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.4,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 9.64047730699795e-08,
+      "orientation_error_rad": 6.06833272570256e-07,
+      "q_rad": [
+        1.5709138182496847,
+        1.7613523184931594,
+        -1.5789473797263895,
+        -0.000689222945687622,
+        0.7992846137004119,
+        0.006698154216249347
+      ],
+      "gripper_body": [
+        0.2000000041195054,
+        0.3999999424482337,
+        0.4199999227685029
+      ],
+      "payload_lowest_world_z": 0.6516705349674983,
+      "payload_root_body": [
+        0.20292863700541391,
+        0.5050990976212089,
+        0.2536947639771914
+      ],
+      "payload_highest_world_z": 0.8422312566022825,
+      "payload_body_aabb_min": [
+        0.16057371775537205,
+        0.45432845410247796,
+        0.15161419193785763
+      ],
+      "payload_body_aabb_max": [
+        0.24879439492185618,
+        0.5812866832923016,
+        0.3429914796590834
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.4423254849485562,
+        6.552423465863018,
+        4.29721998760547,
+        -0.03018077069458057,
+        0.5251804965505128,
+        0.00010580579490165973
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.6348329549739589,
+        9.395533945550236,
+        6.681351817722872,
+        0.3110428499218347,
+        1.677736069284851,
+        0.14109032527865642
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.121169828426372,
+        10.02456607764607,
+        6.923246856280423,
+        0.486602606480507,
+        1.9444677584296237,
+        0.17383749017740188
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.007935411937174485,
+        0.11744417431937795,
+        0.0835168977215359,
+        0.0038880356240229333,
+        0.02097170086606064,
+        0.0017636290659832053
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8556759913637676,
+        0.9740135828787152
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8707638723984951,
+          "all_payload_vertices_radius_max_m": 0.9200038315364915,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.9192372980926089,
+          "all_payload_vertices_radius_max_m": 0.968529719495381,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9386715110711897,
+          "all_payload_vertices_radius_max_m": 0.9879812369409614,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9678660542320808,
+          "all_payload_vertices_radius_max_m": 1.0171984000428718,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9971084154558538,
+          "all_payload_vertices_radius_max_m": 1.0464598633259492,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.2,
+      "success": true,
+      "position_error_m": 3.1857514199954307e-12,
+      "orientation_error_rad": 5.210941034508089e-12,
+      "q_rad": [
+        1.5708961651286795,
+        2.0201968715249405,
+        -1.9263822270425806,
+        -0.000527322973411102,
+        1.0878754489109845,
+        0.00645823851943746
+      ],
+      "gripper_body": [
+        0.19999999999999674,
+        0.4499999999972769,
+        0.3999999999983466
+      ],
+      "payload_lowest_world_z": 0.6147991079263008,
+      "payload_root_body": [
+        0.20292862668887143,
+        0.5199643234021296,
+        0.21612985085641756
+      ],
+      "payload_highest_world_z": 0.8095361711532933,
+      "payload_body_aabb_min": [
+        0.1605737082020256,
+        0.47376076192799144,
+        0.11468627416991622
+      ],
+      "payload_body_aabb_max": [
+        0.2487943818057669,
+        0.5821594687782019,
+        0.3105142226444815
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.5463166842731352,
+        8.075432132062225,
+        4.14143470597578,
+        -0.0398903492387762,
+        0.38249038210205655,
+        9.200165119970915e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7390944231718728,
+        10.920660682672299,
+        6.205826092524498,
+        0.3373878036362165,
+        1.2183049030334299,
+        0.10301770034383839
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3050087429713269,
+        11.454530838734238,
+        6.430144367017069,
+        0.5389738963834242,
+        1.5244378891032153,
+        0.13691773476389313
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.00923868028964841,
+        0.13650825853340373,
+        0.07757282615655622,
+        0.004217347545452706,
+        0.015228811287917874,
+        0.00128772125429798
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8547143310300341,
+        0.9519944684941933
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8560564829317251,
+          "all_payload_vertices_radius_max_m": 0.8977919014307372,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.9045147761736969,
+          "all_payload_vertices_radius_max_m": 0.9464918659486052,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9239440955249404,
+          "all_payload_vertices_radius_max_m": 0.9660090444295925,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9531323405821835,
+          "all_payload_vertices_radius_max_m": 0.9953207555050417,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9823694954913565,
+          "all_payload_vertices_radius_max_m": 1.0246723079885,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 5.499645968178275e-14,
+      "orientation_error_rad": 9.103428923820228e-14,
+      "q_rad": [
+        1.5708980557434566,
+        1.9849162008830727,
+        -1.8514232136900384,
+        -0.0005862812564950465,
+        0.94819712970945,
+        0.00655247622356717
+      ],
+      "gripper_body": [
+        0.20000000000000015,
+        0.4499999999999545,
+        0.39999999999996916
+      ],
+      "payload_lowest_world_z": 0.6216761929291496,
+      "payload_root_body": [
+        0.20292862668887857,
+        0.5379711784159414,
+        0.22403321318189762
+      ],
+      "payload_highest_world_z": 0.815266650784104,
+      "payload_body_aabb_min": [
+        0.1605737082020318,
+        0.48947195657328146,
+        0.12177072792364452
+      ],
+      "payload_body_aabb_max": [
+        0.24879438180577595,
+        0.6074968496397839,
+        0.3163348913529357
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.53727621238221,
+        7.942840883586491,
+        4.22457890834184,
+        -0.03566644384507747,
+        0.4561123121659476,
+        9.912178087312547e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7384897694822317,
+        10.912612702247772,
+        6.454768774205734,
+        0.3264718480826928,
+        1.4551868437779651,
+        0.12173281162642671
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3039416660484517,
+        11.456322201899264,
+        6.686085392064202,
+        0.5166548776282538,
+        1.742852634809486,
+        0.15612063051559028
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009231122118527895,
+        0.13640765877809716,
+        0.08068460967757167,
+        0.00408089810103366,
+        0.018189835547224566,
+        0.001521660145330334
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8302468835404396,
+        0.937556425184325
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8387183904056569,
+          "all_payload_vertices_radius_max_m": 0.8835955156272993,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.887104957396718,
+          "all_payload_vertices_radius_max_m": 0.9320769266641844,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.906508616755022,
+          "all_payload_vertices_radius_max_m": 0.951514451253533,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9356611953431702,
+          "all_payload_vertices_radius_max_m": 0.9807222291632859,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9648657278040899,
+          "all_payload_vertices_radius_max_m": 1.0099764505203561,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.7566644662964873e-08,
+      "orientation_error_rad": 6.79185277254061e-08,
+      "q_rad": [
+        1.5708999129224546,
+        1.9539793227543245,
+        -1.781474338795151,
+        -0.0006706172710269157,
+        0.8091850948407495,
+        0.006669548346516746
+      ],
+      "gripper_body": [
+        0.20000000011606486,
+        0.4499999860399426,
+        0.3999999893374332
+      ],
+      "payload_lowest_world_z": 0.6312758884696545,
+      "payload_root_body": [
+        0.2029286275900777,
+        0.5550990517845935,
+        0.23369477393521895
+      ],
+      "payload_highest_world_z": 0.8218366310967724,
+      "payload_body_aabb_min": [
+        0.16057370898097456,
+        0.5043284197252778,
+        0.13161419880937397
+      ],
+      "payload_body_aabb_max": [
+        0.2487943830755825,
+        0.6312866041392455,
+        0.3229915082836482
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.5290771714489458,
+        7.822493164535843,
+        4.297222546342089,
+        -0.030573604063254323,
+        0.5251785059581172,
+        0.00010580577809616437
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7382378922582669,
+        10.90941355240232,
+        6.6814960546452475,
+        0.3123091774066971,
+        1.6777325927033133,
+        0.1410902046089144
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3034560871118201,
+        11.463516301328205,
+        6.917012525831174,
+        0.4889140577735221,
+        1.9444692929313976,
+        0.17383737394023424
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009227973653228336,
+        0.136367669405029,
+        0.08351870068306559,
+        0.0039038647175837137,
+        0.020971657408791415,
+        0.00176362755761143
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8073677182761976,
+        0.9253038094678601
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8222767254373461,
+          "all_payload_vertices_radius_max_m": 0.8714561888960515,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8705885407060718,
+          "all_payload_vertices_radius_max_m": 0.9198350715046363,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8899654851812135,
+          "all_payload_vertices_radius_max_m": 0.9392341702748164,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9190809546614982,
+          "all_payload_vertices_radius_max_m": 0.9683786596030751,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9482515687459466,
+          "all_payload_vertices_radius_max_m": 0.9975738720202498,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.2,
+      "success": true,
+      "position_error_m": 3.8967019358020445e-10,
+      "orientation_error_rad": 6.229147675604588e-10,
+      "q_rad": [
+        1.5708959790464625,
+        2.031748699869133,
+        -2.0253845619299704,
+        -0.0005059887411244255,
+        1.1753259429821405,
+        0.006408129497361647
+      ],
+      "gripper_body": [
+        0.19999999999997195,
+        0.44999999967404536,
+        0.4199999997864668
+      ],
+      "payload_lowest_world_z": 0.6347521640835607,
+      "payload_root_body": [
+        0.2029286266886511,
+        0.5199643231924808,
+        0.23612985068775386
+      ],
+      "payload_highest_world_z": 0.8294892273093346,
+      "payload_body_aabb_min": [
+        0.1605737082018571,
+        0.4737607617034878,
+        0.134686273993054
+      ],
+      "payload_body_aabb_max": [
+        0.2487943818054431,
+        0.5821594686150062,
+        0.33051422246585005
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.5480345901020197,
+        8.103161948828225,
+        4.0995783193405835,
+        -0.04206556571211486,
+        0.38248751718184215,
+        9.200166461801901e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7408123289466368,
+        10.949256315451727,
+        6.151536232629756,
+        0.3419852718285481,
+        1.218301701664405,
+        0.1030176958442892
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.308037130328387,
+        11.525167241325848,
+        6.320277641214267,
+        0.5491435305751706,
+        1.5244433192771851,
+        0.1369177459982442
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009260154111832961,
+        0.1368657039431466,
+        0.07689420290787194,
+        0.004274815897856851,
+        0.015228771270805064,
+        0.001287721198053615
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8549002143767014,
+        0.9521206119305018
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8562302450911581,
+          "all_payload_vertices_radius_max_m": 0.8979392226112038,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.9046694458117275,
+          "all_payload_vertices_radius_max_m": 0.9466197976536683,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9240916813909059,
+          "all_payload_vertices_radius_max_m": 0.9661307266696642,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9532698357557172,
+          "all_payload_vertices_radius_max_m": 0.9954335189118988,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9824974930795458,
+          "all_payload_vertices_radius_max_m": 1.0247766586585574,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 9.787779732218432e-12,
+      "orientation_error_rad": 1.6026664569361704e-11,
+      "q_rad": [
+        1.5708978643576443,
+        1.9921697246810017,
+        -1.9427669360769024,
+        -0.0005546704920127783,
+        1.0322873144205231,
+        0.006494893052619691
+      ],
+      "gripper_body": [
+        0.1999999999999911,
+        0.44999999999181545,
+        0.41999999999463217
+      ],
+      "payload_lowest_world_z": 0.6416292492570855,
+      "payload_root_body": [
+        0.20292862668885212,
+        0.5379711784106068,
+        0.2440332131779624
+      ],
+      "payload_highest_world_z": 0.8352197071117106,
+      "payload_body_aabb_min": [
+        0.1605737082020094,
+        0.48947195656758424,
+        0.1417707279196605
+      ],
+      "payload_body_aabb_max": [
+        0.24879438180574065,
+        0.6074968496355717,
+        0.3363348913485945
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.5382954817733687,
+        7.960372198898829,
+        4.1973693962943015,
+        -0.03831700829290981,
+        0.45610902169215156,
+        9.912179395757826e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7395090388719927,
+        10.931009822254282,
+        6.419866352140754,
+        0.33345454572389954,
+        1.4551825238298643,
+        0.12173282131054944
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3057384827127123,
+        11.517638840520997,
+        6.597404697327217,
+        0.5306958286404265,
+        1.7428584302448038,
+        0.15612064306218398
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009243862985899909,
+        0.13663762277817854,
+        0.08024832940175942,
+        0.004168181821548744,
+        0.018189781547873304,
+        0.001521660266381868
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.830445658903712,
+        0.9377068948957507
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8389004097757126,
+          "all_payload_vertices_radius_max_m": 0.8837663196482745,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8872670735262154,
+          "all_payload_vertices_radius_max_m": 0.932229352110588,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.9066633579562707,
+          "all_payload_vertices_radius_max_m": 0.9516590922243505,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.935805440252241,
+          "all_payload_vertices_radius_max_m": 0.980856033170961,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9650001032905853,
+          "all_payload_vertices_radius_max_m": 1.0101011210586004,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.45,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 9.927471022069767e-14,
+      "orientation_error_rad": 1.7757451196148727e-13,
+      "q_rad": [
+        1.5708997143371979,
+        1.9575420944492687,
+        -1.8665984451811872,
+        -0.0006240361463694067,
+        0.8907464800030596,
+        0.006599019579404543
+      ],
+      "gripper_body": [
+        0.19999999999999965,
+        0.4499999999999194,
+        0.41999999999994203
+      ],
+      "payload_lowest_world_z": 0.6512289479880188,
+      "payload_root_body": [
+        0.20292862668887712,
+        0.5550990544926693,
+        0.2536947774730952
+      ],
+      "payload_highest_world_z": 0.8417896932629783,
+      "payload_body_aabb_min": [
+        0.16057370820203054,
+        0.5043284238531996,
+        0.15161420195149639
+      ],
+      "payload_body_aabb_max": [
+        0.24879438180577407,
+        0.6312866026932811,
+        0.34299151416961515
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.5294693653165273,
+        7.830862436782607,
+        4.283191015442657,
+        -0.03363220713506797,
+        0.5251744349267373,
+        0.00010580578812659398
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.7386300856848572,
+        10.918648611786448,
+        6.664041835904907,
+        0.3214068641171799,
+        1.6777266436082403,
+        0.14109020267367564
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.3041474680415908,
+        11.516356965782451,
+        6.847165097723815,
+        0.5063089089842003,
+        1.9444754181264592,
+        0.17383737579758948
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.009232876071060716,
+        0.1364831076473306,
+        0.08330052294881134,
+        0.0040175858014647485,
+        0.020971583045103003,
+        0.0017636275334209455
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8075793004299716,
+        0.9254649976426137
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8224671522009174,
+          "all_payload_vertices_radius_max_m": 0.8716386373609614,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8707582359050778,
+          "all_payload_vertices_radius_max_m": 0.9199983034105216,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8901275082679659,
+          "all_payload_vertices_radius_max_m": 0.9393902617833251,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9192320677302113,
+          "all_payload_vertices_radius_max_m": 0.9685245698566469,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9483924333901981,
+          "all_payload_vertices_radius_max_m": 0.9977101888317378,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.2,
+      "success": true,
+      "position_error_m": 0.004625965351138183,
+      "orientation_error_rad": 0.02449509322038241,
+      "q_rad": [
+        1.5708841683937897,
+        2.254673737120339,
+        -2.3174777175692007,
+        -0.0004888537310539508,
+        1.219998954319697,
+        0.006359337926158598
+      ],
+      "gripper_body": [
+        0.20000090064524792,
+        0.4966184389695539,
+        0.39684332459442895
+      ],
+      "payload_lowest_world_z": 0.6126675045421323,
+      "payload_root_body": [
+        0.20292893253831995,
+        0.5710652723074076,
+        0.2147419495736569
+      ],
+      "payload_highest_world_z": 0.8072979539625116,
+      "payload_body_aabb_min": [
+        0.16057428005429972,
+        0.5242877332429189,
+        0.11300354446174687
+      ],
+      "payload_body_aabb_max": [
+        0.24879431400515045,
+        0.6350970224704688,
+        0.3087027269844913
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6296751569875514,
+        9.29594443965494,
+        4.06474313753653,
+        -0.0430952818676469,
+        0.40090009284464656,
+        9.378136008244718e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8400882786913721,
+        12.400184131757447,
+        6.140978485484288,
+        0.3428066428671866,
+        1.2774163185015275,
+        0.10702709018184242
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.4830351293094155,
+        12.873651874735067,
+        6.262367825609668,
+        0.5518878218424077,
+        1.5794467009507802,
+        0.14174949381231955
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010501103483642152,
+        0.1550023016469681,
+        0.0767622310685536,
+        0.004285083035839832,
+        0.015967703981269094,
+        0.0013378386272730302
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.8036824127653864,
+        0.9029105549912069
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.8067059015592924,
+          "all_payload_vertices_radius_max_m": 0.8490149065606776,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8549736977956326,
+          "all_payload_vertices_radius_max_m": 0.8974260491979015,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8743353297488534,
+          "all_payload_vertices_radius_max_m": 0.9168804281249749,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.9034299287903211,
+          "all_payload_vertices_radius_max_m": 0.9461046601873192,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9325819018301463,
+          "all_payload_vertices_radius_max_m": 0.9753864828335709,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 3.4270487298876266e-12,
+      "orientation_error_rad": 5.4377621660475495e-12,
+      "q_rad": [
+        1.5708874895299834,
+        2.2370961227562485,
+        -2.2836100585354298,
+        -0.0005206879334061114,
+        1.1282040192624339,
+        0.0064247295662829
+      ],
+      "gripper_body": [
+        0.1999999999999984,
+        0.4999999999970075,
+        0.3999999999983298
+      ],
+      "payload_lowest_world_z": 0.6212345947396284,
+      "payload_root_body": [
+        0.20292862668887665,
+        0.5879711784139354,
+        0.2240332131807286
+      ],
+      "payload_highest_world_z": 0.8148250525944726,
+      "payload_body_aabb_min": [
+        0.16057370820202993,
+        0.5394719565711544,
+        0.12177072792245908
+      ],
+      "payload_body_aabb_max": [
+        0.24879438180577398,
+        0.6574968496381532,
+        0.31633489135163045
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6283585166730425,
+        9.277158760527351,
+        4.134073919103982,
+        -0.0410131613154251,
+        0.4561050095596743,
+        9.912180605566815e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8462253505265394,
+        12.49160611903412,
+        6.337246620404622,
+        0.33855175627715356,
+        1.4551772864502894,
+        0.12173281007278297
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.493865956027927,
+        12.97878496905056,
+        6.454416174746778,
+        0.5421401839552454,
+        1.742865522672127,
+        0.15612062816465003
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010577816881581742,
+        0.1561450764879265,
+        0.07921558275505777,
+        0.004231896953464419,
+        0.018189716080628617,
+        0.0015216601259097871
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.7822292666745241,
+        0.8890509771259529
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7905262712167851,
+          "all_payload_vertices_radius_max_m": 0.835307539771048,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8387124945017892,
+          "all_payload_vertices_radius_max_m": 0.8835898626217469,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8580450999878817,
+          "all_payload_vertices_radius_max_m": 0.9029627171083451,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8870994935084305,
+          "all_payload_vertices_radius_max_m": 0.9320716727952508,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9162148378806217,
+          "all_payload_vertices_radius_max_m": 0.961239967372787,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.9099828759997964e-09,
+      "orientation_error_rad": 3.0405461038683554e-09,
+      "q_rad": [
+        1.5708889581759056,
+        2.1861636672165745,
+        -2.1699647604605476,
+        -0.0005818616237846909,
+        0.9654911993002844,
+        0.006529304025845639
+      ],
+      "gripper_body": [
+        0.19999999999829432,
+        0.49999999831845815,
+        0.3999999990942138
+      ],
+      "payload_lowest_world_z": 0.6308342929126969,
+      "payload_root_body": [
+        0.20292862668321215,
+        0.6050990533169056,
+        0.23369477688688037
+      ],
+      "payload_highest_world_z": 0.8213950380661472,
+      "payload_body_aabb_min": [
+        0.16057370819725147,
+        0.5543284226104888,
+        0.1316142013844197
+      ],
+      "payload_body_aabb_max": [
+        0.24879438179810345,
+        0.6812866017096108,
+        0.3229915134783143
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6181143762115635,
+        9.127276564255252,
+        4.248386521447058,
+        -0.03624469894586768,
+        0.5251704540443093,
+        0.00010580579828358902
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8439283730073525,
+        12.458872583464782,
+        6.618928320866358,
+        0.32788351483569844,
+        1.6777209365174661,
+        0.14109018697446193
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.4897750976786044,
+        12.963026654357028,
+        6.754518185944276,
+        0.5193349378479963,
+        1.9444816353360976,
+        0.17383735632148734
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010549104662591905,
+        0.15573590729330977,
+        0.08273660401082947,
+        0.0040985439354462305,
+        0.020971511706468327,
+        0.0017636273371807742
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.7594915528693751,
+        0.8768991437359205
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7741727355115927,
+          "all_payload_vertices_radius_max_m": 0.8232646724487382,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8222706453367702,
+          "all_payload_vertices_radius_max_m": 0.8714502773445026,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8415718924083474,
+          "all_payload_vertices_radius_max_m": 0.8907805183525757,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8705829104431093,
+          "all_payload_vertices_radius_max_m": 0.9198295770769133,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8996588007791746,
+          "all_payload_vertices_radius_max_m": 0.9489378113735918,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 0.0014740352346111671,
+      "orientation_error_rad": 0.0071164564006742335,
+      "q_rad": [
+        1.5708867960703874,
+        2.2628043473668638,
+        -2.4082296878982055,
+        -0.0004998128849652905,
+        1.219998954319697,
+        0.0063695359906321665
+      ],
+      "gripper_body": [
+        0.20000026108191188,
+        0.4989143466224251,
+        0.4190029360359176
+      ],
+      "payload_lowest_world_z": 0.6407947227381499,
+      "payload_root_body": [
+        0.2029287058620202,
+        0.5881355562541526,
+        0.24366664454930592
+      ],
+      "payload_highest_world_z": 0.8342334988312412,
+      "payload_body_aabb_min": [
+        0.1605738657473858,
+        0.539476601158462,
+        0.14138478336297583
+      ],
+      "payload_body_aabb_max": [
+        0.2487943483271105,
+        0.6581591795345955,
+        0.3357846530735563
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6304483069824585,
+        9.309886944601166,
+        4.038473448835691,
+        -0.043254266717727016,
+        0.46117564575481185,
+        9.961224626564395e-05
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8485374109611836,
+        12.528446966647934,
+        6.221398125265437,
+        0.34024234881919746,
+        1.471517925086331,
+        0.12315455670521741
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.4979389587876935,
+        13.051777597808114,
+        6.277137391060989,
+        0.54806367439125,
+        1.7577760940234946,
+        0.15743266293649882
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010606717637014795,
+        0.15660558708309918,
+        0.07776747656581796,
+        0.004253029360239968,
+        0.01839397406357914,
+        0.0015394319588152177
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.7818068087001556,
+        0.8892821192814403
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7905687964798104,
+          "all_payload_vertices_radius_max_m": 0.8355700724343672,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8387324170952057,
+          "all_payload_vertices_radius_max_m": 0.8838259779983401,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8580566914219003,
+          "all_payload_vertices_radius_max_m": 0.9031875563392732,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8870992689689225,
+          "all_payload_vertices_radius_max_m": 0.932286225731939,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.9162035474262775,
+          "all_payload_vertices_radius_max_m": 0.9614434089888388,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.5,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 4.5229492123059585e-12,
+      "orientation_error_rad": 7.05263679667146e-12,
+      "q_rad": [
+        1.5708887831513818,
+        2.21211906667829,
+        -2.297988693248714,
+        -0.0005460702462598712,
+        1.0675597192562438,
+        0.006461430409125455
+      ],
+      "gripper_body": [
+        0.19999999999999837,
+        0.4999999999961062,
+        0.41999999999769877
+      ],
+      "payload_lowest_world_z": 0.6507873497982165,
+      "payload_root_body": [
+        0.20292862668887657,
+        0.6050990544899995,
+        0.2536947774715745
+      ],
+      "payload_highest_world_z": 0.8413480950729016,
+      "payload_body_aabb_min": [
+        0.16057370820202982,
+        0.5543284238503796,
+        0.1516142019500189
+      ],
+      "payload_body_aabb_max": [
+        0.24879438180577387,
+        0.6812866026910437,
+        0.3429915141678568
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6217225792512426,
+        9.182485270520798,
+        4.167335616412896,
+        -0.0394747896455372,
+        0.5251665725726428,
+        0.00010580581274715305
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.847536576372846,
+        12.51494715899911,
+        6.512830972051283,
+        0.3337446633166542,
+        1.677715333035767,
+        0.14109019896732553
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.496135905816172,
+        13.057316672932204,
+        6.584744589467679,
+        0.5324809734822531,
+        1.9444876401595457,
+        0.17383737111906536
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.010594207204660575,
+        0.15643683948748888,
+        0.08141038715064104,
+        0.004171808291458178,
+        0.020971441662947087,
+        0.0017636274870915692
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.759728064522991,
+        0.8770792795895558
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7743863719298879,
+          "all_payload_vertices_radius_max_m": 0.8234685043349804,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8224610251520496,
+          "all_payload_vertices_radius_max_m": 0.8716326850720345,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8417537002232486,
+          "all_payload_vertices_radius_max_m": 0.8909549942098997,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8707525611547671,
+          "all_payload_vertices_radius_max_m": 0.9199927704825074,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8998170667839335,
+          "all_payload_vertices_radius_max_m": 0.9490904033718792,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.52,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.3,
+      "success": true,
+      "position_error_m": 0.003069678929502649,
+      "orientation_error_rad": 0.012946795039630667,
+      "q_rad": [
+        1.5708830928039805,
+        2.365433560302661,
+        -2.5166892420051483,
+        -0.0004970120886169706,
+        1.219998954319697,
+        0.0063627378354345725
+      ],
+      "gripper_body": [
+        0.20000045371640288,
+        0.5175382958768533,
+        0.39816616758277745
+      ],
+      "payload_lowest_world_z": 0.6203380396844982,
+      "payload_root_body": [
+        0.2029287603333033,
+        0.6077802608343285,
+        0.22335304470515108
+      ],
+      "payload_highest_world_z": 0.8136452199857995,
+      "payload_body_aabb_min": [
+        0.16057398328846398,
+        0.558992276958955,
+        0.12105916847535886
+      ],
+      "payload_body_aabb_max": [
+        0.2487943153070898,
+        0.6782092013439328,
+        0.3153170997663709
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6630259502283515,
+        9.783765700189665,
+        4.035575849427866,
+        -0.043271065558449805,
+        0.46531469720634067,
+        0.00010001231052133956
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8877943962723795,
+        13.099578955740025,
+        6.225477076981236,
+        0.3400252452521147,
+        1.4848528020834912,
+        0.12431447822565794
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.5671424861051904,
+        13.549415863513033,
+        6.277138215745893,
+        0.5477238586873961,
+        1.7699217951326602,
+        0.15850190596179176
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.011097429953404745,
+        0.16374473694675032,
+        0.07781846346226545,
+        0.004250315565651434,
+        0.01856066002604364,
+        0.0015539309778207244
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.7623932847785486,
+        0.8702945355637439
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7714898166810965,
+          "all_payload_vertices_radius_max_m": 0.8166462369676346,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8195871958983538,
+          "all_payload_vertices_radius_max_m": 0.8648442579715374,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8388884463715568,
+          "all_payload_vertices_radius_max_m": 0.884179504525815,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8678996521017978,
+          "all_payload_vertices_radius_max_m": 0.9132433488814355,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8969759120406514,
+          "all_payload_vertices_radius_max_m": 0.9423730384786597,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.52,
+      "desired_body_z": 0.4,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 1.877232236640216e-09,
+      "orientation_error_rad": 2.912303455991702e-09,
+      "q_rad": [
+        1.570885234516259,
+        2.320180475433746,
+        -2.417348603028488,
+        -0.0005402092200828138,
+        1.0788582137807403,
+        0.006450472926095814
+      ],
+      "gripper_body": [
+        0.2000000000001481,
+        0.5199999983372332,
+        0.39999999912867495
+      ],
+      "payload_lowest_world_z": 0.6306576536571102,
+      "payload_root_body": [
+        0.20292862668878625,
+        0.6250990533142897,
+        0.23369477690788862
+      ],
+      "payload_highest_world_z": 0.8212183988158053,
+      "payload_body_aabb_min": [
+        0.16057370820198294,
+        0.5743284226111144,
+        0.13161420140459745
+      ],
+      "payload_body_aabb_max": [
+        0.24879438180556757,
+        0.7012866016981637,
+        0.3229915135037432
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6573407186389096,
+        9.701148047969536,
+        4.156013995122041,
+        -0.039809465176772016,
+        0.5251659477239832,
+        0.00010580581249218166
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8898160261321257,
+        13.130614250492702,
+        6.497967651081062,
+        0.3341854941963564,
+        1.677714448115937,
+        0.14109018785567107
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.570670041906991,
+        13.600689743310118,
+        6.563021644599136,
+        0.5335935390219384,
+        1.9444886304055335,
+        0.17383735767634956
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.011122700326651571,
+        0.16413267813115878,
+        0.08122459563851328,
+        0.004177318677454455,
+        0.020971430601449213,
+        0.0017636273481958884
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.7404196262146104,
+        0.8575884737799924
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7550000535151711,
+          "all_payload_vertices_radius_max_m": 0.8040498417668749,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.80300108900776,
+          "all_payload_vertices_radius_max_m": 0.8521485148687223,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8222682142729,
+          "all_payload_vertices_radius_max_m": 0.8714479150999341,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.851232293259241,
+          "all_payload_vertices_radius_max_m": 0.900454349059741,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8802657655340397,
+          "all_payload_vertices_radius_max_m": 0.9295238570091579,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    },
+    {
+      "side": 1.0,
+      "desired_side_extension_m": 0.52,
+      "desired_body_z": 0.42,
+      "tilt_change_rad": -0.4,
+      "success": true,
+      "position_error_m": 0.0008514729084370874,
+      "orientation_error_rad": 0.0030201431590525327,
+      "q_rad": [
+        1.5708848977334235,
+        2.38555598847092,
+        -2.626885016842149,
+        -0.0005064371134562622,
+        1.219998954319697,
+        0.006367637957459994
+      ],
+      "gripper_body": [
+        0.20000010425734233,
+        0.5193070733389261,
+        0.419505167962531
+      ],
+      "payload_lowest_world_z": 0.6504553986204326,
+      "payload_root_body": [
+        0.20292865329083556,
+        0.624907917243052,
+        0.25351811871906826
+      ],
+      "payload_highest_world_z": 0.8408947145817791,
+      "payload_body_aabb_min": [
+        0.16057376812940577,
+        0.574071454443916,
+        0.15145698231126897
+      ],
+      "payload_body_aabb_max": [
+        0.24879436038896646,
+        0.7012851690364278,
+        0.3427100462736409
+      ],
+      "arm_only_gravity_torque_nm": [
+        -0.6645401819867548,
+        9.808174948334262,
+        3.9734506917614105,
+        -0.04353686001990565,
+        0.5271686919886666,
+        0.00010599989247215072
+      ],
+      "gravity_plus_payload_absolute_upper_nm": [
+        0.8970157318157606,
+        13.238502375044025,
+        6.261527316328838,
+        0.33586545720684974,
+        1.6841787121655103,
+        0.14165447101799436
+      ],
+      "gravity_plus_payload_tilt_cone_012_upper_nm": [
+        1.5833610394028126,
+        13.73468962018354,
+        6.277137298233094,
+        0.5415703253220385,
+        1.9502978542412204,
+        0.17434759191432017
+      ],
+      "static_position_error_required_at_K80_rad": [
+        0.011212696647697007,
+        0.16548127968805032,
+        0.07826909145411047,
+        0.0041983182150856216,
+        0.021052233902068878,
+        0.0017706808877249295
+      ],
+      "non_arm_near_side_support_m": 0.3756408068649005,
+      "sufficient_axis_aligned_chassis_center_distance_m": 1.4056408068649004,
+      "payload_radial_range_at_that_center_m": [
+        0.740663285151412,
+        0.858128237888894
+      ],
+      "payload_all_inside_inner_radius_098": true,
+      "dock_center_distance_cases": [
+        {
+          "center_distance_m": 1.35,
+          "payload_root_radius_m": 0.7554047311846526,
+          "all_payload_vertices_radius_max_m": 0.8046121440030404,
+          "sufficient_chassis_side_support_plane_gap_m": -0.025640806864900334
+        },
+        {
+          "center_distance_m": 1.4,
+          "payload_root_radius_m": 0.8033825617270457,
+          "all_payload_vertices_radius_max_m": 0.852690442776105,
+          "sufficient_chassis_side_support_plane_gap_m": 0.02435919313509949
+        },
+        {
+          "center_distance_m": 1.42,
+          "payload_root_radius_m": 0.8226411328905768,
+          "all_payload_vertices_radius_max_m": 0.8719822858129207,
+          "sufficient_chassis_side_support_plane_gap_m": 0.044359193135099506
+        },
+        {
+          "center_distance_m": 1.45,
+          "payload_root_radius_m": 0.8515930795151307,
+          "all_payload_vertices_radius_max_m": 0.9009779576250746,
+          "sufficient_chassis_side_support_plane_gap_m": 0.07435919313509953
+        },
+        {
+          "center_distance_m": 1.48,
+          "payload_root_radius_m": 0.8806151898716237,
+          "all_payload_vertices_radius_max_m": 0.9300373398315657,
+          "sufficient_chassis_side_support_plane_gap_m": 0.10435919313509956
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,833 @@
+{
+  "scope": "Independent CPU counterexamples for the bounded Task B grasp probe.\n\nAll images, detections, jaw obstructions and actuator responses here are\nSYNTHETIC. The real controllers and FK execute, but there is no physics,\ncontact, object pose or reward. Passing does not demonstrate a grasp, score,\ndelivery or success rate. Real grasp evidence belongs to the original task.\n",
+  "fixture_classification": "SYNTHETIC_CPU_ONLY",
+  "passed": false,
+  "count": 30,
+  "checks": {
+    "rejects_{'reach_only': True}": true,
+    "rejects_{'lowering_m': 0.0}": true,
+    "rejects_{'lowering_m': 0.03}": true,
+    "entire_first_reach_action_prefix_exact": true,
+    "exactly_one_child_call_per_prefix_step": true,
+    "normal_completion_only_enters_close_without_action_jump": true,
+    "prefix_error_nonfinite_propagates_unchanged": true,
+    "prefix_error_tilt_propagates_unchanged": true,
+    "close_slew_and_six_joint_hold": true,
+    "preload_maps_to_physical_targets_with_nonzero_defaults_and_permuted_actions": true,
+    "stable_repeated_measured_width_authorizes_only_after_active_minimum": false,
+    "lift_rate_and_measured_tether": false,
+    "lower_reference_and_wheel_anchor_request_continuous": true,
+    "synthetic_response_ends_as_observation_only": false,
+    "actual_empty_jaws_stop_without_lift": true,
+    "varying_measured_width_cannot_authorize_lift_and_close_deadline_is_finite": true,
+    "lift_goal_uses_latched_measured_q_and_exact_paired_delta": false,
+    "out_of_limits_paired_goal_stops_before_moving_or_clipping": true,
+    "lift_counterexamples_execution": false,
+    "probe_tangent_budget_terminates": true,
+    "probe_yaw_budget_terminates": true,
+    "probe_gravity_budget_terminates": false,
+    "probe_hard_tilt_terminates": true,
+    "probe_invalid_public_state_terminates": true,
+    "soft_pause_freezes_commands_and_waits_point_two_seconds_quiet": true,
+    "quiet_resumption_restarts_bounded_close": true,
+    "pause_has_finite_two_second_budget": true,
+    "pause_cannot_reset_close_phase_deadline": true,
+    "poisoned_truth_and_score_extras_are_not_read": false,
+    "probe_public_diagnostics_are_finite_json": true
+  },
+  "evidence": {
+    "entire_first_reach_action_prefix_exact": {
+      "calls": 721,
+      "max_action_difference": 0.0,
+      "original_reason": "reach_lowering_hold_complete"
+    },
+    "stable_repeated_measured_width_authorizes_only_after_active_minimum": {
+      "lift_entry_s": null
+    },
+    "synthetic_response_ends_as_observation_only": {
+      "reason": "grasp_probe_lift_goal_outside_joint_limits",
+      "probe_elapsed_s": 1.4000000000000001,
+      "notice": "Synthetic actuator and artificial jaw obstruction, NOT a grasp."
+    },
+    "happy_path_describe": {
+      "mode": "grasp_probe",
+      "inputs": "the frozen first reach owns all vision; after entry the probe reads only public proprio. No reward, score, contact sensor, object or world state, and no image, enters this probe",
+      "entry_contract": "actions and every failure reason are the frozen FirstReachPolicy ones until it returns reach_lowering_hold_complete by itself; only that normal completion opens the probe, any other reason is propagated unchanged, and one step never calls the inner policy twice. Nothing here triggers on score, resets a failure, relocates an object or re-solves a ground-truth target",
+      "candidate_constants": {
+        "candidate": "first fixed close-and-small-lift candidate; not tuned on score, object state or simulator truth",
+        "finger_close_target": {
+          "source": "task_b.arm_kinematics.gripper_targets(0, preload_m=.015)",
+          "physical_q7_m": -0.015,
+          "physical_q8_m": 0.015,
+          "slew_m_per_s": 0.05,
+          "note": "a finite target beyond the closed stop requests holding force, exactly as the existing Task E close does; joint limits and actuators are untouched and real motion is limited by physics"
+        },
+        "close": {
+          "max_s": 3.0,
+          "min_active_s": 1.4,
+          "width_window_samples": 10,
+          "width_range_m": 0.002,
+          "width_median_window_m": [
+            0.006,
+            0.065
+          ],
+          "empty_hold_s": 0.2
+        },
+        "lift": {
+          "paired_delta_rad": 0.1,
+          "joints": [
+            "arm_joint2",
+            "arm_joint3"
+          ],
+          "signs": [
+            -1.0,
+            1.0
+          ],
+          "max_s": 5.0,
+          "rate_rad_per_s": 0.1,
+          "tether_rad": 0.1,
+          "arrival_error_rad": 0.04,
+          "arrival_qdot_rad_per_s": 0.05,
+          "arrival_rise_m": 0.015,
+          "arrival_window_s": 0.3,
+          "progress_window_s": 2.0,
+          "progress_rad": 0.01,
+          "goal_source": "public measured arm q latched once after closure; no Cartesian IK, no grasp-point shift and no silent clipping of the goal"
+        },
+        "observe": {
+          "window_s": 2.0
+        },
+        "motion": {
+          "linear_norm_m_s": 0.06,
+          "angular_norm_rad_s": 0.12,
+          "hard_tilt_rad": 0.25,
+          "instability_tilt_rad": 0.12,
+          "instability_rate_rad_s": 0.45,
+          "pause_quiet_s": 0.2,
+          "pause_episode_s": 2.0,
+          "pause_total_s": 2.0,
+          "base_budgets_from_entry": {
+            "displacement_m": 0.03,
+            "yaw_rad": 0.05,
+            "gravity_rad": 0.05
+          }
+        },
+        "total_probe_s": 10.0,
+        "required_first_reach": {
+          "reach_only": false,
+          "lowering_m": 0.02,
+          "entry_reason": "reach_lowering_hold_complete"
+        }
+      },
+      "phases": {
+        "PROBE_CLOSE": "hold the six achieved joint commands, slew both fingers to the fixed physical preload target at <=.05 m/s, and require >=1.4 s of active closing plus ten consecutive width samples with range <.002 m and median in [.006,.065] m. This permits the bounded lift only; it is not a claim of contact or grasp, and there is no re-squeeze or retry",
+        "PROBE_LIFT": "latch measured arm q once, apply the fixed paired goal (q2-.10 rad, q3+.10 rad, other angles unchanged) after a static limit check, and drive it under a .10 rad/s per-axis rate and a +/-.10 rad measured tether while the closed finger target is retained. No Cartesian IK or grasp-point shift takes part",
+        "PROBE_OBSERVE": "hold the same measured goal, closed target, lowered leg reference, wheel anchor and motion bounds for 2 s, then end. The experiment stops there: no transport, opening, regrasp or further lowering"
+      },
+      "stop_reasons": {
+        "grasp_probe_observation_complete": "NORMAL end of the experiment after the bounded observation; it reports that the observation phase ran, and is not a grasp, lift, transport, delivery or score claim",
+        "grasp_probe_empty_close": "measured jaw width stayed below .006 m after the closed target was commanded",
+        "grasp_probe_close_not_confirmed": "no stable non-empty width window formed inside 3 s",
+        "grasp_probe_lift_goal_outside_joint_limits": "the latched paired goal left the static joint limits, so nothing was commanded",
+        "no_joint_lift_progress": "a full 2 s active lift window improved the goal error by less than .01 rad while it exceeded .04 rad",
+        "grasp_probe_lift_not_reached": "the arrival conditions were not held for .3 s inside 5 s",
+        "grasp_probe_empty_during_lift": "jaw width collapsed below .006 m during the lift",
+        "grasp_probe_empty_during_observation": "jaw width collapsed below .006 m during the observation",
+        "grasp_probe_pause_timeout": "one public body-motion pause reached 2 s",
+        "grasp_probe_pause_budget_exceeded": "cumulative pausing reached 2 s across the probe",
+        "grasp_probe_base_displacement_budget_exceeded": "integrated tangential drift since entry passed .03 m",
+        "grasp_probe_base_yaw_budget_exceeded": "integrated yaw since entry passed .05 rad",
+        "grasp_probe_gravity_changed": "public gravity direction turned more than .05 rad since entry",
+        "grasp_probe_total_budget_exceeded": "the 10 s probe budget, pauses included, ran out",
+        "invalid_proprio": "public proprio was not 84 finite values",
+        "tilt_limit_exceeded": "unchanged hard public tilt limit of .25 rad",
+        "reach_unstable_posture": "unchanged reach instability limits: tilt > .12 rad or roll/pitch rate norm > .45 rad/s"
+      },
+      "probe_state": {
+        "phase": "PROBE_CLOSE",
+        "entry_call": 721,
+        "calls": 791,
+        "state": "STOPPED",
+        "done_reason": "grasp_probe_lift_goal_outside_joint_limits",
+        "phase_elapsed_s": 1.4000000000000001,
+        "phase_remaining_s": 1.5999999999999999,
+        "probe_elapsed_s": 1.4000000000000001,
+        "pause_episodes": 0,
+        "pause_total_s": 0.0,
+        "held_arm_command_rad": [
+          0.5378966977849166,
+          3.1399988169418163,
+          -1.5861420230658447,
+          -0.003451877279376377,
+          -0.08834008427695762,
+          0.0
+        ],
+        "finger_target_m": [
+          -0.015,
+          0.015
+        ],
+        "measured_width_m": 0.04,
+        "latched_lift_q_rad": [
+          0.5378966999053956,
+          3.139998769760132,
+          -1.5861420512199402,
+          -0.003451877050101757,
+          -0.08834008455276489,
+          6.705522526129215e-10
+        ],
+        "lift_goal_rad": null,
+        "lift_max_q_error_rad": null,
+        "lift_max_qdot_rad_s": null,
+        "pinch_rise_m": null,
+        "predicted_pinch_travel_m": null,
+        "wheel_hold_requested": true,
+        "lowering_alpha": 1.0
+      },
+      "wheel_and_leg_contract": "the same wheel anchor request and the child's own achieved lowered leg reference are kept continuously through CLOSE, LIFT and OBSERVE; the base is never raised, the wheels are never released or re-anchored and no extra locomotion is commanded",
+      "verification": "real validation is external: a fresh original-environment run plus an independent audit of the same object's recorded pose and mesh lower surface before and after the lift. This policy cannot and does not certify a grasp",
+      "claim": "proximity, bounded finger closure and a small joint-space lift attempt only; no verified contact, no grasp success, no transport or delivery and no score claim. A normal end reports that the observation phase ran, nothing more",
+      "first_reach": {
+        "mode": "first_reach",
+        "inputs": "public proprio and head/ee RGB-D; static action and robot geometry",
+        "target_selection": "small bearing then distance; temporal visual match",
+        "forward_cmd": 0.05,
+        "turn_cap": 0.6,
+        "turn_gain": 2.0,
+        "standoff": 0.5,
+        "lowering_m": 0.02,
+        "settle_calls": 0,
+        "calls": 721,
+        "state": "STOPPED",
+        "done_reason": "reach_lowering_hold_complete",
+        "visual_reach_contract": "stationary two-sample raw localization of one yellow component, then ONE fixed bounded joint-feedback reach; the goal is never re-solved or retargeted. Shape-assisted local association within .12 m is optional diagnostics only: there is no continuous visual identity or tracking guarantee, and at every lowering amplitude a missing, rejected, unmatched or out-of-frame detection does not stop the bounded joint motion and never authorizes lowering",
+        "reach_base_budgets": {
+          "displacement_m": 0.03,
+          "yaw_rad": 0.05,
+          "gravity_rad": 0.05,
+          "basis": "approximate local integration of public twist, no vertical component, not world odometry"
+        },
+        "reach_settle_contract": {
+          "linear_norm_m_s": 0.06,
+          "angular_norm_rad_s": 0.12,
+          "quiet_s": 0.2,
+          "episode_s": 2.0,
+          "total_s": 3.0,
+          "scope": "whole reach at any amplitude; unchanged thresholds pause the fixed goal and freeze alpha instead of stopping the run on one sample, time keeps counting, and a pause is not a stillness claim",
+          "episodes": 0,
+          "settled_s": 0.0
+        },
+        "lowering_contract": {
+          "amplitude_m": 0.02,
+          "alpha": 1.0,
+          "alpha_rate_per_step": 0.006666666666666667,
+          "admission": {
+            "window_s": 0.5,
+            "max_wait_s": 3.0,
+            "joint_error_rad": 0.04,
+            "arm_speed_rad_s": 0.05,
+            "tangent_speed_m_s": 0.01,
+            "linear_norm_m_s": 0.06,
+            "angular_norm_rad_s": 0.12,
+            "tilt_rad": 0.1,
+            "leg_window_range_rad": 0.02
+          },
+          "authorized": true,
+          "authorized_step": 471,
+          "window_s": 6.0,
+          "hold_s": 2.0,
+          "response": {
+            "increment_error_rad": 0.06,
+            "fault_s": 0.2,
+            "beta_min": 0.15,
+            "beta_after_half_alpha_s": 1.0
+          },
+          "scope": "one latched authorization from a continuous public quiet window; a fixed CLI amplitude on the original leg reference, never chosen from score or simulation truth. Leg increment error and beta measure joint response only and claim no actual chassis descent"
+        },
+        "stage_stats": {
+          "state_calls": {
+            "STANCE_TRANSITION": 4,
+            "WAIT_FOR_STABLE_STANCE": 24,
+            "WAIT_FOR_TARGET": 6,
+            "BRAKE": 70,
+            "REACH_READY": 1,
+            "REACH": 615,
+            "STOPPED": 1
+          },
+          "transitions": [
+            {
+              "from": "SETTLE",
+              "to": "STANCE_TRANSITION",
+              "step": 1,
+              "reason": "reference_transition_requires_wheel_stop"
+            },
+            {
+              "from": "STANCE_TRANSITION",
+              "to": "WAIT_FOR_STABLE_STANCE",
+              "step": 5,
+              "reason": "verify_actual_post_transition_joint_motion"
+            },
+            {
+              "from": "WAIT_FOR_STABLE_STANCE",
+              "to": "WAIT_FOR_TARGET",
+              "step": 29,
+              "reason": "missing_or_stale_visual_target"
+            },
+            {
+              "from": "WAIT_FOR_TARGET",
+              "to": "BRAKE",
+              "step": 35,
+              "reason": "wait_for_actual_stillness_and_new_raw_visual_samples"
+            },
+            {
+              "from": "BRAKE",
+              "to": "REACH_READY",
+              "step": 105,
+              "reason": "stationary_raw_target_accepted_for_ik"
+            },
+            {
+              "from": "REACH_READY",
+              "to": "REACH",
+              "step": 106,
+              "reason": "waiting_for_public_quiet_window_before_fixed_lowering"
+            },
+            {
+              "from": "REACH",
+              "to": "STOPPED",
+              "step": 721,
+              "reason": "reach_lowering_hold_complete"
+            }
+          ],
+          "phase": "REACH",
+          "phase_age_s": 12.32,
+          "brake_retries": 0,
+          "vision_samples": 139
+        },
+        "claim": "proximity attempt only; no implemented grasp or delivery, no verified contact and no score claim",
+        "debug": {
+          "gripper_body": [
+            0.4986023903192592,
+            0.17816609370506714,
+            -0.15160868222022494
+          ],
+          "reach_goal_q": [
+            0.5378966977849166,
+            3.1399988169418163,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695762,
+            0.0
+          ],
+          "predicted_gripper_body": [
+            0.49860236736150493,
+            0.1781660791526569,
+            -0.15160870046797692
+          ],
+          "reach_target_body": [
+            0.5,
+            0.179,
+            -0.28
+          ],
+          "reach_subphase": "LOWER_HOLD",
+          "reach_settle_episodes": 0,
+          "reach_settle_total_s": 0.0,
+          "reach_public_linear_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reach_public_linear_norm": 0.0,
+          "reach_public_angular_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reach_public_angular_norm": 0.0,
+          "reach_base_tangent_speed_m_s": 0.0,
+          "reach_stationarity_thresholds": {
+            "linear_norm_m_s": 0.06,
+            "angular_norm_rad_s": 0.12
+          },
+          "reach_base_displacement_m": 0.0,
+          "reach_base_yaw_rad": 0.0,
+          "reach_gravity_change_rad": 0.0,
+          "reach_base_budgets": {
+            "displacement_m": 0.03,
+            "yaw_rad": 0.05,
+            "gravity_rad": 0.05
+          },
+          "reach_base_integration_claim": "approximate small-angle integration of public twist in the local frame; not world odometry",
+          "reach_camera_projection": {
+            "ee": {
+              "expected_center_in_frame": false,
+              "pixel_uv": null,
+              "optical_depth_m": 0.06633155053395268,
+              "reason": "inside_detector_near_limit"
+            },
+            "head": {
+              "expected_center_in_frame": false,
+              "pixel_uv": [
+                -7.633926865971635,
+                51.41903407057189
+              ],
+              "optical_depth_m": 0.23881323262712745,
+              "reason": "center_outside_frame"
+            }
+          },
+          "expected_out_of_view": true,
+          "out_of_view_reach_allowed": true,
+          "reach_visual_valid": true,
+          "reach_valid_samples": 125,
+          "reach_visual_association": "locally_associated",
+          "reach_camera_available": [
+            "ee",
+            "head"
+          ],
+          "reach_age_s": 12.32,
+          "reach_timeout_s": 16.79999605647272,
+          "reach_deadline_s": 22.79999605647272,
+          "reach_joint_error_rad": 4.7181684337260776e-08,
+          "lower_elapsed_s": 5.0,
+          "lower_hold_s": 2.0,
+          "lower_response_limits": {
+            "increment_error_rad": 0.06,
+            "fault_s": 0.2,
+            "beta_after_half_alpha_s": 1.0,
+            "beta_min": 0.15,
+            "window_s": 6.0,
+            "hold_s": 2.0
+          },
+          "lower_response_claim": "leg joint response to the fixed reference increment; no claim about actual chassis descent",
+          "state": "STOPPED",
+          "reason": "reach_lowering_hold_complete",
+          "done_reason": "reach_lowering_hold_complete",
+          "state_age_s": 0.0,
+          "phase": "REACH",
+          "phase_age_s": 12.32,
+          "vision_samples": 139,
+          "last_vision_sample": 720,
+          "wheel_action": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "arm_target": [
+            0.5378966977849166,
+            3.1399988169418163,
+            -1.5861420230658447,
+            -0.003451877279376377,
+            -0.08834008427695762,
+            0.0,
+            0.035,
+            -0.035
+          ],
+          "lowering_alpha": 1.0,
+          "lowering_m": 0.02,
+          "lower_authorized": true,
+          "lower_authorized_step": 471,
+          "lower_reference_q0": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lower_increment_error_rad": 3.0398368822126542e-09,
+          "lower_beta": 1.0000000070134105,
+          "lower_quiet_window_s": 0.5,
+          "lower_remaining_s": 1.0,
+          "lower_remaining_basis": "seconds left in the 3 s admission wait before authorization, then in the 6 s descent-plus-hold window"
+        }
+      },
+      "debug": {
+        "gripper_body": [
+          0.4986023903192592,
+          0.17816609370506714,
+          -0.15160868222022494
+        ],
+        "reach_goal_q": [
+          0.5378966977849166,
+          3.1399988169418163,
+          -1.5861420230658447,
+          -0.003451877279376377,
+          -0.08834008427695762,
+          0.0
+        ],
+        "predicted_gripper_body": [
+          0.49860236736150493,
+          0.1781660791526569,
+          -0.15160870046797692
+        ],
+        "reach_target_body": [
+          0.5,
+          0.179,
+          -0.28
+        ],
+        "reach_subphase": "LOWER_HOLD",
+        "reach_settle_episodes": 0,
+        "reach_settle_total_s": 0.0,
+        "reach_public_linear_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reach_public_linear_norm": 0.0,
+        "reach_public_angular_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reach_public_angular_norm": 0.0,
+        "reach_base_tangent_speed_m_s": 0.0,
+        "reach_stationarity_thresholds": {
+          "linear_norm_m_s": 0.06,
+          "angular_norm_rad_s": 0.12
+        },
+        "reach_base_displacement_m": 0.0,
+        "reach_base_yaw_rad": 0.0,
+        "reach_gravity_change_rad": 0.0,
+        "reach_base_budgets": {
+          "displacement_m": 0.03,
+          "yaw_rad": 0.05,
+          "gravity_rad": 0.05
+        },
+        "reach_base_integration_claim": "approximate small-angle integration of public twist in the local frame; not world odometry",
+        "reach_camera_projection": {
+          "ee": {
+            "expected_center_in_frame": false,
+            "pixel_uv": null,
+            "optical_depth_m": 0.06633155053395268,
+            "reason": "inside_detector_near_limit"
+          },
+          "head": {
+            "expected_center_in_frame": false,
+            "pixel_uv": [
+              -7.633926865971635,
+              51.41903407057189
+            ],
+            "optical_depth_m": 0.23881323262712745,
+            "reason": "center_outside_frame"
+          }
+        },
+        "expected_out_of_view": true,
+        "out_of_view_reach_allowed": true,
+        "reach_visual_valid": true,
+        "reach_valid_samples": 125,
+        "reach_visual_association": "locally_associated",
+        "reach_camera_available": [
+          "ee",
+          "head"
+        ],
+        "reach_age_s": 12.32,
+        "reach_timeout_s": 16.79999605647272,
+        "reach_deadline_s": 22.79999605647272,
+        "reach_joint_error_rad": 4.7181684337260776e-08,
+        "lower_elapsed_s": 5.0,
+        "lower_hold_s": 2.0,
+        "lower_response_limits": {
+          "increment_error_rad": 0.06,
+          "fault_s": 0.2,
+          "beta_after_half_alpha_s": 1.0,
+          "beta_min": 0.15,
+          "window_s": 6.0,
+          "hold_s": 2.0
+        },
+        "lower_response_claim": "leg joint response to the fixed reference increment; no claim about actual chassis descent",
+        "state": "STOPPED",
+        "reason": "grasp_probe_lift_goal_outside_joint_limits",
+        "done_reason": "grasp_probe_lift_goal_outside_joint_limits",
+        "state_age_s": 0.0,
+        "phase": "REACH",
+        "phase_age_s": 12.32,
+        "vision_samples": 139,
+        "last_vision_sample": 720,
+        "wheel_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "arm_target": [
+          0.5378966977849166,
+          3.1399988169418163,
+          -1.5861420230658447,
+          -0.003451877279376377,
+          -0.08834008427695762,
+          0.0,
+          0.035,
+          -0.035
+        ],
+        "lowering_alpha": 1.0,
+        "lowering_m": 0.02,
+        "lower_authorized": true,
+        "lower_authorized_step": 471,
+        "lower_reference_q0": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "lower_increment_error_rad": 3.0398368822126542e-09,
+        "lower_beta": 1.0000000070134105,
+        "lower_quiet_window_s": 0.5,
+        "lower_remaining_s": 1.0,
+        "lower_remaining_basis": "seconds left in the 3 s admission wait before authorization, then in the 6 s descent-plus-hold window",
+        "first_reach_state": "STOPPED",
+        "first_reach_reason": "reach_lowering_hold_complete",
+        "first_reach_done_reason": "reach_lowering_hold_complete",
+        "first_reach_debug_timing": "frozen_snapshot_of_the_normal_completion_call",
+        "probe_phase": "PROBE_CLOSE",
+        "probe_entry_call": 721,
+        "probe_call": 791,
+        "probe_phase_elapsed_s": 1.4000000000000001,
+        "probe_phase_remaining_s": 1.5999999999999999,
+        "probe_elapsed_s": 1.4000000000000001,
+        "probe_remaining_s": 8.6,
+        "probe_paused": false,
+        "probe_pause_cause": null,
+        "probe_pause_episodes": 0,
+        "probe_pause_episode_s": 0.0,
+        "probe_pause_total_s": 0.0,
+        "probe_pause_quiet_s": 0.0,
+        "probe_held_arm_command_rad": [
+          0.5378966977849166,
+          3.1399988169418163,
+          -1.5861420230658447,
+          -0.003451877279376377,
+          -0.08834008427695762,
+          0.0
+        ],
+        "probe_arm_command": [
+          0.5378966977849166,
+          3.1399988169418163,
+          -1.5861420230658447,
+          -0.003451877279376377,
+          -0.08834008427695762,
+          0.0,
+          -0.015,
+          0.015
+        ],
+        "probe_finger_target_m": [
+          -0.015,
+          0.015
+        ],
+        "probe_finger_target_commanded": true,
+        "probe_close_active_s": 1.4000000000000001,
+        "probe_measured_q7_m": 0.02,
+        "probe_measured_q8_m": -0.02,
+        "probe_measured_width_m": 0.04,
+        "probe_width_window_m": [
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04,
+          0.04
+        ],
+        "probe_width_window_range_m": 0.0,
+        "probe_width_window_median_m": 0.04,
+        "probe_empty_width_s": 0.0,
+        "probe_lift_latched_q_rad": [
+          0.5378966999053956,
+          3.139998769760132,
+          -1.5861420512199402,
+          -0.003451877050101757,
+          -0.08834008455276489,
+          6.705522526129215e-10
+        ],
+        "probe_lift_goal_rad": null,
+        "probe_lift_paired_delta_rad": {
+          "arm_joint2": -0.1,
+          "arm_joint3": 0.1
+        },
+        "probe_lift_static_limit_lower_rad": [
+          -2.6180000032620017,
+          0.157,
+          -2.9669998072658332,
+          -1.7449999521255413,
+          -1.219999954319697,
+          -2.094399762925103
+        ],
+        "probe_lift_static_limit_upper_rad": [
+          2.1679998149169144,
+          2.983,
+          0.0,
+          1.7449999521255413,
+          1.219999954319697,
+          2.094399762925103
+        ],
+        "probe_lift_limit_violations": {
+          "arm_joint2": [
+            3.039998769760132,
+            0.157,
+            2.983
+          ]
+        },
+        "probe_lift_command_clamped_calls": 0,
+        "probe_lift_active_s": 0.0,
+        "probe_lift_arrival_s": 0.0,
+        "probe_lift_max_q_error_rad": null,
+        "probe_lift_max_qdot_rad_s": null,
+        "probe_pinch_rise_m": null,
+        "probe_pinch_reference_body": null,
+        "probe_predicted_pinch_travel_m": null,
+        "probe_predicted_travel_claim": "static body-frame FK of the latched paired goal; a prediction for the recorded pose, never a claim of actual motion",
+        "probe_observe_active_s": 0.0,
+        "probe_public_motion": {
+          "linear_norm": 0.0,
+          "angular_norm": 0.0,
+          "tangent_speed_m_s": 0.0,
+          "tilt_rad": 0.0
+        },
+        "probe_base_displacement_m": 0.0,
+        "probe_base_yaw_rad": 0.0,
+        "probe_base_gravity_change_rad": 0.0,
+        "probe_base_budgets": {
+          "displacement_m": 0.03,
+          "yaw_rad": 0.05,
+          "gravity_rad": 0.05
+        },
+        "probe_base_integration_claim": "approximate small-angle integration of public twist since probe entry, no vertical component; not world odometry",
+        "probe_lowering_alpha": 1.0,
+        "probe_lowered_reference_unchanged": true,
+        "wheel_hold_requested": true,
+        "probe_candidate_constants": {
+          "candidate": "first fixed close-and-small-lift candidate; not tuned on score, object state or simulator truth",
+          "finger_close_target": {
+            "source": "task_b.arm_kinematics.gripper_targets(0, preload_m=.015)",
+            "physical_q7_m": -0.015,
+            "physical_q8_m": 0.015,
+            "slew_m_per_s": 0.05,
+            "note": "a finite target beyond the closed stop requests holding force, exactly as the existing Task E close does; joint limits and actuators are untouched and real motion is limited by physics"
+          },
+          "close": {
+            "max_s": 3.0,
+            "min_active_s": 1.4,
+            "width_window_samples": 10,
+            "width_range_m": 0.002,
+            "width_median_window_m": [
+              0.006,
+              0.065
+            ],
+            "empty_hold_s": 0.2
+          },
+          "lift": {
+            "paired_delta_rad": 0.1,
+            "joints": [
+              "arm_joint2",
+              "arm_joint3"
+            ],
+            "signs": [
+              -1.0,
+              1.0
+            ],
+            "max_s": 5.0,
+            "rate_rad_per_s": 0.1,
+            "tether_rad": 0.1,
+            "arrival_error_rad": 0.04,
+            "arrival_qdot_rad_per_s": 0.05,
+            "arrival_rise_m": 0.015,
+            "arrival_window_s": 0.3,
+            "progress_window_s": 2.0,
+            "progress_rad": 0.01,
+            "goal_source": "public measured arm q latched once after closure; no Cartesian IK, no grasp-point shift and no silent clipping of the goal"
+          },
+          "observe": {
+            "window_s": 2.0
+          },
+          "motion": {
+            "linear_norm_m_s": 0.06,
+            "angular_norm_rad_s": 0.12,
+            "hard_tilt_rad": 0.25,
+            "instability_tilt_rad": 0.12,
+            "instability_rate_rad_s": 0.45,
+            "pause_quiet_s": 0.2,
+            "pause_episode_s": 2.0,
+            "pause_total_s": 2.0,
+            "base_budgets_from_entry": {
+              "displacement_m": 0.03,
+              "yaw_rad": 0.05,
+              "gravity_rad": 0.05
+            }
+          },
+          "total_probe_s": 10.0,
+          "required_first_reach": {
+            "reach_only": false,
+            "lowering_m": 0.02,
+            "entry_reason": "reach_lowering_hold_complete"
+          }
+        },
+        "probe_claim": "bounded close, small joint lift and observation from public proprio only; a stable non-empty jaw width and a joint-space lift are not contact, grasp, transport, delivery or score evidence"
+      }
+    },
+    "actual_empty_jaws_stop_without_lift": {
+      "reason": "grasp_probe_empty_close",
+      "elapsed_s": 1.2
+    },
+    "varying_measured_width_cannot_authorize_lift_and_close_deadline_is_finite": {
+      "reason": "grasp_probe_close_not_confirmed",
+      "elapsed_s": 3.0
+    },
+    "out_of_limits_paired_goal_stops_before_moving_or_clipping": {
+      "reason": "grasp_probe_lift_goal_outside_joint_limits",
+      "elapsed_s": 1.4000000000000001
+    },
+    "lift_counterexamples_execution": {
+      "error": "AssertionError",
+      "message": "No real wrapper LIFT checkpoint"
+    },
+    "probe_tangent_budget_terminates": {
+      "reason": "grasp_probe_base_displacement_budget_exceeded",
+      "elapsed_s": 0.56
+    },
+    "probe_yaw_budget_terminates": {
+      "reason": "grasp_probe_base_yaw_budget_exceeded",
+      "elapsed_s": 0.46
+    },
+    "probe_gravity_budget_terminates": {
+      "reason": null,
+      "elapsed_s": 0.9
+    },
+    "probe_hard_tilt_terminates": {
+      "reason": "tilt_limit_exceeded",
+      "elapsed_s": 0.02
+    },
+    "probe_invalid_public_state_terminates": {
+      "reason": "invalid_proprio",
+      "elapsed_s": 0.02
+    },
+    "pause_has_finite_two_second_budget": {
+      "reason": "grasp_probe_pause_timeout",
+      "elapsed_s": 2.0
+    },
+    "pause_cannot_reset_close_phase_deadline": {
+      "reason": "grasp_probe_close_not_confirmed",
+      "elapsed_s": 3.0
+    }
+  },
+  "source_sha256": {
+    "first_reach.py": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897",
+    "grasp_probe.py": "88a43159266e6e9f7ebc6b7bf5af660b0e4eaf0f33554c67b10395fad958da74",
+    "arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "audit_grasp_probe.py": "b0e7cf0a1a642ae396f5a648af70fe6fa758354bba8cb7efda93155a4af3060f"
+  }
+}

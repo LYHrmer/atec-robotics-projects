@@ -10,6 +10,24 @@ written to answer one question each, against the local USD assets and a recorded
 run, and several print rather than assert. Run them by hand when you need to
 re-derive a constant:
 
+## Subdirectories
+
+Four further archives sit alongside the studies above. They are larger and more
+mixed, and like the studies nothing in the shipped path imports them.
+
+| directory | what it holds |
+| --- | --- |
+| `score_cpu/` | the CPU audit scripts and their JSON output that decided the docking, release, finger-sweep and payload-raise geometry — the numbers the delivery design rests on. Includes `D3_YAW_VERDICT.md`, `CARRY_PROBE_RESULT_d1_d2.md` and the fixture-free audit records. |
+| `takeover_20260914/` | the control and audit source written during the day the delivery was pushed (`audit_carry_probe.py`, `audit_first_delivery.py`, `plant_model.py`, follow-up verification and smoke scripts). |
+| `astra_review_20260914/` | contact and geometry studies from the review round, including the 200 KB `contact_force75_wrist_depth.json` and `next_delivery_plan_astra_2006.md`. |
+| `plan_opus/` | provenance of the designated control modules: the prompts, the answers, and the versioned `.py` files as they were handed over, named with a content hash. Several are near-duplicates of each other and of files elsewhere in the repo; they are kept as the record of what was delivered, not as working code. |
+
+Two things were deliberately left out: `__pycache__` directories, and about 9 MB
+of synthetic audit fixtures under `task_b_score_cpu/*_fixtures*`, which are
+regenerable and contain no recorded evidence.
+
+## Studies
+
 | script | question it answered |
 | --- | --- |
 | `bbox.py` | world-space bounding box of each Task B object asset, from USD only |

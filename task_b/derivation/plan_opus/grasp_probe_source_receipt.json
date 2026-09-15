@@ -1,0 +1,13 @@
+{
+  "provider": "actual Claude CLI --model opus",
+  "session_id": "65b0d998-6ad6-4a79-99b4-3fb0bf16914f",
+  "cli_completed_successfully": true,
+  "original_opus_sha256": "f680d73d5e0589192b7e5e770dd4bd2e7cd49c54ec94d827a48aeda86088b0e2",
+  "integrated_sha256": "91fb3367f59123c7dfe84c2d2c49ec9c45317b6c9993dbb29e4d4db8068e348c",
+  "root_corrections": [
+    "Use actual static hard joint limits, not training soft margins",
+    "Latch public gravity at normal first-reach completion",
+    "Intersect rate, measured tether and hard limit bounds, stopping on an empty intersection"
+  ],
+  "physical_validation": "pending first original-environment run"
+}

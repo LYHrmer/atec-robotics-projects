@@ -1,0 +1,86 @@
+{
+  "model": "Four equally loaded wheel contacts; full lateral Coulomb friction at x=\u00b1L/2; independent ideal longitudinal wheel forces torque/r at y=\u00b1W/2.",
+  "mass_kg": 87.08984375512227,
+  "g_m_s2": 9.81,
+  "wheel_radius_m": 0.113,
+  "original_wheel_drive": {
+    "stiffness": 0,
+    "damping_Nm_per_rad_s": 1,
+    "effort_limit_Nm": 20,
+    "velocity_limit_rad_s": 50
+  },
+  "formulas": {
+    "resistance_yaw": "mu * M * g * L / 2",
+    "drive_yaw": "2 * tau_per_wheel * W / r",
+    "equalizing_torque": "mu * M * g * L * r / (4 * W)"
+  },
+  "rows": [
+    {
+      "profile": "observed_loaded_default",
+      "L_m": 0.946,
+      "W_m": 0.649,
+      "assumed_mu": 0.8,
+      "ideal_full_lateral_friction_yaw_resistance_Nm": 323.2865573627644,
+      "ideal_yaw_drive_at_20Nm_per_wheel_Nm": 229.73451327433628,
+      "ideal_per_wheel_torque_to_match_Nm": 28.144361311242207,
+      "drive_to_resistance_ratio": 0.7106219174357686
+    },
+    {
+      "profile": "observed_loaded_default",
+      "L_m": 0.946,
+      "W_m": 0.649,
+      "assumed_mu": 0.6,
+      "ideal_full_lateral_friction_yaw_resistance_Nm": 242.4649180220733,
+      "ideal_yaw_drive_at_20Nm_per_wheel_Nm": 229.73451327433628,
+      "ideal_per_wheel_torque_to_match_Nm": 21.10827098343165,
+      "drive_to_resistance_ratio": 0.9474958899143583
+    },
+    {
+      "profile": "compact_design",
+      "L_m": 0.76,
+      "W_m": 0.7,
+      "assumed_mu": 0.8,
+      "ideal_full_lateral_friction_yaw_resistance_Nm": 259.7228156402759,
+      "ideal_yaw_drive_at_20Nm_per_wheel_Nm": 247.787610619469,
+      "ideal_per_wheel_torque_to_match_Nm": 20.963341548107984,
+      "drive_to_resistance_ratio": 0.9540463744342834
+    },
+    {
+      "profile": "compact_design",
+      "L_m": 0.76,
+      "W_m": 0.7,
+      "assumed_mu": 0.6,
+      "ideal_full_lateral_friction_yaw_resistance_Nm": 194.7921117302069,
+      "ideal_yaw_drive_at_20Nm_per_wheel_Nm": 247.787610619469,
+      "ideal_per_wheel_torque_to_match_Nm": 15.722506161080986,
+      "drive_to_resistance_ratio": 1.2720618325790447
+    },
+    {
+      "profile": "compact_short_design",
+      "L_m": 0.68,
+      "W_m": 0.72,
+      "assumed_mu": 0.8,
+      "ideal_full_lateral_friction_yaw_resistance_Nm": 232.38357188866792,
+      "ideal_yaw_drive_at_20Nm_per_wheel_Nm": 254.8672566371681,
+      "ideal_per_wheel_torque_to_match_Nm": 18.235655294041305,
+      "drive_to_resistance_ratio": 1.096752470778235
+    },
+    {
+      "profile": "compact_short_design",
+      "L_m": 0.68,
+      "W_m": 0.72,
+      "assumed_mu": 0.6,
+      "ideal_full_lateral_friction_yaw_resistance_Nm": 174.2876789165009,
+      "ideal_yaw_drive_at_20Nm_per_wheel_Nm": 254.8672566371681,
+      "ideal_per_wheel_torque_to_match_Nm": 13.676741470530976,
+      "drive_to_resistance_ratio": 1.4623366277043135
+    }
+  ],
+  "notes": [
+    "Order-of-magnitude inference, not a measured breakaway threshold or simulator torque trace.",
+    "Friction coefficients .8/.6 are scenarios requested for this comparison, not a measurement of actual scene contact friction.",
+    "Real wheel loading, wheel camber, changing stance, friction-cone sharing, rolling transients and contact solver dynamics are omitted.",
+    "Do not change official physics or actuator limits; differences in profile dimensions are CPU design geometry, not verified achieved stance dimensions.",
+    "At zero wheel motion a requested 1.5 rad/s with damping=1 produces only approximately 1.5 Nm before cap; maximum 20 Nm is reached only when velocity error is about 20 rad/s."
+  ]
+}

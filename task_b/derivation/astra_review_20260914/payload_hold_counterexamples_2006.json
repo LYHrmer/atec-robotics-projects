@@ -1,0 +1,17 @@
+{
+  "source_sha256": "042d7b2190dd510660e55ecc43a050319d804e14dec8bdda32f2300dadc62eb0",
+  "verbatim_production_methods_ast_extracted_without_importing_dependencies": true,
+  "hold_without_position_window_result": "payload_motion_observation_complete",
+  "pause_result": "FROZEN",
+  "hold_quiet_calls_after_pause_start": 50,
+  "velocity_lowpass_transfer": {
+    "0.04": {
+      "1.67": 0.9237485037376828,
+      "25": 0.24491866240370913
+    },
+    "0.1": {
+      "1.67": 0.6911641571560001,
+      "25": 0.09966799462495585
+    }
+  }
+}

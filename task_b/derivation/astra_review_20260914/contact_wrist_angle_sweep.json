@@ -1,0 +1,491 @@
+{
+  "scope": "Offline actualquat geometry sweep; not a validated grasp or policy seeded object pose.",
+  "candidates": [
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": -90,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.018624821480956903,
+        0.04488633345396158
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": false,
+          "link8": true
+        },
+        "0.05": {
+          "link7": false,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": -60,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.020667216734126102,
+        0.045347849372261564
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": false,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": -45,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.022900868480786346,
+        0.04271267834141572
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": false,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": -30,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.02609420237803905,
+        0.03900943811494508
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": true,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": 0,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03258604333884217,
+        0.03100969310809058
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": 30,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.034229651058096416,
+        0.022970024288510013
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": false
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": 45,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03415042571678411,
+        0.020681207097113345
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": false
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": 60,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03647417917450538,
+        0.019478125472530104
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": false
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.01,
+      "q6_increment_deg": 90,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.044886334193884235,
+        0.018624821474698468
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": false
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": -90,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.026636156068634776,
+        0.047961411126306044
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": false,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": -60,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03039975536195783,
+        0.05128006335300282
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": true,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": -45,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03310532079325974,
+        0.048848662168334826
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": true
+        },
+        "0.06": {
+          "link7": true,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": -30,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03556345709086169,
+        0.0461927353371797
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": true
+        },
+        "0.06": {
+          "link7": true,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": 0,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.037885402426867686,
+        0.036948145220996154
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": true
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": 30,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.033042611410589055,
+        0.02586089760944855
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": false,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": 45,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.03251624132294416,
+        0.023941948859833476
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": false
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": 60,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.036010180275677386,
+        0.023518752451915637
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": false
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    },
+    {
+      "extra_lowering_m": 0.02,
+      "q6_increment_deg": 90,
+      "fixed_gripper_position_change_m": 0.0,
+      "width_slab_y_bounds_m": [
+        -0.04796141231662339,
+        0.026636156982525284
+      ],
+      "ideal_hull_intersection": {
+        "0.07": {
+          "link7": true,
+          "link8": false
+        },
+        "0.06": {
+          "link7": true,
+          "link8": false
+        },
+        "0.05": {
+          "link7": true,
+          "link8": true
+        },
+        "0.04": {
+          "link7": true,
+          "link8": true
+        }
+      }
+    }
+  ]
+}

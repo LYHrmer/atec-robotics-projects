@@ -1,0 +1,121 @@
+{
+  "run_id": "plan_p4_grasp_seed42_01",
+  "scope": "Offline actual recorded pose/mesh check; no policy input, no reward-derived grasp claim.",
+  "steps": 3182,
+  "stop_reason": "policy_stop:no_joint_lift_progress",
+  "score_raw_total": 0.9999999776482582,
+  "reward_terms": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 1.0
+  },
+  "official_terminated": false,
+  "official_truncated": false,
+  "probe_states": {
+    "PROBE_CLOSE": {
+      "first_step": 2912,
+      "last_state_step": 2981,
+      "samples": 70,
+      "state_span_s": 1.3800000000000026,
+      "jaw_width_min_max_m": [
+        0.049455853179097176,
+        0.06985396146774292
+      ],
+      "object_root_rise_min_max_from_preclose_m": [
+        -5.662441253662109e-07,
+        3.981590270996094e-05
+      ],
+      "mesh_surface_clearance_min_max_from_preclose_m": [
+        -1.848295360118435e-05,
+        1.2559547778151492e-05
+      ],
+      "gripper_z_rise_min_max_m": [
+        -3.293156623840332e-05,
+        0.0026097893714904785
+      ]
+    },
+    "PROBE_LIFT": {
+      "first_step": 2982,
+      "last_state_step": 3183,
+      "samples": 202,
+      "state_span_s": 4.019999999999996,
+      "jaw_width_min_max_m": [
+        0.044194553047418594,
+        0.04944540560245514
+      ],
+      "object_root_rise_min_max_from_preclose_m": [
+        6.109476089477539e-07,
+        0.0011110752820968628
+      ],
+      "mesh_surface_clearance_min_max_from_preclose_m": [
+        -0.00066515854436279,
+        0.00042420834172339494
+      ],
+      "gripper_z_rise_min_max_m": [
+        0.0025432705879211426,
+        0.009122133255004883
+      ]
+    }
+  },
+  "actual_object_quaternion_used": true,
+  "verified_lift_and_follow": false,
+  "object_index_1based": 10,
+  "pre_close_baseline": {
+    "step": 2912,
+    "state_timing": "pre_step",
+    "object_root_world_m": [
+      -6.723809242248535,
+      -8.680275917053223,
+      0.14022468030452728
+    ],
+    "lowest_original_mesh_world_z_m": 0.044136009420683686,
+    "gripper_world_m": [
+      -6.735995292663574,
+      -8.695785522460938,
+      0.33354178071022034
+    ],
+    "object_quaternion_wxyz": [
+      0.0005054544890299439,
+      0.0009219896164722741,
+      -0.69858318567276,
+      0.7155280709266663
+    ]
+  },
+  "object_quaternion_norm_max_error": 1.1385574083533356e-07,
+  "final_actual": {
+    "object_root_rise_m": 0.0009064227342605591,
+    "minimum_mesh_surface_rise_m": -0.0005522072747867757,
+    "gripper_z_rise_m": 0.009120970964431763,
+    "object_world_xyz": [
+      -6.728100776672363,
+      -8.691390037536621,
+      0.14113110303878784
+    ],
+    "object_quaternion_wxyz": [
+      -0.015504260547459126,
+      -0.014966437593102455,
+      -0.7388969659805298,
+      0.6734738945960999
+    ],
+    "jaw_width_m": 0.04420805163681507,
+    "relative_root_in_gripper_m": [
+      0.00814022876773142,
+      -0.0031096263746029076,
+      0.20268373615483348
+    ]
+  },
+  "maximum_illegal_force_N": 0.0,
+  "limits": [
+    "Recorded actual object quaternions are used, not initial OTHER_QUAT.",
+    "Mesh lower-surface rise is relative to its measured pre-close support level; no unverified zero-height floor assumption.",
+    "Original mesh geometry does not attest exact cooked collision hull or friction/contact forces.",
+    "Nonempty jaws alone are not grasp proof; positive proximity score alone is not grasp proof.",
+    "Passing this local lift/follow check would not prove transport, delivery or full Task B completion."
+  ],
+  "source_sha256": {
+    "result.json": "287a932ac96de77b4d20b6c030ca9b010a3ab4e6df2c4d9f1623573686faa900",
+    "telemetry.npz": "6318d22e66b87dd4a0184d77706f880d58b7dfaecff510661e763a6a98529210",
+    "scoring_events.json": "118d71d1700d8c870b578944bcfe7ed82e455533f7d6f84f8675a867a1cf8bd9",
+    "trace.jsonl": "596b577011c0a58cdd3b4ca31de1bf40ea5899bd55fad6f69335ea3a613d6021"
+  },
+  "asset_sha256": "3035d39baf5052ea22e14221f65f94f06c8e345be0e060eec8ceb7753676f785"
+}

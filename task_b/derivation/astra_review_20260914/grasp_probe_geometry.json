@@ -1,0 +1,519 @@
+{
+  "scope": "CPU-only geometry. World/object values are retrospective diagnostics and must never enter control.",
+  "assumptions": [
+    "Old runs record object root positions but no actual object quaternion. OTHER_QUAT is a nominal assumption, not measured final orientation.",
+    "Ideal convex hulls of original USD vertices are not the cooked PhysX hulls; contact offsets, friction, dynamics and centering are not solved.",
+    "Intersection possibility is not proof of bilateral contact force, grasp or lift."
+  ],
+  "nominal_object_quaternion_wxyz": [
+    0,
+    0,
+    -0.707,
+    0.707
+  ],
+  "finger_closed_bounds_gripper_m": {
+    "link7": [
+      [
+        -0.0280000071768765,
+        -0.026499765415484787,
+        0.059299944510223496
+      ],
+      [
+        0.02799999639498025,
+        3.651691716115649e-08,
+        0.1358000378355439
+      ]
+    ],
+    "link8": [
+      [
+        -0.028000004338759755,
+        -1.2668064129049182e-07,
+        0.05929993855073728
+      ],
+      [
+        0.028000101100445842,
+        0.026499879480061887,
+        0.13580003967735593
+      ]
+    ]
+  },
+  "source_sha256": {
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/objects/task_b/006_mustard_bottle.usd": "3035d39baf5052ea22e14221f65f94f06c8e345be0e060eec8ceb7753676f785",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/robot/piper/piper.usd": "1c19fa993984bc476120d84dcfeb50356fac4f6551a34ffae344b3cc43c48623",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/robot/piper/configuration/piper_base.usd": "441ab91764629f9a1cf4ed31628623425175e6da30a0834754f769238d072fe0",
+    "/home/lybm/ATEC2026_Simulation_Challenge/atec_robot_model/robot/piper/configuration/piper_physics.usd": "81ae471b38850d9f1f28e869dee30d86c73d38d2d82ba7d78b984ce5c7f3dff6",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_b/arm_kinematics.py": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+    "/home/lybm/ATEC_Robotics_Projects_20260910/task_e_geometry.py": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4"
+  },
+  "runs": [
+    {
+      "run_id": "plan_p2_lower02_seed42_01",
+      "steps": 3378,
+      "stop_reason": "positive_score_observation_window_complete",
+      "actual_arm_q": [
+        0.5466173887252808,
+        3.1400082111358643,
+        -1.665032982826233,
+        0.003248801687732339,
+        -0.08627311140298843,
+        -6.632958047703141e-06,
+        0.03500000014901161,
+        -0.034853141754865646
+      ],
+      "actual_world_gripper_from_B_FK": [
+        [
+          -0.6929419020279566,
+          -0.7105939882886847,
+          0.12201518029270383,
+          -6.735510396788498
+        ],
+        [
+          -0.6922770290856547,
+          0.7030316176874798,
+          0.16278531731107454,
+          -8.69547805480306
+        ],
+        [
+          -0.20145479744652423,
+          0.028332460883376803,
+          -0.979087961444769,
+          0.33070530477784343
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "FK_position_vs_record_m": 1.070118928170357e-06,
+      "object_root_world_m": [
+        -6.723809719085693,
+        -8.680274963378906,
+        0.14022476971149445
+      ],
+      "nominal_bottle_world_bounds_m": [
+        [
+          -6.771821307062844,
+          -8.709399673287763,
+          0.044573774687595574
+        ],
+        [
+          -6.675797148824019,
+          -8.651150735075568,
+          0.23587477291412642
+        ]
+      ],
+      "axis_points_world_m": {
+        "0.0593": [
+          -6.72827489659714,
+          -8.685824885486513,
+          0.27264538866416865
+        ],
+        "0.115": [
+          -6.721478651054837,
+          -8.676757743312287,
+          0.218110189211695
+        ],
+        "0.1358": [
+          -6.718940735304749,
+          -8.673371808712215,
+          0.1977451596136438
+        ]
+      },
+      "bottle_vertices_in_finger_depth_slab": {
+        "count": 1560,
+        "bounds_gripper_m": [
+          [
+            -0.014338253405865992,
+            -0.027673516079312562,
+            0.09522509258339032
+          ],
+          [
+            0.04005830208528236,
+            0.02292033851489654,
+            0.13578145840702419
+          ]
+        ]
+      },
+      "ideal_convex_hull_contact_possible": {
+        "link7": [
+          {
+            "symmetric_opening_m": 0.07,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.065,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.06,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.010142759296050335,
+              -0.029999999580412717,
+              0.13533449758566635
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.055,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.011579554931987538,
+              -0.027499983386029568,
+              0.1306489938217903
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.05,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.01275159988535751,
+              -0.02513049812774822,
+              0.12628512386765453
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.045,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.013890193386810077,
+              -0.02277007609154428,
+              0.12199272759237051
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.04,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.01490877664561621,
+              -0.02039494223300701,
+              0.11815275926250711
+            ]
+          }
+        ],
+        "link8": [
+          {
+            "symmetric_opening_m": 0.07,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.065,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.06,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.055,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.05,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.01169530337647515,
+              0.025000960908126826,
+              0.13026665304899615
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.045,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.012882349707109575,
+              0.02252262926702992,
+              0.12514084179927423
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.04,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.013995473569424535,
+              0.020173883562555284,
+              0.12090674401615746
+            ]
+          }
+        ]
+      },
+      "paired_joint_lifts": [
+        {
+          "q2_delta_rad": -0.05,
+          "q3_delta_rad": 0.05,
+          "predicted_world_translation_m": [
+            0.002024896649291446,
+            0.0015003076995178978,
+            0.014025399211377163
+          ],
+          "orientation_change_rad": 2.513613718096987e-16
+        },
+        {
+          "q2_delta_rad": -0.1,
+          "q3_delta_rad": 0.1,
+          "predicted_world_translation_m": [
+            0.003558152066819504,
+            0.002496209632455424,
+            0.028157641065967774
+          ],
+          "orientation_change_rad": 9.412373634839017e-17
+        },
+        {
+          "q2_delta_rad": -0.12,
+          "q3_delta_rad": 0.12,
+          "predicted_world_translation_m": [
+            0.004032894717834526,
+            0.0027527366794015086,
+            0.03383254829998169
+          ],
+          "orientation_change_rad": 1.9626155733547162e-17
+        }
+      ],
+      "source_sha256": {
+        "result.json": "b1230540a671a1354849230ae0da2d9f39e8656421ec3972a6f0faa49ed87f2c",
+        "telemetry.npz": "f42934e461316b46049551830627b349e2fac23ab6d9d1327387b80f25e39061",
+        "environment_metadata.json": "ba49f924afb223ae0510ddafe716f82ec7b16d0d86c093f80fafffc5e32aa05b"
+      }
+    },
+    {
+      "run_id": "plan_p2_fullhold_seed42_01",
+      "steps": 2851,
+      "stop_reason": "policy_stop:reach_lowering_hold_complete",
+      "actual_arm_q": [
+        0.5476298928260803,
+        3.1400082111358643,
+        -1.6662344932556152,
+        0.0030300880316644907,
+        -0.08624963462352753,
+        -6.963670784898568e-06,
+        0.03500000014901161,
+        -0.034854669123888016
+      ],
+      "actual_world_gripper_from_B_FK": [
+        [
+          -0.6921289076797631,
+          -0.7111295083900685,
+          0.12350059696584267,
+          -6.736484448550097
+        ],
+        [
+          -0.6925673151289048,
+          0.7025096622569937,
+          0.16380075839478628,
+          -8.695950667537723
+        ],
+        [
+          -0.2032439154542157,
+          0.027838763127449505,
+          -0.9787322995070585,
+          0.3336162985049734
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "FK_position_vs_record_m": 1.0498524424916179e-06,
+      "object_root_world_m": [
+        -6.723809719085693,
+        -8.680274963378906,
+        0.14022479951381683
+      ],
+      "nominal_bottle_world_bounds_m": [
+        [
+          -6.771821307062844,
+          -8.709399673287763,
+          0.04457380448991796
+        ],
+        [
+          -6.675797148824019,
+          -8.651150735075568,
+          0.2358748027164488
+        ]
+      ],
+      "axis_points_world_m": {
+        "0.0593": [
+          -6.729160863150023,
+          -8.686237282564912,
+          0.2755774731442048
+        ],
+        "0.115": [
+          -6.722281879899025,
+          -8.677113580322322,
+          0.22106208406166164
+        ],
+        "0.1358": [
+          -6.719713067482136,
+          -8.673706524547711,
+          0.20070445223191483
+        ]
+      },
+      "bottle_vertices_in_finger_depth_slab": {
+        "count": 1440,
+        "bounds_gripper_m": [
+          [
+            -0.01452639214801624,
+            -0.024393980527249906,
+            0.09825705393677242
+          ],
+          [
+            0.03579949743315819,
+            0.020405686500969772,
+            0.1357700930937378
+          ]
+        ]
+      },
+      "ideal_convex_hull_contact_possible": {
+        "link7": [
+          {
+            "symmetric_opening_m": 0.07,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.065,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.06,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.055,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.010941512656553019,
+              -0.02749999057751931,
+              0.13272969994887318
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.05,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.012224986536577132,
+              -0.025065941621113655,
+              0.1282704093746735
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.045,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.013370651340244333,
+              -0.022706386442100854,
+              0.12395135491870532
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.04,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.014389982085777667,
+              -0.02033134421650827,
+              0.12010856863033473
+            ]
+          }
+        ],
+        "link8": [
+          {
+            "symmetric_opening_m": 0.07,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.065,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.06,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.055,
+            "intersects": false,
+            "witness_gripper_m": null
+          },
+          {
+            "symmetric_opening_m": 0.05,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.0103926006630683,
+              0.024999921742404962,
+              0.13451974252050486
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.045,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.01204425206284468,
+              0.022545280643623062,
+              0.1289257842435067
+            ]
+          },
+          {
+            "symmetric_opening_m": 0.04,
+            "intersects": true,
+            "witness_gripper_m": [
+              0.013099132009340108,
+              0.020052086235401848,
+              0.1243162458164118
+            ]
+          }
+        ]
+      },
+      "paired_joint_lifts": [
+        {
+          "q2_delta_rad": -0.05,
+          "q3_delta_rad": 0.05,
+          "predicted_world_translation_m": [
+            0.00201310665454592,
+            0.0014996071685507042,
+            0.014027171226212939
+          ],
+          "orientation_change_rad": 2.383840817285746e-16
+        },
+        {
+          "q2_delta_rad": -0.1,
+          "q3_delta_rad": 0.1,
+          "predicted_world_translation_m": [
+            0.003534746584482639,
+            0.0024945437461022686,
+            0.02816073644530475
+          ],
+          "orientation_change_rad": 6.369057972232318e-17
+        },
+        {
+          "q2_delta_rad": -0.12,
+          "q3_delta_rad": 0.12,
+          "predicted_world_translation_m": [
+            0.004004898422103131,
+            0.0027506110184303736,
+            0.03383604662421093
+          ],
+          "orientation_change_rad": 3.9252311467094324e-17
+        }
+      ],
+      "source_sha256": {
+        "result.json": "4d7a4e6b90e91c204ded4c1523beec91487d638539d9adec6064e06d6c64710d",
+        "telemetry.npz": "3ff174012b9a7cdc60aa5f0a8c6e923422c622b51b2e80c7e4192515f4e0fa3c",
+        "environment_metadata.json": "2f0e49328f8f9a6174aba6fb3589cd75cc2bfe04b896fedb8e23d787800cc420"
+      }
+    }
+  ],
+  "recommendation": "One bounded physical probe is justified: normal first-reach completion, keep lowered legs/wheel anchor, close gently with finite preload, then measured q2-.10/q3+.10 and observe. Do not infer grasp from proximity reward or static geometry."
+}

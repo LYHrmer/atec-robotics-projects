@@ -1,0 +1,237 @@
+{
+  "module_under_test": "task_b/contact_grasp.py",
+  "module_sha256": "c8684cccc0294de2491ba0692443190b8cb7ce48d041994f4d4416b3f5069af7",
+  "auditor_sha256": "a206a4105238395875e323cb671f7c496bc5e9dc4a5a565f321569e04c20d355",
+  "synthetic_only": true,
+  "physics_contact_object_reward_present": false,
+  "is_grasp_lift_delivery_or_score_evidence": false,
+  "scope_note": "SYNTHETIC CPU counterexamples against independently written expectations. Passing bounds the controller contract only. The physical grasp evidence for this candidate lives in the separate offline audit of recorded object pose and the original mesh, not here.",
+  "checks_total": 29,
+  "checks_passed": 29,
+  "checks_failed": 0,
+  "failed_checks": [],
+  "checks": {
+    "prefix_action_byte_identical_through_normal_completion": true,
+    "prefix_reached_the_frozen_normal_handoff": true,
+    "candidate_entered_contact_open_not_probe_close": true,
+    "inherited_probe_clock_has_not_started_at_contact_entry": true,
+    "contact_phase_order_is_open_rotate_lower_then_inherited_close": true,
+    "probe_close_never_precedes_contact_lower": true,
+    "extra_leg_reference_is_exactly_one_added_copy": true,
+    "extra_alpha_increment_never_exceeds_dt_over_three": true,
+    "extra_alpha_never_decreases": true,
+    "wrist_goal_is_public_q6_plus_exactly_pi_over_six": true,
+    "wrist_goal_never_rechases_the_measurement": true,
+    "wrist_command_slew_within_rate_limit": true,
+    "only_arm_joint6_moves_during_rotation": true,
+    "wrist_goal_outside_original_limits_is_rejected_not_clipped": true,
+    "losing_the_open_width_stops_before_any_close_or_lift": true,
+    "leg_reference_outside_original_limits_stops_before_motion": true,
+    "extra_leg_term_never_reverts_after_alpha_one": true,
+    "extra_leg_term_still_present_in_the_stop_action": true,
+    "extra_alpha_is_one_at_the_stop": true,
+    "quiet_window_requires_a_complete_window_and_is_cleared_by_bad_samples": true,
+    "non_finite_proprio_is_rejected": true,
+    "wrong_length_proprio_is_rejected": true,
+    "phase_deadlines_are_declared_and_finite": true,
+    "single_global_contact_budget_is_declared": true,
+    "nominal_four_centimetre_sum_is_labelled_as_a_reference_not_a_measurement": true,
+    "stop_reason_dictionary_is_exposed": true,
+    "no_ground_truth_or_reward_token_in_executable_source": true,
+    "frozen_dependencies_are_not_modified_by_import": true,
+    "only_the_declared_point_zero_two_lowering_is_accepted": true
+  },
+  "evidence": {
+    "prefix_action_byte_identical_through_normal_completion": {
+      "max_abs_difference": 0.0,
+      "ticks_compared": 716,
+      "child_probe_entry_tick": 716
+    },
+    "candidate_entered_contact_open_not_probe_close": {
+      "candidate_state": "CONTACT_OPEN",
+      "baseline_phase": "PROBE_CLOSE"
+    },
+    "inherited_probe_clock_has_not_started_at_contact_entry": {
+      "entry_call": null
+    },
+    "contact_phase_order_is_open_rotate_lower_then_inherited_close": {
+      "observed_order": [
+        "CONTACT_OPEN",
+        "CONTACT_ROTATE",
+        "CONTACT_LOWER",
+        "PROBE_CLOSE",
+        "PROBE_LIFT",
+        "PROBE_OBSERVE"
+      ]
+    },
+    "extra_leg_reference_is_exactly_one_added_copy": {
+      "observed_ratio_min_max": [
+        2.0,
+        2.0
+      ],
+      "expected_ratio": 2.0,
+      "note": "child .02 term plus exactly one extra copy"
+    },
+    "extra_alpha_increment_never_exceeds_dt_over_three": {
+      "max_increment": 0.00666666666666671,
+      "limit": 0.006666666666666667
+    },
+    "extra_alpha_never_decreases": {
+      "min_increment": 0.0
+    },
+    "wrist_goal_is_public_q6_plus_exactly_pi_over_six": {
+      "latched_start_q6": 6.705522526129215e-10,
+      "latched_goal_q6": 0.5235987762688511,
+      "expected_delta": 0.5235987755982988
+    },
+    "wrist_goal_never_rechases_the_measurement": {
+      "max_goal_drift_rad": 0.0
+    },
+    "wrist_command_slew_within_rate_limit": {
+      "max_per_tick_rad": 0.0020000000000000018,
+      "limit_rad": 0.002,
+      "basis": "policy.wrist_command differences, float32 action tolerance allowed"
+    },
+    "only_arm_joint6_moves_during_rotation": {
+      "per_axis_movement_during_rotation_rad": {
+        "arm_joint1": 0.0,
+        "arm_joint2": 0.0,
+        "arm_joint3": 0.0,
+        "arm_joint4": 0.0,
+        "arm_joint5": 0.0
+      },
+      "basis": "measured from the CONTACT_ROTATE entry pose"
+    },
+    "wrist_goal_outside_original_limits_is_rejected_not_clipped": {
+      "done_reason": "contact_wrist_goal_outside_joint_limits",
+      "q6_before_rad": 6.705522526129215e-10,
+      "q6_after_rad": 6.705522526129215e-10,
+      "requested_delta_rad": 5.188799525850206,
+      "original_limits_rad": [
+        -2.094399762925103,
+        2.094399762925103
+      ],
+      "note": "a clipped goal would have moved q6 to a limit; rejection leaves it put"
+    },
+    "losing_the_open_width_stops_before_any_close_or_lift": {
+      "done_reason": "contact_open_width_lost",
+      "states_after_width_loss": [
+        "CONTACT_ROTATE",
+        "STOPPED"
+      ]
+    },
+    "leg_reference_outside_original_limits_stops_before_motion": {
+      "done_reason": "contact_lower_reference_outside_joint_limits",
+      "extra_alpha_at_stop": 0.0,
+      "violations": {
+        "FR_calf_joint": [
+          -0.0581899993121624,
+          -0.11637999931216239,
+          -2.82,
+          -0.43
+        ],
+        "FL_calf_joint": [
+          -0.05866000056266785,
+          -0.11732000056266784,
+          -2.82,
+          -0.43
+        ],
+        "RR_calf_joint": [
+          -0.06400000303983688,
+          -0.12800000303983688,
+          -2.82,
+          -0.43
+        ],
+        "RL_calf_joint": [
+          -0.06425999850034714,
+          -0.12851999850034712,
+          -2.82,
+          -0.43
+        ]
+      }
+    },
+    "extra_leg_term_never_reverts_after_alpha_one": {
+      "max_deviation_after_alpha_one": 0.0,
+      "ticks_checked": 398
+    },
+    "extra_leg_term_still_present_in_the_stop_action": {
+      "stop_leg_action": [
+        -0.05443999916315079,
+        0.11416000127792358,
+        -0.2327599972486496,
+        0.051920000463724136,
+        0.11423999816179276,
+        -0.2346400022506714,
+        -0.03968000039458275,
+        0.15240000188350677,
+        -0.25600001215934753,
+        0.03776000067591667,
+        0.15532000362873077,
+        -0.25703999400138855
+      ],
+      "alpha_one_leg_action": [
+        -0.05443999916315079,
+        0.11416000127792358,
+        -0.2327599972486496,
+        0.051920000463724136,
+        0.11423999816179276,
+        -0.2346400022506714,
+        -0.03968000039458275,
+        0.15240000188350677,
+        -0.25600001215934753,
+        0.03776000067591667,
+        0.15532000362873077,
+        -0.25703999400138855
+      ],
+      "stop_reason": "grasp_probe_observation_complete"
+    },
+    "extra_alpha_is_one_at_the_stop": {
+      "extra_alpha": 1.0
+    },
+    "quiet_window_requires_a_complete_window_and_is_cleared_by_bad_samples": {
+      "clear_events": 1,
+      "max_samples_held": 26,
+      "expected_required_samples": 26
+    },
+    "non_finite_proprio_is_rejected": {
+      "done_reason": "invalid_proprio"
+    },
+    "wrong_length_proprio_is_rejected": {
+      "done_reason": "invalid_proprio"
+    },
+    "phase_deadlines_are_declared_and_finite": {
+      "expected_phase_max_s": {
+        "CONTACT_OPEN": 1.0,
+        "CONTACT_ROTATE": 7.0,
+        "CONTACT_LOWER": 5.0
+      }
+    },
+    "single_global_contact_budget_is_declared": {
+      "expected_total_s": 25.0
+    },
+    "nominal_four_centimetre_sum_is_labelled_as_a_reference_not_a_measurement": {
+      "declared_constants_present": true
+    },
+    "no_ground_truth_or_reward_token_in_executable_source": {
+      "forbidden_identifiers_used": [],
+      "executable_identifier_count": 324,
+      "basis": "ast walk over Name/Attribute/keyword nodes only; docstring and comment prose is deliberately not counted"
+    },
+    "frozen_dependencies_are_not_modified_by_import": {
+      "grasp_probe_sha256": "bf8a4204c5badd5c1708c2804e9e4a085e29535f88cfba40cb527b20abb4e306",
+      "first_reach_sha256": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897"
+    },
+    "only_the_declared_point_zero_two_lowering_is_accepted": {
+      "rejected": {
+        "0.0": true,
+        "0.01": true,
+        "0.03": true,
+        "0.04": true,
+        "nan": true,
+        "'x'": true,
+        "[0.02]": true
+      },
+      "point_zero_two_accepted": true
+    }
+  }
+}

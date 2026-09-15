@@ -1,0 +1,98 @@
+{
+  "status": "CPU_replay_of_exact_original_RGB_HSV_and_shape_stage",
+  "run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p1_hold_seed42_01",
+  "images": [
+    {
+      "file": "ee_rgb_step_02250.png",
+      "sha256": "c851265976458e6525b9f70bcf3636335d885c145440535f882bfac5de78ff16",
+      "yellow_components_area_at_least35": [
+        {
+          "bbox_xywh": [
+            145,
+            198,
+            69,
+            68
+          ],
+          "pixel_area": 3112,
+          "aspect_h_over_w": 0.9855072463768116,
+          "original_shape_pass": false
+        }
+      ]
+    },
+    {
+      "file": "ee_rgb_final.png",
+      "sha256": "6e16c679c065786e348adb1e3c92c71669f0f9b009395e55a8ee9c2ef9653294",
+      "yellow_components_area_at_least35": [
+        {
+          "bbox_xywh": [
+            153,
+            212,
+            68,
+            69
+          ],
+          "pixel_area": 3063,
+          "aspect_h_over_w": 1.0147058823529411,
+          "original_shape_pass": false
+        }
+      ]
+    }
+  ],
+  "reach_ready_step": 2340,
+  "ready_selected": {
+    "kind": "yellow_vertical_component_not_semantic_classification",
+    "body_point": [
+      0.5404888780348195,
+      0.2048020451548919,
+      -0.303688774952507
+    ],
+    "camera_point": [
+      -0.20462665842920538,
+      -0.016154736191779373,
+      0.6167401075363159
+    ],
+    "pixel_uv": [
+      168.0,
+      228.0
+    ],
+    "bbox_xywh": [
+      145,
+      197,
+      49,
+      68
+    ],
+    "pixel_area": 2298,
+    "depth_samples": 2269,
+    "optical_depth_m": 0.6167401075363159,
+    "height_span_m": 0.06995809575037243,
+    "forward_planar_distance_m": 0.577989710097822,
+    "source": "ee"
+  },
+  "first_missing_step": 2345,
+  "first_missing_projection": {
+    "ee": {
+      "expected_center_in_frame": true,
+      "pixel_uv": [
+        172.60929841546897,
+        236.76985864603327
+      ],
+      "optical_depth_m": 0.6191060985703979,
+      "reason": "center_inside_frame"
+    },
+    "head": {
+      "expected_center_in_frame": false,
+      "pixel_uv": [
+        -141.2805645452927,
+        899.6647908291567
+      ],
+      "optical_depth_m": 0.285689390177928,
+      "reason": "center_outside_frame"
+    }
+  },
+  "first_missing_candidates": [],
+  "first_missing_camera_errors": {},
+  "conclusion": "The visible near-round mustard region is rejected by the fixed portrait-aspect condition before depth/point-cloud processing.",
+  "limits": "Saved PNG replay proves shape-stage rejection only; original raw depth is not saved, so later depth/height acceptance cannot be reconstructed. It does not prove every missing sample had the same rejection reason.",
+  "source_sha256": {
+    "trace.jsonl": "8013f4a8fc087e41ae41f17e61fe5858e76a0ddb02628aec0f173a8000e2fb30"
+  }
+}

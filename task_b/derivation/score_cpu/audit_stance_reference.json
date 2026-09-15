@@ -1,0 +1,108 @@
+{
+  "verdict": "pass",
+  "checks": {
+    "off_preserves_entire_action_exactly": true,
+    "input_action_unmodified": true,
+    "duplicate_observation_names_rejected": true,
+    "compact_requires_twenty_settle_samples": true,
+    "unsupported_profile_rejected": true,
+    "duration_outside_4_to_6_rejected": true,
+    "missing_hard_joint_mapping_rejected": true,
+    "nan_action_rejected": true,
+    "nonfinite_proprio_rejected": true,
+    "float32_overflow_action_rejected": true,
+    "calibration_rejects_nonzero_leg_request": true,
+    "unexpected_action_clipping_rejected": true,
+    "compact_reorderFalse_scale0.5_mapping_scale_profile_final_target_and_holder_composition": true,
+    "compact_reorderFalse_scale0.5_wheel_arm_exact_preservation_and_wheel_gate": true,
+    "compact_reorderFalse_scale0.5_monotone_hard_bounded_5s_transition": true,
+    "compact_reorderTrue_scale0.23_mapping_scale_profile_final_target_and_holder_composition": true,
+    "compact_reorderTrue_scale0.23_wheel_arm_exact_preservation_and_wheel_gate": true,
+    "compact_reorderTrue_scale0.23_monotone_hard_bounded_5s_transition": true,
+    "compact_short_reorderFalse_scale0.5_mapping_scale_profile_final_target_and_holder_composition": true,
+    "compact_short_reorderFalse_scale0.5_wheel_arm_exact_preservation_and_wheel_gate": true,
+    "compact_short_reorderFalse_scale0.5_monotone_hard_bounded_5s_transition": true,
+    "compact_short_reorderTrue_scale0.23_mapping_scale_profile_final_target_and_holder_composition": true,
+    "compact_short_reorderTrue_scale0.23_wheel_arm_exact_preservation_and_wheel_gate": true,
+    "compact_short_reorderTrue_scale0.23_monotone_hard_bounded_5s_transition": true
+  },
+  "check_count": 24,
+  "module_sha256": "5b1423345217a22bd12d9bc987a58df62095d9d0e797b7df4bd6b9ce81cf0cd2",
+  "evidence": {
+    "compact_reorderFalse_scale0.5": {
+      "max_reference_velocity_rad_s": 0.05811333292328191,
+      "final_target_by_joint": {
+        "FR_hip_joint": -0.3023523168313238,
+        "FR_thigh_joint": 0.8130831661377943,
+        "FR_calf_joint": -1.8754745945886573,
+        "FL_hip_joint": 0.30696657668610144,
+        "FL_thigh_joint": 0.8173372201608101,
+        "FL_calf_joint": -1.8881043202266299,
+        "RR_hip_joint": -0.27114297155288936,
+        "RR_thigh_joint": 0.9786392186138522,
+        "RR_calf_joint": -1.729057945170937,
+        "RL_hip_joint": 0.2750100973730118,
+        "RL_thigh_joint": 0.9858544286612007,
+        "RL_calf_joint": -1.7429508632418722
+      },
+      "max_wheel_arm_error": 0.0
+    },
+    "compact_reorderTrue_scale0.23": {
+      "max_reference_velocity_rad_s": 0.05811333292328191,
+      "final_target_by_joint": {
+        "RL_calf_joint": -1.7429508632418722,
+        "RL_thigh_joint": 0.9858544286612007,
+        "RL_hip_joint": 0.2750100973730118,
+        "RR_calf_joint": -1.729057945170937,
+        "RR_thigh_joint": 0.9786392186138522,
+        "RR_hip_joint": -0.27114297155288936,
+        "FL_calf_joint": -1.8881043202266299,
+        "FL_thigh_joint": 0.8173372201608101,
+        "FL_hip_joint": 0.30696657668610144,
+        "FR_calf_joint": -1.8754745945886573,
+        "FR_thigh_joint": 0.8130831661377943,
+        "FR_hip_joint": -0.3023523168313238
+      },
+      "max_wheel_arm_error": 0.0
+    },
+    "compact_short_reorderFalse_scale0.5": {
+      "max_reference_velocity_rad_s": 0.09207796829093784,
+      "final_target_by_joint": {
+        "FR_hip_joint": -0.3228052193353918,
+        "FR_thigh_joint": 0.8989834889270468,
+        "FR_calf_joint": -1.8522322288050448,
+        "FL_hip_joint": 0.3276493691378279,
+        "FL_thigh_joint": 0.9043952913485503,
+        "FL_calf_joint": -1.8652912758550064,
+        "RR_hip_joint": -0.2934330988364878,
+        "RR_thigh_joint": 0.8864735283244438,
+        "RR_calf_joint": -1.7217835132468908,
+        "RL_hip_joint": 0.2975832097573324,
+        "RL_thigh_joint": 0.8930821152109296,
+        "RL_calf_joint": -1.7360366617441942
+      },
+      "max_wheel_arm_error": 0.0
+    },
+    "compact_short_reorderTrue_scale0.23": {
+      "max_reference_velocity_rad_s": 0.09207796829093784,
+      "final_target_by_joint": {
+        "RL_calf_joint": -1.7360366617441942,
+        "RL_thigh_joint": 0.8930821152109296,
+        "RL_hip_joint": 0.2975832097573324,
+        "RR_calf_joint": -1.7217835132468908,
+        "RR_thigh_joint": 0.8864735283244438,
+        "RR_hip_joint": -0.2934330988364878,
+        "FL_calf_joint": -1.8652912758550064,
+        "FL_thigh_joint": 0.9043952913485503,
+        "FL_hip_joint": 0.3276493691378279,
+        "FR_calf_joint": -1.8522322288050448,
+        "FR_thigh_joint": 0.8989834889270468,
+        "FR_hip_joint": -0.3228052193353918
+      },
+      "max_wheel_arm_error": 0.0
+    }
+  },
+  "limits_source": "/home/lybm/ATEC_Experiments_20260910/task_b_score/reach_probe_seed42_01/environment_metadata.json",
+  "reference_observations_source": "/home/lybm/ATEC_Experiments_20260910/task_b_score/reach_probe_seed42_01/telemetry.npz",
+  "claim": "CPU reference/mapping/bounds/composition checks only; no dynamic success proven"
+}

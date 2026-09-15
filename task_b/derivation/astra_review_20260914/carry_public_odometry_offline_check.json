@@ -1,0 +1,35 @@
+{
+  "runs": [
+    {
+      "run_id": "plan_p4_grasp_feedback_seed42_01",
+      "samples": 3218,
+      "public_odometry_final_xy_error_m": 0.016722426643871885,
+      "public_odometry_max_xy_error_m": 0.016722426643871885,
+      "public_odometry_final_yaw_error_rad": 0.008045639605862576,
+      "actual_final_xy_m": [
+        -7.18127965927124,
+        -9.007674217224121
+      ],
+      "integrated_final_xy_m": [
+        -7.17804678246021,
+        -8.991267265636932
+      ]
+    },
+    {
+      "run_id": "plan_p4_grasp_clamp025_delta20_seed42_01",
+      "samples": 4405,
+      "public_odometry_final_xy_error_m": 0.01975650831729118,
+      "public_odometry_max_xy_error_m": 0.019782509403749322,
+      "public_odometry_final_yaw_error_rad": 0.007590970554348098,
+      "actual_final_xy_m": [
+        -7.1790056228637695,
+        -9.006523132324219
+      ],
+      "integrated_final_xy_m": [
+        -7.170649050876122,
+        -8.98862097252417
+      ]
+    }
+  ],
+  "scope": "Offline evaluation of public-twist-only planar dead reckoning from static spawn(-10,-10,yaw0), no per-run pose calibration. This is not a runtime localization accuracy guarantee."
+}

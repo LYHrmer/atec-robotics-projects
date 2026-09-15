@@ -1,0 +1,172 @@
+{
+  "scope": "Offline actual pose and original convex-hull first-contact estimate. Contact solver offsets, real deformation/forces and multi-contact redistribution are not solved.",
+  "assumed_total_reference_lowering_m": 0.03,
+  "actuator_K": 80,
+  "assumed_default_friction_mu": 1.0,
+  "contacts": [
+    {
+      "finger": "link7",
+      "maximum_half_opening_at_first_ideal_contact_m": 0.03324555882034396,
+      "witness_in_gripper": [
+        0.0020696243519014914,
+        -0.03324555906662938,
+        0.1358000364011449
+      ],
+      "active_original_hull_face_normals": [
+        {
+          "bottle_outward_normal_world": [
+            0.5356077340325736,
+            -0.7373262943374643,
+            0.41167255303587713
+          ],
+          "upward_component": 0.41167255303587713,
+          "shoulder_outward_slope_deg": 24.30994535427217,
+          "nominal_lift_per_normal_N_mu1": 0.49965927954593436
+        },
+        {
+          "bottle_outward_normal_world": [
+            0.5720505197069828,
+            -0.6984429039798453,
+            0.4300415244870823
+          ],
+          "upward_component": 0.4300415244870823,
+          "shoulder_outward_slope_deg": 25.470195419156386,
+          "nominal_lift_per_normal_N_mu1": 0.47276758447052347
+        }
+      ]
+    },
+    {
+      "finger": "link8",
+      "maximum_half_opening_at_first_ideal_contact_m": 0.030684418803214555,
+      "witness_in_gripper": [
+        0.010000003507307573,
+        0.030684348008988838,
+        0.1358000336168569
+      ],
+      "active_original_hull_face_normals": [
+        {
+          "bottle_outward_normal_world": [
+            -0.49553328344211156,
+            0.7816221358073447,
+            0.37883189123547517
+          ],
+          "upward_component": 0.37883189123547517,
+          "shoulder_outward_slope_deg": 22.26134606793958,
+          "nominal_lift_per_normal_N_mu1": 0.5466336122723288
+        }
+      ]
+    }
+  ],
+  "force_candidates": [
+    {
+      "preload_m": 0.025,
+      "fully_open_command_slew_time_at_0_05_m_s": 1.2,
+      "byfinger": [
+        {
+          "finger": "link7",
+          "spring_force_magnitude_N": 4.659644705627517,
+          "naive_lift_capacity_range_N": [
+            2.2029289719703846,
+            2.328234716553873
+          ]
+        },
+        {
+          "finger": "link8",
+          "spring_force_magnitude_N": 4.454753504257164,
+          "naive_lift_capacity_range_N": [
+            2.4351179998149086,
+            2.4351179998149086
+          ]
+        }
+      ],
+      "naive_sum_capacity_range_N": [
+        4.638046971785293,
+        4.763352716368781
+      ]
+    },
+    {
+      "preload_m": 0.06,
+      "fully_open_command_slew_time_at_0_05_m_s": 1.9,
+      "byfinger": [
+        {
+          "finger": "link7",
+          "spring_force_magnitude_N": 7.459644705627517,
+          "naive_lift_capacity_range_N": [
+            3.5266782084878505,
+            3.7272806992824887
+          ]
+        },
+        {
+          "finger": "link8",
+          "spring_force_magnitude_N": 7.254753504257164,
+          "naive_lift_capacity_range_N": [
+            3.965692114177429,
+            3.965692114177429
+          ]
+        }
+      ],
+      "naive_sum_capacity_range_N": [
+        7.49237032266528,
+        7.692972813459917
+      ]
+    },
+    {
+      "preload_m": 0.075,
+      "fully_open_command_slew_time_at_0_05_m_s": 2.1999999999999997,
+      "byfinger": [
+        {
+          "finger": "link7",
+          "spring_force_magnitude_N": 8.659644705627516,
+          "naive_lift_capacity_range_N": [
+            4.093999309852478,
+            4.326871834737609
+          ]
+        },
+        {
+          "finger": "link8",
+          "spring_force_magnitude_N": 8.454753504257164,
+          "naive_lift_capacity_range_N": [
+            4.621652448904223,
+            4.621652448904223
+          ]
+        }
+      ],
+      "naive_sum_capacity_range_N": [
+        8.715651758756701,
+        8.948524283641833
+      ]
+    },
+    {
+      "preload_m": 0.1,
+      "fully_open_command_slew_time_at_0_05_m_s": 2.7,
+      "byfinger": [
+        {
+          "finger": "link7",
+          "spring_force_magnitude_N": 10.659644705627517,
+          "naive_lift_capacity_range_N": [
+            5.0395344787935255,
+            5.326190393829479
+          ]
+        },
+        {
+          "finger": "link8",
+          "spring_force_magnitude_N": 10.454753504257166,
+          "naive_lift_capacity_range_N": [
+            5.7149196734488825,
+            5.7149196734488825
+          ]
+        }
+      ],
+      "naive_sum_capacity_range_N": [
+        10.754454152242408,
+        11.04111006727836
+      ]
+    }
+  ],
+  "object_mass_override_kg": 0.5,
+  "estimate_limits": [
+    "Spring-force magnitude is used as a rough contact-normal scale, not as a measured normal force.",
+    "Normal and friction projections along the actual finger drive axis, multiple contacts, damping and solver offsets can change real lifting capacity.",
+    "Nominal capacities are design comparisons only; physical lifting must be measured independently."
+  ]
+}

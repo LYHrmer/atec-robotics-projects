@@ -1,0 +1,149 @@
+{
+  "run_id": "plan_p4_grasp_feedback_seed42_01",
+  "latched_step": 2969,
+  "actual_start_q": [
+    0.5445030331611633,
+    3.140007257461548,
+    -1.6706745624542236,
+    0.004823826253414154,
+    -0.08764371275901794,
+    0.001318169292062521
+  ],
+  "actual_base_quaternion_used": true,
+  "actual_object_quaternion_used": true,
+  "fixed_base_fk_vs_actual_gripper_error_m": 7.067145884433334e-07,
+  "cases": [
+    {
+      "paired_delta_rad": 0.1,
+      "goal_q_rad": [
+        0.5445030331611633,
+        3.0400072574615478,
+        -1.5706745624542235,
+        0.004823826253414154,
+        -0.08764371275901794,
+        0.001318169292062521
+      ],
+      "goal_within_static_limits": true,
+      "ideal_slew_seconds_at_0_1_rad_s": 1.0,
+      "world_gripper_delta_m": [
+        0.0034884304113216302,
+        0.0024208567833330363,
+        0.02817294029311823
+      ],
+      "public_gravity_projected_pinch_rise_m": 0.028172940644233622,
+      "gripper_world_z_monotone_up": true,
+      "finger_axis_tip_world_z_min_max_m": [
+        0.20336479418934997,
+        0.23153773448246823
+      ],
+      "gripper_body_xyz_range_m": [
+        [
+          0.5214971104254336,
+          0.19463919838166635,
+          -0.144918345189269
+        ],
+        [
+          0.5235494531359067,
+          0.1958821297765211,
+          -0.11652843025445274
+        ]
+      ],
+      "final_orientation_change_rad": 3.925231146709433e-17,
+      "object_mesh_fixed_on_support_in_final_gripper_z_min_max_m": [
+        0.12740728439908755,
+        0.3222375215609697
+      ],
+      "fixed_object_has_any_vertex_within_finger_depth_extent": true
+    },
+    {
+      "paired_delta_rad": 0.15,
+      "goal_q_rad": [
+        0.5445030331611633,
+        2.990007257461548,
+        -1.5206745624542237,
+        0.004823826253414154,
+        -0.08764371275901794,
+        0.001318169292062521
+      ],
+      "goal_within_static_limits": true,
+      "ideal_slew_seconds_at_0_1_rad_s": 1.4999999999999998,
+      "world_gripper_delta_m": [
+        0.004488687399841318,
+        0.0028741842829322906,
+        0.042380576718895335
+      ],
+      "public_gravity_projected_pinch_rise_m": 0.04238057724284345,
+      "gripper_world_z_monotone_up": true,
+      "finger_axis_tip_world_z_min_max_m": [
+        0.20336479418934997,
+        0.2457453709082453
+      ],
+      "gripper_body_xyz_range_m": [
+        [
+          0.5214971104254336,
+          0.19463919838166635,
+          -0.144918345189269
+        ],
+        [
+          0.5236929628986974,
+          0.19596907427579593,
+          -0.1022790325449082
+        ]
+      ],
+      "final_orientation_change_rad": 3.108012608937937e-17,
+      "object_mesh_fixed_on_support_in_final_gripper_z_min_max_m": [
+        0.14107997146209353,
+        0.3359102086239758
+      ],
+      "fixed_object_has_any_vertex_within_finger_depth_extent": false
+    },
+    {
+      "paired_delta_rad": 0.2,
+      "goal_q_rad": [
+        0.5445030331611633,
+        2.9400072574615477,
+        -1.4706745624542237,
+        0.004823826253414154,
+        -0.08764371275901794,
+        0.001318169292062521
+      ],
+      "goal_within_static_limits": true,
+      "ideal_slew_seconds_at_0_1_rad_s": 2.0,
+      "world_gripper_delta_m": [
+        0.004989224484699406,
+        0.0028208458880225606,
+        0.05662169922782556
+      ],
+      "public_gravity_projected_pinch_rise_m": 0.05662169992221211,
+      "gripper_world_z_monotone_up": true,
+      "finger_axis_tip_world_z_min_max_m": [
+        0.20336479418934997,
+        0.2599864934171755
+      ],
+      "gripper_body_xyz_range_m": [
+        [
+          0.5214971104254336,
+          0.19463919838166635,
+          -0.144918345189269
+        ],
+        [
+          0.5236929628986974,
+          0.19596907427579593,
+          -0.08804080907442823
+        ]
+      ],
+      "final_orientation_change_rad": 2.274076258007529e-16,
+      "object_mesh_fixed_on_support_in_final_gripper_z_min_max_m": [
+        0.15493623957860547,
+        0.34976647674048766
+      ],
+      "fixed_object_has_any_vertex_within_finger_depth_extent": false
+    }
+  ],
+  "recommendation": "Permit one bounded delta .20 trial with unchanged measured arrival thresholds and time/rate/tether limits; do not infer a grasp. Current object remains supported while jaws rise, so a larger lift can instead expose loss of contact. If this also fails actual mesh lift/follow, change contact acquisition before another lift-amplitude sweep.",
+  "limits": [
+    "Static fixed-base kinematics; no dynamic contact/friction or mesh collision-free certification.",
+    "Fixed-object final depth predicts loss of geometric overlap if the object does not attach and follow; it does not predict whether attachment will occur.",
+    "The public .015 m rise threshold refers to the gripper nominal pinch point, never object height."
+  ]
+}

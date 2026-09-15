@@ -1,0 +1,199 @@
+{
+  "run_id": "plan_p1_settle_seed42_01",
+  "score_raw_total": 0.0,
+  "stop_reason": "policy_stop:reach_observation_complete",
+  "actual_goal_joint_error_threshold_rad": 0.04,
+  "combined_actual_settled_windows": [
+    {
+      "steps": [
+        3206,
+        3206
+      ],
+      "observations": 1,
+      "observed_span_s": 0.0,
+      "max_actual_joint_error_rad": 0.019644688172176572,
+      "max_actual_arm_speed_rad_s": 0.02852221205830574,
+      "max_public_tangent_speed_m_s": 0.0020638771662115146,
+      "max_public_linear_norm_m_s": 0.021601219795865954,
+      "max_public_angular_norm_rad_s": 0.08384002296244465,
+      "max_world_planar_interval_speed_m_s": null
+    },
+    {
+      "steps": [
+        3211,
+        3211
+      ],
+      "observations": 1,
+      "observed_span_s": 0.0,
+      "max_actual_joint_error_rad": 0.012525628609493467,
+      "max_actual_arm_speed_rad_s": 0.03263653442263603,
+      "max_public_tangent_speed_m_s": 0.0021823615303792295,
+      "max_public_linear_norm_m_s": 0.02527013342394938,
+      "max_public_angular_norm_rad_s": 0.0995606930233029,
+      "max_world_planar_interval_speed_m_s": null
+    },
+    {
+      "steps": [
+        3213,
+        3317
+      ],
+      "observations": 105,
+      "observed_span_s": 2.08,
+      "max_actual_joint_error_rad": 0.011991570992305967,
+      "max_actual_arm_speed_rad_s": 0.047823768109083176,
+      "max_public_tangent_speed_m_s": 0.0020737357266403683,
+      "max_public_linear_norm_m_s": 0.02528446424624035,
+      "max_public_angular_norm_rad_s": 0.10401938029705728,
+      "max_world_planar_interval_speed_m_s": 0.0012305725002826633
+    }
+  ],
+  "two_second_combined_settled_observed": true,
+  "final_goal_error_rad": 0.011791418595150205,
+  "final_arm_qdot_max_rad_s": 0.032915905117988586,
+  "target": {
+    "object_id_1based": 10,
+    "association": "nearest actual root to initially localized point, diagnostic only"
+  },
+  "minimum_reach_distance": {
+    "step": 3206,
+    "distance_3d_m": 0.21038510523073128,
+    "horizontal_m": 0.018601649908019168,
+    "signed_vertical_m": 0.20956113934516907
+  },
+  "final_distance": {
+    "step": 3317,
+    "timing": "before_unexecuted_step_after_last_completed_step",
+    "distance_3d_m": 0.2113459140359823,
+    "horizontal_m": 0.015523967234283769,
+    "signed_vertical_m": 0.2107750028371811,
+    "ideal_rigid_down_002_distance_m": 0.1914055779391436,
+    "ideal_downward_translation_to_02m_sphere_m": 0.011378396945032343,
+    "caveat": "Ideal rigid translation only, not actual lowering or dynamic feasibility."
+  },
+  "finite_settle": {
+    "episodes": 1,
+    "total_pause_s": 0.28,
+    "first_entry_record": {
+      "reach_settle_cause": "public_angular_norm",
+      "reach_public_linear_velocity": [
+        -0.002208573278039694,
+        -0.0017298114253208041,
+        0.021160222589969635
+      ],
+      "reach_public_linear_norm": 0.021345375694719046,
+      "reach_public_angular_velocity": [
+        -0.1312108039855957,
+        0.013134430162608624,
+        -0.008726789616048336
+      ],
+      "reach_public_angular_norm": 0.1321550044275495,
+      "reach_base_tangent_speed_m_s": 0.0016434175110841827
+    }
+  },
+  "stop_proprio": {
+    "before_step": 3317,
+    "timing": "same_public_observation_used_by_the_stopping_policy_call",
+    "values": [
+      -0.0013989791041240096,
+      0.0011775038437917829,
+      0.023097410798072815,
+      0.10018430650234222,
+      0.004685267340391874,
+      0.006713348440825939,
+      -0.8393620252609253,
+      0.9760632514953613,
+      1.0,
+      0.0708792507648468,
+      0.010227499529719353,
+      -0.9974324703216553,
+      -0.163487046957016,
+      0.04193776845932007,
+      -0.3739168643951416,
+      0.16379165649414062,
+      0.051928162574768066,
+      -0.39701008796691895,
+      -0.09404618293046951,
+      -0.050993263721466064,
+      -0.25018346309661865,
+      0.10774341970682144,
+      -0.02995544672012329,
+      -0.2600417137145996,
+      6.122625350952148,
+      0.9858781695365906,
+      5.116513729095459,
+      1.6833239793777466,
+      0.5479220151901245,
+      3.140007972717285,
+      -1.662796139717102,
+      0.0029604528099298477,
+      -0.08633879572153091,
+      -6.880487944727065e-06,
+      0.03500000014901161,
+      -0.034852173179388046,
+      -0.08646535873413086,
+      -0.011129310354590416,
+      0.039575472474098206,
+      -0.13940873742103577,
+      -0.04422605410218239,
+      0.0683516263961792,
+      -0.08146581053733826,
+      -0.02485668659210205,
+      0.05082062631845474,
+      -0.12444473803043365,
+      -0.06746447831392288,
+      0.0960034430027008,
+      -0.052103981375694275,
+      -0.04656786844134331,
+      -0.04477318376302719,
+      -0.0444767102599144,
+      -0.016879796981811523,
+      0.0006550505640916526,
+      0.032915905117988586,
+      0.0019886246882379055,
+      0.0072407531552016735,
+      -0.0002618231519591063,
+      -1.5248146155499853e-05,
+      0.008901731111109257,
+      -0.3787498474121094,
+      0.165984109044075,
+      0.0585981123149395,
+      0.33842673897743225,
+      0.174172043800354,
+      0.06288108974695206,
+      -0.3866284191608429,
+      -0.17600472271442413,
+      0.008418519049882889,
+      0.31653133034706116,
+      -0.18896207213401794,
+      0.023688670247793198,
+      0.058401934802532196,
+      0.058401934802532196,
+      0.058401934802532196,
+      0.058401934802532196,
+      1.1018444299697876,
+      6.279997825622559,
+      -3.349175214767456,
+      0.005789587739855051,
+      -0.17688187956809998,
+      -5.681386596734228e-07,
+      0.07000000029802322,
+      -0.07000000029802322
+    ],
+    "linear_norm_m_s": 0.023169679398102397,
+    "angular_norm_rad_s": 0.10051823738354215,
+    "tangent_speed_m_s": 0.001434607168067729
+  },
+  "illegal": {
+    "official_terminated": false,
+    "official_truncated": false,
+    "official_active_terms": [],
+    "recorded_max_force_N": 0.0,
+    "stop_max_force_N": 0.0
+  },
+  "scope": "Independent arithmetic from measured q/qdot/public proprio/world positions, including exact stop observation; no policy inputs or controller files changed. This establishes the specified P1 settling evidence, not a score or automatic P2 dynamics guarantee.",
+  "artifact_sha256": {
+    "result.json": "368de4890d645879e91774d5918aea85311b2badb12ee42222c2d1bd5ae2ebed",
+    "telemetry.npz": "ea1e443d28e4580ad886da06894560c0b4673172d06a32bf4bf1e4e9271df27f",
+    "trace.jsonl": "9deffe3083cb07f7dfc29453d31e3e11dfeda75dea0d65ab486e0d324529e01e"
+  }
+}

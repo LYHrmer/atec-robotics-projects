@@ -1,0 +1,1166 @@
+{
+  "scope": "static CPU geometry of the OPEN-finger sweep at the D candidates; not collision simulation, not a carry, clearance or delivery result",
+  "source": "/home/lybm/ATEC_Experiments_20260910/task_b_score_cpu/next_delivery_geometry_2006.json",
+  "base_pose_is_the_recorded_p13_pose": true,
+  "finger_joints_are_prismatic_with_hard_limits": {
+    "arm_joint7_limits_rad": [
+      0.0,
+      0.035
+    ],
+    "arm_joint8_limits_rad": [
+      -0.035,
+      0.0
+    ],
+    "total_jaw_gap_range_m": [
+      0.0,
+      0.07
+    ]
+  },
+  "recorded_p13_ending_gap_m": 0.057460155338048935,
+  "release_travel_from_recorded_gap_to_full_open_m": 0.012539844661951072,
+  "barrel": {
+    "standoff_m": 1.45,
+    "outer_radius_m": 1.0,
+    "inner_inscribed_radius_m": 0.975281032138753,
+    "rim_z_m": 0.55
+  },
+  "cases": [
+    {
+      "index": 0,
+      "target_gripper_body_xyz_m": [
+        0.2,
+        0.52,
+        0.35
+      ],
+      "joints_rad": [
+        1.572039083318182,
+        2.280695658368132,
+        -2.147228675291141,
+        -0.009221042642499865,
+        0.8724070724144092,
+        0.5385624354373896
+      ],
+      "closed_reference": {
+        "payload_lowest_z_m": 0.5719472977958835,
+        "payload_max_radius_m": 0.9069927507049623,
+        "payload_root_z_m": 0.6699258748155259,
+        "finger_minimum_z_m": 0.6937997736963459,
+        "uncertified_arm_components": [],
+        "arm_components": [
+          {
+            "name": "gripper_base",
+            "min_z_m": 0.7416380670248566,
+            "max_left_m": 0.5995070506243348,
+            "radial_max_m": 0.9739827128033871,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_base",
+            "min_z_m": 0.578524711580189,
+            "max_left_m": 0.041789221661979355,
+            "radial_max_m": 1.5076972198744654,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link1",
+            "min_z_m": 0.6613066984656654,
+            "max_left_m": 0.039312208548192056,
+            "radial_max_m": 1.4981762154812888,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link2",
+            "min_z_m": 0.6701084943108375,
+            "max_left_m": 0.25220843985259456,
+            "radial_max_m": 1.4995882050174143,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link3",
+            "min_z_m": 0.8570339991821182,
+            "max_left_m": 0.43728556000639607,
+            "radial_max_m": 1.2866162330428377,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link4",
+            "min_z_m": 0.8656351697406403,
+            "max_left_m": 0.500640733397825,
+            "radial_max_m": 1.0456594380361166,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link5",
+            "min_z_m": 0.8061230149385014,
+            "max_left_m": 0.5483657659492901,
+            "radial_max_m": 1.034043417882779,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link6",
+            "min_z_m": 0.8118503851659801,
+            "max_left_m": 0.5401430246091131,
+            "radial_max_m": 0.9669528408390476,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link7",
+            "min_z_m": 0.6937997736963459,
+            "max_left_m": 0.5990451763011865,
+            "radial_max_m": 0.9612542519437013,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link8",
+            "min_z_m": 0.7162581898715707,
+            "max_left_m": 0.6251073822018265,
+            "radial_max_m": 0.9107034942030121,
+            "wall_exclusion_certified_by": "above_rim"
+          }
+        ]
+      },
+      "open_sweep": [
+        {
+          "command_joint7_rad": 0.0,
+          "command_joint8_rad": -0.035,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.23502953019513279,
+          "finger_lowest_world_z_m": 0.7062083503905499,
+          "finger_clear_of_rim_by_m": 0.1562083503905498,
+          "finger_min_radial_to_barrel_axis_m": 0.8416352284931538,
+          "finger_wall_margin_vs_inscribed_m": -0.1336458036455992,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8416352284931538,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.004375,
+          "command_joint8_rad": -0.030625000000000003,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.23370241892930343,
+          "finger_lowest_world_z_m": 0.7046572771547384,
+          "finger_clear_of_rim_by_m": 0.15465727715473832,
+          "finger_min_radial_to_barrel_axis_m": 0.8441418620691684,
+          "finger_wall_margin_vs_inscribed_m": -0.13113917006958453,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8441418620691684,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.00875,
+          "command_joint8_rad": -0.026250000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.23237530766347408,
+          "finger_lowest_world_z_m": 0.703106203918927,
+          "finger_clear_of_rim_by_m": 0.15310620391892693,
+          "finger_min_radial_to_barrel_axis_m": 0.8466604145285307,
+          "finger_wall_margin_vs_inscribed_m": -0.12862061761022225,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8466604145285307,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.013125000000000001,
+          "command_joint8_rad": -0.021875000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.2310481963976448,
+          "finger_lowest_world_z_m": 0.7015551306831156,
+          "finger_clear_of_rim_by_m": 0.15155513068311555,
+          "finger_min_radial_to_barrel_axis_m": 0.8491919632914724,
+          "finger_wall_margin_vs_inscribed_m": -0.12608906884728055,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8491919632914724,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.0175,
+          "command_joint8_rad": -0.0175,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.22972108513181544,
+          "finger_lowest_world_z_m": 0.7000040574473041,
+          "finger_clear_of_rim_by_m": 0.15000405744730405,
+          "finger_min_radial_to_barrel_axis_m": 0.8517363924743435,
+          "finger_wall_margin_vs_inscribed_m": -0.12354463966440943,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8517363924743435,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.021875000000000002,
+          "command_joint8_rad": -0.013125000000000001,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.22839397386598614,
+          "finger_lowest_world_z_m": 0.6984529842114926,
+          "finger_clear_of_rim_by_m": 0.14845298421149256,
+          "finger_min_radial_to_barrel_axis_m": 0.8542935869879711,
+          "finger_wall_margin_vs_inscribed_m": -0.12098744515078186,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8542935869879711,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.026250000000000002,
+          "command_joint8_rad": -0.00875,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.2270668626001568,
+          "finger_lowest_world_z_m": 0.6969019109756811,
+          "finger_clear_of_rim_by_m": 0.14690191097568106,
+          "finger_min_radial_to_barrel_axis_m": 0.8568634325430867,
+          "finger_wall_margin_vs_inscribed_m": -0.11841759959566622,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8568634325430867,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.030625000000000003,
+          "command_joint8_rad": -0.004375,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.22573975133432744,
+          "finger_lowest_world_z_m": 0.6953508377398697,
+          "finger_clear_of_rim_by_m": 0.14535083773986968,
+          "finger_min_radial_to_barrel_axis_m": 0.8594458156553265,
+          "finger_wall_margin_vs_inscribed_m": -0.11583521648342643,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8594458156553265,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.035,
+          "command_joint8_rad": 0.0,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.22441264006849815,
+          "finger_lowest_world_z_m": 0.6937997645040583,
+          "finger_clear_of_rim_by_m": 0.1437997645040583,
+          "finger_min_radial_to_barrel_axis_m": 0.8620406236498136,
+          "finger_wall_margin_vs_inscribed_m": -0.11324040848893935,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6613066984656653,
+          "arm_min_radial_to_barrel_axis_m": 0.8620406236498136,
+          "arm_points_below_rim_inside_wall": 0
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.1437997645040583,
+      "worst_finger_wall_margin_m": -0.1336458036455992,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false
+    },
+    {
+      "index": 1,
+      "target_gripper_body_xyz_m": [
+        0.2,
+        0.52,
+        0.3
+      ],
+      "joints_rad": [
+        1.5720399855501965,
+        2.2939658885076195,
+        -1.9726353874852762,
+        -0.011169532263275026,
+        0.6845531839660597,
+        0.5412872620054455
+      ],
+      "closed_reference": {
+        "payload_lowest_z_m": 0.5220719812704393,
+        "payload_max_radius_m": 0.9070047752020397,
+        "payload_root_z_m": 0.6200505582900924,
+        "finger_minimum_z_m": 0.6439244535382431,
+        "uncertified_arm_components": [],
+        "arm_components": [
+          {
+            "name": "gripper_base",
+            "min_z_m": 0.6917627480215575,
+            "max_left_m": 0.5986397843238626,
+            "radial_max_m": 0.973850326845034,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_base",
+            "min_z_m": 0.578524711580189,
+            "max_left_m": 0.041789221661979355,
+            "radial_max_m": 1.5076972198744654,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link1",
+            "min_z_m": 0.6613066984862891,
+            "max_left_m": 0.03931220940992953,
+            "radial_max_m": 1.498176215122304,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link2",
+            "min_z_m": 0.6701164819331543,
+            "max_left_m": 0.25464684860434583,
+            "radial_max_m": 1.499610292059872,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link3",
+            "min_z_m": 0.82717493395916,
+            "max_left_m": 0.4424764349215681,
+            "radial_max_m": 1.2842003302924052,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link4",
+            "min_z_m": 0.8157618478539183,
+            "max_left_m": 0.499822509428853,
+            "radial_max_m": 1.0471953757692547,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link5",
+            "min_z_m": 0.7562464073307358,
+            "max_left_m": 0.5475026605054333,
+            "radial_max_m": 1.0339826815244981,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link6",
+            "min_z_m": 0.7619750642741114,
+            "max_left_m": 0.5392757578434628,
+            "radial_max_m": 0.9669987874446959,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link7",
+            "min_z_m": 0.6439244535382431,
+            "max_left_m": 0.5981779092085847,
+            "radial_max_m": 0.9611883963141654,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link8",
+            "min_z_m": 0.6663828677040675,
+            "max_left_m": 0.6242401155699919,
+            "radial_max_m": 0.9108757572422301,
+            "wall_exclusion_certified_by": "above_rim"
+          }
+        ]
+      },
+      "open_sweep": [
+        {
+          "command_joint7_rad": 0.0,
+          "command_joint8_rad": -0.035,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.1850295257776905,
+          "finger_lowest_world_z_m": 0.6563330291222254,
+          "finger_clear_of_rim_by_m": 0.10633302912222531,
+          "finger_min_radial_to_barrel_axis_m": 0.8416352300573361,
+          "finger_wall_margin_vs_inscribed_m": -0.13364580208141685,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6563330291222254,
+          "arm_min_radial_to_barrel_axis_m": 0.8416352300573361,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.004375,
+          "command_joint8_rad": -0.030625000000000003,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.18370241465268292,
+          "finger_lowest_world_z_m": 0.6547819560251917,
+          "finger_clear_of_rim_by_m": 0.10478195602519169,
+          "finger_min_radial_to_barrel_axis_m": 0.8441418636705963,
+          "finger_wall_margin_vs_inscribed_m": -0.13113916846815665,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6547819560251917,
+          "arm_min_radial_to_barrel_axis_m": 0.8441418636705963,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.00875,
+          "command_joint8_rad": -0.026250000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.18237530352767534,
+          "finger_lowest_world_z_m": 0.653230882928158,
+          "finger_clear_of_rim_by_m": 0.10323088292815796,
+          "finger_min_radial_to_barrel_axis_m": 0.8466604161875089,
+          "finger_wall_margin_vs_inscribed_m": -0.12862061595124408,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.653230882928158,
+          "arm_min_radial_to_barrel_axis_m": 0.8466604161875089,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.013125000000000001,
+          "command_joint8_rad": -0.021875000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.18104819240266776,
+          "finger_lowest_world_z_m": 0.6516798098311244,
+          "finger_clear_of_rim_by_m": 0.10167980983112435,
+          "finger_min_radial_to_barrel_axis_m": 0.8491919650080735,
+          "finger_wall_margin_vs_inscribed_m": -0.12608906713067947,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6516798098311244,
+          "arm_min_radial_to_barrel_axis_m": 0.8491919650080735,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.0175,
+          "command_joint8_rad": -0.0175,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.17972108127766018,
+          "finger_lowest_world_z_m": 0.6501287367340908,
+          "finger_clear_of_rim_by_m": 0.10012873673409073,
+          "finger_min_radial_to_barrel_axis_m": 0.851736394248637,
+          "finger_wall_margin_vs_inscribed_m": -0.12354463789011594,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6501287367340908,
+          "arm_min_radial_to_barrel_axis_m": 0.851736394248637,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.021875000000000002,
+          "command_joint8_rad": -0.013125000000000001,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.1783939701526526,
+          "finger_lowest_world_z_m": 0.6485776636370572,
+          "finger_clear_of_rim_by_m": 0.09857766363705711,
+          "finger_min_radial_to_barrel_axis_m": 0.8542935888200236,
+          "finger_wall_margin_vs_inscribed_m": -0.12098744331872935,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6485776636370572,
+          "arm_min_radial_to_barrel_axis_m": 0.8542935888200236,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.026250000000000002,
+          "command_joint8_rad": -0.00875,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.17706685902764502,
+          "finger_lowest_world_z_m": 0.6470265905400235,
+          "finger_clear_of_rim_by_m": 0.0970265905400235,
+          "finger_min_radial_to_barrel_axis_m": 0.8568634344329616,
+          "finger_wall_margin_vs_inscribed_m": -0.1184175977057913,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6470265905400235,
+          "arm_min_radial_to_barrel_axis_m": 0.8568634344329616,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.030625000000000003,
+          "command_joint8_rad": -0.004375,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.17573974790263744,
+          "finger_lowest_world_z_m": 0.6454755174429898,
+          "finger_clear_of_rim_by_m": 0.09547551744298977,
+          "finger_min_radial_to_barrel_axis_m": 0.8594458176030846,
+          "finger_wall_margin_vs_inscribed_m": -0.11583521453566836,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6454755174429898,
+          "arm_min_radial_to_barrel_axis_m": 0.8594458176030846,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.035,
+          "command_joint8_rad": 0.0,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.17441263677762986,
+          "finger_lowest_world_z_m": 0.6439244443459562,
+          "finger_clear_of_rim_by_m": 0.09392444434595615,
+          "finger_min_radial_to_barrel_axis_m": 0.8620406256555126,
+          "finger_wall_margin_vs_inscribed_m": -0.1132404064832403,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6439244443459562,
+          "arm_min_radial_to_barrel_axis_m": 0.8620406256555126,
+          "arm_points_below_rim_inside_wall": 0
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.09392444434595615,
+      "worst_finger_wall_margin_m": -0.13364580208141685,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false
+    },
+    {
+      "index": 2,
+      "target_gripper_body_xyz_m": [
+        0.2,
+        0.52,
+        0.25
+      ],
+      "joints_rad": [
+        1.5720410416679655,
+        2.343709244881347,
+        -1.8630619942144093,
+        -0.014086799889629662,
+        0.525248933052412,
+        0.5448229915063195
+      ],
+      "closed_reference": {
+        "payload_lowest_z_m": 0.4721966649276517,
+        "payload_max_radius_m": 0.9070721853719753,
+        "payload_root_z_m": 0.5701752419244566,
+        "finger_minimum_z_m": 0.5940491350498631,
+        "uncertified_arm_components": [],
+        "arm_components": [
+          {
+            "name": "gripper_base",
+            "min_z_m": 0.6418874306864193,
+            "max_left_m": 0.5977725162626875,
+            "radial_max_m": 0.9737307129706525,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_base",
+            "min_z_m": 0.578524711580189,
+            "max_left_m": 0.041789221661979355,
+            "radial_max_m": 1.5076972198744654,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link1",
+            "min_z_m": 0.6613066985104308,
+            "max_left_m": 0.039312210418608745,
+            "radial_max_m": 1.4981762147020543,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link2",
+            "min_z_m": 0.6701957816326277,
+            "max_left_m": 0.2633907514401398,
+            "radial_max_m": 1.4996865548477527,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link3",
+            "min_z_m": 0.7843111447888478,
+            "max_left_m": 0.44780593820863757,
+            "radial_max_m": 1.2755029031443876,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link4",
+            "min_z_m": 0.76595399805978,
+            "max_left_m": 0.49902172811090667,
+            "radial_max_m": 1.0488612536355744,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link5",
+            "min_z_m": 0.7063696058580876,
+            "max_left_m": 0.5466405379608567,
+            "radial_max_m": 1.0339175970105037,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link6",
+            "min_z_m": 0.7120997453651418,
+            "max_left_m": 0.5384084897673811,
+            "radial_max_m": 0.9670576104262629,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link7",
+            "min_z_m": 0.5940491350498631,
+            "max_left_m": 0.5973106406186585,
+            "radial_max_m": 0.9611354939830312,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link8",
+            "min_z_m": 0.6165075474165842,
+            "max_left_m": 0.6233728471729939,
+            "radial_max_m": 0.911061658009477,
+            "wall_exclusion_certified_by": "above_rim"
+          }
+        ]
+      },
+      "open_sweep": [
+        {
+          "command_joint7_rad": 0.0,
+          "command_joint8_rad": -0.035,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.13502952308647462,
+          "finger_lowest_world_z_m": 0.6064577096398154,
+          "finger_clear_of_rim_by_m": 0.056457709639815334,
+          "finger_min_radial_to_barrel_axis_m": 0.8416352333179458,
+          "finger_wall_margin_vs_inscribed_m": -0.13364579882080718,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6064577096398154,
+          "arm_min_radial_to_barrel_axis_m": 0.8416352333179458,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.004375,
+          "command_joint8_rad": -0.030625000000000003,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.13370241208832245,
+          "finger_lowest_world_z_m": 0.6049066366670356,
+          "finger_clear_of_rim_by_m": 0.05490663666703555,
+          "finger_min_radial_to_barrel_axis_m": 0.8441418669590853,
+          "finger_wall_margin_vs_inscribed_m": -0.13113916517966762,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6049066366670356,
+          "arm_min_radial_to_barrel_axis_m": 0.8441418669590853,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.00875,
+          "command_joint8_rad": -0.026250000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.13237530109017026,
+          "finger_lowest_world_z_m": 0.6033555636942558,
+          "finger_clear_of_rim_by_m": 0.05335556369425576,
+          "finger_min_radial_to_barrel_axis_m": 0.8466604195123879,
+          "finger_wall_margin_vs_inscribed_m": -0.12862061262636504,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6033555636942558,
+          "arm_min_radial_to_barrel_axis_m": 0.8466604195123879,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.013125000000000001,
+          "command_joint8_rad": -0.021875000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.1310481900920181,
+          "finger_lowest_world_z_m": 0.601804490721476,
+          "finger_clear_of_rim_by_m": 0.05180449072147597,
+          "finger_min_radial_to_barrel_axis_m": 0.8491919683694716,
+          "finger_wall_margin_vs_inscribed_m": -0.1260890637692813,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.601804490721476,
+          "arm_min_radial_to_barrel_axis_m": 0.8491919683694716,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.0175,
+          "command_joint8_rad": -0.0175,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.12972107909386593,
+          "finger_lowest_world_z_m": 0.6002534177486962,
+          "finger_clear_of_rim_by_m": 0.05025341774869618,
+          "finger_min_radial_to_barrel_axis_m": 0.8517363976466812,
+          "finger_wall_margin_vs_inscribed_m": -0.12354463449207176,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.6002534177486962,
+          "arm_min_radial_to_barrel_axis_m": 0.8517363976466812,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.021875000000000002,
+          "command_joint8_rad": -0.013125000000000001,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.12839396809571374,
+          "finger_lowest_world_z_m": 0.5987023447759164,
+          "finger_clear_of_rim_by_m": 0.048702344775916395,
+          "finger_min_radial_to_barrel_axis_m": 0.8542935922548381,
+          "finger_wall_margin_vs_inscribed_m": -0.1209874398839148,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.5987023447759164,
+          "arm_min_radial_to_barrel_axis_m": 0.8542935922548381,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.026250000000000002,
+          "command_joint8_rad": -0.00875,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.12706685709756158,
+          "finger_lowest_world_z_m": 0.5971512718031368,
+          "finger_clear_of_rim_by_m": 0.04715127180313672,
+          "finger_min_radial_to_barrel_axis_m": 0.856863437904669,
+          "finger_wall_margin_vs_inscribed_m": -0.11841759423408393,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.5971512718031368,
+          "arm_min_radial_to_barrel_axis_m": 0.856863437904669,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.030625000000000003,
+          "command_joint8_rad": -0.004375,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.1257397460994094,
+          "finger_lowest_world_z_m": 0.595600198830357,
+          "finger_clear_of_rim_by_m": 0.04560019883035693,
+          "finger_min_radial_to_barrel_axis_m": 0.8594458211118046,
+          "finger_wall_margin_vs_inscribed_m": -0.11583521102694838,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.595600198830357,
+          "arm_min_radial_to_barrel_axis_m": 0.8594458211118046,
+          "arm_points_below_rim_inside_wall": 0
+        },
+        {
+          "command_joint7_rad": 0.035,
+          "command_joint8_rad": 0.0,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.12441263510125725,
+          "finger_lowest_world_z_m": 0.5940491258575772,
+          "finger_clear_of_rim_by_m": 0.04404912585757714,
+          "finger_min_radial_to_barrel_axis_m": 0.8620406292013632,
+          "finger_wall_margin_vs_inscribed_m": -0.1132404029373898,
+          "finger_points_below_rim_inside_wall": 0,
+          "arm_lowest_world_z_m": 0.5940491258575772,
+          "arm_min_radial_to_barrel_axis_m": 0.8620406292013632,
+          "arm_points_below_rim_inside_wall": 0
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.04404912585757714,
+      "worst_finger_wall_margin_m": -0.13364579882080718,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false
+    },
+    {
+      "index": 3,
+      "target_gripper_body_xyz_m": [
+        0.2,
+        0.52,
+        0.15
+      ],
+      "joints_rad": [
+        1.572044357214623,
+        2.518275563496442,
+        -1.7817003587029256,
+        -0.026552165419390462,
+        0.26936837730464286,
+        0.5582326362445165
+      ],
+      "closed_reference": {
+        "payload_lowest_z_m": 0.3724460316980555,
+        "payload_max_radius_m": 0.9072488034533401,
+        "payload_root_z_m": 0.47042460871766356,
+        "finger_minimum_z_m": 0.4942985010874821,
+        "uncertified_arm_components": [],
+        "arm_components": [
+          {
+            "name": "gripper_base",
+            "min_z_m": 0.5421367982661978,
+            "max_left_m": 0.5960379780556415,
+            "radial_max_m": 0.9737917873323919,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          },
+          {
+            "name": "arm_base",
+            "min_z_m": 0.578524711580189,
+            "max_left_m": 0.041789221661979355,
+            "radial_max_m": 1.5076972198744654,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link1",
+            "min_z_m": 0.6613066985862229,
+            "max_left_m": 0.03931221358496737,
+            "radial_max_m": 1.498176213382479,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link2",
+            "min_z_m": 0.6701690342883316,
+            "max_left_m": 0.2895988290613156,
+            "radial_max_m": 1.4997102450819157,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link3",
+            "min_z_m": 0.6963329572036856,
+            "max_left_m": 0.4571499508808712,
+            "radial_max_m": 1.2491502314566527,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link4",
+            "min_z_m": 0.6663745658385927,
+            "max_left_m": 0.49746905306460026,
+            "radial_max_m": 1.0501082859012514,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link5",
+            "min_z_m": 0.6066152679374686,
+            "max_left_m": 0.5449229034402501,
+            "radial_max_m": 1.033703972611563,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link6",
+            "min_z_m": 0.6123491100039642,
+            "max_left_m": 0.5366739512219482,
+            "radial_max_m": 0.9672138738859253,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link7",
+            "min_z_m": 0.4942985010874821,
+            "max_left_m": 0.5955761023129515,
+            "radial_max_m": 0.9610685549185793,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          },
+          {
+            "name": "arm_link8",
+            "min_z_m": 0.5167569104922499,
+            "max_left_m": 0.621638309033436,
+            "radial_max_m": 0.9114743355128131,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          }
+        ]
+      },
+      "open_sweep": [
+        {
+          "command_joint7_rad": 0.0,
+          "command_joint8_rad": -0.035,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.035029521155994676,
+          "finger_lowest_world_z_m": 0.5067070740409143,
+          "finger_clear_of_rim_by_m": -0.04329292595908574,
+          "finger_min_radial_to_barrel_axis_m": 0.8416352415884728,
+          "finger_wall_margin_vs_inscribed_m": -0.13364579055028014,
+          "finger_points_below_rim_inside_wall": 3494,
+          "arm_lowest_world_z_m": 0.5067070740409143,
+          "arm_min_radial_to_barrel_axis_m": 0.8416352415884728,
+          "arm_points_below_rim_inside_wall": 3494
+        },
+        {
+          "command_joint7_rad": 0.004375,
+          "command_joint8_rad": -0.030625000000000003,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.03370241036722285,
+          "finger_lowest_world_z_m": 0.5051560012726997,
+          "finger_clear_of_rim_by_m": -0.04484399872730038,
+          "finger_min_radial_to_barrel_axis_m": 0.8441418752690082,
+          "finger_wall_margin_vs_inscribed_m": -0.13113915686974476,
+          "finger_points_below_rim_inside_wall": 3717,
+          "arm_lowest_world_z_m": 0.5051560012726997,
+          "arm_min_radial_to_barrel_axis_m": 0.8441418752690082,
+          "arm_points_below_rim_inside_wall": 3717
+        },
+        {
+          "command_joint7_rad": 0.00875,
+          "command_joint8_rad": -0.026250000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.03237529957845102,
+          "finger_lowest_world_z_m": 0.503604928504485,
+          "finger_clear_of_rim_by_m": -0.04639507149551503,
+          "finger_min_radial_to_barrel_axis_m": 0.8466604278826888,
+          "finger_wall_margin_vs_inscribed_m": -0.12862060425606414,
+          "finger_points_below_rim_inside_wall": 4013,
+          "arm_lowest_world_z_m": 0.503604928504485,
+          "arm_min_radial_to_barrel_axis_m": 0.8466604278826888,
+          "arm_points_below_rim_inside_wall": 4013
+        },
+        {
+          "command_joint7_rad": 0.013125000000000001,
+          "command_joint8_rad": -0.021875000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.031048188789679194,
+          "finger_lowest_world_z_m": 0.5020538557362704,
+          "finger_clear_of_rim_by_m": -0.04794614426372967,
+          "finger_min_radial_to_barrel_axis_m": 0.8491919768003179,
+          "finger_wall_margin_vs_inscribed_m": -0.12608905533843506,
+          "finger_points_below_rim_inside_wall": 4128,
+          "arm_lowest_world_z_m": 0.5020538557362704,
+          "arm_min_radial_to_barrel_axis_m": 0.8491919768003179,
+          "arm_points_below_rim_inside_wall": 4128
+        },
+        {
+          "command_joint7_rad": 0.0175,
+          "command_joint8_rad": -0.0175,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.02972107800090737,
+          "finger_lowest_world_z_m": 0.5005027829680557,
+          "finger_clear_of_rim_by_m": -0.04949721703194432,
+          "finger_min_radial_to_barrel_axis_m": 0.8517364061382369,
+          "finger_wall_margin_vs_inscribed_m": -0.12354462600051608,
+          "finger_points_below_rim_inside_wall": 4317,
+          "arm_lowest_world_z_m": 0.5005027829680557,
+          "arm_min_radial_to_barrel_axis_m": 0.8517364061382369,
+          "arm_points_below_rim_inside_wall": 4317
+        },
+        {
+          "command_joint7_rad": 0.021875000000000002,
+          "command_joint8_rad": -0.013125000000000001,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.028393967212135544,
+          "finger_lowest_world_z_m": 0.4989517101998411,
+          "finger_clear_of_rim_by_m": -0.051048289800158964,
+          "finger_min_radial_to_barrel_axis_m": 0.8542936008072642,
+          "finger_wall_margin_vs_inscribed_m": -0.1209874313314887,
+          "finger_points_below_rim_inside_wall": 4510,
+          "arm_lowest_world_z_m": 0.4989517101998411,
+          "arm_min_radial_to_barrel_axis_m": 0.8542936008072642,
+          "arm_points_below_rim_inside_wall": 4510
+        },
+        {
+          "command_joint7_rad": 0.026250000000000002,
+          "command_joint8_rad": -0.00875,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.027066856423363712,
+          "finger_lowest_world_z_m": 0.4974006374316265,
+          "finger_clear_of_rim_by_m": -0.05259936256837355,
+          "finger_min_radial_to_barrel_axis_m": 0.8568634465181237,
+          "finger_wall_margin_vs_inscribed_m": -0.1184175856206292,
+          "finger_points_below_rim_inside_wall": 4725,
+          "arm_lowest_world_z_m": 0.4974006374316265,
+          "arm_min_radial_to_barrel_axis_m": 0.8568634465181237,
+          "arm_points_below_rim_inside_wall": 4725
+        },
+        {
+          "command_joint7_rad": 0.030625000000000003,
+          "command_joint8_rad": -0.004375,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.025739745634591887,
+          "finger_lowest_world_z_m": 0.49584956466341185,
+          "finger_clear_of_rim_by_m": -0.0541504353365882,
+          "finger_min_radial_to_barrel_axis_m": 0.8594458297864431,
+          "finger_wall_margin_vs_inscribed_m": -0.11583520235230982,
+          "finger_points_below_rim_inside_wall": 5186,
+          "arm_lowest_world_z_m": 0.49584956466341185,
+          "arm_min_radial_to_barrel_axis_m": 0.8594458297864431,
+          "arm_points_below_rim_inside_wall": 5186
+        },
+        {
+          "command_joint7_rad": 0.035,
+          "command_joint8_rad": 0.0,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": 0.024412634845820062,
+          "finger_lowest_world_z_m": 0.4942984918951972,
+          "finger_clear_of_rim_by_m": -0.055701508104802844,
+          "finger_min_radial_to_barrel_axis_m": 0.8620406379373378,
+          "finger_wall_margin_vs_inscribed_m": -0.11324039420141518,
+          "finger_points_below_rim_inside_wall": 5582,
+          "arm_lowest_world_z_m": 0.4942984918951972,
+          "arm_min_radial_to_barrel_axis_m": 0.8620406379373378,
+          "arm_points_below_rim_inside_wall": 5582
+        }
+      ],
+      "worst_finger_rim_clearance_m": -0.055701508104802844,
+      "worst_finger_wall_margin_m": -0.13364579055028014,
+      "any_finger_below_rim_inside_wall": true,
+      "any_arm_below_rim_inside_wall": true
+    },
+    {
+      "index": 4,
+      "target_gripper_body_xyz_m": [
+        0.2,
+        0.52,
+        0.05
+      ],
+      "joints_rad": [
+        1.5720532856120657,
+        2.768473315932997,
+        -1.8651711734046892,
+        -0.06896135912654448,
+        0.10279368198424156,
+        0.6012431157922293
+      ],
+      "closed_reference": {
+        "payload_lowest_z_m": 0.2726954007070611,
+        "payload_max_radius_m": 0.9074802801887939,
+        "payload_root_z_m": 0.3706739775695407,
+        "finger_minimum_z_m": 0.3945478737462413,
+        "uncertified_arm_components": [
+          "arm_link5"
+        ],
+        "arm_components": [
+          {
+            "name": "gripper_base",
+            "min_z_m": 0.4423861715622958,
+            "max_left_m": 0.5943034370586511,
+            "radial_max_m": 0.9739971636906052,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          },
+          {
+            "name": "arm_base",
+            "min_z_m": 0.578524711580189,
+            "max_left_m": 0.041789221661979355,
+            "radial_max_m": 1.5076972198744654,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link1",
+            "min_z_m": 0.6613066987903409,
+            "max_left_m": 0.03931222210965134,
+            "radial_max_m": 1.4981762098270917,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link2",
+            "min_z_m": 0.6700620745034956,
+            "max_left_m": 0.313681854314424,
+            "radial_max_m": 1.4996586940151442,
+            "wall_exclusion_certified_by": "outside_support_plane"
+          },
+          {
+            "name": "arm_link3",
+            "min_z_m": 0.6042754814468366,
+            "max_left_m": 0.46308243522180115,
+            "radial_max_m": 1.2246134394683952,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link4",
+            "min_z_m": 0.5671789969336436,
+            "max_left_m": 0.4964584539045317,
+            "radial_max_m": 1.049741616407651,
+            "wall_exclusion_certified_by": "above_rim"
+          },
+          {
+            "name": "arm_link5",
+            "min_z_m": 0.5068732745825592,
+            "max_left_m": 0.5432146743044426,
+            "radial_max_m": 1.0330602130337823,
+            "wall_exclusion_certified_by": "NOT_CERTIFIED"
+          },
+          {
+            "name": "arm_link6",
+            "min_z_m": 0.5125984817791734,
+            "max_left_m": 0.5349394106577978,
+            "radial_max_m": 0.9674216042755447,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          },
+          {
+            "name": "arm_link7",
+            "min_z_m": 0.3945478737462413,
+            "max_left_m": 0.5938415625167943,
+            "radial_max_m": 0.9610534434853449,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          },
+          {
+            "name": "arm_link8",
+            "min_z_m": 0.4170062817237944,
+            "max_left_m": 0.6199037686443949,
+            "radial_max_m": 0.9119414512188763,
+            "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+          }
+        ]
+      },
+      "open_sweep": [
+        {
+          "command_joint7_rad": 0.0,
+          "command_joint8_rad": -0.035,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.06497047355146696,
+          "finger_lowest_world_z_m": 0.40695644591111807,
+          "finger_clear_of_rim_by_m": -0.14304355408888197,
+          "finger_min_radial_to_barrel_axis_m": 0.8416352517171239,
+          "finger_wall_margin_vs_inscribed_m": -0.133645780421629,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.40695644591111807,
+          "arm_min_radial_to_barrel_axis_m": 0.8416352517171239,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.004375,
+          "command_joint8_rad": -0.030625000000000003,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.066297584236985,
+          "finger_lowest_world_z_m": 0.40540537324147297,
+          "finger_clear_of_rim_by_m": -0.14459462675852708,
+          "finger_min_radial_to_barrel_axis_m": 0.8441418853950257,
+          "finger_wall_margin_vs_inscribed_m": -0.1311391467437273,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.40540537324147297,
+          "arm_min_radial_to_barrel_axis_m": 0.8441418853950257,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.00875,
+          "command_joint8_rad": -0.026250000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.06762469492250305,
+          "finger_lowest_world_z_m": 0.4038543005718278,
+          "finger_clear_of_rim_by_m": -0.14614569942817224,
+          "finger_min_radial_to_barrel_axis_m": 0.8466604379995293,
+          "finger_wall_margin_vs_inscribed_m": -0.12862059413922367,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.4038543005718278,
+          "arm_min_radial_to_barrel_axis_m": 0.8466604379995293,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.013125000000000001,
+          "command_joint8_rad": -0.021875000000000002,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.06895180560802108,
+          "finger_lowest_world_z_m": 0.40230322790218265,
+          "finger_clear_of_rim_by_m": -0.1476967720978174,
+          "finger_min_radial_to_barrel_axis_m": 0.8491919869082039,
+          "finger_wall_margin_vs_inscribed_m": -0.1260890452305491,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.40230322790218265,
+          "arm_min_radial_to_barrel_axis_m": 0.8491919869082039,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.0175,
+          "command_joint8_rad": -0.0175,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.07027891629353913,
+          "finger_lowest_world_z_m": 0.40075215523253754,
+          "finger_clear_of_rim_by_m": -0.1492478447674625,
+          "finger_min_radial_to_barrel_axis_m": 0.8517364162373907,
+          "finger_wall_margin_vs_inscribed_m": -0.12354461590136223,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.40075215523253754,
+          "arm_min_radial_to_barrel_axis_m": 0.8517364162373907,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.021875000000000002,
+          "command_joint8_rad": -0.013125000000000001,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.07160602697905717,
+          "finger_lowest_world_z_m": 0.39920108256289244,
+          "finger_clear_of_rim_by_m": -0.1507989174371076,
+          "finger_min_radial_to_barrel_axis_m": 0.8542936108979081,
+          "finger_wall_margin_vs_inscribed_m": -0.12098742124084483,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.39920108256289244,
+          "arm_min_radial_to_barrel_axis_m": 0.8542936108979081,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.026250000000000002,
+          "command_joint8_rad": -0.00875,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.07293313766457521,
+          "finger_lowest_world_z_m": 0.3976500098932473,
+          "finger_clear_of_rim_by_m": -0.15234999010675276,
+          "finger_min_radial_to_barrel_axis_m": 0.8568634566004794,
+          "finger_wall_margin_vs_inscribed_m": -0.11841757553827359,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.3976500098932473,
+          "arm_min_radial_to_barrel_axis_m": 0.8568634566004794,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.030625000000000003,
+          "command_joint8_rad": -0.004375,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.07426024835009325,
+          "finger_lowest_world_z_m": 0.3960989372236022,
+          "finger_clear_of_rim_by_m": -0.15390106277639787,
+          "finger_min_radial_to_barrel_axis_m": 0.8594458398607319,
+          "finger_wall_margin_vs_inscribed_m": -0.11583519227802108,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.3960989372236022,
+          "arm_min_radial_to_barrel_axis_m": 0.8594458398607319,
+          "arm_points_below_rim_inside_wall": 22996
+        },
+        {
+          "command_joint7_rad": 0.035,
+          "command_joint8_rad": 0.0,
+          "jaw_command_gap_m": 0.035,
+          "finger_lowest_body_z_m": -0.07558735903561128,
+          "finger_lowest_world_z_m": 0.3945478645539571,
+          "finger_clear_of_rim_by_m": -0.15545213544604297,
+          "finger_min_radial_to_barrel_axis_m": 0.8620406480037808,
+          "finger_wall_margin_vs_inscribed_m": -0.11324038413497217,
+          "finger_points_below_rim_inside_wall": 12516,
+          "arm_lowest_world_z_m": 0.3945478645539571,
+          "arm_min_radial_to_barrel_axis_m": 0.8620406480037808,
+          "arm_points_below_rim_inside_wall": 22996
+        }
+      ],
+      "worst_finger_rim_clearance_m": -0.15545213544604297,
+      "worst_finger_wall_margin_m": -0.133645780421629,
+      "any_finger_below_rim_inside_wall": true,
+      "any_arm_below_rim_inside_wall": true
+    }
+  ]
+}

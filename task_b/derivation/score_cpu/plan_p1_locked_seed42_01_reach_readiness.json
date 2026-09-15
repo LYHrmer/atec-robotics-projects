@@ -1,0 +1,201 @@
+{
+  "run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p1_locked_seed42_01",
+  "score_raw_total": 0.0,
+  "stop_reason": "policy_stop:reach_base_not_stationary",
+  "actual_goal": {
+    "q_goal": [
+      0.5509622687932553,
+      3.1399988169418163,
+      -1.6769649977588135,
+      0.00324144258874048,
+      -0.0883923708265652,
+      0.0
+    ],
+    "stop_actual_q": [
+      0.547908365726471,
+      3.1400086879730225,
+      -1.6570184230804443,
+      0.003329338738694787,
+      -0.08461038768291473,
+      -8.293401151604485e-06
+    ],
+    "stop_command_q": [
+      0.5509622687932553,
+      3.062576765060414,
+      -1.6769649977588135,
+      0.00324144258874048,
+      -0.0883923708265652,
+      0.0
+    ],
+    "max_stop_actual_error_rad": 0.019946574678369133,
+    "continuous_at_goal_windows": [
+      {
+        "steps": [
+          2621,
+          2630
+        ],
+        "observations": 10,
+        "observed_span_s": 0.18,
+        "max_joint_error_rad": 0.038306855653364114,
+        "max_arm_joint_speed_rad_s": 0.33141064643859863,
+        "min_target_root_distance_m": 0.21358027759411263
+      }
+    ],
+    "two_second_actual_goal_hold_observed": false
+  },
+  "associated_target": {
+    "object_id_1based": 10,
+    "initial_visual_point_world": [
+      -6.723532036754384,
+      -8.684181738523131,
+      0.19631065934855346
+    ],
+    "association_distance_to_root_m": 0.05622254982432101,
+    "note": "Independent diagnostic nearest-root association, never a runtime policy input."
+  },
+  "minimum_selected_target_distance": {
+    "step": 2630,
+    "timing": "policy_stop_pre_unexecuted_step",
+    "object_id_1based": 10,
+    "distance_3d_m": 0.21358027759411263,
+    "horizontal_distance_m": 0.018881740735679397,
+    "signed_gripper_above_root_m": 0.21274401247501373,
+    "gripper_xyz": [
+      -6.732846736907959,
+      -8.696853637695312,
+      0.35296881198883057
+    ],
+    "object_root_xyz": [
+      -6.723809719085693,
+      -8.680274963378906,
+      0.14022479951381683
+    ],
+    "actual_arm_q": [
+      0.547908365726471,
+      3.1400086879730225,
+      -1.6570184230804443,
+      0.003329338738694787,
+      -0.08461038768291473,
+      -8.293401151604485e-06
+    ],
+    "max_joint_goal_error_rad": 0.019946574678369133,
+    "hypothetical_rigid_vertical_shift_distances_m": {
+      "0.01": 0.2036213513551021,
+      "0.02": 0.19366665814790543,
+      "0.03": 0.18371688607386472
+    },
+    "hypothetical_shift_note": "Geometry only; neither actual base lowering nor joint/contact feasibility is established."
+  },
+  "final_selected_target_distance": {
+    "step": 2630,
+    "timing": "policy_stop_pre_unexecuted_step",
+    "object_id_1based": 10,
+    "distance_3d_m": 0.21358027759411263,
+    "horizontal_distance_m": 0.018881740735679397,
+    "signed_gripper_above_root_m": 0.21274401247501373,
+    "gripper_xyz": [
+      -6.732846736907959,
+      -8.696853637695312,
+      0.35296881198883057
+    ],
+    "object_root_xyz": [
+      -6.723809719085693,
+      -8.680274963378906,
+      0.14022479951381683
+    ],
+    "actual_arm_q": [
+      0.547908365726471,
+      3.1400086879730225,
+      -1.6570184230804443,
+      0.003329338738694787,
+      -0.08461038768291473,
+      -8.293401151604485e-06
+    ],
+    "max_joint_goal_error_rad": 0.019946574678369133,
+    "hypothetical_rigid_vertical_shift_distances_m": {
+      "0.01": 0.2036213513551021,
+      "0.02": 0.19366665814790543,
+      "0.03": 0.18371688607386472
+    },
+    "hypothetical_shift_note": "Geometry only; neither actual base lowering nor joint/contact feasibility is established."
+  },
+  "public_and_actual_stillness": {
+    "window": "last up to 1s, final recorded pose included; raw public sample for stop call was not saved",
+    "public_raw_speed_max_m_s": 0.023619405814716915,
+    "public_tangent_speed_max_m_s": 0.0015857745792611118,
+    "public_angular_speed_max_rad_s": 0.10972993747889528,
+    "public_roll_rate_min_max_rad_s": [
+      -0.10930366069078445,
+      0.10949182510375977
+    ],
+    "public_roll_sign_flips": 49,
+    "world_planar_speed_max_m_s": 0.00142254198934329,
+    "world_vertical_speed_max_abs_m_s": 0.0027745962142944336,
+    "pose_interval_angular_speed_max_rad_s": 0.038685411773231794,
+    "orientation_from_window_start_max_rad": 0.0010540037715914303,
+    "last_saved_public_step": 2629,
+    "last_saved_public_linvel": [
+      -0.0018664037343114614,
+      -0.0013294644886627793,
+      0.020611470565199852
+    ],
+    "last_saved_public_angvel": [
+      -0.07626418769359589,
+      0.0019053041469305754,
+      -0.0048569426871836185
+    ],
+    "last_saved_public_speed_norm": 0.02073845841874866,
+    "last_saved_public_angular_norm": 0.07644243847970131,
+    "exact_stop_trigger_component": "not recoverable: stop-call proprio is absent from saved state; prior-call values do not prove stop-call values",
+    "sampling_limit": "Pose differences are interval averages; public twist is an instantaneous simulator sample. Their disagreement does not alone prove a sensor error."
+  },
+  "recorded_public_reach_budget_maxima": {
+    "reach_base_displacement_m": 0.0029192050286431805,
+    "reach_base_yaw_rad": 0.00128242175270762,
+    "reach_gravity_change_rad": 0.005230335716543207
+  },
+  "illegal": {
+    "official_terminated": false,
+    "official_truncated": false,
+    "official_active_terms": [],
+    "recorded_illegal_force_max_N": 0.0,
+    "stop_illegal_force_max_N": 0.0
+  },
+  "final_detection": {
+    "detector_rejections": {
+      "ee": {
+        "yellow_components": 4,
+        "rejected": {
+          "metric_height": 1,
+          "image_shape": 3
+        },
+        "association_mode": "locked_point_local_association",
+        "locked_shape_bypass": 1,
+        "accepted": 0
+      },
+      "head": {
+        "yellow_components": 0,
+        "rejected": {},
+        "association_mode": "locked_point_local_association",
+        "locked_shape_bypass": 0,
+        "accepted": 0
+      }
+    },
+    "accepted_candidates": 0
+  },
+  "p2_evidence_status": {
+    "inspected_evidence_gates_pass": false,
+    "open_issues": [
+      "continuous_2s_actual_goal_hold_not_observed",
+      "exact_stop_instant_public_velocity_component_not_recorded",
+      "final_visual_support_absent_for_current_strict_lowering_branch"
+    ],
+    "limit": "These evidence gates do not establish physical feasibility of lowering."
+  },
+  "source_artifact_hashes": {
+    "result.json": "61142173d07e93c21943029d99c65763a73087df64095dba1c11238d8fd20f4b",
+    "telemetry.npz": "aa0dcad603a901a642002f60b0329bfc49603240731a6b68058423a7cf145311",
+    "trace.jsonl": "b25768f337d7325357c5f1715d3f9f644c5ebfcec32d5d2f309a450a263f98bb"
+  },
+  "scope": "Offline evidence for planning, not permission to lower, official score verification or a physical feasibility certificate."
+}

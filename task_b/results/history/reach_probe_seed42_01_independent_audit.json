@@ -1,0 +1,270 @@
+{
+  "run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/reach_probe_seed42_01",
+  "verdict": "independent static-reach runtime checks passed",
+  "checks": {
+    "exactly_1000_samples": true,
+    "step_numbers_contiguous": true,
+    "no_termination_term_fired": true,
+    "no_trace_termination_or_truncation": true,
+    "reported_max_steps_stop": true,
+    "zero_score_confirmed": true,
+    "independent_fk_agrees_with_simulator_20um": true,
+    "independent_object_distance_agrees_with_trace_2um": true,
+    "all_action_values_finite": true,
+    "all_wheel_commands_zero": true,
+    "open_fingers_final": true
+  },
+  "input_sha256": {
+    "telemetry.npz": "b874e4e911c1d767b4e2b4e2afd6f0c9b2755e1a4e5d54e6b488f5dbd2afb345",
+    "trace.jsonl": "d8276316055db86df4208ad0c207e48b62d7361b7a7948ba4c586a00d6c84a78",
+    "result.json": "e013d613cc63895a9efa8901b294c42ef54c7f56128ad2c0db68ae0c0a57716b",
+    "environment_metadata.json": "914b9180437bc369db4e038c582ec52a91cc1d4171df4f3b0b00013c659f9baa",
+    "source_manifest.json": "38d2d9aaa2279b5f2609e9671c059f45abed469a8f0e58d6099f46a1e2dee464"
+  },
+  "kinematics_source_sha256": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+  "evidence": {
+    "steps": 1000,
+    "first_reach_step": 152,
+    "max_illegal_force_n": 0.0,
+    "fk_max_world_error_m": 3.4769032612758778e-06,
+    "final_q": [
+      -0.0018741399981081486,
+      3.1400063037872314,
+      -1.5779303312301636,
+      -0.00509693194180727,
+      -0.08735831826925278,
+      -5.092641913506668e-06,
+      0.03497933968901634,
+      -0.03500000014901161
+    ],
+    "final_target_q": [
+      -0.002536115964835228,
+      3.1399988169418163,
+      -1.5844159165954572,
+      -0.005092089489039628,
+      -0.08849073069861609,
+      -4.775297384185251e-06,
+      0.035,
+      -0.035
+    ],
+    "final_tracking_error_rad_or_m": [
+      0.0006619759667270794,
+      7.486845415183296e-06,
+      0.006485585365293645,
+      -4.842452767641649e-06,
+      0.001132412429363308,
+      -3.173445293214172e-07,
+      -2.0660310983661168e-05,
+      -1.490116086078075e-10
+    ],
+    "final_gripper_body_fk": [
+      0.5448599723241567,
+      -0.0006099700554340314,
+      -0.15215201745693702
+    ],
+    "final_gripper_world_diagnostic": [
+      -9.708983421325684,
+      -9.935959815979004,
+      0.3247785270214081
+    ],
+    "final_gripper_world_fk": [
+      -9.708983512003648,
+      -9.93596066003772,
+      0.3247786325614849
+    ],
+    "final_base_z": 0.51616370677948,
+    "final_projected_gravity": [
+      0.07275889068841934,
+      0.0064352648332715034,
+      -0.9973288178443909
+    ],
+    "gripper_min_world_z": 0.3236524164676666,
+    "final_gripper_world_z": 0.3247785270214081,
+    "final_expected_upright_mustard_vertical_gap": 0.18412802702140807,
+    "final_horizontal_radius_for_20cm_proximity_on_upright_mustard": 0.07808245427241402,
+    "nearest_actual_object_min_distance_m": 2.3175065517425537,
+    "nearest_actual_object_final_distance_m": 2.4566423892974854,
+    "nominal_finger_box_min_ground_clearance_m": 0.1402755101156668,
+    "last_100_body_velocity_mean": [
+      -0.0016287672333419323,
+      -0.0002332521980861202,
+      0.023157574236392975
+    ],
+    "last_100_world_position_difference_velocity": [
+      -5.201860039960593e-05,
+      -3.3715757581376238e-06,
+      -1.8664080698727048e-06
+    ]
+  },
+  "limitations": [
+    "Reach probe uses a synthetic body-frame target, not an actual visually approached object.",
+    "No score, no physical grasp, no delivery, and no full Task B pass occurred.",
+    "Upright mustard score margin is a static geometric diagnostic only, not current actual-object proximity.",
+    "FK and nominal finger box do not certify complete arm-mesh, terrain or object collision freedom; official illegal-contact terms remained false.",
+    "Published trace records pre-step geometry with post-step reward/termination flags; each alignment is preserved here.",
+    "Probe debug target continues body-twist propagation during stationary reach, drifting vertically. It must not be treated as a current visual target."
+  ],
+  "path": [
+    {
+      "step": 1,
+      "q": [
+        0.0,
+        0.15700006484985352,
+        -0.14835000038146973,
+        0.0,
+        0.0,
+        0.0,
+        0.0017499998211860657,
+        -0.0017499998211860657
+      ],
+      "gripper_body": [
+        0.26608716203622085,
+        2.2060078948347927e-08,
+        0.35394305770864454
+      ],
+      "gripper_world": [
+        -9.734152793884277,
+        -9.999725341796875,
+        1.1421113014221191
+      ]
+    },
+    {
+      "step": 100,
+      "q": [
+        0.00046211888547986746,
+        -3.1009635677037295e-06,
+        8.556767170375679e-06,
+        0.00013409645180217922,
+        0.010934079997241497,
+        -3.350225142639829e-06,
+        5.7534452935215086e-05,
+        0.0
+      ],
+      "gripper_body": [
+        0.2562228850999113,
+        2.6066248410912463e-05,
+        0.3121986495843031
+      ],
+      "gripper_world": [
+        -10.012459754943848,
+        -9.940855979919434,
+        0.8189621567726135
+      ]
+    },
+    {
+      "step": 200,
+      "q": [
+        -0.002693978138267994,
+        0.25070586800575256,
+        -0.21765293180942535,
+        -0.0049742721021175385,
+        -0.07793692499399185,
+        -8.355755198863335e-06,
+        0.01836119405925274,
+        -0.01842992752790451
+      ],
+      "gripper_body": [
+        0.2754182146418784,
+        -0.00016832538949662542,
+        0.37789064742014955
+      ],
+      "gripper_world": [
+        -9.947640419006348,
+        -9.93207836151123,
+        0.8784931302070618
+      ]
+    },
+    {
+      "step": 400,
+      "q": [
+        -0.0020930077880620956,
+        1.5473982095718384,
+        -1.4176710844039917,
+        -0.004972836002707481,
+        -0.07802034169435501,
+        -9.281773600378074e-06,
+        0.03496391326189041,
+        -0.03500000014901161
+      ],
+      "gripper_body": [
+        0.5744017427246487,
+        -0.0007502582789103266,
+        0.5206740086041
+      ],
+      "gripper_world": [
+        -9.630006790161133,
+        -9.931806564331055,
+        0.9956191778182983
+      ]
+    },
+    {
+      "step": 600,
+      "q": [
+        -0.0017526008887216449,
+        2.8240127563476562,
+        -1.560661792755127,
+        -0.005061088129878044,
+        -0.08427799493074417,
+        -5.073620286566438e-06,
+        0.03497437387704849,
+        -0.03500000014901161
+      ],
+      "gripper_body": [
+        0.6388986682234359,
+        -0.0007347592367578477,
+        -0.0293251950060108
+      ],
+      "gripper_world": [
+        -9.604085922241211,
+        -9.935601234436035,
+        0.4392854571342468
+      ]
+    },
+    {
+      "step": 800,
+      "q": [
+        -0.0018699623178690672,
+        3.1400063037872314,
+        -1.5779287815093994,
+        -0.005097005516290665,
+        -0.08735809475183487,
+        -5.092945229989709e-06,
+        0.03497906029224396,
+        -0.03500000014901161
+      ],
+      "gripper_body": [
+        0.5448594326349894,
+        -0.0006085278490913926,
+        -0.15215211784341431
+      ],
+      "gripper_world": [
+        -9.70870590209961,
+        -9.935942649841309,
+        0.3247837424278259
+      ]
+    },
+    {
+      "step": 1000,
+      "q": [
+        -0.0018741399981081486,
+        3.1400063037872314,
+        -1.5779303312301636,
+        -0.00509693194180727,
+        -0.08735831826925278,
+        -5.092641913506668e-06,
+        0.03497933968901634,
+        -0.03500000014901161
+      ],
+      "gripper_body": [
+        0.5448599723241567,
+        -0.0006099700554340314,
+        -0.15215201745693702
+      ],
+      "gripper_world": [
+        -9.708983421325684,
+        -9.935959815979004,
+        0.3247785270214081
+      ]
+    }
+  ]
+}

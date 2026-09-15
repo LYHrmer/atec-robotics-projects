@@ -1,0 +1,214 @@
+{
+  "scope": "Offline integration replay and diagnostic motion comparison; no policy receives truth.",
+  "run": {
+    "status": "completed",
+    "run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p1_locked_seed42_01",
+    "score_raw_total": 0.0,
+    "stop_reason": "policy_stop:reach_base_not_stationary",
+    "steps": 2629,
+    "terminated": false,
+    "first_positive_step": null,
+    "hold_windows": [
+      {
+        "steps": [
+          2211,
+          2629
+        ],
+        "states": [
+          "BRAKE",
+          "REACH",
+          "REACH_READY"
+        ],
+        "duration_s": 8.38,
+        "max_rollback_from_entry_m": 0.016342737755099146,
+        "max_drawdown_from_furthest_forward_m": 0.020852522360754976,
+        "net_forward_displacement_m": -0.014522877780096333,
+        "public_tangent_integral_m": -0.011905004803824183,
+        "public_integral_max_rollback_m": 0.015645299565698028,
+        "public_vs_world_forward_integral_max_error_m": 0.00261787297627215,
+        "rollback_within_2cm": true,
+        "steady_last_up_to_1s_after_brake_1s": {
+          "sample_count": 50,
+          "public_tangent_speed_median_m_s": 0.0014328816057759754,
+          "public_tangent_speed_max_m_s": 0.0015857745792611118,
+          "world_planar_speed_median_m_s": 0.0005560829304158688,
+          "world_planar_speed_max_m_s": 0.0009286089916713536,
+          "all_public_speeds_below_001": true,
+          "all_world_speeds_below_001": true
+        }
+      }
+    ],
+    "reach": {
+      "entered": true,
+      "first_step": 2321,
+      "joint_progress": {
+        "start_q": [
+          0.0001337416033493355,
+          1.1235274076461792,
+          -0.7528884410858154,
+          0.00020111807680223137,
+          1.1367480754852295,
+          -3.0176957466210297e-07
+        ],
+        "last_q": [
+          0.548047661781311,
+          3.140007972717285,
+          -1.659164547920227,
+          0.0032839144114404917,
+          -0.08514856547117233,
+          -1.6023548710109026e-07
+        ],
+        "goal_q": [
+          0.5509622687932553,
+          3.1399988169418163,
+          -1.6769649977588135,
+          0.00324144258874048,
+          -0.0883923708265652,
+          0.0
+        ],
+        "start_max_error_rad": 2.016471409295637,
+        "last_max_error_rad": 0.01780044983858642,
+        "min_max_error_rad": 0.012845992555566399,
+        "max_measured_joint_travel_rad": 2.016481876373291,
+        "stop_actual_q": [
+          0.547908365726471,
+          3.1400086879730225,
+          -1.6570184230804443,
+          0.003329338738694787,
+          -0.08461038768291473,
+          -8.293401151604485e-06
+        ],
+        "stop_max_error_rad": 0.019946574678369133
+      }
+    },
+    "minimum_recorded_pre_step_gripper_object_distance_m": 0.21364308893680573,
+    "telemetry_timing": {
+      "proprio_q_qdot_base_gripper_object_and_contact": "pre_step",
+      "env_reward_reward_terms_and_termination": "post_step; terminal term values captured before official reset",
+      "env_reward": "unmodified scalar returned by env.step; reward_raw_total = env_reward / step_dt",
+      "scoring_event_state": "post_step_before_any_reset or terminal_pre_reset; see each event"
+    },
+    "artifact_sha256": {
+      "result.json": "61142173d07e93c21943029d99c65763a73087df64095dba1c11238d8fd20f4b",
+      "telemetry.npz": "aa0dcad603a901a642002f60b0329bfc49603240731a6b68058423a7cf145311",
+      "trace.jsonl": "b25768f337d7325357c5f1715d3f9f644c5ebfcec32d5d2f309a450a263f98bb"
+    },
+    "integration_replay": {
+      "snapshot_sha256": "41503365b8d3b4d05670758c886337e47aa63c3585147c697ccce3089b31a605",
+      "scale": 5.0,
+      "ordinary_gain": 8.0,
+      "snapshot_matches_manifest": true,
+      "optional_stabilizer_present": false,
+      "active_sample_count": 419,
+      "inactive_sample_count": 2210,
+      "max_active_physical_command_error_rad_s": 2.9802322387695312e-08,
+      "max_replayed_debug_error": 0.0,
+      "max_inactive_normalized_wheel_error": 0.0,
+      "max_contiguous_anchor_change_rad": 0.0,
+      "brake_to_reach_transitions": [
+        {
+          "step": 2320,
+          "unchanged_anchor": true,
+          "mean_error_rad": 0.14195257425308228,
+          "command_rad_s": 0.2932045415509492
+        }
+      ],
+      "passed": true
+    }
+  },
+  "baseline": {
+    "status": "completed",
+    "run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p1_hold_seed42_01",
+    "score_raw_total": 0.0,
+    "stop_reason": "policy_stop:reach_visual_confirmation_lost",
+    "steps": 2369,
+    "terminated": false,
+    "first_positive_step": null,
+    "hold_windows": [
+      {
+        "steps": [
+          2187,
+          2369
+        ],
+        "states": [
+          "BRAKE",
+          "REACH",
+          "REACH_READY",
+          "REACH_VISUAL_HOLD"
+        ],
+        "duration_s": 3.66,
+        "max_rollback_from_entry_m": 0.016124769195423005,
+        "max_drawdown_from_furthest_forward_m": 0.020863996628661938,
+        "net_forward_displacement_m": -0.014732824562428819,
+        "public_tangent_integral_m": -0.013497682208132218,
+        "public_integral_max_rollback_m": 0.015413089790812929,
+        "public_vs_world_forward_integral_max_error_m": 0.0012351423542966006,
+        "rollback_within_2cm": true,
+        "steady_last_up_to_1s_after_brake_1s": {
+          "sample_count": 50,
+          "public_tangent_speed_median_m_s": 0.0005832907255488281,
+          "public_tangent_speed_max_m_s": 0.0025690929045600447,
+          "world_planar_speed_median_m_s": 0.00040531158447265625,
+          "world_planar_speed_max_m_s": 0.002644619904458523,
+          "all_public_speeds_below_001": true,
+          "all_world_speeds_below_001": true
+        }
+      }
+    ],
+    "reach": {
+      "entered": true,
+      "first_step": 2341,
+      "joint_progress": {
+        "start_q": [
+          0.00014139061386231333,
+          1.123518943786621,
+          -0.7528789639472961,
+          0.00019324463210068643,
+          1.1361844539642334,
+          -2.914573542511789e-07
+        ],
+        "last_q": [
+          0.02412685938179493,
+          1.1498748064041138,
+          -0.7767763733863831,
+          0.0029522106051445007,
+          1.1124155521392822,
+          -7.565624287053652e-07
+        ],
+        "goal_q": [
+          0.5504306861647107,
+          3.1399988169185065,
+          -1.6779310529384548,
+          0.0027949433944223965,
+          -0.08833909041110467,
+          -3.235087149278115e-07
+        ],
+        "start_max_error_rad": 2.0164798731318854,
+        "last_max_error_rad": 1.9901240105143927,
+        "min_max_error_rad": 1.9872834915629767,
+        "max_measured_joint_travel_rad": 0.02919638156890869,
+        "stop_actual_q": [
+          0.024126259610056877,
+          1.1499392986297607,
+          -0.7767456769943237,
+          0.0029521610122174025,
+          1.1124166250228882,
+          -7.576028906441934e-07
+        ],
+        "stop_max_error_rad": 1.9900595182887457
+      }
+    },
+    "minimum_recorded_pre_step_gripper_object_distance_m": 0.7612736225128174,
+    "telemetry_timing": {
+      "proprio_q_qdot_base_gripper_object_and_contact": "pre_step",
+      "env_reward_reward_terms_and_termination": "post_step; terminal term values captured before official reset",
+      "env_reward": "unmodified scalar returned by env.step; reward_raw_total = env_reward / step_dt",
+      "scoring_event_state": "post_step_before_any_reset or terminal_pre_reset; see each event"
+    },
+    "artifact_sha256": {
+      "result.json": "f144e939b3637ca3269daa78d07876c461bfee318de55eea4a7bebcaccc5e2e8",
+      "telemetry.npz": "c4e4e1c4f755517114117770bbfaf3d5821812e78c68fafaded89b7a8e290b5b",
+      "trace.jsonl": "8013f4a8fc087e41ae41f17e61fe5858e76a0ddb02628aec0f173a8000e2fb30"
+    }
+  }
+}

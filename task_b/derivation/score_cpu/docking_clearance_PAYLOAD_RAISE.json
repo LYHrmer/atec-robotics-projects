@@ -1,0 +1,293 @@
+{
+  "scope": "static CPU geometry on recorded telemetry; not collision simulation, not a carry, clearance or delivery result",
+  "run": "plan_p13_payload_denyquist_seed42_01",
+  "phase": "PAYLOAD_RAISE",
+  "sample": 4562,
+  "barrel": {
+    "centre": [
+      -3.0,
+      -10.0
+    ],
+    "outer_radius_m": 1.0,
+    "inner_radius_m": 0.98,
+    "rim_z_m": 0.55
+  },
+  "attachment": "mesh placed from the RECORDED object quaternion at this sample, so this is the in-hand pose actually achieved, not a rigid-attachment assumption",
+  "mesh_vertices": 8377,
+  "payload_body_aabb_min": [
+    0.5073746289222799,
+    0.17671245048585146,
+    0.18931195352647484
+  ],
+  "payload_body_aabb_max": [
+    0.6290742897461714,
+    0.26026249839379256,
+    0.3835858606423576
+  ],
+  "gripper_base_body_m": [
+    0.4972067976007519,
+    0.18176149295353572,
+    0.4516032359002863
+  ],
+  "chassis_max_body_y_m": 0.38002945682816885,
+  "chassis_min_body_y_m": -0.3828118165362673,
+  "minimum_safe_standoff_m": 1.4100294568281688,
+  "standoffs": {
+    "1.35": {
+      "chassis": {
+        "min_distance_to_barrel_axis_m": 1.022405398197907,
+        "max_body_y_m": 0.38002945682816885,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 27,
+        "min_radial_margin_to_outer_wall_m": 0.0224053981979071,
+        "points_above_rim": 27,
+        "radial_range_of_points_above_rim_m": [
+          1.1133631577871166,
+          1.6668139416182048
+        ],
+        "lowest_world_z_m": 0.046738853979017114,
+        "highest_world_z_m": 0.6384718214966503,
+        "lowest_body_z_m": -0.4791095166262178
+      },
+      "payload": {
+        "min_distance_to_barrel_axis_m": 1.221362351049496,
+        "max_body_y_m": 0.26026249839379256,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 8377,
+        "min_radial_margin_to_outer_wall_m": 0.22136235104949598,
+        "points_above_rim": 8377,
+        "radial_range_of_points_above_rim_m": [
+          1.221362351049496,
+          1.30692164559745
+        ],
+        "lowest_world_z_m": 0.6431647120387582,
+        "highest_world_z_m": 0.8376170592488381,
+        "lowest_body_z_m": 0.18931195352647484
+      },
+      "arm": {
+        "min_distance_to_barrel_axis_m": 1.1960953453004866,
+        "max_body_y_m": 0.266964940623598,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 551238,
+        "min_radial_margin_to_outer_wall_m": 0.19609534530048656,
+        "points_above_rim": 551238,
+        "radial_range_of_points_above_rim_m": [
+          1.1960953453004866,
+          1.4192093438523155
+        ],
+        "lowest_world_z_m": 0.5779482638821132,
+        "highest_world_z_m": 1.02941143181701,
+        "lowest_body_z_m": 0.1000000014901161
+      },
+      "chassis_wall_gap_m": -0.030029456828168766,
+      "payload_entirely_above_rim": true,
+      "payload_clear_of_wall_below_rim": true,
+      "payload_reaches_over_mouth": false
+    },
+    "1.4": {
+      "chassis": {
+        "min_distance_to_barrel_axis_m": 1.0703981153773927,
+        "max_body_y_m": 0.38002945682816885,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 27,
+        "min_radial_margin_to_outer_wall_m": 0.07039811537739271,
+        "points_above_rim": 27,
+        "radial_range_of_points_above_rim_m": [
+          1.1620547951298439,
+          1.7154056006388188
+        ],
+        "lowest_world_z_m": 0.046738853979017114,
+        "highest_world_z_m": 0.6384718214966503,
+        "lowest_body_z_m": -0.4791095166262178
+      },
+      "payload": {
+        "min_distance_to_barrel_axis_m": 1.266346362199466,
+        "max_body_y_m": 0.26026249839379256,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 8377,
+        "min_radial_margin_to_outer_wall_m": 0.26634636219946595,
+        "points_above_rim": 8377,
+        "radial_range_of_points_above_rim_m": [
+          1.266346362199466,
+          1.3516861645463643
+        ],
+        "lowest_world_z_m": 0.6431647120387582,
+        "highest_world_z_m": 0.8376170592488381,
+        "lowest_body_z_m": 0.18931195352647484
+      },
+      "arm": {
+        "min_distance_to_barrel_axis_m": 1.241555217120174,
+        "max_body_y_m": 0.266964940623598,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 551238,
+        "min_radial_margin_to_outer_wall_m": 0.24155521712017403,
+        "points_above_rim": 551238,
+        "radial_range_of_points_above_rim_m": [
+          1.241555217120174,
+          1.4687092675280284
+        ],
+        "lowest_world_z_m": 0.5779482638821132,
+        "highest_world_z_m": 1.02941143181701,
+        "lowest_body_z_m": 0.1000000014901161
+      },
+      "chassis_wall_gap_m": 0.019970543171831057,
+      "payload_entirely_above_rim": true,
+      "payload_clear_of_wall_below_rim": true,
+      "payload_reaches_over_mouth": false
+    },
+    "1.45": {
+      "chassis": {
+        "min_distance_to_barrel_axis_m": 1.118529297720997,
+        "max_body_y_m": 0.38002945682816885,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 27,
+        "min_radial_margin_to_outer_wall_m": 0.11852929772099707,
+        "points_above_rim": 27,
+        "radial_range_of_points_above_rim_m": [
+          1.210853076409697,
+          1.764075971559399
+        ],
+        "lowest_world_z_m": 0.046738853979017114,
+        "highest_world_z_m": 0.6384718214966503,
+        "lowest_body_z_m": -0.4791095166262178
+      },
+      "payload": {
+        "min_distance_to_barrel_axis_m": 1.3116936477510635,
+        "max_body_y_m": 0.26026249839379256,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 8377,
+        "min_radial_margin_to_outer_wall_m": 0.31169364775106345,
+        "points_above_rim": 8377,
+        "radial_range_of_points_above_rim_m": [
+          1.3116936477510635,
+          1.3968059232123036
+        ],
+        "lowest_world_z_m": 0.6431647120387582,
+        "highest_world_z_m": 0.8376170592488381,
+        "lowest_body_z_m": 0.18931195352647484
+      },
+      "arm": {
+        "min_distance_to_barrel_axis_m": 1.2873517931269431,
+        "max_body_y_m": 0.266964940623598,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 551238,
+        "min_radial_margin_to_outer_wall_m": 0.28735179312694314,
+        "points_above_rim": 551238,
+        "radial_range_of_points_above_rim_m": [
+          1.2873517931269431,
+          1.5182419646972338
+        ],
+        "lowest_world_z_m": 0.5779482638821132,
+        "highest_world_z_m": 1.02941143181701,
+        "lowest_body_z_m": 0.1000000014901161
+      },
+      "chassis_wall_gap_m": 0.0699705431718311,
+      "payload_entirely_above_rim": true,
+      "payload_clear_of_wall_below_rim": true,
+      "payload_reaches_over_mouth": false
+    },
+    "1.5": {
+      "chassis": {
+        "min_distance_to_barrel_axis_m": 1.16674651474871,
+        "max_body_y_m": 0.38002945682816885,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 27,
+        "min_radial_margin_to_outer_wall_m": 0.16674651474870994,
+        "points_above_rim": 27,
+        "radial_range_of_points_above_rim_m": [
+          1.2597456086120689,
+          1.812818714643979
+        ],
+        "lowest_world_z_m": 0.046738853979017114,
+        "highest_world_z_m": 0.6384718214966503,
+        "lowest_body_z_m": -0.4791095166262178
+      },
+      "payload": {
+        "min_distance_to_barrel_axis_m": 1.357360258947268,
+        "max_body_y_m": 0.26026249839379256,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 8377,
+        "min_radial_margin_to_outer_wall_m": 0.357360258947268,
+        "points_above_rim": 8377,
+        "radial_range_of_points_above_rim_m": [
+          1.357360258947268,
+          1.4422475816640812
+        ],
+        "lowest_world_z_m": 0.6431647120387582,
+        "highest_world_z_m": 0.8376170592488381,
+        "lowest_body_z_m": 0.18931195352647484
+      },
+      "arm": {
+        "min_distance_to_barrel_axis_m": 1.3334503820450119,
+        "max_body_y_m": 0.266964940623598,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 551238,
+        "min_radial_margin_to_outer_wall_m": 0.3334503820450119,
+        "points_above_rim": 551238,
+        "radial_range_of_points_above_rim_m": [
+          1.3334503820450119,
+          1.5678043290579076
+        ],
+        "lowest_world_z_m": 0.5779482638821132,
+        "highest_world_z_m": 1.02941143181701,
+        "lowest_body_z_m": 0.1000000014901161
+      },
+      "chassis_wall_gap_m": 0.11997054317183115,
+      "payload_entirely_above_rim": true,
+      "payload_clear_of_wall_below_rim": true,
+      "payload_reaches_over_mouth": false
+    },
+    "1.55": {
+      "chassis": {
+        "min_distance_to_barrel_axis_m": 1.2151055763658043,
+        "max_body_y_m": 0.38002945682816885,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 27,
+        "min_radial_margin_to_outer_wall_m": 0.2151055763658043,
+        "points_above_rim": 27,
+        "radial_range_of_points_above_rim_m": [
+          1.3087218284203697,
+          1.861628145171226
+        ],
+        "lowest_world_z_m": 0.046738853979017114,
+        "highest_world_z_m": 0.6384718214966503,
+        "lowest_body_z_m": -0.4791095166262178
+      },
+      "payload": {
+        "min_distance_to_barrel_axis_m": 1.4033036377152814,
+        "max_body_y_m": 0.26026249839379256,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 8377,
+        "min_radial_margin_to_outer_wall_m": 0.40330363771528144,
+        "points_above_rim": 8377,
+        "radial_range_of_points_above_rim_m": [
+          1.4033036377152814,
+          1.4879887398609166
+        ],
+        "lowest_world_z_m": 0.6431647120387582,
+        "highest_world_z_m": 0.8376170592488381,
+        "lowest_body_z_m": 0.18931195352647484
+      },
+      "arm": {
+        "min_distance_to_barrel_axis_m": 1.379820714254146,
+        "max_body_y_m": 0.266964940623598,
+        "points_below_rim_inside_outer_wall": 0,
+        "points_above_rim_outside_inner_wall": 551238,
+        "min_radial_margin_to_outer_wall_m": 0.3798207142541461,
+        "points_above_rim": 551238,
+        "radial_range_of_points_above_rim_m": [
+          1.379820714254146,
+          1.6173936333056698
+        ],
+        "lowest_world_z_m": 0.5779482638821132,
+        "highest_world_z_m": 1.02941143181701,
+        "lowest_body_z_m": 0.1000000014901161
+      },
+      "chassis_wall_gap_m": 0.1699705431718312,
+      "payload_entirely_above_rim": true,
+      "payload_clear_of_wall_below_rim": true,
+      "payload_reaches_over_mouth": false
+    }
+  },
+  "recommended_standoff_m": 1.4
+}

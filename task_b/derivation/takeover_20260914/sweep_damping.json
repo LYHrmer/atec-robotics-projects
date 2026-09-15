@@ -1,0 +1,107 @@
+{
+  "synthetic_zero_lag_plant": true,
+  "is_not_a_real_stability_guarantee": true,
+  "results": [
+    {
+      "q2_damp": 0.0,
+      "q3_damp": 0.0,
+      "done_reason": "payload_motion_observation_complete",
+      "phases": [
+        "PAYLOAD_RAISE",
+        "PAYLOAD_SWING",
+        "PAYLOAD_EXTEND",
+        "PAYLOAD_HOLD"
+      ],
+      "final_goal_error_rad": 5.592191110181943e-08,
+      "final_max_abs_qdot_rad_s": 5.9604644775390625e-06,
+      "quiet_ready": false,
+      "completed_all_segments": true
+    },
+    {
+      "q2_damp": 0.02,
+      "q3_damp": 0.012,
+      "done_reason": "payload_motion_observation_complete",
+      "phases": [
+        "PAYLOAD_RAISE",
+        "PAYLOAD_SWING",
+        "PAYLOAD_EXTEND",
+        "PAYLOAD_HOLD"
+      ],
+      "final_goal_error_rad": 6.328737844896182e-08,
+      "final_max_abs_qdot_rad_s": 5.9604644775390625e-06,
+      "quiet_ready": false,
+      "completed_all_segments": true
+    },
+    {
+      "q2_damp": 0.05,
+      "q3_damp": 0.03,
+      "done_reason": "payload_motion_observation_complete",
+      "phases": [
+        "PAYLOAD_RAISE",
+        "PAYLOAD_SWING",
+        "PAYLOAD_EXTEND",
+        "PAYLOAD_HOLD"
+      ],
+      "final_goal_error_rad": 2.4338186710437526e-07,
+      "final_max_abs_qdot_rad_s": 2.384185791015625e-05,
+      "quiet_ready": false,
+      "completed_all_segments": true
+    },
+    {
+      "q2_damp": 0.08,
+      "q3_damp": 0.05,
+      "done_reason": "payload_motion_observation_complete",
+      "phases": [
+        "PAYLOAD_RAISE",
+        "PAYLOAD_SWING",
+        "PAYLOAD_EXTEND",
+        "PAYLOAD_HOLD"
+      ],
+      "final_goal_error_rad": 0.001039152340302163,
+      "final_max_abs_qdot_rad_s": 0.09999871253967285,
+      "quiet_ready": false,
+      "completed_all_segments": true
+    },
+    {
+      "q2_damp": 0.11,
+      "q3_damp": 0.07,
+      "done_reason": "payload_motion_observation_complete",
+      "phases": [
+        "PAYLOAD_RAISE",
+        "PAYLOAD_SWING",
+        "PAYLOAD_EXTEND",
+        "PAYLOAD_HOLD"
+      ],
+      "final_goal_error_rad": 0.0010840942424628075,
+      "final_max_abs_qdot_rad_s": 0.09999871253967285,
+      "quiet_ready": false,
+      "completed_all_segments": true
+    },
+    {
+      "q2_damp": 0.2,
+      "q3_damp": 0.12,
+      "done_reason": "payload_extend_not_reached",
+      "phases": [
+        "PAYLOAD_RAISE",
+        "PAYLOAD_SWING",
+        "PAYLOAD_EXTEND"
+      ],
+      "final_goal_error_rad": 0.0010645439189764794,
+      "final_max_abs_qdot_rad_s": 0.10000467300415039,
+      "quiet_ready": false,
+      "completed_all_segments": false
+    },
+    {
+      "q2_damp": 0.35,
+      "q3_damp": 0.2,
+      "done_reason": "payload_raise_not_reached",
+      "phases": [
+        "PAYLOAD_RAISE"
+      ],
+      "final_goal_error_rad": 0.0006102578326971919,
+      "final_max_abs_qdot_rad_s": 0.10000169277191162,
+      "quiet_ready": false,
+      "completed_all_segments": false
+    }
+  ]
+}

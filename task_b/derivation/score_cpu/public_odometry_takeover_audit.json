@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": {
+    "previous_observation_timing_without_double_integration": true,
+    "constant_body_translation_and_path_length": true,
+    "constant_turn_matches_independent_geometric_sum": true,
+    "body_forward_velocity_rotates_with_estimated_heading": true,
+    "gravity_projection_removes_pure_vertical_motion": true,
+    "wrapped_heading_preserves_unwrapped_continuity": true,
+    "invalid_inputs_are_atomic_including_history": true,
+    "overflow_integration_rejected_without_partial_commit": true,
+    "elapsed_time_overflow_preserves_state": true,
+    "snapshot_copy_isolation_and_complete_reset": true,
+    "known_waypoint_transform_is_stateless_and_validated": true,
+    "positive_finite_dt_required": true
+  },
+  "evidence": {},
+  "offline_replays": [],
+  "scope": "synthetic logic checks and offline finite-run error diagnostics; no carry accuracy guarantee",
+  "source_sha256": {
+    "task_b/audit_public_odometry.py": "8acd0acefb354f0219cb9afb76301c59e534aa51a7136ec404ce57b1342a6129",
+    "task_b/public_odometry.py": "9bf8b464415a5b211c8d5e9d744e625b2d7da11c6635cb9dab02f4979216967b"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "scope": "CPU failure-branch and public-telemetry checks only; no dynamics, collision-free path or score claim. Detector shape cases use generated synthetic images and are not original-environment positive evidence.",
+  "passed": true,
+  "count": 59,
+  "checks": {
+    "gate_pre_settle_detection_and_repeated_frame_cannot_fake_two_samples": true,
+    "gate_explicit_frame_tokens_have_honest_distinct_basis": true,
+    "gate_repeated_control_call_cannot_increment_confirmation": true,
+    "gate_camera_switch_requires_new_confirmation": true,
+    "gate_motion_clears_samples_and_quiet_clock": true,
+    "gate_stale_confirmation_expires_without_new_detection": true,
+    "gate_no_token_does_not_claim_proven_frame_update": true,
+    "gate_short_interval_and_spatial_jump_do_not_authorize_reach": true,
+    "gate_sparse_call_gap_cannot_join_expired_sample_to_new_detection": true,
+    "synthetic_round_component_rejected_by_default_shape_filter": true,
+    "synthetic_round_component_accepted_only_by_locked_association": true,
+    "locked_association_rejects_component_beyond_12cm": true,
+    "locked_association_keeps_area_height_and_metric_filters": true,
+    "locked_target_must_be_a_finite_three_vector": true,
+    "brake_requires_sensor_period_samples_after_one_second_stop": true,
+    "stationary_ik_uses_unfiltered_raw_target": true,
+    "periodic_detection_not_control_tick_count": true,
+    "hard_arm_joint2_limit_preserved_above_soft_limit": true,
+    "approach_and_brake_detection_is_never_locked": true,
+    "ready_anchors_gravity_and_zeroes_base_drift_integrals": true,
+    "reach_detection_locks_association_to_the_fixed_target": true,
+    "associated_points_update_diagnostics_but_never_retarget_or_resolve_ik": true,
+    "distant_unmatched_component_is_not_called_target_movement_in_p1": true,
+    "moving_period_target_cannot_authorize_reach_without_new_detections": true,
+    "lowering_request_still_holds_arm_on_visible_target_loss": true,
+    "lowering_request_persistent_loss_stops_normally": true,
+    "lowering_request_keeps_strict_target_movement_stop": true,
+    "missing_vision_beyond_half_second_still_makes_bounded_joint_progress": true,
+    "bounded_reach_keeps_030_rad_s_slew_without_vision": true,
+    "missing_vision_reach_never_lowers_legs": true,
+    "bounded_reach_without_vision_finishes_or_times_out": true,
+    "measured_state_tether_still_bounds_command_without_vision": true,
+    "missing_vision_does_not_disable_no_progress_stop": true,
+    "missing_vision_does_not_disable_total_reach_deadline": true,
+    "unavailable_camera_images_do_not_stop_bounded_p1_reach": true,
+    "reach_stops_on_integrated_base_displacement_budget": true,
+    "reach_stops_on_integrated_base_yaw_budget": true,
+    "reach_stops_when_public_gravity_direction_leaves_anchor": true,
+    "vertical_velocity_is_not_integrated_into_the_displacement_budget": true,
+    "predicted_two_camera_loss_allows_bounded_p1_joint_reach": true,
+    "p1_never_changes_leg_lowering_action": true,
+    "out_of_view_never_authorizes_lowering": true,
+    "reach_tilt_stops_arm_wheels_and_lowering_progress": true,
+    "lowering_request_keeps_immediate_stop_after_base_motion": true,
+    "p1_single_tick_base_motion_freezes_then_quiet_window_resumes": true,
+    "p1_prolonged_base_motion_exits_in_a_finite_two_second_settle": true,
+    "p1_repeated_settle_episodes_exhaust_the_three_second_budget": true,
+    "drift_budget_still_executes_during_a_p1_settle": true,
+    "total_reach_deadline_still_executes_during_a_p1_settle": true,
+    "transient_goal_with_moving_arm_cannot_complete_the_reach": true,
+    "settled_arm_and_quiet_base_complete_after_two_seconds": true,
+    "settle_restarts_the_final_observation_window": true,
+    "final_window_completes_only_after_a_full_two_seconds_post_settle": true,
+    "joint_stall_has_normal_explicit_stop": true,
+    "far_stationary_visual_distance_has_correct_scope": true,
+    "near_stationary_visual_distance_has_correct_scope": true,
+    "synthetic_reach_probe_does_not_require_images_or_visual_timeout": true,
+    "phase_records_are_json_safe": true,
+    "recorded_post_compact_public_motion_satisfies_half_second_gate": true
+  },
+  "evidence": {
+    "synthetic_detector_case": {
+      "basis": "generated CPU pixels; NOT original-environment positive evidence",
+      "expected_body_point": [
+        1.2883175304400174,
+        0.02636425818502903,
+        -0.4369675195264101
+      ],
+      "default_rejections": {
+        "image_shape": 1
+      },
+      "locked_body_point": [
+        1.2883175304400174,
+        0.02636425818502903,
+        -0.4369675195264101
+      ],
+      "locked_aspect": 1.0,
+      "locked_height_span_m": 0.08270373460554709,
+      "locked_pixel_area": 1296
+    },
+    "first_reach_ready_step": 80,
+    "p1_missing_vision_progress": {
+      "expected_out_of_view": true,
+      "joint_error_rad": [
+        2.039998816941816,
+        1.799998816941816
+      ],
+      "state": "REACH"
+    },
+    "p1_missing_vision_stop": {
+      "reason": "reach_observation_complete",
+      "steps": 515,
+      "joint_error_rad": 0.0
+    },
+    "p1_settle_resume": {
+      "episodes": 1,
+      "settled_s": 0.22,
+      "resume_step": 91
+    },
+    "p1_settle_budget": {
+      "episodes": 5,
+      "settle_ticks": 150,
+      "reason": "reach_settle_budget_exceeded"
+    },
+    "p1_observation_complete": {
+      "joint_error_rad": 0.0,
+      "arm_speed_rad_s": 0.0,
+      "tangent_speed_m_s": 0.0,
+      "basis": "CPU fixture with zero measured joint and body velocity; not a score claim"
+    },
+    "public_replay": {
+      "path": "/home/lybm/ATEC_Experiments_20260910/task_b_score/first_reach_side_seed42_01",
+      "steps": [
+        351,
+        375
+      ],
+      "max_leg_speed_rad_s": 0.14209428429603577,
+      "max_tilt_rad": 0.03263602778315544
+    }
+  },
+  "source_sha256": {
+    "first_reach.py": "39194825ddd2b7f9fcc1a6d9e9f3a940a36bd71b46d29272ffd938c8a278b5ee",
+    "visual_approach.py": "47b9f7f32ff9aac9e5bf8cad744a7bbc4b713af78592c2810f867e41c1b54e6f",
+    "stationary_target_gate.py": "8580f44635e8365b04e99484b77e3fc0a96da321c75e0ebebc3ece354278df81"
+  }
+}

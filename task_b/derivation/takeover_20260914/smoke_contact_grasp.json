@@ -1,0 +1,530 @@
+{
+  "module": "task_b.payload_motion.PayloadMotionPolicy(open_on=close_complete)",
+  "synthetic": true,
+  "is_grasp_evidence": false,
+  "calls_executed": 3615,
+  "final_state": "STOPPED",
+  "done_reason": "payload_motion_observation_complete",
+  "states_seen": [
+    "WAIT_FOR_STABLE_STANCE",
+    "WAIT_FOR_TARGET",
+    "BRAKE",
+    "REACH_READY",
+    "REACH",
+    "CONTACT_OPEN",
+    "CONTACT_ROTATE",
+    "CONTACT_LOWER",
+    "PROBE_CLOSE",
+    "PAYLOAD_RAISE",
+    "PAYLOAD_SWING",
+    "PAYLOAD_EXTEND",
+    "PAYLOAD_HOLD",
+    "STOPPED"
+  ],
+  "contact_phases_reached": [
+    "CONTACT_OPEN",
+    "CONTACT_ROTATE",
+    "CONTACT_LOWER"
+  ],
+  "payload_phases_reached": [
+    "PAYLOAD_RAISE",
+    "PAYLOAD_SWING",
+    "PAYLOAD_EXTEND",
+    "PAYLOAD_HOLD"
+  ],
+  "plan_error": null,
+  "plan_ik": {
+    "A": {
+      "solver_position_error_m": 0.0004217347371371504,
+      "solver_orientation_error_rad": 0.0030424657790216925,
+      "solver_success": true,
+      "recomputed_position_error_m": 0.0004217347371371504,
+      "recomputed_orientation_error_rad": 0.0030424657790216925
+    },
+    "C": {
+      "solver_position_error_m": 0.0015015726746156984,
+      "solver_orientation_error_rad": 0.0061812568663296074,
+      "solver_success": true,
+      "recomputed_position_error_m": 0.0015015726746156984,
+      "recomputed_orientation_error_rad": 0.0061812568663296074
+    }
+  },
+  "goals_rad": {
+    "A": [
+      0.5378857737097362,
+      1.6664327608812697,
+      -1.6239570005253046,
+      0.00034347458605555925,
+      1.2199989533800164,
+      0.5200382104604656
+    ],
+    "B": [
+      1.5707963267948966,
+      1.6664327608812697,
+      -1.6239570005253046,
+      0.00034347458605555925,
+      1.2199989533800164,
+      0.5200382104604656
+    ],
+    "C": [
+      1.5707432635296097,
+      2.3731635620159004,
+      -2.533826581346155,
+      0.00035739572991252337,
+      1.219998954319697,
+      0.5199979291706113
+    ]
+  },
+  "tracker": {
+    "unit": "PayloadJointTracker",
+    "owns": "one fixed six-axis goal, one scalar reference path and the selected-axis load correction; NOT body safety, fingers, wheels, legs, navigation or success",
+    "dt_s": 0.02,
+    "path_max_axis_rate_rad_s": 0.1,
+    "command_rate_rad_s": 0.1,
+    "filter_tau_s": 0.1,
+    "filter_weight": 0.18126924692201818,
+    "damping_velocity_tau_s": 0.04,
+    "damping_velocity_weight": 0.3934693402873666,
+    "filtered_rate_rad_s": [
+      -3.159653466740906e-70,
+      -0.00022655304966535882,
+      0.0011885361702924436,
+      7.852612510375951e-71,
+      5e-324,
+      -2.2556984445309538e-70
+    ],
+    "feedback_axes": {
+      "arm_joint2": {
+        "gain": 0.9,
+        "raw_cap_rad": 0.14,
+        "damping_rad_per_rad_s": 0.2
+      },
+      "arm_joint3": {
+        "gain": 0.9,
+        "raw_cap_rad": 0.08,
+        "damping_rad_per_rad_s": 0.2
+      }
+    },
+    "other_axes_added_correction": 0.0,
+    "feedforward_basis": "the child own measured holding offset, arm_command - reference: a public quantity already admitted by the child, introduced here as a gravity feed-forward so the proportional term no longer has to carry the whole .5 kg load",
+    "damping_basis": "measured public joint velocity, opposing motion only; added after the recorded p6 outer-loop limit cycle and it changes no threshold, no original actuator and no admission rule",
+    "tether_rad": [
+      0.1,
+      0.18,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "static_lower_rad": [
+      -2.6180000032620017,
+      0.0,
+      -2.9669998072658332,
+      -1.7449999521255413,
+      -1.219999954319697,
+      -2.094399762925103
+    ],
+    "static_upper_rad": [
+      2.1679998149169144,
+      3.139999816941817,
+      0.0,
+      1.7449999521255413,
+      1.219999954319697,
+      2.094399762925103
+    ],
+    "reference_rad": [
+      1.5707432635296097,
+      2.3731635620159004,
+      -2.533826581346155,
+      0.00035739572991252337,
+      1.219998954319697,
+      0.5199979291706113
+    ],
+    "command_rad": [
+      1.5707432614091306,
+      2.3735634675863664,
+      -2.535928173892125,
+      0.00035739550063790325,
+      1.2199989545955043,
+      0.519997916462793
+    ],
+    "fixed_goal_rad": [
+      1.5707432635296097,
+      2.3731635620159004,
+      -2.533826581346155,
+      0.00035739572991252337,
+      1.219998954319697,
+      0.5199979291706113
+    ],
+    "path_start_rad": [
+      1.5707963267948966,
+      1.6664327608812697,
+      -1.6239570005253046,
+      0.00034347458605555925,
+      1.2199989533800164,
+      0.5200382104604656
+    ],
+    "path_alpha": 1.0,
+    "planned_duration_s": 9.098695808208506,
+    "raw_correction_rad": [
+      0.0,
+      -0.000318499753887755,
+      0.0016745435465587198,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "filtered_correction_rad": [
+      0.0,
+      -0.0003352186424642012,
+      0.0017620662080225454,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "feedforward_rad": [
+      -2.1204790146001073e-09,
+      4.7181684337260776e-08,
+      2.815409549938863e-08,
+      -2.2927462012267696e-10,
+      2.75807265914807e-10,
+      -1.27078182421414e-08
+    ],
+    "integral_trim_rad": [
+      0.0,
+      0.0007350770312458794,
+      -0.0038636869080878244,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "integral_gain_per_s": 1.0,
+    "integral_cap_rad": 0.2,
+    "handoff_filtered_correction_rad": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "segments_begun": 3,
+    "bounds_violation": null,
+    "done_reason": null
+  },
+  "final_debug": {
+    "actual_goal_error_rad": 0.002124723089574676,
+    "arm_qdot_rad_s": [
+      0.0,
+      -0.0002205371856689453,
+      0.0011682510375976562,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "quiet_ready": false,
+    "quiet_tick": true,
+    "body_quiet": true,
+    "arm_window_span_rad": null,
+    "segment_age_s": 2.0,
+    "segment_deadline_s": 29.098695808208504
+  },
+  "transitions": [
+    {
+      "call": 0,
+      "state": "WAIT_FOR_STABLE_STANCE",
+      "reason": "verify_actual_post_transition_joint_motion",
+      "q6": 0.03,
+      "width": 0.07,
+      "leg_action": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "call": 24,
+      "state": "WAIT_FOR_TARGET",
+      "reason": "missing_or_stale_visual_target",
+      "q6": 0.03,
+      "width": 0.07,
+      "leg_action": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "call": 29,
+      "state": "BRAKE",
+      "reason": "wait_for_actual_stillness_and_new_raw_visual_samples",
+      "q6": 0.03,
+      "width": 0.07,
+      "leg_action": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "call": 99,
+      "state": "REACH_READY",
+      "reason": "stationary_raw_target_accepted_for_ik",
+      "q6": 0.03,
+      "width": 0.07,
+      "leg_action": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "call": 100,
+      "state": "REACH",
+      "reason": "waiting_for_public_quiet_window_before_fixed_lowering",
+      "q6": 0.024,
+      "width": 0.07,
+      "leg_action": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "call": 715,
+      "state": "CONTACT_OPEN",
+      "reason": "verifying_the_fully_open_jaw_before_any_wrist_rotation",
+      "q6": 0.0,
+      "width": 0.07,
+      "leg_action": [
+        -0.02722,
+        0.05708,
+        -0.11638,
+        0.02596,
+        0.05712,
+        -0.11732,
+        -0.01984,
+        0.0762,
+        -0.128,
+        0.01888,
+        0.07766,
+        -0.12852
+      ]
+    },
+    {
+      "call": 725,
+      "state": "CONTACT_ROTATE",
+      "reason": "latched_the_fixed_relative_wrist_goal_from_public_measured_q6",
+      "q6": 0.0,
+      "width": 0.07,
+      "leg_action": [
+        -0.02722,
+        0.05708,
+        -0.11638,
+        0.02596,
+        0.05712,
+        -0.11732,
+        -0.01984,
+        0.0762,
+        -0.128,
+        0.01888,
+        0.07766,
+        -0.12852
+      ]
+    },
+    {
+      "call": 1012,
+      "state": "CONTACT_LOWER",
+      "reason": "reacquiring_a_fresh_public_quiet_window_before_the_extra_leg_reference",
+      "q6": 0.5236,
+      "width": 0.07,
+      "leg_action": [
+        -0.02722,
+        0.05708,
+        -0.11638,
+        0.02596,
+        0.05712,
+        -0.11732,
+        -0.01984,
+        0.0762,
+        -0.128,
+        0.01888,
+        0.07766,
+        -0.12852
+      ]
+    },
+    {
+      "call": 1215,
+      "state": "PROBE_CLOSE",
+      "reason": "entering_the_inherited_unchanged_close_lift_and_observation_probe",
+      "q6": 0.5236,
+      "width": 0.07,
+      "leg_action": [
+        -0.05444,
+        0.11416,
+        -0.23276,
+        0.05192,
+        0.11424,
+        -0.23464,
+        -0.03968,
+        0.1524,
+        -0.256,
+        0.03776,
+        0.15532,
+        -0.25704
+      ]
+    },
+    {
+      "call": 1335,
+      "state": "PAYLOAD_RAISE",
+      "reason": "raising_the_loaded_arm_before_any_side_swing",
+      "q6": 0.5236,
+      "width": 0.04,
+      "leg_action": [
+        -0.05444,
+        0.11416,
+        -0.23276,
+        0.05192,
+        0.11424,
+        -0.23464,
+        -0.03968,
+        0.1524,
+        -0.256,
+        0.03776,
+        0.15532,
+        -0.25704
+      ]
+    },
+    {
+      "call": 2319,
+      "state": "PAYLOAD_SWING",
+      "reason": "swinging_only_joint1_after_the_raise_actually_settled",
+      "q6": 0.52004,
+      "width": 0.04,
+      "leg_action": [
+        -0.05444,
+        0.11416,
+        -0.23276,
+        0.05192,
+        0.11424,
+        -0.23464,
+        -0.03968,
+        0.1524,
+        -0.256,
+        0.03776,
+        0.15532,
+        -0.25704
+      ]
+    },
+    {
+      "call": 2861,
+      "state": "PAYLOAD_EXTEND",
+      "reason": "extending_over_the_side_at_height_after_the_swing",
+      "q6": 0.52004,
+      "width": 0.04,
+      "leg_action": [
+        -0.05444,
+        0.11416,
+        -0.23276,
+        0.05192,
+        0.11424,
+        -0.23464,
+        -0.03968,
+        0.1524,
+        -0.256,
+        0.03776,
+        0.15532,
+        -0.25704
+      ]
+    },
+    {
+      "call": 3513,
+      "state": "PAYLOAD_HOLD",
+      "reason": "holding_the_extended_loaded_pose_for_the_bounded_observation",
+      "q6": 0.52,
+      "width": 0.04,
+      "leg_action": [
+        -0.05444,
+        0.11416,
+        -0.23276,
+        0.05192,
+        0.11424,
+        -0.23464,
+        -0.03968,
+        0.1524,
+        -0.256,
+        0.03776,
+        0.15532,
+        -0.25704
+      ]
+    },
+    {
+      "call": 3613,
+      "state": "STOPPED",
+      "reason": "payload_motion_observation_complete",
+      "q6": 0.52,
+      "width": 0.04,
+      "leg_action": [
+        -0.05444,
+        0.11416,
+        -0.23276,
+        0.05192,
+        0.11424,
+        -0.23464,
+        -0.03968,
+        0.1524,
+        -0.256,
+        0.03776,
+        0.15532,
+        -0.25704
+      ]
+    }
+  ],
+  "final_q6": 0.52,
+  "final_width": 0.04
+}

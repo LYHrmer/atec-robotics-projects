@@ -1,0 +1,6 @@
+{
+  "actual_claude_session": "15ca1101-04c2-428a-aa92-17d2db268160",
+  "opus_source_sha256": "6bc358a3ed1511704eb17a7069f0dd33708c7cb81b13dc578fd9498a245a43ea",
+  "integrated_source_sha256": "784fb33f6046f2a2c8baf82c22c07779825f072b703fb5fcb7c90a0dcb090231",
+  "root_change": "metadata clarifies offline candidate selection versus public-only runtime inputs; no behavior change"
+}

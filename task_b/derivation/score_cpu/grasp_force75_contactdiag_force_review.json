@@ -1,0 +1,1047 @@
+{
+  "run_id": "plan_p4_grasp_force75_contactdiag_seed42_01",
+  "steps": 3257,
+  "stop_reason": "policy_stop:grasp_probe_empty_during_lift",
+  "score_raw_total": 0.9999999776482582,
+  "scope": "Offline finger normal-contact diagnostics; never a force-to-object or grasp proof.",
+  "timing": "same-row pre-step cached finger normal force and actual q/object/gripper poses; no action-poststate conflation",
+  "sensor_semantics_source": "/home/lybm/IsaacLab/source/isaaclab/isaaclab/sensors/contact_sensor/contact_sensor_data.py:74",
+  "sensor_semantics": "sum of normal contact forces on each finger body in world coordinates; excludes tangential/friction forces; unfiltered by contacted object",
+  "materials": {
+    "robot": {
+      "shape_count": 25,
+      "distinct_static_dynamic_restitution_rows": [
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "masses": [
+        40.08949661254883,
+        2.6730000972747803,
+        2.6730000972747803,
+        2.6730000972747803,
+        2.6730000972747803,
+        1.0199999809265137,
+        4.535999774932861,
+        4.535999774932861,
+        4.535999774932861,
+        4.535999774932861,
+        0.7099999785423279,
+        2.290600061416626,
+        2.2905569076538086,
+        2.290600061416626,
+        2.290600061416626,
+        1.1699999570846558,
+        1.0829999446868896,
+        1.0829999446868896,
+        1.0829999446868896,
+        1.0829999446868896,
+        0.5,
+        0.3799999952316284,
+        0.382999986410141,
+        0.006990896072238684,
+        0.44999998807907104,
+        0.02500000037252903,
+        0.02500000037252903
+      ]
+    },
+    "object_10": {
+      "shape_count": 1,
+      "distinct_static_dynamic_restitution_rows": [
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "masses": [
+        0.5
+      ]
+    }
+  },
+  "stages": {
+    "PROBE_CLOSE": {
+      "first_step": 2938,
+      "last_step": 3095,
+      "sample_count": 158,
+      "endpoint_span_s": 3.14,
+      "jaw_width_m": {
+        "mean": 0.05742379650473595,
+        "median": 0.05552951991558075,
+        "min": 0.05069611221551895,
+        "max": 0.06985388696193695,
+        "p10": 0.05295721516013145,
+        "p90": 0.06273833811283111
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            3.677834245034411,
+            -5.848567589928832,
+            3.5609144990957238
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 7.7745698439280595,
+            "median": 8.17357228334939,
+            "min": 0.0,
+            "max": 26.43280578517173,
+            "p10": 0.0,
+            "p90": 13.601272679130124
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 6.910853714831017,
+            "median": 7.212615656645597,
+            "min": 0.0,
+            "max": 23.512811236922754,
+            "p10": 0.0,
+            "p90": 12.149016349728134
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 3.5609144990957238,
+            "median": 3.845120429992676,
+            "min": 0.0,
+            "max": 12.076461791992188,
+            "p10": 0.0,
+            "p90": 6.174597597122193
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.8354430379746836,
+            "0.5": 0.8354430379746836,
+            "1.0": 0.8291139240506329
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 27.380888807848542,
+            "median": 27.443840194192756,
+            "min": 26.331326078778726,
+            "max": 28.217856443100562,
+            "p10": 26.687281562491993,
+            "p90": 27.903559305043245
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -4.833710826803706,
+            3.87080961162861,
+            3.4893107717485417
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 7.108961225705891,
+            "median": 6.23293964285533,
+            "min": 0.0,
+            "max": 17.095036892568164,
+            "p10": 0.8220527045582241,
+            "p90": 14.349013754327101
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 6.192597711942667,
+            "median": 5.482276853855366,
+            "min": 0.0,
+            "max": 14.880120363387645,
+            "p10": 0.7239128011805577,
+            "p90": 12.3934465068518
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 3.4893107717485417,
+            "median": 2.9654672145843506,
+            "min": 0.0,
+            "max": 8.495551109313965,
+            "p10": 0.38951367735862735,
+            "p90": 7.211397457122804
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.9367088607594937,
+            "0.5": 0.9113924050632911,
+            "1.0": 0.8734177215189873
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 29.000909819428554,
+            "median": 28.60843669931989,
+            "min": 28.18145451180265,
+            "max": 30.67709708147199,
+            "p10": 28.278721177730315,
+            "p90": 30.561672700327765
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 0.8354430379746836,
+        "0.5": 0.8354430379746836,
+        "1.0": 0.810126582278481
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 38,
+        "endpoint_span_s": 0.74
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -7.050225270844265,
+        "median": -7.005884647369385,
+        "min": -14.598134994506836,
+        "max": -0.0,
+        "p10": -12.70960431098938,
+        "p90": -0.5879543364047982
+      }
+    },
+    "PROBE_CLOSE_first_half_second": {
+      "first_step": 2938,
+      "last_step": 2963,
+      "sample_count": 26,
+      "endpoint_span_s": 0.5,
+      "jaw_width_m": {
+        "mean": 0.0640358179807663,
+        "median": 0.06284123659133911,
+        "min": 0.05948588252067566,
+        "max": 0.06985388696193695,
+        "p10": 0.061787547543644905,
+        "p90": 0.06889071315526962
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            0.38792031888778394,
+            -0.6184256214361924,
+            0.3863827907122098
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 0.8259687092541707,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 4.90133931698339,
+            "p10": 0.0,
+            "p90": 3.759764365945561
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 0.7300222739638254,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 4.3314933380673555,
+            "p10": 0.0,
+            "p90": 3.323209126143893
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 0.3863827907122098,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 2.293750762939453,
+            "p10": 0.0,
+            "p90": 1.7584390044212341
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.3076923076923077,
+            "0.5": 0.3076923076923077,
+            "1.0": 0.2692307692307692
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 27.884763544782235,
+            "median": 27.90198338457217,
+            "min": 27.801255983834025,
+            "max": 27.903544530527416,
+            "p10": 27.84647377485583,
+            "p90": 27.902954245047273
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -0.5696157455587616,
+            0.4568832378404645,
+            0.3933302619888519
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 0.8294056319389209,
+            "median": 0.33422458671832106,
+            "min": 0.0,
+            "max": 3.544202371720725,
+            "p10": 0.0,
+            "p90": 2.655667181007514
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 0.7302085512127194,
+            "median": 0.2942707050363925,
+            "min": 0.0,
+            "max": 3.1211174563458277,
+            "p10": 0.0,
+            "p90": 2.338047317395249
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 0.3933302619888519,
+            "median": 0.15846387296915054,
+            "min": 0.0,
+            "max": 1.6792844533920288,
+            "p10": 0.0,
+            "p90": 1.2594050168991089
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.6153846153846154,
+            "0.5": 0.46153846153846156,
+            "1.0": 0.3076923076923077
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 28.316101848705227,
+            "median": 28.284153919527384,
+            "min": 28.273341137247538,
+            "max": 28.437151866318327,
+            "p10": 28.280457336478044,
+            "p90": 28.402636369438518
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 0.3076923076923077,
+        "0.5": 0.3076923076923077,
+        "1.0": 0.23076923076923078
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 6,
+        "endpoint_span_s": 0.1
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -0.7797130527010617,
+        "median": -0.15846387296915054,
+        "min": -3.973035216331482,
+        "max": -0.0,
+        "p10": -3.017844021320343,
+        "p90": -0.0
+      }
+    },
+    "PROBE_CLOSE_last_half_second": {
+      "first_step": 3070,
+      "last_step": 3095,
+      "sample_count": 26,
+      "endpoint_span_s": 0.5,
+      "jaw_width_m": {
+        "mean": 0.055459652096033096,
+        "median": 0.05546116828918457,
+        "min": 0.055385611951351166,
+        "max": 0.05551161244511604,
+        "p10": 0.05540389008820057,
+        "p90": 0.05550500191748142
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            6.318789830574622,
+            -9.534780960816603,
+            5.7543338262117825
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 12.804358468784617,
+            "median": 12.921461302023669,
+            "min": 10.59084172656907,
+            "max": 13.841992166635846,
+            "p10": 11.441864947985781,
+            "p90": 13.734006341623154
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 11.438496711539909,
+            "median": 11.542863794449973,
+            "min": 9.46287253698332,
+            "max": 12.363075951634384,
+            "p10": 10.223583931204487,
+            "p90": 12.26690737566075
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 5.7543338262117825,
+            "median": 5.807087421417236,
+            "min": 4.756045818328857,
+            "max": 6.2253594398498535,
+            "p10": 5.13756799697876,
+            "p90": 6.1762378215789795
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 26.704465068167547,
+            "median": 26.70617515576607,
+            "min": 26.670337582993064,
+            "max": 26.73764019727237,
+            "p10": 26.67516803893364,
+            "p90": 26.73264438511594
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -8.93700229204618,
+            7.165452315257146,
+            6.7695320936349725
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 13.30565907915465,
+            "median": 13.134659298432892,
+            "min": 10.936814048892877,
+            "max": 15.359120715911784,
+            "p10": 11.92541824273782,
+            "p90": 14.759605727340602
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 11.454862543249067,
+            "median": 11.310083396305286,
+            "min": 9.422505265032619,
+            "max": 13.217583243356051,
+            "p10": 10.27318655743028,
+            "p90": 12.710102240463579
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 6.7695320936349725,
+            "median": 6.678419589996338,
+            "min": 5.55250358581543,
+            "max": 7.822920322418213,
+            "p10": 6.056173324584961,
+            "p90": 7.511308193206787
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 30.579607451596864,
+            "median": 30.57136960468175,
+            "min": 30.50546959604689,
+            "max": 30.67709708147199,
+            "p10": 30.51458248323933,
+            "p90": 30.64272743825001
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 1.0,
+        "0.5": 1.0,
+        "1.0": 1.0
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 26,
+        "endpoint_span_s": 0.5
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -12.523865919846754,
+        "median": -12.527586936950684,
+        "min": -13.898342609405518,
+        "max": -11.554448127746582,
+        "p10": -13.083904504776001,
+        "p90": -11.838435411453247
+      }
+    },
+    "PROBE_CLOSE_full_target_commanded": {
+      "first_step": 3086,
+      "last_step": 3095,
+      "sample_count": 10,
+      "endpoint_span_s": 0.18,
+      "jaw_width_m": {
+        "mean": 0.055415429174900055,
+        "median": 0.05541524291038513,
+        "min": 0.055385611951351166,
+        "max": 0.055442679673433304,
+        "p10": 0.05538857914507389,
+        "p90": 0.055437033623456956
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            6.536978626251221,
+            -9.860307788848877,
+            5.950219058990479
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 13.242468163330827,
+            "median": 13.462315679381295,
+            "min": 12.322088081980322,
+            "max": 13.841992166635846,
+            "p10": 12.473289216258056,
+            "p90": 13.775857707837224
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 11.830377118916976,
+            "median": 12.026700365416835,
+            "min": 11.011022663461363,
+            "max": 12.363075951634384,
+            "p10": 11.146175380647714,
+            "p90": 12.304346591134205
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 5.950219058990479,
+            "median": 6.0491650104522705,
+            "min": 5.5309343338012695,
+            "max": 6.2253594398498535,
+            "p10": 5.598724699020385,
+            "p90": 6.194942331314087
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 26.699698925522892,
+            "median": 26.70149408149669,
+            "min": 26.670337582993064,
+            "max": 26.72729063626314,
+            "p10": 26.670739482944995,
+            "p90": 26.72496071733555
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -9.101629066467286,
+            7.302519607543945,
+            6.909139394760132
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 13.561075987285298,
+            "median": 13.4095277686311,
+            "min": 12.390681102743487,
+            "max": 15.359120715911784,
+            "p10": 12.430949251696894,
+            "p90": 14.730239279571473
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 11.66904144919813,
+            "median": 11.536785698899754,
+            "min": 10.66759940443063,
+            "max": 13.217583243356051,
+            "p10": 10.69630564780873,
+            "p90": 12.671262881955572
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 6.909139394760132,
+            "median": 6.835052728652954,
+            "min": 6.303277015686035,
+            "max": 7.822920322418213,
+            "p10": 6.333840036392212,
+            "p90": 7.511260509490967
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 30.627991656374626,
+            "median": 30.628159384455152,
+            "min": 30.57801485096586,
+            "max": 30.67709708147199,
+            "p10": 30.59090914422656,
+            "p90": 30.664527662300785
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 1.0,
+        "0.5": 1.0,
+        "1.0": 1.0
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 10,
+        "endpoint_span_s": 0.18
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -12.85935845375061,
+        "median": -12.785080671310425,
+        "min": -13.898342609405518,
+        "max": -12.326184749603271,
+        "p10": -13.180248737335205,
+        "p90": -12.498654651641846
+      }
+    },
+    "PROBE_LIFT": {
+      "first_step": 3096,
+      "last_step": 3257,
+      "sample_count": 162,
+      "endpoint_span_s": 3.22,
+      "jaw_width_m": {
+        "mean": 0.04265816882252693,
+        "median": 0.05145646259188652,
+        "min": 0.0,
+        "max": 0.05537739396095276,
+        "p10": 0.01600740607827902,
+        "p90": 0.05511278100311756
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            4.451510245417372,
+            -5.928711395204803,
+            3.748490651448568
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 8.318631751035324,
+            "median": 7.273109479553366,
+            "min": 0.0,
+            "max": 18.2102502040762,
+            "p10": 4.889154968071849,
+            "p90": 14.228073934747044
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 7.425362848371652,
+            "median": 6.536138801796742,
+            "min": 0.0,
+            "max": 16.28660603998972,
+            "p10": 4.368721436005724,
+            "p90": 12.587798823360451
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 3.748490651448568,
+            "median": 3.180620551109314,
+            "min": 0.0,
+            "max": 8.14614486694336,
+            "p10": 2.209393572807312,
+            "p90": 6.651358175277711
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.9444444444444444,
+            "0.5": 0.9444444444444444,
+            "1.0": 0.9444444444444444
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 26.72371310647472,
+            "median": 26.68174343554329,
+            "min": 24.540286434760617,
+            "max": 28.648180614577026,
+            "p10": 25.61073503365829,
+            "p90": 27.800661636063598
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -4.253012728543929,
+            3.595807569998282,
+            3.17758403736868
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 6.414507305063672,
+            "median": 5.697362679413204,
+            "min": 0.0,
+            "max": 14.892952779923545,
+            "p10": 4.790473586142299,
+            "p90": 10.363822926822678
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 5.570761811302369,
+            "median": 4.984411433410239,
+            "min": 0.0,
+            "max": 12.806215616901282,
+            "p10": 4.190903979147222,
+            "p90": 8.941317997767948
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 3.17758403736868,
+            "median": 2.8350133895874023,
+            "min": 0.0,
+            "max": 7.602689266204834,
+            "p10": 2.340872955322266,
+            "p90": 5.164281034469605
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.9382716049382716,
+            "0.5": 0.9382716049382716,
+            "1.0": 0.9382716049382716
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 29.63145683338858,
+            "median": 29.53768571484507,
+            "min": 27.539882843287803,
+            "max": 32.53442198380349,
+            "p10": 28.200261409784044,
+            "p90": 31.325764359401987
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 0.9382716049382716,
+        "0.5": 0.9382716049382716,
+        "1.0": 0.9382716049382716
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 152,
+        "endpoint_span_s": 3.02
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -6.9260746888172475,
+        "median": -6.545178174972534,
+        "min": -13.764670848846436,
+        "max": -0.0,
+        "p10": -10.974784445762634,
+        "p90": -4.577270555496216
+      }
+    },
+    "PROBE_LIFT_first_half_second": {
+      "first_step": 3096,
+      "last_step": 3121,
+      "sample_count": 26,
+      "endpoint_span_s": 0.5,
+      "jaw_width_m": {
+        "mean": 0.05516989529132843,
+        "median": 0.05521855503320694,
+        "min": 0.05475154519081116,
+        "max": 0.05537739396095276,
+        "p10": 0.0548651535063982,
+        "p90": 0.05536317825317383
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            7.213715700002817,
+            -10.861619545863224,
+            6.556762750332172
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 14.595059500401355,
+            "median": 13.842167226054224,
+            "min": 11.357229114860207,
+            "max": 18.2102502040762,
+            "p10": 11.540404340215744,
+            "p90": 17.868184555231828
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 13.039302183604523,
+            "median": 12.360997663639797,
+            "min": 10.130898176709566,
+            "max": 16.28660603998972,
+            "p10": 10.313738752225655,
+            "p90": 15.95430911041835
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 6.556762750332172,
+            "median": 6.229871511459351,
+            "min": 5.129085540771484,
+            "max": 8.14614486694336,
+            "p10": 5.177600860595703,
+            "p90": 8.045437335968018
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 26.702908233798873,
+            "median": 26.67266185601545,
+            "min": 26.54094090005875,
+            "max": 27.05679000641653,
+            "p10": 26.57337510607909,
+            "p90": 26.90402103157293
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -6.68990748662215,
+            5.321346475527837,
+            5.023097716844999
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 9.91502850183851,
+            "median": 9.87686430868547,
+            "min": 5.41259321731535,
+            "max": 14.892952779923545,
+            "p10": 5.881169999567952,
+            "p90": 14.041517687259716
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 8.548329181766318,
+            "median": 8.542994973169183,
+            "min": 4.698624805194452,
+            "max": 12.806215616901282,
+            "p10": 5.075409361553268,
+            "p90": 12.073552831596569
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 5.023097716844999,
+            "median": 4.956750154495239,
+            "min": 2.6868364810943604,
+            "max": 7.602689266204834,
+            "p10": 2.971192955970764,
+            "p90": 7.168928384780884
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 30.38836407209611,
+            "median": 30.47496100114347,
+            "min": 29.76241775005535,
+            "max": 30.710983166029862,
+            "p10": 29.968152928132188,
+            "p90": 30.692189324971327
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 1.0,
+        "0.5": 1.0,
+        "1.0": 1.0
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 26,
+        "endpoint_span_s": 0.5
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -11.579860467177172,
+        "median": -11.717249870300293,
+        "min": -13.764670848846436,
+        "max": -8.697545289993286,
+        "p10": -13.01789903640747,
+        "p90": -10.090094804763794
+      }
+    },
+    "PROBE_LIFT_last_half_second": {
+      "first_step": 3232,
+      "last_step": 3257,
+      "sample_count": 26,
+      "endpoint_span_s": 0.5,
+      "jaw_width_m": {
+        "mean": 0.010817691683769226,
+        "median": 0.012859941460192204,
+        "min": 0.0,
+        "max": 0.02242301031947136,
+        "p10": 0.0,
+        "p90": 0.02097162138670683
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            1.9077624999559843,
+            -2.3041446759150577,
+            1.5222740540137658
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 3.35678944924405,
+            "median": 4.774353529011986,
+            "min": 0.0,
+            "max": 8.937164899682632,
+            "p10": 0.0,
+            "p90": 5.051554632894667
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 2.991508790121588,
+            "median": 4.252640523297613,
+            "min": 0.0,
+            "max": 7.924186890171692,
+            "p10": 0.0,
+            "p90": 4.5209098267974825
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 1.5222740540137658,
+            "median": 2.1937167644500732,
+            "min": 0.0,
+            "max": 4.132817268371582,
+            "p10": 0.0,
+            "p90": 2.2796874046325684
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.6538461538461539,
+            "0.5": 0.6538461538461539,
+            "1.0": 0.6538461538461539
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 26.953979500174576,
+            "median": 26.68174343554329,
+            "min": 26.283625759857507,
+            "max": 28.648180614577026,
+            "p10": 26.422697382256615,
+            "p90": 28.153907237950715
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -1.9985338357778697,
+            1.7088935191814716,
+            1.46490413409013
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 3.010913605933585,
+            "median": 4.750732229733471,
+            "min": 0.0,
+            "max": 5.076007126991612,
+            "p10": 0.0,
+            "p90": 5.064681461210407
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 2.6296611878153446,
+            "median": 4.15225767365908,
+            "min": 0.0,
+            "max": 4.469747274914281,
+            "p10": 0.0,
+            "p90": 4.4540356652277495
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 1.46490413409013,
+            "median": 2.329624891281128,
+            "min": 0.0,
+            "max": 2.4850382804870605,
+            "p10": 0.0,
+            "p90": 2.4166877269744873
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.6153846153846154,
+            "0.5": 0.6153846153846154,
+            "1.0": 0.6153846153846154
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 29.154124222549903,
+            "median": 28.632210705675732,
+            "min": 28.239976426936277,
+            "max": 32.53442198380349,
+            "p10": 28.330794971638998,
+            "p90": 30.860606067381163
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 0.6153846153846154,
+        "0.5": 0.6153846153846154,
+        "1.0": 0.6153846153846154
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 16,
+        "endpoint_span_s": 0.3
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -2.987178188103896,
+        "median": -4.512714385986328,
+        "min": -4.709143877029419,
+        "max": -0.0,
+        "p10": -4.681971549987793,
+        "p90": -0.0
+      }
+    },
+    "PROBE_LIFT_nonempty_samples": {
+      "first_step": 3096,
+      "last_step": 3248,
+      "sample_count": 153,
+      "endpoint_span_s": 3.04,
+      "jaw_width_m": {
+        "mean": 0.045167475938797,
+        "median": 0.05201241001486778,
+        "min": 0.00965164415538311,
+        "max": 0.05537739396095276,
+        "p10": 0.02204076573252678,
+        "p90": 0.05513240396976471
+      },
+      "fingers": {
+        "arm_link7": {
+          "world_xyz_mean_N": [
+            4.713363789265452,
+            -6.277459124334498,
+            3.9689901015337776
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 8.807963030507992,
+            "median": 7.725648556196641,
+            "min": 4.71366970984146,
+            "max": 18.2102502040762,
+            "p10": 5.092291564452379,
+            "p90": 14.99584195380282
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 7.8621488982758665,
+            "median": 6.9489560364084415,
+            "min": 4.155963959047989,
+            "max": 16.28660603998972,
+            "p10": 4.556855809906632,
+            "p90": 13.265444081913088
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 3.9689901015337776,
+            "median": 3.3760414123535156,
+            "min": 2.138589859008789,
+            "max": 8.14614486694336,
+            "p10": 2.2704158306121824,
+            "p90": 6.881778144836429
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 1.0,
+            "0.5": 1.0,
+            "1.0": 1.0
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 26.72371310647472,
+            "median": 26.68174343554329,
+            "min": 24.540286434760617,
+            "max": 28.648180614577026,
+            "p10": 25.61073503365829,
+            "p90": 27.800661636063598
+          }
+        },
+        "arm_link8": {
+          "world_xyz_mean_N": [
+            -4.503189947870043,
+            3.807325662351122,
+            3.364500745449191
+          ],
+          "normal_resultant_norm_N": {
+            "mean": 6.791831264185064,
+            "median": 5.727340479584668,
+            "min": 0.0,
+            "max": 14.892952779923545,
+            "p10": 4.962969249154061,
+            "p90": 10.409081009813411
+          },
+          "world_horizontal_resultant_N": {
+            "mean": 5.898453682555451,
+            "median": 5.009307521731347,
+            "min": 0.0,
+            "max": 12.806215616901282,
+            "p10": 4.337074507189448,
+            "p90": 8.964574823805743
+          },
+          "signed_world_up_normal_force_on_finger_N": {
+            "mean": 3.364500745449191,
+            "median": 2.8701841831207275,
+            "min": 0.0,
+            "max": 7.602689266204834,
+            "p10": 2.3953420162200927,
+            "p90": 5.222599124908448
+          },
+          "sample_fraction_above_norm_N": {
+            "0.1": 0.9934640522875817,
+            "0.5": 0.9934640522875817,
+            "1.0": 0.9934640522875817
+          },
+          "normal_elevation_above_horizontal_deg_when_norm_above_point_one": {
+            "mean": 29.63145683338858,
+            "median": 29.53768571484507,
+            "min": 27.539882843287803,
+            "max": 32.53442198380349,
+            "p10": 28.200261409784044,
+            "p90": 31.325764359401987
+          }
+        }
+      },
+      "dual_contact_sample_fraction": {
+        "0.1": 0.9934640522875817,
+        "0.5": 0.9934640522875817,
+        "1.0": 0.9934640522875817
+      },
+      "longest_consecutive_dual_contact_norm_above_point_one_N": {
+        "samples": 152,
+        "endpoint_span_s": 3.02
+      },
+      "opposite_sum_of_finger_normal_Z_N": {
+        "mean": -7.3334908469829685,
+        "median": -6.715822219848633,
+        "min": -13.764670848846436,
+        "max": -4.132817268371582,
+        "p10": -11.203500175476075,
+        "p90": -4.683809518814087
+      }
+    }
+  },
+  "limitations": [
+    "Nonzero net normal force proves sampled body contact, but it is not object-specific. Exact contacts to mustard versus other links require filtered contact data.",
+    "Normal force world Z is force ON the finger. Its opposite is only the counterpart normal contribution; omitted tangential friction prevents computing actual object support.",
+    "Samples are cached at control ticks, not a continuous contact trace or all physics substeps; zero sampled net force does not prove all contact absent between ticks.",
+    "All robot and target shape material coefficients are live PhysX getter values; this does not measure effective grip strength or static-friction utilization.",
+    "Read the independently computed actual-quaternion original-mesh clearance report for physical lift/follow."
+  ],
+  "source_sha256": {
+    "result.json": "a677372860e2ddd1957cf67d1eacf6d6e50032fb94ba8ceabe894537fb3ebc73",
+    "environment_metadata.json": "ddbf87a251f53d1db1b7a3506ac3e1b4730a8c88913293917e0defbd1fe3b7ef",
+    "telemetry.npz": "89b7b869dc13df0b442e0a01a0648c666378ab2337bdfda5379a32b06aba603d",
+    "trace.jsonl": "79c44f41414e6ce7cb5c44338a6b1775348c344aac218ac0c4827a6f60247a43"
+  }
+}

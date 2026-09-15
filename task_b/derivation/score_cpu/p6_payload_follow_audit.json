@@ -1,0 +1,136 @@
+{
+  "run_id": "plan_p6_payload_closeentry_seed42_01",
+  "scope": "OFFLINE independent audit of recorded actual object/gripper pose and the original full mesh. No value here was ever a policy input.",
+  "object_index_1based": 10,
+  "stop_reason": "policy_stop:payload_raise_not_reached",
+  "official_terminated": false,
+  "official_truncated": false,
+  "original_environment_flags": {
+    "source": "result.json + telemetry.npz + scoring_events.json, read by this script; no separate audit is assumed to have done it",
+    "official_terminated": false,
+    "official_truncated": false,
+    "termination_term_names": [
+      "time_out",
+      "illegal_contact",
+      "fall",
+      "objects_in_circle_done"
+    ],
+    "termination_terms_fired_any": {
+      "time_out": false,
+      "illegal_contact": false,
+      "fall": false,
+      "objects_in_circle_done": false
+    },
+    "illegal_contact_term_fired": false,
+    "illegal_contact_body_names": [
+      "base_link",
+      "FL_hip",
+      "FL_thigh",
+      "FR_hip",
+      "FR_thigh",
+      "RL_hip",
+      "RL_thigh",
+      "RR_hip",
+      "RR_thigh"
+    ],
+    "illegal_contact_max_force_per_body": {
+      "base_link": 0.0,
+      "FL_hip": 0.0,
+      "FL_thigh": 0.0,
+      "FR_hip": 0.0,
+      "FR_thigh": 0.0,
+      "RL_hip": 0.0,
+      "RL_thigh": 0.0,
+      "RR_hip": 0.0,
+      "RR_thigh": 0.0
+    },
+    "illegal_contact_force_ever_nonzero": false,
+    "scoring_event_termination_flags": [
+      {
+        "step": 2877,
+        "termination_flags": {
+          "time_out": false,
+          "illegal_contact": false,
+          "fall": false,
+          "objects_in_circle_done": false
+        }
+      }
+    ],
+    "required_clean_terms": [
+      "illegal_contact"
+    ],
+    "clean": true
+  },
+  "reward_term_totals_raw": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 1.0
+  },
+  "note_on_reward": "grasped_objects only means the gripper base came within the official .20 m of an object root; objects_in_circle is the delivery term and is 0 here",
+  "admission_thresholds": {
+    "mesh_lowest_surface_rise_m": 0.01,
+    "root_rise_m": 0.015,
+    "follow_window_s": 1.0,
+    "follow_drift_m": 0.02
+  },
+  "baseline_step": 3017,
+  "baseline_trace_row": 3016,
+  "baseline_source_field": "child_phase",
+  "baseline_field_is_nested_child_phase": true,
+  "baseline_phase_before": "REACH",
+  "baseline_basis": "the FIRST sample whose NESTED child phase/state is 'CONTACT_OPEN' (child_phase, valid only while child_called_this_tick), i.e. BEFORE the wrist rotation and the extra leg reference, so no preparation-stage push or tip is hidden. It is NOT the first payload phase.",
+  "baseline_lowest_mesh_world_z_m": 0.04413599535265211,
+  "baseline_object_root_world_m": [
+    -6.723809242248535,
+    -8.680274963378906,
+    0.14022468030452728
+  ],
+  "peak_mesh_rise_m": 0.5904730056305382,
+  "peak_root_rise_m": 0.5942396074533463,
+  "final_mesh_rise_m": 0.5847238847575666,
+  "final_root_rise_m": 0.5877688676118851,
+  "final_jaw_width_m": 0.05730031803250313,
+  "follow_windows": [],
+  "best_follow_window": {
+    "first_step": 3886,
+    "last_step": 3936,
+    "duration_s": 1.0,
+    "relative_drift_from_first_sample_m": 0.00011783383640739618,
+    "relative_axis_spread_m": 0.0002348389784447881,
+    "min_mesh_rise_m": 0.11682634255048313,
+    "min_root_rise_m": 0.11847828328609467,
+    "min_jaw_width_m": 0.05728013068437576,
+    "phases": [
+      "PAYLOAD_RAISE"
+    ],
+    "passes_follow": true
+  },
+  "follow_window_count_passing": 1,
+  "longest_contiguous_lifted_follow": {
+    "first_step": 3737,
+    "last_step": 4688,
+    "samples": 952,
+    "duration_s": 19.019999999999996,
+    "relative_drift_from_first_sample_m": 0.007792523467776046,
+    "min_mesh_rise_m": 0.01375872075238116,
+    "min_root_rise_m": 0.015000000596046448,
+    "min_jaw_width_m": 0.057202164083719254,
+    "phases": [
+      "PAYLOAD_RAISE"
+    ]
+  },
+  "physical_grasp_admitted": true,
+  "verdict": "PHYSICAL_GRASP_EVIDENCE_FOR_ONE_OBJECT",
+  "explicitly_not_claimed": [
+    "transport",
+    "navigation",
+    "objects_in_circle delivery",
+    "Task B completion",
+    "repeatability across seeds",
+    "that a nonempty jaw or a proximity point proves anything"
+  ],
+  "source_sha256": {
+    "result.json": "0a1dc16df78ad4683a02b58766f62e5b8fee44f64fd0073d1edc2ff44d8e7930",
+    "telemetry.npz": "ea832dabde01e1071e64a3a0cd5681326de92c492f352ec8daea425fa4702a6b",
+    "scoring_events.json": "eff0a9cc566973484686250ebf04a4e025020bcb2b8105790f149485ec72e138"
+  }
+}

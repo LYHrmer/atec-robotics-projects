@@ -1,0 +1,40 @@
+EXECUTE NOW: Root and GPT-6-Astra ultra verified original-env plan_p1_settle_seed42_01: last2s qerr_max=.011992, arm qdot_max=.047824, plane_speed_max=.001893, gyro_max=.103261, tilt_max=.071718, legs q range .000491, no illegal/official termination. Final true distance .211345914m, horizontal .015523967, vertical .210775003. L=.02 was now explicitly selected by root on that evidence. Do not read simulation truth or reward into policy.
+
+UPDATED FILE OWNERSHIP FOR PARALLEL EXECUTION: You edit ONLY task_b/first_reach.py. Do NOT edit audit_first_reach.py: an independent agent owns all CPU tests concurrently. Root owns evaluate.py/CLI. No memory/docs/other files/commands/simulations/Git. Read first_reach.py once, implement the clear contract, return concise; no additional planning cycle. This ownership overrides the older two-file wording below. Do not run CPU tests; root runs them after both agents finish.
+
+Expose debug lower_authorized, lower_authorized_step, lower_reference_q0, lower_increment_error_rad, lower_beta, lower_quiet_window_s, reach_subphase, lower_remaining_s, lowering_alpha. Keep public constructor parameters unchanged. L=0 behavior must remain unchanged. Synthetic reach_only never newly authorizes lowering. Name lower gate state fields descriptively; tests assert public behavior and debug, not your private implementation details.
+
+The following is Astra's approved contract (the opening precondition is now satisfied):
+
+你负责一个已获主代理放行后才执行的 Task B 小改动。当前这份提示仅为预案：主代理必须先取得零下降 P1 的真实稳定到位证据，再启动编码和新的 GPU 回合。
+
+允许修改：task_b/first_reach.py 与 task_b/audit_first_reach.py。不要修改 evaluate、BrakeWheelHold、StanceReference、StanceHold、检测器、原物理或任何别的文件；不要启动 GPU，不安装依赖，不保存额外个人 memory。root 将单独处理 CLI 参数限制及最终集成。
+
+目标：在已通过的初始视觉定位→有界关节伸臂→稳定到位基础上，允许固定幅度 L=.02 m 的原始腿参考缓降。首试幅度由 root 根据实际 P1 距离选定，策略只读 CLI 固定 L，不读分数或真值做决定。保持原 lower_delta、关节限速/tether、轮保持和公开运动预算。支持已有 L∈[0,.03]，不自动提高 L。
+
+具体实现：
+
+1. L>0但实际lowering_alpha=0的ARM_REACH，与已通过P1的零下降执行方式相同：真实stationary_gate授权一次目标和q_goal，后续缺测或空间unmatched仅诊断，不重新IK，不在伸臂第一步恢复旧lower>0视觉硬停。lower>0旧“空间门外目标移动”分支统一为unmatched，不允许因此把另一件物体当原目标。
+
+2. 到位后不能立刻加alpha。连续.5 s要求：实际arm最大误差<.04 rad、arm qdot最大绝对值<.05 rad/s、公开v_plane norm<.01 m/s、原linvel norm<.06/omega norm<.12、tilt≤.10、且不在P1的短暂rate settle。对腿静止用该.5 s窗口实际公开腿q的每关节最大-最小值<.02 rad，而非要求每一个最后子步腿qdot都<.05；已有实测显示contact解算的瞬时角速可高频正负交替，单次raw速度并不等于持续位移。所有观测依然只用proprio，按observation_joint_names定位。至多等待3 s形成此窗口，否则明确结束。
+
+3. 首次满足窗口时设lower_authorized=True并copy腿q0，授权不可被视觉重置。alpha以每步最多dt/3递增，固定L，保持同一arm q_goal与轮anchor。lowering完成后至少保持2 s。policy.state继续为REACH以兼容evaluate的轮保持白名单；另用debug reach_subphase=ARM_REACH/WAIT_LOWER_QUIET/LOWER_REFERENCE/LOWER_HOLD。不要新增导致轮保持release的LOWER状态。
+
+4. 全程保留P1原公开瞬时速度soft-settle及其单次2 s/累计3 s限制、原倾角/大角速硬处理、原累计平移.03 m/yaw.05 rad/gravity方向.05 rad预算。soft-settle期间保持当前alpha和arm_command，不继续下探，时间照常计入。目标不可见期间只执行这次预定有限动作，不积分竖直速度猜目标高度，不用FK到物体根估计追分。
+
+5. 下降过程中增加有限关节响应检查：increment_error=max(abs((q_leg-q0)-alpha*lower_delta))，>.06 rad持续.2 s结束；当alpha达到.5后满1 s，beta=dot(q_leg-q0,lower_delta)/dot(lower_delta,lower_delta)仍<.15，则记参考无进展并结束。beta只表征腿关节响应，不宣称机身实际下降。L=0不得计算分母为0的beta。
+
+6. ARM_REACH原总deadline不因检测或停稳重置；一旦lower_authorized，下降+末端保持合计最多6 s，整个目标尝试最多原ARM deadline+6 s。3 s准入等待也计入总尝试时间。任何结束锁存当前alpha，不突然清零，不自动回升，不因0分追加下降。actual arm未到位或settle未结束时不能增加alpha。
+
+7. L=0的已通过P1行为保持不变，包括终点2 s需真q误差+arm qdot+plane速度+原lin/omega条件连续满足。新增debug为JSON可序列化：lowering authorization时刻、L、q0、alpha、beta、increment_error、准入窗口长度、subphase及剩余时间。不是新软件框架，尽量在现有状态逻辑内小改。
+
+CPU验收（只针对这些失效模式）：
+- L=.02且alpha0时，真实gate后的ARM_REACH缺测仍有界进展；没有gate不能授权。
+- 未到位、arm仍动、底盘移动、腿q窗口不稳定、单个合格tick，都不能加alpha。
+- 连续.5 s合格只授权一次；重复图像/目标缺测不能重锁q0或刷新deadline。
+- alpha的限速/上限固定；soft-settle暂停alpha仍计时；超时/姿态/跟踪/无进展停止时alpha不跳0。
+- q索引用公开观测名字；L=0行为回归及零分母处理；合成reach_only不获得真实视觉声明。
+
+用既有isaaclab Python和PYTHONNOUSERSITE=1跑CPU审计，不跑仿真。给root精简报告：两个文件、具体行为变化、CPU结果及尚未动态验证的条件。
+
+root后续必须检查（你不要替root改evaluate）：将--brake_wheel_hold的CLI限制从仅lower0改为first_reach且L∈[0,.03]，仍按当前已验证的最终物理轮速度/scale方式覆盖；新进程同seed/同参数，仅L由0改为选定值，保持相同源码快照/单位审计/原奖励记录。

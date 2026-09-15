@@ -1,0 +1,506 @@
+{
+  "scope": "static CPU geometry of the FRONTAL-dock release from the recorded RAISE pose; not collision simulation, not a carry or delivery result",
+  "run": "plan_d3_carry_probe_seed42_01",
+  "handoff_sample": 4551,
+  "arm_q_rad_at_handoff": [
+    0.547846794128418,
+    1.63932466506958,
+    -1.588068962097168,
+    -0.000564937072340399,
+    1.1432504653930664,
+    0.526707112789154
+  ],
+  "barrel_centre_body_axis": "+X (frontal dock)",
+  "inner_inscribed_radius_m": 0.975281032138753,
+  "rim_z_m": 0.55,
+  "standoffs": {
+    "1.45": {
+      "chassis_forward_extent_m": 0.48100526183629605,
+      "sweep": [
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8286317030909413,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9148933378954707
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8273470323356484,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9136581472854457
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8260623615803557,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9124412072811524
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8247776908250628,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.911242591002175
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8234930200697701,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9100623708494292
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8222083493144774,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9089006184857985
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8209236785591845,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9077567137354281
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8196390078038918,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9066313622017128
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8183543370485991,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9055246870139871
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.268354337048599,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false,
+      "finger_min_radial_over_sweep_m": 0.9055246870139871
+    },
+    "1.5": {
+      "chassis_forward_extent_m": 0.48100526183629605,
+      "sweep": [
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8286317030909413,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9636665665134462
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8273470323356484,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.962478867319433
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8260623615803557,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9613086106580134
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8247776908250628,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9601555715312742
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8234930200697701,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9590196851887324
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8222083493144774,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.957901429106617
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8209236785591845,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9568008651007583
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8196390078038918,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9557180542914716
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8183543370485991,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9546530570882019
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.268354337048599,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false,
+      "finger_min_radial_over_sweep_m": 0.9546530570882019
+    },
+    "1.52": {
+      "chassis_forward_extent_m": 0.48100526183629605,
+      "sweep": [
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8286317030909413,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9832103661434481
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8273470323356484,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9820403830854763
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8260623615803557,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9808872591851621
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8247776908250628,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9797509200295355
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8234930200697701,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9786318366136061
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8222083493144774,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9775300682008582
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8209236785591845,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9764456734032293
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8196390078038918,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9753787101670066
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8183543370485991,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 0.9743292357587747
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.268354337048599,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false,
+      "finger_min_radial_over_sweep_m": 0.9743292357587747
+    },
+    "1.55": {
+      "chassis_forward_extent_m": 0.48100526183629605,
+      "sweep": [
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8286317030909413,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0125594713922301
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8273470323356484,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0114142193844224
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8260623615803557,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0102855902758203
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8247776908250628,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0091737119708288
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8234930200697701,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0080786398962416
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8222083493144774,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0070004288803394
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8209236785591845,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0059391331404577
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8196390078038918,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0048948062705965
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8183543370485991,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0038675012290816
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.268354337048599,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false,
+      "finger_min_radial_over_sweep_m": 1.0038675012290816
+    },
+    "1.6": {
+      "chassis_forward_extent_m": 0.48100526183629605,
+      "sweep": [
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8286317030909413,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.061554003972547
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8273470323356484,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0604478893718348
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8260623615803557,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.059357779536389
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8247776908250628,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0582837239244562
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8234930200697701,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0572257714654032
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8222083493144774,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.05618397054958
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8209236785591845,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0551583690182205
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8196390078038918,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0541490141533894
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8183543370485991,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.0531559526679752
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.268354337048599,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false,
+      "finger_min_radial_over_sweep_m": 1.0531559526679752
+    },
+    "1.65": {
+      "chassis_forward_extent_m": 0.48100526183629605,
+      "sweep": [
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8286317030909413,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.1106380949729742
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8273470323356484,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.109567811795817
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8260623615803557,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.1085128940204414
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8247776908250628,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.107473385555539
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8234930200697701,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.106449329832224
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8222083493144774,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.1054407697957245
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8209236785591845,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.1044477478971138
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8196390078038918,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.1034703060850821
+        },
+        {
+          "jaw_gap_m": 0.035,
+          "finger_lowest_world_z_m": 0.8183543370485991,
+          "arm_lowest_world_z_m": 0.6726105181795901,
+          "finger_below_rim_inside_wall": 0,
+          "arm_below_rim_inside_wall": 0,
+          "finger_min_radial_to_axis_m": 1.102508485797756
+        }
+      ],
+      "worst_finger_rim_clearance_m": 0.268354337048599,
+      "any_finger_below_rim_inside_wall": false,
+      "any_arm_below_rim_inside_wall": false,
+      "finger_min_radial_over_sweep_m": 1.102508485797756
+    }
+  },
+  "chassis_forward_extent_m": 0.48100526183629605,
+  "minimum_safe_standoff_m": 1.5110052618362961
+}

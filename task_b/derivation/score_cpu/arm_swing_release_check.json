@@ -1,0 +1,307 @@
+{
+  "scope": "static CPU geometry: can the ARM absorb the residual heading error? Not collision simulation, not a delivery result",
+  "note": "the barrel is DEAD AHEAD at the standoff; only arm_joint1 is offset",
+  "arm_joint1_at_handoff_rad": 0.547846794128418,
+  "swings": [
+    {
+      "swing_rad": 0.0,
+      "standoffs": {
+        "1.45": {
+          "finger_rim_clearance_m": 0.2213589668589937,
+          "finger_min_radial_to_axis_m": 0.9055246870139871,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09183646257544176,
+          "bottle_min_radial_above_rim_m": 0.8533484742073902,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.5": {
+          "finger_rim_clearance_m": 0.2213589668589937,
+          "finger_min_radial_to_axis_m": 0.9546530570882019,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09183646257544176,
+          "bottle_min_radial_above_rim_m": 0.9017792826803951,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.52": {
+          "finger_rim_clearance_m": 0.2213589668589937,
+          "finger_min_radial_to_axis_m": 0.9743292357587747,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09183646257544176,
+          "bottle_min_radial_above_rim_m": 0.9211985546923979,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.55": {
+          "finger_rim_clearance_m": 0.2213589668589937,
+          "finger_min_radial_to_axis_m": 1.0038675012290816,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09183646257544176,
+          "bottle_min_radial_above_rim_m": 0.9503726273999347,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": false
+        },
+        "1.6": {
+          "finger_rim_clearance_m": 0.2213589668589937,
+          "finger_min_radial_to_axis_m": 1.0531559526679752,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09183646257544176,
+          "bottle_min_radial_above_rim_m": 0.9990749441738553,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": false,
+          "fingers_inside_mouth": false
+        }
+      }
+    },
+    {
+      "swing_rad": -0.15,
+      "standoffs": {
+        "1.45": {
+          "finger_rim_clearance_m": 0.220364880605192,
+          "finger_min_radial_to_axis_m": 0.8749500745973346,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09027402114032301,
+          "bottle_min_radial_above_rim_m": 0.8102065601170397,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.5": {
+          "finger_rim_clearance_m": 0.220364880605192,
+          "finger_min_radial_to_axis_m": 0.9245256300495971,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09027402114032301,
+          "bottle_min_radial_above_rim_m": 0.8592504819665047,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.52": {
+          "finger_rim_clearance_m": 0.220364880605192,
+          "finger_min_radial_to_axis_m": 0.9443683834451965,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09027402114032301,
+          "bottle_min_radial_above_rim_m": 0.8788945712968392,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.55": {
+          "finger_rim_clearance_m": 0.220364880605192,
+          "finger_min_radial_to_axis_m": 0.9741445725349639,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09027402114032301,
+          "bottle_min_radial_above_rim_m": 0.9083898295875682,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.6": {
+          "finger_rim_clearance_m": 0.220364880605192,
+          "finger_min_radial_to_axis_m": 1.023800593758399,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.09027402114032301,
+          "bottle_min_radial_above_rim_m": 0.957618282112759,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": false
+        }
+      }
+    },
+    {
+      "swing_rad": -0.256,
+      "standoffs": {
+        "1.45": {
+          "finger_rim_clearance_m": 0.2200311915557751,
+          "finger_min_radial_to_axis_m": 0.8559802787789641,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08955500240534386,
+          "bottle_min_radial_above_rim_m": 0.7872001151939945,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.5": {
+          "finger_rim_clearance_m": 0.2200311915557751,
+          "finger_min_radial_to_axis_m": 0.905207984037482,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08955500240534386,
+          "bottle_min_radial_above_rim_m": 0.8367042763067495,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.52": {
+          "finger_rim_clearance_m": 0.2200311915557751,
+          "finger_min_radial_to_axis_m": 0.9249222654082223,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08955500240534386,
+          "bottle_min_radial_above_rim_m": 0.8565220696756312,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.55": {
+          "finger_rim_clearance_m": 0.2200311915557751,
+          "finger_min_radial_to_axis_m": 0.9545159773790545,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08955500240534386,
+          "bottle_min_radial_above_rim_m": 0.8862641088403416,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.6": {
+          "finger_rim_clearance_m": 0.2200311915557751,
+          "finger_min_radial_to_axis_m": 1.0038924283899051,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08955500240534386,
+          "bottle_min_radial_above_rim_m": 0.9358707684542391,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": false
+        }
+      }
+    },
+    {
+      "swing_rad": -0.35,
+      "standoffs": {
+        "1.45": {
+          "finger_rim_clearance_m": 0.21999465368446414,
+          "finger_min_radial_to_axis_m": 0.8372826083040098,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.0891920589308528,
+          "bottle_min_radial_above_rim_m": 0.7732770396300136,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.5": {
+          "finger_rim_clearance_m": 0.21999465368446414,
+          "finger_min_radial_to_axis_m": 0.8868342686277012,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.0891920589308528,
+          "bottle_min_radial_above_rim_m": 0.8230826788406482,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.52": {
+          "finger_rim_clearance_m": 0.21999465368446414,
+          "finger_min_radial_to_axis_m": 0.9066687165387672,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.0891920589308528,
+          "bottle_min_radial_above_rim_m": 0.8430113775524705,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.55": {
+          "finger_rim_clearance_m": 0.21999465368446414,
+          "finger_min_radial_to_axis_m": 0.936433592870575,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.0891920589308528,
+          "bottle_min_radial_above_rim_m": 0.872910540889522,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.6": {
+          "finger_rim_clearance_m": 0.21999465368446414,
+          "finger_min_radial_to_axis_m": 0.9860733885977037,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.0891920589308528,
+          "bottle_min_radial_above_rim_m": 0.9227570257573648,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": false
+        }
+      }
+    },
+    {
+      "swing_rad": -0.493,
+      "standoffs": {
+        "1.45": {
+          "finger_rim_clearance_m": 0.2204069054408,
+          "finger_min_radial_to_axis_m": 0.8189967626868293,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08914202903378521,
+          "bottle_min_radial_above_rim_m": 0.7647047584405811,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.5": {
+          "finger_rim_clearance_m": 0.2204069054408,
+          "finger_min_radial_to_axis_m": 0.8688941778937225,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08914202903378521,
+          "bottle_min_radial_above_rim_m": 0.8147041759179209,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.52": {
+          "finger_rim_clearance_m": 0.2204069054408,
+          "finger_min_radial_to_axis_m": 0.8888563722064708,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08914202903378521,
+          "bottle_min_radial_above_rim_m": 0.8347039624493651,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.55": {
+          "finger_rim_clearance_m": 0.2204069054408,
+          "finger_min_radial_to_axis_m": 0.9188027467654355,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08914202903378521,
+          "bottle_min_radial_above_rim_m": 0.8647036607616102,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        },
+        "1.6": {
+          "finger_rim_clearance_m": 0.2204069054408,
+          "finger_min_radial_to_axis_m": 0.9687207453904404,
+          "finger_wall_strikes": 0,
+          "arm_wall_strikes": 0,
+          "bottle_rim_clearance_m": 0.08914202903378521,
+          "bottle_min_radial_above_rim_m": 0.9147032019245155,
+          "bottle_wall_strikes": 0,
+          "bottle_over_mouth": true,
+          "fingers_inside_mouth": true
+        }
+      }
+    }
+  ]
+}

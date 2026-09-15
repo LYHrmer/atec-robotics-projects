@@ -1,0 +1,2282 @@
+{
+  "scope": "CPU offline actual-p13-pose original-mesh static transplant and sensitivity only; no production write, no GPU, no git; GT never policy input",
+  "run": "plan_p13_payload_denyquist_seed42_01",
+  "sample_timing": "final_state_before_close: post final action, physical sample corresponding step5865; telemetry last pre-step5864",
+  "mesh_vertices": 8377,
+  "source_sha256": {
+    "result.json": "f835d6968281848090e4057a1af8df783d6f51bbd4d74c64b693b4e257ee0d19",
+    "telemetry.npz": "305da15ee1ded6c5593b9fcc4b03e1f7d7d38b4f0fb34d7bc8cc35a52b42eaf3",
+    "trace.jsonl": "bc47d5c7712dd864e15bfbf909bccebe7ac73c2f872d082283f70d5e28d9459d"
+  },
+  "asset_sha256": "3035d39baf5052ea22e14221f65f94f06c8e345be0e060eec8ceb7753676f785",
+  "base_xyz_actual": [
+    -7.18764066696167,
+    -9.007394790649414,
+    0.4957733452320099
+  ],
+  "base_quat_wxyz_actual": [
+    0.991723895072937,
+    -0.012819680385291576,
+    0.03290122374892235,
+    0.12343768030405045
+  ],
+  "object_root_xyz_actual": [
+    -7.124980926513672,
+    -8.357682228088379,
+    0.7191824913024902
+  ],
+  "object_quat_wxyz_actual": [
+    -0.3056159019470215,
+    0.3695860207080841,
+    -0.7233126759529114,
+    0.4968135952949524
+  ],
+  "T_body_gripper_actual": [
+    [
+      -0.506945132307701,
+      -0.8619551665867687,
+      0.0063185143747183465,
+      0.20382497298753854
+    ],
+    [
+      -0.6831332209026274,
+      0.40622262120158725,
+      0.6068872914498326,
+      0.5193784153067815
+    ],
+    [
+      -0.5256763598724312,
+      0.3033421711837767,
+      -0.7947627896754998,
+      0.3996313394010602
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "T_gripper_object_actual": [
+    [
+      0.9011203612439267,
+      0.3461068171165955,
+      0.2611362971649757,
+      0.0172047336303649
+    ],
+    [
+      0.3051637742768166,
+      -0.07845739762688028,
+      -0.949062436105626,
+      -0.00886331979563515
+    ],
+    [
+      -0.3079889047039569,
+      0.9349088233100792,
+      -0.17631882110602892,
+      0.17534563877378462
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "T_body_object_actual": [
+    [
+      -0.721802104970612,
+      -0.10192317211519207,
+      0.6845534224923359,
+      0.20385082525106846
+    ],
+    [
+      -0.6785353786873898,
+      0.2990760490613411,
+      -0.6709271620283522,
+      0.6104398489901293
+    ],
+    [
+      -0.1363505083582537,
+      -0.9487703535966094,
+      -0.28503219994697193,
+      0.24854040995368465
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "actual_yaw_rad": 0.2470677261163007,
+  "actual_tilt_rotvec_after_yaw_removal": [
+    -0.017339407012142313,
+    0.0684745084332789,
+    0.0005939006584925256
+  ],
+  "fk_reconstruction_gripper_position_error_m": 8.876592682509511e-07,
+  "fk_reconstruction_gripper_orientation_error_rad": 8.408940296541225e-07,
+  "object_radius_about_root_max_m": 0.10359253533523866,
+  "final_at_145m": {
+    "center_distance_m": 1.45,
+    "yaw_error_rad": 0,
+    "payload_root_radius_m": 0.8637369293036516,
+    "payload_max_vertex_radius_m": 0.9085502596486104,
+    "payload_min_vertex_radius_m": 0.8013540862933863,
+    "payload_min_world_z_m": 0.6212039142828478,
+    "payload_rim_clearance_m": 0.07120391428284778,
+    "nonarm_left_support_m": 0.374513451518015,
+    "nonarm_outer_wall_support_plane_gap_m": 0.07548654848198494,
+    "crossing_arm_components": [
+      {
+        "name": "gripper_base",
+        "side_projection_max_m": 0.5997470519936798,
+        "whole_component_min_z_m": 0.7908948266125688,
+        "whole_component_rim_clearance_m": 0.24089482661256878
+      },
+      {
+        "name": "arm_link4",
+        "side_projection_max_m": 0.5010065542108759,
+        "whole_component_min_z_m": 0.9101788417823227,
+        "whole_component_rim_clearance_m": 0.3601788417823226
+      },
+      {
+        "name": "arm_link5",
+        "side_projection_max_m": 0.5486160128795925,
+        "whole_component_min_z_m": 0.855386567755665,
+        "whole_component_rim_clearance_m": 0.305386567755665
+      },
+      {
+        "name": "arm_link6",
+        "side_projection_max_m": 0.5403829911367556,
+        "whole_component_min_z_m": 0.8611071390914814,
+        "whole_component_rim_clearance_m": 0.31110713909148136
+      },
+      {
+        "name": "arm_link7",
+        "side_projection_max_m": 0.5992850882770031,
+        "whole_component_min_z_m": 0.743056512768936,
+        "whole_component_rim_clearance_m": 0.19305651276893598
+      },
+      {
+        "name": "arm_link8",
+        "side_projection_max_m": 0.6253473393296384,
+        "whole_component_min_z_m": 0.7655149117907366,
+        "whole_component_rim_clearance_m": 0.21551491179073656
+      }
+    ],
+    "component_support": [
+      {
+        "name": "base_link",
+        "max_left_m": 0.14127983754633094,
+        "outer_wall_support_plane_gap_m": 0.308720162453669,
+        "min_z_m": 0.40047538232149654,
+        "max_z_m": 0.6001910875422619
+      },
+      {
+        "name": "FL_hip",
+        "max_left_m": 0.2978005175882649,
+        "outer_wall_support_plane_gap_m": 0.15219948241173503,
+        "min_z_m": 0.4063314978329652,
+        "max_z_m": 0.6001326380686333
+      },
+      {
+        "name": "FL_thigh",
+        "max_left_m": 0.2609011278793885,
+        "outer_wall_support_plane_gap_m": 0.18909887212061144,
+        "min_z_m": 0.32283846855699494,
+        "max_z_m": 0.5506568463799464
+      },
+      {
+        "name": "FL_foot",
+        "max_left_m": 0.374513451518015,
+        "outer_wall_support_plane_gap_m": 0.07548654848198494,
+        "min_z_m": 0.04755149752717919,
+        "max_z_m": 0.26758490399539814
+      },
+      {
+        "name": "FR_hip",
+        "max_left_m": -0.0758414285555086,
+        "outer_wall_support_plane_gap_m": 0.5258414285555085,
+        "min_z_m": 0.4100165722643898,
+        "max_z_m": 0.607805374641736
+      },
+      {
+        "name": "FR_thigh",
+        "max_left_m": -0.17544957758238577,
+        "outer_wall_support_plane_gap_m": 0.6254495775823857,
+        "min_z_m": 0.336404457454093,
+        "max_z_m": 0.5117336612966574
+      },
+      {
+        "name": "FR_foot",
+        "max_left_m": -0.28471844515639033,
+        "outer_wall_support_plane_gap_m": 0.7347184451563903,
+        "min_z_m": 0.04877759643910064,
+        "max_z_m": 0.2673287848773831
+      },
+      {
+        "name": "RL_hip",
+        "max_left_m": 0.296674768699643,
+        "outer_wall_support_plane_gap_m": 0.15332523130035697,
+        "min_z_m": 0.44882251639325954,
+        "max_z_m": 0.6333452677104418
+      },
+      {
+        "name": "RL_thigh",
+        "max_left_m": 0.23390710485321503,
+        "outer_wall_support_plane_gap_m": 0.21609289514678492,
+        "min_z_m": 0.4075856306357766,
+        "max_z_m": 0.5558007132892874
+      },
+      {
+        "name": "RL_foot",
+        "max_left_m": 0.3568230359554381,
+        "outer_wall_support_plane_gap_m": 0.09317696404456188,
+        "min_z_m": 0.046615040411879693,
+        "max_z_m": 0.2688695892886027
+      },
+      {
+        "name": "RR_hip",
+        "max_left_m": -0.08132136277962236,
+        "outer_wall_support_plane_gap_m": 0.5313213627796223,
+        "min_z_m": 0.451883899980815,
+        "max_z_m": 0.6386925912570172
+      },
+      {
+        "name": "RR_thigh",
+        "max_left_m": -0.17442196608476168,
+        "outer_wall_support_plane_gap_m": 0.6244219660847616,
+        "min_z_m": 0.4051533130194528,
+        "max_z_m": 0.558088751630162
+      },
+      {
+        "name": "RR_foot",
+        "max_left_m": -0.2741933213539407,
+        "outer_wall_support_plane_gap_m": 0.7241933213539407,
+        "min_z_m": 0.04706864373067968,
+        "max_z_m": 0.26870073343050027
+      }
+    ]
+  },
+  "standoff_cases": [
+    {
+      "center_distance_m": 1.42,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 0.8347580634971528,
+      "payload_max_vertex_radius_m": 0.8795554288567158,
+      "payload_min_vertex_radius_m": 0.7724958409858497,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.04548654848198491,
+      "crossing_arm_components": [
+        {
+          "name": "gripper_base",
+          "side_projection_max_m": 0.5997470519936798,
+          "whole_component_min_z_m": 0.7908948266125688,
+          "whole_component_rim_clearance_m": 0.24089482661256878
+        },
+        {
+          "name": "arm_link3",
+          "side_projection_max_m": 0.44112407473659865,
+          "whole_component_min_z_m": 0.8455744711308034,
+          "whole_component_rim_clearance_m": 0.2955744711308034
+        },
+        {
+          "name": "arm_link4",
+          "side_projection_max_m": 0.5010065542108759,
+          "whole_component_min_z_m": 0.9101788417823227,
+          "whole_component_rim_clearance_m": 0.3601788417823226
+        },
+        {
+          "name": "arm_link5",
+          "side_projection_max_m": 0.5486160128795925,
+          "whole_component_min_z_m": 0.855386567755665,
+          "whole_component_rim_clearance_m": 0.305386567755665
+        },
+        {
+          "name": "arm_link6",
+          "side_projection_max_m": 0.5403829911367556,
+          "whole_component_min_z_m": 0.8611071390914814,
+          "whole_component_rim_clearance_m": 0.31110713909148136
+        },
+        {
+          "name": "arm_link7",
+          "side_projection_max_m": 0.5992850882770031,
+          "whole_component_min_z_m": 0.743056512768936,
+          "whole_component_rim_clearance_m": 0.19305651276893598
+        },
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.278720162453669,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.122199482411735,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.1590988721206114,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.04548654848198491,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.4958414285555085,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.5954495775823857,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.7047184451563903,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.12332523130035694,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.1860928951467849,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.06317696404456186,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.5013213627796222,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.5944219660847616,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.6941933213539406,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    },
+    {
+      "center_distance_m": 1.45,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 0.8637369293036516,
+      "payload_max_vertex_radius_m": 0.9085502596486104,
+      "payload_min_vertex_radius_m": 0.8013540862933863,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.07548654848198494,
+      "crossing_arm_components": [
+        {
+          "name": "gripper_base",
+          "side_projection_max_m": 0.5997470519936798,
+          "whole_component_min_z_m": 0.7908948266125688,
+          "whole_component_rim_clearance_m": 0.24089482661256878
+        },
+        {
+          "name": "arm_link4",
+          "side_projection_max_m": 0.5010065542108759,
+          "whole_component_min_z_m": 0.9101788417823227,
+          "whole_component_rim_clearance_m": 0.3601788417823226
+        },
+        {
+          "name": "arm_link5",
+          "side_projection_max_m": 0.5486160128795925,
+          "whole_component_min_z_m": 0.855386567755665,
+          "whole_component_rim_clearance_m": 0.305386567755665
+        },
+        {
+          "name": "arm_link6",
+          "side_projection_max_m": 0.5403829911367556,
+          "whole_component_min_z_m": 0.8611071390914814,
+          "whole_component_rim_clearance_m": 0.31110713909148136
+        },
+        {
+          "name": "arm_link7",
+          "side_projection_max_m": 0.5992850882770031,
+          "whole_component_min_z_m": 0.743056512768936,
+          "whole_component_rim_clearance_m": 0.19305651276893598
+        },
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.308720162453669,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.15219948241173503,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.18909887212061144,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.07548654848198494,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.5258414285555085,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.6254495775823857,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.7347184451563903,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.15332523130035697,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.21609289514678492,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.09317696404456188,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.5313213627796223,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.6244219660847616,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.7241933213539407,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    },
+    {
+      "center_distance_m": 1.48,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 0.8927832556182302,
+      "payload_max_vertex_radius_m": 0.9376135704517343,
+      "payload_min_vertex_radius_m": 0.8302932728245972,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.10548654848198497,
+      "crossing_arm_components": [
+        {
+          "name": "gripper_base",
+          "side_projection_max_m": 0.5997470519936798,
+          "whole_component_min_z_m": 0.7908948266125688,
+          "whole_component_rim_clearance_m": 0.24089482661256878
+        },
+        {
+          "name": "arm_link4",
+          "side_projection_max_m": 0.5010065542108759,
+          "whole_component_min_z_m": 0.9101788417823227,
+          "whole_component_rim_clearance_m": 0.3601788417823226
+        },
+        {
+          "name": "arm_link5",
+          "side_projection_max_m": 0.5486160128795925,
+          "whole_component_min_z_m": 0.855386567755665,
+          "whole_component_rim_clearance_m": 0.305386567755665
+        },
+        {
+          "name": "arm_link6",
+          "side_projection_max_m": 0.5403829911367556,
+          "whole_component_min_z_m": 0.8611071390914814,
+          "whole_component_rim_clearance_m": 0.31110713909148136
+        },
+        {
+          "name": "arm_link7",
+          "side_projection_max_m": 0.5992850882770031,
+          "whole_component_min_z_m": 0.743056512768936,
+          "whole_component_rim_clearance_m": 0.19305651276893598
+        },
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.33872016245366904,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.18219948241173506,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.21909887212061147,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.10548654848198497,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.5558414285555086,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.6554495775823858,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.7647184451563903,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.183325231300357,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.24609289514678495,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.12317696404456191,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.5613213627796223,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.6544219660847617,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.7541933213539407,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    },
+    {
+      "center_distance_m": 1.5,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 0.9121817694362654,
+      "payload_max_vertex_radius_m": 0.9570338115214391,
+      "payload_min_vertex_radius_m": 0.8496269477934986,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.12548654848198498,
+      "crossing_arm_components": [
+        {
+          "name": "gripper_base",
+          "side_projection_max_m": 0.5997470519936798,
+          "whole_component_min_z_m": 0.7908948266125688,
+          "whole_component_rim_clearance_m": 0.24089482661256878
+        },
+        {
+          "name": "arm_link4",
+          "side_projection_max_m": 0.5010065542108759,
+          "whole_component_min_z_m": 0.9101788417823227,
+          "whole_component_rim_clearance_m": 0.3601788417823226
+        },
+        {
+          "name": "arm_link5",
+          "side_projection_max_m": 0.5486160128795925,
+          "whole_component_min_z_m": 0.855386567755665,
+          "whole_component_rim_clearance_m": 0.305386567755665
+        },
+        {
+          "name": "arm_link6",
+          "side_projection_max_m": 0.5403829911367556,
+          "whole_component_min_z_m": 0.8611071390914814,
+          "whole_component_rim_clearance_m": 0.31110713909148136
+        },
+        {
+          "name": "arm_link7",
+          "side_projection_max_m": 0.5992850882770031,
+          "whole_component_min_z_m": 0.743056512768936,
+          "whole_component_rim_clearance_m": 0.19305651276893598
+        },
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.35872016245366906,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.20219948241173508,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.23909887212061148,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.12548654848198498,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.5758414285555086,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.6754495775823858,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.7847184451563903,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.203325231300357,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.26609289514678497,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.14317696404456193,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.5813213627796223,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.6744219660847617,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.7741933213539407,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    },
+    {
+      "center_distance_m": 1.52,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 0.9316057210383939,
+      "payload_max_vertex_radius_m": 0.9765170042159004,
+      "payload_min_vertex_radius_m": 0.8689546901487457,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.145486548481985,
+      "crossing_arm_components": [
+        {
+          "name": "gripper_base",
+          "side_projection_max_m": 0.5997470519936798,
+          "whole_component_min_z_m": 0.7908948266125688,
+          "whole_component_rim_clearance_m": 0.24089482661256878
+        },
+        {
+          "name": "arm_link5",
+          "side_projection_max_m": 0.5486160128795925,
+          "whole_component_min_z_m": 0.855386567755665,
+          "whole_component_rim_clearance_m": 0.305386567755665
+        },
+        {
+          "name": "arm_link6",
+          "side_projection_max_m": 0.5403829911367556,
+          "whole_component_min_z_m": 0.8611071390914814,
+          "whole_component_rim_clearance_m": 0.31110713909148136
+        },
+        {
+          "name": "arm_link7",
+          "side_projection_max_m": 0.5992850882770031,
+          "whole_component_min_z_m": 0.743056512768936,
+          "whole_component_rim_clearance_m": 0.19305651276893598
+        },
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.3787201624536691,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.2221994824117351,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.2590988721206115,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.145486548481985,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.5958414285555086,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.6954495775823858,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.8047184451563903,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.22332523130035703,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.286092895146785,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.16317696404456195,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.6013213627796223,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.6944219660847617,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.7941933213539407,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    },
+    {
+      "center_distance_m": 1.55,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 0.9607859688509459,
+      "payload_max_vertex_radius_m": 1.0057798338672892,
+      "payload_min_vertex_radius_m": 0.8979722826336728,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.17548654848198503,
+      "crossing_arm_components": [
+        {
+          "name": "gripper_base",
+          "side_projection_max_m": 0.5997470519936798,
+          "whole_component_min_z_m": 0.7908948266125688,
+          "whole_component_rim_clearance_m": 0.24089482661256878
+        },
+        {
+          "name": "arm_link7",
+          "side_projection_max_m": 0.5992850882770031,
+          "whole_component_min_z_m": 0.743056512768936,
+          "whole_component_rim_clearance_m": 0.19305651276893598
+        },
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.4087201624536691,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.2521994824117351,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.2890988721206115,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.17548654848198503,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.6258414285555086,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.7254495775823858,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.8347184451563904,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.25332523130035706,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.316092895146785,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.19317696404456197,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.6313213627796224,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.7244219660847617,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.8241933213539407,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    },
+    {
+      "center_distance_m": 1.6,
+      "yaw_error_rad": 0,
+      "payload_root_radius_m": 1.0095265104938183,
+      "payload_max_vertex_radius_m": 1.0546432724068222,
+      "payload_min_vertex_radius_m": 0.946471076397146,
+      "payload_min_world_z_m": 0.6212039142828478,
+      "payload_rim_clearance_m": 0.07120391428284778,
+      "nonarm_left_support_m": 0.374513451518015,
+      "nonarm_outer_wall_support_plane_gap_m": 0.22548654848198507,
+      "crossing_arm_components": [
+        {
+          "name": "arm_link8",
+          "side_projection_max_m": 0.6253473393296384,
+          "whole_component_min_z_m": 0.7655149117907366,
+          "whole_component_rim_clearance_m": 0.21551491179073656
+        }
+      ],
+      "component_support": [
+        {
+          "name": "base_link",
+          "max_left_m": 0.14127983754633094,
+          "outer_wall_support_plane_gap_m": 0.45872016245366914,
+          "min_z_m": 0.40047538232149654,
+          "max_z_m": 0.6001910875422619
+        },
+        {
+          "name": "FL_hip",
+          "max_left_m": 0.2978005175882649,
+          "outer_wall_support_plane_gap_m": 0.30219948241173517,
+          "min_z_m": 0.4063314978329652,
+          "max_z_m": 0.6001326380686333
+        },
+        {
+          "name": "FL_thigh",
+          "max_left_m": 0.2609011278793885,
+          "outer_wall_support_plane_gap_m": 0.33909887212061157,
+          "min_z_m": 0.32283846855699494,
+          "max_z_m": 0.5506568463799464
+        },
+        {
+          "name": "FL_foot",
+          "max_left_m": 0.374513451518015,
+          "outer_wall_support_plane_gap_m": 0.22548654848198507,
+          "min_z_m": 0.04755149752717919,
+          "max_z_m": 0.26758490399539814
+        },
+        {
+          "name": "FR_hip",
+          "max_left_m": -0.0758414285555086,
+          "outer_wall_support_plane_gap_m": 0.6758414285555087,
+          "min_z_m": 0.4100165722643898,
+          "max_z_m": 0.607805374641736
+        },
+        {
+          "name": "FR_thigh",
+          "max_left_m": -0.17544957758238577,
+          "outer_wall_support_plane_gap_m": 0.7754495775823859,
+          "min_z_m": 0.336404457454093,
+          "max_z_m": 0.5117336612966574
+        },
+        {
+          "name": "FR_foot",
+          "max_left_m": -0.28471844515639033,
+          "outer_wall_support_plane_gap_m": 0.8847184451563904,
+          "min_z_m": 0.04877759643910064,
+          "max_z_m": 0.2673287848773831
+        },
+        {
+          "name": "RL_hip",
+          "max_left_m": 0.296674768699643,
+          "outer_wall_support_plane_gap_m": 0.3033252313003571,
+          "min_z_m": 0.44882251639325954,
+          "max_z_m": 0.6333452677104418
+        },
+        {
+          "name": "RL_thigh",
+          "max_left_m": 0.23390710485321503,
+          "outer_wall_support_plane_gap_m": 0.36609289514678506,
+          "min_z_m": 0.4075856306357766,
+          "max_z_m": 0.5558007132892874
+        },
+        {
+          "name": "RL_foot",
+          "max_left_m": 0.3568230359554381,
+          "outer_wall_support_plane_gap_m": 0.24317696404456202,
+          "min_z_m": 0.046615040411879693,
+          "max_z_m": 0.2688695892886027
+        },
+        {
+          "name": "RR_hip",
+          "max_left_m": -0.08132136277962236,
+          "outer_wall_support_plane_gap_m": 0.6813213627796224,
+          "min_z_m": 0.451883899980815,
+          "max_z_m": 0.6386925912570172
+        },
+        {
+          "name": "RR_thigh",
+          "max_left_m": -0.17442196608476168,
+          "outer_wall_support_plane_gap_m": 0.7744219660847618,
+          "min_z_m": 0.4051533130194528,
+          "max_z_m": 0.558088751630162
+        },
+        {
+          "name": "RR_foot",
+          "max_left_m": -0.2741933213539407,
+          "outer_wall_support_plane_gap_m": 0.8741933213539408,
+          "min_z_m": 0.04706864373067968,
+          "max_z_m": 0.26870073343050027
+        }
+      ]
+    }
+  ],
+  "actual_phase_mesh_checks": {
+    "PAYLOAD_RAISE": {
+      "first_step": 3544,
+      "last_step": 4563,
+      "samples": 1020,
+      "minimum_mesh_world_z_m": 0.04410615171694976,
+      "last_mesh_world_z_m": 0.6431645621258342,
+      "maximum_mesh_radius_if_rebased_at_145_m": 1.4045159591225527,
+      "last_dock_metrics": {
+        "center_distance_m": 1.45,
+        "yaw_error_rad": 0,
+        "payload_root_radius_m": 1.3616378684056925,
+        "payload_max_vertex_radius_m": 1.402681024656438,
+        "payload_min_vertex_radius_m": 1.3151635441521545,
+        "payload_min_world_z_m": 0.6431645621258342,
+        "payload_rim_clearance_m": 0.09316456212583413,
+        "nonarm_left_support_m": 0.37577760105750635,
+        "nonarm_outer_wall_support_plane_gap_m": 0.0742223989424936,
+        "crossing_arm_components": []
+      },
+      "actual_end_gripper_body_xyz_m": [
+        0.4972062111007336,
+        0.18176229889416362,
+        0.4516030762268092
+      ],
+      "actual_end_object_body_xyz_m": [
+        0.5595097220003691,
+        0.2143278154259889,
+        0.2905906730445861
+      ]
+    },
+    "PAYLOAD_SWING": {
+      "first_step": 4564,
+      "last_step": 5110,
+      "samples": 547,
+      "minimum_mesh_world_z_m": 0.6430156353636288,
+      "last_mesh_world_z_m": 0.6634138666241907,
+      "maximum_mesh_radius_if_rebased_at_145_m": 1.4027008660249334,
+      "last_dock_metrics": {
+        "center_distance_m": 1.45,
+        "yaw_error_rad": 0,
+        "payload_root_radius_m": 1.0523828687837813,
+        "payload_max_vertex_radius_m": 1.0960045993779002,
+        "payload_min_vertex_radius_m": 0.9927564245960754,
+        "payload_min_world_z_m": 0.6634138666241907,
+        "payload_rim_clearance_m": 0.11341386662419062,
+        "nonarm_left_support_m": 0.3754948819526359,
+        "nonarm_outer_wall_support_plane_gap_m": 0.07450511804736404,
+        "crossing_arm_components": []
+      },
+      "actual_end_gripper_body_xyz_m": [
+        0.20106698312864602,
+        0.34926296356216024,
+        0.4499576554908574
+      ],
+      "actual_end_object_body_xyz_m": [
+        0.20548505510238613,
+        0.41756809884333723,
+        0.28785789702308895
+      ]
+    },
+    "PAYLOAD_EXTEND": {
+      "first_step": 5111,
+      "last_step": 5764,
+      "samples": 654,
+      "minimum_mesh_world_z_m": 0.6120576689340249,
+      "last_mesh_world_z_m": 0.6221477150548222,
+      "maximum_mesh_radius_if_rebased_at_145_m": 1.096006426715466,
+      "last_dock_metrics": {
+        "center_distance_m": 1.45,
+        "yaw_error_rad": 0,
+        "payload_root_radius_m": 0.8629968802732706,
+        "payload_max_vertex_radius_m": 0.9080762052678776,
+        "payload_min_vertex_radius_m": 0.8000550409021656,
+        "payload_min_world_z_m": 0.6221477150548222,
+        "payload_rim_clearance_m": 0.0721477150548222,
+        "nonarm_left_support_m": 0.37452895424698784,
+        "nonarm_outer_wall_support_plane_gap_m": 0.07547104575301211,
+        "crossing_arm_components": [
+          {
+            "name": "gripper_base",
+            "side_projection_max_m": 0.6000011818144187,
+            "whole_component_min_z_m": 0.7915027294120036,
+            "whole_component_rim_clearance_m": 0.24150272941200357
+          },
+          {
+            "name": "arm_link4",
+            "side_projection_max_m": 0.501038934031896,
+            "whole_component_min_z_m": 0.9105802911732617,
+            "whole_component_rim_clearance_m": 0.3605802911732616
+          },
+          {
+            "name": "arm_link5",
+            "side_projection_max_m": 0.5487764714836414,
+            "whole_component_min_z_m": 0.855937912722298,
+            "whole_component_rim_clearance_m": 0.305937912722298
+          },
+          {
+            "name": "arm_link6",
+            "side_projection_max_m": 0.5405602384910551,
+            "whole_component_min_z_m": 0.8616801662160327,
+            "whole_component_rim_clearance_m": 0.3116801662160327
+          },
+          {
+            "name": "arm_link7",
+            "side_projection_max_m": 0.5997495250235851,
+            "whole_component_min_z_m": 0.7437915326074676,
+            "whole_component_rim_clearance_m": 0.1937915326074675
+          },
+          {
+            "name": "arm_link8",
+            "side_projection_max_m": 0.6257472204993626,
+            "whole_component_min_z_m": 0.7662924443893484,
+            "whole_component_rim_clearance_m": 0.21629244438934836
+          }
+        ]
+      },
+      "actual_end_gripper_body_xyz_m": [
+        0.2038046790465078,
+        0.5194093870191789,
+        0.4004514775930945
+      ],
+      "actual_end_object_body_xyz_m": [
+        0.2040774201377431,
+        0.6111652723598011,
+        0.24981881067841735
+      ]
+    },
+    "PAYLOAD_HOLD": {
+      "first_step": 5765,
+      "last_step": 5864,
+      "samples": 100,
+      "minimum_mesh_world_z_m": 0.6211913788324583,
+      "last_mesh_world_z_m": 0.6211913788324583,
+      "maximum_mesh_radius_if_rebased_at_145_m": 0.9085682762495473,
+      "last_dock_metrics": {
+        "center_distance_m": 1.45,
+        "yaw_error_rad": 0,
+        "payload_root_radius_m": 0.8637706906312275,
+        "payload_max_vertex_radius_m": 0.9085682762495473,
+        "payload_min_vertex_radius_m": 0.8014215193542479,
+        "payload_min_world_z_m": 0.6211913788324583,
+        "payload_rim_clearance_m": 0.0711913788324583,
+        "nonarm_left_support_m": 0.3745320509081764,
+        "nonarm_outer_wall_support_plane_gap_m": 0.07546794909182358,
+        "crossing_arm_components": [
+          {
+            "name": "gripper_base",
+            "side_projection_max_m": 0.5997540428160784,
+            "whole_component_min_z_m": 0.7909180853463144,
+            "whole_component_rim_clearance_m": 0.24091808534631431
+          },
+          {
+            "name": "arm_link4",
+            "side_projection_max_m": 0.5010492927011875,
+            "whole_component_min_z_m": 0.910223911393918,
+            "whole_component_rim_clearance_m": 0.36022391139391796
+          },
+          {
+            "name": "arm_link5",
+            "side_projection_max_m": 0.5486394375361507,
+            "whole_component_min_z_m": 0.8554185330194836,
+            "whole_component_rim_clearance_m": 0.3054185330194835
+          },
+          {
+            "name": "arm_link6",
+            "side_projection_max_m": 0.5404038413602825,
+            "whole_component_min_z_m": 0.8611357338417976,
+            "whole_component_rim_clearance_m": 0.3111357338417976
+          },
+          {
+            "name": "arm_link7",
+            "side_projection_max_m": 0.5992621574746957,
+            "whole_component_min_z_m": 0.7430599927543476,
+            "whole_component_rim_clearance_m": 0.1930599927543476
+          },
+          {
+            "name": "arm_link8",
+            "side_projection_max_m": 0.6253286024363711,
+            "whole_component_min_z_m": 0.7655081609064499,
+            "whole_component_rim_clearance_m": 0.21550816090644986
+          }
+        ]
+      },
+      "actual_end_gripper_body_xyz_m": [
+        0.20380843359060208,
+        0.5192396185355523,
+        0.39985800662021975
+      ],
+      "actual_end_object_body_xyz_m": [
+        0.20383355519676805,
+        0.6103038059477033,
+        0.24876371182548074
+      ]
+    }
+  },
+  "conditional_uncertainty_sensitivity": [
+    {
+      "assumed_xy_error_bound_m": 0,
+      "assumed_abs_yaw_error_rad": 0,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.07548654848198494,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.05144974035138962,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.04673077249014258
+    },
+    {
+      "assumed_xy_error_bound_m": 0,
+      "assumed_abs_yaw_error_rad": 0.02,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.06867302289206506,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.04395435471092714,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.0392353868496801
+    },
+    {
+      "assumed_xy_error_bound_m": 0,
+      "assumed_abs_yaw_error_rad": 0.05,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.058463661494885244,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.032068244562040396,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.02734927670079336
+    },
+    {
+      "assumed_xy_error_bound_m": 0.017,
+      "assumed_abs_yaw_error_rad": 0,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.05848654848198494,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.03444974035138962,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.029730772490142582
+    },
+    {
+      "assumed_xy_error_bound_m": 0.017,
+      "assumed_abs_yaw_error_rad": 0.02,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.05167302289206506,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.02695435471092714,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.022235386849680103
+    },
+    {
+      "assumed_xy_error_bound_m": 0.017,
+      "assumed_abs_yaw_error_rad": 0.05,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.04146366149488524,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.015068244562040398,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.010349276700793362
+    },
+    {
+      "assumed_xy_error_bound_m": 0.03,
+      "assumed_abs_yaw_error_rad": 0,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.04548654848198494,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.021449740351389624,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.016730772490142588
+    },
+    {
+      "assumed_xy_error_bound_m": 0.03,
+      "assumed_abs_yaw_error_rad": 0.02,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.03867302289206506,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.013954354710927142,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": 0.009235386849680106
+    },
+    {
+      "assumed_xy_error_bound_m": 0.03,
+      "assumed_abs_yaw_error_rad": 0.05,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.028463661494885245,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.0020682445620404007,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": -0.002650723299206636
+    },
+    {
+      "assumed_xy_error_bound_m": 0.05,
+      "assumed_abs_yaw_error_rad": 0,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.025486548481984936,
+      "payload_inner_098_margin_after_error_and_drift_m": 0.0014497403513896202,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": -0.0032692275098574163
+    },
+    {
+      "assumed_xy_error_bound_m": 0.05,
+      "assumed_abs_yaw_error_rad": 0.02,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.018673022892065058,
+      "payload_inner_098_margin_after_error_and_drift_m": -0.006045645289072862,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": -0.010764613150319898
+    },
+    {
+      "assumed_xy_error_bound_m": 0.05,
+      "assumed_abs_yaw_error_rad": 0.05,
+      "assumed_additional_payload_translation_drift_m": 0.02,
+      "body_gap_after_error_bound_m": 0.008463661494885241,
+      "payload_inner_098_margin_after_error_and_drift_m": -0.017931755437959603,
+      "payload_rim_clearance_after_translation_drift_m": 0.051203914282847776,
+      "payload_inner_polygon_inradius_margin_after_error_and_drift_m": -0.02265072329920664
+    }
+  ],
+  "pre_dock_turn": {
+    "standoff_m": 1.45,
+    "tangent_offset_m": 1,
+    "pre_dock_radius_m": 1.7613914953808536,
+    "nonarm_enclosing_horizontal_radius_m": 0.6788635162471074,
+    "sufficient_static_arbitrary_yaw_gap_m": 0.08252797913374621,
+    "source": "actual A end q with original full collision support points; low components only matter for wall contact; excluding mesh cooked margins"
+  },
+  "limits": [
+    "Original visual object vertices + original robot collision support mesh/extents are used; original cooked PhysX hull/contact/rest offsets are not reconstructed.",
+    "Robot q-based rigid joint tree misses solver constraint deformation: gripper reconstruction error above measures only endpoint consistency, other link errors unrecorded.",
+    "All standoff cases transpose actual p13 pose to a hypothetical bucket pose preserving recorded base height/roll/pitch. No navigation, bucket interaction or release was recorded.",
+    "20mm follow threshold constrains root translation over a chosen window, not object angular slip; mesh orientation changes require separate checks.",
+    "17mm old odometry endpoint error is retrospective evidence, not a bound for future transport, turn, stopping, slip or yaw.",
+    "Free drop may translate, rotate, collide and rebound; static radial inclusion does not prove delivery.",
+    "The .98 inner-circle margins are nominal circumradius-only; polygon-inradius margins are the sufficient all-azimuth replacement."
+  ],
+  "corrected_preparation_baselines": [
+    {
+      "step": 2921,
+      "policy_state": "CONTACT_OPEN",
+      "child_state": "CONTACT_OPEN",
+      "phase": "PREFIX",
+      "child_phase": "CONTACT_OPEN",
+      "mesh_min_z_m": 0.04413603012818208,
+      "root_xyz_m": [
+        -6.723809242248535,
+        -8.680275917053223,
+        0.1402246206998825
+      ],
+      "object_quat_wxyz": [
+        0.0005070092738606036,
+        0.0009190286509692669,
+        -0.6985841393470764,
+        0.7155272960662842
+      ]
+    },
+    {
+      "step": 3544,
+      "policy_state": "PAYLOAD_RAISE",
+      "child_state": "PROBE_LIFT",
+      "phase": "PAYLOAD_RAISE",
+      "child_phase": "PROBE_LIFT",
+      "mesh_min_z_m": 0.044122031211129065,
+      "root_xyz_m": [
+        -6.726646900177002,
+        -8.681764602661133,
+        0.14026987552642822
+      ],
+      "object_quat_wxyz": [
+        0.004876432474702597,
+        -0.001281670411117375,
+        -0.6985409259796143,
+        0.7155523300170898
+      ]
+    },
+    {
+      "step": 3640,
+      "policy_state": "PAYLOAD_RAISE",
+      "child_state": "PROBE_LIFT",
+      "phase": "PAYLOAD_RAISE",
+      "child_phase": "PROBE_LIFT",
+      "mesh_min_z_m": 0.05935085449249258,
+      "root_xyz_m": [
+        -6.728802680969238,
+        -8.683698654174805,
+        0.1554112732410431
+      ],
+      "object_quat_wxyz": [
+        0.0007499843486584723,
+        -0.015787040814757347,
+        -0.7068496346473694,
+        0.7071872353553772
+      ]
+    },
+    {
+      "step": 5864,
+      "policy_state": "PAYLOAD_HOLD",
+      "child_state": "PROBE_LIFT",
+      "phase": "PAYLOAD_HOLD",
+      "child_phase": "PROBE_LIFT",
+      "mesh_min_z_m": 0.6211913788324583,
+      "root_xyz_m": [
+        -7.124970436096191,
+        -8.357738494873047,
+        0.7191687822341919
+      ],
+      "object_quat_wxyz": [
+        -0.3055717349052429,
+        0.3696681261062622,
+        -0.7231659293174744,
+        0.4969933331012726
+      ]
+    }
+  ],
+  "baseline_2921_to_3544": {
+    "mesh_lowest_z_change_m": -1.3998917053018034e-05,
+    "root_xyz_change_m": [
+      -0.002837657928466797,
+      -0.0014886856079101562,
+      4.525482654571533e-05
+    ],
+    "root_xyz_displacement_m": 0.0032047675980505963,
+    "final_mesh_rise_from_2921_m": 0.5770678841546657,
+    "final_root_rise_from_2921_m": 0.5789578706026077,
+    "warning": "p13_payload_follow_audit.json calls step3544 firstCONTACT_OPEN but actual trace is PAYLOAD_RAISE; first CONTACT_OPEN child_state is step2921"
+  },
+  "actual_recorded_robot_sweep_at145": {
+    "PAYLOAD_SWING": {
+      "samples": 547,
+      "minimum_nonarm_support_plane_gap_at145_m": 0.07401317034141197,
+      "minimum_crossing_arm_whole_component_z_m": null,
+      "limiting_crossing_arm_component": null,
+      "limiting_step": null,
+      "crossing_components_min_z_m": {},
+      "method": "all telemetry frames, original per-link convex support vertices at q-based rigid transforms; conservative whole-component z for each component crossing tangent wall support plane"
+    },
+    "PAYLOAD_EXTEND": {
+      "samples": 654,
+      "minimum_nonarm_support_plane_gap_at145_m": 0.07440532767863861,
+      "minimum_crossing_arm_whole_component_z_m": 0.733363183385733,
+      "limiting_crossing_arm_component": "arm_link7",
+      "limiting_step": 5542,
+      "crossing_components_min_z_m": {
+        "arm_link8": 0.7553193504668918,
+        "gripper_base": 0.7822327164233948,
+        "arm_link7": 0.733363183385733,
+        "arm_link5": 0.8471878485644404,
+        "arm_link6": 0.8527322122638746,
+        "arm_link4": 0.9030896996494293
+      },
+      "method": "all telemetry frames, original per-link convex support vertices at q-based rigid transforms; conservative whole-component z for each component crossing tangent wall support plane"
+    },
+    "PAYLOAD_HOLD": {
+      "samples": 100,
+      "minimum_nonarm_support_plane_gap_at145_m": 0.0754609540567176,
+      "minimum_crossing_arm_whole_component_z_m": 0.7430599927543476,
+      "limiting_crossing_arm_component": "arm_link7",
+      "limiting_step": 5864,
+      "crossing_components_min_z_m": {
+        "gripper_base": 0.7909012593969094,
+        "arm_link4": 0.9101824840361492,
+        "arm_link5": 0.8553921555130019,
+        "arm_link6": 0.8611130458972689,
+        "arm_link7": 0.7430599927543476,
+        "arm_link8": 0.7655081609064499
+      },
+      "method": "all telemetry frames, original per-link convex support vertices at q-based rigid transforms; conservative whole-component z for each component crossing tangent wall support plane"
+    }
+  },
+  "actual_held_mesh_relative_drift": {
+    "long_follow": {
+      "first_step": 3640,
+      "last_step": 5865,
+      "max_relative_root_translation_from_first_m": 0.016619934828826118,
+      "max_relative_orientation_from_first_rad": 0.30522974484879806,
+      "max_corresponding_vertex_relative_displacement_from_first_m": 0.04759932521208
+    },
+    "hold": {
+      "first_step": 5765,
+      "last_step": 5865,
+      "max_relative_root_translation_from_first_m": 0.00045125724491773545,
+      "max_relative_orientation_from_first_rad": 0.008147885061779972,
+      "max_corresponding_vertex_relative_displacement_from_first_m": 0.0012898062117236977
+    },
+    "after_A_complete": {
+      "first_step": 4564,
+      "last_step": 5865,
+      "samples": 1302,
+      "max_relative_root_translation_from_first_m": 0.01187133856255156,
+      "max_relative_orientation_from_first_rad": 0.22616897749360912,
+      "max_corresponding_vertex_relative_displacement_from_first_m": 0.03501607770870808,
+      "final_relative_root_translation_m": 0.011861805538792755,
+      "final_relative_orientation_rad": 0.2260121749769916,
+      "final_corresponding_vertex_displacement_m": 0.034990884175198744
+    }
+  },
+  "final_halfsecond_object_velocity_fd": {
+    "xy_speed_max_m_s": 0.003377474988358456,
+    "xy_speed_mean_vector_m_s": [
+      8.069551908052884e-05,
+      -0.0001723949725811298
+    ],
+    "warning": "finite difference of recorded object root in this stationary p13 only; no bound on velocity after finger opening"
+  },
+  "bucket_mesh_geometry": {
+    "source": "/home/lybm/ATEC2026_Simulation_Challenge/source/atec_rl_lab/atec_rl_lab/tasks/task_b/terrain.py",
+    "outer_circumradius_m": 1.0,
+    "inner_circumradius_m": 0.98,
+    "segments": 32,
+    "guaranteed_inner_inradius_m": 0.975281032138753,
+    "rim_z_m": 0.55,
+    "bottom_top_z_m": 0.05,
+    "ground_top_z_m": 0.045,
+    "trimesh_version_cpu": "4.12.2",
+    "note": "default32-segment annulus reproduced on CPU from original dimensions; arbitrary dock azimuth uses inradius conservatively"
+  },
+  "reused_geometry_script_sha256": "aea790442ac5c0ac725ee1ec42a5a7d5e2825decaaa23e943c2da97dec98ea65",
+  "pure_freefall_illustration": {
+    "assumptions": "zero vertical velocity, unchanged orientation, no gripper/rim contact, g=9.81; illustrates timescale only, not release prediction",
+    "time_to_lowest_surface_at_rim_s": 0.12048484644469946,
+    "time_to_lowest_surface_at_bottom_s": 0.34125268849828627,
+    "xy_displacement_at_008m_s_until_floor_m": 0.027300215079862904,
+    "xy_displacement_at_001m_s_until_floor_m": 0.003412526884982863
+  },
+  "lower_inside_bin_D_candidates": {
+    "scope": "Hypothetical rigid retention of ACTUAL final p13 T_gripper_object during NEW unexecuted lowering; no physical hold/clearance claim",
+    "seed_actual_C_arm_q": [
+      1.5637975931167603,
+      2.332355260848999,
+      -2.4447460174560547,
+      -0.002291701268404722,
+      1.1182152032852173,
+      0.5270857810974121
+    ],
+    "orientation_basis": "same actual current C body-relative gripper rotation; targets bodyxy[.2,.52]",
+    "path_sample_count_each": 11,
+    "cases": [
+      {
+        "target_gripper_body_xyz_m": [
+          0.2,
+          0.52,
+          0.35
+        ],
+        "success": true,
+        "position_error_m": 6.744604874597826e-15,
+        "orientation_error_rad": 1.085251324950522e-14,
+        "q_rad": [
+          1.572039083318182,
+          2.280695658368132,
+          -2.147228675291141,
+          -0.009221042642499865,
+          0.8724070724144092,
+          0.5385624354373896
+        ],
+        "endpoint": {
+          "payload_lowest_z_m": 0.5719472977958835,
+          "payload_max_radius_m": 0.9069927507049623,
+          "payload_root_z_m": 0.6699258748155259,
+          "finger_minimum_z_m": 0.6937997736963459,
+          "uncertified_arm_components": [],
+          "arm_components": [
+            {
+              "name": "gripper_base",
+              "min_z_m": 0.7416380670248566,
+              "max_left_m": 0.5995070506243348,
+              "radial_max_m": 0.9739827128033871,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_base",
+              "min_z_m": 0.578524711580189,
+              "max_left_m": 0.041789221661979355,
+              "radial_max_m": 1.5076972198744654,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link1",
+              "min_z_m": 0.6613066984656654,
+              "max_left_m": 0.039312208548192056,
+              "radial_max_m": 1.4981762154812888,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link2",
+              "min_z_m": 0.6701084943108375,
+              "max_left_m": 0.25220843985259456,
+              "radial_max_m": 1.4995882050174143,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link3",
+              "min_z_m": 0.8570339991821182,
+              "max_left_m": 0.43728556000639607,
+              "radial_max_m": 1.2866162330428377,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link4",
+              "min_z_m": 0.8656351697406403,
+              "max_left_m": 0.500640733397825,
+              "radial_max_m": 1.0456594380361166,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link5",
+              "min_z_m": 0.8061230149385014,
+              "max_left_m": 0.5483657659492901,
+              "radial_max_m": 1.034043417882779,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link6",
+              "min_z_m": 0.8118503851659801,
+              "max_left_m": 0.5401430246091131,
+              "radial_max_m": 0.9669528408390476,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link7",
+              "min_z_m": 0.6937997736963459,
+              "max_left_m": 0.5990451763011865,
+              "radial_max_m": 0.9612542519437013,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link8",
+              "min_z_m": 0.7162581898715707,
+              "max_left_m": 0.6251073822018265,
+              "radial_max_m": 0.9107034942030121,
+              "wall_exclusion_certified_by": "above_rim"
+            }
+          ]
+        },
+        "path_11_scalar_samples": {
+          "min_payload_z_m": 0.5719472977958835,
+          "max_payload_radius_m": 0.9085498918285699,
+          "minimum_finger_z_m": 0.6937997736963459,
+          "uncertified_arm_components": [],
+          "lowering_is_monotonic": true
+        },
+        "nominal_max_axis_01_rad_s_time_s": 2.9751734216491377
+      },
+      {
+        "target_gripper_body_xyz_m": [
+          0.2,
+          0.52,
+          0.3
+        ],
+        "success": true,
+        "position_error_m": 6.731784725301444e-12,
+        "orientation_error_rad": 1.2507223546344384e-11,
+        "q_rad": [
+          1.5720399855501965,
+          2.2939658885076195,
+          -1.9726353874852762,
+          -0.011169532263275026,
+          0.6845531839660597,
+          0.5412872620054455
+        ],
+        "endpoint": {
+          "payload_lowest_z_m": 0.5220719812704393,
+          "payload_max_radius_m": 0.9070047752020397,
+          "payload_root_z_m": 0.6200505582900924,
+          "finger_minimum_z_m": 0.6439244535382431,
+          "uncertified_arm_components": [],
+          "arm_components": [
+            {
+              "name": "gripper_base",
+              "min_z_m": 0.6917627480215575,
+              "max_left_m": 0.5986397843238626,
+              "radial_max_m": 0.973850326845034,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_base",
+              "min_z_m": 0.578524711580189,
+              "max_left_m": 0.041789221661979355,
+              "radial_max_m": 1.5076972198744654,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link1",
+              "min_z_m": 0.6613066984862891,
+              "max_left_m": 0.03931220940992953,
+              "radial_max_m": 1.498176215122304,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link2",
+              "min_z_m": 0.6701164819331543,
+              "max_left_m": 0.25464684860434583,
+              "radial_max_m": 1.499610292059872,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link3",
+              "min_z_m": 0.82717493395916,
+              "max_left_m": 0.4424764349215681,
+              "radial_max_m": 1.2842003302924052,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link4",
+              "min_z_m": 0.8157618478539183,
+              "max_left_m": 0.499822509428853,
+              "radial_max_m": 1.0471953757692547,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link5",
+              "min_z_m": 0.7562464073307358,
+              "max_left_m": 0.5475026605054333,
+              "radial_max_m": 1.0339826815244981,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link6",
+              "min_z_m": 0.7619750642741114,
+              "max_left_m": 0.5392757578434628,
+              "radial_max_m": 0.9669987874446959,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link7",
+              "min_z_m": 0.6439244535382431,
+              "max_left_m": 0.5981779092085847,
+              "radial_max_m": 0.9611883963141654,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link8",
+              "min_z_m": 0.6663828677040675,
+              "max_left_m": 0.6242401155699919,
+              "radial_max_m": 0.9108757572422301,
+              "wall_exclusion_certified_by": "above_rim"
+            }
+          ]
+        },
+        "path_11_scalar_samples": {
+          "min_payload_z_m": 0.5220719812704393,
+          "max_payload_radius_m": 0.9085498918285699,
+          "minimum_finger_z_m": 0.6439244535382431,
+          "uncertified_arm_components": [],
+          "lowering_is_monotonic": true
+        },
+        "nominal_max_axis_01_rad_s_time_s": 4.721106299707785
+      },
+      {
+        "target_gripper_body_xyz_m": [
+          0.2,
+          0.52,
+          0.25
+        ],
+        "success": true,
+        "position_error_m": 4.5298628911859343e-10,
+        "orientation_error_rad": 4.036986726805709e-09,
+        "q_rad": [
+          1.5720410416679655,
+          2.343709244881347,
+          -1.8630619942144093,
+          -0.014086799889629662,
+          0.525248933052412,
+          0.5448229915063195
+        ],
+        "endpoint": {
+          "payload_lowest_z_m": 0.4721966649276517,
+          "payload_max_radius_m": 0.9070721853719753,
+          "payload_root_z_m": 0.5701752419244566,
+          "finger_minimum_z_m": 0.5940491350498631,
+          "uncertified_arm_components": [],
+          "arm_components": [
+            {
+              "name": "gripper_base",
+              "min_z_m": 0.6418874306864193,
+              "max_left_m": 0.5977725162626875,
+              "radial_max_m": 0.9737307129706525,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_base",
+              "min_z_m": 0.578524711580189,
+              "max_left_m": 0.041789221661979355,
+              "radial_max_m": 1.5076972198744654,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link1",
+              "min_z_m": 0.6613066985104308,
+              "max_left_m": 0.039312210418608745,
+              "radial_max_m": 1.4981762147020543,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link2",
+              "min_z_m": 0.6701957816326277,
+              "max_left_m": 0.2633907514401398,
+              "radial_max_m": 1.4996865548477527,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link3",
+              "min_z_m": 0.7843111447888478,
+              "max_left_m": 0.44780593820863757,
+              "radial_max_m": 1.2755029031443876,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link4",
+              "min_z_m": 0.76595399805978,
+              "max_left_m": 0.49902172811090667,
+              "radial_max_m": 1.0488612536355744,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link5",
+              "min_z_m": 0.7063696058580876,
+              "max_left_m": 0.5466405379608567,
+              "radial_max_m": 1.0339175970105037,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link6",
+              "min_z_m": 0.7120997453651418,
+              "max_left_m": 0.5384084897673811,
+              "radial_max_m": 0.9670576104262629,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link7",
+              "min_z_m": 0.5940491350498631,
+              "max_left_m": 0.5973106406186585,
+              "radial_max_m": 0.9611354939830312,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link8",
+              "min_z_m": 0.6165075474165842,
+              "max_left_m": 0.6233728471729939,
+              "radial_max_m": 0.911061658009477,
+              "wall_exclusion_certified_by": "above_rim"
+            }
+          ]
+        },
+        "path_11_scalar_samples": {
+          "min_payload_z_m": 0.4721966649276517,
+          "max_payload_radius_m": 0.9085498918285699,
+          "minimum_finger_z_m": 0.5940491350498631,
+          "uncertified_arm_components": [],
+          "lowering_is_monotonic": true
+        },
+        "nominal_max_axis_01_rad_s_time_s": 5.929662702328052
+      },
+      {
+        "target_gripper_body_xyz_m": [
+          0.2,
+          0.52,
+          0.15
+        ],
+        "success": true,
+        "position_error_m": 1.5897654499731182e-13,
+        "orientation_error_rad": 3.5466797288818304e-12,
+        "q_rad": [
+          1.572044357214623,
+          2.518275563496442,
+          -1.7817003587029256,
+          -0.026552165419390462,
+          0.26936837730464286,
+          0.5582326362445165
+        ],
+        "endpoint": {
+          "payload_lowest_z_m": 0.3724460316980555,
+          "payload_max_radius_m": 0.9072488034533401,
+          "payload_root_z_m": 0.47042460871766356,
+          "finger_minimum_z_m": 0.4942985010874821,
+          "uncertified_arm_components": [],
+          "arm_components": [
+            {
+              "name": "gripper_base",
+              "min_z_m": 0.5421367982661978,
+              "max_left_m": 0.5960379780556415,
+              "radial_max_m": 0.9737917873323919,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            },
+            {
+              "name": "arm_base",
+              "min_z_m": 0.578524711580189,
+              "max_left_m": 0.041789221661979355,
+              "radial_max_m": 1.5076972198744654,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link1",
+              "min_z_m": 0.6613066985862229,
+              "max_left_m": 0.03931221358496737,
+              "radial_max_m": 1.498176213382479,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link2",
+              "min_z_m": 0.6701690342883316,
+              "max_left_m": 0.2895988290613156,
+              "radial_max_m": 1.4997102450819157,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link3",
+              "min_z_m": 0.6963329572036856,
+              "max_left_m": 0.4571499508808712,
+              "radial_max_m": 1.2491502314566527,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link4",
+              "min_z_m": 0.6663745658385927,
+              "max_left_m": 0.49746905306460026,
+              "radial_max_m": 1.0501082859012514,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link5",
+              "min_z_m": 0.6066152679374686,
+              "max_left_m": 0.5449229034402501,
+              "radial_max_m": 1.033703972611563,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link6",
+              "min_z_m": 0.6123491100039642,
+              "max_left_m": 0.5366739512219482,
+              "radial_max_m": 0.9672138738859253,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link7",
+              "min_z_m": 0.4942985010874821,
+              "max_left_m": 0.5955761023129515,
+              "radial_max_m": 0.9610685549185793,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            },
+            {
+              "name": "arm_link8",
+              "min_z_m": 0.5167569104922499,
+              "max_left_m": 0.621638309033436,
+              "radial_max_m": 0.9114743355128131,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            }
+          ]
+        },
+        "path_11_scalar_samples": {
+          "min_payload_z_m": 0.3724460316980555,
+          "max_payload_radius_m": 0.9085498918285699,
+          "minimum_finger_z_m": 0.4942985010874822,
+          "uncertified_arm_components": [],
+          "lowering_is_monotonic": true
+        },
+        "nominal_max_axis_01_rad_s_time_s": 8.488468259805742
+      },
+      {
+        "target_gripper_body_xyz_m": [
+          0.2,
+          0.52,
+          0.05
+        ],
+        "success": true,
+        "position_error_m": 3.3506859547561567e-09,
+        "orientation_error_rad": 1.3962263313966065e-08,
+        "q_rad": [
+          1.5720532856120657,
+          2.768473315932997,
+          -1.8651711734046892,
+          -0.06896135912654448,
+          0.10279368198424156,
+          0.6012431157922293
+        ],
+        "endpoint": {
+          "payload_lowest_z_m": 0.2726954007070611,
+          "payload_max_radius_m": 0.9074802801887939,
+          "payload_root_z_m": 0.3706739775695407,
+          "finger_minimum_z_m": 0.3945478737462413,
+          "uncertified_arm_components": [
+            "arm_link5"
+          ],
+          "arm_components": [
+            {
+              "name": "gripper_base",
+              "min_z_m": 0.4423861715622958,
+              "max_left_m": 0.5943034370586511,
+              "radial_max_m": 0.9739971636906052,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            },
+            {
+              "name": "arm_base",
+              "min_z_m": 0.578524711580189,
+              "max_left_m": 0.041789221661979355,
+              "radial_max_m": 1.5076972198744654,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link1",
+              "min_z_m": 0.6613066987903409,
+              "max_left_m": 0.03931222210965134,
+              "radial_max_m": 1.4981762098270917,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link2",
+              "min_z_m": 0.6700620745034956,
+              "max_left_m": 0.313681854314424,
+              "radial_max_m": 1.4996586940151442,
+              "wall_exclusion_certified_by": "outside_support_plane"
+            },
+            {
+              "name": "arm_link3",
+              "min_z_m": 0.6042754814468366,
+              "max_left_m": 0.46308243522180115,
+              "radial_max_m": 1.2246134394683952,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link4",
+              "min_z_m": 0.5671789969336436,
+              "max_left_m": 0.4964584539045317,
+              "radial_max_m": 1.049741616407651,
+              "wall_exclusion_certified_by": "above_rim"
+            },
+            {
+              "name": "arm_link5",
+              "min_z_m": 0.5068732745825592,
+              "max_left_m": 0.5432146743044426,
+              "radial_max_m": 1.0330602130337823,
+              "wall_exclusion_certified_by": "NOT_CERTIFIED"
+            },
+            {
+              "name": "arm_link6",
+              "min_z_m": 0.5125984817791734,
+              "max_left_m": 0.5349394106577978,
+              "radial_max_m": 0.9674216042755447,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            },
+            {
+              "name": "arm_link7",
+              "min_z_m": 0.3945478737462413,
+              "max_left_m": 0.5938415625167943,
+              "radial_max_m": 0.9610534434853449,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            },
+            {
+              "name": "arm_link8",
+              "min_z_m": 0.4170062817237944,
+              "max_left_m": 0.6199037686443949,
+              "radial_max_m": 0.9119414512188763,
+              "wall_exclusion_certified_by": "entire_component_inside_inner_inradius"
+            }
+          ]
+        },
+        "path_11_scalar_samples": {
+          "min_payload_z_m": 0.2726954007070611,
+          "max_payload_radius_m": 0.9085498918285699,
+          "minimum_finger_z_m": 0.3945478737462413,
+          "uncertified_arm_components": [
+            "arm_link5"
+          ],
+          "lowering_is_monotonic": true
+        },
+        "nominal_max_axis_01_rad_s_time_s": 10.154215213009756
+      }
+    ],
+    "asset_contact_materials": [],
+    "limitations": [
+      "Nominal IK/path samples do not cover loaded tracking error, dynamic deformation, slip/rotation, contact offsets or all between-sample geometry.",
+      "Keep body at the checked standoff with tangent heading and establish payload-inside margin BEFORE any below-rim motion.",
+      "Opening finger sweep (to70mm) and postrelease arm unloading are not simulated; their sweep must be separately audited.",
+      "Candidate desired arm motion should derive from public measured q/FK, while T_gripper_object and mesh are offline evidence only."
+    ]
+  },
+  "recommendation": {
+    "standoff_candidate_m": 1.45,
+    "keep_standoff_as_parameter": true,
+    "first_mobility_trial": "A-hold in bucket exterior, bounded .10-.20m move and brake, measure public velocity/odometry and offline payload full-mesh follow; no GT steering",
+    "lowering_trial_order": "after independently confirming C payload is inside bucket opening, first z_body=.35, then consider=.25; retain original limits/gates and verify actual loaded motion",
+    "do_not_use_zbody005": "arm_link5 wall exclusion is uncertified even in nominal sampled geometry",
+    "do_not_open_based_only_on_20mm_root_gate": "20mm root translation does not bound angular slip or corresponding vertex motion",
+    "required_delivery_evidence": "same object actual entry and retention after release, original objects_in_circle event and no original failure; point may occur while still held at low D and is insufficient for physical release by itself"
+  }
+}

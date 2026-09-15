@@ -1,0 +1,7 @@
+{
+  "recorded2400step_action_replay_max_abs_error": 0.0,
+  "wheel_arm_bytes_preserved": true,
+  "first100steps_unmodified": true,
+  "replay_pass": true,
+  "invalid_input_rejected": true
+}

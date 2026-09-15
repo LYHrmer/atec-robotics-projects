@@ -1,0 +1,52 @@
+{
+  "decision": "P2_fixed_002_reference_lowering_is_now_supported_as_an_experiment",
+  "no_score_guarantee": true,
+  "policy_inputs": "Only public observations and fixed CLI amplitude; all world positions in this report are diagnostics.",
+  "source_run": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p1_settle_seed42_01",
+  "steps": 3316,
+  "score": 0.0,
+  "stop_reason": "policy_stop:reach_observation_complete",
+  "terminated": false,
+  "final_state_timing": "post_step_before_any_reset",
+  "last_consecutive_good_public_samples": 104,
+  "last_good_sample_endpoint_duration_s": 2.06,
+  "last100": {
+    "qerror_max_rad": 0.011991570992305967,
+    "arm_qdot_max_rad_s": 0.047823768109083176,
+    "tangent_velocity_max_m_s": 0.0018927592318505049,
+    "linear_velocity_max_m_s": 0.023941921070218086,
+    "angular_velocity_max_rad_s": 0.10326123237609863,
+    "tilt_max_rad": 0.07171794027090073,
+    "leg_q_peak_to_peak_max_rad": 0.0004907846450805664,
+    "illegal_force_max_n": 0.0,
+    "distance_range_m": [
+      0.2113076150417328,
+      0.21151867508888245
+    ]
+  },
+  "final_object_name": "object_10",
+  "final_root_world_m": [
+    -6.723809242248535,
+    -8.680274963378906,
+    0.14022468030452728
+  ],
+  "final_gripper_world_m": [
+    -6.730481147766113,
+    -8.694292068481445,
+    0.3509996831417084
+  ],
+  "final_distance_3d_m": 0.2113459140359823,
+  "final_horizontal_distance_m": 0.015523967234283769,
+  "final_vertical_difference_m": 0.2107750028371811,
+  "rigid_vertical_translation_only_predictions_m": {
+    "0.01": 0.20137426678441608,
+    "0.02": 0.1914055779391436,
+    "0.03": 0.18144033512279995
+  },
+  "prediction_limit": "Assumes actual rigid descent equals the named reference amount and XY stays fixed; neither is established for P2.",
+  "source_sha256": {
+    "result.json": "368de4890d645879e91774d5918aea85311b2badb12ee42222c2d1bd5ae2ebed",
+    "telemetry.npz": "ea1e443d28e4580ad886da06894560c0b4673172d06a32bf4bf1e4e9271df27f",
+    "trace.jsonl": "9deffe3083cb07f7dfc29453d31e3e11dfeda75dea0d65ab486e0d324529e01e"
+  }
+}

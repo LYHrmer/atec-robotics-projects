@@ -55,6 +55,9 @@ PYTHONNOUSERSITE=1 python3 tools/task_e/learn_geometry.py
 ```text
 task_a/              Task A 代码、训练权重、运行说明与验收证据
 task_b/              Task B 视觉接近、站姿/轮保持、有界伸臂、抓取/投递探针、相机标定与审计
+task_b/autonomous_route/  已停用的早期「自主完成整回合」路线源码（归档，不被引用）
+task_b/derivation/   设计所依据的一次性 CPU 推导与审计（归档）
+docs/history/       按日期写的过程文档、方案与状态记录（归档，非结果）
 run.sh               三项任务的统一启动入口
 solution.py          Task E 官方策略入口；同目录策略文件共同运行
 scripts/evaluate.sh  Task E 评测入口

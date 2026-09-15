@@ -1,0 +1,717 @@
+{
+  "scope": "INDEPENDENT CPU counterexample audit of the Task B delivery contract. No GPU, no production file modified, no threshold relaxed, no failure reclassified.",
+  "source_sha256_at_the_moment_of_the_run": {
+    "delivery.py": "6c5f07666e8f8f32781d4cef3a9378361781ebf14d47bab7489b3e74d4a471ad",
+    "carry_drive.py": "092c55ce5a4dae740c3207bfd2d0f10b91a39f8bd932fa66ffed0be026553878",
+    "bucket_observation.py": "4f0721c2d482282365f887a1db3e6df2143b035da2b2ce22b92707cbd9e39d75",
+    "payload_motion.py": "8f97410612e87aa036852984a702977e4afad8b1b536d32d880925db83f6ccdb",
+    "evaluate.py": "561bfbde7811639ce09e41359ecc13bf78b63ccc9b3ab3e51e86094b66eb0f4d"
+  },
+  "source_sha256_note": "the production tree was being edited by another writer while this audit ran, so every result below belongs to exactly these revisions and no other",
+  "schema_metadata": "/home/lybm/ATEC_Experiments_20260910/task_b_score/plan_p13_payload_denyquist_seed42_01/environment_metadata.json",
+  "note_on_the_seam": "the production PayloadRaisePrefix is exercised directly at its A-arrival branch; the parent carry machine is exercised through a counting stub child that returns that REAL carry record, because the true prefix needs the GPU simulator",
+  "summary": {
+    "PASS": 17,
+    "FALSIFIED": 9,
+    "NOT_APPLICABLE": 1
+  },
+  "checks": [
+    {
+      "id": "A-raise",
+      "contract_ref": "plan 3 \"A \u5230\u4f4d\u4ea4\u63a5\" / \"\u4e0d\u8c03\u7528 tracker.begin(B)\"",
+      "claim_under_test": "the handoff publishes once and NEVER begins the swing",
+      "method": "drive the real PayloadRaisePrefix._advance_segment(\"A\") 5x at the A branch",
+      "verdict": "PASS",
+      "observed": {
+        "handoff_ready": true,
+        "handoff_call": 1000,
+        "phase_after": "PAYLOAD_RAISE",
+        "segments_begun_before": 1,
+        "segments_begun_after": 1,
+        "tracker_fixed_goal_is_still_A": true,
+        "tracker_fixed_goal_changed_from_its_pre_call_value": false,
+        "goal_B_selected": false
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: the counter is read before and after, and goal B is compared by value",
+      "note": ""
+    },
+    {
+      "id": "handoff-transfer",
+      "contract_ref": "plan 3 \"\u6b63\u5728\u4f7f\u7528\u7684\u540c\u4e00\u4e2a PayloadJointTracker \u5b9e\u4f8b\"",
+      "claim_under_test": "the handoff carries the SAME tracker instance, not a copy",
+      "method": "identity comparison carry[\"tracker\"] is prefix.tracker on the real class",
+      "verdict": "PASS",
+      "observed": {
+        "carry_tracker_is_prefix_tracker": true,
+        "carry_control_tick": 1000,
+        "carry_finger_command_m": [
+          -0.075,
+          0.075
+        ],
+        "carry_action_template_len": 24,
+        "carry_goals_keys": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": ""
+    },
+    {
+      "id": "handoff-once",
+      "contract_ref": "plan 3 \"Once published\" the transfer is single-shot",
+      "claim_under_test": "the carry state can be taken exactly once",
+      "method": "call take_carry_state() a second time on the real class",
+      "verdict": "PASS",
+      "observed": {
+        "second_call": "ValueError: the carry state has already been taken"
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": ""
+    },
+    {
+      "id": "child-call-count",
+      "contract_ref": "plan 3 \"\u9876\u5c42\u4ece\u4e0b\u4e00 tick \u8d77\u6c38\u4e45\u505c\u6b62\u8c03\u7528\u524d\u7f00\u5b50\u7b56\u7565\"",
+      "claim_under_test": "the prefix child is called once per tick while it runs and NEVER after",
+      "method": "counting stub child through the production _prefix path, then 10 more ticks",
+      "verdict": "PASS",
+      "observed": {
+        "after_handoff_first_tick": 1,
+        "after_10_more_ticks": 1,
+        "parent_tracker_is_carry_tracker": true,
+        "parent_state": "CARRY_READY"
+      },
+      "evidence": {},
+      "trivial_pass_risk": "the child is a stub; only the parent prefix path is under test here",
+      "note": "the stub child is not the frozen prefix; the prefix itself is tested above"
+    },
+    {
+      "id": "wheel-anchor-move",
+      "contract_ref": "plan 3 \"\u79fb\u52a8\u9636\u6bb5\u5fc5\u987b wheel_hold_requested=False\uff0c\u5426\u5219 evaluator \u4f1a\u8986\u76d6\u6240\u6709\u5bfc\u822a\u8bf7\u6c42\"",
+      "claim_under_test": "no movement phase holds the wheel anchor, so the navigation slice survives",
+      "method": "run into PROBE_DRIVE, emit the real action, then replay the evaluator composition",
+      "verdict": "PASS",
+      "observed": {
+        "phase": "PROBE_DRIVE",
+        "wheel_hold_requested": false,
+        "anchor_released": true,
+        "navigator_request_rad_s": [
+          0.02,
+          0.02,
+          0.02,
+          0.02
+        ],
+        "request_nonzero": true,
+        "evaluator_would_overwrite": false,
+        "composed_wheel_slice": [
+          0.004000000189989805,
+          0.004000000189989805,
+          0.004000000189989805,
+          0.004000000189989805
+        ],
+        "requested_slice_times_gain": [
+          0.004000000189989805,
+          0.004000000189989805,
+          0.004000000189989805,
+          0.004000000189989805
+        ],
+        "overwrite_is_real_when_held": true
+      },
+      "evidence": {},
+      "trivial_pass_risk": "guarded: part (a) proves the overwrite really happens when held, and part (b) requires the emitted request to be non-zero, so a zero request cannot pass this check",
+      "note": "the drive layer is the delivered task_b.carry_drive"
+    },
+    {
+      "id": "wheel-anchor-phases",
+      "contract_ref": "plan 3 \"\u5f00\u59cb\u51cf\u901f\u65f6\u4fdd\u6301 False ... \u5f00\u59cb\u4e0b\u4e00\u6b21\u771f\u5b9e\u79fb\u52a8\u624d release\"",
+      "claim_under_test": "entering any declared movement phase releases the anchor",
+      "method": "_begin() every phase in MOVEMENT_PHASES and read wheel_hold_requested",
+      "verdict": "PASS",
+      "observed": {
+        "wheel_hold_requested_by_phase": {
+          "PROBE_DRIVE": false,
+          "PROBE_YAW_NEG": false,
+          "PROBE_YAW_POS": false
+        },
+        "movement_phases": [
+          "PROBE_DRIVE",
+          "PROBE_YAW_NEG",
+          "PROBE_YAW_POS"
+        ]
+      },
+      "evidence": {},
+      "trivial_pass_risk": "these are the phases the implementation itself declares as movement; a phase it failed to declare would not be covered here",
+      "note": ""
+    },
+    {
+      "id": "anchor-not-sliding",
+      "contract_ref": "plan 3 \"\u4e0d\u8981\u5728\u4ecd\u4ee5 .235 m/s \u6ed1\u884c\u65f6\u91cd\u7f6e .03 m \u9759\u6b62\u9884\u7b97\"",
+      "claim_under_test": "a NEW wheel anchor is taken only after the base has stopped",
+      "method": "hold the brake phase at 7 constant planar speeds for 150 ticks each",
+      "verdict": "PASS",
+      "observed": {
+        "brake_settle_speed_m_s": 0.01,
+        "fastest_speed_that_anchored_m_s": 0.0099,
+        "anchored_at_or_above_settle_speed": false,
+        "per_speed": {
+          "0": {
+            "phase_when_probed": "PROBE_YAW_POS",
+            "anchor_engaged": true,
+            "stop_reason": null
+          },
+          "0.005": {
+            "phase_when_probed": "PROBE_YAW_POS",
+            "anchor_engaged": true,
+            "stop_reason": null
+          },
+          "0.0099": {
+            "phase_when_probed": "PROBE_YAW_POS",
+            "anchor_engaged": true,
+            "stop_reason": null
+          },
+          "0.0101": {
+            "phase_when_probed": "PROBE_BRAKE_DRIVE",
+            "anchor_engaged": false,
+            "stop_reason": null
+          },
+          "0.02": {
+            "phase_when_probed": "PROBE_BRAKE_DRIVE",
+            "anchor_engaged": false,
+            "stop_reason": null
+          },
+          "0.05": {
+            "phase_when_probed": "PROBE_BRAKE_DRIVE",
+            "anchor_engaged": false,
+            "stop_reason": null
+          },
+          "0.08": {
+            "phase_when_probed": "PROBE_BRAKE_DRIVE",
+            "anchor_engaged": false,
+            "stop_reason": null
+          }
+        }
+      },
+      "evidence": {},
+      "trivial_pass_risk": "guarded: the battery also requires an anchor to be reachable at all (see anchor-reengage), so a policy that simply never anchors cannot pass by accident",
+      "note": "the speeds below the .01 m/s settle gate must anchor; the sweep reports which did"
+    },
+    {
+      "id": "anchor-yaw-residue",
+      "contract_ref": "plan 4 \"\u516c\u5f00\u901f\u5ea6\u5df2\u8db3\u591f\u4f4e\u540e\u624d\u5207 True\" + \"\u671f\u671b/\u5b9e\u6d4b yaw \u4e0a\u9650 .08 rad/s\"",
+      "claim_under_test": "the anchor is not taken while the base is still YAWING",
+      "method": "hold the brake phase at zero planar speed with 7 constant yaw rates, 150 ticks each",
+      "verdict": "PASS",
+      "observed": {
+        "yaw_rate_cap_for_the_probe_rad_s": 0.08,
+        "fastest_yaw_rate_that_anchored_rad_s": 0.08,
+        "anchored_by_yaw_rate": {
+          "0": true,
+          "0.05": true,
+          "0.08": true,
+          "0.1": false,
+          "0.119": false,
+          "0.121": false,
+          "0.15": false
+        }
+      },
+      "evidence": {},
+      "trivial_pass_risk": "guarded: the same series contains a yaw of 0 that must anchor",
+      "note": "the anchor gate reuses the .12 rad/s quiet angular gate, which is wider than the .08 rad/s probe yaw cap; the sweep measures whether that width is reachable"
+    },
+    {
+      "id": "anchor-reengage",
+      "contract_ref": "plan 3 \"\u9759\u6b62\u6bb5\u53cd\u590d engage \u4e0d\u91cd\u6293\u951a\"",
+      "claim_under_test": "a settled stationary stretch does not re-take the anchor",
+      "method": "stay settled in the brake phase for 150 further ticks after the anchor was taken",
+      "verdict": "PASS",
+      "observed": {
+        "engage_count_after_settle": 1,
+        "engage_count_after_150_more_ticks": 1,
+        "engage_calls": [
+          388
+        ],
+        "anchor_reachable_at_all": true
+      },
+      "evidence": {},
+      "trivial_pass_risk": "the battery requires at least one engage, so \"never anchors\" cannot pass",
+      "note": ""
+    },
+    {
+      "id": "hold-not-window",
+      "contract_ref": "plan 4 \"\u539f hold_quiet_calls * dt \u4e0d\u80fd\u4ee3\u66ff\u7aef\u70b9\u6301\u7eed\u65f6\u95f4\"",
+      "claim_under_test": "the hold duration is NOT the length of a bounded window",
+      "method": "drive _quiet_tick for 200 ticks on a still arm and read quiet_elapsed_s()",
+      "verdict": "PASS",
+      "observed": {
+        "quiet_window_s": 0.5,
+        "max_quiet_elapsed_s": 3.98,
+        "value_at_window_close_s": 0.0,
+        "value_after_200_ticks_s": 3.98
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: a window-length implementation would pin this at 0.5 s",
+      "note": ""
+    },
+    {
+      "id": "hold-restart-on-motion",
+      "contract_ref": "plan 4 \"\u53ea\u6709\u5b8c\u6574\u9759\u7a33\u7a97\u53e3 quiet_ready \u6210\u7acb\u624d\u7d2f\u8ba1\uff0c\u4efb\u4f55\u5931\u9759/\u6682\u505c\u6e05\u96f6\"",
+      "claim_under_test": "losing quiet zeroes the hold run",
+      "method": "accumulate 80 quiet ticks, then 3 ticks at 0.05 m/s, then read the timer",
+      "verdict": "PASS",
+      "observed": {
+        "elapsed_before_break_s": 1.58,
+        "elapsed_after_3_moving_ticks_s": 0.0,
+        "quiet_ready_after_break": false,
+        "measured_speed_during_the_break_m_s": 0.05
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": ""
+    },
+    {
+      "id": "hold-restart-on-pause",
+      "contract_ref": "plan 4 \"\u4efb\u4f55\u5931\u9759/\u6682\u505c\u6e05\u96f6\"",
+      "claim_under_test": "a stance pause also zeroes the hold run",
+      "method": "accumulate 80 quiet ticks, raise pause_for_stance, run 5 further ticks",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "elapsed_before_pause_s": 1.58,
+        "elapsed_after_5_ticks_with_pause_true_s": 1.68,
+        "pause_flag_reaches_the_policy": true,
+        "policy_reads_the_flag_after_handoff": false
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: the flag is set on the live policy object",
+      "note": "the carry state machine never reads pause_for_stance; measured, not inferred"
+    },
+    {
+      "id": "hold-position-window",
+      "contract_ref": "plan 4 \"\u4e0d\u80fd\u4ec5\u7528 quiet_tick \u7ed5\u8fc7 .002 rad \u4f4d\u7f6e\u7a97\u53e3\"",
+      "claim_under_test": "a quiet velocity signal cannot bypass the .002 rad position window",
+      "method": "walk one arm axis at 5e-4 rad/tick with reported qdot exactly zero",
+      "verdict": "PASS",
+      "observed": {
+        "arm_span_limit_rad": 0.002,
+        "ticks_with_quiet_tick_true": 60,
+        "ticks_with_quiet_ready_true": 0,
+        "max_arm_span_rad": 0.0125
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: the check fails if quiet_ready is reachable while walking",
+      "note": ""
+    },
+    {
+      "id": "carry-ready-goal-error",
+      "contract_ref": "plan 4 \"\u4fdd\u7559\u5b9e\u9645 goal_error<.04 rad\u3001\u5b8c\u6574 .5 s\uff0826 \u6837\u672c\uff09\u7a97\u53e3\u4e0e arm span <=.002 rad\"",
+      "claim_under_test": "the carry-ready stationary gate keeps goal_error < .04 rad",
+      "method": "hold a perfectly still arm 0.06 rad AWAY from the fixed A goal and watch the phase",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "fed_goal_error_rad": 0.06,
+        "declared_limit_rad": 0.04,
+        "phase_reached": "PROBE_DRIVE",
+        "left_CARRY_READY": true,
+        "stopped_instead_of_proceeding": false,
+        "stop_reason": null,
+        "wheel_anchor_released_to_start_driving": true,
+        "goal_error_reported_when_it_left_CARRY_READY": 0.06,
+        "ticks_in_CARRY_READY": 26
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: the arm is still, so the window and span gates pass; only the goal-error element can hold the phase",
+      "note": "the debug record prints goal_error_rad next to goal_error_limit_rad, but nothing in the carry state machine compares them"
+    },
+    {
+      "id": "hold-end-to-end",
+      "contract_ref": "plan 4 \"\u5f20\u6307\u5230\u4f4d\u540e\u89c2\u5bdf\u7aef\u70b9\u8ba1\u65f6\" + plan 7 \"\u8fde\u7eed\u89c2\u5bdf\u81f3\u5c11\u771f\u5b9e 3.0 \u79d2\"",
+      "claim_under_test": "the observation ends on a REAL elapsed hold, longer than the window",
+      "method": "drive the production phase machine through the whole carry probe on the audit twist model",
+      "verdict": "PASS",
+      "observed": {
+        "reached_PROBE_HOLD": true,
+        "phases_before_the_hold": [
+          "CARRY_READY",
+          "PROBE_BRAKE_DRIVE",
+          "PROBE_BRAKE_YAW_NEG",
+          "PROBE_BRAKE_YAW_POS",
+          "PROBE_DRIVE",
+          "PROBE_YAW_NEG",
+          "PROBE_YAW_POS"
+        ],
+        "ticks_driven_before_the_hold": 666,
+        "hold_ticks": 51,
+        "quiet_elapsed_s_at_the_completing_tick": 1.0,
+        "phase_elapsed_s_at_the_completing_tick": 1.02,
+        "required_hold_s": 1.0,
+        "quiet_window_s": 0.5,
+        "stop_reason": "delivery_carry_probe_complete"
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": "the carry-probe observation is 1.0 s here; the 3.0 s figure belongs to the release stage, which does not exist yet"
+    },
+    {
+      "id": "hold-pause-end-to-end",
+      "contract_ref": "plan 4 \"\u4efb\u4f55\u5931\u9759/\u6682\u505c\u6e05\u96f6\"",
+      "claim_under_test": "a pause during the observation does not let it complete",
+      "method": "reach PROBE_HOLD, then assert pause_for_stance for the whole observation",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "phase_reached": "STOPPED",
+        "pause_asserted_for_the_whole_observation": true,
+        "ticks_in_the_paused_observation": 51,
+        "stop_reason": "delivery_carry_probe_complete",
+        "quiet_elapsed_s_at_the_stop": 1.0
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: the pause flag is set on the live policy object",
+      "note": "the carry state machine never reads pause_for_stance after the handoff"
+    },
+    {
+      "id": "handoff-incomplete",
+      "contract_ref": "plan 3 \"That is an implementation fault, so stop rather than carry on\"",
+      "claim_under_test": "an incomplete handoff is stopped, not crashed",
+      "method": "stub a prefix that reports handoff_ready but whose state is incomplete",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "outcome": "ValueError: zero-dimensional arrays cannot be concatenated",
+        "state": "STOPPED",
+        "done_reason": "delivery_handoff_incomplete: the carry state is incomplete; the prefix never fully opened"
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": "the intended delivery_handoff_incomplete stop path builds an action from a template that does not exist yet"
+    },
+    {
+      "id": "closing-action-after-stop",
+      "contract_ref": "plan 3 \"\u9876\u5c42\u5bf9\u5916\u4ecd\u63d0\u4f9b act(proprio, images) ... \u4f7f evaluator \u4e0d\u5fc5\u91cd\u5199\u8bb0\u5f55\u5668\"",
+      "claim_under_test": "a closed episode can still be asked for its closing action",
+      "method": "stop the prefix before any handoff, then call act() once more",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "done_reason_after_first_tick": "audit_stub_prefix_stopped_before_the_A_arrival",
+        "second_act_outcome": "ValueError: zero-dimensional arrays cannot be concatenated"
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": "the production evaluator breaks out of its loop on the same tick, so this is latent; any other driver that wants one closing action hits it"
+    },
+    {
+      "id": "drive-unavailable",
+      "contract_ref": "plan 3 \"a missing or broken drive layer must show up as an explicit diagnostic\"",
+      "claim_under_test": "a missing drive layer stops the run with an explicit drive diagnostic",
+      "method": "monkeypatch _drive_layer to return None and drive a movement phase",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "stop_reason": "delivery_probe_no_forward_progress",
+        "ticks_until_the_stop": 276,
+        "wheel_hold_requested_at_the_stop": true,
+        "drive_state_recorded": {
+          "available": false,
+          "reason": "no usable drive layer (task_b.carry_drive is missing or failed to build); the base cannot be commanded to move"
+        },
+        "drive_fault_latched": null
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: the branch is forced directly",
+      "note": "the unavailable drive is reported inside debug[\"wheel\"][\"drive\"] but the STOP reason comes from the stall watchdog"
+    },
+    {
+      "id": "budget-separation",
+      "contract_ref": "plan 4 P0 \"\u79fb\u52a8\u9884\u7b97\u4e0e\u9759\u6b62\u9884\u7b97\u5206\u79bb\" + plan 3 \"\u4e0d\u8981\u5957\u7528 .03 m/.05 rad \u4f4d\u79fb/yaw \u9884\u7b97\"",
+      "claim_under_test": "the loaded move is bounded by the PROBE budget, not by the .03 m stationary budget",
+      "method": "drive PROBE_DRIVE to its own distance target and measure how far the base actually went",
+      "verdict": "PASS",
+      "observed": {
+        "stationary_displacement_budget_m": 0.03,
+        "probe_forward_target_m": 0.2,
+        "distance_travelled_before_the_brake_phase_m": 0.20020000000012672,
+        "phase_after": "PROBE_BRAKE_DRIVE",
+        "stop_reason": null,
+        "carry_probe_path_budget_m": 0.7
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: a wrapper that kept the stationary budget would stop before the target and never reach the brake phase",
+      "note": ""
+    },
+    {
+      "id": "invalid-inputs",
+      "contract_ref": "plan 4 P0 \"NaN/\u4e22\u5e27/\u65e0\u8fdb\u5c55\u6b63\u5e38\u505c\u6b62\"",
+      "claim_under_test": "NaN / wrong-length / over-tilt proprio stop normally instead of crashing",
+      "method": "feed three malformed proprio vectors to the production act()",
+      "verdict": "PASS",
+      "observed": {
+        "hard_tilt_rad": 0.25,
+        "cases": {
+          "nan": {
+            "outcome": "returned",
+            "done_reason": "delivery_invalid_proprio",
+            "state": "STOPPED"
+          },
+          "short_vector": {
+            "outcome": "returned",
+            "done_reason": "delivery_invalid_proprio",
+            "state": "STOPPED"
+          },
+          "tilted_body_beyond_the_hard_limit": {
+            "outcome": "returned",
+            "done_reason": "delivery_tilt_limit_exceeded",
+            "state": "STOPPED"
+          }
+        }
+      },
+      "evidence": {},
+      "trivial_pass_risk": "none: each case requires BOTH a returned action and a named stop reason",
+      "note": ""
+    },
+    {
+      "id": "release-stage-absent",
+      "contract_ref": "plan 7 \"RELEASE_OPEN \u8fdb\u5165\u6761\u4ef6: D \u5b9e\u9645\u5230\u4f4d\u3001\u5b8c\u6574\u65b0\u9c9c\u9759\u6b62\u7a97\u53e3\u6210\u7acb\u3001\u8f6e\u951a\u4fdd\u6301...\"",
+      "claim_under_test": "the release/open stage is unreachable before the arrival gates",
+      "method": "enumerate the declared phases and drive both modes to their stop",
+      "verdict": "NOT_APPLICABLE",
+      "observed": {
+        "declared_carry_phases": [
+          "CARRY_READY",
+          "PREFIX",
+          "PROBE_BRAKE_DRIVE",
+          "PROBE_BRAKE_YAW_NEG",
+          "PROBE_BRAKE_YAW_POS",
+          "PROBE_DRIVE",
+          "PROBE_HOLD",
+          "PROBE_YAW_NEG",
+          "PROBE_YAW_POS",
+          "STOPPED"
+        ],
+        "release_like_phases_declared": [],
+        "declared_stop_reasons": [
+          "delivery_carry_probe_complete",
+          "delivery_handoff_never_ready"
+        ],
+        "stop_reasons_claiming_a_delivery": [],
+        "carry_probe_phases_visited": [
+          "CARRY_READY",
+          "PROBE_BRAKE_DRIVE",
+          "PROBE_BRAKE_YAW_NEG",
+          "PROBE_BRAKE_YAW_POS",
+          "PROBE_DRIVE",
+          "PROBE_HOLD",
+          "PROBE_YAW_NEG",
+          "PROBE_YAW_POS"
+        ],
+        "first_delivery_phases_visited": [
+          "CARRY_READY",
+          "PROBE_BRAKE_DRIVE",
+          "PROBE_BRAKE_YAW_NEG",
+          "PROBE_BRAKE_YAW_POS",
+          "PROBE_DRIVE",
+          "PROBE_HOLD",
+          "PROBE_YAW_NEG",
+          "PROBE_YAW_POS"
+        ],
+        "carry_probe_stop_reason": "delivery_carry_probe_complete",
+        "first_delivery_stop_reason": "delivery_carry_probe_complete",
+        "first_delivery_is_the_same_sequence_as_carry_probe": true,
+        "carry_probe_selectable_from_the_evaluator_cli": true,
+        "first_delivery_selectable_from_the_evaluator_cli": false,
+        "evaluator_mode_choices": [
+          "carry_probe",
+          "contact_grasp",
+          "crouch",
+          "first_reach",
+          "forward",
+          "grasp_probe",
+          "hold",
+          "multi_reach",
+          "payload_motion",
+          "reach_probe",
+          "turn",
+          "visual_approach"
+        ]
+      },
+      "evidence": {},
+      "trivial_pass_risk": "THIS CHECK IS VACUOUS TODAY: the release/open stage does not exist in the delivered module, so there is no gate to test and no failure to reclassify. The battery can only become real once the stage exists.",
+      "note": "a failed open cannot be reclassified as a release because there is no open and no release; the delivery chain has not been implemented yet"
+    },
+    {
+      "id": "no-ground-truth",
+      "contract_ref": "plan 3 ownership table + plan 7 \"\u4e0d\u5411\u7b56\u7565\u6ce8\u5165 GT/root/contact/reward/seed \u5730\u56fe\"",
+      "claim_under_test": "no GT, world base pose, contact force, reward, score or seed map reaches the policy",
+      "method": "AST scan of delivery.py/carry_drive.py/bucket_observation.py for contract-derived names",
+      "verdict": "PASS",
+      "observed": {
+        "forbidden_identifiers_checked": [
+          "OBJECT_NAMES",
+          "base_pos",
+          "base_quat",
+          "base_world",
+          "base_xyz",
+          "contact_force",
+          "contact_forces",
+          "contact_sensor",
+          "env_origins",
+          "env_reward",
+          "final_state_before_close",
+          "finger_contact_forces_w",
+          "force_matrix",
+          "grasped_objects",
+          "illegal_force",
+          "max_illegal_force",
+          "net_forces_w",
+          "np_random",
+          "object_names",
+          "object_pos",
+          "object_pose",
+          "object_position",
+          "object_quat",
+          "object_root",
+          "object_xyz",
+          "objects_in_circle",
+          "reward",
+          "reward_manager",
+          "reward_raw_total",
+          "reward_terms",
+          "root_pos_w",
+          "root_quat_w",
+          "score",
+          "scoring_events",
+          "seed",
+          "seed_map",
+          "termination_flags",
+          "world_pose"
+        ],
+        "forbidden_imports_checked": [
+          "isaaclab",
+          "isaacsim",
+          "omni",
+          "pxr",
+          "task_b.diagnostics",
+          "task_b.evaluate",
+          "torch"
+        ],
+        "hits_per_file": {
+          "delivery.py": {
+            "identifier_hits": [],
+            "import_hits": [],
+            "standalone_string_literal_hits": []
+          },
+          "carry_drive.py": {
+            "identifier_hits": [],
+            "import_hits": [],
+            "standalone_string_literal_hits": []
+          },
+          "bucket_observation.py": {
+            "identifier_hits": [],
+            "import_hits": [],
+            "standalone_string_literal_hits": []
+          }
+        },
+        "total_code_hits": 0
+      },
+      "evidence": {},
+      "trivial_pass_risk": "an identifier scan can only catch literal names; it cannot prove that a value is not smuggled in through a differently named variable. It is a necessary, not a sufficient, check.",
+      "note": ""
+    },
+    {
+      "id": "public-inputs-only",
+      "contract_ref": "plan 3 \"\u6240\u6709\u7b56\u7565\u6a21\u5757\u4ecd\u53ea\u6709 public inputs\"",
+      "claim_under_test": "the policy entry point accepts only public proprio and RGB-D",
+      "method": "inspect the production act() signature and run a carry sequence CPU-only",
+      "verdict": "PASS",
+      "observed": {
+        "act_signature": "(self, proprio, images)",
+        "debug_keys": [
+          "arm_command_rad",
+          "arm_velocity",
+          "calls",
+          "child_called_this_tick",
+          "done_reason",
+          "evidence_note",
+          "goal_error_limit_rad",
+          "goal_error_rad",
+          "handoff",
+          "jaw",
+          "measured",
+          "mode",
+          "module",
+          "odometry",
+          "phase",
+          "phase_elapsed_s",
+          "probe",
+          "quiet",
+          "reason",
+          "state",
+          "wheel"
+        ]
+      },
+      "evidence": {},
+      "trivial_pass_risk": "a signature check cannot see what act() does with the values; the AST scan above is the companion check",
+      "note": ""
+    },
+    {
+      "id": "integral-windup-slew",
+      "contract_ref": "plan 4 P0 \"CPU \u8986\u76d6\u52a0\u8f7d\u2192\u8f93\u51fa\u5939\u9650\u2192\u5378\u8f7d\" + signal review 5.3 \"\u672a\u53cd\u9988\u6700\u7ec8 slew/tether/hard-limit \u7684\u5939\u9650\"",
+      "claim_under_test": "a final-command clamp must stop the integral from ramping",
+      "method": "feed-forward 0.15 rad on one axis with a 5e-2 tracking error inside the P cap; recompute candidate-command every tick",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "ticks_where_the_applied_command_is_clamped": 200,
+        "p_term_always_inside_its_cap": true,
+        "integral_axis1_first_tick": 0.006839999999999999,
+        "integral_axis1_last_tick": 0.2,
+        "integral_accumulated_rad": 0.19316,
+        "integral_cap_rad": 0.2,
+        "p_cap_axis1_rad": 0.14,
+        "max_candidate_minus_applied_rad": 0.30300000000000005,
+        "final_candidate_minus_applied_rad": 0.30300000000000005
+      },
+      "evidence": {},
+      "trivial_pass_risk": "guarded: the battery requires both a clamped row and a non-zero integral before it can falsify",
+      "note": "the code's own \"unsaturated\" test only compares the P term with its cap, so it reports unsaturated while the applied command is slew/tether clamped"
+    },
+    {
+      "id": "integral-windup-hardlimit",
+      "contract_ref": "plan 4 P0 \"\u79ef\u5206\u5728\u6700\u7ec8\u547d\u4ee4\u9650\u5e45\u65f6\u4ecd\u53ef\u80fd\u79ef\u5206\"",
+      "claim_under_test": "a HARD joint-limit clamp must stop the integral from ramping",
+      "method": "place the reference on arm_joint3's upper static limit with a 5e-2 error inside the P cap",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "static_upper_axis2_rad": 0.0,
+        "ticks_pinned_at_the_hard_limit": 291,
+        "p_always_inside_its_cap": true,
+        "integral_axis2_final_rad": 0.2,
+        "integral_cap_rad": 0.2,
+        "p_cap_axis2_rad": 0.08,
+        "candidate_minus_applied_final_rad": 0.225
+      },
+      "evidence": {},
+      "trivial_pass_risk": "",
+      "note": ""
+    },
+    {
+      "id": "unload-overshoot",
+      "contract_ref": "plan 7 \"\u5378\u8f7d\u65f6\u79ef\u5206\u53ea\u4f5c\u6297 windup \u548c\u65e2\u6709\u6709\u754c\u53cd\u9988\uff0c\u4e0d\u80fd\u628a arm_command \u4e00\u6b21\u6027\u8df3\u56de\u65e0\u8f7d\u53c2\u8003\"",
+      "claim_under_test": "after unloading, the wound-up trim must not bias the command past its reference",
+      "method": "unload a tracker that wound up against a hard limit, then move its goal clear of the limit",
+      "verdict": "FALSIFIED",
+      "observed": {
+        "integral_axis2_at_unload_rad": 0.2,
+        "integral_cap_rad": 0.2,
+        "integral_never_rewinds": true,
+        "reference_axis2_at_settle_rad": -0.4,
+        "command_axis2_at_settle_rad": -0.30000000000000004,
+        "steady_state_bias_past_the_reference_rad": 0.09999999999999998,
+        "candidate_minus_reference_at_settle_rad": 0.19239991828012415,
+        "arm_tether_axis2_rad": 0.1,
+        "first_tick_command_is_slew_bounded_not_a_jump": true
+      },
+      "evidence": {},
+      "trivial_pass_risk": "guarded: the battery fails only if the un-rewound trim actually holds the command away from the reference",
+      "note": "the command is slew-bounded (no jump), which the design does achieve; the hazard is the stored trim, which never leaks and therefore holds a permanent steady-state offset"
+    }
+  ]
+}

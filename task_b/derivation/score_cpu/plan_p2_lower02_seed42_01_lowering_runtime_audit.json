@@ -1,0 +1,371 @@
+{
+  "scope": "Independent arithmetic on complete original-environment artifacts. Object truth is diagnostic only, never policy input. One local seed and one positive proximity event do not establish grasp, delivery, success rate or Task B completion.",
+  "run_id": "plan_p2_lower02_seed42_01",
+  "steps": 3378,
+  "score_raw_total": 0.9999999776482582,
+  "original_reward_terms": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 1.0
+  },
+  "first_positive_step": 3278,
+  "stop_reason": "positive_score_observation_window_complete",
+  "terminated": false,
+  "truncated": false,
+  "official_termination_flags_any": false,
+  "maximum_illegal_force_N": 0.0,
+  "object_id_1based": 10,
+  "lowering_authorization": {
+    "step": 3191,
+    "public_position_mapping_max_error_rad": 7.450580596923828e-09,
+    "q0_vs_actual_auth_max_error_rad": 7.450580596923828e-09,
+    "q0_vs_public_auth_max_error_rad": 0.0,
+    "joint_names": [
+      "FR_hip_joint",
+      "FR_thigh_joint",
+      "FR_calf_joint",
+      "FL_hip_joint",
+      "FL_thigh_joint",
+      "FL_calf_joint",
+      "RR_hip_joint",
+      "RR_thigh_joint",
+      "RR_calf_joint",
+      "RL_hip_joint",
+      "RL_thigh_joint",
+      "RL_calf_joint"
+    ],
+    "q0_actual_leg_rad": [
+      -0.2636818364262581,
+      0.8420103788375854,
+      -1.8739150762557983,
+      0.2640773728489876,
+      0.8519362807273865,
+      -1.8970520496368408,
+      -0.19354979693889618,
+      0.9490413665771484,
+      -1.7502201795578003,
+      0.20744143426418304,
+      0.9700478315353394,
+      -1.759968876838684
+    ],
+    "window_steps": [
+      3167,
+      3191
+    ],
+    "window_observations": 25,
+    "window_control_occupancy_s": 0.5,
+    "first_to_last_observation_span_s": 0.48,
+    "all_public_and_actual_conditions_met": true,
+    "max_actual_arm_error_rad": 0.012089433212638001,
+    "max_actual_arm_qdot_rad_s": 0.03725690767168999,
+    "max_public_plane_speed_m_s": 0.001680846093787495,
+    "max_public_linear_norm_m_s": 0.023974447051218917,
+    "max_public_angular_norm_rad_s": 0.10139450374226162,
+    "max_tilt_rad": 0.07193756051208551,
+    "max_actual_leg_window_range_rad": 0.000418245792388916,
+    "max_public_leg_window_range_rad": 0.000418245792388916,
+    "max_instantaneous_actual_leg_qdot_rad_s": 0.1429758071899414
+  },
+  "reference_execution": {
+    "fixed_lowering_m": 0.02,
+    "first_positive_alpha": 0.5866666666666666,
+    "first_full_alpha_command_step": 3340,
+    "increments_to_full": 150,
+    "control_occupancy_to_full_s": 3.0,
+    "first_to_full_command_span_s": 2.98,
+    "max_alpha_increment": 0.00666666666666671,
+    "allowed_max_alpha_increment": 0.006666666666666667,
+    "min_alpha_increment": 0.0,
+    "max_alpha": 1.0,
+    "all_unauthorized_alpha_zero": true,
+    "authorization_only_once": true,
+    "max_q0_relock_error_rad": 0.0,
+    "max_goal_retarget_error_rad": 0.0,
+    "requested_leg_action_physical_error_rad": 3.3671380683664154e-09,
+    "increment_error_diagnostic_replay_max_error_rad": 7.450580596923828e-09,
+    "beta_diagnostic_replay_max_error": 9.815618540187643e-09,
+    "max_actual_increment_error_rad": 0.004646766242980958,
+    "final_beta": 1.0401601513672185,
+    "final_alpha": 1.0,
+    "last_recorded_lower_hold_s": 0.74,
+    "full_two_second_lower_hold_observed": false,
+    "hold_limit_note": "Evaluator ended at 100 completed steps (2 s) after first positive score. The full-alpha hold had only 0.74 s recorded, so reach_lowering_hold_complete was not observed.",
+    "remaining_lower_deadline_s": 2.26
+  },
+  "authorization_pose_and_distance": {
+    "step": 3191,
+    "timing": "pre_step",
+    "distance_3d_m": 0.21134813023703375,
+    "horizontal_distance_m": 0.015344503378856542,
+    "signed_gripper_above_root_m": 0.21079036593437195,
+    "base_delta_world_xyz_from_authorization_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gripper_delta_world_xyz_from_authorization_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "base_xy_drift_from_authorization_m": 0.0,
+    "gripper_xy_drift_from_authorization_m": 0.0
+  },
+  "first_positive_post_step_pose_and_distance": {
+    "step": 3278,
+    "timing": "post_step_before_any_reset",
+    "distance_3d_m": 0.1999666892893277,
+    "horizontal_distance_m": 0.017154063674105775,
+    "signed_gripper_above_root_m": 0.19922955334186554,
+    "base_delta_world_xyz_from_authorization_m": [
+      -0.002686023712158203,
+      -0.0005626678466796875,
+      -0.011550962924957275
+    ],
+    "gripper_delta_world_xyz_from_authorization_m": [
+      -0.0026612281799316406,
+      -0.0006008148193359375,
+      -0.011560767889022827
+    ],
+    "base_xy_drift_from_authorization_m": 0.0027443247781491335,
+    "gripper_xy_drift_from_authorization_m": 0.002728207080262777
+  },
+  "first_full_reference_executed_state": {
+    "step": 3341,
+    "timing": "pre_step_after_first_full_alpha_action_executed",
+    "distance_3d_m": 0.19168916513263196,
+    "horizontal_distance_m": 0.01881954656962966,
+    "signed_gripper_above_root_m": 0.19076310098171234,
+    "base_delta_world_xyz_from_authorization_m": [
+      -0.004818439483642578,
+      -0.0010576248168945312,
+      -0.020000040531158447
+    ],
+    "gripper_delta_world_xyz_from_authorization_m": [
+      -0.004725456237792969,
+      -0.0012025833129882812,
+      -0.020027369260787964
+    ],
+    "base_xy_drift_from_authorization_m": 0.004933145985153586,
+    "gripper_xy_drift_from_authorization_m": 0.004876078678607878
+  },
+  "minimum_pre_step_pose_and_distance": {
+    "step": 3348,
+    "timing": "pre_step",
+    "distance_3d_m": 0.19115828255048942,
+    "horizontal_distance_m": 0.019091786427034633,
+    "signed_gripper_above_root_m": 0.1902025043964386,
+    "base_delta_world_xyz_from_authorization_m": [
+      -0.005091667175292969,
+      -0.0011272430419921875,
+      -0.020413458347320557
+    ],
+    "gripper_delta_world_xyz_from_authorization_m": [
+      -0.005008697509765625,
+      -0.0013284683227539062,
+      -0.020587801933288574
+    ],
+    "base_xy_drift_from_authorization_m": 0.0052149546018806035,
+    "gripper_xy_drift_from_authorization_m": 0.0051818798547335065
+  },
+  "final_post_step_pose_and_distance": {
+    "step": 3378,
+    "timing": "post_step_before_any_reset",
+    "distance_3d_m": 0.19144420031473167,
+    "horizontal_distance_m": 0.01918446633332626,
+    "signed_gripper_above_root_m": 0.1904805451631546,
+    "base_delta_world_xyz_from_authorization_m": [
+      -0.005277156829833984,
+      -0.0011625289916992188,
+      -0.020272791385650635
+    ],
+    "gripper_delta_world_xyz_from_authorization_m": [
+      -0.005189418792724609,
+      -0.001308441162109375,
+      -0.02030983567237854
+    ],
+    "base_xy_drift_from_authorization_m": 0.005403689282629477,
+    "gripper_xy_drift_from_authorization_m": 0.005351830124451399
+  },
+  "motion_from_authorization": {
+    "max_base_xy_drift_m": 0.005490732586185346,
+    "max_gripper_xy_drift_m": 0.005435714152161531,
+    "max_body_actual_downward_m": 0.020415306091308594,
+    "max_gripper_actual_downward_m": 0.020587801933288574,
+    "public_z_velocity_not_used_as_descent_measure": true,
+    "max_public_tangent_speed_m_s": 0.0026965643461084082,
+    "max_actual_world_planar_interval_speed_m_s": 0.002733092327840167,
+    "max_actual_arm_goal_error_rad": 0.012036742706656556,
+    "max_actual_arm_qdot_rad_s": 0.03504815325140953,
+    "max_public_budget_displacement_m": 0.0037981015996649808,
+    "max_public_budget_yaw_rad": 0.0012824549489597369,
+    "max_public_budget_gravity_change_rad": 0.00543311418533058
+  },
+  "soft_settle_segments": [
+    {
+      "first_step": 3148,
+      "last_paused_label_step": 3166,
+      "resume_step": 3167,
+      "paused_label_samples": 19,
+      "episode_budget_s_including_resume": 0.4,
+      "all_policy_states_REACH": true,
+      "holder_active_all_paused_samples": true,
+      "lowering_alphas_during_pause": [
+        0.0
+      ],
+      "cause": "public_angular_norm"
+    }
+  ],
+  "holder_replay": {
+    "snapshot_sha256": "41503365b8d3b4d05670758c886337e47aa63c3585147c697ccce3089b31a605",
+    "scale": 5.0,
+    "ordinary_gain": 8.0,
+    "snapshot_matches_manifest": true,
+    "optional_stabilizer_present": false,
+    "active_sample_count": 620,
+    "inactive_sample_count": 2758,
+    "max_active_physical_command_error_rad_s": 2.9802322387695312e-08,
+    "max_replayed_debug_error": 0.0,
+    "max_inactive_normalized_wheel_error": 0.0,
+    "max_contiguous_anchor_change_rad": 0.0,
+    "brake_to_reach_transitions": [
+      {
+        "step": 2840,
+        "unchanged_anchor": true,
+        "mean_error_rad": 0.14238093793392181,
+        "command_rad_s": 0.3020061918068677
+      }
+    ],
+    "passed": true
+  },
+  "rollback": [
+    {
+      "steps": [
+        2759,
+        3378
+      ],
+      "states": [
+        "BRAKE",
+        "REACH",
+        "REACH_READY"
+      ],
+      "duration_s": 12.4,
+      "max_rollback_from_entry_m": 0.01908261497336432,
+      "max_drawdown_from_furthest_forward_m": 0.023497898492597077,
+      "net_forward_displacement_m": -0.01900783721609642,
+      "public_tangent_integral_m": -0.015387106260663237,
+      "public_integral_max_rollback_m": 0.015543500731435867,
+      "public_vs_world_forward_integral_max_error_m": 0.0036207309554331848,
+      "rollback_within_2cm": true,
+      "steady_last_up_to_1s_after_brake_1s": {
+        "sample_count": 50,
+        "public_tangent_speed_median_m_s": 0.0017273132026817072,
+        "public_tangent_speed_max_m_s": 0.0023271816145098803,
+        "world_planar_speed_median_m_s": 0.001221299055032432,
+        "world_planar_speed_max_m_s": 0.002221902599558234,
+        "all_public_speeds_below_001": true,
+        "all_world_speeds_below_001": true
+      }
+    }
+  ],
+  "stop_proprio_evidence": {
+    "policy_stop_record_present": false,
+    "last_public_observation_step": 3378,
+    "last_public_observation_timing": "pre_step_3378",
+    "values": [
+      -0.0009069113293662667,
+      -0.0016176797216758132,
+      0.02382977120578289,
+      -0.100746750831604,
+      -0.0050554899498820305,
+      -0.006584262941032648,
+      -0.8393620252609253,
+      0.9760632514953613,
+      1.0,
+      0.07108160853385925,
+      0.010797005146741867,
+      -0.9974120855331421,
+      -0.1750083565711975,
+      0.06978130340576172,
+      -0.43600940704345703,
+      0.17562419176101685,
+      0.07973527908325195,
+      -0.45963501930236816,
+      -0.1018613651394844,
+      -0.013223469257354736,
+      -0.3177448511123657,
+      0.11548937112092972,
+      0.008574962615966797,
+      -0.32852065563201904,
+      6.10629940032959,
+      0.9729910492897034,
+      5.0990471839904785,
+      1.6689612865447998,
+      0.5466694235801697,
+      3.1400065422058105,
+      -1.6651777029037476,
+      0.003207345260307193,
+      -0.08630811423063278,
+      2.0505515294644283e-06,
+      0.03487023711204529,
+      -0.03495580330491066,
+      0.14522749185562134,
+      -0.03747086599469185,
+      0.08017721772193909,
+      0.08232741057872772,
+      -0.009682534262537956,
+      0.05023821443319321,
+      0.12596724927425385,
+      -0.048687636852264404,
+      0.0887078046798706,
+      0.08070572465658188,
+      -0.011061287485063076,
+      0.041229017078876495,
+      -0.025486964732408524,
+      -0.07503001391887665,
+      -0.03465661033987999,
+      -0.06316623091697693,
+      0.017722444608807564,
+      0.0007927576079964638,
+      -0.03271644935011864,
+      -0.0018835156224668026,
+      -0.007617350667715073,
+      0.0002777760091703385,
+      -0.006793701555579901,
+      -0.009047188796103,
+      -0.3663249611854553,
+      0.21808718144893646,
+      -0.030510718002915382,
+      0.4057430922985077,
+      0.2420918345451355,
+      -0.041558247059583664,
+      -0.37030157446861267,
+      -0.10542809218168259,
+      -0.09447334706783295,
+      0.37849634885787964,
+      -0.09661886096000671,
+      -0.10041804611682892,
+      0.06174962967634201,
+      0.06174962967634201,
+      0.06174962967634201,
+      0.06174962967634201,
+      1.09917151927948,
+      6.279997825622559,
+      -3.353853702545166,
+      0.006366701330989599,
+      -0.17678512632846832,
+      0.0,
+      0.07000000029802322,
+      -0.07000000029802322
+    ],
+    "final_state_timing": "post_step_before_any_reset",
+    "caveat": "Positive-score evaluator stop is post-step; no public proprio vector after that final physics step is recorded."
+  },
+  "source_sha256": {
+    "result.json": "b1230540a671a1354849230ae0da2d9f39e8656421ec3972a6f0faa49ed87f2c",
+    "telemetry.npz": "f42934e461316b46049551830627b349e2fac23ab6d9d1327387b80f25e39061",
+    "trace.jsonl": "511f2b9fc3ff7ee0d09783c199a83ffd4af2a942061082205cfea201c2f8df8a",
+    "scoring_events.json": "540ce598e643d241bfa6db978e9a91a1dc647432cf91c2a3e84aa59070ab09d0",
+    "source_snapshots/task_b/first_reach.py": "5efb6324f3b9f6b2f328d060e84ea60564b7580dab6b81e00a03b57d74d2b897",
+    "source_snapshots/task_b/brake_wheel_hold.py": "41503365b8d3b4d05670758c886337e47aa63c3585147c697ccce3089b31a605"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "scope": "Static public-reference reparameterization only; no new grasp or contact certificate. The object is assumed unchanged while the open wrist turns, so its relative gripper transform must be recomputed.",
+  "q6_delta_rad": 0.5235987755982988,
+  "new_reference_q": [
+    0.5445030331611633,
+    3.140007257461548,
+    -1.6706745624542236,
+    0.004823826253414154,
+    -0.08764371275901794,
+    0.5249169448903613
+  ],
+  "new_reference_gripper_translation_change_m": 0.0,
+  "stages": [
+    {
+      "stage": "A",
+      "q": [
+        0.5445121405958139,
+        1.6409201808286697,
+        -1.5813717882003169,
+        -0.0004950988924328079,
+        1.122141652598167,
+        0.5299380895779708
+      ],
+      "fit_success": true,
+      "pose_translation_error_vs_original_m": 3.40987158999494e-15,
+      "difference_from_old_q_plus_q6_rotation_rad": 1.8207657603852567e-14,
+      "hard_limits_satisfied": true
+    },
+    {
+      "stage": "B",
+      "q": [
+        1.5707963267948966,
+        1.6409201808286697,
+        -1.5813717882003169,
+        -0.0004950988924328079,
+        1.122141652598167,
+        0.5299380895779708
+      ],
+      "fit_success": null,
+      "pose_translation_error_vs_original_m": 3.370217268963258e-15,
+      "difference_from_old_q_plus_q6_rotation_rad": 1.8207657603852567e-14,
+      "hard_limits_satisfied": true
+    },
+    {
+      "stage": "C",
+      "q": [
+        1.5708852345166135,
+        2.3201804765013114,
+        -2.417348605321574,
+        -0.0005402092198611511,
+        1.0788582151848582,
+        0.5300492485241298
+      ],
+      "fit_success": true,
+      "pose_translation_error_vs_original_m": 1.0991097411059573e-10,
+      "difference_from_old_q_plus_q6_rotation_rad": 2.293085721305488e-09,
+      "hard_limits_satisfied": true
+    }
+  ],
+  "payload_invariance_condition": "FK(q + q6_delta)=FK(q) Rz(delta). If newly grasped stationary bottle relative transform is Rz(-delta) times the old relative transform, the new body/world payload geometry is unchanged. Never reuse the old relative attachment matrix without this update.",
+  "unchanged_mesh_scope": "This calculation proves transform cancellation only; the new finger geometry/contact and extra descent need a real run audit."
+}

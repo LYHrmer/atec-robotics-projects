@@ -1,0 +1,319 @@
+{
+  "run_id": "plan_p4_grasp_force75_seed42_01",
+  "baseline_step": 2924,
+  "baseline_base_xyz": [
+    -7.183420181274414,
+    -9.007926940917969,
+    0.5068339109420776
+  ],
+  "original_first_reach_lowering_parameter_range_m": [
+    0,
+    0.03
+  ],
+  "original_fall_threshold_base_z_m": 0.0,
+  "original_illegal_contact_threshold_N": 1.0,
+  "cases": [
+    {
+      "extra_reference_lowering_m": 0.0,
+      "total_reference_lowering_m": 0.03,
+      "predicted_base_xyz": [
+        -7.183420181274414,
+        -9.007926940917969,
+        0.5068339109420774
+      ],
+      "predicted_base_descent_m": 2.220446049250313e-16,
+      "predicted_tilt_rad": 0.07109241970553813,
+      "wheel_center_rigid_fit_max_error_m": 5.551115123125783e-17,
+      "minimum_leg_hard_limit_margin_rad": 0.6005324673652649,
+      "minimum_thigh_visual_box_world_z_m": 0.22677862799949694,
+      "base_visual_box_min_z_m": {
+        "/b2w_description/base_link": 0.37022668240598267
+      },
+      "gripper_world": [
+        -6.738928981451701,
+        -8.696480321056255,
+        0.3231182633230018
+      ],
+      "finger_axis_tip_world": [
+        -6.722311683953035,
+        -8.674423395774028,
+        0.1901558721331051
+      ],
+      "fixed_object_vertices_in_contact_depth": 1834,
+      "fixed_object_contact_depth_xyz_bounds": [
+        [
+          -0.021653672881227593,
+          -0.03422023589157672,
+          0.088635424353367
+        ],
+        [
+          0.041841024044531355,
+          0.029396354034853772,
+          0.1357956693478462
+        ]
+      ],
+      "object_y_bounds_within_finger_x_extent": [
+        -0.03422023589157672,
+        0.029396354034853772
+      ],
+      "ideal_open_70mm_finger_hull_intersects_fixed_object": {
+        "link7": false,
+        "link8": false
+      },
+      "nominal_leg_q": {
+        "FR": [
+          -0.2690097689628601,
+          0.8831831216812134,
+          -1.9687021970748901,
+          6.111014366149902
+        ],
+        "FL": [
+          0.2694675326347351,
+          0.8931072354316711,
+          -1.9923804998397827,
+          0.9803778529167175
+        ],
+        "RR": [
+          -0.19711312651634216,
+          1.0055012702941895,
+          -1.8523812294006348,
+          5.099752426147461
+        ],
+        "RL": [
+          0.2105536162853241,
+          1.0276464223861694,
+          -1.86361825466156,
+          1.675805926322937
+        ]
+      }
+    },
+    {
+      "extra_reference_lowering_m": 0.01,
+      "total_reference_lowering_m": 0.04,
+      "predicted_base_xyz": [
+        -7.18354964301225,
+        -9.007933572921909,
+        0.4967776122060454
+      ],
+      "predicted_base_descent_m": 0.010056298736032254,
+      "predicted_tilt_rad": 0.07092215326940461,
+      "wheel_center_rigid_fit_max_error_m": 0.0002394803752941645,
+      "minimum_leg_hard_limit_margin_rad": 0.5940424673652649,
+      "minimum_thigh_visual_box_world_z_m": 0.22105934567984542,
+      "base_visual_box_min_z_m": {
+        "/b2w_description/base_link": 0.3602375410186859
+      },
+      "gripper_world": [
+        -6.739020599432567,
+        -8.69649406974904,
+        0.31314148231656014
+      ],
+      "finger_axis_tip_world": [
+        -6.722377216261257,
+        -8.674440332287672,
+        0.1801818250494098
+      ],
+      "fixed_object_vertices_in_contact_depth": 2273,
+      "fixed_object_contact_depth_xyz_bounds": [
+        [
+          -0.029638422377551776,
+          -0.039531039563989574,
+          0.07888076774013471
+        ],
+        [
+          0.04491600161523359,
+          0.03535492471309235,
+          0.13577165300025304
+        ]
+      ],
+      "object_y_bounds_within_finger_x_extent": [
+        -0.039531039563989574,
+        0.03535492471309235
+      ],
+      "ideal_open_70mm_finger_hull_intersects_fixed_object": {
+        "link7": true,
+        "link8": false
+      },
+      "nominal_leg_q": {
+        "FR": [
+          -0.2758147689628601,
+          0.8974531216812134,
+          -1.9977971970748902,
+          6.111014366149902
+        ],
+        "FL": [
+          0.2759575326347351,
+          0.9073872354316711,
+          -2.0217104998397826,
+          0.9803778529167175
+        ],
+        "RR": [
+          -0.20207312651634216,
+          1.0245512702941895,
+          -1.8843812294006348,
+          5.099752426147461
+        ],
+        "RL": [
+          0.2152736162853241,
+          1.0470614223861694,
+          -1.89574825466156,
+          1.675805926322937
+        ]
+      }
+    },
+    {
+      "extra_reference_lowering_m": 0.02,
+      "total_reference_lowering_m": 0.05,
+      "predicted_base_xyz": [
+        -7.1837176655940285,
+        -9.007953782573344,
+        0.48664901032666447
+      ],
+      "predicted_base_descent_m": 0.02018490061541317,
+      "predicted_tilt_rad": 0.07071543882252317,
+      "wheel_center_rigid_fit_max_error_m": 0.0006223584054731217,
+      "minimum_leg_hard_limit_margin_rad": 0.5873802310371399,
+      "minimum_thigh_visual_box_world_z_m": 0.21531971548731615,
+      "base_visual_box_min_z_m": {
+        "/b2w_description/base_link": 0.3501916691658814
+      },
+      "gripper_world": [
+        -6.7391444408948065,
+        -8.696519458369877,
+        0.30311107824807537
+      ],
+      "finger_axis_tip_world": [
+        -6.722470160313668,
+        -8.674467822027198,
+        0.17015494374608353
+      ],
+      "fixed_object_vertices_in_contact_depth": 2677,
+      "fixed_object_contact_depth_xyz_bounds": [
+        [
+          -0.03438036937234175,
+          -0.04204993096706623,
+          0.06907997829295509
+        ],
+        [
+          0.04691285942714406,
+          0.03788208014315668,
+          0.13575743832552167
+        ]
+      ],
+      "object_y_bounds_within_finger_x_extent": [
+        -0.04204993096706623,
+        0.03788208014315668
+      ],
+      "ideal_open_70mm_finger_hull_intersects_fixed_object": {
+        "link7": true,
+        "link8": true
+      },
+      "nominal_leg_q": {
+        "FR": [
+          -0.2826197689628601,
+          0.9117231216812134,
+          -2.0268921970748903,
+          6.111014366149902
+        ],
+        "FL": [
+          0.2824475326347351,
+          0.9216672354316712,
+          -2.051040499839783,
+          0.9803778529167175
+        ],
+        "RR": [
+          -0.20703312651634218,
+          1.0436012702941895,
+          -1.9163812294006348,
+          5.099752426147461
+        ],
+        "RL": [
+          0.2199936162853241,
+          1.0664764223861694,
+          -1.92787825466156,
+          1.675805926322937
+        ]
+      }
+    },
+    {
+      "extra_reference_lowering_m": 0.03,
+      "total_reference_lowering_m": 0.06,
+      "predicted_base_xyz": [
+        -7.18392320609843,
+        -9.00798733435881,
+        0.47645159117212066
+      ],
+      "predicted_base_descent_m": 0.030382319769956978,
+      "predicted_tilt_rad": 0.07047259278577134,
+      "wheel_center_rigid_fit_max_error_m": 0.0011527546386932382,
+      "minimum_leg_hard_limit_margin_rad": 0.5805752310371399,
+      "minimum_thigh_visual_box_world_z_m": 0.20956128885161962,
+      "base_visual_box_min_z_m": {
+        "/b2w_description/base_link": 0.3400924241550736
+      },
+      "gripper_world": [
+        -6.7392995250631005,
+        -8.696556274791417,
+        0.2930303810503266
+      ],
+      "finger_axis_tip_world": [
+        -6.722589566487207,
+        -8.674505677965476,
+        0.16007855344343833
+      ],
+      "fixed_object_vertices_in_contact_depth": 3073,
+      "fixed_object_contact_depth_xyz_bounds": [
+        [
+          -0.036778074486518486,
+          -0.04383325657836295,
+          0.05930026222571259
+        ],
+        [
+          0.04721952321708721,
+          0.03868966944623007,
+          0.1357489081750737
+        ]
+      ],
+      "object_y_bounds_within_finger_x_extent": [
+        -0.04383325657836295,
+        0.03868966944623007
+      ],
+      "ideal_open_70mm_finger_hull_intersects_fixed_object": {
+        "link7": true,
+        "link8": true
+      },
+      "nominal_leg_q": {
+        "FR": [
+          -0.2894247689628601,
+          0.9259931216812134,
+          -2.05598719707489,
+          6.111014366149902
+        ],
+        "FL": [
+          0.2889375326347351,
+          0.9359472354316711,
+          -2.0803704998397827,
+          0.9803778529167175
+        ],
+        "RR": [
+          -0.21199312651634217,
+          1.0626512702941895,
+          -1.9483812294006349,
+          5.099752426147461
+        ],
+        "RL": [
+          0.2247136162853241,
+          1.0858914223861695,
+          -1.96000825466156,
+          1.675805926322937
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Static wheel-center fit of public measured leg q plus fixed reference delta; no dynamic stability or collision-free guarantee.",
+    "World/base/object poses are used only for this offline candidate review; they must not enter policy.",
+    "Visual boxes are conservative geometric diagnostics, not cooked collision shapes.",
+    "Contact-depth vertex overlap does not certify bilateral contact, grasp or friction."
+  ]
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "run": "first_reach_camera_seed42_02",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_compact_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_compact_seed42_02",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_gain3_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_heading_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_pulse_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_side_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_stance_gain8_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "first_reach_stance_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  },
+  {
+    "run": "reach_probe_seed42_01",
+    "exit": 2,
+    "raw_score": 0.0,
+    "verified_positive_raw_score": false,
+    "status": "not_achieved_zero_score",
+    "failed_checks": [],
+    "error": null
+  }
+]

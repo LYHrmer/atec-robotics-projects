@@ -1,0 +1,121 @@
+{
+  "run_id": "plan_p4_grasp_clamp025_delta20_seed42_01",
+  "scope": "Offline actual recorded pose/mesh check; no policy input, no reward-derived grasp claim.",
+  "steps": 4405,
+  "stop_reason": "policy_stop:grasp_probe_lift_not_reached",
+  "score_raw_total": 0.9999999776482582,
+  "reward_terms": {
+    "objects_in_circle": 0.0,
+    "grasped_objects": 1.0
+  },
+  "official_terminated": false,
+  "official_truncated": false,
+  "probe_states": {
+    "PROBE_CLOSE": {
+      "first_step": 4081,
+      "last_state_step": 4155,
+      "samples": 75,
+      "state_span_s": 1.4799999999999898,
+      "jaw_width_min_max_m": [
+        0.049155859276652336,
+        0.06985102593898773
+      ],
+      "object_root_rise_min_max_from_preclose_m": [
+        -4.470348358154297e-08,
+        0.00017493963241577148
+      ],
+      "mesh_surface_clearance_min_max_from_preclose_m": [
+        -5.175926562057953e-05,
+        3.406969251106007e-05
+      ],
+      "gripper_z_rise_min_max_m": [
+        -3.349781036376953e-05,
+        0.0028830766677856445
+      ]
+    },
+    "PROBE_LIFT": {
+      "first_step": 4156,
+      "last_state_step": 4406,
+      "samples": 251,
+      "state_span_s": 5.0,
+      "jaw_width_min_max_m": [
+        0.018521830439567566,
+        0.053091902285814285
+      ],
+      "object_root_rise_min_max_from_preclose_m": [
+        -1.1473894119262695e-06,
+        0.004638269543647766
+      ],
+      "mesh_surface_clearance_min_max_from_preclose_m": [
+        -0.00045710329271077266,
+        0.00042782083340339727
+      ],
+      "gripper_z_rise_min_max_m": [
+        0.0027464330196380615,
+        0.037494659423828125
+      ]
+    }
+  },
+  "actual_object_quaternion_used": true,
+  "verified_lift_and_follow": false,
+  "object_index_1based": 10,
+  "pre_close_baseline": {
+    "step": 4081,
+    "state_timing": "pre_step",
+    "object_root_world_m": [
+      -6.723809242248535,
+      -8.680274963378906,
+      0.14022481441497803
+    ],
+    "lowest_original_mesh_world_z_m": 0.0441360765675871,
+    "gripper_world_m": [
+      -6.7362236976623535,
+      -8.694643020629883,
+      0.3284183740615845
+    ],
+    "object_quaternion_wxyz": [
+      0.000507186574395746,
+      0.0009181441273540258,
+      -0.6985803842544556,
+      0.7155307531356812
+    ]
+  },
+  "object_quaternion_norm_max_error": 1.389561503639669e-07,
+  "final_actual": {
+    "object_root_rise_m": 0.0006321072578430176,
+    "minimum_mesh_surface_rise_m": -0.0004434711077859754,
+    "gripper_z_rise_m": 0.037494659423828125,
+    "object_world_xyz": [
+      -6.727192401885986,
+      -8.688661575317383,
+      0.14085692167282104
+    ],
+    "object_quaternion_wxyz": [
+      -0.014293575659394264,
+      -0.014299681410193443,
+      -0.7261325120925903,
+      0.6872575283050537
+    ],
+    "jaw_width_m": 0.018521830439567566,
+    "relative_root_in_gripper_m": [
+      0.010598210576784096,
+      -0.004059423697481434,
+      0.2259346052311377
+    ]
+  },
+  "maximum_illegal_force_N": 0.0,
+  "limits": [
+    "Recorded actual object quaternions are used, not initial OTHER_QUAT.",
+    "Mesh lower-surface rise is relative to its measured pre-close support level; no unverified zero-height floor assumption.",
+    "Original mesh geometry does not attest exact cooked collision hull or friction/contact forces.",
+    "Nonempty jaws alone are not grasp proof; positive proximity score alone is not grasp proof.",
+    "Passing this local lift/follow check would not prove transport, delivery or full Task B completion."
+  ],
+  "source_sha256": {
+    "result.json": "8df964a9359a8ae8bc10e1980f73699b2d50f18d1a3ff0928d02b67be9011060",
+    "telemetry.npz": "0bb449a79bb60725f6889689a64323aee88f6ec47d99a63dfc45fb995e1070de",
+    "scoring_events.json": "b0e2e56a25bc63062e5a57a4373248a2769c4952d32a2f1e120736247578a64a",
+    "trace.jsonl": "bd648649ab5a8931f1b7191131cfe17e977dca8d043d7c350f3bd32dab6f886e"
+  },
+  "asset_sha256": "3035d39baf5052ea22e14221f65f94f06c8e345be0e060eec8ceb7753676f785"
+}

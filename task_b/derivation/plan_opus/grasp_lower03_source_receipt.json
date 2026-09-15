@@ -1,0 +1,8 @@
+{
+  "actual_claude_session": "804be925-cab1-4878-bc23-d39e445ab5c5",
+  "opus_source_sha256": "d29faaae13700cf8d2095bfdc694aa4aacc991b35d21233fc3367770eb51e79f",
+  "integrated_source_sha256": "d29faaae13700cf8d2095bfdc694aa4aacc991b35d21233fc3367770eb51e79f",
+  "root_code_change": null,
+  "runtime_default_lowering_m": 0.02,
+  "new_candidate_lowering_m": 0.03
+}

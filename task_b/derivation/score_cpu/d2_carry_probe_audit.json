@@ -1,0 +1,85 @@
+{
+  "scope": "measured offline audit of a carry probe; external evidence only, never a policy input",
+  "run": "plan_d2_carry_probe_seed42_01",
+  "samples": 5380,
+  "baseline": {
+    "state": "CONTACT_OPEN",
+    "sample": 2994,
+    "step": 2995,
+    "note": "the TRUE preparation frame, taken from the recorded state column"
+  },
+  "object_index": 9,
+  "mesh_vertices": 8377,
+  "failure_channels": {
+    "terminated_any": false,
+    "illegal_force_max_n": 0.0,
+    "env_reward_total": 0.9999999776482582,
+    "score_total": 2527.9999434947968,
+    "note": "score and reward are read here for the audit only and drove nothing"
+  },
+  "segments": {
+    "PROBE_DRIVE": {
+      "samples": 416,
+      "seconds": 8.32,
+      "mesh_rise_min_m": 0.596498173259817,
+      "mesh_rise_max_m": 0.597951117771092,
+      "root_rise_min_m": 0.599817156791687,
+      "root_rise_max_m": 0.6015976071357727,
+      "relative_drift_max_m": 0.0007309366832256003,
+      "any_sample_below_mesh_gate": false,
+      "any_sample_below_root_gate": false
+    },
+    "PROBE_BRAKE_DRIVE": {
+      "samples": 50,
+      "seconds": 1.0,
+      "mesh_rise_min_m": 0.597283334305859,
+      "mesh_rise_max_m": 0.5980234751440933,
+      "root_rise_min_m": 0.6005922555923462,
+      "root_rise_max_m": 0.6013494729995728,
+      "relative_drift_max_m": 0.00018959282308692643,
+      "any_sample_below_mesh_gate": false,
+      "any_sample_below_root_gate": false
+    },
+    "PROBE_YAW_POS": {
+      "samples": 251,
+      "seconds": 5.0200000000000005,
+      "mesh_rise_min_m": 0.5977302531914928,
+      "mesh_rise_max_m": 0.5986224143170373,
+      "root_rise_min_m": 0.601058304309845,
+      "root_rise_max_m": 0.6018989086151123,
+      "relative_drift_max_m": 0.00023697248048192617,
+      "any_sample_below_mesh_gate": false,
+      "any_sample_below_root_gate": false
+    }
+  },
+  "carry_gate": {
+    "movement_samples": 717,
+    "movement_seconds": 14.34,
+    "longest_unbroken_pass_samples": 717,
+    "longest_unbroken_pass_seconds": 14.34,
+    "mesh_rise_min_over_movement_m": 0.596498173259817,
+    "mesh_rise_max_over_movement_m": 0.5986224143170373,
+    "passed_every_movement_sample": true,
+    "thresholds": {
+      "mesh_m": 0.01,
+      "root_m": 0.015
+    }
+  },
+  "motion": {
+    "basis": "public proprio twist integrated once per control tick; no ground truth",
+    "xy_at_movement_start": [
+      -7.173192957119264,
+      -8.989461024452384
+    ],
+    "xy_at_movement_end": [
+      -6.972141798434197,
+      -8.939497055408083
+    ],
+    "net_displacement_m": 0.20716651904028313,
+    "path_length_m": 0.23423719373858992,
+    "yaw_at_movement_start_rad": 0.2560252081761139,
+    "yaw_at_movement_end_rad": 0.2613066501469481,
+    "net_yaw_change_rad": 0.005281441970834189,
+    "peak_yaw_rate_rad_s": 0.00949116374072273
+  }
+}

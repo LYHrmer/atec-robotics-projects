@@ -1,0 +1,1191 @@
+{
+  "run_directory": "/home/lybm/ATEC_Experiments_20260910/task_b_score/first_reach_heading_seed42_01",
+  "official_commit": "4000378a9a6fc6ce3e57bcdd20a1582f6854e0dc",
+  "audit_schema_version": 2,
+  "verified_positive_raw_score": false,
+  "checks": [
+    {
+      "name": "artifact_exists:result.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "artifact_exists:environment_metadata.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "artifact_exists:source_manifest.json",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "artifact_exists:telemetry.npz",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "artifact_exists:trace.jsonl",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "completed_run_not_integration_failure",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_task_identity",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "result_seed_matches_metadata",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "finite_positive_timestep",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_timestep_and_episode_length",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "single_complete_step_sequence",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "trace_step_sequence",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "exact_original_reward_terms",
+      "passed": true,
+      "evidence": {
+        "objects_in_circle": {
+          "weight": 1.0,
+          "func": "<atec_rl_lab.tasks.task_b.mdp.rewards.ObjectsInCircle object at 0x7f19793c5900>",
+          "params": {
+            "center": [
+              -3.0,
+              -10.0
+            ],
+            "radius": 1.0,
+            "reward_per_object": 1.0
+          }
+        },
+        "grasped_objects": {
+          "weight": 1.0,
+          "func": "<atec_rl_lab.tasks.task_b.mdp.rewards.GraspedObjectsByEE object at 0x7f19793c59f0>",
+          "params": {
+            "ee_body_name": "gripper_base",
+            "grasp_dist_thresh": 0.2,
+            "reward_per_object": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "original_termination_parameters",
+      "passed": true,
+      "evidence": {
+        "time_out": {
+          "time_out": true,
+          "func": "<function time_out at 0x7f19da1dce50>",
+          "params": {}
+        },
+        "illegal_contact": {
+          "time_out": false,
+          "func": "<function illegal_contact at 0x7f19da1dd5a0>",
+          "params": {
+            "sensor_cfg": "SceneEntityCfg(name='contact_sensor', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=['base_link', '.*_hip', '.*_thigh'], body_ids=[0, 1, 2, 5, 6, 9, 10, 13, 14], object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)",
+            "threshold": 1.0
+          }
+        },
+        "fall": {
+          "time_out": false,
+          "func": "<function root_height_below_minimum at 0x7f19da1dd240>",
+          "params": {
+            "asset_cfg": "SceneEntityCfg(name='robot', joint_names=None, joint_ids=slice(None, None, None), fixed_tendon_names=None, fixed_tendon_ids=slice(None, None, None), body_names=None, body_ids=slice(None, None, None), object_collection_names=None, object_collection_ids=slice(None, None, None), preserve_order=False)",
+            "minimum_height": 0.0
+          }
+        },
+        "objects_in_circle_done": {
+          "time_out": false,
+          "func": "<atec_rl_lab.tasks.task_b.mdp.terminations.ObjectsInCircleDone object at 0x7f19793c5600>",
+          "params": {
+            "center": [
+              -3.0,
+              -10.0
+            ],
+            "radius": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "original_illegal_body_set",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "recorded_original_configuration",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_resolved_action_schema",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/evaluate.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tools/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tools/task_e/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tools/task_e/check_environment.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/envs_base.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/mdp/rewards.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/mdp/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/cfg.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/b2.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/b2w.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/g1/g1_29dof_dex1.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/piper.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/tron1a.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/tron2a.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/robots/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/terrain_base.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/envs_base_cfg.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_a/terrain.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_a/mdp/rewards.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_a/mdp/terminations.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_a/mdp/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_a/env_cfg.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_a/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_b/terrain.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/objects/task_b/object.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/objects/task_e/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/objects/task_e/basket.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/objects/task_e/table.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:assets/objects/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_b/mdp/rewards.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_b/mdp/terminations.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_b/mdp/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_b/env_cfg.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_b/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_d/terrain.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_d/mdp/rewards.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_d/mdp/terminations.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_d/mdp/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_d/env_cfg.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_d/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_e/mdp/rewards.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_e/mdp/terminations.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_e/mdp/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_e/terrain.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_e/env_cfg.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_e/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:tasks/task_base/action_base.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_a/tools/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_a/tools/d1g2_taska_camera_compat.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/__init__.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/control.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/diagnostics.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_e_geometry.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/arm_kinematics.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/visual_approach.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/first_reach.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "safe_manifest_path:task_b/stance_hold.py",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "project_source_snapshots_match_manifest",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "evaluator_and_policy_snapshots_present",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "critical_official_sources_loaded",
+      "passed": true,
+      "evidence": [
+        "__init__.py",
+        "assets/__init__.py",
+        "assets/objects/__init__.py",
+        "assets/objects/task_b/object.py",
+        "assets/objects/task_e/__init__.py",
+        "assets/objects/task_e/basket.py",
+        "assets/objects/task_e/table.py",
+        "assets/robots/__init__.py",
+        "assets/robots/b2.py",
+        "assets/robots/b2w.py",
+        "assets/robots/cfg.py",
+        "assets/robots/g1/g1_29dof_dex1.py",
+        "assets/robots/piper.py",
+        "assets/robots/tron1a.py",
+        "assets/robots/tron2a.py",
+        "tasks/__init__.py",
+        "tasks/task_a/__init__.py",
+        "tasks/task_a/env_cfg.py",
+        "tasks/task_a/mdp/__init__.py",
+        "tasks/task_a/mdp/rewards.py",
+        "tasks/task_a/mdp/terminations.py",
+        "tasks/task_a/terrain.py",
+        "tasks/task_b/__init__.py",
+        "tasks/task_b/env_cfg.py",
+        "tasks/task_b/mdp/__init__.py",
+        "tasks/task_b/mdp/rewards.py",
+        "tasks/task_b/mdp/terminations.py",
+        "tasks/task_b/terrain.py",
+        "tasks/task_base/__init__.py",
+        "tasks/task_base/action_base.py",
+        "tasks/task_base/envs_base.py",
+        "tasks/task_base/envs_base_cfg.py",
+        "tasks/task_base/mdp/__init__.py",
+        "tasks/task_base/mdp/rewards.py",
+        "tasks/task_base/terrain_base.py",
+        "tasks/task_d/__init__.py",
+        "tasks/task_d/env_cfg.py",
+        "tasks/task_d/mdp/__init__.py",
+        "tasks/task_d/mdp/rewards.py",
+        "tasks/task_d/mdp/terminations.py",
+        "tasks/task_d/terrain.py",
+        "tasks/task_e/__init__.py",
+        "tasks/task_e/env_cfg.py",
+        "tasks/task_e/mdp/__init__.py",
+        "tasks/task_e/mdp/rewards.py",
+        "tasks/task_e/mdp/terminations.py",
+        "tasks/task_e/terrain.py"
+      ]
+    },
+    {
+      "name": "loaded_official_sources_match_current_files",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "task_b_and_shared_sources_match_pinned_upstream",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "policy_snapshots_no_direct_simulator_truth_access",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "finite_telemetry_shapes",
+      "passed": true,
+      "evidence": {
+        "reward_raw_total": [
+          5000
+        ],
+        "score": [
+          5000
+        ],
+        "reward_terms": [
+          5000,
+          2
+        ],
+        "termination": [
+          5000,
+          4
+        ],
+        "gripper_xyz": [
+          5000,
+          3
+        ],
+        "object_xyz": [
+          5000,
+          18,
+          3
+        ],
+        "q": [
+          5000,
+          24
+        ],
+        "qdot": [
+          5000,
+          24
+        ],
+        "proprio": [
+          5000,
+          84
+        ],
+        "action": [
+          5000,
+          24
+        ],
+        "base_xyz": [
+          5000,
+          3
+        ],
+        "base_quat": [
+          5000,
+          4
+        ],
+        "illegal_force": [
+          5000,
+          9
+        ]
+      }
+    },
+    {
+      "name": "raw_score_equals_reward_sum",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "score_cumulative_each_step",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "term_sum_equals_raw_reward_each_step",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "trace_matches_raw_reward",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "trace_matches_score",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "trace_matches_term_rewards",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "nonnegative_integer_original_rewards",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "original_env_reward_present_for_positive_run",
+      "passed": true,
+      "evidence": {
+        "present": false,
+        "historical_zero_only_exception": true
+      }
+    },
+    {
+      "name": "boolean_termination_values",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "no_step_after_official_termination",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "trace_termination_flags_match_telemetry",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "result_terminal_flags_match_final_step",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "public_joint_mapping_is_complete_permutation",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "public_q_mapping_independently_recomputed",
+      "passed": true,
+      "evidence": 7.450580596923828e-09
+    },
+    {
+      "name": "public_q_mapping_verified_each_step",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "scoring_events_cover_exact_positive_steps",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "standalone_event_file_matches_result",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "first_positive_step_matches_telemetry",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "final_post_state_available_for_positive_run",
+      "passed": true,
+      "evidence": {
+        "present": false,
+        "historical_zero_only_exception": true
+      }
+    },
+    {
+      "name": "all_available_post_states_explain_unique_rewards",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "all_available_post_states_explain_termination_flags",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "complete_post_state_coverage_for_positive_run",
+      "passed": true,
+      "evidence": [
+        5000
+      ]
+    }
+  ],
+  "events": [],
+  "scope_limits": [
+    "Recorded source/configuration/state audit, not a fresh simulation.",
+    "USD assets, Isaac packages, GPU drivers and unrecorded runtime mutations are not cryptographically attested.",
+    "AST rejects direct simulator access in policy modules; semantic absence of indirect GT input still requires human source review.",
+    "A proximity reward is not evidence of grasp, lift, delivery or full Task B completion."
+  ],
+  "steps": 5000,
+  "score_raw_total": 0.0,
+  "stop_reason": "max_steps",
+  "project_source_verification": [
+    {
+      "path": "task_b/evaluate.py",
+      "sha256": "9f3828a79c1343a76f029464281ca2c044d2c2ea40ca6e564428b6c44210d6bd",
+      "snapshot_matches": true
+    },
+    {
+      "path": "tools/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_matches": true
+    },
+    {
+      "path": "tools/task_e/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_matches": true
+    },
+    {
+      "path": "tools/task_e/check_environment.py",
+      "sha256": "fcb3f250edda2d2c060ee864245a566b8a3a84fd0f5b543c374a616111538c9b",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_a/tools/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_a/tools/d1g2_taska_camera_compat.py",
+      "sha256": "22c23f8ea94e2aa770adf1a728ba56826ed69bbe62524a996c8500a7e69d0578",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/__init__.py",
+      "sha256": "e2ae23048fde81d709d2af393bbd02fbd086797893146ed79ec80e34193690ea",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/control.py",
+      "sha256": "4001b889d390291751371ec96d056d0fd0cb7201be68998edc33abf5991c2f0b",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/diagnostics.py",
+      "sha256": "bb3cc76a0a6358ac9ec5e4c31c815a1012dead33f91007683dfffffe038c3452",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_e_geometry.py",
+      "sha256": "857940ed4722aace8c02fc5f6391b224c7f4e6bda681ee86510d6233dbf429c4",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/arm_kinematics.py",
+      "sha256": "a50e2fe2274131024c61de1b5c06cfe7dacf91a50b083f7e15e1a6c1481d2591",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/visual_approach.py",
+      "sha256": "028850d002029db7be80843b4ef80d581b84de5601e5cfccafb8707410c9dbf4",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/first_reach.py",
+      "sha256": "b7d860d38ab2889b735954965cc90e1c118797ba34c2145d5e8127ef26e3a08f",
+      "snapshot_matches": true
+    },
+    {
+      "path": "task_b/stance_hold.py",
+      "sha256": "9c2345c4145b518410b6d3119d17496668d25b923cb0011986899a3f3bbdc680",
+      "snapshot_matches": true
+    }
+  ],
+  "official_source_verification": [
+    {
+      "path": "__init__.py",
+      "recorded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/envs_base.py",
+      "recorded_sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+      "upstream_sha256": "0749d8087ed5f400ac349a2c22ce1d35085041f482785565e8be80dc90834d9d",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/mdp/rewards.py",
+      "recorded_sha256": "017f3fcc8439a155239a288dec44dcdf0587a3cf8385ce17003821a08d77638d",
+      "upstream_sha256": "017f3fcc8439a155239a288dec44dcdf0587a3cf8385ce17003821a08d77638d",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/mdp/__init__.py",
+      "recorded_sha256": "c37a82c7da7532b69b3050948577a5f16906ee138890a3f4bb92d09aad1fc9a8",
+      "upstream_sha256": "c37a82c7da7532b69b3050948577a5f16906ee138890a3f4bb92d09aad1fc9a8",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/__init__.py",
+      "recorded_sha256": "7819fb5ec56a872b678aa079eb9ae92223c0d0d86e882a90cfcbfaa84cd1ba17",
+      "upstream_sha256": "7819fb5ec56a872b678aa079eb9ae92223c0d0d86e882a90cfcbfaa84cd1ba17",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/cfg.py",
+      "recorded_sha256": "ac2b0a22772584b70b3b5cd19dad8ab3ecd1d378927993bcc1d0f7933984369e",
+      "upstream_sha256": "ac2b0a22772584b70b3b5cd19dad8ab3ecd1d378927993bcc1d0f7933984369e",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/b2.py",
+      "recorded_sha256": "dde3e56631517debf6bfe40415b1f2ab94ee78a48c620bceb0b33dda88107c3c",
+      "upstream_sha256": "dde3e56631517debf6bfe40415b1f2ab94ee78a48c620bceb0b33dda88107c3c",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/b2w.py",
+      "recorded_sha256": "4b88d079b53a6bfc0bd3cf3cd2107c74fd313d73e8f04b6bcec6702d6cdd61c8",
+      "upstream_sha256": "4b88d079b53a6bfc0bd3cf3cd2107c74fd313d73e8f04b6bcec6702d6cdd61c8",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/g1/g1_29dof_dex1.py",
+      "recorded_sha256": "b47e37c20aebf1331bbd6f19b7fb09ed35cdb30fcc82d40875a790d58b7fb4ab",
+      "upstream_sha256": "b47e37c20aebf1331bbd6f19b7fb09ed35cdb30fcc82d40875a790d58b7fb4ab",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/piper.py",
+      "recorded_sha256": "18258c1e075c06f7a53a51380aabd675a095bf1b8e38cf107a57e35a707bde12",
+      "upstream_sha256": "18258c1e075c06f7a53a51380aabd675a095bf1b8e38cf107a57e35a707bde12",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/tron1a.py",
+      "recorded_sha256": "d963e700cae7327ea74f38a76c871ec3577251ffb2dc0cc8a00eef9fc6af6701",
+      "upstream_sha256": "d963e700cae7327ea74f38a76c871ec3577251ffb2dc0cc8a00eef9fc6af6701",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/tron2a.py",
+      "recorded_sha256": "16e8537bbbefb36e435b9f13beab74d77f1e80ea020baad4b9c8b3be06a25d90",
+      "upstream_sha256": "16e8537bbbefb36e435b9f13beab74d77f1e80ea020baad4b9c8b3be06a25d90",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/robots/__init__.py",
+      "recorded_sha256": "240b58db48b6e173423c9a913419137fa2a441a86c68752aaaff8e4efd25ba5c",
+      "upstream_sha256": "240b58db48b6e173423c9a913419137fa2a441a86c68752aaaff8e4efd25ba5c",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/terrain_base.py",
+      "recorded_sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+      "upstream_sha256": "bcd1c0e89bd9f48f3702b24439664a7899fffa652be7fe69e4f4fe1880fee600",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/envs_base_cfg.py",
+      "recorded_sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+      "upstream_sha256": "60e40cbe1ab8f2081bce0ce0fa2b0328490ad2e9d8d556919d467e7d07c87ca9",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/__init__.py",
+      "recorded_sha256": "3e3664c14bd4346f354ac48ba28ac517842f52da5ff3d538ea627f298e83952b",
+      "upstream_sha256": "3e3664c14bd4346f354ac48ba28ac517842f52da5ff3d538ea627f298e83952b",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_a/terrain.py",
+      "recorded_sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+      "upstream_sha256": "a2d8a40ab4d958e1775d3027c80b42df85de7095c5a167edd0bef6e96274db0a",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_a/mdp/rewards.py",
+      "recorded_sha256": "6f0941e0ff0749e10cc79e9a14bd7aa49bdfb7afe9ff756049670feb65d5af30",
+      "upstream_sha256": "6f0941e0ff0749e10cc79e9a14bd7aa49bdfb7afe9ff756049670feb65d5af30",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_a/mdp/terminations.py",
+      "recorded_sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+      "upstream_sha256": "649f69d04e2e0ed33fec5a15b5fbce03a67a1600210d35b0dffecb805f43fc32",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_a/mdp/__init__.py",
+      "recorded_sha256": "7a4ca2a473feccca88008dc0586fcf021e78f584fd9cb0de71f3748103e3de4c",
+      "upstream_sha256": "7a4ca2a473feccca88008dc0586fcf021e78f584fd9cb0de71f3748103e3de4c",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_a/env_cfg.py",
+      "recorded_sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+      "upstream_sha256": "3f571125833032f8a42de75fe98bffb4f7891a3c4193a3cb91810a670643dd54",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_a/__init__.py",
+      "recorded_sha256": "68675ddfd91af67a30b9abcfad277d31b043c62e63ca847d4ec51f8d54adea7c",
+      "upstream_sha256": "68675ddfd91af67a30b9abcfad277d31b043c62e63ca847d4ec51f8d54adea7c",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_b/terrain.py",
+      "recorded_sha256": "d7fd6b801199327dba95de156bc235fa7197790728b16227cbafc8cf25e905fc",
+      "upstream_sha256": "d7fd6b801199327dba95de156bc235fa7197790728b16227cbafc8cf25e905fc",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/objects/task_b/object.py",
+      "recorded_sha256": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25",
+      "upstream_sha256": "e156ce8c88028ef34371ab7b814beed5ab5092d3df75f6d1059dd5866fd6ae25",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/objects/task_e/__init__.py",
+      "recorded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/objects/task_e/basket.py",
+      "recorded_sha256": "54e43ded35a8f2ad6dc8c1cb98fce2088eaa04a0cd8dbba982b549e5757bcc44",
+      "upstream_sha256": "54e43ded35a8f2ad6dc8c1cb98fce2088eaa04a0cd8dbba982b549e5757bcc44",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/objects/task_e/table.py",
+      "recorded_sha256": "730f1310f6be9014e41b2876628872a10d568f3e943528399d9d15a170b05832",
+      "upstream_sha256": "730f1310f6be9014e41b2876628872a10d568f3e943528399d9d15a170b05832",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "assets/objects/__init__.py",
+      "recorded_sha256": "8c456f8c597caca327777acfa0865a4c14ce5075d8b81fce4a953feea64b0304",
+      "upstream_sha256": "8c456f8c597caca327777acfa0865a4c14ce5075d8b81fce4a953feea64b0304",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_b/mdp/rewards.py",
+      "recorded_sha256": "58e54fa477cb84171e9cf550622b31376d597a0a32dfe7447e247ba009360d3c",
+      "upstream_sha256": "58e54fa477cb84171e9cf550622b31376d597a0a32dfe7447e247ba009360d3c",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_b/mdp/terminations.py",
+      "recorded_sha256": "d42f497cd8120735ac481f474b7adba464ca069b3c213233036422cd00f26cee",
+      "upstream_sha256": "d42f497cd8120735ac481f474b7adba464ca069b3c213233036422cd00f26cee",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_b/mdp/__init__.py",
+      "recorded_sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+      "upstream_sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_b/env_cfg.py",
+      "recorded_sha256": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1",
+      "upstream_sha256": "6050d9a8a3b9abef1c5c7a89c87e0d91a464117b9d409bb8546cd77d29a079d1",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_b/__init__.py",
+      "recorded_sha256": "0f750f36dbc286a07498f3ce03cc591faa2adf66b473a96e5810e17199e9e912",
+      "upstream_sha256": "0f750f36dbc286a07498f3ce03cc591faa2adf66b473a96e5810e17199e9e912",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_d/terrain.py",
+      "recorded_sha256": "42b0a2a0a8b5b85ccf474f8cc9ed71315bf4d69ecae626fef5f016b92a661fea",
+      "upstream_sha256": "42b0a2a0a8b5b85ccf474f8cc9ed71315bf4d69ecae626fef5f016b92a661fea",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_d/mdp/rewards.py",
+      "recorded_sha256": "c572549f2c2609ef6bc9ff1376ccd67ae641faaec793d94bdf48774a62e48d46",
+      "upstream_sha256": "c572549f2c2609ef6bc9ff1376ccd67ae641faaec793d94bdf48774a62e48d46",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_d/mdp/terminations.py",
+      "recorded_sha256": "e3d4e08f7242c0a415a347c022d7edffafb5797dc5178fae95b3e0ed27a70ade",
+      "upstream_sha256": "e3d4e08f7242c0a415a347c022d7edffafb5797dc5178fae95b3e0ed27a70ade",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_d/mdp/__init__.py",
+      "recorded_sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+      "upstream_sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_d/env_cfg.py",
+      "recorded_sha256": "536c02b9d63250805c2fd0d42b5b089a9809a54591fc6cf0bd08599e394c3c19",
+      "upstream_sha256": "536c02b9d63250805c2fd0d42b5b089a9809a54591fc6cf0bd08599e394c3c19",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_d/__init__.py",
+      "recorded_sha256": "051a9e6351a6157a297f45cfc07f39e3c48485ec0d1d3e668e3271a30119c813",
+      "upstream_sha256": "051a9e6351a6157a297f45cfc07f39e3c48485ec0d1d3e668e3271a30119c813",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_e/mdp/rewards.py",
+      "recorded_sha256": "80121ef00a27cf335242eb0ead7925e31c111bab877bf094a6d630aca4eb8d74",
+      "upstream_sha256": "ac96e75c60f8f16900bca1fe92278cf26b28304ece5b3c8064fe1e11c29b6016",
+      "current_file_matches_record": true,
+      "matches_upstream": false,
+      "known_inactive_task_e_diagnostic_only": true
+    },
+    {
+      "path": "tasks/task_e/mdp/terminations.py",
+      "recorded_sha256": "7e8f205d6baba71769e3101554ebef0d5a245ac75cb3130cd30aa56801298a3c",
+      "upstream_sha256": "7e8f205d6baba71769e3101554ebef0d5a245ac75cb3130cd30aa56801298a3c",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_e/mdp/__init__.py",
+      "recorded_sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+      "upstream_sha256": "b5de9cf283d190f5a86f45e3a80d341c252bbd6bda11aa937d40532d61aed7db",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_e/terrain.py",
+      "recorded_sha256": "1c950bcad48280d4ae9409a5ba2e3eae1901dd0d35d15f59896d594f08af049d",
+      "upstream_sha256": "1c950bcad48280d4ae9409a5ba2e3eae1901dd0d35d15f59896d594f08af049d",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_e/env_cfg.py",
+      "recorded_sha256": "af5d1cfa3977e4b32c4704e78b60af590e99330628032bab9f4ec83fdd902e51",
+      "upstream_sha256": "af5d1cfa3977e4b32c4704e78b60af590e99330628032bab9f4ec83fdd902e51",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_e/__init__.py",
+      "recorded_sha256": "25acc6ac000ecb422731e56ff4c8ecf1c144fc2a5a0f9a0462a88ed444b77782",
+      "upstream_sha256": "25acc6ac000ecb422731e56ff4c8ecf1c144fc2a5a0f9a0462a88ed444b77782",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/__init__.py",
+      "recorded_sha256": "8d56cc8c7dc3ed0dc89f9c4ea4fb57d2aed76481199db1858b66ff26bfbfbf96",
+      "upstream_sha256": "8d56cc8c7dc3ed0dc89f9c4ea4fb57d2aed76481199db1858b66ff26bfbfbf96",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    },
+    {
+      "path": "tasks/task_base/action_base.py",
+      "recorded_sha256": "a5e6d366cfd6fbdbff61b55f5e9a30ee0a9a50684abab1c8dc846502f2a09ee6",
+      "upstream_sha256": "a5e6d366cfd6fbdbff61b55f5e9a30ee0a9a50684abab1c8dc846502f2a09ee6",
+      "current_file_matches_record": true,
+      "matches_upstream": true,
+      "known_inactive_task_e_diagnostic_only": false
+    }
+  ],
+  "upstream_differences": [
+    {
+      "path": "tasks/task_e/mdp/rewards.py",
+      "recorded_sha256": "80121ef00a27cf335242eb0ead7925e31c111bab877bf094a6d630aca4eb8d74",
+      "upstream_sha256": "ac96e75c60f8f16900bca1fe92278cf26b28304ece5b3c8064fe1e11c29b6016",
+      "current_file_matches_record": true,
+      "matches_upstream": false,
+      "known_inactive_task_e_diagnostic_only": true
+    }
+  ],
+  "reward_geometry_replay": {
+    "replayed_steps": 4999,
+    "missing_post_steps": [
+      5000
+    ],
+    "mismatch_count": 0,
+    "note": "next-step PRE samples only across nonterminal steps; dedicated final capture otherwise"
+  },
+  "unique_proximity_object_count": 0,
+  "unique_delivery_object_count": 0,
+  "no_illegal_or_fall_entire_run": true,
+  "quality_limits": [],
+  "full_task_pass_claimed": false,
+  "failed_checks": [],
+  "status": "not_achieved_zero_score"
+}

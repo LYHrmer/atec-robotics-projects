@@ -1,0 +1,10 @@
+{
+  "actual_claude_session": "b0745118-931d-4992-bbe0-aa2529f8a68b",
+  "opus_source_sha256": "6667d972a4bbcc76763c656b4fac1c97d5c747dbe28dc19820f78c5fdabff365",
+  "root_changes": [
+    "reject nonfinite computed gravity norm",
+    "atomic elapsed-time overflow rejection",
+    "reject nonfinite waypoint-transform output"
+  ],
+  "integrated_source_sha256": "9bf8b464415a5b211c8d5e9d744e625b2d7da11c6635cb9dab02f4979216967b"
+}
