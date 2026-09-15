@@ -171,7 +171,17 @@ def arm_targets_to_action(targets, action_joint_names, default_joint_positions, 
 
 
 def ee_camera_transform(joints):
-    """body_from_ROS_ee_camera from measured q and the official fixed mount."""
+    """body_from_ROS_ee_camera from measured q and the official fixed mount.
+
+    The mount was verified against the simulator's own camera poses rather than
+    trusted from the config: task_b/audit_camera_calibration.py --fit fits it from
+    a nine-pose arm sweep and recovers (-0.04999, 0.00000, 0.05999) with a
+    z = -90 deg rotation, agreeing with the offset below to 9e-06 in every
+    element, with under 0.8 mm of spread across the poses. Do not "correct" it
+    from a single-step comparison: isaaclab CameraCfg.update_latest_camera_pose
+    defaults to False, so sensor.data.pos_w holds the pose from initialization and
+    a comparison against a later arm pose measures the arm, not the mount.
+    """
     offset = np.eye(4)
     offset[:3, :3] = Rotation.from_euler('z', -np.pi/2).as_matrix()
     offset[:3, 3] = [-.05, 0., .06]
@@ -184,6 +194,11 @@ def head_camera_transform():
     B2w inherits B2's camera on base_link: offset uses the Isaac ``world``
     camera convention (+X forward,+Y left,+Z up), pitched down by +30 deg.
     The final axis conversion maps ROS optical +Z to that forward direction.
+
+    Verified against the simulator the same way as the wrist mount: the sweep fit
+    reproduces (0.421607, 0.025001, 0.061850) with this exact rotation, agreeing
+    to 3e-06, and base_link turns out to sit exactly at the articulation root
+    (measured offset 0.0 m), so no extra link term is missing.
     """
     ros_to_world_camera = np.array([[0., 0., 1.], [-1., 0., 0.], [0., -1., 0.]])
     transform = np.eye(4)

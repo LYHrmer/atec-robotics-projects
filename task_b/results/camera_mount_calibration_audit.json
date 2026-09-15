@@ -1,0 +1,214 @@
+{
+  "checks": {
+    "synthetic_head_mount_recovered": true,
+    "synthetic_ee_offset_recovered": true,
+    "synthetic_fit_is_exact_when_noise_free": true,
+    "induced_error_is_zero_for_a_matching_model": true,
+    "induced_error_equals_a_known_mount_offset": true,
+    "reported_pose_round_trip": true,
+    "sweep_rejects_a_broken_base_pose_chain": true,
+    "sweep_cannot_pin_the_absolute_camera_orientation": true,
+    "stillness_rejects_a_moving_arm": true,
+    "stillness_rejects_a_drifting_base": true,
+    "stillness_keeps_exactly_the_settled_stretches": true,
+    "stillness_window_covers_the_camera_lag": true,
+    "sweep_poses_inside_real_piper_limits": true,
+    "sweep_poses_span_every_arm_joint": true,
+    "sweep_rejects_a_pose_beyond_the_hard_limits": true,
+    "sweep_completes_with_a_done_reason": true,
+    "sweep_leaves_legs_and_wheels_untouched": true,
+    "sweep_ramps_into_the_first_pose": true,
+    "sweep_ramps_between_poses": true,
+    "sweep_holds_every_pose_past_the_window": true,
+    "sweep_actions_decode_to_the_commanded_angles": true,
+    "fitted_head_mount_is_constant_across_the_sweep": true,
+    "fitted_ee_mount_is_constant_across_the_sweep": true,
+    "config_mount_through_measured_base_link_matches_the_camera": true,
+    "fitted_head_mount_matches_arm_kinematics": true,
+    "fitted_ee_offset_matches_arm_kinematics": true,
+    "gate_head_mount_pose_matches_the_simulator": true,
+    "gate_head_localisation_error_under_1cm": true,
+    "gate_ee_mount_pose_matches_the_simulator": true,
+    "gate_ee_localisation_error_under_1cm": true,
+    "visual_detector_bearing_matches_the_projected_object": true,
+    "visual_residual_along_the_ray_is_the_object_surface_offset": true,
+    "visual_camera_model_is_not_the_residual": true
+  },
+  "notes": [
+    "synthetic_head_mount_recovered: error=1.269e-15 m",
+    "synthetic_ee_offset_recovered: error=6.742e-16 m",
+    "synthetic_fit_is_exact_when_noise_free: spread=(5.740965065173434e-16, 9.801786626580705e-16)",
+    "induced_error_equals_a_known_mount_offset: a 37.4 mm mount error is reported as exactly that",
+    "reported_pose_round_trip: pos_w and quat_w_world are the world-camera convention this module assumes",
+    "sweep_rejects_a_broken_base_pose_chain: dropping the base rotation into the mount makes each pose disagree by centimetres",
+    "sweep_cannot_pin_the_absolute_camera_orientation: reading the pose in the wrong convention leaves the across-pose spread at 9.3e-16 m while rotating the fitted mount by 120.0 deg -- a constant the fit silently absorbs, so only the gate run's images can confirm the orientation",
+    "stillness_rejects_a_moving_arm: kept 113 of 320 steps; none inside the arm ramp",
+    "stillness_rejects_a_drifting_base: a 0.6 mm/step chassis creep is not mistaken for a settled pose",
+    "stillness_keeps_exactly_the_settled_stretches: missing [], unexpected []",
+    "stillness_window_covers_the_camera_lag: a kept step has 25 quiet steps behind it; the camera pose can only be 5 steps old",
+    "sweep_poses_inside_real_piper_limits: checked against task_e_geometry.JOINT_LOWER/UPPER, not the synthetic schema",
+    "sweep_poses_span_every_arm_joint: per-joint span [0.9, 0.7, 0.75, 1.0, 0.9, 0.9] rad",
+    "sweep_rejects_a_pose_beyond_the_hard_limits: sweep pose 9 puts arm_joint5 at 1.3000 rad, outside the Piper hard limit [-1.2200, 1.2200]",
+    "sweep_completes_with_a_done_reason: reason=camera_calibration_complete",
+    "sweep_ramps_into_the_first_pose: largest per-step change 0.1200 against a bound of 0.1200",
+    "sweep_ramps_between_poses: largest per-step change 0.0800 against a bound of 0.0800",
+    "sweep_holds_every_pose_past_the_window: steps at each settled pose [141, 141, 141, 141, 141, 141, 141, 141, 141], so [116, 116, 116, 116, 116, 116, 116, 116, 116] usable once the window is subtracted",
+    "sweep_actions_decode_to_the_commanded_angles: max decode error 0.00e+00 rad",
+    "fitted_head_mount_is_constant_across_the_sweep: 0.0004295",
+    "fitted_ee_mount_is_constant_across_the_sweep: 0.00072947",
+    "config_mount_through_measured_base_link_matches_the_camera: max element error 0.000567 m/rad",
+    "fitted_head_mount_matches_arm_kinematics: largest element difference 3.10e-06 m/rad between the simulator's head camera and head_camera_transform()",
+    "fitted_ee_offset_matches_arm_kinematics: largest element difference 9.14e-06 m/rad between the simulator's wrist camera and the offset ee_camera_transform() applies",
+    "gate_head_mount_pose_matches_the_simulator: {\"mean\": 0.0002, \"max\": 0.0006, \"p95\": 0.0004}",
+    "gate_head_localisation_error_under_1cm: max 0.0006 m",
+    "gate_ee_mount_pose_matches_the_simulator: {\"mean\": 0.0002, \"max\": 0.0006, \"p95\": 0.0004}",
+    "gate_ee_localisation_error_under_1cm: max 0.0006 m",
+    "visual_detector_bearing_matches_the_projected_object: the detector's pixel is 2.579 px from where the true object centre projects, on 221 detections",
+    "visual_residual_along_the_ray_is_the_object_surface_offset: 33.1 mm toward the camera, spread only 2.6 mm -- a constant the size of the detected object's half-width, which is the front surface standing in for the axis",
+    "visual_camera_model_is_not_the_residual: the body-frame residual is 47 mm while the mount audit above puts the whole camera model inside a millimetre"
+  ],
+  "fitted_mounts": {
+    "head": {
+      "still_steps": 650,
+      "first_still_step": 303,
+      "spread_position_m": 0.0004295,
+      "spread_rotation_rad": 0.00057192,
+      "transform": [
+        [
+          1.56e-07,
+          -0.500000429,
+          0.866025156,
+          0.421606895
+        ],
+        [
+          -1.0,
+          -1.647e-06,
+          -7.71e-07,
+          0.025001088
+        ],
+        [
+          1.812e-06,
+          -0.866025156,
+          -0.500000429,
+          0.061850329
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "ee": {
+      "still_steps": 650,
+      "first_still_step": 303,
+      "distinct_poses": 16,
+      "spread_position_m": 0.00072947,
+      "spread_rotation_rad": 0.00071608,
+      "transform": [
+        [
+          -1.562e-06,
+          1.0,
+          -1.442e-06,
+          -0.049990856
+        ],
+        [
+          -1.0,
+          -1.562e-06,
+          -2.345e-06,
+          1.761e-06
+        ],
+        [
+          -2.345e-06,
+          1.442e-06,
+          1.0,
+          0.059993914
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "base_link_to_root": {
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "offset_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "note": "measured, not assumed: where base_link sits in the articulation root frame the arm FK uses"
+    }
+  },
+  "passed": true,
+  "gate": {
+    "head": {
+      "still_steps": 14,
+      "mount_position_error_m": 0.0003,
+      "mount_rotation_error_rad": 0.0001,
+      "induced_localisation_error_m": {
+        "mean": 0.0002,
+        "max": 0.0006,
+        "p95": 0.0004
+      }
+    },
+    "ee": {
+      "still_steps": 14,
+      "mount_position_error_m": 0.0003,
+      "mount_rotation_error_rad": 0.0001,
+      "induced_localisation_error_m": {
+        "mean": 0.0002,
+        "max": 0.0006,
+        "p95": 0.0004
+      }
+    }
+  },
+  "visual_localisation": {
+    "detections": 221,
+    "body_error_m": {
+      "mean": 0.0472,
+      "median": 0.0438,
+      "max": 0.2159
+    },
+    "along_the_view_ray_m": {
+      "mean": 0.0331,
+      "std": 0.0026
+    },
+    "across_the_view_ray_m": {
+      "mean": 0.0312,
+      "std": 0.0259
+    },
+    "detected_pixel_vs_projected_truth_px": 2.579,
+    "interpretation": "body error is measured against each object's true ROOT, which the task defines as its bounding-box centre; the detector's point is on the visible surface at the median pixel of the colour blob"
+  },
+  "scope": "CPU: solver round-trip, sweep encoding and timing, and the mount fit / localisation arithmetic on recorded telemetry. A GPU camera run supplies the telemetry; this script never renders.",
+  "count": 33
+}

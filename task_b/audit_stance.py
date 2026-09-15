@@ -102,8 +102,12 @@ def main() -> int:
                     raise AssertionError(f"{name} axis {axis} != model {model_axis}")
         report["usd_frame_max_pos_error_m"] = worst_pos
         record("leg_frames_match_usd", worst_pos < 1e-6, f"max |USD - model| = {worst_pos:.2e} m")
-    except ImportError:
-        record("leg_frames_match_usd", False, "pxr unavailable")
+    except Exception as error:
+        # Do not collapse every failure into "pxr unavailable": an ImportError
+        # raised by the USD plugin registry after a successful import of pxr, or
+        # a missing joint prim, would then look like a missing dependency instead
+        # of the real reason the frame check could not run.
+        record("leg_frames_match_usd", False, f"{type(error).__name__}: {error}")
 
     # 2. The published default foot positions must be recoverable and re-derivable.
     schema = build_schema()

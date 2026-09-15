@@ -8,6 +8,17 @@
 M2（真实抓起）与 M3（投递）已在 oracle 定位下打通并推送，**官方 `objects_in_circle` 真的加过分**；
 现在缺的只是把真值换成视觉。
 
+> **2026-09-15 更正（相机挂载一节）**：原先"头相机差 0.39 m、腕相机差约 0.05 m、
+> 腕相机挂载就是 0.033 m 定位误差来源"的结论**是错的**，已由实验推翻。真正的原因是一个
+> 诊断读数的 bug：`isaaclab CameraCfg.update_latest_camera_pose` 默认 `False`，
+> 此时 `sensor.data.pos_w` 返回**初始化那一刻**的相机位姿、之后永不更新。旧审计拿这个
+> 冻结位姿去比已经移动过的机身，差多少就等于机身走了多少。
+> 实测两个挂载模型本来就是对的（与仿真差 3e-06 / 9e-06），定位残差的真正来源是
+> **检测器的深度几何**（读的是物体前表面，当成轴心用）。
+> 结论与证据：`task_b/results/camera_mount_calibration.json`、
+> `task_b/results/camera_mount_calibration_audit.json`（33 项 CPU 检查全绿）。
+> 第 6.1 节已改写为实际做过的事。
+
 ## 2. 路径与环境
 
 | 项目 | 值 |
@@ -17,7 +28,16 @@ M2（真实抓起）与 M3（投递）已在 oracle 定位下打通并推送，*
 | Python | `/home/lybm/miniforge3/envs/isaaclab/bin/python` |
 | 无渲染跑（快、稳） | 加 `--camera_free` |
 | 开相机跑 | 不加 `--camera_free`（渲染已获用户批准） |
-| CPU 审计（上 GPU 前先跑） | `task_b/audit_stance.py`（14 项）、`task_b/audit_grasp.py`（27 项） |
+| CPU 审计（上 GPU 前先跑） | `task_b/audit_stance.py`（14 项）、`task_b/audit_grasp.py`（27 项）、`task_b/audit_camera_calibration.py`（33 项，可只跑 CPU，也可 `--fit/--gate/--visual` 指向真实 run） |
+
+注意 `audit_stance.py` 的 `leg_frames_match_usd` 需要 Isaac Sim 的 USD 动态库在
+`LD_LIBRARY_PATH` 上，否则报 `ImportError: libtf.so`：
+
+```bash
+LD_LIBRARY_PATH=/home/lybm/miniforge3/envs/isaaclab/lib/python3.10/site-packages/isaacsim/extscache/omni.usd.libs-1.0.1+d02c707b.lx64.r.cp310/bin \
+  $ATEC_PYTHON task_b/audit_stance.py     # 14/14
+```
+
 
 ```bash
 export ATEC_TASK_ROOT=/home/lybm/ATEC2026_Simulation_Challenge
@@ -33,7 +53,7 @@ bash run.sh task-b --mode <MODE> --output <必须是不存在的新目录> ...
 | `672225a` | **M2**：夹爪能夹住并抬起物体（升高 73 mm 且全程钳口-物体距离恒定，手指停在瓶身宽度 0.05641 m） |
 | `64ed373` | **M3**：官方 `objects_in_circle` 在 step 2195 加分，score 2.0，全程 0 非法接触 |
 | `6884533` | 站姿包线（机身可降 0.253 m，9 个官方接触体受力全 0）+ 无渲染能力 + 地面高度修正 |
-| `e04446f` | 相机挂载审计 |
+| `e04446f` | 相机挂载审计 —— **结论已于 2026-09-15 推翻**，见第 1、6.1 节；该文件的数字是诊断读数 bug 的产物 |
 
 证据：`task_b/results/{oracle_grasp_probe,oracle_delivery,stance_envelope,camera_mount_audit}.json`
 
@@ -48,7 +68,9 @@ bash run.sh task-b --mode <MODE> --output <必须是不存在的新目录> ...
 3. **机身不能贴到桶。** `base_link` 前角伸出约 0.49 m，距桶心 1.484 m 就碰壁
    （曾以 3.16 N 触发 `illegal_contact` 终止）。接近停在 **1.58 m**，靠已抬高的物体送进去。
 4. **地面在 z = +0.0449**，不是 0。所有基于 z=0 的物体高度结论都偏低 4.5 cm。
-5. **相机挂载模型是错的**（见第 6 节）。
+5. **相机挂载模型是对的**（2026-09-15 实测更正，见第 6.1 节）。曾经的"挂载错了"是
+   诊断读数 bug：`update_latest_camera_pose` 默认 False → `pos_w` 冻结在初始化时刻。
+   别再用旧审计给的 0.39 m / 0.05 m 做规划。
 6. 物体静置高度（实测）：糖盒 root z 0.0902、芥末瓶 0.1402、香蕉 0.0601；
    顶部 ≈ root + 0.0464 / 0.0957 / 0.0193。
 7. 物体朝向只有 **3 种固定值**（`SUGAR_QUAT` / `OTHER_QUAT`），不是任意角——
@@ -64,21 +86,34 @@ bash run.sh task-b --mode <MODE> --output <必须是不存在的新目录> ...
 
 ## 6. 建议的下一步（按顺序）
 
-### 6.1 相机挂载标定（低风险，gate 住抓取精度）
+### 6.1 相机挂载标定 —— 已完成，结论是"模型本来是对的"
 
-- **问题**：头相机实测机身偏移 `(0.636,-0.042,0.380)` vs 模型 `(0.422,0.025,0.062)`（差 **0.39 m**）；
-  腕相机差约 **0.05 m**。M1 的视觉定位误差是 **0.033 m**（水平 0.008、竖直 −0.033），
-  量级与腕相机吻合 → **腕相机挂载很可能就是定位误差的来源**。
-- **做法**：写一个模式让手臂扫过一组关节位姿，每个位姿停够 ≥25 步（相机周期 0.5 s），
-  只保留手臂静止的采样点（相邻步关节变化 < 1e-5）：
-  - 头相机：`offset = mean(R_base^T · (cam_w − base_w))`
-  - 腕相机：`offset = mean(fk(q)^{-1} · (R_base^T · (cam_w − base_w))`
-  然后更新 `task_b/arm_kinematics.py` 的 `head_camera_transform` / `ee_camera_transform`，
-  再用真值重测定位误差。
-- **测量坑**：机器人在出生时会**弹跳**（地形 restitution=1.0），相机 10 Hz 更新，
-  弹跳期间采样最多滞后 5 步，反推偏移会摆动 **0.1 m**。只在稳定段测（离散度可到 0.0008 m）。
-- 评测器已经会记录相机真实位姿（`evaluate.py::camera_state`，存进 `telemetry.npz` 的
-  `camera_{head,ee}_{pos,quat}`）。
+- **做法**（已实现）：`--mode camera_calibration` 让手臂扫过 9 个保持位姿
+  （第一个就是机器人自己的默认臂姿，25 步斜坡 + 140 步保持，腿轮保持默认），
+  评测器逐步记录仿真自己的 `pos_w/quat_w_world`；只取"手臂与机身连续 25 步不变"的采样点
+  （相机 10 Hz、策略 50 Hz，故记录位姿最多滞后 5 步，25 步静窗把滞后消掉）。
+  `task_b/audit_camera_calibration.py` 闭式解出两个挂载，33 项 CPU 检查。
+- **必须先修的工具 bug**：`evaluate.py` 现在把场景相机的
+  `update_latest_camera_pose` 设为 `True`。默认 `False` 时 `pos_w` 是**初始化位姿**，
+  旧审计的 0.39 m 就是这么来的。官方 observation 读的是 annotator 不是位姿，
+  奖励/动作/终止都不受影响；每个 result.json 里都记了
+  `camera_pose_reader`，source manifest 也列了这一项。
+- **结果**：头挂载拟合约 `(0.421607, 0.025001, 0.061850)` + Ry(30°)，
+  与 `arm_kinematics` 现有常量最大元素差 **3.1e-06**；腕挂载拟合
+  `(-0.04999, 0.00000, 0.05999)` + Rz(-90°)，差 **9.1e-06**。
+  跨 16 个不同臂姿的离散度 < 0.8 mm / 0.8 mrad，说明挂载确实是刚性的、
+  FK 链也是对的。**所以 arm_kinematics.py 的数值一个没改**，只把验证结论写进了
+  docstring。（另：`base_link` 与 articulation root 重合，实测偏移 0.0。）
+- **硬门槛（真值重测）**：另跑一集（seed 7，`first_reach`，会走会转），
+  用 `|M_model·M_sim⁻¹·p − p|` 在 18 个真实物体位置上量模型引入的定位误差：
+  **头 0.6 mm、腕 0.6 mm（max）**，比 1 cm 门槛低两个数量级。**过。**
+- **顺带查清了 0.033 m 是什么**：同一集的真实检测输出对真值——检测器**像素**只偏
+  2.6 px，但 body 系残差 47 mm。把它投影到"物体→相机"射线上：**沿线分量 +33 mm，
+  离散只有 2.6 mm**，而芥末瓶半宽是 29 mm。也就是说深度读的是**前表面**，被当成轴心用了。
+  横向那 31 mm 就是那 2.6 px 在 5.6 m 处的等效。两者都是检测器几何，不是挂载。
+  → **给 6.2 的具体要求**：把估计从"前表面点"沿视线推到"物体轴心"（等于减掉半个宽度），
+  再交给 IK；否则钳口会落在物体后面约 3 cm。
+
 
 ### 6.2 橙色桶检测器
 

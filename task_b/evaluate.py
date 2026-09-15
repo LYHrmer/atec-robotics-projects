@@ -31,6 +31,8 @@ from tools.task_e.check_environment import compatible_experience  # noqa: E402  
 
 TASK_ID = "ATEC-TaskB-B2wPiper"
 ROBOT = "robot"
+#: The link the official head camera is parented to (assets/robots/cfg.py).
+BASE_LINK = "base_link"
 OBJECT_NAMES = tuple(f"object_{index}" for index in range(1, 19))
 #: Action term class name -> command mode, used to describe the real terms.
 ACTION_MODES = {"JointPositionAction": "position", "JointVelocityAction": "velocity",
@@ -38,7 +40,7 @@ ACTION_MODES = {"JointPositionAction": "position", "JointVelocityAction": "veloc
 
 parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument("--output", type=Path, required=True, help="New artifact directory; never overwritten.")
-parser.add_argument("--mode", choices=("hold", "forward", "turn", "crouch", "visual_approach", "first_reach", "reach_probe", "stance_descend", "grasp_probe"), default="hold")
+parser.add_argument("--mode", choices=("hold", "forward", "turn", "crouch", "visual_approach", "first_reach", "reach_probe", "stance_descend", "grasp_probe", "camera_calibration"), default="hold")
 parser.add_argument("--camera_free", action="store_true", help="Build the official task with the three scene cameras and the lidar nulled and the image/extero observation groups removed, so Kit never creates a render product. Required for modes that do not consume images.")
 parser.add_argument("--stance_drop_max", type=float, default=.24, help="stance_descend: maximum commanded wheels-planted body drop, in metres.")
 parser.add_argument("--stance_drop_rate", type=float, default=.03, help="stance_descend: commanded descent rate, m/s.")
@@ -74,6 +76,7 @@ parser.add_argument("--vision_head", action="store_true", help="Allow the origin
 parser.add_argument("--seed", type=int, default=42, help="Config seed (object layout) and reset seed.")
 parser.add_argument("--max_steps", type=int, default=1500, help="Step cap; the official episode is far longer.")
 parser.add_argument("--settle_calls", type=int, default=100)
+parser.add_argument("--calibration_hold_calls", type=int, default=140, help="camera_calibration: steps to hold each arm sweep pose. The camera period is 5 steps and the fit keeps only steps still for 25, and the position servo settles asymptotically, so a much shorter hold has no usable sample in it.")
 parser.add_argument("--ramp_calls", type=int, default=100)
 parser.add_argument("--wheel_cmd", type=float, default=0.10, help="Normalized wheel command after the ramp.")
 parser.add_argument("--crouch_fraction", type=float, default=1.0, help="Fraction of the experimental crouch target, in [0,1].")
@@ -116,6 +119,21 @@ if args.mode == "stance_descend":
         parser.error("--stance_grid_step must not exceed --stance_drop_max")
 if args.camera_free and (args.video or args.vision_head):
     parser.error("--camera_free cannot be combined with --video or --vision_head")
+if args.mode == "camera_calibration":
+    if args.camera_free:
+        parser.error("camera_calibration reads the scene cameras' own poses; drop --camera_free")
+    # The mount fit only uses steps that have been still for a full camera period,
+    # and the chassis bounces for the first ~120 steps after spawn (terrain
+    # restitution 1.0), so the sweep must not start inside that transient.
+    if args.settle_calls < 200:
+        parser.error("camera_calibration needs --settle_calls >= 200 so the sweep starts after "
+                     "the spawn bounce has died out")
+    if args.max_steps < args.settle_calls + 1:
+        parser.error("camera_calibration needs --max_steps above --settle_calls")
+    if args.calibration_hold_calls < 40:
+        parser.error("--calibration_hold_calls must be at least 40: the camera refreshes every 5 "
+                     "steps and the fit keeps only steps still for 25, so a shorter hold has no "
+                     "usable sample in it")
 if args.mode == "grasp_probe":
     if not args.camera_free:
         parser.error("grasp_probe is an oracle probe and consumes no images; pass --camera_free")
@@ -287,12 +305,21 @@ def camera_state(task) -> dict:
 def sample_state(task, illegal: dict | None) -> dict:
     """Diagnostic simulator state. Not visible to the policy."""
     robot = task.scene[ROBOT]
+    # The head camera is parented to base_link while the arm FK works in the
+    # articulation root frame. Recording both lets the mount audit separate a
+    # wrong mount from a root-to-link offset, instead of fitting one number that
+    # silently absorbs the other.
+    base_link = robot.data.body_names.index(BASE_LINK) if BASE_LINK in robot.data.body_names else None
     return {
         "cameras": camera_state(task),
         "q": robot.data.joint_pos[0].detach().cpu().numpy().copy(),
         "qdot": robot.data.joint_vel[0].detach().cpu().numpy().copy(),
         "base_xyz": robot.data.root_pos_w[0].detach().cpu().numpy().copy(),
         "base_quat": robot.data.root_quat_w[0].detach().cpu().numpy().copy(),
+        "base_link_xyz": (robot.data.body_pos_w[0, base_link].detach().cpu().numpy().copy()
+                          if base_link is not None else np.zeros(3)),
+        "base_link_quat": (robot.data.body_quat_w[0, base_link].detach().cpu().numpy().copy()
+                           if base_link is not None else np.array([1., 0., 0., 0.])),
         "illegal_force": illegal_force_norms(task, illegal),
         "gripper_xyz": robot.data.body_pos_w[0, robot.data.body_names.index("gripper_base")].detach().cpu().numpy().copy(),
         "object_xyz": np.stack([task.scene[name].data.root_pos_w[0].detach().cpu().numpy().copy() for name in OBJECT_NAMES]),
@@ -345,6 +372,11 @@ def write_source_manifest(output: Path) -> dict:
                      "sets scene.num_envs=1, sim.device and sim.use_fabric, then calls the official "
                      "apply_safe_action_spec with no participant action spec.",
             "covered_by_hashes": "the exact bootstrap and atec_rl_lab .py sources loaded in this process",
+            "declared_diagnostic_changes": [
+                "scene cameras: update_latest_camera_pose=True, so the evaluator's own pos_w/"
+                "quat_w_world record tracks the camera instead of staying at its initialization "
+                "pose. No official observation, action, reward or termination reads it.",
+            ],
             "not_covered_by_hashes": [
                 "USD/USDA robot, object and scene assets, textures and MDL materials",
                 "Isaac Lab and Isaac Sim packages, Kit experience files and GPU drivers",
@@ -527,7 +559,8 @@ def main() -> None:
     steps, score, reason = 0, 0.0, "max_steps"
     env, trace, recorder, video, restore_camera_views = None, None, None, None, lambda: None
     telemetry = {key: [] for key in ("step", "sim_seconds", "alpha", "action", "requested_action", "proprio", "q", "qdot", "base_xyz",
-                                     "base_quat", "env_reward", "reward_raw_total", "score", "illegal_force",
+                                     "base_quat", "base_link_xyz", "base_link_quat",
+                                     "env_reward", "reward_raw_total", "score", "illegal_force",
                                      "termination", "reward_terms", "gripper_xyz", "object_xyz",
                                      "camera_head_pos", "camera_ee_pos",
                                      "camera_head_quat", "camera_ee_quat")}
@@ -549,6 +582,18 @@ def main() -> None:
             # makes a renderer-free app drive MDL compilation, which stalls startup.
             if getattr(cfg.scene, "terrain", None) is not None:
                 cfg.scene.terrain.visual_material = None
+        else:
+            # isaaclab CameraCfg.update_latest_camera_pose defaults to False, and
+            # docs/behaviour agree that sensor.data.pos_w then returns "the pose of
+            # the camera during initialization" and never moves. The official
+            # observation group reads the annotators, not the pose, so nothing the
+            # task scores depends on this; it only stops the evaluator's own camera
+            # record from being a frozen reset-time pose, which the mount audit
+            # would otherwise compare against a robot that has since driven away.
+            for name in ("head_camera", "ee_camera", "ee_dual_camera"):
+                camera = getattr(cfg.scene, name, None)
+                if camera is not None:
+                    camera.update_latest_camera_pose = True
         # Mirror the official runner, which always applies the action spec helper.
         cfg = apply_safe_action_spec(cfg, None)
 
@@ -582,6 +627,11 @@ def main() -> None:
                                       turn_cap=args.reach_turn_cap, standoff=args.reach_standoff,
                                       turn_gain=args.reach_turn_gain, lowering_m=args.reach_lowering,
                                       grasp=args.reach_grasp)
+        elif args.mode == "camera_calibration":
+            from task_b.camera_calibration import CameraCalibrationPolicy
+            policy = CameraCalibrationPolicy(schema, observed_names, defaults, dt=dt,
+                                             settle_calls=args.settle_calls,
+                                             hold_calls=args.calibration_hold_calls)
         elif args.mode == "stance_descend":
             from task_b.stance_descend import StanceDescendPolicy
             policy = StanceDescendPolicy(schema, observed_names, defaults, dt=dt,
@@ -848,6 +898,8 @@ def main() -> None:
             telemetry["qdot"].append(state["qdot"])
             telemetry["base_xyz"].append(state["base_xyz"])
             telemetry["base_quat"].append(state["base_quat"])
+            telemetry["base_link_xyz"].append(state["base_link_xyz"])
+            telemetry["base_link_quat"].append(state["base_link_quat"])
             telemetry["gripper_xyz"].append(state["gripper_xyz"])
             telemetry["object_xyz"].append(state["object_xyz"])
             for label in ("head", "ee"):
@@ -953,6 +1005,13 @@ def main() -> None:
             "experience": selected_experience or None,
             "camera_fabric_compatibility": "task_a.tools.d1g2_taska_camera_compat.prepare_camera_views "
                                            "(read-only recursive world-pose reader; preserves moving camera inheritance)",
+            "camera_pose_reader": ("scene cameras have update_latest_camera_pose=True so "
+                                   "sensor.data.pos_w/quat_w_world track the camera each update. "
+                                   "isaaclab CameraCfg defaults it to False, in which case those "
+                                   "buffers hold the pose from initialization and never move -- the "
+                                   "official observation reads the annotators, not the pose, so no "
+                                   "official input, reward, action or termination is affected"
+                                   if not args.camera_free else None),
             "action_spec": None, "apply_safe_action_spec": "called with no participant spec",
             "steps": steps, "max_steps": args.max_steps, "sim_seconds": steps * float(task.step_dt),
             "wall_seconds": time.monotonic() - started, "stop_reason": reason,

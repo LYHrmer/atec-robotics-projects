@@ -1,0 +1,70 @@
+{
+  "scope": "B2wPiper, OFFICIAL ATEC-TaskB-B2wPiper env, single env, cameras enabled, seed 42 sweep + seed 7 independent episode. Calibration and diagnosis only; no score claim.",
+  "question": "The visual policies back-project pixels with a camera pose built from joint FK plus a hardcoded mount. The handover said the wrist mount was probably the 0.033 m localisation error, and an earlier audit reported the head mount wrong by 0.39 m. Does the simulated camera actually sit where task_b/arm_kinematics says it does?",
+  "finding": "Yes, to a few microns. Both mounts in task_b/arm_kinematics.py are correct and neither is the localisation error. The earlier audit was measuring a bug in the diagnostic reader, not in the model, and the residual that remains is the detector's own depth geometry.",
+  "root_cause_of_the_earlier_audit": {
+    "claim": "isaaclab CameraCfg.update_latest_camera_pose defaults to False, and its docstring states that sensor.data.pos_w then returns 'the pose of the camera during initialization'. The earlier camera_mount_audit compared that frozen reset-time pose against a robot that had since settled and driven 0.25 m, so the difference it called a mount error was mostly the robot's own travel.",
+    "evidence": "In the 42-seed sweep's telemetry the recorded head_camera pos_w had exactly ONE unique value across all 1144 steps. That value minus the step-0 base pose equals the configured offset (0.4216099977493286, 0.02500000037252903, 0.06185099855065346) to 4e-05 m -- the pose was written once at initialization and never moved.",
+    "fix": "evaluate.py now sets update_latest_camera_pose=True on the scene cameras. The official observation reads the annotators, not the pose, so no official input, reward, action or termination is affected; the change is recorded in every result.json as result.camera_pose_reader and in the source manifest's declared list."
+  },
+  "method": [
+    "task_b/camera_calibration.py adds --mode camera_calibration: the arm sweeps nine held joint poses (first one the robot's own default arm pose), 25-step ramps, 140-step holds, legs and wheels at their defaults, and the run records the simulator's own camera pos_w/quat_w_world each step alongside base and arm state.",
+    "Only steps where the arm AND the base were unchanged for the preceding 25 steps are used. The cameras refresh at 10 Hz against a 50 Hz policy, so a recorded camera pose is up to five steps old; a 25-step quiet window makes that lag irrelevant without needing to know the refresh phase.",
+    "task_b/audit_camera_calibration.py fits both mounts in closed form: the head mount as the mean body_from_optical, the wrist mount as mean(fk(q)^-1 @ body_from_optical) so it is a constant offset in the gripper frame.",
+    "Cross-checks: a synthetic round trip against a mount known by construction; the official config composed through the MEASURED base_link pose; and a separate episode's induced localisation error at the true object positions."
+  ],
+  "sweep_run": {
+    "command": "bash run.sh task-b --mode camera_calibration --output runs/camera_calibration/sweep_seed42_04 --seed 42 --settle_calls 200 --max_steps 1800 --rgb_interval 0",
+    "steps": 1684,
+    "wall_seconds": 75.3,
+    "stop_reason": "policy_stop:camera_calibration_complete",
+    "terminated": false,
+    "active_termination_terms_at_stop": [],
+    "still_steps_used": 650
+  },
+  "result": {
+    "head_mount_fitted_body_from_optical": [
+      [0.0000002, -0.5000004, 0.8660252, 0.4216069],
+      [-1.0, -0.0000016, -0.0000008, 0.0250011],
+      [0.0000018, -0.8660252, -0.5000004, 0.0618503],
+      [0.0, 0.0, 0.0, 1.0]
+    ],
+    "head_mount_spread_m": 0.0004295,
+    "head_mount_spread_rad": 0.00057192,
+    "ee_offset_fitted_gripper_base_from_optical": "(-0.04999, 0.00000, 0.05999) with a z = -90 deg rotation",
+    "ee_offset_distinct_poses": 16,
+    "ee_offset_spread_m": 0.00072947,
+    "ee_offset_spread_rad": 0.00071608,
+    "fitted_head_vs_arm_kinematics_max_element_error": 3.1e-06,
+    "fitted_ee_vs_arm_kinematics_max_element_error": 9.14e-06,
+    "official_config_through_measured_base_link_vs_camera_max_element_error": 0.000567,
+    "base_link_in_articulation_root_m": [0.0, 0.0, 0.0],
+    "changed_in_arm_kinematics": "nothing numeric -- the fitted mounts agree with the existing constants to 3e-06 and 9e-06, so the constants stay and their docstrings now record the verification and the update_latest_camera_pose trap"
+  },
+  "gate": {
+    "definition": "If the model places a true body-frame point where the simulator does, then M_model @ M_sim^-1 is the residual rigid transform and |M_model M_sim^-1 p - p| is exactly the localisation error a perfect detector would still inherit. Evaluated at the 18 true object positions, on an episode that is not the fitting data.",
+    "run": "bash run.sh task-b --mode first_reach --output runs/camera_calibration/gate_seed7_firstreach_01 --seed 7 --settle_calls 200 --max_steps 1400 --rgb_interval 0",
+    "head_max_error_m": 0.0006,
+    "ee_max_error_m": 0.0006,
+    "head_mount_pose_error": {"position_m": 0.0003, "rotation_rad": 0.0001},
+    "ee_mount_pose_error": {"position_m": 0.0003, "rotation_rad": 0.0001},
+    "verdict": "~0.6 mm, two orders inside the 1 cm gate. The camera model is not what limits the grasp estimate."
+  },
+  "end_to_end_localisation_on_real_images": {
+    "source": "the same seed-7 first_reach run's own detector output joined with truth",
+    "detections": 221,
+    "body_error_vs_true_object_root_m": {"mean": 0.0472, "median": 0.0438, "max": 0.2159},
+    "decomposition": {
+      "along_the_object_to_camera_ray_m": {"mean": 0.0331, "std": 0.0026},
+      "across_the_ray_m": {"mean": 0.0312, "std": 0.0259}
+    },
+    "detected_pixel_vs_projected_true_centre_px": 2.579,
+    "reading": "The detector's BEARING is good: its pixel is 2.6 px from where the object's true centre projects. The body-frame residual is still 47 mm, and its component along the view ray is a tight +33 mm (spread 2.6 mm) -- the mustard bottle's half-width is 29 mm, so the depth is being read on the front surface and reported as if it were the axis. The across-ray 31 mm is the same 2.6 px at 5.6 m. Both are detector geometry; a mount error would move the estimate sideways and grow with range, and this one does not.",
+    "consequence_for_the_next_step": "At grasp range the along-ray term stays at roughly the object's half-width (29 mm for mustard, 22 mm for sugar, 37 mm for banana) while the pixel term shrinks. The estimate must be pushed from the near surface to the object axis before it is handed to IK, or the jaws will close ~3 cm behind the object."
+  },
+  "what_this_does_not_say": [
+    "Nothing here is a policy score. The sweep is not a policy and the gate episode scored 0.",
+    "One seed for the sweep and one for the gate. The mounts are rigid by construction, so the risk is not seed dependence but a wrong convention, which the config cross-check and the gate both bound.",
+    "The 0.2159 m worst-case detection is a single outlier among 221; it is not explained here."
+  ]
+}
