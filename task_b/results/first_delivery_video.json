@@ -1,18 +1,18 @@
 {
   "scope": "B2wPiper, OFFICIAL ATEC-TaskB-B2wPiper env, single env, seed 42, cameras ENABLED and recorded. ORACLE probe -- the base is parked from the object's true pose. Diagnostic, not policy behaviour and not a Task B pass.",
-  "question": "The only run that ever fired the official objects_in_circle was the camera-free oracle delivery, and --camera_free builds no render product, so no video of a delivery existed. Can the same delivery be re-run with the cameras alive, and does it still score?",
-  "finding": "Yes, exactly. Same step count, same score to six significant figures, same two scoring steps, zero official contact force. The video is committed at docs/videos/task_b_first_delivery_20260915_720p_1x.mp4 with its provenance beside it.",
+  "question": "No video of a delivery existed anywhere: the only run that ever fired objects_in_circle was camera-free, and --camera_free builds no render product. Can the same delivery be re-run with the cameras alive, does it still score, and can it be shown from a third-person view rather than the two low-resolution onboard cameras?",
+  "finding": "Yes, exactly. Same step count, same score to six significant figures, same two scoring steps, zero official contact force. The third-person recording is committed at docs/videos/task_b_first_delivery_20260915_1080p_1x.mp4 with its provenance beside it.",
   "code_change": {
     "what": "evaluate.py now accepts --mode grasp_probe without --camera_free when --video is passed.",
     "why": "The probe consumes no image, so --camera_free is the normal way to run it, and the guard that required it also made a recording impossible. --video is the one reason to keep the cameras alive, so it is the opt-in.",
     "effect_on_the_run": "none that the probe consumes: same oracle plan, same action terms, same physics. The extra image observation group is computed and discarded. The identical score is the evidence for that claim, not the argument."
   },
   "run": {
-    "command": "bash run.sh task-b --mode grasp_probe --probe_object 10 --probe_standoff 0.60 --probe_drop 0.06 --probe_clearance 0.03 --probe_preload 0.025 --probe_deliver --probe_carry_cmd 0.30 --probe_carry_stop 1.58 --probe_place_lift 0.40 --probe_place_forward 0.12 --settle_calls 200 --probe_park_settle 150 --max_steps 3800 --rgb_interval 0 --video",
-    "output_dir": "runs/delivery_video/record_01",
+    "command": "bash run.sh task-b --mode grasp_probe --probe_object 10 --probe_standoff 0.60 --probe_drop 0.06 --probe_clearance 0.03 --probe_preload 0.025 --probe_deliver --probe_carry_cmd 0.30 --probe_carry_stop 1.58 --probe_place_lift 0.40 --probe_place_forward 0.12 --settle_calls 200 --probe_park_settle 150 --max_steps 3800 --rgb_interval 0 --video --video_view overview",
+    "output_dir": "runs/delivery_video/record_03_overview",
     "target_object": "object_10 (mustard bottle)",
     "steps": 2369,
-    "wall_seconds": 161.7,
+    "wall_seconds": 190.6,
     "stop_reason": "policy_stop:grasp_probe_complete",
     "terminated": false,
     "truncated": false,
@@ -20,34 +20,76 @@
     "camera_free": false,
     "enable_cameras": true,
     "score_raw_total": 1.9999999552965164,
-    "reward_term_totals_raw": {"grasped_objects": 1.0, "objects_in_circle": 1.0},
+    "reward_term_totals_raw": {
+      "grasped_objects": 1.0,
+      "objects_in_circle": 1.0
+    },
     "max_official_illegal_contact_force_n": 0.0
   },
   "reproduction_check": {
     "camera_free_reference": "task_b/results/oracle_delivery.json (/tmp/atec-m2/run_deliver08)",
     "steps_match": true,
     "score_match": true,
-    "scoring_events_match": [[37, "grasped_objects"], [2195, "objects_in_circle"]],
+    "scoring_events_match": [
+      [
+        37,
+        "grasped_objects"
+      ],
+      [
+        2195,
+        "objects_in_circle"
+      ]
+    ],
     "reading": "2369 == 2369, 1.9999999552965164 == 1.9999999552965164, and objects_in_circle fires at step 2195 in both. Turning the cameras on changed nothing the probe consumes."
   },
   "scoring_events": [
-    {"step": 37, "policy_seconds": 0.74, "reward_terms": {"grasped_objects": 1.0, "objects_in_circle": 0.0},
-     "reading": "NOT a grasp. grasped_objects only requires the gripper body within 0.20 m of an object, and the gripper starts that close to one at spawn. A viewer who reads the on-frame raw score will see 1 here; the real grasp is the LIFT phase at 6.2 s."},
-    {"step": 2195, "policy_seconds": 43.9, "reward_terms": {"objects_in_circle": 1.0, "grasped_objects": 0.0},
-     "reading": "The delivery. The object's root entered the 1.0 m reward radius with root z <= 0.5 while it was being carried inward over the wall, during PLACE_DRIVE; RELEASE at 46.6 s then lets it drop. This is the point of the video."}
+    {
+      "step": 37,
+      "policy_seconds": 0.74,
+      "reward_terms": {
+        "grasped_objects": 1.0,
+        "objects_in_circle": 0.0
+      },
+      "reading": "NOT a grasp. grasped_objects only requires the gripper body within 0.20 m of an object, and the gripper starts that close to one at spawn. A viewer who reads the on-frame raw score will see 1 here; the real grasp is the LIFT phase at 6.2 s."
+    },
+    {
+      "step": 2195,
+      "policy_seconds": 43.9,
+      "reward_terms": {
+        "objects_in_circle": 1.0,
+        "grasped_objects": 0.0
+      },
+      "reading": "The delivery. The object's root entered the 1.0 m reward radius with root z <= 0.5 while it was being carried inward over the wall, during PLACE_DRIVE; RELEASE at 46.6 s then lets it drop. This is the point of the video."
+    }
   ],
   "probe_phase_timeline_policy_seconds": {
-    "REACH": 0.0, "CLOSE": 2.7, "CLOSE_HOLD": 4.7, "LIFT": 6.2, "LIFT_HOLD": 8.2,
-    "CARRY": 10.2, "PLACE_RAISE": 40.7, "PLACE_DRIVE": 43.2, "PLACE_IN": 44.1, "RELEASE": 46.6
+    "REACH": 0.0,
+    "CLOSE": 2.7,
+    "CLOSE_HOLD": 4.7,
+    "LIFT": 6.2,
+    "LIFT_HOLD": 8.2,
+    "CARRY": 10.2,
+    "PLACE_RAISE": 40.7,
+    "PLACE_DRIVE": 43.2,
+    "PLACE_IN": 44.1,
+    "RELEASE": 46.6
   },
   "media": {
-    "raw": "runs/delivery_video/record_01/public_cameras.mp4 (105,758,691 bytes, over GitHub's 100 MB file limit, kept local)",
-    "committed": "docs/videos/task_b_first_delivery_20260915_720p_1x.mp4 (10,798,983 bytes, 1280x720, 473 frames, 47.3 s)",
+    "raw": "runs/delivery_video/record_03_overview/overview_cameras.mp4 (354,992,181 bytes, 1920x1080, published as the Release asset task_b_first_delivery_20260915_original.mp4)",
+    "committed": "docs/videos/task_b_first_delivery_20260915_1080p_1x.mp4 (19,197,777 bytes, 1920x1080, 473 frames, 47.3 s)",
     "provenance": "docs/videos/task_b_first_delivery_20260915_provenance.json"
   },
   "what_this_does_not_say": [
     "It is not a policy result and not a Task B pass: the base is parked from the object's true pose, so perception and navigation are removed by construction.",
     "It shows the delivery mechanics work on camera. The visual replacement for the oracle is still the open work.",
     "One run, one seed, one object."
-  ]
+  ],
+  "camera_layout": {
+    "canvas": "1920x1080",
+    "main_view": "third-person overview camera on base_link at (-2.00, -2.00, 1.25) m aimed at (0.15, 0.00, 0.20) m",
+    "insets": "head RGB and wrist RGB, 448x336, bottom-left",
+    "why": "the first recording used only the onboard 640x480 cameras; they are low resolution and point at the work rather than at the robot, so the robot was never really shown",
+    "framing_check": "task_b/audit_overview_video.py -- nearest frame edge 77.2 px away against a 30 px floor, envelope spans 42.1 percent of the frame width; on the run itself every chassis corner, the gripper and the held object stay at least 115 px inside the frame",
+    "declared": "the overview camera is a diagnostic render product, absent from the official scene, never read by a policy, and recorded in result.json and the source manifest"
+  }
 }

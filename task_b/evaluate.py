@@ -81,6 +81,7 @@ parser.add_argument("--ramp_calls", type=int, default=100)
 parser.add_argument("--wheel_cmd", type=float, default=0.10, help="Normalized wheel command after the ramp.")
 parser.add_argument("--crouch_fraction", type=float, default=1.0, help="Fraction of the experimental crouch target, in [0,1].")
 parser.add_argument("--video", action="store_true", help="Record the two public RGB cameras at their native 10 Hz.")
+parser.add_argument("--video_view", choices=("robot", "overview"), default="robot", help="--video layout. 'robot' is the two onboard cameras side by side. 'overview' adds a third-person camera on the chassis looking back at the robot and records its full 1920x1080 frame with the two onboard cameras as insets. The overview camera is a diagnostic render product only: it is not part of the official scene, no policy ever reads it, and it is declared in the result and the source manifest.")
 parser.add_argument("--rgb_interval", type=int, default=100, help="Save public RGB frames every N steps (0: only step 0 and final).")
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
@@ -119,6 +120,8 @@ if args.mode == "stance_descend":
         parser.error("--stance_grid_step must not exceed --stance_drop_max")
 if args.camera_free and (args.video or args.vision_head):
     parser.error("--camera_free cannot be combined with --video or --vision_head")
+if args.video_view != "robot" and not args.video:
+    parser.error("--video_view only applies to --video recordings; pass --video as well")
 if args.mode == "camera_calibration":
     if args.camera_free:
         parser.error("camera_calibration reads the scene cameras' own poses; drop --camera_free")
@@ -205,6 +208,9 @@ from atec_rl_lab.tasks.task_b.env_cfg import TaskBEnvB2WCfg  # noqa: E402
 from atec_rl_lab.tasks.task_base.action_base import apply_safe_action_spec  # noqa: E402
 from task_a.tools.d1g2_taska_camera_compat import prepare_camera_views  # noqa: E402
 from task_b import control  # noqa: E402
+from task_b.overview_video import (OVERVIEW_CAMERA_POS,  # noqa: E402
+                                   OVERVIEW_CAMERA_TARGET, compose_overview_frame,
+                                   world_camera_from_look_at)
 from task_b.diagnostics import PreResetRecorder  # noqa: E402
 
 
@@ -561,6 +567,7 @@ def solve_descent(leg_q, schema, drop_m) -> np.ndarray:
 def main() -> None:
     output = args.output
     started = time.monotonic()
+    video_file = "overview_cameras.mp4" if args.video_view == "overview" else "public_cameras.mp4"
     steps, score, reason = 0, 0.0, "max_steps"
     env, trace, recorder, video, restore_camera_views = None, None, None, None, lambda: None
     telemetry = {key: [] for key in ("step", "sim_seconds", "alpha", "action", "requested_action", "proprio", "q", "qdot", "base_xyz",
@@ -599,6 +606,25 @@ def main() -> None:
                 camera = getattr(cfg.scene, name, None)
                 if camera is not None:
                     camera.update_latest_camera_pose = True
+            if args.video and args.video_view == "overview":
+                # A third-person chase camera for the recording, mounted on
+                # base_link and aimed back at the robot, the same construction
+                # the Task A runner uses for its overview videos. It is an extra
+                # render product: the official scene, physics, actions, rewards
+                # and terminations are untouched and no policy ever reads it.
+                import isaaclab.sim as sim_utils
+                from isaaclab.sensors import CameraCfg
+                from scipy.spatial.transform import Rotation as _Rotation
+                rotation = world_camera_from_look_at(OVERVIEW_CAMERA_POS, OVERVIEW_CAMERA_TARGET)
+                quaternion = _Rotation.from_matrix(rotation).as_quat()[[3, 0, 1, 2]]
+                cfg.scene.overview_camera = CameraCfg(
+                    prim_path=f"{{ENV_REGEX_NS}}/Robot/{BASE_LINK}/OverviewCamera",
+                    update_period=0.1, height=1080, width=1920, data_types=["rgb"],
+                    spawn=sim_utils.PinholeCameraCfg(focal_length=24.0, horizontal_aperture=20.955,
+                                                     clipping_range=(0.05, 100.0)),
+                    offset=CameraCfg.OffsetCfg(pos=tuple(float(v) for v in OVERVIEW_CAMERA_POS),
+                                               rot=tuple(float(v) for v in quaternion),
+                                               convention="world"))
         # Mirror the official runner, which always applies the action spec helper.
         cfg = apply_safe_action_spec(cfg, None)
 
@@ -774,9 +800,14 @@ def main() -> None:
         if args.video:
             import imageio.v2 as imageio
             import cv2
-            video = imageio.get_writer(output / "public_cameras.mp4", fps=10,
-                                       codec="libx264", quality=7, macro_block_size=1,
+            video = imageio.get_writer(output / video_file,
+                                       fps=10, codec="libx264", quality=7, macro_block_size=1,
                                        ffmpeg_params=["-threads", "2", "-movflags", "+faststart"])
+            overview_camera = (task.scene.sensors.get("overview_camera")
+                               if hasattr(task.scene, "sensors") else None) \
+                if args.video_view == "overview" else None
+            if args.video_view == "overview" and overview_camera is None:
+                raise RuntimeError("--video_view overview did not register the overview camera")
 
         terminated_flag = truncated_flag = False
         active_terms, reward_step, final_state = [], {}, None
@@ -885,12 +916,22 @@ def main() -> None:
                 if not (terminated_flag or truncated_flag):
                     frames[f"score_{steps:05d}"] = save_rgb(obs, output, f"score_{steps:05d}")
             if video is not None and steps % 5 == 0 and not (terminated_flag or truncated_flag):
-                rgb = [obs["image"][key][0].detach().cpu().numpy()[..., :3].astype(np.uint8)
-                       for key in ("head_rgb", "ee_rgb")]
-                frame = np.concatenate(rgb, axis=1)
-                cv2.rectangle(frame, (0, 0), (frame.shape[1], 32), (15, 20, 26), -1)
-                cv2.putText(frame, f"Task B | {args.mode} | {steps * dt:.1f}s | raw score {score:.0f} | head RGB / wrist RGB",
-                            (12, 23), cv2.FONT_HERSHEY_SIMPLEX, .55, (240, 240, 240), 1, cv2.LINE_AA)
+                head_rgb = obs["image"]["head_rgb"][0].detach().cpu().numpy()
+                ee_rgb = obs["image"]["ee_rgb"][0].detach().cpu().numpy()
+                caption = (f"Task B | {args.mode} | {steps * dt:.1f}s | raw score {score:.0f} | "
+                           + ("third-person overview / onboard insets" if overview_camera is not None
+                              else "head RGB / wrist RGB"))
+                if overview_camera is None:
+                    frame = np.concatenate([head_rgb[..., :3].astype(np.uint8),
+                                            ee_rgb[..., :3].astype(np.uint8)], axis=1)
+                    cv2.rectangle(frame, (0, 0), (frame.shape[1], 32), (15, 20, 26), -1)
+                    cv2.putText(frame, caption, (12, 23), cv2.FONT_HERSHEY_SIMPLEX, .55,
+                                (240, 240, 240), 1, cv2.LINE_AA)
+                else:
+                    # The overview camera refreshes on the same 10 Hz period as the
+                    # onboard ones, so this frame carries a consistent set.
+                    overview_rgb = overview_camera.data.output["rgb"][0].detach().cpu().numpy()
+                    frame = compose_overview_frame(overview_rgb, head_rgb, ee_rgb, caption)
                 video.append_data(frame)
 
             telemetry["step"].append(steps)
@@ -1057,7 +1098,19 @@ def main() -> None:
             "stability_controller": stabilizer.describe() if stabilizer else None,
             "grasp_probe": probe_plan,
             "rgb_frames": frames,
-            "video": "public_cameras.mp4" if args.video else None,
+            "video": video_file if args.video else None,
+            "video_layout": (None if not args.video else
+                             "1920x1080 third-person overview with the two onboard cameras as "
+                             "insets; the overview camera is a diagnostic render product added "
+                             "for the recording, absent from the official scene and never read "
+                             "by a policy" if args.video_view == "overview" else
+                             "head RGB | wrist RGB side by side, 1280x480"),
+            "overview_camera": (None if args.video_view != "overview" else {
+                "prim_path": f"{{ENV_REGEX_NS}}/Robot/{BASE_LINK}/OverviewCamera",
+                "base_link_from_camera_pos": list(OVERVIEW_CAMERA_POS),
+                "aimed_at_base_link_point": list(OVERVIEW_CAMERA_TARGET),
+                "resolution": [1920, 1080], "update_period_s": 0.1,
+                "convention": "world camera (+X forward, +Y left, +Z up), as the official head camera offset"}),
             "files": {"trace": "trace.jsonl", "telemetry": "telemetry.npz",
                       "metadata": "environment_metadata.json", "manifest": "source_manifest.json"},
             "task_physics_modified": False,

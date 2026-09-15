@@ -48,14 +48,14 @@
 
 ## Task B：投递（真值定位）
 
-**[完整 1× 双相机录像](videos/task_b_first_delivery_20260915_720p_1x.mp4)**：seed 42 的 oracle 探针回合，2369 步 / 47.3 媒体秒。0.7 秒官方 `grasped_objects` 触发（出生时夹爪本体已在某物体 0.20 m 阈值内的**接近**项，**不是夹住**），6.2 秒抬升离地，10.2–40.7 秒直行搬运，40.7 秒抬过桶沿，**43.9 秒 `objects_in_circle` 触发、累计 2 分**，46.6 秒松爪，全程 0 非法接触。这段录像把相机打开重跑，**步数、总分与两个得分步与之前的无相机回合完全一致**。
+**[完整 1× 第三人称录像](videos/task_b_first_delivery_20260915_1080p_1x.mp4)**（主机位第三人称 1920×1080，左下角为头部 / 腕部相机画中画）：seed 42 的 oracle 探针回合，2369 步 / 47.3 媒体秒。0.7 秒官方 `grasped_objects` 触发（出生时夹爪本体已在某物体 0.20 m 阈值内的**接近**项，**不是夹住**），6.2 秒抬升离地，10.2–40.7 秒直行搬运，40.7 秒抬过桶沿，**43.9 秒 `objects_in_circle` 触发、累计 2 分**，46.6 秒松爪，全程 0 非法接触。这段录像把相机打开重跑，**步数、总分与两个得分步与之前的无相机回合完全一致**。
 
 **底座按物体真实位姿泊车**，所以这段录像是抓取与投递的机构与几何验证，**不是感知或导航结果，也不是 Task B 通关**。[探针、复现命令与逐步时间轴](../task_b/results/first_delivery_video.json)。
 
 | 文件 | 展示与来源 | 获取位置 |
 | --- | --- | --- |
-| 本次网页视频 | 完整 1×，1280×720，约 10.80 MB；双相机原画面加上下留边，保留全部 473 帧 | [转码与出处](videos/task_b_first_delivery_20260915_provenance.json) |
-| 本次原片 | 头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 105.76 MB，全部 473 帧 | [task_b_first_delivery_20260915_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_original.mp4) （Release 附件，超过仓库单文件 100 MB 上限故不进 git；sha256 记在转码记录里） |
+| 本次网页视频 | 完整 1×，1920×1080，约 19.20 MB；第三人称主机位，保留全部 473 帧 | [转码与出处](videos/task_b_first_delivery_20260915_provenance.json) |
+| 本次原片 | 第三人称 1920×1080、10 fps，约 354.99 MB，全部 473 帧 | [task_b_first_delivery_20260915_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_original.mp4) （Release 附件，超过仓库单文件 100 MB 上限故不进 git；sha256 记在转码记录里） |
 | 本次完整证据 | 原结果、得分事件、逐步遥测、压缩逐步轨迹、源码快照、抓取复核、独立成绩复核与原片 | [task_b_first_delivery_20260915_evidence.tar.gz](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_evidence.tar.gz) |
 | 首次接近分网页视频 | 同次完整 1×，1280×720，约 15.36 MB；双相机原画面加上下留边，保留全部 675 帧 | [本地文件](videos/task_b_first_score_20260914_720p_1x.mp4) · [转码记录](videos/task_b_first_score_20260914_provenance.json) |
 | 首次接近分原片 | 官方头部 / 腕部 RGB 横向拼接，1280×480、10 fps，约 169.71 MB | [task_b_first_score_20260914_original.mp4](https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-score-20260914/task_b_first_score_20260914_original.mp4) |

@@ -49,11 +49,11 @@
   </style>
 </head>
 <body>
-  <main data-run-id="delivery_video/record_01" data-score="1.9999999552965164" data-oracle-localisation="true">
+  <main data-run-id="delivery_video/record_03_overview" data-score="1.9999999552965164" data-oracle-localisation="true">
     <header>
       <p class="eyebrow">ATEC · B2w + Piper</p>
       <h1>Task B 抓起与投递</h1>
-      <p class="intro">双相机完整录像 · 1× 仿真时间播放 · 本机原始环境 · 真值定位</p>
+      <p class="intro">第三人称完整录像 + 双相机画中画 · 1× 仿真时间播放 · 本机原始环境 · 真值定位</p>
     </header>
     <dl class="stats" aria-label="本次运行记录">
       <div><dt>官方累计得分</dt><dd>2 <small>分</small></dd></div>
@@ -66,9 +66,9 @@
     </aside>
     <figure>
       <div class="player">
-        <video id="task-video" controls playsinline preload="metadata" width="1280" height="720"
-               src="videos/task_b_first_delivery_20260915_720p_1x.mp4" poster="videos/task_b_first_delivery_20260915_poster.jpg"
-               aria-label="Task B 双相机单次仿真录像" aria-describedby="video-caption">
+        <video id="task-video" controls playsinline preload="metadata" width="1920" height="1080"
+               src="videos/task_b_first_delivery_20260915_1080p_1x.mp4" poster="videos/task_b_first_delivery_20260915_1080p_poster.jpg"
+               aria-label="Task B 第三人称单次仿真录像" aria-describedby="video-caption">
           你的浏览器不支持视频播放，请使用下方下载入口观看。
         </video>
       </div>
@@ -76,16 +76,16 @@
         <strong>视频暂时无法播放。</strong>
         <span id="error-detail">请刷新页面重试，或使用下方下载入口观看。</span>
       </div>
-      <figcaption id="video-caption">完整 1× 录像未做倍速处理，媒体时长 47.30 秒，原片共 473 帧、10 fps；回合仿真时长为 2369 步 × 0.02 s = 47.38 秒，差异来自原生 10 Hz 采样，帧数与时间轴均未改动。画面左侧为头部相机、右侧为腕部相机。得分时刻取自第 2195 个环境步后的事件记录，不根据视频帧估计。</figcaption>
+      <figcaption id="video-caption">第三人称主机位 1920×1080，左下角为头部与腕部相机的原画面。完整 1× 录像未做倍速处理，媒体时长 47.30 秒，原片共 473 帧、10 fps；回合仿真时长为 2369 步 × 0.02 s = 47.38 秒，差异来自原生 10 Hz 采样，帧数与时间轴均未改动。得分时刻取自第 2195 个环境步后的事件记录，不根据视频帧估计。</figcaption>
     </figure>
     <nav class="links" aria-label="视频与证据">
-      <a class="button primary" href="videos/task_b_first_delivery_20260915_720p_1x.mp4" download>下载 720p 完整视频 · 约 10.8 MB</a>
-      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_original.mp4">下载原始录像 1280×480 · Release</a>
+      <a class="button primary" href="videos/task_b_first_delivery_20260915_1080p_1x.mp4" download>下载 1080p 完整视频 · 约 19.2 MB</a>
+      <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_original.mp4">下载原始录像 1920×1080 · Release</a>
       <a class="button" href="https://github.com/LYHrmer/atec-robotics-projects/releases/download/task-b-first-delivery-20260915/task_b_first_delivery_20260915_evidence.tar.gz">下载证据与校验记录 · Release</a>
       <a class="button" href="videos/task_b_first_delivery_20260915_provenance.json">查看视频来源</a>
     </nav>
     <div class="run-details">
-      <p>运行编号：delivery_video/record_01 · 随机种子：42 · 目标物：<code>object_10</code>（芥末瓶）</p>
+      <p>运行编号：delivery_video/record_03_overview · 随机种子：42 · 目标物：<code>object_10</code>（芥末瓶）</p>
       <p>结束原因：探针序列完成；未触发官方终止条件，全程 0 非法接触。</p>
       <p>复核：独立成绩复核从遥测重算两个计分项，逐步<strong>零处不一致</strong>；抓取复核判定 <code>real_grasp_observed</code>（物体离地，搬运段钳口–物体距离<strong>恒定 53.9 mm</strong>，是夹住而非推铲）。</p>
     </div>
