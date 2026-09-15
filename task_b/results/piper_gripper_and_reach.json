@@ -93,5 +93,33 @@
       "unexplained": "The same search finds 0.053 m when run at 128 envs but 0.156 m at 1 env. The objects' WORLD positions differ between the two builds (object_1 at (6.49,-23.11) with 128 envs and at (-7.26,-10.60) with 1 env) even though both use seed 42 and the same cfg. Same seed should mean the same layout, so this is NOT explained. Until it is, reach figures from the 128-env build and from the 1-env build are not interchangeable.",
       "assert_calibration_error_caught": "an assert required >5 cm per-finger travel but the asset has 3.5 cm per finger (7 cm total jaw). The assert was miscalibrated, not the asset."
     }
+  },
+  "env_build_validity": {
+    "finding": "the 128-env build of the official Task B env is INVALID; only 1 env is usable",
+    "evidence": {
+      "unique_env_origins_at_1_env": 1,
+      "unique_env_origins_at_128_envs": 1,
+      "env_origin_at_128_envs": [
+        -10.0,
+        -10.0,
+        0.0
+      ],
+      "same_objects_between_builds": "0 of 18",
+      "object_1_env_local_1_env": [
+        2.74,
+        -0.611
+      ],
+      "object_1_env_local_128_env": [
+        16.49,
+        -13.111
+      ]
+    },
+    "cause": "cfg.scene.num_envs is assigned AFTER construction. TaskBEnvB2WCfg.__post_init__ builds the terrain and the env origins using the default scene.num_envs (4096); changing the count afterwards does not rebuild them, so all 128 envs collapse onto one origin and share one terrain tile. evaluate.py does the same assignment, but only for num_envs=1.",
+    "consequences": [
+      "the 128-env objects fall through the floor (128 overlapping scenes at one point) -- this was previously misattributed to a teleport or interpenetration problem",
+      "reach measured at 128 envs (0.053 m) is INVALID",
+      "the single-env v4 result (0.156 m from the jaw midpoint) is the trustworthy one",
+      "any multi-env work on this task needs the terrain rebuilt for the chosen count, not just scene.num_envs reassigned"
+    ]
   }
 }
