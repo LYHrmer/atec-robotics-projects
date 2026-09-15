@@ -47,7 +47,7 @@ from pathlib import Path
 BIN_XY_IN_TILE = (0.0, 0.0)
 BIN_RADIUS = 1.0
 BIN_RIM_Z = 0.55
-SUCCESS_Z_MAX = 0.5
+SUCCESS_HEIGHT_FRACTION = 0.9
 SUCCESS_SPEED = 0.4
 # The official circle is 1.0 m in radius, but merely landing anywhere inside it
 # is reachable by walking past, which is not a delivery.  Delivery additionally
@@ -123,6 +123,21 @@ COMMAND_WZ_SCALE = 0.50
 COMMAND_WZ_RANGE = (-0.5, 0.5)
 
 FAILURE_TERMS = ("illegal_contact", "bad_orientation", "too_far")
+
+# --- multi-delivery episodes ------------------------------------------------
+# One episode is no longer one delivery.  The episode hands the robot a fresh
+# object and a fresh spawn the moment its previous attempt resolves -- straight
+# away if the drop landed, after a settle window if it did not -- so a single
+# rollout contains many deliveries, the way the official task asks for many
+# objects in the circle.
+DROPS_PER_EPISODE = 10        # cap, so one episode cannot run on forever
+DROP_SETTLE_STEPS = 400       # time a drop gets to settle before the next handover
+# The multi-delivery loop hands the robot a new object inside the same episode.
+# OFF by default: the shipped checkpoint was trained one-delivery-per-episode
+# and a policy trained that way does not chain deliveries, so enabling this
+# against that checkpoint scores nothing.  It is meant to be enabled *with* a
+# training run, not against an existing single-delivery policy.
+MULTI_DELIVERY_DEFAULT = False
 
 
 def command_from_action(action):
@@ -217,6 +232,9 @@ def taskb_state(env):
         "success_radius": BIN_RADIUS * SUCCESS_DISTANCE_FRACTION,
         "release_radius": RELEASE_RADIUS,
         "ground_z": 0.0,
+        "deliveries_this_episode": torch.zeros(n, dtype=torch.long, device=device),
+        "deliveries_max_this_episode": torch.zeros(n, dtype=torch.long, device=device),
+        "drops_this_episode": torch.zeros(n, dtype=torch.long, device=device),
         "success_ema": 0.0,
         "episodes": 0,
         "curriculum_successes": 0.0,
@@ -275,9 +293,11 @@ def _heading_error(env):
 def delivery_success(env):
     """Official Task B test, applied to the released object once it settles.
 
-    ``BIN_RADIUS`` / ``SUCCESS_Z_MAX`` are the official 1.0 m / 0.5 m values
-    scaled by the same ``bin_scale`` the terrain used, so the test keeps its
-    shape and only its size changes.
+    ``BIN_RADIUS`` is the official 1.0 m circle and the height fraction bounds how
+    high the object may be, both scaled by the ``bin_scale`` the terrain used, so
+    the test keeps its shape and only its size changes.  The fraction must leave
+    room above the rim: a drop is released at ~1.43 m and only scores in the band
+    once it has fallen into it.
     """
     import torch
 
@@ -285,9 +305,15 @@ def delivery_success(env):
     obj = env.scene["object"]
     pos = obj.data.root_pos_w
     inside = _object_dist_to_bin(env) <= state["bin_radius"] * SUCCESS_DISTANCE_FRACTION
-    height_ok = (pos[:, 2] - _ground_z(env) >= 0.0) & (pos[:, 2] - _ground_z(env) <= SUCCESS_Z_MAX * state["bin_scale"])
+    bin_height = state["bin_scale"] * (0.05 + 0.5)
+    height_ok = ((pos[:, 2] - _ground_z(env) >= 0.0)
+                 & (pos[:, 2] - _ground_z(env) <= SUCCESS_HEIGHT_FRACTION * bin_height))
     settled = torch.norm(obj.data.root_lin_vel_w, dim=1) < SUCCESS_SPEED
-    return (~state["carrying"]) & inside & height_ok & settled
+    # Guard on the drop phase, not on a flag this function also writes:
+    # A flag set from this result must never be required by it, so this guards
+    # on the drop phase directly: ``released`` is cleared by the next
+    # ``reset_carried_object``, which is exactly the lifespan of one drop.
+    return state["released"] & (~state["carrying"]) & inside & height_ok & settled
 
 
 def _ground_z(env):
@@ -351,11 +377,13 @@ def reset_carried_object(env, env_ids):
     state["success_counted"][ids] = False
     state["steps_since_release"][ids] = 0
     state["release_height"][ids] = 0.0
-    dist = torch.norm(pos[ids, :2] - bin_center_w(env)[ids], dim=1)
-    state["prev_dist"][ids] = dist
-    state["min_dist"][ids] = dist
+    state["prev_dist"][ids] = torch.norm(pos[ids, :2] - bin_center_w(env)[ids], dim=1)
+    state["min_dist"][ids] = state["prev_dist"][ids]
     state["command"][ids] = 0.0
     state["command"][ids, 0] = COMMAND_VX_BIAS
+    # a reset event means a whole new episode: clear the per-episode counters
+    state["deliveries_this_episode"][ids] = 0
+    state["drops_this_episode"][ids] = 0
 
 
 def update_carried_object(env, env_ids, release_radius: float = RELEASE_RADIUS,
@@ -404,6 +432,55 @@ def update_carried_object(env, env_ids, release_radius: float = RELEASE_RADIUS,
         state["release_height"][drop] = pos[drop, 2]
     state["steps_since_release"] += (~state["carrying"]).long()
     state["min_dist"] = torch.minimum(state["min_dist"], _object_dist_to_bin(env))
+
+
+def next_delivery(env, env_ids, multi_delivery: bool = MULTI_DELIVERY_DEFAULT,
+                  settle_steps: int = DROP_SETTLE_STEPS,
+                  max_drops: int = DROPS_PER_EPISODE):
+    """Resolve a finished drop and start the next one, within the same episode.
+
+    Runs every control step right after ``update_carried_object``.  For each
+    environment:
+
+    * a drop that landed is credited and the next delivery starts immediately;
+    * a drop that did not land is given ``settle_steps`` to be judged, then the
+      next delivery starts anyway;
+    * a carried object is left alone.
+
+    This is what turns one rollout into many deliveries.  The robot is
+    re-spawned on the ring with a fresh random heading for every attempt, so
+    each delivery inside an episode is an independent goal-conditioned problem
+    and the policy cannot solve the episode by memorising a single trajectory.
+    """
+    import torch
+
+    if not multi_delivery:
+        # Single-delivery mode: a successful delivery ends the episode and an
+        # unresolved drop just runs out the clock.  This is the mode the
+        # published checkpoint was trained and verified under.
+        return
+
+    state = taskb_state(env)
+    success = delivery_success(env)
+
+    # a landed drop finishes its attempt at once
+    landed = success & (~state["carrying"])
+    # an unlanded drop finishes once its settle window has elapsed
+    stalled = ((~state["carrying"]) & (~success)
+               & (state["steps_since_release"] >= settle_steps))
+    advance = landed | stalled
+    if max_drops:
+        advance = advance & (state["drops_this_episode"] < max_drops)
+    ids = advance.nonzero().flatten()
+    if len(ids) == 0:
+        return
+
+    state["deliveries_this_episode"][ids] += landed[ids].long()  # noqa: multi-delivery only
+    state["drops_this_episode"][ids] += 1
+
+    # fresh ring position and heading for the next attempt
+    reset_robot_on_ring(env, ids)
+    reset_carried_object(env, ids)
 
 
 def delivery_curriculum(env, env_ids, window: int = 512,
@@ -651,10 +728,11 @@ def delivery_done(env):
     return delivery_success(env)
 
 
-def delivery_resolved(env, settle_steps: int = 250):
-    """Give up shortly after a release that did not land in the circle."""
-    state = taskb_state(env)
-    return state["released"] & (state["steps_since_release"] >= settle_steps)
+def drops_exhausted(env, max_drops: int = DROPS_PER_EPISODE):
+    """Truncate once an episode has spent its allowance of delivery attempts."""
+    import torch
+
+    return taskb_state(env)["drops_this_episode"] >= max_drops
 
 
 def too_far_from_bin(env, max_dist: float = 8.0):
@@ -711,7 +789,7 @@ def build_d1g2_taskb_train_cfg(
     seed: int = 42,
     ddt_root: str | Path | None = None,
     num_envs: int = 128,
-    episode_length_s: float = 20.0,
+    episode_length_s: float = 40.0,
     spawn_min: float = SPAWN_MIN_DEFAULT,
     spawn_max: float = SPAWN_MAX_DEFAULT,
     heading_noise: float = HEADING_NOISE_DEFAULT,
@@ -888,6 +966,14 @@ def build_d1g2_taskb_train_cfg(
             is_global_time=False,
             params={"release_radius": release_radius},
         )
+        # Order matters: resolution must see this step's release bookkeeping.
+        # The interval manager applies terms in declaration order.
+        advance_delivery = EventTermCfg(
+            func=next_delivery,
+            mode="interval",
+            interval_range_s=(step_dt, step_dt),
+            is_global_time=False,
+        )
 
     cfg.events = TaskBEventsCfg()
 
@@ -929,8 +1015,11 @@ def build_d1g2_taskb_train_cfg(
         bad_orientation = TerminationTermCfg(func=mdp.bad_orientation, params={"limit_angle": 1.0})
         too_far = TerminationTermCfg(func=too_far_from_bin, params={"max_dist": 8.0})
         delivery_success = TerminationTermCfg(func=delivery_done)
-        # Truncation, not failure: the drop is resolved, the episode is over.
-        delivery_resolved = TerminationTermCfg(func=delivery_resolved, time_out=True)
+        # NOTE: an unresolved drop no longer ends the episode.  ``next_delivery``
+        # hands the robot its next object instead, so episodes contain many
+        # attempts.  Dropping this term is what makes that loop observable in
+        # the termination counts.
+        drops_exhausted = TerminationTermCfg(func=drops_exhausted, time_out=True)
 
     @configclass
     class TaskBCurriculumCfg:
