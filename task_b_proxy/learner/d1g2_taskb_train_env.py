@@ -230,6 +230,9 @@ def taskb_state(env):
         "prev_dist": torch.zeros(n, device=device),
         "min_dist": torch.full((n,), 1.0e3, device=device),
         "command": torch.zeros(n, 3, device=device),
+        "closing_rate": torch.zeros(n, device=device),
+        "armed": torch.zeros(n, dtype=torch.bool, device=device),
+        "moving": torch.zeros(n, dtype=torch.bool, device=device),
         # spawn curriculum, widened/narrowed by ``delivery_curriculum``
         "spawn_min": SPAWN_MIN_DEFAULT,
         "spawn_max": SPAWN_MAX_DEFAULT,
@@ -380,6 +383,8 @@ def reset_carried_object(env, env_ids):
 
     state["carrying"][ids] = True
     state["released"][ids] = False
+    state["armed"][ids] = False
+    state["moving"][ids] = False
     state["reach_counted"][ids] = False
     state["success_counted"][ids] = False
     state["steps_since_release"][ids] = 0
@@ -388,9 +393,6 @@ def reset_carried_object(env, env_ids):
     state["min_dist"][ids] = state["prev_dist"][ids]
     state["command"][ids] = 0.0
     state["command"][ids, 0] = COMMAND_VX_BIAS
-    # a reset event means a whole new episode: clear the per-episode counters
-    state["deliveries_this_episode"][ids] = 0
-    state["drops_this_episode"][ids] = 0
 
 
 def update_carried_object(env, env_ids, release_radius: float = RELEASE_RADIUS,
@@ -433,26 +435,39 @@ def update_carried_object(env, env_ids, release_radius: float = RELEASE_RADIUS,
         obj.write_root_velocity_to_sim(velocity, env_ids=ids)
         dist = torch.norm(pos[ids, :2] - bin_center_w(env)[ids], dim=1)
         forward_speed = robot.data.root_lin_vel_b[ids, 0]
-        drop = ids[(dist <= release_radius) & (forward_speed > release_speed)]
-        if not hasattr(env, "_rp"):
-            env._rp = 0
-        env._rp += 1
-        if env._rp % 100 == 1:
-            import sys
-            near = dist <= release_radius
-            print(f"REL_PROBE n={env._rp} carrying={len(ids)} "
-                  f"dist[min={float(dist.min()):.2f} mean={float(dist.mean()):.2f}] "
-                  f"near={int(near.sum())} "
-                  f"fspeed[min={float(forward_speed.min()):.2f} mean={float(forward_speed.mean()):.2f} "
-                  f"max={float(forward_speed.max()):.2f}] "
-                  f"near_and_fast={int((near & (forward_speed > release_speed)).sum())} "
-                  f"drops_so_far={int(state['drops_this_episode'].sum())}",
-                  file=sys.stderr, flush=True)
+        # The two requirements are latched separately and the drop fires on
+        # whichever is satisfied last.  Demanding both within one 20 ms step
+        # made the release depend on a coincidence: the object repeatedly came
+        # inside the radius while the robot happened to be turning, so its
+        # forward speed was under the gate and the window was missed.
+        in_radius = dist <= release_radius
+        moving_forward = forward_speed > release_speed
+        state["armed"][ids] |= in_radius
+        state["moving"][ids] |= moving_forward
+        drop = ids[state["armed"][ids] & state["moving"][ids]]
         state["carrying"][drop] = False
         state["released"][drop] = True
         state["release_height"][drop] = pos[drop, 2]
     state["steps_since_release"] += (~state["carrying"]).long()
     state["min_dist"] = torch.minimum(state["min_dist"], _object_dist_to_bin(env))
+
+
+def reset_episode_counters(env, env_ids):
+    """Clear the per-episode delivery totals.  Episodes only, never cycles.
+
+    This must NOT live in ``reset_carried_object``.  That runs once per
+    *delivery cycle* as well as once per episode, so clearing the counters
+    there wiped the count every time a delivery succeeded -- destroying exactly
+    the quantity the multi-delivery loop measures.  Four multi-delivery
+    training runs and every measurement taken from this environment read zero
+    because of this one placement, not because of the reward or the geometry.
+    """
+    import torch
+
+    state = taskb_state(env)
+    ids = env_ids if isinstance(env_ids, torch.Tensor) else torch.tensor(env_ids, device=env.device)
+    state["deliveries_this_episode"][ids] = 0
+    state["drops_this_episode"][ids] = 0
 
 
 def next_delivery(env, env_ids, multi_delivery: bool = MULTI_DELIVERY_DEFAULT,
@@ -636,6 +651,7 @@ def approach_progress(env, max_rate: float = 2.0):
     dist = _object_dist_to_bin(env)
     rate = ((state["prev_dist"] - dist) / env.step_dt).clamp(-max_rate, max_rate)
     state["prev_dist"] = dist
+    state["closing_rate"] = rate
     return rate * state["carrying"].float()
 
 
@@ -650,7 +666,9 @@ def heading_alignment(env):
     """
     import torch
 
-    return torch.cos(_heading_error(env))
+    state = taskb_state(env)
+    closing = (state["closing_rate"] > 0.05).float()
+    return torch.cos(_heading_error(env)) * closing * state["carrying"].float()
 
 
 def heading_error_penalty(env, min_dist: float = 1.2):
@@ -662,7 +680,7 @@ def heading_error_penalty(env, min_dist: float = 1.2):
     return _heading_error(env).abs() * active.float()
 
 
-def objective_proximity(env, sigma: float = 1.0):
+def objective_proximity(env, saturation: float = 1.5):
     """Dense exponential reward for the object sitting close to the bin centre.
 
     ``approach_progress`` only pays while the distance is shrinking, so it
@@ -674,8 +692,24 @@ def objective_proximity(env, sigma: float = 1.0):
     import torch
 
     state = taskb_state(env)
-    distance = _object_dist_to_bin(env)
-    return torch.exp(-((distance / sigma) ** 2)) * state["carrying"].float()
+    distance = _object_dist_to_bin(env).clamp(max=saturation)
+    return (saturation - distance) / saturation * state["carrying"].float()
+
+
+def holding_cost(env):
+    """Charge for sitting inside the release radius without delivering.
+
+    Every shaping term pays for being *near* the bin, so a policy can collect
+    them indefinitely by approaching and never finishing.  This is the one term
+    that distinguishes "about to deliver" from "delivered".
+    """
+    import torch
+
+    state = taskb_state(env)
+    ready = (state["carrying"]
+             & (_object_dist_to_bin(env) <= state["release_radius"])
+             & (env.scene["robot"].data.root_lin_vel_b[:, 0] <= RELEASE_SPEED))
+    return ready.float()
 
 
 def approach_speed_penalty(env, zone_extra: float = 0.5):
@@ -981,6 +1015,7 @@ def build_d1g2_taskb_train_cfg(
             params={"position_range": (1.0, 1.0), "velocity_range": (0.0, 0.0)},
         )
         reset_object = EventTermCfg(func=reset_carried_object, mode="reset")
+        reset_episode_metrics = EventTermCfg(func=reset_episode_counters, mode="reset")
         carry_object = EventTermCfg(
             func=update_carried_object,
             mode="interval",
@@ -1005,14 +1040,15 @@ def build_d1g2_taskb_train_cfg(
     class TaskBRewardsCfg:
         # task
         approach_progress = RewardTermCfg(func=approach_progress, weight=3.0)
-        objective_proximity = RewardTermCfg(func=objective_proximity, weight=1.2)
-        heading_alignment = RewardTermCfg(func=heading_alignment, weight=1.0)
+        objective_proximity = RewardTermCfg(func=objective_proximity, weight=0.3)
+        heading_alignment = RewardTermCfg(func=heading_alignment, weight=0.5)
         heading_error = RewardTermCfg(func=heading_error_penalty, weight=-0.3)
-        approach_speed = RewardTermCfg(func=approach_speed_penalty, weight=-4.0)
+        holding_cost = RewardTermCfg(func=holding_cost, weight=-4.0)
+        approach_speed = RewardTermCfg(func=approach_speed_penalty, weight=-8.0)
         reach_bonus = RewardTermCfg(func=reach_bonus, weight=25.0)
-        success_bonus = RewardTermCfg(func=success_bonus, weight=60.0)
+        success_bonus = RewardTermCfg(func=success_bonus, weight=100.0)
         failure_penalty = RewardTermCfg(func=failure_penalty, weight=-30.0)
-        time_penalty = RewardTermCfg(func=elapsed_step, weight=-0.05)
+        time_penalty = RewardTermCfg(func=elapsed_step, weight=-0.15)
         # locomotion regularisation, identical in spirit to the Task A proxy
         lin_vel_z_l2 = RewardTermCfg(func=mdp.lin_vel_z_l2, weight=-0.3)
         ang_vel_xy_l2 = RewardTermCfg(func=mdp.ang_vel_xy_l2, weight=-0.05)

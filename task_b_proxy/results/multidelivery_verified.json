@@ -1,0 +1,103 @@
+{
+  "scope": "Task B PROXY, deterministic policy, multi-delivery episodes.",
+  "official_task_b_success": false,
+  "checkpoint": "/home/lybm/ATEC2026_Simulation_Challenge/logs/taskb_multi_run1/model_399_final.pt",
+  "num_envs": 64,
+  "episode_length_s": 40.0,
+  "chunks": [
+    {
+      "steps": 250,
+      "cum_deliveries": 48,
+      "cum_drops": 48,
+      "deliveries_per_env_mean": 0.75,
+      "deliveries_per_env_max": 2,
+      "drops_per_env_mean": 0.75,
+      "carrying_now": 52,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 500,
+      "cum_deliveries": 151,
+      "cum_drops": 152,
+      "deliveries_per_env_mean": 1.609375,
+      "deliveries_per_env_max": 3,
+      "drops_per_env_mean": 1.625,
+      "carrying_now": 50,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 750,
+      "cum_deliveries": 316,
+      "cum_drops": 321,
+      "deliveries_per_env_mean": 2.578125,
+      "deliveries_per_env_max": 4,
+      "drops_per_env_mean": 2.640625,
+      "carrying_now": 51,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 1000,
+      "cum_deliveries": 545,
+      "cum_drops": 554,
+      "deliveries_per_env_mean": 3.578125,
+      "deliveries_per_env_max": 5,
+      "drops_per_env_mean": 3.640625,
+      "carrying_now": 47,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 1250,
+      "cum_deliveries": 833,
+      "cum_drops": 848,
+      "deliveries_per_env_mean": 4.5,
+      "deliveries_per_env_max": 7,
+      "drops_per_env_mean": 4.59375,
+      "carrying_now": 51,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 1500,
+      "cum_deliveries": 1182,
+      "cum_drops": 1208,
+      "deliveries_per_env_mean": 5.453125,
+      "deliveries_per_env_max": 8,
+      "drops_per_env_mean": 5.625,
+      "carrying_now": 50,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 1750,
+      "cum_deliveries": 1577,
+      "cum_drops": 1616,
+      "deliveries_per_env_mean": 6.171875,
+      "deliveries_per_env_max": 9,
+      "drops_per_env_mean": 6.375,
+      "carrying_now": 45,
+      "episodes_ended": 0
+    },
+    {
+      "steps": 2000,
+      "cum_deliveries": 1579,
+      "cum_drops": 1618,
+      "deliveries_per_env_mean": 0.03125,
+      "deliveries_per_env_max": 2,
+      "drops_per_env_mean": 0.03125,
+      "carrying_now": 63,
+      "episodes_ended": 50
+    },
+    {
+      "steps": 2250,
+      "cum_deliveries": 1628,
+      "cum_drops": 1667,
+      "deliveries_per_env_mean": 0.765625,
+      "deliveries_per_env_max": 3,
+      "drops_per_env_mean": 0.765625,
+      "carrying_now": 53,
+      "episodes_ended": 0
+    }
+  ],
+  "total_deliveries_in_window": 1628,
+  "total_drops_in_window": 1667,
+  "deliveries_per_drop": 0.9766046790641871,
+  "deliveries_per_env_per_episode_window": 2.826388888888889
+}

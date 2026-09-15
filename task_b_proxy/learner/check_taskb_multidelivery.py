@@ -57,7 +57,11 @@ cfg = build_d1g2_taskb_train_cfg(
     release_radius=(args.release_radius_override if args.release_radius_override
                     else meta['release_radius_m']),
     spawn_min=meta['spawn_ring_m'][0], spawn_max=meta['spawn_ring_m'][1],
-    heading_noise=1.5707963267948966)
+    heading_noise=1.5707963267948966,
+    # Without this the environment builds in SINGLE-delivery mode, next_delivery
+    # returns immediately, and every measurement of this script is of the wrong
+    # mode -- which is exactly what made four runs of it read zero.
+    multi_delivery=True)
 cfg.sim.use_fabric = True
 env = ManagerBasedRLEnv(cfg=cfg)
 state = taskb_state(env)
@@ -88,8 +92,12 @@ for chunk in range(int(env.max_episode_length // args.chunk) + 1):
             residual.combine(action[:, :NUM_RESIDUAL_ACTIONS]))
         residual.reset((terminated | truncated).nonzero().flatten())
         total_steps += 1
+    _d = int(state['drops_this_episode'].sum())
+    _r = int(state['released'].sum())
     total_deliveries += int(state['deliveries_this_episode'].sum())
-    total_drops += int(state['drops_this_episode'].sum())
+    total_drops += _d
+    print(f'CHUNK_READ steps={total_steps} drops_this_episode_sum={_d} '
+          f'released_sum={_r} carrying={int(state["carrying"].sum())}', flush=True)
     chunks.append({
         'steps': total_steps,
         'cum_deliveries': total_deliveries,

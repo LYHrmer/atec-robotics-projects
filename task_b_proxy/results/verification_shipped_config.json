@@ -119,22 +119,23 @@
       "episode_length_s": 20.0
     }
   },
-  "episodes": 417,
-  "deliveries": 406,
-  "delivery_rate": 0.973621103117506,
-  "release_rate": 0.7074340527577938,
+  "episodes": 859,
+  "deliveries": 846,
+  "delivery_rate": 0.9848661233993015,
+  "release_rate": 0.9848661233993015,
   "termination_counts": {
-    "delivery_success": 285,
-    "time_out": 132
+    "delivery_success": 829,
+    "illegal_contact": 3,
+    "time_out": 27
   },
-  "mean_min_object_distance_m": 0.2707372327933727,
-  "mean_min_robot_clearance_m": 0.7765933292375194,
+  "mean_min_object_distance_m": 0.3946047259030627,
+  "mean_min_robot_clearance_m": 0.9477584374519943,
   "negative_clearance_episodes": 12,
-  "mean_path_length_m": 8.454550801421242,
-  "mean_steps": 407.1654676258993,
-  "success_mean_final_object_distance_m": 0.2405596864490031,
-  "success_mean_path_length_m": 8.481224947962268,
-  "success_mean_start_distance_m": 4.8590505733865825,
-  "success_min_start_distance_m": 1.8963069915771484,
-  "success_max_start_distance_m": 6.495234966278076
+  "mean_path_length_m": 8.122250547092646,
+  "mean_steps": 244.8149010477299,
+  "success_mean_final_object_distance_m": 0.3774424813474236,
+  "success_mean_path_length_m": 8.142531986354935,
+  "success_mean_start_distance_m": 5.053341863003183,
+  "success_min_start_distance_m": 1.9937570095062256,
+  "success_max_start_distance_m": 6.748396396636963
 }
