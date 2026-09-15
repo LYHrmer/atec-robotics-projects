@@ -65,6 +65,17 @@
     },
     "interpretation": "The jaw half-width is 0.035 m but the approach left the object 0.130 m from the jaw midpoint, so the object was never between the fingers and the jaws closed on nothing. This run therefore does NOT test whether the jaws can hold an object.",
     "next_step": "Re-solve the pose against the 1-env geometry (the object layout differs between 1 and 128 envs, so absolute base coordinates cannot be carried across) so the object really sits between the fingers, then re-run this same self-checking harness.",
-    "harness_note": "The probe now measures the natural stance first and refuses any commanded height below it, carries 14 preflight assertions (tensor widths, radians, joint-velocity width, search-box width), and aborts rather than emitting a number when they fail."
+    "harness_note": "The probe now measures the natural stance first and refuses any commanded height below it, carries 14 preflight assertions (tensor widths, radians, joint-velocity width, search-box width), and aborts rather than emitting a number when they fail.",
+    "review_findings": {
+      "reviewed_by": "independent subagent, before the first successful run",
+      "independently_found": "the 6-wide root velocity passed where a 24-wide joint velocity belongs (line 94) -- the same blocking bug the run then hit",
+      "corrections_to_the_author": [
+        "the 'arm limits look like radians (max<10)' guard is BACKWARDS: a 57x pi/180 shrink leaves max~0.05, which still passes. It only catches the inverse error. Replaced with a search-box-width check.",
+        "ROOT_Z = natural-0.020 commanded 20 mm below the stance while the message claimed 'no wheel penetration'. That is penetration at 1/5 the v2 scale. M1 tolerated ~20 mm, so the magnitude is acceptable, but the wording was wrong.",
+        "'reuse task_b/evaluate.py instead of a new oracle harness' was WRONG advice: BootstrapPolicy is an env.step action-schema policy, not a pose oracle, and evaluate.py never writes sim state. The bug lived in the new oracle code, so reuse would not have prevented it.",
+        "the clearance term measures object-centre to finger LINK ORIGIN (prismatic frame, localPos z=0.1358), not to the jaw surface; 30 mm is 86% of the 35 mm finger travel, so it caps graspable width near 60 mm.",
+        "'held' cannot distinguish a pinch from carrying or scooping, nor (when false) never-engaged from slipped from ejected, because finger joint positions and contact forces are never recorded."
+      ]
+    }
   }
 }
