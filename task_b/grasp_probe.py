@@ -25,6 +25,7 @@ PHASES = ("REACH", "CLOSE", "CLOSE_HOLD", "LIFT", "LIFT_HOLD", "DONE")
 class GraspProbePolicy:
     def __init__(self, schema, observation_joint_names, defaults, dt=.02, *,
                  grasp_point_body, descent_delta_rad, preload_m=.025, reach_s=3.,
+                 approach_clearance_m=.12,
                  close_s=2., close_hold_s=1.5, lift_s=2., lift_hold_s=2.):
         schema.validate()
         if dt <= 0 or not np.isfinite(dt):
@@ -53,6 +54,7 @@ class GraspProbePolicy:
         self.grasp_point_body = point
         self.descent_delta = descent
         self.preload_m = float(preload_m)
+        self.approach_clearance_m = float(approach_clearance_m)
         # Jaw travel in metres, as arm_kinematics.gripper_targets defines it: open is
         # the joint's full travel, closed is the stop. The close commands PAST the
         # stop by preload_m, so the servo keeps pressing instead of settling at zero
@@ -80,10 +82,20 @@ class GraspProbePolicy:
         # handed to top_grasp_rotation must be the body's +Y: perpendicular to the
         # approach, straddling the object left-right. Pointing it along the approach
         # would close the jaws front-to-back instead.
-        goal = point + np.array([0., 0., GRASP_DEPTH])
         jaw_axis = (0., 1.)
-        fit = solve_ik(goal, rotation=top_grasp_rotation(jaw_axis), seed=self.arm_defaults[:6],
-                       max_nfev=400)
+        rotation_target = top_grasp_rotation(jaw_axis)
+        goal = point + np.array([0., 0., GRASP_DEPTH])
+        # Two targets, not one. The finger tips sit 21 mm BEYOND the jaw midpoint,
+        # so driving straight to the grasp pose rakes them across the object's top
+        # and knocks it over -- measured on a mustard bottle, which tipped every run.
+        # Instead: arrive directly above the grasp point, then descend vertically.
+        approach = point + np.array([0., 0., GRASP_DEPTH + self.approach_clearance_m])
+        fit = solve_ik(goal, rotation=rotation_target, seed=self.arm_defaults[:6], max_nfev=400)
+        pre = solve_ik(approach, rotation=rotation_target, seed=np.asarray(fit.joints), max_nfev=400)
+        self.reach_pre_q = np.asarray(pre.joints, dtype=float)
+        self.ik_pre_error_m = float(pre.position_error)
+        if not pre.success or self.ik_pre_error_m > .01:
+            raise RuntimeError(f"Pre-grasp IK failed: position error {self.ik_pre_error_m:.4f} m")
         self.reach_q = np.asarray(fit.joints, dtype=float)
         self.ik_position_error_m = float(fit.position_error)
         self.ik_orientation_error_rad = float(fit.orientation_error)
@@ -120,6 +132,7 @@ class GraspProbePolicy:
         self.reach_tolerance_rad = .02
         self.reach_timeout_s = 8.
         self.reach_joint_error_rad = None
+        self.pre_grasp_reached = False
         self.arm_measured = None
 
     def _phase_of(self, seconds):
@@ -131,6 +144,10 @@ class GraspProbePolicy:
             # Leave REACH only once the arm has actually arrived, not on a timer.
             arrived = (self.reach_joint_error_rad is not None
                        and self.reach_joint_error_rad <= self.reach_tolerance_rad)
+            if arrived and not self.pre_grasp_reached:
+                self.pre_grasp_reached = True          # switch to the vertical descent
+                self.phase_start = self.calls
+                return
             if arrived:
                 self._enter("CLOSE")
             elif elapsed >= self.reach_timeout_s:
@@ -163,11 +180,15 @@ class GraspProbePolicy:
         # as far as the arm is allowed to follow.
         measured = (obs[12 + self.arm_obs_ids] + self.arm_defaults)[:6]
         self.arm_measured = measured
-        error = self.reach_q - measured
+        # Stage 1 aims at the pre-grasp pose; stage 2, once that is reached, at the
+        # grasp pose itself. Converging on the pre-grasp pose before switching is what
+        # makes the final descent vertical.
+        target_q = self.reach_pre_q if not self.pre_grasp_reached else self.reach_q
+        error = target_q - measured
         self.reach_joint_error_rad = float(np.max(np.abs(error)))
         self.arm_trim = np.clip(self.arm_trim + self.dt * self.trim_gain * error,
                                 -self.trim_cap, self.trim_cap)
-        arm_command = np.clip(self.reach_q + self.arm_trim,
+        arm_command = np.clip(target_q + self.arm_trim,
                               measured - self.tether, measured + self.tether)
 
         # Legs: descend during LOWER, hold, then return along the same path at LIFT.
@@ -198,6 +219,8 @@ class GraspProbePolicy:
             'ik_position_error_m': self.ik_position_error_m,
             'ik_orientation_error_rad': self.ik_orientation_error_rad,
             'predicted_gripper_body': fk(self.reach_q)[:3, 3].tolist(),
+            'pre_grasp_reached': self.pre_grasp_reached,
+            'ik_pre_error_m': self.ik_pre_error_m,
             'jaw_axis_body': self.jaw_axis_body, 'approach_axis_body': self.approach_axis_body,
         }
         return action.astype(np.float32)

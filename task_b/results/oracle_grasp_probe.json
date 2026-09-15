@@ -1,34 +1,47 @@
 {
   "scope": "B2wPiper, OFFICIAL ATEC-TaskB-B2wPiper env, single env, camera-free, ORACLE probe. seed 42. NOT the visual policy path.",
-  "purpose": "Answer one question for M2: when the jaws are placed on a Task B object, can they hold it? The evaluator parks the base using the object's true pose, then commands the reach, the jaw close and the lift through the ordinary action terms. Nothing but the probe's own setup writes simulator state.",
-  "verdict": "NOT ANSWERED. The object was displaced during the arm's approach in every run, so the grip itself was never tested.",
-  "best_run": {
-    "command": "bash run.sh task-b --mode grasp_probe --camera_free --probe_object 10 --probe_standoff 0.60 --probe_drop 0.06 --probe_clearance 0.03 --probe_preload 0.025 --settle_calls 200 --probe_park_settle 150 --max_steps 1200 --rgb_interval 0",
-    "target": "object_10 (mustard bottle)",
-    "closest_jaw_midpoint_to_object_root_m": 0.0149,
-    "intended_jaw_midpoint_offset_from_root_m": 0.0657,
-    "object_peak_rise_m": 0.0069,
-    "object_final_rise_m": -0.0486,
-    "official_terminations": []
+  "purpose": "Answer the M2 question: when the jaws are placed on a Task B object, can they hold it? The evaluator parks the base using the object's true pose, lowers the body, then hands the policy the object's measured body-frame position; the reach, the jaw close and the lift all run through the ordinary action terms. Nothing but the probe's own setup writes simulator state.",
+  "verdict": "YES. The Piper jaws grasp and hold a Task B object and lift it clear of the ground.",
+  "run": {
+    "command": "bash run.sh task-b --mode grasp_probe --camera_free --probe_object 10 --probe_standoff 0.60 --probe_drop 0.06 --probe_clearance 0.03 --probe_preload 0.025 --settle_calls 200 --probe_park_settle 150 --max_steps 1400 --rgb_interval 0",
+    "target": "object_10 (mustard bottle, 0.5 kg)",
+    "object_rest_z_m": 0.1402,
+    "object_peak_z_m": 0.2136,
+    "object_rise_m": 0.0733,
+    "object_rise_held_at_end_of_record_m": 0.0679,
+    "object_planar_drift_m": 0.0239,
+    "finger_gap_closed_to_m": 0.05641,
+    "finger_gap_spread_while_held_m": 0.0,
+    "jaw_midpoint_to_object_root_m": 0.0496,
+    "jaw_midpoint_distance_spread_while_held_m": 0.0,
+    "official_terminations": [],
+    "max_official_illegal_contact_force_n": 0.0,
+    "stop_reason": "policy_stop:grasp_probe_complete"
   },
-  "what_was_established": [
-    "The jaws DO reach the object: in the best run the jaw midpoint got within 14.9 mm of the object's root, well inside the 65.7 mm offset the grasp plan asked for.",
-    "In two earlier runs the fingers physically met the bottle -- the gap stopped at 0.044-0.049 m, which is the bottle's own width at the grasp height, instead of closing to the 0.0035 m the stops allow.",
-    "The reported -0.049 to -0.067 m 'rise' is the object TIPPING OVER, not sinking: an upright mustard root sits at 0.140 m and a fallen one at 0.073 m."
-  ],
-  "defects_found_and_fixed": {
-    "jaw_axis_90_degrees_wrong": "top_build_rotation was called with jaw_xy=(1,0). The fingers slide along the gripper's local +Y (USD: arm_link7 spans y in [-0.0265,0], arm_link8 y in [0,+0.0265]), so (1,0) pointed the jaw axis ALONG the approach: the fingers closed front-to-back across the bottle's 96 mm side, which cannot fit the 70 mm opening. The fingers sat pinned fully open and could not close at all.",
-    "arm_servo_sag": "The arm actuator is a position servo of stiffness 80 N/m. Loaded, arm_joint2 settled 0.084 rad short of its command, worth ~50 mm at the jaws, and the reach was open-loop so nothing checked. Fixed with an integral trim plus a reach phase that ends on convergence, not on a timer.",
-    "descent_undone_by_the_policy": "After the evaluator lowered the body, the probe's leg command started at alpha 0 -- which in that parameterisation meant ZERO leg action, i.e. 'return to standing'. The descent was erased within 30 steps and the arm then drove into a bottle that was 68 mm higher than the plan assumed.",
-    "front_wheel_standing_on_the_object": "In the descended stance the furthest wheel edge reaches body x = 0.563 m. Parking the object at 0.50 m put it 35 mm INSIDE the wheel, which tipped it during the approach. park_and_measure now refuses to run when the object is within 10 mm of a wheel edge.",
-    "park_did_not_aim_the_jaws": "The park aligned the base with the object but not the jaw axis with the object's narrow side. Each type's narrow side is fixed in the WORLD by its spawn quaternion: sugar 45 mm along world x, mustard 58 mm and banana 74 mm along world y. Park now sets the yaw so body +Y is that axis."
+  "why_this_is_a_grasp_and_not_a_nudge": {
+    "object_left_the_ground": "The root rose 73 mm and was still 68 mm up at the end of the record.",
+    "it_moved_with_the_jaws": "The jaw-midpoint-to-object distance stayed at exactly 0.0496 m throughout the lift -- spread 0.0 m -- so the object tracked the gripper rather than being pushed along the floor.",
+    "the_fingers_are_on_the_object": "The finger gap stopped at 0.05641 m and held there with zero spread. The mustard's narrow horizontal extent is 0.0582 m, so the fingers are closed onto the bottle's own sides, not onto their stops (which are at 0.0035 m).",
+    "the_gripper_is_actually_gripping": "The close commands the fingers 25 mm PAST the stop (--probe_preload), so the position servo keeps pressing instead of settling at zero error. Closing exactly at the stop was measured to leave roughly 4 N per finger, which slipped while lifting a 0.5 kg object."
   },
-  "standing_blocker": "The arm's approach displaces the object before the grip can be tested. This is a collision-free-approach problem, not a grip-physics one. The planned next step is to close the jaws to just wider than the object while still above it and then lower around it, or to approach horizontally at the object's mid-height instead of from directly above.",
+  "what_had_to_be_fixed_to_get_here": {
+    "jaw_axis_was_90_degrees_wrong": "top_grasp_rotation was called with jaw_xy=(1,0). The fingers slide along the gripper's local +Y (USD: arm_link7 spans y in [-0.0265,0], arm_link8 y in [0,+0.0265]), so (1,0) pointed the jaw axis ALONG the approach: the fingers closed front-to-back across the bottle's 96 mm side, which cannot fit the 70 mm opening. They sat pinned fully open and could not close at all.",
+    "arm_servo_sag": "The arm actuator is a position servo of stiffness 80 N/m. Loaded, arm_joint2 settled 0.084 rad short of its command, worth ~50 mm at the jaws, and the reach was open-loop. Fixed with an integral trim plus a reach phase that ends on convergence, not on a timer.",
+    "descent_undone_by_the_policy": "After the evaluator lowered the body, the probe's leg command started at alpha 0, which in that parameterisation meant ZERO leg action -- 'return to standing'. The descent was erased within 30 steps and the arm then drove into a bottle 68 mm higher than the plan assumed.",
+    "front_wheel_standing_on_the_object": "In the descended stance the furthest wheel edge reaches body x = 0.563 m. Parking the object at 0.50 m put it 35 mm INSIDE the wheel, which tipped it over during the approach. park_and_measure now refuses to run when the object is within 10 mm of a wheel edge.",
+    "park_did_not_aim_the_jaws": "The park aligned the base with the object but not the jaw axis with the object's narrow side. Each type's narrow side is fixed in the WORLD by its spawn quaternion: sugar 45 mm along world x, mustard 58 mm and banana 74 mm along world y. Park now sets the yaw so body +Y is that axis.",
+    "single_stage_reach_raked_the_object": "The finger tips sit 21 mm beyond the jaw midpoint, so driving straight to the grasp pose raked them across the object's top and knocked it over in every earlier run. The reach is now two-stage: arrive directly above the grasp point, then descend vertically."
+  },
+  "delivery_consequence": {
+    "target_is_the_bin": "TARGET_CENTER (-3, -10) is where task_b/terrain.py builds the trash bin (trash_bin_x=7 from the terrain centre at the env origin), and the reward radius 1.0 m equals the bin's outer wall radius (bin_diameter 2.0). The wall stands 0.50 m above the bin floor.",
+    "pushing_alone_cannot_score": "An object pushed against the OUTSIDE of the wall has its root at r = 1.0 + its radial half-extent = 1.019-1.029 m, outside the 1.0 m threshold. It has to go over the lip.",
+    "so_the_chain_is": "push the object to the bin (no grasp needed) and then raise it over the 0.50 m lip (needs the arm). object_10 starts 3.95 m from the bin, the closest of the 18."
+  },
   "harnesses": {
     "task_b/leg_kinematics.py": "B2w leg FK and the wheels-planted vertical solver, both frames read from b2w_piper.usda. Recovers the USD's authored default leg pose to 1e-14 m.",
     "task_b/grasp_probe.py": "The oracle probe policy.",
     "task_b/audit_stance.py": "14 checks: leg frames vs USD, published static-IK cross-check, solver residuals over the full +/- range, policy action encoding, argument handling. All pass.",
     "task_b/audit_grasp.py": "25 checks: the first_reach grasp sequence, the oracle probe sequence, and a static check that the evaluator's policy constructions match the policy signatures. All pass."
   },
-  "not_shown": "No grasp, no delivery, no score. The oracle probe is told where the object is, so it measures grip physics only, never perception or navigation. Every number here is one run on one seed."
+  "not_shown": "This is grip physics only. The probe is TOLD where the object is, so it demonstrates nothing about perception, navigation, carrying while driving, release over the bin lip, or score. It is one object of one type on one seed, and no objects_in_circle point was earned."
 }
