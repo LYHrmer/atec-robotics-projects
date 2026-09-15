@@ -60,7 +60,18 @@
     },
     "detected_pixel_vs_projected_true_centre_px": 2.579,
     "reading": "The detector's BEARING is good: its pixel is 2.6 px from where the object's true centre projects. The body-frame residual is still 47 mm, and its component along the view ray is a tight +33 mm (spread 2.6 mm) -- the mustard bottle's half-width is 29 mm, so the depth is being read on the front surface and reported as if it were the axis. The across-ray 31 mm is the same 2.6 px at 5.6 m. Both are detector geometry; a mount error would move the estimate sideways and grow with range, and this one does not.",
-    "consequence_for_the_next_step": "At grasp range the along-ray term stays at roughly the object's half-width (29 mm for mustard, 22 mm for sugar, 37 mm for banana) while the pixel term shrinks. The estimate must be pushed from the near surface to the object axis before it is handed to IK, or the jaws will close ~3 cm behind the object."
+    "second_episode_and_the_first_order_fix": {
+      "run": "--mode first_reach --seed 42 --max_steps 4000 (1549 ee detections, range 2.97-4.04 m)",
+      "raw_mean_error_m": 0.0421,
+      "after_pushing_the_estimate_30_mm_from_the_camera_along_the_view_ray_m": 0.0262,
+      "optimal_push_length_m": 0.035,
+      "both_terms_scale_with_range": {
+        "surface_offset": "constant, about the object's half-width (29 mm for mustard), and the only one a correction can remove",
+        "blob_median_pixel": "2.6 px, so 17-20 mm at 3-4 m and 3.4 mm at a 0.6 m grasp standoff"
+      },
+      "gate_status": "NOT yet at 1 cm end to end. The mount sub-gate is met with two orders of margin (0.6 mm), and the residual is now attributed and quantified, but closing it to a centimetre is the detector step, not this one."
+    },
+    "consequence_for_the_next_step": "At grasp range the along-ray term stays at roughly the object's half-width (29 mm for mustard, 22 mm for sugar, 37 mm for banana) while the pixel term shrinks. The estimate must be pushed from the near surface to the object axis before it is handed to IK, or the jaws will close ~3 cm behind the object. Pushing 30 mm along the view ray cuts the mean residual by 38 percent at 3-4 m and takes the optimal push to 35 mm, which is the object's half-width -- so the correction is the right shape and size."
   },
   "what_this_does_not_say": [
     "Nothing here is a policy score. The sweep is not a policy and the gate episode scored 0.",
