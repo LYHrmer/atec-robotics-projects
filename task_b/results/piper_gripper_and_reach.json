@@ -76,6 +76,22 @@
         "the clearance term measures object-centre to finger LINK ORIGIN (prismatic frame, localPos z=0.1358), not to the jaw surface; 30 mm is 86% of the 35 mm finger travel, so it caps graspable width near 60 mm.",
         "'held' cannot distinguish a pinch from carrying or scooping, nor (when false) never-engaged from slipped from ejected, because finger joint positions and contact forces are never recorded."
       ]
+    },
+    "harness_v4": {
+      "design": "single env for BOTH search and physics, 8 preflight assertions, per-step diagnostics",
+      "premises_verified_before_building": {
+        "sim_forward_recomputes_kinematics": "TRUE - two very different arm configs give gripper positions 0.556 m apart; forward is not slower than a physics step (3.9 ms)",
+        "contact_sensor_available": "TRUE - scene key 'contact_sensor' exists (read via scene['contact_sensor'], not as an attribute)"
+      },
+      "result": {
+        "commanded_root_z_m": 0.514,
+        "natural_stance_m": 0.534,
+        "best_jaw_mid_to_object_m": 0.1564,
+        "blocked_by": "preflight assert (<0.06 m required)"
+      },
+      "interpretation": "In the physically-valid single-env build, from the natural stance with a 0.30-0.50 m standoff, the object cannot be brought between the fingers -- best 0.156 m versus a 0.07 m jaw opening. The run aborted rather than emitting a number.",
+      "unexplained": "The same search finds 0.053 m when run at 128 envs but 0.156 m at 1 env. The objects' WORLD positions differ between the two builds (object_1 at (6.49,-23.11) with 128 envs and at (-7.26,-10.60) with 1 env) even though both use seed 42 and the same cfg. Same seed should mean the same layout, so this is NOT explained. Until it is, reach figures from the 128-env build and from the 1-env build are not interchangeable.",
+      "assert_calibration_error_caught": "an assert required >5 cm per-finger travel but the asset has 3.5 cm per finger (7 cm total jaw). The assert was miscalibrated, not the asset."
     }
   }
 }
