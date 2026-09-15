@@ -89,7 +89,7 @@
     "main_view": "third-person overview camera on base_link at (-2.00, -2.00, 1.25) m aimed at (0.15, 0.00, 0.20) m",
     "insets": "head RGB and wrist RGB, 448x336, bottom-left",
     "why": "the first recording used only the onboard 640x480 cameras; they are low resolution and point at the work rather than at the robot, so the robot was never really shown",
-    "framing_check": "task_b/audit_overview_video.py -- nearest frame edge 77.2 px away against a 30 px floor, envelope spans 42.1 percent of the frame width; on the run itself every chassis corner, the gripper and the held object stay at least 115 px inside the frame",
+    "framing_check": "task_b/audit_overview_video.py (CPU, reproducible): against the in-repo body-frame robot envelope the chosen mount keeps the nearest frame edge 77.2 px away and spans 42.1 percent of the width, where the earlier Task-A-style mount put part of the envelope 43.5 px outside the frame at 35.6 percent. Against the run's own recorded gripper and held-object points the earlier mount had 209.6 px of margin and this one 316.0 px, so neither recording clipped anything -- the gain is headroom and size.",
     "declared": "the overview camera is a diagnostic render product, absent from the official scene, never read by a policy, and recorded in result.json and the source manifest"
   }
 }

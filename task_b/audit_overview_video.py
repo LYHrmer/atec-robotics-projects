@@ -8,6 +8,7 @@ Prints a JSON report; exit code 1 if any check fails.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -29,7 +30,48 @@ def record(name, passed, note=""):
         notes.append(f"{name}: {note}")
 
 
+def recorded_point_margin(run_directory, stride=10):
+    """Worst frame margin over a recorded run's own gripper and held-object points.
+
+    Uses only what the run recorded -- the gripper body position and every
+    object's root position, converted to the body frame with the recorded base
+    pose -- and the mount THAT RUN actually used, read back from its own
+    result.json. Nothing is assumed: not a chassis box, which the run does not
+    record, and not the current default mount, which would make every run score
+    the same and the comparison meaningless.
+    """
+    import json
+    from task_b import camera_calibration as cal
+
+    result = json.loads((Path(run_directory) / "result.json").read_text())
+    mounted = result.get("overview_camera") or {}
+    if not mounted:
+        raise ValueError(f"{run_directory} recorded no overview camera; it is not an overview run")
+    position = np.asarray(mounted["base_link_from_camera_pos"], dtype=float)
+    target = np.asarray(mounted["aimed_at_base_link_point"], dtype=float)
+    run = np.load(Path(run_directory) / "telemetry.npz")
+    base, quat = run["base_xyz"], run["base_quat"]
+    gripper, objects = run["gripper_xyz"], run["object_xyz"]
+    worst, worst_step = 1e9, None
+    for index in range(0, len(base), stride):
+        rotation = cal.body_from_world(base[index], quat[index])[:3, :3]
+        body = [(gripper[index] - base[index]) @ rotation.T]
+        roots = (objects[index] - base[index]) @ rotation.T
+        nearest = int(np.argmin(np.linalg.norm(roots - body[0], axis=1)))
+        body.append(roots[nearest])
+        margin, _ = overview.project_points(position, target, np.asarray(body))
+        if margin < worst:
+            worst, worst_step = margin, index
+    return margin is not None and worst, worst_step, int(len(base)), position, target
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run", type=Path, action="append", default=[],
+                        help="a recorded run directory whose gripper and held-object points are "
+                             "projected into the mount; repeatable")
+    args = parser.parse_args()
+
     position = np.asarray(overview.OVERVIEW_CAMERA_POS, dtype=float)
     target = np.asarray(overview.OVERVIEW_CAMERA_TARGET, dtype=float)
     rotation = overview.world_camera_from_look_at(position, target)
@@ -84,10 +126,12 @@ def main():
         except ValueError as error:
             record(f"framing_check_rejects_{name}", True, str(error))
 
-    for name, args in (("a_coincident_aim_point", (target, target)),
-                       ("a_vertical_view_direction", ((0., 0., 0.), (0., 0., 1.)))):
+    # NB: do not name this loop variable `args`; it would shadow the argparse
+    # namespace the --run loop below still needs.
+    for name, bad in (("a_coincident_aim_point", (target, target)),
+                      ("a_vertical_view_direction", ((0., 0., 0.), (0., 0., 1.)))):
         try:
-            overview.world_camera_from_look_at(*args)
+            overview.world_camera_from_look_at(*bad)
             record(f"look_at_rejects_{name}", False, "no error raised")
         except ValueError as error:
             record(f"look_at_rejects_{name}", True, str(error))
@@ -125,6 +169,14 @@ def main():
         record("composition_rejects_a_wrong_overview_size", False, "no error raised")
     except ValueError as error:
         record("composition_rejects_a_wrong_overview_size", True, str(error))
+
+    for directory in args.run:
+        margin, step, steps, used_pos, _ = recorded_point_margin(directory)
+        record(f"recorded_points_stay_inside_the_frame:{Path(directory).name}",
+               margin >= overview.FRAMING_MARGIN_PX,
+               f"{Path(directory).name}: with its own mount {np.round(used_pos, 2).tolist()} the "
+               f"gripper and held-object points stay {margin:.1f} px inside the frame over {steps} "
+               f"steps (worst at step {step})")
 
     report = {"checks": checks, "count": len(checks), "notes": notes,
               "passed": all(checks.values()),

@@ -9,7 +9,7 @@
     "insets": "head RGB and wrist RGB, 448x336 each, bottom-left, labelled",
     "title_bar": "mode, policy seconds, raw score, layout",
     "why_changed": "the first delivery recording used only the two onboard 640x480 cameras, which are low resolution and pointed at the work rather than at the robot. This adds the same kind of chase camera the Task A videos use.",
-    "framing_check": "task_b/audit_overview_video.py projects the body-frame robot envelope (chassis, arm workspace, held object) into the mount: the nearest frame edge is 77.2 px away against a 30 px floor, and the envelope spans 42.1 percent of the frame width. Measured on the run itself, every chassis corner, the gripper and the held object stay at least 115 px inside the frame; the earlier 3.72 m mount clipped the chassis bottom by 11 px."
+    "framing_check": "task_b/audit_overview_video.py, reproducible on CPU. Against the in-repo body-frame robot envelope the chosen mount keeps the nearest frame edge 77.2 px away (30 px floor) and spans 42.1 percent of the frame width; the earlier Task-A-style (-2.30,-2.30,1.70) mount put part of that envelope 43.5 px outside the frame and spanned 35.6 percent. Against the points the run actually recorded -- the gripper and the held object -- the earlier mount had 209.6 px of margin and this one 316.0 px, so nothing was clipped in either recording: the gain is headroom and apparent size, not the rescue of a clipped frame."
   },
   "reproduces_the_earlier_runs_exactly": {
     "reference": "runs/delivery_video/record_01 (onboard layout) and /tmp/atec-m2/run_deliver08 (camera-free)",
@@ -55,7 +55,7 @@
     "-pix_fmt", "yuv420p", "-movflags", "+faststart"
   ],
   "what_to_watch": {
-    "timeline_source": "the probe's own phase record in trace.jsonl, in policy seconds; the recording is 10 fps against a 50 Hz policy, so media time equals policy time exactly",
+    "timeline_source": "the probe's own phase record in trace.jsonl, in policy seconds; the recording is 10 fps against a 50 Hz policy, so a media second spans exactly 50 policy steps and the two clocks track each other; the file is 47.300 s against 47.38 s of policy time because the last frame interval is partial",
     "0.0_s": "REACH -- the two-stage reach begins from the settled stance",
     "2.7_s": "CLOSE -- the jaws close on the bottle",
     "6.2_s": "LIFT -- the bottle leaves the ground",

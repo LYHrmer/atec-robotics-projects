@@ -4,7 +4,7 @@
   "finding": "Yes, to a few microns. Both mounts in task_b/arm_kinematics.py are correct and neither is the localisation error. The earlier audit was measuring a bug in the diagnostic reader, not in the model, and the residual that remains is the detector's own depth geometry.",
   "root_cause_of_the_earlier_audit": {
     "claim": "isaaclab CameraCfg.update_latest_camera_pose defaults to False, and its docstring states that sensor.data.pos_w then returns 'the pose of the camera during initialization'. The earlier camera_mount_audit compared that frozen reset-time pose against a robot that had since settled and driven 0.25 m, so the difference it called a mount error was mostly the robot's own travel.",
-    "evidence": "In the 42-seed sweep's telemetry the recorded head_camera pos_w had exactly ONE unique value across all 1144 steps. That value minus the step-0 base pose equals the configured offset (0.4216099977493286, 0.02500000037252903, 0.06185099855065346) to 4e-05 m -- the pose was written once at initialization and never moved.",
+    "evidence": "In the earlier 42-seed sweep run (sweep_seed42_03, 1144 steps) the recorded head_camera pos_w had exactly ONE unique value; the 1684-step sweep_seed42_04 quoted above is the later, fixed run. That value minus the step-0 base pose equals the configured offset (0.4216099977493286, 0.02500000037252903, 0.06185099855065346) to 4e-05 m -- the pose was written once at initialization and never moved.",
     "fix": "evaluate.py now sets update_latest_camera_pose=True on the scene cameras. The official observation reads the annotators, not the pose, so no official input, reward, action or termination is affected; the change is recorded in every result.json as result.camera_pose_reader and in the source manifest's declared list."
   },
   "method": [
@@ -48,7 +48,7 @@
     "ee_max_error_m": 0.0006,
     "head_mount_pose_error": {"position_m": 0.0003, "rotation_rad": 0.0001},
     "ee_mount_pose_error": {"position_m": 0.0003, "rotation_rad": 0.0001},
-    "verdict": "~0.6 mm, two orders inside the 1 cm gate. The camera model is not what limits the grasp estimate."
+    "verdict": "~0.6 mm, about 17x inside the 1 cm gate. The camera model is not what limits the grasp estimate."
   },
   "end_to_end_localisation_on_real_images": {
     "source": "the same seed-7 first_reach run's own detector output joined with truth",
@@ -69,7 +69,7 @@
         "surface_offset": "constant, about the object's half-width (29 mm for mustard), and the only one a correction can remove",
         "blob_median_pixel": "2.6 px, so 17-20 mm at 3-4 m and 3.4 mm at a 0.6 m grasp standoff"
       },
-      "gate_status": "NOT yet at 1 cm end to end. The mount sub-gate is met with two orders of margin (0.6 mm), and the residual is now attributed and quantified, but closing it to a centimetre is the detector step, not this one."
+      "gate_status": "NOT yet at 1 cm end to end. The mount sub-gate is met with about 17x margin (0.6 mm), and the residual is now attributed and quantified, but closing it to a centimetre is the detector step, not this one."
     },
     "consequence_for_the_next_step": "At grasp range the along-ray term stays at roughly the object's half-width (29 mm for mustard, 22 mm for sugar, 37 mm for banana) while the pixel term shrinks. The estimate must be pushed from the near surface to the object axis before it is handed to IK, or the jaws will close ~3 cm behind the object. Pushing 30 mm along the view ray cuts the mean residual by 38 percent at 3-4 m and takes the optimal push to 35 mm, which is the object's half-width -- so the correction is the right shape and size."
   },

@@ -37,23 +37,22 @@ ROBOT_ENVELOPE = ((0.45, 0.32, 0.35), (-0.45, -0.32, -0.15))
 FRAMING_MARGIN_PX = 30
 
 
-def project_envelope(position, target, envelope=ROBOT_ENVELOPE, image=OVERVIEW_FRAME,
-                     focal_length=24.0, aperture=20.955):
-    """Pixel extents of a body-frame box seen from a candidate mount.
+def project_points(position, target, points, image=OVERVIEW_FRAME, focal_length=24.0,
+                   aperture=20.955):
+    """Pixel extents of body-frame points seen from a candidate mount.
 
     Returns the margin to the nearest frame edge and the fraction of the frame
-    width the box spans. Both are what a readable chase view needs: the box has
-    to stay inside the frame throughout, and it has to be big enough to read.
+    width the points span. Both are what a readable chase view needs: the points
+    have to stay inside the frame throughout, and they have to be big enough to
+    read.
     """
     position = np.asarray(position, dtype=float).reshape(-1)
     target = np.asarray(target, dtype=float).reshape(-1)
-    (x_high, y_high, z_high), (x_low, y_low, z_low) = envelope
-    corners = np.array([[x, y, z]
-                        for x in (x_low, x_high) for y in (y_low, y_high) for z in (z_low, z_high)])
+    corners = np.asarray(points, dtype=float).reshape(-1, 3)
     rotation = world_camera_from_look_at(position, target)
     camera = (corners - position) @ rotation
     if (camera[:, 0] <= 0.2).any():
-        raise ValueError("part of the envelope is behind the camera")
+        raise ValueError("part of the point set is behind the camera")
     width, height = image
     focal = width * focal_length / aperture
     # World-camera (+X forward, +Y left, +Z up) to image: right is -Y, down is -Z.
@@ -61,6 +60,19 @@ def project_envelope(position, target, envelope=ROBOT_ENVELOPE, image=OVERVIEW_F
     v = focal * (-camera[:, 2] / camera[:, 0]) + height / 2.
     margin = float(min(u.min(), v.min(), width - u.max(), height - v.max()))
     return margin, float(u.max() - u.min()) / width
+
+
+def envelope_points(envelope=ROBOT_ENVELOPE):
+    (x_high, y_high, z_high), (x_low, y_low, z_low) = envelope
+    return np.array([[x, y, z]
+                     for x in (x_low, x_high) for y in (y_low, y_high) for z in (z_low, z_high)])
+
+
+def project_envelope(position, target, envelope=ROBOT_ENVELOPE, image=OVERVIEW_FRAME,
+                     focal_length=24.0, aperture=20.955):
+    """The envelope box's extents, i.e. ``project_points`` over its eight corners."""
+    return project_points(position, target, envelope_points(envelope), image=image,
+                          focal_length=focal_length, aperture=aperture)
 
 
 def world_camera_from_look_at(position, target):
