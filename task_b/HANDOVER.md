@@ -172,4 +172,19 @@ bash run.sh task-b --mode <MODE> --output <必须是不存在的新目录> ...
 - 提交署 `LYHrmer <1507229006@qq.com>`（local config 已设好）。
 - 推送走 **SSH**：`git push git@github.com:LYHrmer/atec-robotics-projects.git main`
   （HTTPS 在这台机器上拿不到凭据）。
+- **SSH 直连会间歇性挂断**（`kex_exchange_identification: Connection closed by remote host`）。
+  这台机器跑 FlClash 代理（`127.0.0.1:7890`，fake-IP DNS 把 github.com 解析成 `198.18.0.15`），
+  TUN 路由时好时坏。**稳的做法是显式把 SSH 穿 HTTP CONNECT 代理**：
+
+  ```bash
+  cd /tmp/atec-upload
+  env GIT_SSH_COMMAND="ssh -o ConnectTimeout=30 -o ProxyCommand='nc -X connect -x 127.0.0.1:7890 %h %p'" \
+    git push git@github.com:LYHrmer/atec-robotics-projects.git HEAD:main
+  ```
+
+  `nc -X connect` 就是普通的 openbsd netcat。推完用同一条 `GIT_SSH_COMMAND` 跑
+  `git ls-remote <repo> main` 核对远端哈希 == 本地 HEAD（这条也会偶尔需要重试）。
+  代理本身是活的，`curl -x http://127.0.0.1:7890 https://github.com` 能返回 200 可用来判断。
 - 提交信息用英文，结尾加 `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`。
+- **大文件**：GitHub 单文件上限 100 MB。原片（如 105 MB 的投递录像）**不进 git**，
+  留在本机并把 sha256 写进转码记录；仓库只放转码后的 720p 版本（见 `docs/VIDEO_COMPARISON.md` 的约定）。
